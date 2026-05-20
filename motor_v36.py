@@ -1,8 +1,26 @@
 # -*- coding: utf-8 -*-
 """
 MOTOR DE GOVERNANÇA PREDITIVA – BIOSSISTEMAS CONSTRUÍDOS
-Doutorado UFSB – Versão 4.0.1
+Doutorado UFSB – Versão 4.0.6
 
+# ============================================================================
+# CHANGELOG v4.0.6 (2026-05-20) — PATCH (Fase 4B completa — Previsão de Custos)
+# ----------------------------------------------------------------------------
+# Completa a integração do pipeline de previsão de custos (R$) introduzido
+# em v4.0.3/4.0.4, alinhando o motor ao dashboard v4.1.2 (aba "Previsão de
+# Custos"):
+#   • MIN_PONTOS_SERIE_CUSTO = 24: mínimo 24 meses com custo > 0 para rodar
+#     a previsão financeira. Séries mais curtas são puladas com log — mesma
+#     regra documentada no painel (info box "Fase 4B").
+#   • executar_previsao_custo() agora faz pré-validação da série antes de
+#     delegar ao pipeline completo, evitando que modelos de sazonalidade
+#     tentem ajustar séries curtas (< 24 meses).
+#   • Cadência (loop Colab): executar_previsao_custo() adicionado ao bloco
+#     INTERVALO_PREVISAO_CICLOS, espelhando a lógica de chamados.
+#   • Idle (loop Colab, sem novos chamados): executar_previsao_custo() também
+#     chamado junto com executar_analise_preditiva_avancada no bloco de idle.
+#   As demais integrações (boot, _modo_previsao_global, executar_todos_filtros)
+#   já estavam presentes desde v4.0.4 e não foram alteradas.
 # ============================================================================
 # CHANGELOG v4.0.1 (2026-05-13) — PATCH (infraestrutura)
 # ----------------------------------------------------------------------------
@@ -564,7 +582,7 @@ except ImportError:
 #   - Detecção automática Colab vs. local; google.colab.drive opcional.
 #   - Imports do TensorFlow (Keras) elevados a escopo global para uso
 #     em treinar_classificador_lstm() fora da função _importar_tf().
-_VERSAO_MOTOR = "v4.0.5"
+_VERSAO_MOTOR = "v4.0.6"
 
 print(f"[Imports] OK · pandas={pd.__version__} · {_VERSAO_MOTOR} "
       f"(pmdarima={'ON' if _PMDARIMA_OK else 'fallback'}, "
@@ -632,6 +650,7 @@ INTERVALO_PREVISAO_CICLOS = 10    # 10 × 15 = 150 chamados
 INTERVALO_RETREINO_CICLOS = 10
 MIN_AMOSTRAS_TREINO = 10
 MIN_PONTOS_SERIE = 6
+MIN_PONTOS_SERIE_CUSTO = 24        # mínimo 24 meses para previsão de custos [v4.0.6]
 MIN_EXEMPLOS_POR_CLASSE = 3
 
 # Eixo 2
@@ -2072,6 +2091,82 @@ def extrair_serie_temporal(dados_linhas):
 
     print(f"[Série] {len(contagem)} meses completos, "
           f"de {contagem['Mes_Ano_Str'].iloc[0]} a {contagem['Mes_Ano_Str'].iloc[-1]}")
+    return contagem
+
+
+def extrair_serie_custo(dados_linhas):
+    """[v4.0.4] Variante de extrair_serie_temporal que agrega por SOMA da
+    coluna Q (Valor do chamado) em vez de COUNT. Devolve DataFrame com
+    estrutura idêntica (Mes_Ano, Quantidade, Mes_Ano_Str) onde a coluna
+    "Quantidade" passa a conter o valor financeiro mensal em R$.
+
+    Filtros aplicados:
+      - Datas futuras (> agora) descartadas
+      - Mês corrente (incompleto) removido
+      - Valor parseável e > 0 (via parse_valor_chamado)
+    Devolve None quando não houver dados suficientes.
+    """
+    agora = datetime.now(FUSO_BAHIA)
+    registros = []
+    for linha in dados_linhas:
+        if len(linha) <= max(COL_DATA_ABERTURA, COL_VALOR):
+            continue
+        data_str = (linha[COL_DATA_ABERTURA] or '').strip()
+        if not data_str:
+            continue
+        data = pd.to_datetime(data_str, format='%d/%m/%Y %H:%M:%S', errors='coerce')
+        if pd.isna(data):
+            data = pd.to_datetime(data_str, format='%d/%m/%Y', errors='coerce')
+        if pd.isna(data):
+            data = pd.to_datetime(data_str, dayfirst=True, errors='coerce')
+        if pd.isna(data):
+            continue
+        try:
+            if data.tz is None and data > agora.replace(tzinfo=None):
+                continue
+            elif data.tz is not None and data > agora:
+                continue
+        except Exception:
+            pass
+        valor = parse_valor_chamado(linha[COL_VALOR])
+        if valor is None or valor <= 0:
+            continue
+        registros.append({'data': data, 'valor': valor})
+
+    if not registros:
+        return None
+
+    df = pd.DataFrame(registros)
+    df['Mes_Ano'] = df['data'].dt.to_period('M')
+    contagem = df.groupby('Mes_Ano')['valor'].sum().reset_index()
+    contagem = contagem.rename(columns={'valor': 'Quantidade'})
+    inicio = contagem['Mes_Ano'].min()
+    fim = contagem['Mes_Ano'].max()
+    if pd.isna(inicio) or pd.isna(fim):
+        return None
+    todos_meses = pd.period_range(inicio, fim, freq='M')
+    contagem = contagem.set_index('Mes_Ano').reindex(todos_meses, fill_value=0.0).reset_index()
+    contagem = contagem.rename(columns={'index': 'Mes_Ano'})
+    contagem['Mes_Ano_Str'] = contagem['Mes_Ano'].dt.strftime('%m/%Y')
+
+    try:
+        mes_atual = pd.Period(year=agora.year, month=agora.month, freq='M')
+        n_antes = len(contagem)
+        contagem = contagem[contagem['Mes_Ano'] < mes_atual].reset_index(drop=True)
+        n_removidos = n_antes - len(contagem)
+        if n_removidos > 0:
+            print(f"[Custo] Mês corrente ({mes_atual.strftime('%m/%Y')}) e posteriores "
+                  f"removidos ({n_removidos} período(s)). Série encerra em "
+                  f"{contagem['Mes_Ano'].max().strftime('%m/%Y')}.")
+    except Exception as e:
+        print(f"[Custo] Aviso ao remover mês incompleto: {e}")
+
+    if len(contagem) < 2:
+        return None
+
+    print(f"[Custo] {len(contagem)} meses completos com valor > 0, "
+          f"de {contagem['Mes_Ano_Str'].iloc[0]} a {contagem['Mes_Ano_Str'].iloc[-1]} "
+          f"(soma total R$ {contagem['Quantidade'].sum():,.2f}).")
     return contagem
 
 
@@ -4477,10 +4572,34 @@ def gravar_aba_shap(resultados_modelos):
 
 
 # =====================================================================
-def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
+def executar_analise_preditiva_avancada(dados_linhas, sufixo="",
+                                         prefixo_aba="PREVISAO",
+                                         extrator=None,
+                                         rotulo_alvo="Quantidade Real",
+                                         unidade="chamados"):
+    """[v4.0.4] Função-mãe do Eixo 2 parametrizada por prefixo de aba e
+    extrator de série. Permite reuso completo do pipeline para:
+      - Contagem de chamados/mês (default: prefixo_aba='PREVISAO',
+        extrator=extrair_serie_temporal, unidade='chamados')
+      - Soma de R$/mês via wrapper executar_previsao_custo
+        (prefixo_aba='PREVISAO_CUSTO', extrator=extrair_serie_custo,
+        unidade='reais')
+    """
     _lbl = f" [{sufixo}]" if sufixo else ""
-    print(f"[Previsão {_VERSAO_MOTOR}{_lbl}] Iniciando modelagem — {len(dados_linhas)} chamados filtrados.")
-    contagem = extrair_serie_temporal(dados_linhas)
+    _eh_custo = (prefixo_aba == "PREVISAO_CUSTO")
+    # Formatador de valor: int para contagem, float com 2 decimais para R$
+    if _eh_custo:
+        def _fmt_valor(v):
+            try: return round(float(v), 2)
+            except: return ""
+    else:
+        def _fmt_valor(v):
+            try: return int(round(float(v)))
+            except: return ""
+    print(f"[Previsão {_VERSAO_MOTOR}{_lbl}] Iniciando modelagem ({unidade}) — "
+          f"{len(dados_linhas)} chamados filtrados.")
+    _extrator = extrator if extrator is not None else extrair_serie_temporal
+    contagem = _extrator(dados_linhas)
     if contagem is None or len(contagem) < MIN_PONTOS_SERIE:
         n = 0 if contagem is None else len(contagem)
         print(f"[Previsão] Série insuficiente: {n} pontos (mínimo {MIN_PONTOS_SERIE}).")
@@ -4603,11 +4722,11 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     # ============================================
     nomes_modelos = [r['nome'] for r in resultados] + (['Ensemble'] if ensemble else [])
     _venc_rmse_label = f"Vencedor (menor RMSE holdout = {melhor['metricas']['RMSE']:.2f})"
-    cabecalho_prev = (["Período", "Quantidade Real"] + nomes_modelos
+    cabecalho_prev = (["Período", rotulo_alvo] + nomes_modelos
                       + [_venc_rmse_label])
 
     aba_prev = obter_aba(
-        f"PREVISAO_TEMPORAL{sufixo}", linhas=500, colunas=len(cabecalho_prev),
+        f"{prefixo_aba}_TEMPORAL{sufixo}", linhas=500, colunas=len(cabecalho_prev),
         cabecalho=cabecalho_prev
     )
 
@@ -4661,11 +4780,11 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     # Períodos no holdout mostram prev_holdout (out-of-sample backtest).
     for i in range(inicio_holdout):
         row = contagem.iloc[i]
-        linha = [row['Mes_Ano_Str'], int(row['Quantidade'])]
+        linha = [row['Mes_Ano_Str'], _fmt_valor(row['Quantidade'])]
         for _r in resultados:
             if _r.get('sucesso'):
                 fv = fitted_por_modelo.get(_r['nome'], {}).get(i)
-                linha.append(int(round(fv)) if fv is not None else "")
+                linha.append(_fmt_valor(fv) if fv is not None else "")
             else:
                 linha.append("")
         # Ensemble in-sample: média ponderada dos fitted individuais
@@ -4679,7 +4798,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
                     _pesos_ens_is.append(1.0 / max(_r['metricas']['RMSE'], 1e-6))
             if _vals_ens_is:
                 _pa = np.array(_pesos_ens_is); _pa /= _pa.sum()
-                linha.append(int(round(float(np.average(_vals_ens_is, weights=_pa)))))
+                linha.append(_fmt_valor(float(np.average(_vals_ens_is, weights=_pa))))
             else:
                 linha.append("")
         linha.append("In-sample")
@@ -4689,11 +4808,11 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     for i in range(inicio_holdout, n_total):
         row = contagem.iloc[i]
         h_idx = i - inicio_holdout
-        linha = [row['Mes_Ano_Str'], int(row['Quantidade'])]
+        linha = [row['Mes_Ano_Str'], _fmt_valor(row['Quantidade'])]
         for r in resultados:
             if r.get('sucesso') and r.get('prev_holdout') is not None:
                 v = _extrair_arr_seguro(r, 'prev_holdout', h_idx)
-                linha.append(int(round(v)) if v is not None else "")
+                linha.append(_fmt_valor(v) if v is not None else "")
             else:
                 linha.append("")
         if ensemble:
@@ -4707,7 +4826,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
                         pesos_ens.append(1.0 / max(r['metricas']['RMSE'], 1e-6))
             if vals_ens:
                 p_arr = np.array(pesos_ens); p_arr /= p_arr.sum()
-                linha.append(int(round(float(np.average(vals_ens, weights=p_arr)))))
+                linha.append(_fmt_valor(float(np.average(vals_ens, weights=p_arr))))
             else:
                 linha.append("")
         linha.append("Backtest (out-of-sample)")
@@ -4723,12 +4842,12 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
         for r in resultados:
             if r.get('sucesso'):
                 v = _extrair_arr_seguro(r, 'forecast', i)
-                linha.append(int(round(v)) if v is not None else "")
+                linha.append(_fmt_valor(v) if v is not None else "")
             else:
                 linha.append("")
         if ensemble:
             v_ens = _extrair_arr_seguro(ensemble, 'forecast', i)
-            linha.append(int(round(v_ens)) if v_ens is not None else "")
+            linha.append(_fmt_valor(v_ens) if v_ens is not None else "")
         linha.append(_venc_nome_futuro)
         export.append(linha)
 
@@ -4793,7 +4912,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     # ABA 2: PREVISAO_DETALHES
     # ============================================
     aba_det = obter_aba(
-        f"PREVISAO_DETALHES{sufixo}", linhas=600, colunas=10,
+        f"{prefixo_aba}_DETALHES{sufixo}", linhas=600, colunas=10,
         cabecalho=["Modelo", "Parâmetro", "Valor", "Erro Padrão",
                    "p-valor", "IC95% Inf", "IC95% Sup", "Significativo (p<0.05)"]
     )
@@ -4849,7 +4968,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     # ABA 3: PREVISAO_INCERTEZAS
     # ============================================
     aba_inc = obter_aba(
-        f"PREVISAO_INCERTEZAS{sufixo}", linhas=500, colunas=13,
+        f"{prefixo_aba}_INCERTEZAS{sufixo}", linhas=500, colunas=13,
         cabecalho=["Modelo", "Tipo", "Horizonte", "Período", "Forecast",
                    "IC 1σ Inf", "IC 1σ Sup", "IC 2σ Inf", "IC 2σ Sup",
                    "P10", "P50", "P90", "Desvio σ"]
@@ -4998,7 +5117,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
         "Breusch-Pagan Stat", "BP p-valor", "BP Interpretação",
     ]
     aba_diag = obter_aba(
-        f"PREVISAO_DIAGNOSTICO{sufixo}", linhas=200, colunas=len(_cab_diag),
+        f"{prefixo_aba}_DIAGNOSTICO{sufixo}", linhas=200, colunas=len(_cab_diag),
         cabecalho=_cab_diag
     )
     diag = [_cab_diag]
@@ -5058,7 +5177,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     # ABA 5: PREVISAO_RESIDUOS (resíduos individuais)
     # ============================================
     aba_res = obter_aba(
-        f"PREVISAO_RESIDUOS{sufixo}", linhas=2000, colunas=4,
+        f"{prefixo_aba}_RESIDUOS{sufixo}", linhas=2000, colunas=4,
         cabecalho=["Modelo", "Indice", "Periodo", "Residuo"]
     )
     res_export = [["Modelo", "Indice", "Periodo", "Residuo"]]
@@ -5093,7 +5212,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
             "p-valor", "Resultado", "Recomendação"
         ]
         aba_pp = obter_aba(
-            f"PREVISAO_PRESSUPOSTOS{sufixo}", linhas=400, colunas=len(_cab_pp),
+            f"{prefixo_aba}_PRESSUPOSTOS{sufixo}", linhas=400, colunas=len(_cab_pp),
             cabecalho=_cab_pp
         )
         pp_export = [_cab_pp]
@@ -5323,7 +5442,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     # ABA 6: PREVISAO_QQPLOT
     # ============================================
     aba_qq = obter_aba(
-        f"PREVISAO_QQPLOT{sufixo}", linhas=1500, colunas=3,
+        f"{prefixo_aba}_QQPLOT{sufixo}", linhas=1500, colunas=3,
         cabecalho=["Modelo", "Quantil_Teorico", "Quantil_Observado_Padronizado"]
     )
     qq_export = [["Modelo", "Quantil_Teorico", "Quantil_Observado_Padronizado"]]
@@ -5345,7 +5464,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     # ABA 7: PREVISAO_VALIDACAO (rolling-origin CV)
     # ============================================
     aba_val = obter_aba(
-        f"PREVISAO_VALIDACAO{sufixo}", linhas=200, colunas=10,
+        f"{prefixo_aba}_VALIDACAO{sufixo}", linhas=200, colunas=10,
         cabecalho=["Modelo", "RMSE_Médio_CV", "RMSE_DesvPad_CV", "N_Folds",
                    "Fold_1", "Fold_2", "Fold_3", "Fold_4", "Fold_5", "Interpretação"]
     )
@@ -5389,7 +5508,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     # ---------- ABA: PREVISAO_DIEBOLD_MARIANO (G3) ----------
     try:
         aba_dm = obter_aba(
-            f"PREVISAO_DIEBOLD_MARIANO{sufixo}", linhas=200, colunas=8,
+            f"{prefixo_aba}_DIEBOLD_MARIANO{sufixo}", linhas=200, colunas=8,
             cabecalho=["Modelo_A", "Modelo_B", "DM_Stat", "p_valor",
                        "n_pares", "Significativo (α=0.05)", "Vencedor", "Interpretação"]
         )
@@ -5427,7 +5546,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
         stl_result = decompor_stl_serie(serie_qtd, periodo=12)
         if stl_result is not None:
             aba_stl = obter_aba(
-                f"PREVISAO_DECOMPOSICAO{sufixo}", linhas=300, colunas=6,
+                f"{prefixo_aba}_DECOMPOSICAO{sufixo}", linhas=300, colunas=6,
                 cabecalho=["Período", "Observado", "Tendência", "Sazonal", "Resíduo"]
             )
             stl_export = [["Período", "Observado", "Tendência", "Sazonal", "Resíduo"]]
@@ -5460,7 +5579,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
         per = calcular_periodograma(serie_qtd)
         if per is not None:
             aba_per = obter_aba(
-                f"PREVISAO_ESPECTRO{sufixo}", linhas=200, colunas=4,
+                f"{prefixo_aba}_ESPECTRO{sufixo}", linhas=200, colunas=4,
                 cabecalho=["Frequência", "Período (meses)", "Potência", "Top 10?"]
             )
             per_export = [["Frequência", "Período (meses)", "Potência", "Top 10?"]]
@@ -5495,7 +5614,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
         ap = calcular_acf_pacf(serie_qtd, n_lags=ACF_PACF_LAGS)
         if ap is not None:
             aba_ap = obter_aba(
-                f"PREVISAO_ACF_PACF{sufixo}", linhas=50, colunas=8,
+                f"{prefixo_aba}_ACF_PACF{sufixo}", linhas=50, colunas=8,
                 cabecalho=["Lag", "ACF", "ACF_IC95_Inf", "ACF_IC95_Sup",
                            "PACF", "PACF_IC95_Inf", "PACF_IC95_Sup", "Interpretação"]
             )
@@ -5543,7 +5662,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
     # Testa se precipitação e período letivo Granger-causam chamados.
     try:
         aba_gr = obter_aba(
-            f"PREVISAO_GRANGER{sufixo}", linhas=20, colunas=6,
+            f"{prefixo_aba}_GRANGER{sufixo}", linhas=20, colunas=6,
             cabecalho=["Variável Exógena", "Lag Mínimo p", "p-valor Mínimo",
                        "Significativo (α=0.05)", "Recomendação", "Interpretação"]
         )
@@ -5623,7 +5742,7 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
         sel = selecionar_modelo_multicriterio(sucessos, cv_results, crps_por_modelo)
 
         aba_crps = obter_aba(
-            f"PREVISAO_CRPS_MULTICRITERIO{sufixo}", linhas=30, colunas=6,
+            f"{prefixo_aba}_CRPS_MULTICRITERIO{sufixo}", linhas=30, colunas=6,
             cabecalho=["Modelo", "RMSE", "CRPS", "Desvio_CV",
                        "Score_Multicriterio", "Posição"]
         )
@@ -5666,6 +5785,36 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo=""):
         pass
 
     print(f"[Previsão] Concluído. Modelo vencedor: {melhor['nome']}")
+
+
+def executar_previsao_custo(dados_linhas, sufixo=""):
+    """[v4.0.6] Wrapper que aplica o pipeline completo de previsão temporal
+    sobre a série mensal de custos em R$ (soma da coluna Q). Reusa a
+    infraestrutura de executar_analise_preditiva_avancada via parametrização
+    de prefixo de aba e extrator de série. Gera 14 abas com prefixo
+    PREVISAO_CUSTO espelhando o pipeline de chamados.
+
+    Validação prévia: exige MIN_PONTOS_SERIE_CUSTO (24) meses com valor > 0
+    para que os modelos de sazonalidade tenham dados suficientes. Séries mais
+    curtas são puladas com log — mesma regra documentada no dashboard v4.1.2.
+    """
+    _lbl = f" [{sufixo}]" if sufixo else ""
+    # Pré-valida série de custos antes de delegar ao pipeline completo
+    serie_custo = extrair_serie_custo(dados_linhas)
+    if serie_custo is None or len(serie_custo) < MIN_PONTOS_SERIE_CUSTO:
+        n = 0 if serie_custo is None else len(serie_custo)
+        print(f"[Custo{_lbl}] Série insuficiente: {n} meses com custo > 0 "
+              f"(mínimo {MIN_PONTOS_SERIE_CUSTO}) — pulado.")
+        return
+    print(f"[Custo{_lbl}] {len(serie_custo)} meses válidos — iniciando previsão de custos.")
+    return executar_analise_preditiva_avancada(
+        dados_linhas,
+        sufixo=sufixo,
+        prefixo_aba="PREVISAO_CUSTO",
+        extrator=extrair_serie_custo,
+        rotulo_alvo="Custo Real (R$)",
+        unidade="reais"
+    )
 
 
 def gravar_filtros_disponiveis(dados_linhas):
@@ -5758,6 +5907,11 @@ def executar_todos_filtros(dados_linhas, executar_ods=True):
             executar_analise_preditiva_avancada(filtrados, sufixo=suf)
         except Exception as e:
             print(f"[Filtros] Erro no campus '{campus}': {e}")
+        # [v4.0.4] Previsão de custos paralela para este recorte
+        try:
+            executar_previsao_custo(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro custos no campus '{campus}': {e}")
 
     # ── Por tipo (Preventiva / Corretiva) e suas categorias ─────────────────
     for tipo in ("Preventiva", "Corretiva"):
@@ -5774,6 +5928,11 @@ def executar_todos_filtros(dados_linhas, executar_ods=True):
             executar_analise_preditiva_avancada(filtrados, sufixo=suf)
         except Exception as e:
             print(f"[Filtros] Erro no tipo '{tipo}': {e}")
+        # [v4.0.4] Previsão de custos paralela para este recorte
+        try:
+            executar_previsao_custo(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro custos no tipo '{tipo}': {e}")
 
         # Categorias dentro do tipo
         cats = sorted({
@@ -5797,6 +5956,11 @@ def executar_todos_filtros(dados_linhas, executar_ods=True):
                 executar_analise_preditiva_avancada(filtrados_cat, sufixo=suf_cat)
             except Exception as e:
                 print(f"[Filtros] Erro na categoria '{cat}': {e}")
+            # [v4.0.4] Previsão de custos paralela para esta categoria
+            try:
+                executar_previsao_custo(filtrados_cat, sufixo=suf_cat)
+            except Exception as e:
+                print(f"[Filtros] Erro custos na categoria '{cat}': {e}")
 
     # ── [v3.8 — Fase 1.3] PREVISAO_POR_CATEGORIA — aba resumo de todas as cats ──
     # Coleta resultados das análises por categoria para um resumo executivo.
@@ -6139,6 +6303,11 @@ def _modo_previsao_global():
     dados_op = todas_linhas[1:]
     atualizar_categorias(dados_op)
     executar_analise_preditiva_avancada(dados_op, sufixo="")
+    # [v4.0.4] Previsão de custos global, espelhando o pipeline de chamados
+    try:
+        executar_previsao_custo(dados_op, sufixo="")
+    except Exception as e:
+        print(f"[Custo] Erro na previsão global de custos: {e}")
 
 
 def _modo_previsao_filtros():
@@ -6364,6 +6533,11 @@ def iniciar_motor_operacional():
         if not previsao_recente_existe(horas=INTERVALO_HORAS_PREVISAO_BOOT):
             print("[Boot] Última previsão >24h ou inexistente — executando agora.")
             executar_analise_preditiva_avancada(primeiras[1:], sufixo="")
+            # [v4.0.4] Previsão de custos paralela no boot
+            try:
+                executar_previsao_custo(primeiras[1:], sufixo="")
+            except Exception as e:
+                print(f"[Custo] Erro na previsão global de custos (boot): {e}")
             if FILTROS_ATIVOS:
                 print("[Boot] FILTROS_ATIVOS=True — rodando análise por campus/tipo/categoria...")
                 executar_todos_filtros(primeiras[1:])
@@ -6406,6 +6580,11 @@ def iniciar_motor_operacional():
             # Em modo idle, roda previsão apenas se não há execução recente
             if not previsao_recente_existe(horas=INTERVALO_HORAS_PREVISAO_BOOT):
                 executar_analise_preditiva_avancada(dados_operacionais, sufixo="")
+                # [v4.0.6] Previsão de custos no idle (espelha chamados)
+                try:
+                    executar_previsao_custo(dados_operacionais, sufixo="")
+                except Exception as _e_idle:
+                    print(f"[Custo] Erro na previsão de custos (idle): {_e_idle}")
                 if FILTROS_ATIVOS:
                     executar_todos_filtros(dados_operacionais)
             # [v4.0.1] Em modo agendado, encerra após o idle (não dorme PAUSA_OCIOSA)
@@ -6499,6 +6678,11 @@ def iniciar_motor_operacional():
             print(f"[Cadência] Ciclo {contador_ciclos} (≈ {contador_ciclos * TAMANHO_LOTE} chamados): "
                   f"executando previsão temporal completa.")
             executar_analise_preditiva_avancada(dados_operacionais)
+            # [v4.0.6] Previsão de custos na cadência (espelha chamados)
+            try:
+                executar_previsao_custo(dados_operacionais, sufixo="")
+            except Exception as _e_cad:
+                print(f"[Custo] Erro na previsão de custos (cadência): {_e_cad}")
 
         if contador_ciclos % INTERVALO_RETREINO_CICLOS == 0:
             print(f"[Retreino] Ciclo {contador_ciclos}: avaliando classificador (LSTM).")
