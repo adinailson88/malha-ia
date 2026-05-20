@@ -1,8 +1,30 @@
 # -*- coding: utf-8 -*-
 """
 MOTOR DE GOVERNANÇA PREDITIVA – BIOSSISTEMAS CONSTRUÍDOS
-Doutorado UFSB – Versão 4.0.6
+Doutorado UFSB – Versão 4.0.8
 
+# ============================================================================
+# CHANGELOG v4.0.8 (2026-05-20) — PATCH (workflows separados chamados/custos)
+# ----------------------------------------------------------------------------
+#   • _modo_previsao_chamados(): novo modo ativado por --apenas-previsao-chamados.
+#     Roda apenas executar_analise_preditiva_avancada (série de contagem).
+#   • _modo_previsao_custos(): novo modo ativado por --apenas-previsao-custos.
+#     Roda apenas executar_previsao_custo (série R$/mês — coluna Q).
+#   • _modo_previsao_global() preservado para uso manual/legado (roda os dois).
+#   • Dois novos workflows GitHub Actions (1×/dia, 12h de defasagem):
+#       previsao_chamados_global.yml  → 06:30 UTC
+#       previsao_custo_global.yml     → 18:30 UTC
+#   • previsao_global.yml reconfigurado para workflow_dispatch somente
+#     (sem cron — não compete com os dois novos).
+# ============================================================================
+# CHANGELOG v4.0.7 (2026-05-20) — PATCH (correção limiar custo)
+# ----------------------------------------------------------------------------
+#   • MIN_PONTOS_SERIE_CUSTO reduzido de 24 → 12 meses. O limiar de 24 era
+#     restritivo demais: a previsão de chamados usa MIN_PONTOS_SERIE=6 e o
+#     horizonte de sazonalidade já é coberto com 12 meses históricos. Com 24
+#     meses exigidos e coluna Q parcialmente preenchida, o motor pulava a
+#     previsão de custos inteira sem gravar nenhuma aba — tornando a aba
+#     "Previsão de Custos" do dashboard v4.1.2 sempre vazia.
 # ============================================================================
 # CHANGELOG v4.0.6 (2026-05-20) — PATCH (Fase 4B completa — Previsão de Custos)
 # ----------------------------------------------------------------------------
@@ -582,7 +604,7 @@ except ImportError:
 #   - Detecção automática Colab vs. local; google.colab.drive opcional.
 #   - Imports do TensorFlow (Keras) elevados a escopo global para uso
 #     em treinar_classificador_lstm() fora da função _importar_tf().
-_VERSAO_MOTOR = "v4.0.6"
+_VERSAO_MOTOR = "v4.0.8"
 
 print(f"[Imports] OK · pandas={pd.__version__} · {_VERSAO_MOTOR} "
       f"(pmdarima={'ON' if _PMDARIMA_OK else 'fallback'}, "
@@ -650,7 +672,7 @@ INTERVALO_PREVISAO_CICLOS = 10    # 10 × 15 = 150 chamados
 INTERVALO_RETREINO_CICLOS = 10
 MIN_AMOSTRAS_TREINO = 10
 MIN_PONTOS_SERIE = 6
-MIN_PONTOS_SERIE_CUSTO = 24        # mínimo 24 meses para previsão de custos [v4.0.6]
+MIN_PONTOS_SERIE_CUSTO = 12        # mínimo 12 meses para previsão de custos [v4.0.7 — reduzido de 24]
 MIN_EXEMPLOS_POR_CLASSE = 3
 
 # Eixo 2
@@ -5794,7 +5816,7 @@ def executar_previsao_custo(dados_linhas, sufixo=""):
     de prefixo de aba e extrator de série. Gera 14 abas com prefixo
     PREVISAO_CUSTO espelhando o pipeline de chamados.
 
-    Validação prévia: exige MIN_PONTOS_SERIE_CUSTO (24) meses com valor > 0
+    Validação prévia: exige MIN_PONTOS_SERIE_CUSTO (12) meses com valor > 0
     para que os modelos de sazonalidade tenham dados suficientes. Séries mais
     curtas são puladas com log — mesma regra documentada no dashboard v4.1.2.
     """
@@ -6295,7 +6317,11 @@ def _modo_classificacao():
 
 
 def _modo_previsao_global():
-    """[v4.0.4] Só previsão global. Sem filtros. Sem ODS."""
+    """[v4.0.4] Previsão global combinada (chamados + custos). Sem filtros. Sem ODS.
+    Mantida para workflow_dispatch manual e compatibilidade legada.
+    Em produção prefer usar --apenas-previsao-chamados e --apenas-previsao-custos
+    em workflows separados para evitar timeout de 60 min. [v4.0.8]
+    """
     try:
         todas_linhas = planilha.get_all_values()
     except APIError as e:
@@ -6303,7 +6329,38 @@ def _modo_previsao_global():
     dados_op = todas_linhas[1:]
     atualizar_categorias(dados_op)
     executar_analise_preditiva_avancada(dados_op, sufixo="")
-    # [v4.0.4] Previsão de custos global, espelhando o pipeline de chamados
+    try:
+        executar_previsao_custo(dados_op, sufixo="")
+    except Exception as e:
+        print(f"[Custo] Erro na previsão global de custos: {e}")
+
+
+def _modo_previsao_chamados():
+    """[v4.0.8] Só previsão global de chamados (contagem). Sem custos, sem filtros, sem ODS.
+    Projetado para rodar uma vez por dia (workflow previsao_chamados_global).
+    Gera as 14 abas PREVISAO_* sem sufixo (TEMPORAL, DETALHES, INCERTEZAS, etc.).
+    """
+    try:
+        todas_linhas = planilha.get_all_values()
+    except APIError as e:
+        print(f"[Modo previsao_chamados] Falha: {e}"); return
+    dados_op = todas_linhas[1:]
+    atualizar_categorias(dados_op)
+    executar_analise_preditiva_avancada(dados_op, sufixo="")
+
+
+def _modo_previsao_custos():
+    """[v4.0.8] Só previsão global de custos (R$/mês — coluna Q). Sem chamados, sem filtros, sem ODS.
+    Projetado para rodar uma vez por dia com 12h de defasagem em relação a
+    _modo_previsao_chamados (workflow previsao_custo_global).
+    Gera as 4 abas PREVISAO_CUSTO_* sem sufixo (TEMPORAL, DETALHES, INCERTEZAS, VALIDACAO).
+    """
+    try:
+        todas_linhas = planilha.get_all_values()
+    except APIError as e:
+        print(f"[Modo previsao_custos] Falha: {e}"); return
+    dados_op = todas_linhas[1:]
+    atualizar_categorias(dados_op)
     try:
         executar_previsao_custo(dados_op, sufixo="")
     except Exception as e:
@@ -6486,6 +6543,10 @@ def iniciar_motor_operacional():
         return _modo_reclassificacao()
     if MODO == 'previsao_global':
         return _modo_previsao_global()
+    if MODO == 'previsao_chamados':      # [v4.0.8] workflow separado — só chamados
+        return _modo_previsao_chamados()
+    if MODO == 'previsao_custos':        # [v4.0.8] workflow separado — só custos
+        return _modo_previsao_custos()
     if MODO == 'previsao_filtros':
         return _modo_previsao_filtros()
     if MODO == 'ods':
@@ -6723,10 +6784,13 @@ if '--ciclo-unico' in _argv:
     print("[Entry] Flag --ciclo-unico detectada → MOTOR_MAX_CICLOS=1")
 
 # [v4.0.4] Flags de modo — dispatcher em iniciar_motor_operacional()
+# [v4.0.8] Adicionados --apenas-previsao-chamados e --apenas-previsao-custos
 _MODOS_CLI = {
     '--apenas-classificacao':    'classificacao',
     '--apenas-reclassificacao':  'reclassificacao',
     '--apenas-previsao-global':  'previsao_global',
+    '--apenas-previsao-chamados': 'previsao_chamados',
+    '--apenas-previsao-custos':   'previsao_custos',
     '--apenas-previsao-filtros': 'previsao_filtros',
     '--apenas-ods':              'ods',
 }
