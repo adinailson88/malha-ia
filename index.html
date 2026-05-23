@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malha IA — UFSB</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    header { text-align: center; margin-bottom: 2.5rem; }
+    header h1 { font-size: 1.9rem; color: #38bdf8; letter-spacing: 0.02em; }
+    header p  { color: #94a3b8; margin-top: 0.4rem; font-size: 0.95rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 900px;
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .card:hover { border-color: #38bdf8; transform: translateY(-2px); }
+    .card .num  { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .card h2    { font-size: 1.05rem; color: #f1f5f9; margin-bottom: 0.4rem; }
+    .card p     { font-size: 0.83rem; color: #94a3b8; line-height: 1.5; }
+    footer { margin-top: 3rem; font-size: 0.78rem; color: #475569; text-align: center; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Malha IA — Governança Preditiva UFSB</h1>
+  <p>PPG Biossistemas · Doutorado · v4.0.8</p>
+</header>
+
+<div class="grid">
+
+  <a class="card" href="dashboard_malha_ia_v36.html">
+    <div class="num">Visão geral</div>
+    <h2>Dashboard Completo</h2>
+    <p>Todos os módulos consolidados: classificação, previsão, custos, ODS e filtros.</p>
+  </a>
+
+  <a class="card" href="dashboard_classificacao.html">
+    <div class="num">Módulo 1</div>
+    <h2>Classificação</h2>
+    <p>BiLSTM — classificação e reclassificação automática de chamados.</p>
+  </a>
+
+  <a class="card" href="dashboard_previsao_chamados.html">
+    <div class="num">Módulo 2</div>
+    <h2>Previsão de Chamados</h2>
+    <p>8 modelos + ensemble — previsão global de chamados/mês.</p>
+  </a>
+
+  <a class="card" href="dashboard_previsao_custos.html">
+    <div class="num">Módulo 3</div>
+    <h2>Previsão de Custos</h2>
+    <p>Previsão de gastos mensais em R$ (coluna Q) com intervalos de confiança.</p>
+  </a>
+
+  <a class="card" href="dashboard_ods.html">
+    <div class="num">Módulo 4</div>
+    <h2>Indicadores ODS</h2>
+    <p>MCDM-ESG por campus — ODS 9, 11 e 12 com pesos editáveis.</p>
+  </a>
+
+  <a class="card" href="dashboard_filtros.html">
+    <div class="num">Módulo 5</div>
+    <h2>Previsão por Filtros</h2>
+    <p>Previsão segmentada por campus, tipo de chamado e categoria.</p>
+  </a>
+
+</div>
+
+<footer>
+  Adinailson Guimarães de Oliveira · UFSB · Dados lidos em tempo real do Google Sheets
+</footer>
+
+</body>
+</html>
