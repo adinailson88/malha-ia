@@ -44,4 +44,4 @@ jobs:
           echo "{}" > chaves_api.json
 
       - name: Executar previsao de custos
-        run: python motor_v36.py --apenas-previsao-custos
+        run: python motor_previsao_custos.py --apenas-previsao-custos

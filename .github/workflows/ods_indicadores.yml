@@ -1,5 +1,5 @@
 # ============================================================================
-# Malha IA v4.0.4 — Workflow 4/4: INDICADORES ODS + PESOS_ODS
+# Malha IA v4.0.8 — Workflow 4: INDICADORES ODS + PESOS_ODS
 # Roda 1× por dia às 04:00 BR (07:00 UTC) — depois dos filtros terminarem.
 # Atualiza INDICADORES_ODS por campus; cria PESOS_ODS se não existir.
 # Salvar em: .github/workflows/ods_indicadores.yml
@@ -43,4 +43,4 @@ jobs:
           echo "{}" > chaves_api.json
 
       - name: Executar indicadores ODS
-        run: python motor_v36.py --apenas-ods
+        run: python motor_ods.py --apenas-ods

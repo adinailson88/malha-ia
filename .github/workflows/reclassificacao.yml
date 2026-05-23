@@ -1,5 +1,5 @@
 # ============================================================================
-# Malha IA v4.0.5 — Workflow 5/5: RECLASSIFICAÇÃO
+# Malha IA v4.0.8 — Workflow 5: RECLASSIFICAÇÃO
 # Roda 1× por dia às 04:30 BR (07:30 UTC) — depois dos outros workflows.
 # Reavalia até 200 chamados com confiança < 0.80, respeitando a coluna
 # AF (CONFERENCIA): se marcada TRUE, motor NÃO sobrescreve (revisão humana).
@@ -44,4 +44,4 @@ jobs:
           echo "{}" > chaves_api.json
 
       - name: Executar reclassificacao
-        run: python motor_v36.py --apenas-reclassificacao
+        run: python motor_classificacao_v1.py --apenas-reclassificacao

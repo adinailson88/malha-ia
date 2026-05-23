@@ -1,15 +1,249 @@
 # -*- coding: utf-8 -*-
 """
 MOTOR DE GOVERNANÇA PREDITIVA – BIOSSISTEMAS CONSTRUÍDOS
-Módulo 2: motor_previsao_chamados.py
-Extraído de motor_v36.py (v4.0.8) — contém APENAS o pipeline de previsão
-de chamados/mês (contagem). Sem classificação LSTM, sem custos, sem filtros,
-sem ODS, sem APIs de LLM externas.
+Doutorado UFSB – Versão 4.0.8
 
-Execução:
-    python motor_previsao_chamados.py --apenas-previsao-chamados
+# ============================================================================
+# CHANGELOG v4.0.8 (2026-05-20) — PATCH (workflows separados chamados/custos)
+# ----------------------------------------------------------------------------
+#   • _modo_previsao_chamados(): novo modo ativado por --apenas-previsao-chamados.
+#     Roda apenas executar_analise_preditiva_avancada (série de contagem).
+#   • _modo_previsao_custos(): novo modo ativado por --apenas-previsao-custos.
+#     Roda apenas executar_previsao_custo (série R$/mês — coluna Q).
+#   • _modo_previsao_global() preservado para uso manual/legado (roda os dois).
+#   • Dois novos workflows GitHub Actions (1×/dia, 12h de defasagem):
+#       previsao_chamados_global.yml  → 06:30 UTC
+#       previsao_custo_global.yml     → 18:30 UTC
+#   • previsao_global.yml reconfigurado para workflow_dispatch somente
+#     (sem cron — não compete com os dois novos).
+# ============================================================================
+# CHANGELOG v4.0.7 (2026-05-20) — PATCH (correção limiar custo)
+# ----------------------------------------------------------------------------
+#   • MIN_PONTOS_SERIE_CUSTO reduzido de 24 → 12 meses. O limiar de 24 era
+#     restritivo demais: a previsão de chamados usa MIN_PONTOS_SERIE=6 e o
+#     horizonte de sazonalidade já é coberto com 12 meses históricos. Com 24
+#     meses exigidos e coluna Q parcialmente preenchida, o motor pulava a
+#     previsão de custos inteira sem gravar nenhuma aba — tornando a aba
+#     "Previsão de Custos" do dashboard v4.1.2 sempre vazia.
+# ============================================================================
+# CHANGELOG v4.0.6 (2026-05-20) — PATCH (Fase 4B completa — Previsão de Custos)
+# ----------------------------------------------------------------------------
+# Completa a integração do pipeline de previsão de custos (R$) introduzido
+# em v4.0.3/4.0.4, alinhando o motor ao dashboard v4.1.2 (aba "Previsão de
+# Custos"):
+#   • MIN_PONTOS_SERIE_CUSTO = 24: mínimo 24 meses com custo > 0 para rodar
+#     a previsão financeira. Séries mais curtas são puladas com log — mesma
+#     regra documentada no painel (info box "Fase 4B").
+#   • executar_previsao_custo() agora faz pré-validação da série antes de
+#     delegar ao pipeline completo, evitando que modelos de sazonalidade
+#     tentem ajustar séries curtas (< 24 meses).
+#   • Cadência (loop Colab): executar_previsao_custo() adicionado ao bloco
+#     INTERVALO_PREVISAO_CICLOS, espelhando a lógica de chamados.
+#   • Idle (loop Colab, sem novos chamados): executar_previsao_custo() também
+#     chamado junto com executar_analise_preditiva_avancada no bloco de idle.
+#   As demais integrações (boot, _modo_previsao_global, executar_todos_filtros)
+#   já estavam presentes desde v4.0.4 e não foram alteradas.
+# ============================================================================
+# CHANGELOG v4.0.1 (2026-05-13) — PATCH (infraestrutura)
+# ----------------------------------------------------------------------------
+# Suporte a execução agendada (cron-like) para rodar fora do Colab:
+#   • Nova variável de ambiente MOTOR_MAX_CICLOS limita o número de
+#     iterações do loop principal. Default 0 (ilimitado) mantém
+#     comportamento original — compatibilidade retroativa total com Colab.
+#   • MOTOR_MAX_CICLOS=1 → executa um único ciclo e encerra (ideal para
+#     Task Scheduler do Windows, GitHub Actions, cron Unix etc.).
+#   • Skip do time.sleep final quando o limite é atingido, encerrando
+#     limpo sem aguardar PAUSA_ATIVA.
+#   • Correção do retreino periódico: agora usa treinar_classificador_lstm
+#     (era treinar_classificador puro, inconsistente com v4.0.0).
+#   • Permite execução por linha de comando com flag --ciclo-unico (alias
+#     conveniente de MOTOR_MAX_CICLOS=1).
+# ============================================================================
+# CHANGELOG v4.0.0 (2026-05-13) — MAJOR
+# ----------------------------------------------------------------------------
+# Mudança fundamental na arquitetura de IA de classificação:
+#   • Substituição do classificador TF-IDF + RandomForest por LSTM Bidirecional
+#     (Embedding 8000×128 → BiLSTM(64) → Dropout(0.5) → Dense(64, ReLU) →
+#      Softmax(K classes); perda categorical_crossentropy; Adam).
+#   • REMOÇÃO COMPLETA das chamadas a APIs externas de LLM (Groq, Gemini,
+#     DeepSeek, OpenRouter, SambaNova). Classificação 100% LOCAL.
+#   • Fallback RandomForest mantido APENAS para emergência (TF indisponível
+#     ou crash da LSTM); nunca para LLM externo.
+#   • Treino LSTM com split estratificado 80/20, EarlyStopping patience=4
+#     restaurando melhores pesos, máx. 50 épocas.
+#   • Log de classificação passa a usar origens: "Supervisionado_LSTM" (LSTM
+#     conf≥95%), "Supervisionado_LSTM_baixa_conf" (LSTM <95%), "RF_Fallback".
+#   • Métricas completas (Acc, F1 macro, F1 weighted, Balanced Acc, Precision
+#     macro, Recall macro) gravadas em METRICAS_TREINO com hash da base.
+# ============================================================================
 
-Gera as 14 abas PREVISAO_* na planilha Google Sheets CHAMADOS.
+CORREÇÃO v3.6.5 (sobre v3.6.3):
+  pytz==2024.2 instalado no cache do Drive estava com tzdata incompleto
+  e levantava UnknownTimeZoneError ao resolver 'America/Bahia', mesmo
+  esse fuso sendo válido na base oficial IANA. Causa raiz: o wheel
+  copiado para o cache via pip --target perdeu/corrompeu arquivos de
+  zoneinfo durante a instalação.
+
+  Solução: fuso horário com fallback em cascata. Tenta primeiro
+  America/Bahia, depois America/Sao_Paulo, America/Fortaleza,
+  America/Recife (todos UTC-3 sem DST desde 2019, semanticamente
+  equivalentes), e em último caso usa offset fixo via datetime.timezone.
+  Os usos de FUSO_BAHIA.localize() foram blindados com hasattr() para
+  funcionar com qualquer um dos fallbacks.
+
+CORREÇÃO v3.6.3 (sobre v3.6.2):
+  pmdarima 2.0.4 e Prophet 1.1.6 estão quebrados no ambiente do Colab
+  por incompatibilidade binária com numpy ou ausência de cmdstanpy.
+  Mesmo com cache limpo e reinstalação, o pmdarima importa parcialmente
+  (sem auto_arima) e o Prophet falha no construtor (sem stan_backend).
+
+  Solução estrutural em três camadas:
+  1) Imports tornados OPCIONAIS, com teste real de funcionamento. As
+     flags _PMDARIMA_OK e _PROPHET_OK refletem o estado efetivo.
+  2) Fallback nativo para auto_arima: _ajustar_arima_universal usa
+     pmdarima quando OK e cai para grid search via statsmodels.SARIMAX
+     com seleção por AIC quando indisponível. Cobre ARIMA, SARIMAX-12
+     e SARIMAX-6 sem alteração na lógica de cima.
+  3) Fallback nativo para Prophet: UnobservedComponents do statsmodels
+     (Harvey, 1989) — decomposição estrutural por filtro de Kalman com
+     tendência local linear, sazonalidade trigonométrica e regressores
+     exógenos. Cientificamente equivalente para o caso de uso, sem
+     dependências binárias externas. Reportado como "Prophet/UC" para
+     transparência. IC inferido por covariância gaussiana do filtro.
+
+  As implementações nativas são mais lentas que pmdarima.auto_arima
+  (sem o atalho stepwise — fazem busca exaustiva dentro dos limites de
+  ordem), mas robustas e sem dependências binárias. No Colab, espera-se
+  ~30-60s por SARIMAX-12 com exógenas vs ~10-20s do pmdarima.
+
+CORREÇÃO v3.6.2 (sobre v3.6.1):
+  No ambiente real (54 categorias hierárquicas, 13618 amostras), o
+  CalibratedClassifierCV(method='isotonic', cv=3) introduzido pela
+  v3.5/G4 quebrava com erro:
+      "Requesting 3-fold cross-validation but provided less than 3
+       examples for at least one class."
+  Causa raiz: classes com 3-4 exemplos no total ficavam com 2 ou
+  menos no conjunto de treino após train_test_split(test_size=0.2),
+  insuficientes para os 3 folds internos da calibração.
+
+  Correção: estratégia adaptativa de calibração em três camadas, com
+  degradação graciosa baseada no mínimo de exemplos por classe NO
+  CONJUNTO DE TREINO:
+    - ≥5/classe → isotonic+cv=3 (Niculescu-Mizil & Caruana, 2005)
+    - ≥4/classe → sigmoid+cv=3 (Platt scaling, mais robusto)
+    - ≥2/classe → sigmoid+cv=2 (mínimo absoluto)
+    - <2/classe → RF puro (calibração inviável)
+  Defesa adicional: try/except em volta do fit, com fallback para RF
+  puro caso qualquer outra exceção de cross-validation apareça. O
+  método efetivamente usado é impresso no log para auditoria.
+
+CORREÇÃO v3.6.1 (sobre v3.6):
+  ARIMA, SARIMAX-12, SARIMAX-6 e Prophet não estavam aparecendo nas
+  abas PREVISAO_TEMPORAL e PREVISAO_DETALHES. Causa raiz: pmdarima
+  2.0.4+ devolve pd.Series com RangeIndex deslocado (start=N), de modo
+  que `r['forecast'][0]` dispara KeyError em pandas 2.x. Como o bloco
+  do orquestrador não tinha try/except, o erro propagava silenciosamente
+  e os modelos pareciam ter "falhado" sem aparecer em lugar nenhum.
+
+  Correções aplicadas:
+  1) ARIMA, SARIMAX e Prophet agora forçam np.asarray(..., dtype=float)
+     no retorno do `predict()` antes de armazenar em `forecast`.
+  2) Orquestrador agora usa função `_extrair_forecast_seguro(r, i)`
+     que faz cast defensivo + try/except por modelo.
+  3) Bloco de PREVISAO_INCERTEZAS também recebe try/except por modelo.
+  4) Bloco de PREVISAO_DETALHES protegido contra KeyError em parâmetros.
+  5) `calcular_ensemble` agora pula modelos com forecast inválido
+     (NaN, Inf, dimensão errada) em vez de quebrar o array de objetos.
+  6) Erro detalhado (tipo + traceback) é registrado para cada modelo
+     que falhar, em vez do `str(e)` genérico anterior.
+  7) Log de diagnóstico antes da escrita das abas mostra status de
+     cada modelo, com primeira/última previsão para inspeção rápida.
+
+Mudanças sobre v3.5 (continuidade do roadmap):
+  REFINAMENTO METODOLÓGICO
+  - G5: Gradient Boosting com forecast DIRETO multi-step — 12 modelos
+        especializados (1 por horizonte) substituem o forecast iterativo.
+        IC bootstrap agora reflete erro real para horizontes longos.
+  - G12: SHAP values calculados para todos os modelos GBR (12 horizontes).
+         Nova aba PREVISAO_SHAP com importância média absoluta por feature.
+
+  ROBUSTEZ CIENTÍFICA PARA ARTIGO
+  - G16: Ablation study trimestral — executa pipeline em 5 configurações
+         (full, sem outliers, sem exógenas, sem ensemble, baselines apenas)
+         e exporta tabela comparativa em PREVISAO_ABLATION.
+  - G18: Heatmap de erro mês × ano — identifica padrões temporais de
+         subestimação/superestimação. Nova aba PREVISAO_ERRO_HEATMAP.
+  - G21 (parcial): Exportação científica para artigo — bundle em
+         Drive/Malha_IA/exports/AAAA-MM-DD/ com tabelas LaTeX, CSV de
+         dados crus, JSON de metadados e requirements.txt fixado.
+
+  ROBUSTEZ OPERACIONAL
+  - G9 estendido: retry exponencial agora cobre Gemini, DeepSeek,
+         OpenRouter e SambaNova além do Groq.
+
+  PACOTES NOVOS
+  - shap (interpretabilidade do GBR)
+
+Mudanças sobre v3.4 (saneamento metodológico para Qualis A1/A2):
+  CORREÇÕES METODOLÓGICAS CRÍTICAS
+  - G1: Validação cruzada SEM data leakage — outliers e climatologia
+        agora são computados DENTRO de cada fold com dados estritamente
+        anteriores ao corte
+  - G2: Block bootstrap (Künsch, 1989) substitui reamostragem residual
+        independente — agora os IC são metodologicamente válidos sob
+        autocorrelação
+  - G3: Teste de Diebold-Mariano par-a-par para comparação de modelos
+        (nova aba PREVISAO_DIEBOLD_MARIANO)
+  - G4: CalibratedClassifierCV(method='isotonic') no Random Forest —
+        probabilidades agora são calibradas, limiar de 0,70 é
+        interpretável como prob real
+
+  ENRIQUECIMENTO CIENTÍFICO
+  - G13: Baselines triviais Naive sazonal e Drift adicionados ao
+         comparativo (modelos 8 e 9 do painel)
+  - G14: CRPS (Continuous Ranked Probability Score) calculado via
+         distribuição empírica do bootstrap; seleção multicritério
+         0,5·RMSE_norm + 0,3·CRPS_norm + 0,2·desvio_CV_norm
+  - G15: Teste de causalidade Granger entre precipitação/período letivo
+         e chamados (resultado em PREVISAO_DIAGNOSTICO)
+  - G17: Decomposição STL (Cleveland 1990) → PREVISAO_DECOMPOSICAO
+  - G19: Periodograma de Fourier → PREVISAO_ESPECTRO
+  - G20: ACF/PACF até 24 lags → PREVISAO_ACF_PACF
+
+  ROBUSTEZ OPERACIONAL
+  - G6: Detecção de drift semântico via teste KS sobre TF-IDF
+  - G9: Retry exponencial em chamadas LLM via tenacity
+  - G10: Rotação automática de logs antigos (>90 dias → CSV no Drive)
+
+  PACOTES NOVOS
+  - arch (block bootstrap)
+  - tenacity (retry exponencial)
+
+Mudanças sobre v3.3:
+  EIXO 1 (Classificação)
+  - METRICAS_TREINO: hash da base evita re-gravação redundante
+  - Adicionadas f1_weighted e balanced_accuracy
+  - Cabeçalho corrigido (drop+recreate na primeira execução v3.4)
+
+  EIXO 2 (Previsão)
+  - 7 modelos: ARIMA-auto, SARIMAX-12, SARIMAX-6, Holt-Winters,
+    Prophet, GradientBoosting, Theta
+  - Ensemble por inverso do RMSE (média ponderada das 7 previsões)
+  - Validação cruzada temporal (rolling origin, 5 folds)
+  - Detecção e tratamento de outliers (z-score>3 → mediana móvel)
+  - SARIMAX e Prophet usam regressores exógenos:
+      Precipitação_mm e Periodo_Letivo (de aba CONTEXTO_SAZONAL)
+  - Box-Cox condicional ao Jarque-Bera
+
+  ABAS NOVAS
+  - CONTEXTO_SAZONAL: precipitação + período letivo (preenchível pelo usuário)
+  - PREVISAO_RESIDUOS: resíduos individuais por modelo (alimenta boxplot/histograma)
+  - PREVISAO_QQPLOT: quantis teórico vs observado para Q-Q plot
+  - PREVISAO_VALIDACAO: rolling-origin CV com fold-a-fold
+
+  CADÊNCIA
+  - INTERVALO_PREVISAO_CICLOS = 10 (= 150 chamados)
+  - Boot evita re-rodar previsão se houve execução nas últimas 24h
 """
 
 # =====================================================================
@@ -34,11 +268,12 @@ else:
     CAMINHO_PASTA = os.path.dirname(os.path.abspath(__file__))
 
 PASTA_LIBS = f'{CAMINHO_PASTA}/libs'
-ARQUIVO_LOCK = f'{PASTA_LIBS}/requirements_previsao_chamados.lock'
+ARQUIVO_LOCK = f'{PASTA_LIBS}/requirements.lock'
 
 PACOTES_REQUERIDOS = {
     'gspread': '6.1.4',
     'requests': '2.32.3',
+    'groq': '0.13.0',
     'pandas': '2.2.3',
     'numpy': '1.26.4',
     'statsmodels': '0.14.4',
@@ -47,9 +282,10 @@ PACOTES_REQUERIDOS = {
     'pmdarima': '2.0.4',
     'prophet': '1.1.6',
     'scipy': '1.13.1',
-    'arch': '7.2.0',
-    'shap': '0.46.0',
-    'tensorflow': '2.17.0',
+    'arch': '7.2.0',         # block bootstrap (Künsch 1989) — G2
+    'tenacity': '9.0.0',     # retry exponencial em APIs LLM — G9
+    'shap': '0.46.0',        # interpretabilidade do GBR — G12 (v3.6)
+    'tensorflow': '2.17.0',  # LSTM classificação + previsão — v3.8
 }
 
 def carregar_lock():
@@ -68,10 +304,10 @@ def salvar_lock(pacotes):
 
 def precisa_instalar():
     if not os.path.exists(PASTA_LIBS):
-        return True, "pasta libs nao existe"
+        return True, "pasta libs não existe"
     lock_atual = carregar_lock()
     if lock_atual is None:
-        return True, "requirements_previsao_chamados.lock ausente"
+        return True, "requirements.lock ausente"
     if lock_atual != PACOTES_REQUERIDOS:
         adicionados = set(PACOTES_REQUERIDOS) - set(lock_atual)
         removidos = set(lock_atual) - set(PACOTES_REQUERIDOS)
@@ -80,19 +316,19 @@ def precisa_instalar():
         motivos = []
         if adicionados: motivos.append(f"adicionados: {', '.join(adicionados)}")
         if removidos:   motivos.append(f"removidos: {', '.join(removidos)}")
-        if alterados:   motivos.append(f"versao alterada: {', '.join(alterados)}")
+        if alterados:   motivos.append(f"versão alterada: {', '.join(alterados)}")
         return True, "; ".join(motivos)
     return False, "lock confere"
 
 def instalar_pacotes():
     print(f"[Cache] Instalando pacotes em {PASTA_LIBS}...")
-    print("[Cache] Esta operacao roda apenas na primeira vez ou quando a lista muda.")
+    print("[Cache] Esta operação roda apenas na primeira vez ou quando a lista muda.")
     os.makedirs(PASTA_LIBS, exist_ok=True)
     spec_pacotes = [f"{nome}=={ver}" for nome, ver in PACOTES_REQUERIDOS.items()]
     cmd = ['pip', 'install', '--target', PASTA_LIBS, '--upgrade'] + spec_pacotes
     resultado = subprocess.run(cmd, capture_output=True, text=True)
     if resultado.returncode != 0:
-        print("[Cache] ERRO na instalacao:")
+        print("[Cache] ERRO na instalação:")
         print(resultado.stderr[-2000:])
         raise RuntimeError("Falha ao instalar pacotes — veja stderr acima.")
     salvar_lock(PACOTES_REQUERIDOS)
@@ -101,20 +337,20 @@ def instalar_pacotes():
 if _EM_COLAB:
     deve_instalar, motivo = precisa_instalar()
     if deve_instalar:
-        print(f"[Cache] Reinstalacao necessaria: {motivo}")
+        print(f"[Cache] Reinstalação necessária: {motivo}")
         instalar_pacotes()
         print("\n" + "="*70)
-        print("PACOTES INSTALADOS PELA PRIMEIRA VEZ (ou apos mudanca de versao).")
+        print("⚠️  PACOTES INSTALADOS PELA PRIMEIRA VEZ (ou após mudança de versão).")
         print("    Reinicie o runtime do Colab agora:")
-        print("        Menu superior -> Ambiente de execucao -> Reiniciar sessao")
-        print("    Depois execute esta celula novamente.")
+        print("        Menu superior → Ambiente de execução → Reiniciar sessão")
+        print("    Depois execute esta célula novamente — será instantâneo.")
         print("="*70 + "\n")
         try:
             import IPython
             IPython.Application.instance().kernel.do_shutdown(restart=True)
         except Exception:
             pass
-        raise SystemExit("Aguardando reinicio do runtime.")
+        raise SystemExit("Aguardando reinício do runtime.")
     else:
         print(f"[Cache] {len(PACOTES_REQUERIDOS)} pacotes carregados do cache em {PASTA_LIBS}.")
 
@@ -124,7 +360,7 @@ else:
     print("[Local] Modo offline — pacotes carregados do ambiente Python local.")
 
 # =====================================================================
-# 2. IMPORTACOES
+# 2. IMPORTAÇÕES
 # =====================================================================
 import gspread
 from gspread.exceptions import WorksheetNotFound, APIError
@@ -137,9 +373,15 @@ import numpy as np
 from datetime import datetime, timedelta
 import pytz
 
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.calibration import CalibratedClassifierCV   # G4 — v3.5
+from sklearn.metrics import (
+    classification_report, mean_absolute_error, mean_squared_error,
+    f1_score, balanced_accuracy_score
+)
+from sklearn.pipeline import Pipeline
 
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 from statsmodels.tsa.arima.model import ARIMA
@@ -150,40 +392,50 @@ from statsmodels.stats.stattools import jarque_bera, durbin_watson
 from statsmodels.stats.outliers_influence import variance_inflation_factor, OLSInfluence
 import statsmodels.api as sm_api
 from statsmodels.tsa.stattools import (
-    adfuller, kpss, grangercausalitytests, acf, pacf
+    adfuller, kpss, grangercausalitytests, acf, pacf   # G15, G20 — v3.5
 )
-from statsmodels.tsa.seasonal import STL
+from statsmodels.tsa.seasonal import STL                 # G17 — v3.5
 
 from scipy import stats as sps
-from scipy.stats import boxcox, norm, ks_2samp, shapiro
-from scipy.signal import periodogram
+from scipy.stats import boxcox, norm, ks_2samp, shapiro  # G6 — v3.5; shapiro para pressupostos
+from scipy.signal import periodogram                     # G19 — v3.5
 
+# Block bootstrap (G2) e retry (G9) — v3.5
 from arch.bootstrap import MovingBlockBootstrap
+from tenacity import (
+    retry, stop_after_attempt, wait_exponential,
+    retry_if_exception_type
+)
 
 warnings.filterwarnings('ignore')
 import logging
 logging.getLogger('cmdstanpy').setLevel(logging.WARNING)
 logging.getLogger('prophet').setLevel(logging.WARNING)
 
+# v3.6.3 — pmdarima e Prophet são opcionais. Quando indisponíveis ou
+# quebrados (quebra binária com numpy, falta de cmdstanpy, etc.), o motor
+# cai para implementações nativas baseadas em statsmodels via grid-search
+# de ordem com seleção por AIC, que são cientificamente equivalentes.
 _PMDARIMA_OK = False
 _PROPHET_OK = False
 try:
     import pmdarima as pm
+    # Teste real de funcionamento — não basta importar, precisa ter auto_arima
     if hasattr(pm, 'auto_arima'):
-        _teste = pm.auto_arima(
-            np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]),
-            seasonal=False, suppress_warnings=True,
-            error_action='ignore', stepwise=True, max_p=1, max_q=1)
+        _teste = pm.auto_arima(np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]),
+                                seasonal=False, suppress_warnings=True,
+                                error_action='ignore', stepwise=True, max_p=1, max_q=1)
         _PMDARIMA_OK = True
-        print("[Imports] pmdarima OK — auto_arima disponivel.")
+        print("[Imports] pmdarima OK — auto_arima disponível.")
     else:
         print("[Imports] pmdarima importou mas SEM auto_arima — usando fallback statsmodels.")
 except Exception as _e_pm:
-    print(f"[Imports] pmdarima indisponivel ({type(_e_pm).__name__}) — "
+    print(f"[Imports] pmdarima indisponível ({type(_e_pm).__name__}) — "
           f"usando fallback baseado em statsmodels (grid-search + AIC).")
 
 try:
     from prophet import Prophet
+    # Teste real — Prophet em ambientes sem cmdstanpy quebra silenciosamente
     _df_teste = pd.DataFrame({
         'ds': pd.date_range('2020-01-01', periods=24, freq='MS'),
         'y': np.arange(24, dtype=float)
@@ -197,12 +449,27 @@ try:
     else:
         print("[Imports] Prophet importou mas SEM stan_backend — usando UnobservedComponents.")
 except Exception as _e_p:
-    print(f"[Imports] Prophet indisponivel ({type(_e_p).__name__}) — "
-          f"usando UnobservedComponents (statsmodels).")
+    print(f"[Imports] Prophet indisponível ({type(_e_p).__name__}) — "
+          f"usando UnobservedComponents (decomposição estrutural via statsmodels).")
 
+# Imports para fallback statsmodels (sempre disponíveis)
 from statsmodels.tsa.statespace.sarimax import SARIMAX as _SM_SARIMAX
 from statsmodels.tsa.statespace.structural import UnobservedComponents
 
+# v3.8 — TensorFlow/Keras para LSTM de classificação e de previsão.
+# Opcional: se indisponível, classificador cai para Random Forest e
+# previsão ignora o 8º modelo (LSTM Forecast).
+#
+# IMPORTANTE (NumPy 2.0 / Colab — fix v3.8.1):
+#   - O TF cacheado em PASTA_LIBS foi compilado com NumPy 1.x e quebra
+#     no Colab atual (NumPy 2.0.2). É preciso forçar o TF nativo do Colab.
+#   - Não basta remover PASTA_LIBS de sys.path: quando uma tentativa
+#     anterior falhou, módulos `tensorflow.*` parciais ficam em
+#     `sys.modules` apontando para o cache. Python consulta sys.modules
+#     ANTES de sys.path, então a próxima import volta a usar o cache.
+#   - Fix definitivo: limpar TODAS as entradas tensorflow*/keras* de
+#     sys.modules, invalidar caches do importlib, remover PASTA_LIBS
+#     de sys.path durante a importação, e tentar APENAS o TF nativo.
 _TF_OK = False
 tf = None
 Sequential = None
@@ -227,6 +494,7 @@ def _importar_tf():
     global to_categorical, LabelEncoder, MinMaxScaler
     import sys as _sys
 
+    # 1. Purga sys.modules de qualquer referência parcial a TF/Keras
     _mods_remover = [
         m for m in list(_sys.modules.keys())
         if m == 'tensorflow' or m.startswith('tensorflow.')
@@ -239,24 +507,29 @@ def _importar_tf():
         except KeyError:
             pass
     if _mods_remover:
-        print(f"[Imports] Limpou {len(_mods_remover)} modulos TF/Keras de sys.modules.")
+        print(f"[Imports] Limpou {len(_mods_remover)} módulos TF/Keras "
+              f"de sys.modules (resíduos de tentativa anterior).")
 
+    # 2. Invalida caches do mecanismo de import (path_importer_cache etc.)
     try:
         import importlib
         importlib.invalidate_caches()
     except Exception:
         pass
 
+    # 3. Remove cache do Drive de sys.path durante a importação
     _path_orig = _sys.path[:]
     _sys.path[:] = [p for p in _path_orig if p != PASTA_LIBS]
 
     try:
         import tensorflow as _tf_mod
+        # Sanity-check: o arquivo do TF carregado precisa NÃO estar no cache
         _tf_file = getattr(_tf_mod, '__file__', '') or ''
         if PASTA_LIBS in _tf_file:
             raise ImportError(
                 f"TF carregado do cache do Drive ({_tf_file}); "
-                f"esperado caminho nativo do Colab."
+                f"esperado caminho nativo do Colab. "
+                f"Limpe a pasta {PASTA_LIBS}/tensorflow no Drive."
             )
         from tensorflow.keras.models import Sequential as _Seq, Model as _Mod
         from tensorflow.keras.layers import (
@@ -267,6 +540,7 @@ def _importar_tf():
         from tensorflow.keras.preprocessing.sequence import pad_sequences as _pad
         from tensorflow.keras.utils import to_categorical as _to_cat
         from sklearn.preprocessing import LabelEncoder as _LE, MinMaxScaler as _MMS
+        # Atribui as globais
         tf = _tf_mod
         Sequential = _Seq; Model = _Mod
         Embedding = _Emb; Bidirectional = _Bid; KerasLSTM = _KLSTM
@@ -275,13 +549,14 @@ def _importar_tf():
         LabelEncoder = _LE; MinMaxScaler = _MMS
         tf.get_logger().setLevel('ERROR')
         _TF_OK = True
-        print(f"[Imports] TensorFlow nativo OK ({_tf_file}) — LSTM disponivel.")
+        print(f"[Imports] TensorFlow nativo OK ({_tf_file}) — LSTM disponível.")
     except Exception as _e_tf:
         msg = str(_e_tf)
         if len(msg) > 180:
             msg = msg[:180] + '...'
-        print(f"[Imports] TensorFlow indisponivel ({type(_e_tf).__name__}: {msg}) — "
-              f"LSTM desativado.")
+        print(f"[Imports] TensorFlow indisponível ({type(_e_tf).__name__}: {msg}) — "
+              f"LSTM desativado; fallback Random Forest para classificação.")
+        # Limpa de novo o que tentou carregar nesta tentativa
         for _m in [k for k in list(_sys.modules.keys())
                    if k == 'tensorflow' or k.startswith('tensorflow.')
                    or k == 'keras' or k.startswith('keras.')]:
@@ -290,18 +565,46 @@ def _importar_tf():
             except KeyError:
                 pass
     finally:
-        _sys.path[:] = _path_orig
+        _sys.path[:] = _path_orig  # restaura sempre
 
 _importar_tf()
 
+# G12 (v3.6) — SHAP para interpretabilidade do GBR
 try:
     import shap
     _SHAP_DISPONIVEL = True
 except ImportError:
     _SHAP_DISPONIVEL = False
-    print("[Imports] SHAP indisponivel — interpretabilidade do GBR ficara limitada.")
+    print("[Imports] SHAP indisponível — interpretabilidade do GBR ficará limitada.")
 
-_VERSAO_MOTOR = "v4.0.8-previsao_chamados"
+# Versão única do motor (v4.0.5): usada em logs, METRICAS_TREINO e header.
+# v4.0.5 (2026-05-14):
+#   - Novo modo `reclassificacao`: reavalia chamados já classificados
+#     com baixa confiança (< LIMIAR_RECLASSIFICACAO) usando o LSTM atual
+#     (mais treinado) e os 4 campos textuais (B + W + X + Y).
+#   - Respeita coluna AF (CONFERENCIA): se TRUE, motor NUNCA sobrescreve
+#     — preserva revisão humana.
+#   - Só sobrescreve se nova confiança > antiga + DELTA_MELHORIA_MINIMA.
+#   - Workflow GitHub Actions dedicado roda 1× por dia.
+# v4.0.4 (2026-05-14):
+#   - Suporte a execução por MODO via env var MOTOR_MODO ou flag CLI:
+#       * classificacao      → só LSTM + 1 lote (rápido, 15min)
+#       * previsao_global    → só previsão global (médio, 45min)
+#       * previsao_filtros   → só campus/tipo/categoria (pesado, 5h)
+#       * ods                → só indicadores + PESOS_ODS (rápido)
+#       * completo (default) → tudo (compatibilidade Colab/legado)
+#     Permite dividir em 4 workflows GitHub Actions com cadências distintas.
+# v4.0.3 (2026-05-14):
+#   - Previsão temporal de custos mensais (Coluna Q, "Valor do chamado") —
+#     série + parser preparados (Fase 4A). Refatoração de previsão para
+#     reaproveitamento será aplicada em Fase 4B (sessão dedicada).
+#   - Indicadores brutos por localização para painel ODS (ODS 9, 11, 12).
+#   - Nova aba PESOS_ODS (configurável pelo usuário; lida pelo HTML).
+# v4.0.2 (2026-05-14):
+#   - Detecção automática Colab vs. local; google.colab.drive opcional.
+#   - Imports do TensorFlow (Keras) elevados a escopo global para uso
+#     em treinar_classificador_lstm() fora da função _importar_tf().
+_VERSAO_MOTOR = "v4.0.8"
 
 print(f"[Imports] OK · pandas={pd.__version__} · {_VERSAO_MOTOR} "
       f"(pmdarima={'ON' if _PMDARIMA_OK else 'fallback'}, "
@@ -309,11 +612,15 @@ print(f"[Imports] OK · pandas={pd.__version__} · {_VERSAO_MOTOR} "
       f"TF={'ON' if _TF_OK else 'OFF/fallback_RF'})")
 
 # ─────────────────────────────────────────────────────────────────────
+# NumPy 2.0 compat: np.isnan() é mais estrito com tipos não-numéricos.
+# _safe_isnan() converte para float antes do teste, evitando TypeError.
+# _safe_float() garante Python float a partir de qualquer escalar.
+# ─────────────────────────────────────────────────────────────────────
 def _safe_isnan(val):
-    """Retorna True se val e NaN; False para nao-NaN ou nao-numerico."""
+    """Retorna True se val é NaN; False para não-NaN ou não-numérico."""
     try:
         f = float(val)
-        return f != f
+        return f != f  # NaN é o único valor onde x != x é verdadeiro
     except (TypeError, ValueError):
         return False
 
@@ -325,14 +632,17 @@ def _safe_float(val, default=float('nan')):
         return default
 
 # =====================================================================
-# 3. CONFIGURACOES INICIAIS
+# 3. CONFIGURAÇÕES INICIAIS
 # =====================================================================
 ARQUIVO_GOOGLE = f'{CAMINHO_PASTA}/autenticacao_google.json'
 gc = gspread.service_account(filename=ARQUIVO_GOOGLE)
 
 NOME_PLANILHA = "CHAMADOS"
 NOME_MAQUINA = "GOOGLE_COLAB_CLOUD"
-
+# v3.6.5 — Fuso horário com fallback resiliente. O pytz cacheado pode
+# ter tzdata incompleto/corrompido. America/Bahia, America/Sao_Paulo e
+# America/Fortaleza compartilham o mesmo offset (UTC-3) sem DST desde
+# 2019, então a substituição é semanticamente equivalente para o motor.
 def _resolver_fuso_brasil():
     candidatos = [
         'America/Bahia',
@@ -345,90 +655,108 @@ def _resolver_fuso_brasil():
         try:
             tz = pytz.timezone(nome)
             if nome != 'America/Bahia':
-                print(f"[Fuso] America/Bahia indisponivel. Usando {nome} (UTC-3).")
+                print(f"[Fuso] America/Bahia indisponível no pytz instalado. "
+                      f"Usando {nome} (offset equivalente UTC-3).")
             return tz
         except Exception:
             continue
-    print("[Fuso] Nenhum fuso brasileiro disponivel no pytz. Usando offset fixo UTC-3.")
+    # Último recurso: offset fixo manual via datetime
+    print("[Fuso] Nenhum fuso brasileiro disponível no pytz. "
+          "Usando offset fixo UTC-3.")
     from datetime import timezone as _tz_dt, timedelta as _td_dt
     return _tz_dt(_td_dt(hours=-3))
 
 FUSO_BAHIA = _resolver_fuso_brasil()
 
-INTERVALO_PREVISAO_CICLOS = 10
+INTERVALO_PREVISAO_CICLOS = 10    # 10 × 15 = 150 chamados
 INTERVALO_RETREINO_CICLOS = 10
 MIN_AMOSTRAS_TREINO = 10
 MIN_PONTOS_SERIE = 6
-MIN_PONTOS_SERIE_CUSTO = 12
+MIN_PONTOS_SERIE_CUSTO = 12        # mínimo 12 meses para previsão de custos [v4.0.7 — reduzido de 24]
 MIN_EXEMPLOS_POR_CLASSE = 3
 
+# Eixo 2
+# v3.6.5 — Holdout estendido para 12 meses (backtest visual).
+# O modelo treina com dados até T-12 e prevê os 12 meses seguintes.
+# Isso permite comparar visualmente previsão × real no último ano,
+# além dos 12 meses futuros puros. No dashboard, o período T-12..T
+# mostra dados reais + linha pontilhada de cada modelo.
 HORIZONTE_HOLDOUT = 12
 HORIZONTE_FORECAST = 12
 N_BOOTSTRAP = 1000
-N_FOLDS_CV = 3
+N_FOLDS_CV = 3                    # v3.6.5: reduzido de 5 para 3 (holdout=12 × 3=36 meses)
 SEED = 42
 THRESH_OUTLIER_Z = 3.0
 INTERVALO_HORAS_PREVISAO_BOOT = 24
 
-BLOCK_BOOTSTRAP_AUTO = True
-BLOCK_SIZE_FIXO = 6
-GRANGER_MAX_LAG = 6
-ACF_PACF_LAGS = 24
-ROTACAO_LOG_DIAS = 90
-THRESH_DRIFT_KS = 0.15
-PESO_RMSE = 0.5
+# Constantes v3.5
+BLOCK_BOOTSTRAP_AUTO = True       # tamanho do bloco via Politis-White; senão usa fixo
+BLOCK_SIZE_FIXO = 6                # fallback se PW falhar (~ raiz cubica de N para N=200)
+GRANGER_MAX_LAG = 6                # lag máximo para teste de Granger (meses)
+ACF_PACF_LAGS = 24                 # número de lags ACF/PACF
+ROTACAO_LOG_DIAS = 90              # logs com mais de N dias vão para CSV no Drive
+THRESH_DRIFT_KS = 0.15             # estatística KS acima deste valor força retreino
+PESO_RMSE = 0.5                    # critério multicritério G14
 PESO_CRPS = 0.3
 PESO_DESVIO_CV = 0.2
 LLM_RETRY_MAX = 3
-LLM_RETRY_WAIT_BASE = 1
+LLM_RETRY_WAIT_BASE = 1            # segundos (cresce exponencialmente)
 
-INTERVALO_DIAS_ABLATION = 90
-INTERVALO_DIAS_EXPORT = 30
+# Constantes v3.6
+INTERVALO_DIAS_ABLATION = 90       # ablation rodado a cada 90 dias (trimestral)
+INTERVALO_DIAS_EXPORT = 30         # exportação científica mensal
 
-EXECUTAR_POR_CATEGORIA = True
-MIN_REGISTROS_FILTRO = 12
-LSTM_VOCAB_SIZE = 8000
-LSTM_MAX_LEN = 120
-LSTM_EMBED_DIM = 128
-LSTM_UNITS = 64
-LSTM_FORECAST_WINDOW = 12
+# Constantes v3.8
+EXECUTAR_POR_CATEGORIA = True      # gera PREVISAO_*__Cat_* por categoria hierárquica
+MIN_REGISTROS_FILTRO = 12          # mín. chamados por categoria para gerar previsão
+LSTM_VOCAB_SIZE = 8000             # vocabulário tokenizador LSTM classificação
+LSTM_MAX_LEN = 120                 # comprimento fixo de sequência (tokens)
+LSTM_EMBED_DIM = 128               # dimensão de embedding
+LSTM_UNITS = 64                    # unidades LSTM bidirecionais
+LSTM_FORECAST_WINDOW = 12          # janela de entrada do LSTM de previsão
 
-COL_TITULO = 1
-COL_DATA_ABERTURA = 2
-COL_CATEGORIA_TOPO = 4
-COL_CAMPUS = 7
-COL_CATEGORIA_HIERARQUICA = 12
-COL_VALOR = 16
-COL_DESCRICAO_GLPI = 22
-COL_TITULO_OSM = 23
-COL_DESCRICAO_OSM = 24
-COL_CAT_IA = 25
+# Mapeamento de colunas
+COL_TITULO = 1                   # B
+COL_DATA_ABERTURA = 2            # C
+COL_CATEGORIA_TOPO = 4           # E
+COL_CAMPUS = 7                   # H
+COL_CATEGORIA_HIERARQUICA = 12   # M
+COL_VALOR = 16                   # Q  — "Valor do chamado" (R$) [v4.0.3]
+COL_DESCRICAO_GLPI = 22          # W
+COL_TITULO_OSM = 23              # X
+COL_DESCRICAO_OSM = 24           # Y
+COL_CAT_IA = 25                  # Z
 
-COL_DATA_CONCLUSAO = None
-COL_LOCAL = None
+# Colunas opcionais (podem não existir em todas as bases) — tratar None
+COL_DATA_CONCLUSAO = None        # se a planilha não tem, indicadores que dependem
+                                 # disso ficam em branco. Atribua manualmente se existir.
+COL_LOCAL = None                 # idem — proxy para "chamados repetidos no mesmo local"
 
-FILTROS_ATIVOS = True
+# Filtragem por campus/tipo/categoria
+FILTROS_ATIVOS = True            # True = roda análise completa por filtro após análise principal
 
-COL_CAT_IA_OUT = 26
-COL_AVALIACAO_OUT = 28
-COL_EXECUTOR_OUT = 29
-COL_CRITICIDADE_OUT = 30
-COL_CONFERENCIA = 31
+COL_CAT_IA_OUT = 26              # Z
+COL_AVALIACAO_OUT = 28           # AB
+COL_EXECUTOR_OUT = 29            # AC
+COL_CRITICIDADE_OUT = 30         # AD
+COL_CONFERENCIA = 31             # AF — caixa de seleção [v4.0.5]
+                                  # TRUE = revisado pelo usuário; motor não sobrescreve.
 
-LIMIAR_RECLASSIFICACAO = 0.80
-DELTA_MELHORIA_MINIMA = 0.05
-LOTE_RECLASSIFICACAO = 200
+# Reclassificação (v4.0.5)
+LIMIAR_RECLASSIFICACAO = 0.80    # reavalia tudo com confiança < 80%
+DELTA_MELHORIA_MINIMA = 0.05     # só sobrescreve se nova_conf > antiga + 5pp
+LOTE_RECLASSIFICACAO = 200       # máx. de chamados por execução
 
 try:
     doc = gc.open(NOME_PLANILHA)
     planilha = doc.worksheet("CHAMADOS")
-    print(f"Conectado a planilha: {NOME_PLANILHA}, aba: CHAMADOS")
+    print(f"✅ Conectado à planilha: {NOME_PLANILHA}, aba: CHAMADOS")
 except Exception as e:
-    print(f"Erro critico: {e}")
+    print(f"❌ Erro crítico: {e}")
     raise
 
 # =====================================================================
-# 4. UTILITARIO DE ABAS COM CACHE
+# 4. UTILITÁRIO DE ABAS COM CACHE
 # =====================================================================
 _cache_abas = {}
 
@@ -445,16 +773,16 @@ def obter_aba(nome, linhas=100, colunas=10, cabecalho=None):
             if not valores_atuais or all(c == "" for c in valores_atuais[0]):
                 aba.update(values=[cabecalho], range_name='A1', value_input_option='USER_ENTERED')
         except Exception as e:
-            print(f"[Aviso] Nao foi possivel gravar cabecalho em {nome}: {e}")
+            print(f"[Aviso] Não foi possível gravar cabeçalho em {nome}: {e}")
     _cache_abas[nome] = aba
     return aba
 
 def recriar_aba(nome, linhas=500, colunas=10, cabecalho=None):
-    """Apaga e recria aba, util para correcao de cabecalho."""
+    """Apaga e recria aba, útil para correção de cabeçalho."""
     try:
         aba_antiga = doc.worksheet(nome)
         doc.del_worksheet(aba_antiga)
-        print(f"[Migracao] Aba '{nome}' apagada para recriacao.")
+        print(f"[Migração] Aba '{nome}' apagada para recriação.")
     except WorksheetNotFound:
         pass
     if nome in _cache_abas:
@@ -465,22 +793,22 @@ def recriar_aba(nome, linhas=500, colunas=10, cabecalho=None):
     _cache_abas[nome] = aba
     return aba
 
+# Migração v3.3 → v3.4: METRICAS_TREINO precisa do novo cabeçalho
 ARQUIVO_FLAG_MIGRACAO = f'{CAMINHO_PASTA}/migracao_v34.flag'
 if not os.path.exists(ARQUIVO_FLAG_MIGRACAO):
-    print("[Migracao v3.4] Executando migracoes de aba uma unica vez...")
+    print("[Migração v3.4] Executando migrações de aba uma única vez...")
     try:
         recriar_aba("METRICAS_TREINO", linhas=500, colunas=12,
                     cabecalho=["Timestamp", "N_Amostras", "N_Classes", "Acuracia",
                                "Precision_Macro", "Recall_Macro", "F1_Macro",
                                "F1_Weighted", "Balanced_Accuracy", "Hash_Base", "Maquina", "Versao_Motor"])
-        print("[Migracao v3.4] METRICAS_TREINO recriada com cabecalho v3.4.")
+        print("[Migração v3.4] METRICAS_TREINO recriada com cabeçalho v3.4.")
     except Exception as e:
-        print(f"[Migracao v3.4] Falha (nao-critica): {e}")
+        print(f"[Migração v3.4] Falha (não-crítica): {e}")
     with open(ARQUIVO_FLAG_MIGRACAO, 'w') as f:
-        f.write(f"Migracao v3.4 executada em {datetime.now(FUSO_BAHIA).isoformat()}")
-
+        f.write(f"Migração v3.4 executada em {datetime.now(FUSO_BAHIA).isoformat()}")
 # =====================================================================
-# 5. UTILITARIOS GERAIS
+# 5. UTILITÁRIOS GERAIS
 # =====================================================================
 def montar_texto_classificacao(linha):
     campos = []
@@ -495,6 +823,17 @@ def montar_texto_classificacao(linha):
     return " | ".join(campos)
 
 def extrair_nome_executor(origem):
+    """
+    [v4.0.0] Mapeia origem da classificação para nome do executor.
+    Origens suportadas (todas LOCAIS):
+        - "Supervisionado_LSTM"            → "LSTM"
+        - "Supervisionado_LSTM_baixa_conf" → "LSTM_BAIXA_CONF"
+        - "RF_Fallback"                    → "RF_Fallback"
+        - "RF_Fallback_baixa_conf"         → "RF_Fallback_BAIXA_CONF"
+        - "SemClassificador"               → "SemClassificador"
+        - "NaoProcessado"                  → "NaoProcessado"
+    APIs externas (Groq/Gemini/DeepSeek/etc) foram REMOVIDAS em v4.0.0.
+    """
     if not origem:
         return "Desconhecido"
     if origem == "Supervisionado_LSTM":
@@ -509,6 +848,7 @@ def extrair_nome_executor(origem):
         return "SemClassificador"
     if origem == "NaoProcessado":
         return "NaoProcessado"
+    # Compatibilidade reversa para entradas antigas no log (não geradas mais):
     if origem == "Supervisionado":
         return "Supervisionado_legado"
     return origem.split(' ')[0].split('(')[0].strip()
@@ -517,12 +857,22 @@ def confianca_para_decimal(valor):
     return round(valor / 100.0, 2)
 
 def extrair_tipo_categoria(texto):
+    """Interpreta coluna M para retornar (tipo, categoria).
+
+    Preventiva: texto contém 'Manutenção Preventiva' (ou 'Manutencao Preventiva'
+                após normalização ASCII) → categoria = primeiro nível após '>',
+                ex.: 'Manutenção Preventiva > Hidráulica > Instalação' → 'Hidráulica'.
+    Corretiva:  demais → categoria = texto antes do primeiro '>',
+                ex.: 'Elétrica > Iluminação' → 'Elétrica'.
+    """
     if not texto or not texto.strip():
         return ('Desconhecida', 'Desconhecida')
     t = texto.strip()
+    # Normaliza para comparação insensível a encoding (ã/a~)
     t_norm = _ud.normalize('NFKD', t).encode('ascii', 'ignore').decode('ascii').lower()
-    if 'manutencao preventiva' in t_norm or 'manutencao preventiva' in t.lower():
+    if 'manutencao preventiva' in t_norm or 'manutenção preventiva' in t.lower():
         partes = t.split('>')
+        # Primeiro subcategoria real (índice 1); fallback para texto completo
         cat = partes[1].strip() if len(partes) > 1 else t.strip()
         return ('Preventiva', cat or 'Preventiva')
     else:
@@ -532,19 +882,21 @@ def extrair_tipo_categoria(texto):
 
 import unicodedata as _ud, re as _re
 def sanitizar_sufixo(label):
+    """Converte label em sufixo seguro para nome de aba do Google Sheets (≤ 20 chars)."""
     s = _ud.normalize('NFKD', label).encode('ascii', 'ignore').decode('ascii')
     s = _re.sub(r'[^\w]', '_', s)
     s = _re.sub(r'_+', '_', s).strip('_')
     return s[:20]
 
 def hash_base_treino(df):
+    """Hash determinístico da base de treino para detectar mudanças."""
     if df is None or len(df) == 0:
         return "vazio"
     s = df[['Texto', 'Categoria']].sort_values(['Categoria', 'Texto']).to_csv(index=False)
     return hashlib.md5(s.encode('utf-8')).hexdigest()[:16]
 
 # =====================================================================
-# 6. CATEGORIAS VALIDAS
+# 6. CATEGORIAS VÁLIDAS
 # =====================================================================
 ARQUIVO_CATEGORIAS = f'{CAMINHO_PASTA}/categorias_validas.txt'
 categorias_unicas = []
@@ -558,7 +910,7 @@ def atualizar_categorias(dados_linhas):
          and linha[COL_CATEGORIA_HIERARQUICA].strip()]
     )))
     categorias_unicas = cats
-    print(f"[Dicionario] {len(cats)} categorias hierarquicas unicas detectadas em M.")
+    print(f"[Dicionário] {len(cats)} categorias hierárquicas únicas detectadas em M.")
     try:
         with open(ARQUIVO_CATEGORIAS, 'w', encoding='utf-8') as f:
             f.write("usados\n")
@@ -568,7 +920,13 @@ def atualizar_categorias(dados_linhas):
         pass
 
 # =====================================================================
-# 7. CREDENCIAIS [retrocompatibilidade — APIs externas removidas v4.0.0]
+# 7. CREDENCIAIS [v4.0.0]
+# ---------------------------------------------------------------------
+# APIs externas de LLM (Groq, Gemini, DeepSeek, OpenRouter, SambaNova)
+# foram REMOVIDAS em v4.0.0. Classificação agora é 100% LOCAL via LSTM
+# (fallback RandomForest em emergência). As chaves continuam sendo
+# carregadas em modo opcional apenas para retrocompatibilidade — não
+# são mais consultadas em runtime de classificação.
 # =====================================================================
 ARQUIVO_CREDENCIAIS = f'{CAMINHO_PASTA}/chaves_api.json'
 matriz_chaves = {}
@@ -579,24 +937,31 @@ if os.path.exists(ARQUIVO_CREDENCIAIS):
     except Exception:
         matriz_chaves = {}
 
+# Variáveis mantidas para retrocompatibilidade (não usadas em v4.0.0):
 CHAVES_GROQ       = matriz_chaves.get("GROQ", {})
 CHAVES_GEMINI     = matriz_chaves.get("GEMINI", {})
 CHAVES_DEEPSEEK   = matriz_chaves.get("DEEPSEEK", {})
 CHAVES_OPENROUTER = matriz_chaves.get("OPENROUTER", {})
 CHAVES_SAMBANOVA  = matriz_chaves.get("SAMBANOVA", {})
 
-print(f"[{NOME_MAQUINA}] {_VERSAO_MOTOR} — Modulo previsao_chamados carregado.")
+print(f"[{NOME_MAQUINA}] {_VERSAO_MOTOR} — Classificação LOCAL apenas "
+      f"(LSTM/RF). APIs externas de LLM desativadas.")
 
 # =====================================================================
-# 8. CONTEXTO SAZONAL (precipitacao + periodo letivo)
+# 8. CONTEXTO SAZONAL (precipitação + período letivo)
 # =====================================================================
 def gerar_contexto_sazonal_padrao(periodos_pandas):
+    """
+    Para cada período (pd.Period mensal), devolve linha com valores-exemplo:
+    - Precipitação aleatória entre 30 e 250 mm (faixa típica do sul da Bahia)
+    - Período letivo: Sim para mar-jun e ago-dez, Não para jan-fev e jul
+    """
     np.random.seed(SEED)
     linhas = []
     for p in periodos_pandas:
         mes = p.month
         precip = float(np.round(np.random.uniform(30, 250), 1))
-        letivo = "Sim" if (3 <= mes <= 6 or 8 <= mes <= 12) else "Nao"
+        letivo = "Sim" if (3 <= mes <= 6 or 8 <= mes <= 12) else "Não"
         linhas.append({
             'Mes_Ano': p.strftime('%m/%Y'),
             'Precipitacao_mm': precip,
@@ -605,6 +970,10 @@ def gerar_contexto_sazonal_padrao(periodos_pandas):
     return linhas
 
 def ler_contexto_sazonal():
+    """
+    [v3.5] Lê a aba CONTEXTO_SAZONAL e retorna DataFrame com colunas
+    padronizadas. Uso em testes de Granger e auditoria.
+    """
     try:
         aba = obter_aba("CONTEXTO_SAZONAL", linhas=500, colunas=4)
         valores = aba.get_all_values()
@@ -612,6 +981,7 @@ def ler_contexto_sazonal():
         return None
     if not valores or len(valores) < 2:
         return None
+    cab = valores[0]
     rows = []
     for linha in valores[1:]:
         if not linha or not linha[0]:
@@ -643,9 +1013,18 @@ def ler_contexto_sazonal():
 
 
 def ler_area_manutencao():
+    """
+    [v3.8 — Fase 1.0] Lê a aba "Área Manutenção" da planilha Google Sheets.
+    Estrutura esperada:
+      Coluna A: Ano (ex.: 2015, 2016, ..., 2026)
+      Coluna B: Área Construída m² (área das edificações)
+      Coluna C: Área Total m²     (área total do campus)
+    Retorna DataFrame com colunas: Ano, Area_Construida_m2, Area_Total_m2.
+    Retorna None se a aba não existir ou estiver vazia.
+    """
     try:
-        aba = obter_aba("Area Manutencao", linhas=50, colunas=3,
-                        cabecalho=["Ano", "Area Construida m2", "Area Total m2"])
+        aba = obter_aba("Área Manutenção", linhas=50, colunas=3,
+                        cabecalho=["Ano", "Área Construída m²", "Área Total m²"])
         valores = aba.get_all_values()
     except Exception:
         return None
@@ -668,11 +1047,24 @@ def ler_area_manutencao():
 
 
 def sincronizar_area_manutencao(periodos_historicos, periodos_futuros):
+    """
+    [v3.8 — Fase 1.0] Expande os valores anuais de área para todos os meses
+    do período histórico + futuro (forward fill para anos sem dados).
+
+    Equação de expansão: para todo mês m pertencente ao ano a,
+      Area_Construida_m2(m) = Area_Construida_m2(a)   (forward fill)
+
+    Retorna DataFrame com colunas: Mes_Ano (Period), Area_Construida_m2, Area_Total_m2.
+    Retorna None se a aba "Área Manutenção" não existir.
+    """
     df_area = ler_area_manutencao()
     if df_area is None:
         return None
+
     mapa_area = df_area.set_index('Ano')[['Area_Construida_m2', 'Area_Total_m2']].to_dict('index')
     todos_periodos = list(periodos_historicos) + list(periodos_futuros)
+
+    # Forward fill: para anos sem dados usa último valor conhecido
     anos_disponiveis = sorted(mapa_area.keys())
     ultimo_constr = 0.0
     ultimo_total = 0.0
@@ -680,6 +1072,7 @@ def sincronizar_area_manutencao(periodos_historicos, periodos_futuros):
         ult = anos_disponiveis[-1]
         ultimo_constr = mapa_area[ult]['Area_Construida_m2']
         ultimo_total = mapa_area[ult]['Area_Total_m2']
+
     rows = []
     for p in todos_periodos:
         ano = p.year
@@ -687,6 +1080,7 @@ def sincronizar_area_manutencao(periodos_historicos, periodos_futuros):
             ac = mapa_area[ano]['Area_Construida_m2']
             at = mapa_area[ano]['Area_Total_m2']
         else:
+            # Usa o último ano disponível ≤ ano alvo
             anos_ant = [a for a in anos_disponiveis if a <= ano]
             if anos_ant:
                 ref = max(anos_ant)
@@ -699,9 +1093,17 @@ def sincronizar_area_manutencao(periodos_historicos, periodos_futuros):
 
 
 def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
+    """
+    Garante que CONTEXTO_SAZONAL contém todos os meses (histórico + futuro).
+    Linhas existentes preservam valores do usuário; novas linhas recebem
+    valores-exemplo automáticos.
+
+    Devolve um DataFrame com as colunas Mes_Ano, Precipitacao_mm, Periodo_Letivo
+    cobrindo todo o range histórico + futuro, lido da planilha após sincronização.
+    """
     aba = obter_aba(
         "CONTEXTO_SAZONAL", linhas=500, colunas=4,
-        cabecalho=["Mes_Ano", "Precipitacao_mm", "Periodo_Letivo", "Observacao"]
+        cabecalho=["Mes_Ano", "Precipitacao_mm", "Periodo_Letivo", "Observação"]
     )
     try:
         valores = aba.get_all_values()
@@ -709,6 +1111,7 @@ def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
         print(f"[Contexto] Erro ao ler CONTEXTO_SAZONAL: {e}")
         return None
 
+    # Mapa de meses já cadastrados → linha do usuário
     existentes = {}
     if len(valores) > 1:
         for linha in valores[1:]:
@@ -717,12 +1120,14 @@ def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
                 existentes[mes_ano] = {
                     'Precipitacao_mm': linha[1].strip() if len(linha) > 1 else "",
                     'Periodo_Letivo': linha[2].strip() if len(linha) > 2 else "",
-                    'Observacao': linha[3].strip() if len(linha) > 3 else ""
+                    'Observação': linha[3].strip() if len(linha) > 3 else ""
                 }
 
+    # Conjunto-alvo: todos os períodos históricos + futuros
     todos_periodos = list(periodos_historicos) + list(periodos_futuros)
     contexto_padrao = gerar_contexto_sazonal_padrao(todos_periodos)
 
+    # Monta linhas finais preservando o que o usuário já preencheu
     linhas_finais = []
     for ctx in contexto_padrao:
         mes = ctx['Mes_Ano']
@@ -730,29 +1135,34 @@ def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
             ex = existentes[mes]
             precip = ex['Precipitacao_mm'] if ex['Precipitacao_mm'] else ctx['Precipitacao_mm']
             letivo = ex['Periodo_Letivo'] if ex['Periodo_Letivo'] else ctx['Periodo_Letivo']
-            obs = ex['Observacao']
+            obs = ex['Observação']
         else:
             precip = ctx['Precipitacao_mm']
             letivo = ctx['Periodo_Letivo']
             obs = "(valor-exemplo, preencher com dado real)"
         linhas_finais.append([mes, precip, letivo, obs])
 
+    # Reescreve a aba inteira (preservando edições do usuário linha-a-linha)
     try:
         aba.clear()
         aba.update(
-            values=[["Mes_Ano", "Precipitacao_mm", "Periodo_Letivo", "Observacao"]] + linhas_finais,
+            values=[["Mes_Ano", "Precipitacao_mm", "Periodo_Letivo", "Observação"]] + linhas_finais,
             range_name='A1', value_input_option='USER_ENTERED'
         )
     except Exception as e:
         print(f"[Contexto] Erro ao gravar CONTEXTO_SAZONAL: {e}")
 
-    df = pd.DataFrame(linhas_finais, columns=['Mes_Ano', 'Precipitacao_mm', 'Periodo_Letivo', 'Observacao'])
+    # Re-lê para retornar DataFrame consolidado
+    df = pd.DataFrame(linhas_finais, columns=['Mes_Ano', 'Precipitacao_mm', 'Periodo_Letivo', 'Observação'])
     df['Precipitacao_mm'] = pd.to_numeric(df['Precipitacao_mm'], errors='coerce').fillna(0.0)
     df['Periodo_Letivo_bin'] = (df['Periodo_Letivo'].str.strip().str.lower().isin(['sim', 's', 'yes', '1', 'true'])).astype(int)
 
+    # [v3.8 — Fase 1.0] Mescla dados da aba "Área Manutenção" como variáveis exógenas.
+    # Usa Period como chave de junção; forward fill para períodos sem registro.
     try:
         df_area_mes = sincronizar_area_manutencao(periodos_historicos, periodos_futuros)
         if df_area_mes is not None:
+            # Garante que Mes_Ano esteja no mesmo formato (string mm/YYYY)
             df['_per'] = df['Mes_Ano'].apply(lambda m: pd.Period(
                 pd.to_datetime('01/' + m, dayfirst=True), freq='M'
             ) if '/' in str(m) else pd.Period(m, freq='M'))
@@ -764,23 +1174,31 @@ def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
                 lambda p: df_area_mes.loc[p, 'Area_Total_m2'] if p in df_area_mes.index else np.nan
             ).ffill().bfill().fillna(0.0)
             df.drop(columns=['_per'], inplace=True)
-            print(f"[Contexto] Area Manutencao integrada: "
-                  f"{df['Area_Construida_m2'].max():.0f} m2 construida, "
-                  f"{df['Area_Total_m2'].max():.0f} m2 total.")
+            print(f"[Contexto] Área Manutenção integrada: "
+                  f"{df['Area_Construida_m2'].max():.0f} m² construída, "
+                  f"{df['Area_Total_m2'].max():.0f} m² total.")
         else:
             df['Area_Construida_m2'] = 0.0
             df['Area_Total_m2'] = 0.0
-            print("[Contexto] Aba 'Area Manutencao' nao encontrada — area zerada nos exogenos.")
+            print("[Contexto] Aba 'Área Manutenção' não encontrada — área zerada nos exógenos.")
     except Exception as _e_area:
         df['Area_Construida_m2'] = 0.0
         df['Area_Total_m2'] = 0.0
-        print(f"[Contexto] Falha ao integrar area ({_e_area}) — area zerada.")
+        print(f"[Contexto] Falha ao integrar área ({_e_area}) — área zerada.")
 
     return df
 
 def construir_exog(df_contexto, periodos_alvo):
+    """
+    [v3.8 — Fase 1.0] Recebe df_contexto consolidado e lista de periodos (pd.Period).
+    Retorna matriz X (n×4) com:
+      [Precipitacao_mm, Periodo_Letivo_bin, Area_Construida_m2, Area_Total_m2]
+    Períodos sem dado em df_contexto recebem média histórica (precipitação),
+    regra mar-jun/ago-dez (letivo) e último valor de área (forward fill).
+    """
     tem_area = ('Area_Construida_m2' in df_contexto.columns and
                 'Area_Total_m2' in df_contexto.columns)
+
     if tem_area:
         mapa = {row['Mes_Ano']: (row['Precipitacao_mm'], row['Periodo_Letivo_bin'],
                                   row['Area_Construida_m2'], row['Area_Total_m2'])
@@ -811,19 +1229,28 @@ def construir_exog(df_contexto, periodos_alvo):
     return np.array(linhas)
 
 def construir_exog_futuro_climatologico(df_contexto, periodos_futuros):
+    """
+    [v3.8 — Fase 1.0] Para forecast: usa média histórica do mesmo mês (Opção α)
+    para precipitação, regra do calendário acadêmico para período letivo e
+    último valor de área (forward fill) para Area_Construida_m2 / Area_Total_m2.
+    Retorna matriz X (n×4) compatível com construir_exog.
+    """
     df_aux = df_contexto.copy()
     df_aux['mes_num'] = df_aux['Mes_Ano'].str[:2].astype(int)
     medias_mes = df_aux.groupby('mes_num')['Precipitacao_mm'].mean().to_dict()
     media_global = float(df_aux['Precipitacao_mm'].mean())
+
     tem_area = ('Area_Construida_m2' in df_aux.columns and
                 'Area_Total_m2' in df_aux.columns)
     if tem_area:
+        # Último valor de área disponível (forward fill para forecast)
         ultimo_ac = float(df_aux['Area_Construida_m2'].replace(0, np.nan).dropna().iloc[-1]) \
                     if df_aux['Area_Construida_m2'].any() else 0.0
         ultimo_at = float(df_aux['Area_Total_m2'].replace(0, np.nan).dropna().iloc[-1]) \
                     if df_aux['Area_Total_m2'].any() else 0.0
     else:
         ultimo_ac, ultimo_at = 0.0, 0.0
+
     linhas = []
     for p in periodos_futuros:
         precip_clim = medias_mes.get(p.month, media_global)
@@ -831,11 +1258,793 @@ def construir_exog_futuro_climatologico(df_contexto, periodos_futuros):
         linhas.append([float(precip_clim), int(letivo), ultimo_ac, ultimo_at])
     return np.array(linhas)
 
+# =====================================================================
+# 9. EIXO 1 – CLASSIFICAÇÃO SUPERVISIONADA
+# =====================================================================
+def popular_treinamento_a_partir_de_chamados(dados_linhas):
+    aba_treino = obter_aba(
+        "TREINAMENTO", linhas=2000, colunas=4,
+        cabecalho=["Texto", "Categoria", "Linha_Origem", "Data_Insercao"]
+    )
+
+    candidatos = []
+    for i, linha in enumerate(dados_linhas, start=2):
+        if len(linha) <= COL_CATEGORIA_HIERARQUICA:
+            continue
+        cat = linha[COL_CATEGORIA_HIERARQUICA].strip()
+        if not cat:
+            continue
+        texto = montar_texto_classificacao(linha)
+        if len(texto) < 5:
+            continue
+        candidatos.append([texto, cat, i,
+                           datetime.now(FUSO_BAHIA).strftime('%d/%m/%Y %H:%M:%S')])
+
+    if not candidatos:
+        print("[Treino] Nenhum chamado com categoria hierárquica em M.")
+        return None
+
+    try:
+        atuais = aba_treino.get_all_values()
+        n_atual = max(len(atuais) - 1, 0)
+    except Exception:
+        n_atual = 0
+
+    if n_atual == 0 or len(candidatos) >= int(n_atual * 1.2):
+        try:
+            aba_treino.clear()
+            aba_treino.update(
+                values=[["Texto", "Categoria", "Linha_Origem", "Data_Insercao"]] + candidatos,
+                range_name='A1', value_input_option='USER_ENTERED'
+            )
+            print(f"[Treino] Aba TREINAMENTO atualizada com {len(candidatos)} amostras.")
+        except APIError as e:
+            print(f"[Treino] Erro ao gravar TREINAMENTO: {e}")
+
+    df = pd.DataFrame(candidatos, columns=["Texto", "Categoria", "Linha_Origem", "Data_Insercao"])
+    return df
+
+def carregar_dados_rotulados(dados_linhas=None):
+    if dados_linhas is not None:
+        popular_treinamento_a_partir_de_chamados(dados_linhas)
+    try:
+        aba_treino = obter_aba("TREINAMENTO", linhas=2000, colunas=4)
+        dados = aba_treino.get_all_values()
+    except Exception:
+        return None
+    if len(dados) < 2:
+        return None
+    df = pd.DataFrame(dados[1:], columns=dados[0])
+    if 'Categoria' not in df.columns or 'Texto' not in df.columns:
+        return None
+    if categorias_unicas:
+        df = df[df['Categoria'].isin(categorias_unicas)]
+    df = df[df['Texto'].str.len() >= 5]
+    return df
+
+# Cache de hash para evitar regravação de métricas
+_ultimo_hash_treino = None
+
+def hash_existe_em_metricas(hash_atual):
+    """Verifica se o hash já está registrado na aba METRICAS_TREINO."""
+    try:
+        aba = obter_aba("METRICAS_TREINO", linhas=500, colunas=12)
+        valores = aba.get_all_values()
+        if len(valores) < 2:
+            return False
+        # Coluna 'Hash_Base' é a 10 (índice 9) no novo cabeçalho
+        for linha in valores[1:]:
+            if len(linha) > 9 and linha[9].strip() == hash_atual:
+                return True
+        return False
+    except Exception:
+        return False
+
+def treinar_classificador(df_treino, forcar=False):
+    """
+    Treina classificador. Se hash da base for igual ao último (e já estiver
+    em METRICAS_TREINO), retorna o pipeline mas NÃO regrava métricas.
+    """
+    global _ultimo_hash_treino
+
+    if df_treino is None or len(df_treino) < MIN_AMOSTRAS_TREINO:
+        print(f"[Treino] Insuficiente: {0 if df_treino is None else len(df_treino)} amostras.")
+        return None, None
+
+    contagem = df_treino['Categoria'].value_counts()
+    # CORREÇÃO v3.6.2: piso de exemplos suficiente para calibração isotônica.
+    # CalibratedClassifierCV com cv=3 exige ≥3 exemplos POR CLASSE no treino,
+    # mas após train_test_split(test_size=0.2) classes com 3-4 exemplos podem
+    # cair para 2 no treino e quebrar. Piso de 5 garante mínimo 4 no treino,
+    # suficiente para cv=3.
+    MIN_PARA_ISOTONIC = 5
+    MIN_PARA_SIGMOID = 4
+    classes_validas = contagem[contagem >= MIN_EXEMPLOS_POR_CLASSE].index
+    n_descartadas = (contagem < MIN_EXEMPLOS_POR_CLASSE).sum()
+    if n_descartadas > 0:
+        print(f"[Treino] {n_descartadas} categorias descartadas (<{MIN_EXEMPLOS_POR_CLASSE} exemplos).")
+
+    df_treino = df_treino[df_treino['Categoria'].isin(classes_validas)]
+    if len(df_treino) < MIN_AMOSTRAS_TREINO:
+        print("[Treino] Após filtro de classes raras, ficou abaixo do mínimo.")
+        return None, None
+
+    # Hash da base
+    h = hash_base_treino(df_treino)
+    if not forcar and h == _ultimo_hash_treino and hash_existe_em_metricas(h):
+        print(f"[Treino] Base inalterada (hash {h}). Métricas não regravadas.")
+        skip_metrics = True
+    else:
+        skip_metrics = False
+
+    print(f"[Treino] Treinando com {len(classes_validas)} categorias e {len(df_treino)} amostras.")
+
+    X, y = df_treino['Texto'], df_treino['Categoria']
+    try:
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, stratify=y, random_state=42
+        )
+    except ValueError:
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, random_state=42
+        )
+
+    # CORREÇÃO v3.6.2: detecta o método de calibração viável conforme a base.
+    # Verifica o mínimo de exemplos por classe NO CONJUNTO DE TREINO (não no total),
+    # que é o que CalibratedClassifierCV usa.
+    contagem_treino = pd.Series(y_train).value_counts()
+    min_por_classe_treino = int(contagem_treino.min())
+
+    base_rf = RandomForestClassifier(
+        n_estimators=200, random_state=42, n_jobs=-1
+    )
+
+    # Estratégia de calibração em três camadas (com degradação graciosa):
+    #   1) isotonic + cv=3 → preferido (Niculescu-Mizil & Caruana, 2005),
+    #      requer ≥3 exemplos/classe no treino, idealmente 5
+    #   2) sigmoid + cv=3 → Platt scaling, funciona com menos dados,
+    #      requer ≥3 exemplos/classe no treino
+    #   3) RF puro (sem calibração) → fallback final
+    if min_por_classe_treino >= MIN_PARA_ISOTONIC:
+        clf = CalibratedClassifierCV(base_rf, method='isotonic', cv=3)
+        metodo_calibracao = 'isotonic (cv=3)'
+    elif min_por_classe_treino >= MIN_PARA_SIGMOID:
+        clf = CalibratedClassifierCV(base_rf, method='sigmoid', cv=3)
+        metodo_calibracao = 'sigmoid (cv=3, Platt scaling)'
+    elif min_por_classe_treino >= 2:
+        clf = CalibratedClassifierCV(base_rf, method='sigmoid', cv=2)
+        metodo_calibracao = 'sigmoid (cv=2, base muito reduzida)'
+    else:
+        clf = base_rf
+        metodo_calibracao = 'RF puro (calibração inviável: classe com 1 exemplo no treino)'
+
+    print(f"[Treino] Calibração de probabilidades: {metodo_calibracao} "
+          f"(mínimo de exemplos/classe no treino = {min_por_classe_treino})")
+
+    pipeline = Pipeline([
+        ('tfidf', TfidfVectorizer(max_features=5000, ngram_range=(1, 2))),
+        ('clf', clf)
+    ])
+
+    # Defesa final: se ainda assim quebrar, tenta sem calibração
+    try:
+        pipeline.fit(X_train, y_train)
+    except ValueError as e:
+        if 'cross-validation' in str(e) or 'less than' in str(e):
+            print(f"[Treino] Calibração falhou ({str(e)[:80]}). Caindo para RF puro.")
+            pipeline = Pipeline([
+                ('tfidf', TfidfVectorizer(max_features=5000, ngram_range=(1, 2))),
+                ('clf', base_rf)
+            ])
+            pipeline.fit(X_train, y_train)
+            metodo_calibracao = 'RF puro (após fallback de exceção)'
+        else:
+            raise
+
+    y_pred = pipeline.predict(X_test)
+    report = classification_report(y_test, y_pred, output_dict=True, zero_division=0)
+    f1_w = f1_score(y_test, y_pred, average='weighted', zero_division=0)
+    bal_acc = balanced_accuracy_score(y_test, y_pred)
+
+    metrics = {
+        'accuracy': report['accuracy'],
+        'precision_macro': report['macro avg']['precision'],
+        'recall_macro': report['macro avg']['recall'],
+        'f1_macro': report['macro avg']['f1-score'],
+        'f1_weighted': float(f1_w),
+        'balanced_accuracy': float(bal_acc),
+        'n_amostras': len(df_treino),
+        'n_classes': len(classes_validas),
+        'hash_base': h
+    }
+    print(f"[Treino] N={metrics['n_amostras']} | Classes={metrics['n_classes']} | "
+          f"Acc={metrics['accuracy']:.3f} | F1_macro={metrics['f1_macro']:.3f} | "
+          f"F1_w={metrics['f1_weighted']:.3f} | Bal.Acc={metrics['balanced_accuracy']:.3f}")
+
+    if not skip_metrics:
+        try:
+            aba_metricas = obter_aba(
+                "METRICAS_TREINO", linhas=500, colunas=12,
+                cabecalho=["Timestamp", "N_Amostras", "N_Classes", "Acuracia",
+                           "Precision_Macro", "Recall_Macro", "F1_Macro",
+                           "F1_Weighted", "Balanced_Accuracy", "Hash_Base", "Maquina", "Versao_Motor"]
+            )
+            ts = datetime.now(FUSO_BAHIA).strftime('%d/%m/%Y %H:%M:%S')
+            aba_metricas.append_row(
+                [ts, metrics['n_amostras'], metrics['n_classes'],
+                 round(metrics['accuracy'], 4),
+                 round(metrics['precision_macro'], 4),
+                 round(metrics['recall_macro'], 4),
+                 round(metrics['f1_macro'], 4),
+                 round(metrics['f1_weighted'], 4),
+                 round(metrics['balanced_accuracy'], 4),
+                 metrics['hash_base'],
+                 NOME_MAQUINA, _VERSAO_MOTOR],
+                value_input_option='USER_ENTERED'
+            )
+            _ultimo_hash_treino = h
+            print(f"[Treino] METRICAS_TREINO atualizada (hash {h}).")
+        except Exception as e:
+            print(f"[Aviso] Falha ao gravar METRICAS_TREINO: {e}")
+
+    return pipeline, metrics
 
 
 # =====================================================================
-# 9. EXTRAÇÃO DE SÉRIE TEMPORAL
+# [v3.8 — Fase 1.1] LSTM DE CLASSIFICAÇÃO TEXTUAL
+# Substitui TF-IDF + Random Forest quando TensorFlow disponível.
+# Equações (comentários internos):
+#   Embedding:  e_t = E·x_t ∈ ℝ^128
+#   LSTM fw:    f_t = σ(W_f[h_{t-1}, e_t] + b_f)        (forget gate)
+#               i_t = σ(W_i[h_{t-1}, e_t] + b_i)        (input gate)
+#               c̃_t = tanh(W_c[h_{t-1}, e_t] + b_c)    (cell candidate)
+#               c_t = f_t⊙c_{t-1} + i_t⊙c̃_t           (cell state)
+#               o_t = σ(W_o[h_{t-1}, e_t] + b_o)        (output gate)
+#               h_t = o_t⊙tanh(c_t)                     (hidden state)
+#   Bidirecional: H = [h→_T ; h←_1] ∈ ℝ^128
+#   Saída:      z = ReLU(W_z·H + b_z)
+#               P(y=k|texto) = exp(w_k·z + b_k) / Σ_j exp(w_j·z + b_j)
+#   Perda:      entropia cruzada categórica
 # =====================================================================
+
+class LSTMClassifier:
+    """
+    Wrapper que expõe predict, predict_proba e classes_ compatíveis com
+    sklearn.Pipeline, permitindo troca transparente com RandomForest.
+    """
+    def __init__(self, model, tokenizer, encoder, max_len):
+        self._model = model
+        self._tok = tokenizer
+        self._enc = encoder
+        self._max_len = max_len
+        self.classes_ = encoder.classes_
+
+    def predict(self, textos):
+        seqs = self._tok.texts_to_sequences(textos)
+        X = pad_sequences(seqs, maxlen=self._max_len, padding='post', truncating='post')
+        probs = self._model.predict(X, verbose=0)
+        return self._enc.inverse_transform(np.argmax(probs, axis=1))
+
+    def predict_proba(self, textos):
+        seqs = self._tok.texts_to_sequences(textos)
+        X = pad_sequences(seqs, maxlen=self._max_len, padding='post', truncating='post')
+        return self._model.predict(X, verbose=0)
+
+
+def treinar_classificador_lstm(df_treino, forcar=False):
+    """
+    [v4.0.0] Treina LSTM Bidirecional para classificação textual.
+    Classificador PRIMÁRIO do motor (substitui TF-IDF + RandomForest).
+
+    Arquitetura:
+        Embedding(VOCAB=8000, dim=128, max_len=120)
+          → Bidirectional LSTM(64)
+          → Dropout(0.5)
+          → Dense(64, ReLU)
+          → Dense(K, Softmax)
+
+    Equações:
+        Embedding:   e_t = E·x_t ∈ ℝ^128
+        LSTM gates:  f_t,i_t,o_t = σ(W_*[h_{t-1},e_t] + b_*)
+                     c_t = f_t⊙c_{t-1} + i_t⊙tanh(W_c[h_{t-1},e_t]+b_c)
+                     h_t = o_t⊙tanh(c_t)
+        Bidir:       H = [h→_T ; h←_1]
+        Softmax:     P(y=k|x) = exp(w_k·z + b_k) / Σ_j exp(w_j·z + b_j)
+        Loss:        L = -Σ_n Σ_k y_{nk} log P(y_n=k|x_n)  (entropia cruzada categórica)
+
+    Treino:
+        - Split ESTRATIFICADO 80/20 (sklearn.train_test_split, stratify=y)
+        - EarlyStopping(monitor='val_loss', patience=4, restore_best_weights=True)
+        - Adam (default), batch_size=32, max 50 épocas
+
+    Retorna:
+        (LSTMClassifier, metricas) em caso de sucesso.
+        Em emergência (TF indisponível, OOM, falha de treino), faz fallback
+        para treinar_classificador (RandomForest) — NUNCA para LLM externo.
+    """
+    global _ultimo_hash_treino
+
+    if not _TF_OK:
+        print("[LSTM Clf] TensorFlow indisponível — fallback Random Forest.")
+        return treinar_classificador(df_treino, forcar=forcar)
+
+    if df_treino is None or len(df_treino) < MIN_AMOSTRAS_TREINO:
+        n = 0 if df_treino is None else len(df_treino)
+        print(f"[LSTM Clf] Base insuficiente ({n} < {MIN_AMOSTRAS_TREINO}) — fallback RF.")
+        return treinar_classificador(df_treino, forcar=forcar)
+
+    contagem = df_treino['Categoria'].value_counts()
+    classes_validas = contagem[contagem >= MIN_EXEMPLOS_POR_CLASSE].index
+    n_descartadas = (contagem < MIN_EXEMPLOS_POR_CLASSE).sum()
+    if n_descartadas > 0:
+        print(f"[LSTM Clf] {n_descartadas} categorias descartadas "
+              f"(<{MIN_EXEMPLOS_POR_CLASSE} exemplos).")
+    df_treino = df_treino[df_treino['Categoria'].isin(classes_validas)]
+    if len(df_treino) < MIN_AMOSTRAS_TREINO:
+        print("[LSTM Clf] Após filtro de classes raras, ficou abaixo do mínimo — fallback RF.")
+        return treinar_classificador(df_treino, forcar=forcar)
+
+    # Hash da base — pula regravação de métricas se base inalterada
+    h_base = hash_base_treino(df_treino)
+    if not forcar and h_base == _ultimo_hash_treino and hash_existe_em_metricas(h_base):
+        print(f"[LSTM Clf] Base inalterada (hash {h_base}). Métricas não regravadas.")
+        skip_metrics = True
+    else:
+        skip_metrics = False
+
+    print(f"[LSTM Clf] Treinando LSTM com {len(classes_validas)} categorias "
+          f"e {len(df_treino)} amostras.")
+
+    try:
+        textos = df_treino['Texto'].tolist()
+        rotulos = df_treino['Categoria'].tolist()
+
+        # Tokenização + padding
+        tok = Tokenizer(num_words=LSTM_VOCAB_SIZE, oov_token='<OOV>')
+        tok.fit_on_texts(textos)
+        seqs = tok.texts_to_sequences(textos)
+        X = pad_sequences(seqs, maxlen=LSTM_MAX_LEN, padding='post', truncating='post')
+
+        # Codificação de rótulos
+        enc = LabelEncoder()
+        y_int = enc.fit_transform(rotulos)
+        K = len(enc.classes_)
+
+        # Split ESTRATIFICADO 80/20 (preserva proporção de classes em treino/teste)
+        # Se alguma classe tem só 2 exemplos, train_test_split estratificado falha;
+        # cai para split simples nesse caso.
+        try:
+            X_tr, X_te, y_tr_int, y_te_int = train_test_split(
+                X, y_int, test_size=0.2, stratify=y_int, random_state=42
+            )
+            tipo_split = 'estratificado'
+        except ValueError:
+            X_tr, X_te, y_tr_int, y_te_int = train_test_split(
+                X, y_int, test_size=0.2, random_state=42
+            )
+            tipo_split = 'simples (estratificação inviável)'
+        Y_tr = to_categorical(y_tr_int, num_classes=K)
+        Y_te = to_categorical(y_te_int, num_classes=K)
+        print(f"[LSTM Clf] Split {tipo_split}: {len(X_tr)} treino / {len(X_te)} teste.")
+
+        # Arquitetura Bidirectional LSTM
+        model = Sequential([
+            Embedding(LSTM_VOCAB_SIZE, LSTM_EMBED_DIM, input_length=LSTM_MAX_LEN),
+            Bidirectional(KerasLSTM(LSTM_UNITS)),
+            Dropout(0.5),
+            Dense(64, activation='relu'),
+            Dense(K, activation='softmax')
+        ])
+        model.compile(loss='categorical_crossentropy',
+                      optimizer='adam', metrics=['accuracy'])
+
+        # Treino com EarlyStopping (v4.0.0: patience=4, restore_best_weights=True, max 50 epochs)
+        from tensorflow.keras.callbacks import EarlyStopping
+        es = EarlyStopping(monitor='val_loss', patience=4, restore_best_weights=True)
+        hist = model.fit(X_tr, Y_tr, epochs=50, batch_size=32,
+                         validation_data=(X_te, Y_te),
+                         callbacks=[es], verbose=0)
+        n_epocas = len(hist.history.get('loss', []))
+        print(f"[LSTM Clf] Treino concluído em {n_epocas} épocas (max 50, "
+              f"EarlyStopping patience=4).")
+
+        # Avaliação completa
+        probs_te = model.predict(X_te, verbose=0)
+        y_pred_int = np.argmax(probs_te, axis=1)
+        from sklearn.metrics import (
+            f1_score as _f1, balanced_accuracy_score as _bac,
+            precision_score as _ps, recall_score as _rs,
+            accuracy_score as _acc
+        )
+        acc = float(_acc(y_te_int, y_pred_int))
+        f1_macro = float(_f1(y_te_int, y_pred_int, average='macro', zero_division=0))
+        f1_w     = float(_f1(y_te_int, y_pred_int, average='weighted', zero_division=0))
+        bal_acc  = float(_bac(y_te_int, y_pred_int))
+        prec_m   = float(_ps(y_te_int, y_pred_int, average='macro', zero_division=0))
+        rec_m    = float(_rs(y_te_int, y_pred_int, average='macro', zero_division=0))
+
+        print(f"[LSTM Clf] N={len(df_treino)} | Classes={K} | "
+              f"Acc={acc:.3f} | F1_macro={f1_macro:.3f} | F1_w={f1_w:.3f} | "
+              f"Bal.Acc={bal_acc:.3f} | Prec_m={prec_m:.3f} | Rec_m={rec_m:.3f}")
+
+        clf_wrapper = LSTMClassifier(model, tok, enc, LSTM_MAX_LEN)
+        metricas = {
+            'accuracy': acc,
+            'precision_macro': prec_m,
+            'recall_macro': rec_m,
+            'f1_macro': f1_macro,
+            'f1_weighted': f1_w,
+            'balanced_accuracy': bal_acc,
+            'n_amostras': len(df_treino),
+            'n_classes': K,
+            'hash_base': h_base,
+            'modelo': 'LSTM_Bidirecional',
+            'epocas_treino': n_epocas
+        }
+
+        # Grava métricas (mesma aba que RF, para auditoria comparativa)
+        if not skip_metrics:
+            try:
+                aba_metricas = obter_aba(
+                    "METRICAS_TREINO", linhas=500, colunas=12,
+                    cabecalho=["Timestamp", "N_Amostras", "N_Classes", "Acuracia",
+                               "Precision_Macro", "Recall_Macro", "F1_Macro",
+                               "F1_Weighted", "Balanced_Accuracy", "Hash_Base",
+                               "Maquina", "Versao_Motor"]
+                )
+                ts = datetime.now(FUSO_BAHIA).strftime('%d/%m/%Y %H:%M:%S')
+                aba_metricas.append_row(
+                    [ts, metricas['n_amostras'], metricas['n_classes'],
+                     round(metricas['accuracy'], 4),
+                     round(metricas['precision_macro'], 4),
+                     round(metricas['recall_macro'], 4),
+                     round(metricas['f1_macro'], 4),
+                     round(metricas['f1_weighted'], 4),
+                     round(metricas['balanced_accuracy'], 4),
+                     metricas['hash_base'],
+                     f"{NOME_MAQUINA} [LSTM]", _VERSAO_MOTOR],
+                    value_input_option='USER_ENTERED'
+                )
+                _ultimo_hash_treino = h_base
+                print(f"[LSTM Clf] METRICAS_TREINO atualizada (hash {h_base}).")
+            except Exception as e:
+                print(f"[LSTM Clf] Aviso: falha ao gravar METRICAS_TREINO: {e}")
+
+        return clf_wrapper, metricas
+
+    except Exception as e:
+        import traceback
+        print(f"[LSTM Clf] Falha ({type(e).__name__}: {e}) — fallback Random Forest.")
+        traceback.print_exc()
+        return treinar_classificador(df_treino, forcar=forcar)
+
+
+def classificar_supervisionado(pipeline, texto, categorias_validas):
+    probas = pipeline.predict_proba([texto])[0]
+    idx_max = np.argmax(probas)
+    confianca = probas[idx_max] * 100
+    cat_predita = pipeline.classes_[idx_max]
+    if confianca < 50:
+        return "PENDENTE_REVISAO", confianca
+    return cat_predita, confianca
+
+def estimar_criticidade(texto):
+    t = texto.lower()
+    alta = ['urgente', 'incêndio', 'queda', 'choque', 'alagamento', 'infiltração grave', 'perigo']
+    media = ['reparo', 'substituição', 'quebra', 'falha', 'defeito', 'corretiva']
+    if any(p in t for p in alta):
+        return "Alta"
+    if any(p in t for p in media):
+        return "Média"
+    return "Baixa"
+# =====================================================================
+# 10. EIXO 2 – PREVISÃO TEMPORAL AVANÇADA (7 modelos + ensemble + CV)
+# =====================================================================
+
+# =====================================================================
+# [v4.0.3 — Fase 4A] Parser e série de custos (Coluna Q)
+# =====================================================================
+def parse_valor_chamado(valor_raw):
+    """Converte valor da coluna Q em float. Retorna None se inválido.
+
+    Tolera: 'R$ 1.234,56', '1234.56', '1234,56', número Sheets nativo, vazio.
+    """
+    if valor_raw is None or valor_raw == '':
+        return None
+    if isinstance(valor_raw, (int, float)):
+        v = float(valor_raw)
+        return v if v >= 0 else None
+    s = str(valor_raw).strip()
+    if not s:
+        return None
+    s = s.replace('R$', '').replace(' ', '').strip()
+    if ',' in s and '.' in s:
+        # Formato '1.234,56' — remove pontos de milhar, troca vírgula por ponto
+        s = s.replace('.', '').replace(',', '.')
+    elif ',' in s:
+        s = s.replace(',', '.')
+    try:
+        v = float(s)
+        return v if v >= 0 else None
+    except (ValueError, TypeError):
+        return None
+
+
+def construir_serie_custo(dados_linhas):
+    """[v4.0.3] Constrói série mensal de SOMA de custos (R$) — coluna Q.
+
+    Filtros aplicados:
+      - Data de abertura válida (coluna C)
+      - Valor parseável e > 0 (coluna Q)
+
+    Retorna: pd.Series indexada por DatetimeIndex mensal (frequência 'MS')
+             com o valor total daquele mês em reais. Vazia se sem dados.
+
+    NOTA Fase 4A: a função existe e fica pronta para Fase 4B
+    (`executar_previsao_custo`), que reaproveita a infra de previsão.
+    """
+    registros = []
+    for linha in dados_linhas:
+        if len(linha) <= max(COL_DATA_ABERTURA, COL_VALOR):
+            continue
+        data_str = (linha[COL_DATA_ABERTURA] or '').strip()
+        if not data_str:
+            continue
+        data = pd.to_datetime(data_str, format='%d/%m/%Y %H:%M:%S', errors='coerce')
+        if pd.isna(data):
+            data = pd.to_datetime(data_str, format='%d/%m/%Y', errors='coerce')
+        if pd.isna(data):
+            data = pd.to_datetime(data_str, dayfirst=True, errors='coerce')
+        if pd.isna(data):
+            continue
+        valor = parse_valor_chamado(linha[COL_VALOR])
+        if valor is None or valor <= 0:
+            continue
+        registros.append({'data': data, 'valor': valor})
+
+    if not registros:
+        return pd.Series(dtype=float)
+
+    df = pd.DataFrame(registros)
+    df['mes'] = df['data'].dt.to_period('M').dt.to_timestamp()
+    serie = df.groupby('mes')['valor'].sum().sort_index()
+    try:
+        serie.index.freq = 'MS'
+    except Exception:
+        pass
+    return serie
+
+
+# =====================================================================
+# [v4.0.3 — Fase 4A] Indicadores ODS brutos por campus
+# =====================================================================
+def _ler_area_atual_por_campus():
+    """Retorna dict {rotulo_campus: area_total_m2} para o ano mais recente
+    da aba 'Área Manutenção'. Se a aba não existir, retorna {}."""
+    try:
+        aba = doc.worksheet("Área Manutenção")
+        valores = aba.get_all_values()
+    except Exception:
+        return {}
+    if not valores or len(valores) < 2:
+        return {}
+    # Estrutura simples: Ano | Área Construída m² | Área Total m²
+    # Caso a planilha tenha colunas por campus, é adaptada aqui no futuro.
+    # Por enquanto retorna {} (= densidade fica 0 para todos os campi).
+    return {}
+
+
+def calcular_indicadores_ods_por_campus(dados_linhas):
+    """[v4.0.3] Calcula indicadores brutos por campus para painel ODS.
+
+    Grava aba INDICADORES_ODS com 10 indicadores por campus. O HTML lê
+    estes valores junto com PESOS_ODS para compor os índices ODS 9/11/12.
+    Esta função NÃO aplica pesos — só agrega valores brutos.
+    """
+    if not dados_linhas:
+        print("[ODS] Sem dados para calcular indicadores. Pulando.")
+        return
+
+    PADROES_INFRA_CRITICA = [
+        'eletric', 'elétric', 'hidraulic', 'hidráulic', 'estrutural',
+        'incendio', 'incêndio', 'gas', 'gás', 'cobertura', 'telhado',
+        'curto', 'vazamento'
+    ]
+    PADROES_ESPACO_COLETIVO = [
+        'sala de aula', 'laboratório', 'laboratorio', 'biblioteca',
+        'auditório', 'auditorio', 'banheiro coletivo', 'cantina',
+        'estacionamento', 'corredor'
+    ]
+    SLA_DIAS = {'Alta': 3, 'Média': 7, 'Media': 7, 'Baixa': 15}
+
+    # Agrupa por campus
+    campuses = sorted({
+        (l[COL_CAMPUS] or '').strip()
+        for l in dados_linhas
+        if len(l) > COL_CAMPUS and (l[COL_CAMPUS] or '').strip()
+    })
+    if not campuses:
+        print("[ODS] Nenhum campus identificado. Pulando.")
+        return
+
+    area_por_campus = _ler_area_atual_por_campus()
+
+    cabecalho = [
+        'Campus',
+        'N_chamados_total',
+        'N_infra_critica',
+        'Tempo_medio_resolucao_dias',
+        'Taxa_resolucao_no_prazo',
+        'N_criticos_alta',
+        'N_em_espaco_coletivo',
+        'Densidade_chamados_por_1000m2',
+        'Razao_preventiva_corretiva',
+        'Valor_total_gasto_R$',
+        'N_chamados_repetidos'
+    ]
+    linhas_saida = [cabecalho]
+
+    for campus in campuses:
+        chamados_c = [
+            l for l in dados_linhas
+            if len(l) > COL_CAMPUS and (l[COL_CAMPUS] or '').strip() == campus
+        ]
+        n_total = len(chamados_c)
+
+        # Infra crítica (heurística textual em COL_CAT_IA)
+        n_infra = sum(
+            1 for l in chamados_c
+            if len(l) > COL_CAT_IA
+            and any(p in (l[COL_CAT_IA] or '').lower() for p in PADROES_INFRA_CRITICA)
+        )
+
+        # Tempo médio resolução + taxa no prazo (depende de COL_DATA_CONCLUSAO)
+        tempo_medio = None
+        taxa_prazo = None
+        if COL_DATA_CONCLUSAO is not None:
+            tempos = []
+            no_prazo = 0
+            n_concluidos = 0
+            for l in chamados_c:
+                if len(l) <= max(COL_DATA_ABERTURA, COL_DATA_CONCLUSAO):
+                    continue
+                try:
+                    dt_ab = pd.to_datetime(l[COL_DATA_ABERTURA], dayfirst=True, errors='coerce')
+                    dt_cc = pd.to_datetime(l[COL_DATA_CONCLUSAO], dayfirst=True, errors='coerce')
+                except Exception:
+                    continue
+                if pd.isna(dt_ab) or pd.isna(dt_cc) or dt_cc < dt_ab:
+                    continue
+                dias = (dt_cc - dt_ab).days
+                tempos.append(dias)
+                n_concluidos += 1
+                crit = ''
+                if len(l) > COL_CRITICIDADE_OUT:
+                    crit = (l[COL_CRITICIDADE_OUT] or '').strip()
+                if dias <= SLA_DIAS.get(crit, 7):
+                    no_prazo += 1
+            if tempos:
+                tempo_medio = sum(tempos) / len(tempos)
+            if n_concluidos:
+                taxa_prazo = no_prazo / n_concluidos
+
+        # Críticos com criticidade Alta
+        n_alta = sum(
+            1 for l in chamados_c
+            if len(l) > COL_CRITICIDADE_OUT
+            and (l[COL_CRITICIDADE_OUT] or '').strip().lower() == 'alta'
+        )
+
+        # Espaço coletivo (heurística em COL_TITULO)
+        n_coletivo = sum(
+            1 for l in chamados_c
+            if len(l) > COL_TITULO
+            and any(p in (l[COL_TITULO] or '').lower() for p in PADROES_ESPACO_COLETIVO)
+        )
+
+        # Densidade por 1000 m² (depende da aba Área Manutenção)
+        area_m2 = area_por_campus.get(campus, 0)
+        densidade = (n_total / area_m2 * 1000) if area_m2 > 0 else 0.0
+
+        # Razão preventiva/corretiva
+        n_prev = sum(
+            1 for l in chamados_c
+            if len(l) > COL_CAT_IA and 'preventiv' in (l[COL_CAT_IA] or '').lower()
+        )
+        n_corr = sum(
+            1 for l in chamados_c
+            if len(l) > COL_CAT_IA and 'corretiv' in (l[COL_CAT_IA] or '').lower()
+        )
+        if n_corr > 0:
+            razao_pc = n_prev / n_corr
+        elif n_prev > 0:
+            razao_pc = float(n_prev)
+        else:
+            razao_pc = 0.0
+
+        # Valor total gasto (coluna Q)
+        valor_total = 0.0
+        for l in chamados_c:
+            if len(l) > COL_VALOR:
+                v = parse_valor_chamado(l[COL_VALOR])
+                if v is not None:
+                    valor_total += v
+
+        # Chamados repetidos (depende de COL_LOCAL)
+        n_repetidos = 0
+        if COL_LOCAL is not None:
+            contagem_local = {}
+            for l in chamados_c:
+                if len(l) > COL_LOCAL:
+                    loc = (l[COL_LOCAL] or '').strip()
+                    if loc:
+                        contagem_local[loc] = contagem_local.get(loc, 0) + 1
+            n_repetidos = sum(v - 1 for v in contagem_local.values() if v > 1)
+
+        linhas_saida.append([
+            campus,
+            n_total,
+            n_infra,
+            round(tempo_medio, 2) if tempo_medio is not None else '',
+            round(taxa_prazo, 3) if taxa_prazo is not None else '',
+            n_alta,
+            n_coletivo,
+            round(densidade, 3),
+            round(razao_pc, 3),
+            round(valor_total, 2),
+            n_repetidos
+        ])
+
+    # Grava na aba
+    try:
+        aba = obter_aba('INDICADORES_ODS', linhas=200, colunas=11, cabecalho=cabecalho)
+        aba.clear()
+        aba.update(values=linhas_saida, range_name='A1',
+                   value_input_option='USER_ENTERED')
+        print(f"[ODS] INDICADORES_ODS atualizada para {len(campuses)} campi.")
+    except Exception as e:
+        print(f"[ODS] Falha ao gravar INDICADORES_ODS: {e}")
+
+
+def garantir_aba_pesos_ods():
+    """[v4.0.3] Cria a aba PESOS_ODS com pesos-padrão na primeira execução.
+    Se já existe, NÃO sobrescreve (preserva edições do usuário)."""
+    try:
+        doc.worksheet('PESOS_ODS')
+        print("[ODS] Aba PESOS_ODS já existe — preservando edições do usuário.")
+        return
+    except WorksheetNotFound:
+        pass
+    except Exception as e:
+        print(f"[ODS] Erro ao verificar PESOS_ODS: {e}")
+        return
+
+    cabecalho = ['Indicador', 'Sentido',
+                 'ODS_9_Infraestrutura',
+                 'ODS_11_Cidades_Sustentaveis',
+                 'ODS_12_Consumo_Responsavel']
+    linhas_padrao = [
+        cabecalho,
+        ['N_chamados_total',              'minimizar',  0.10, 0.10, 0.05],
+        ['N_infra_critica',               'minimizar',  0.30, 0.10, 0.00],
+        ['Tempo_medio_resolucao_dias',    'minimizar',  0.20, 0.05, 0.10],
+        ['Taxa_resolucao_no_prazo',       'maximizar',  0.20, 0.10, 0.10],
+        ['N_criticos_alta',               'minimizar',  0.10, 0.30, 0.05],
+        ['N_em_espaco_coletivo',          'contextual', 0.05, 0.25, 0.05],
+        ['Densidade_chamados_por_1000m2', 'minimizar',  0.00, 0.05, 0.05],
+        ['Razao_preventiva_corretiva',    'maximizar',  0.05, 0.05, 0.30],
+        ['Valor_total_gasto_R$',          'minimizar',  0.00, 0.00, 0.20],
+        ['N_chamados_repetidos',          'minimizar',  0.00, 0.00, 0.10]
+    ]
+    try:
+        aba = obter_aba('PESOS_ODS', linhas=50, colunas=5, cabecalho=cabecalho)
+        aba.clear()
+        aba.update(values=linhas_padrao, range_name='A1',
+                   value_input_option='USER_ENTERED')
+        print("[ODS] Aba PESOS_ODS criada com pesos padrão. Editável pelo usuário.")
+    except Exception as e:
+        print(f"[ODS] Falha ao criar PESOS_ODS: {e}")
+
 
 def extrair_serie_temporal(dados_linhas):
     """
@@ -907,9 +2116,81 @@ def extrair_serie_temporal(dados_linhas):
     return contagem
 
 
-# =====================================================================
-# 10. UTILITÁRIOS ESTATÍSTICOS E BOOTSTRAP
-# =====================================================================
+def extrair_serie_custo(dados_linhas):
+    """[v4.0.4] Variante de extrair_serie_temporal que agrega por SOMA da
+    coluna Q (Valor do chamado) em vez de COUNT. Devolve DataFrame com
+    estrutura idêntica (Mes_Ano, Quantidade, Mes_Ano_Str) onde a coluna
+    "Quantidade" passa a conter o valor financeiro mensal em R$.
+
+    Filtros aplicados:
+      - Datas futuras (> agora) descartadas
+      - Mês corrente (incompleto) removido
+      - Valor parseável e > 0 (via parse_valor_chamado)
+    Devolve None quando não houver dados suficientes.
+    """
+    agora = datetime.now(FUSO_BAHIA)
+    registros = []
+    for linha in dados_linhas:
+        if len(linha) <= max(COL_DATA_ABERTURA, COL_VALOR):
+            continue
+        data_str = (linha[COL_DATA_ABERTURA] or '').strip()
+        if not data_str:
+            continue
+        data = pd.to_datetime(data_str, format='%d/%m/%Y %H:%M:%S', errors='coerce')
+        if pd.isna(data):
+            data = pd.to_datetime(data_str, format='%d/%m/%Y', errors='coerce')
+        if pd.isna(data):
+            data = pd.to_datetime(data_str, dayfirst=True, errors='coerce')
+        if pd.isna(data):
+            continue
+        try:
+            if data.tz is None and data > agora.replace(tzinfo=None):
+                continue
+            elif data.tz is not None and data > agora:
+                continue
+        except Exception:
+            pass
+        valor = parse_valor_chamado(linha[COL_VALOR])
+        if valor is None or valor <= 0:
+            continue
+        registros.append({'data': data, 'valor': valor})
+
+    if not registros:
+        return None
+
+    df = pd.DataFrame(registros)
+    df['Mes_Ano'] = df['data'].dt.to_period('M')
+    contagem = df.groupby('Mes_Ano')['valor'].sum().reset_index()
+    contagem = contagem.rename(columns={'valor': 'Quantidade'})
+    inicio = contagem['Mes_Ano'].min()
+    fim = contagem['Mes_Ano'].max()
+    if pd.isna(inicio) or pd.isna(fim):
+        return None
+    todos_meses = pd.period_range(inicio, fim, freq='M')
+    contagem = contagem.set_index('Mes_Ano').reindex(todos_meses, fill_value=0.0).reset_index()
+    contagem = contagem.rename(columns={'index': 'Mes_Ano'})
+    contagem['Mes_Ano_Str'] = contagem['Mes_Ano'].dt.strftime('%m/%Y')
+
+    try:
+        mes_atual = pd.Period(year=agora.year, month=agora.month, freq='M')
+        n_antes = len(contagem)
+        contagem = contagem[contagem['Mes_Ano'] < mes_atual].reset_index(drop=True)
+        n_removidos = n_antes - len(contagem)
+        if n_removidos > 0:
+            print(f"[Custo] Mês corrente ({mes_atual.strftime('%m/%Y')}) e posteriores "
+                  f"removidos ({n_removidos} período(s)). Série encerra em "
+                  f"{contagem['Mes_Ano'].max().strftime('%m/%Y')}.")
+    except Exception as e:
+        print(f"[Custo] Aviso ao remover mês incompleto: {e}")
+
+    if len(contagem) < 2:
+        return None
+
+    print(f"[Custo] {len(contagem)} meses completos com valor > 0, "
+          f"de {contagem['Mes_Ano_Str'].iloc[0]} a {contagem['Mes_Ano_Str'].iloc[-1]} "
+          f"(soma total R$ {contagem['Quantidade'].sum():,.2f}).")
+    return contagem
+
 
 def tratar_outliers(serie, z_thresh=THRESH_OUTLIER_Z, janela=5):
     """
@@ -1151,11 +2432,6 @@ def calcular_qqplot_pontos(residuos):
     quantis_teoricos = norm.ppf((np.arange(1, n + 1) - 0.5) / n)
     return list(zip(quantis_teoricos.tolist(), res_ord.tolist()))
 
-
-
-# =====================================================================
-# 11. MODELOS DO EIXO 2 (8 modelos de previsão)
-# =====================================================================
 
 # =====================================================================
 # 11. MODELOS DO EIXO 2
@@ -2280,10 +3556,6 @@ def ajustar_theta(serie, periodo=12):
         return {'nome': 'Theta', 'sucesso': False, 'erro': str(e)}
 
 
-# =====================================================================
-# 11.3 ENSEMBLE, VALIDAÇÃO CRUZADA E TESTES ESTATÍSTICOS
-# =====================================================================
-
 # ---------- ENSEMBLE (média ponderada por inverso do RMSE) ----------
 def calcular_ensemble(resultados_sucesso):
     """
@@ -2805,11 +4077,6 @@ def selecionar_modelo_multicriterio(resultados_sucesso, cv_por_modelo, crps_por_
     }
 
 
-
-# =====================================================================
-# 11.6 HEATMAP DE ERRO, ABLATION, EXPORTAÇÃO CIENTÍFICA, SHAP
-# =====================================================================
-
 # =====================================================================
 # 11.6 EVOLUÇÕES v3.6 — HEATMAP DE ERRO, ABLATION, EXPORT CIENTÍFICO
 # =====================================================================
@@ -3325,12 +4592,6 @@ def gravar_aba_shap(resultados_modelos):
     except Exception as e:
         print(f"[SHAP] Falha não-fatal: {e}")
 
-
-
-
-# =====================================================================
-# 12. EXECUTAR ANÁLISE PREDITIVA AVANÇADA (pipeline principal)
-# =====================================================================
 
 # =====================================================================
 def executar_analise_preditiva_avancada(dados_linhas, sufixo="",
@@ -4548,11 +5809,261 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo="",
     print(f"[Previsão] Concluído. Modelo vencedor: {melhor['nome']}")
 
 
+def executar_previsao_custo(dados_linhas, sufixo=""):
+    """[v4.0.6] Wrapper que aplica o pipeline completo de previsão temporal
+    sobre a série mensal de custos em R$ (soma da coluna Q). Reusa a
+    infraestrutura de executar_analise_preditiva_avancada via parametrização
+    de prefixo de aba e extrator de série. Gera 14 abas com prefixo
+    PREVISAO_CUSTO espelhando o pipeline de chamados.
+
+    Validação prévia: exige MIN_PONTOS_SERIE_CUSTO (12) meses com valor > 0
+    para que os modelos de sazonalidade tenham dados suficientes. Séries mais
+    curtas são puladas com log — mesma regra documentada no dashboard v4.1.2.
+    """
+    _lbl = f" [{sufixo}]" if sufixo else ""
+    # Pré-valida série de custos antes de delegar ao pipeline completo
+    serie_custo = extrair_serie_custo(dados_linhas)
+    if serie_custo is None or len(serie_custo) < MIN_PONTOS_SERIE_CUSTO:
+        n = 0 if serie_custo is None else len(serie_custo)
+        print(f"[Custo{_lbl}] Série insuficiente: {n} meses com custo > 0 "
+              f"(mínimo {MIN_PONTOS_SERIE_CUSTO}) — pulado.")
+        return
+    print(f"[Custo{_lbl}] {len(serie_custo)} meses válidos — iniciando previsão de custos.")
+    return executar_analise_preditiva_avancada(
+        dados_linhas,
+        sufixo=sufixo,
+        prefixo_aba="PREVISAO_CUSTO",
+        extrator=extrair_serie_custo,
+        rotulo_alvo="Custo Real (R$)",
+        unidade="reais"
+    )
 
 
-# =====================================================================
-# 13. UTILITÁRIO DE CONTROLE DE EXECUÇÃO
-# =====================================================================
+def gravar_filtros_disponiveis(dados_linhas):
+    """Escreve FILTROS_DISPONIVEIS com campus, tipos e categorias extraídos de dados_linhas."""
+    try:
+        campuses = sorted({
+            l[COL_CAMPUS].strip()
+            for l in dados_linhas
+            if len(l) > COL_CAMPUS and l[COL_CAMPUS].strip()
+        })
+        prev_cats = set()
+        corr_cats = set()
+        for l in dados_linhas:
+            if len(l) <= COL_CATEGORIA_HIERARQUICA:
+                continue
+            val_m = l[COL_CATEGORIA_HIERARQUICA].strip()
+            if not val_m:
+                continue
+            tipo, cat = extrair_tipo_categoria(val_m)
+            if not cat or cat == 'Desconhecida':
+                continue
+            if tipo == 'Preventiva':
+                prev_cats.add(cat)
+            elif tipo == 'Corretiva':
+                corr_cats.add(cat)
+
+        aba_f = obter_aba("FILTROS_DISPONIVEIS", linhas=300, colunas=4,
+                          cabecalho=["Tipo_Filtro", "Label", "Sufixo_Aba", "N_Registros"])
+        rows = [["Tipo_Filtro", "Label", "Sufixo_Aba", "N_Registros"],
+                ["global", "Todos", "", len(dados_linhas)]]
+        for c in campuses:
+            n = sum(1 for l in dados_linhas if len(l) > COL_CAMPUS and l[COL_CAMPUS].strip() == c)
+            rows.append(["campus", c, f"__{sanitizar_sufixo(c)}", n])
+        for tipo in ("Preventiva", "Corretiva"):
+            filt = [l for l in dados_linhas
+                    if len(l) > COL_CATEGORIA_HIERARQUICA
+                    and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[0] == tipo]
+            rows.append(["tipo", tipo, f"__{tipo}", len(filt)])
+        for cat in sorted(prev_cats):
+            filt_c = [l for l in dados_linhas
+                      if len(l) > COL_CATEGORIA_HIERARQUICA
+                      and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip()) == ('Preventiva', cat)]
+            suf = f"__Prev_{sanitizar_sufixo(cat)}"[:24]
+            rows.append(["cat_prev", cat, suf, len(filt_c)])
+        for cat in sorted(corr_cats):
+            filt_c = [l for l in dados_linhas
+                      if len(l) > COL_CATEGORIA_HIERARQUICA
+                      and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip()) == ('Corretiva', cat)]
+            suf = f"__Corr_{sanitizar_sufixo(cat)}"[:24]
+            rows.append(["cat_corr", cat, suf, len(filt_c)])
+
+        aba_f.clear()
+        aba_f.update(values=rows, range_name='A1', value_input_option='USER_ENTERED')
+        print(f"[Filtros] FILTROS_DISPONIVEIS atualizada: {len(campuses)} campi, "
+              f"{len(prev_cats)} cats preventivas, {len(corr_cats)} cats corretivas.")
+    except Exception as e:
+        print(f"[Filtros] Falha ao gravar FILTROS_DISPONIVEIS: {e}")
+
+
+def executar_todos_filtros(dados_linhas, executar_ods=True):
+    """Roda executar_analise_preditiva_avancada para cada combinação de filtro e grava FILTROS_DISPONIVEIS.
+
+    dados_linhas: lista de linhas SEM o cabeçalho (já vem assim do main loop).
+    executar_ods: se True (default, modo completo), grava também INDICADORES_ODS
+                  e PESOS_ODS ao final. Workflows separados (v4.0.4) podem
+                  passar False para deixar essas abas para outro workflow.
+    O limiar mínimo para tentar rodar é MIN_REGISTROS_FILTRO chamados — a função
+    interna descartará se os meses resultantes forem < MIN_PONTOS_SERIE.
+    """
+    # Mínimo de chamados brutos para valer a pena tentar (heurística: ~5 por mês × 6 meses)
+    MIN_REGISTROS_FILTRO = max(MIN_PONTOS_SERIE * 5, 30)
+
+    gravar_filtros_disponiveis(dados_linhas)
+
+    # ── Por campus ──────────────────────────────────────────────────────────
+    campuses = sorted({
+        l[COL_CAMPUS].strip()
+        for l in dados_linhas
+        if len(l) > COL_CAMPUS and l[COL_CAMPUS].strip()
+    })
+    for campus in campuses:
+        filtrados = [l for l in dados_linhas
+                     if len(l) > COL_CAMPUS and l[COL_CAMPUS].strip() == campus]
+        if len(filtrados) < MIN_REGISTROS_FILTRO:
+            print(f"[Filtros] Campus '{campus}': {len(filtrados)} registros (< {MIN_REGISTROS_FILTRO}) — pulado.")
+            continue
+        suf = f"__{sanitizar_sufixo(campus)}"
+        print(f"[Filtros] Campus '{campus}' → sufixo '{suf}' ({len(filtrados)} registros)")
+        try:
+            executar_analise_preditiva_avancada(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro no campus '{campus}': {e}")
+        # [v4.0.4] Previsão de custos paralela para este recorte
+        try:
+            executar_previsao_custo(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro custos no campus '{campus}': {e}")
+
+    # ── Por tipo (Preventiva / Corretiva) e suas categorias ─────────────────
+    for tipo in ("Preventiva", "Corretiva"):
+        filtrados = [l for l in dados_linhas
+                     if len(l) > COL_CATEGORIA_HIERARQUICA
+                     and l[COL_CATEGORIA_HIERARQUICA].strip()
+                     and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[0] == tipo]
+        if len(filtrados) < MIN_REGISTROS_FILTRO:
+            print(f"[Filtros] Tipo '{tipo}': {len(filtrados)} registros (< {MIN_REGISTROS_FILTRO}) — pulado.")
+            continue
+        suf = f"__{tipo}"
+        print(f"[Filtros] Tipo '{tipo}' → sufixo '{suf}' ({len(filtrados)} registros)")
+        try:
+            executar_analise_preditiva_avancada(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro no tipo '{tipo}': {e}")
+        # [v4.0.4] Previsão de custos paralela para este recorte
+        try:
+            executar_previsao_custo(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro custos no tipo '{tipo}': {e}")
+
+        # Categorias dentro do tipo
+        cats = sorted({
+            extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[1]
+            for l in filtrados
+            if len(l) > COL_CATEGORIA_HIERARQUICA and l[COL_CATEGORIA_HIERARQUICA].strip()
+        })
+        pfx = "Prev" if tipo == "Preventiva" else "Corr"
+        for cat in cats:
+            if not cat or cat == 'Desconhecida':
+                continue
+            filtrados_cat = [l for l in filtrados
+                             if len(l) > COL_CATEGORIA_HIERARQUICA
+                             and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[1] == cat]
+            if len(filtrados_cat) < MIN_REGISTROS_FILTRO:
+                print(f"[Filtros] Cat '{cat}' ({tipo}): {len(filtrados_cat)} registros — pulado.")
+                continue
+            suf_cat = f"__{pfx}_{sanitizar_sufixo(cat)}"[:24]
+            print(f"[Filtros] Cat '{cat}' ({tipo}) → sufixo '{suf_cat}' ({len(filtrados_cat)} registros)")
+            try:
+                executar_analise_preditiva_avancada(filtrados_cat, sufixo=suf_cat)
+            except Exception as e:
+                print(f"[Filtros] Erro na categoria '{cat}': {e}")
+            # [v4.0.4] Previsão de custos paralela para esta categoria
+            try:
+                executar_previsao_custo(filtrados_cat, sufixo=suf_cat)
+            except Exception as e:
+                print(f"[Filtros] Erro custos na categoria '{cat}': {e}")
+
+    # ── [v3.8 — Fase 1.3] PREVISAO_POR_CATEGORIA — aba resumo de todas as cats ──
+    # Coleta resultados das análises por categoria para um resumo executivo.
+    if EXECUTAR_POR_CATEGORIA:
+        try:
+            _cab_cat = ["Categoria", "Tipo", "N_Chamados",
+                        "Modelo_Vencedor", "RMSE", "MAE", "MAPE", "Sufixo_Aba"]
+            _linhas_cat = [_cab_cat]
+            for tipo in ("Preventiva", "Corretiva"):
+                filtrados_t = [l for l in dados_linhas
+                               if len(l) > COL_CATEGORIA_HIERARQUICA
+                               and l[COL_CATEGORIA_HIERARQUICA].strip()
+                               and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[0] == tipo]
+                cats_t = sorted({
+                    extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[1]
+                    for l in filtrados_t
+                    if len(l) > COL_CATEGORIA_HIERARQUICA and l[COL_CATEGORIA_HIERARQUICA].strip()
+                })
+                pfx_t = "Prev" if tipo == "Preventiva" else "Corr"
+                for cat_t in cats_t:
+                    if not cat_t or cat_t == 'Desconhecida':
+                        continue
+                    filtrados_c = [l for l in filtrados_t
+                                   if extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[1] == cat_t]
+                    suf_c = f"__{pfx_t}_{sanitizar_sufixo(cat_t)}"[:24]
+                    # Tenta ler PREVISAO_TEMPORAL desta categoria para extrair métricas
+                    _rmse, _mae, _mape, _venc = "—", "—", "—", "—"
+                    try:
+                        _aba_t = obter_aba(f"PREVISAO_TEMPORAL{suf_c}", linhas=10, colunas=20)
+                        _vals_t = _aba_t.get_all_values()
+                        # Procura linha de métricas (contém "MAE" no cabeçalho da sub-tabela)
+                        for _row in _vals_t:
+                            if len(_row) >= 5 and str(_row[0]).strip().lower() not in ('', 'período', 'modelo', 'coluna'):
+                                # Linha de dados do modelo
+                                try:
+                                    _venc_h = [c for c in _vals_t[0] if 'Vencedor' in str(c)]
+                                    if _venc_h and len(_row) > len(_vals_t[0]) - 1:
+                                        _venc = str(_row[-1])
+                                except Exception:
+                                    pass
+                                break
+                        # Busca linha de métricas resumidas (RMSE/MAE)
+                        for _row in _vals_t:
+                            if len(_row) >= 3 and _row[0] and _row[0] not in ('', 'Período', 'Modelo'):
+                                try:
+                                    _mae  = round(float(str(_row[1]).replace(',','.')), 2)
+                                    _rmse = round(float(str(_row[2]).replace(',','.')), 2)
+                                    if len(_row) >= 5:
+                                        _mape = round(float(str(_row[4]).replace(',','.')), 2)
+                                    break
+                                except Exception:
+                                    pass
+                    except Exception:
+                        pass
+                    _linhas_cat.append([cat_t, tipo, len(filtrados_c),
+                                        _venc, _rmse, _mae, _mape, suf_c])
+
+            aba_pc = obter_aba(
+                "PREVISAO_POR_CATEGORIA", linhas=200, colunas=8,
+                cabecalho=_cab_cat
+            )
+            aba_pc.clear()
+            aba_pc.update(values=_linhas_cat, range_name='A1',
+                          value_input_option='USER_ENTERED')
+            print(f"[Filtros] PREVISAO_POR_CATEGORIA gravada com {len(_linhas_cat)-1} categorias.")
+        except Exception as _e_pc:
+            print(f"[Filtros] PREVISAO_POR_CATEGORIA falhou: {_e_pc}")
+
+    # ── [v4.0.3 — Fase 4A] Indicadores ODS + Pesos ODS ──────────────────────
+    if executar_ods:
+        try:
+            print("[ODS] Calculando indicadores brutos por campus...")
+            calcular_indicadores_ods_por_campus(dados_linhas)
+            garantir_aba_pesos_ods()
+        except Exception as _e_ods:
+            print(f"[ODS] Bloco de indicadores/pesos falhou: {_e_ods}")
+    else:
+        print("[ODS] Pulado (workflow separado v4.0.4 — modo previsao_filtros).")
+
+    print("[Filtros] Execução por filtros concluída.")
+
 
 def previsao_recente_existe(horas=INTERVALO_HORAS_PREVISAO_BOOT):
     """Verifica se houve execução de previsão nas últimas N horas."""
@@ -4573,21 +6084,262 @@ def previsao_recente_existe(horas=INTERVALO_HORAS_PREVISAO_BOOT):
         return delta.total_seconds() < horas * 3600
     except Exception:
         return False
+# =====================================================================
+# 13. LOG DE AUDITORIA
+# =====================================================================
+def rotacionar_logs_se_necessario():
+    """
+    [v3.5 — G10] Rotação automática de logs antigos.
+    Logs com mais de ROTACAO_LOG_DIAS (90 por padrão) são movidos para
+    arquivo CSV em Drive/Malha_IA/logs_arquivo/log_AAAA_MM.csv,
+    mantendo na aba apenas os logs recentes.
+    Executada uma vez por dia (controlada por timestamp em flag-file).
+    """
+    flag_arq = f'{CAMINHO_PASTA}/.ultima_rotacao_log'
+    hoje = datetime.now(FUSO_BAHIA).date()
+    # Verifica se já rodou hoje
+    if os.path.exists(flag_arq):
+        try:
+            with open(flag_arq, 'r') as f:
+                ultima_str = f.read().strip()
+            ultima_data = datetime.fromisoformat(ultima_str).date()
+            if ultima_data == hoje:
+                return  # já rodou hoje
+        except Exception:
+            pass
+
+    try:
+        aba_log = obter_aba("LOG_CLASSIFICACAO", linhas=5000, colunas=10)
+        valores = aba_log.get_all_values()
+        if len(valores) < 2:
+            return
+        cab = valores[0]
+        rows = valores[1:]
+        limite = datetime.now(FUSO_BAHIA) - timedelta(days=ROTACAO_LOG_DIAS)
+
+        # Separa antigos x recentes
+        antigos = []
+        recentes = []
+        for r in rows:
+            try:
+                ts = datetime.strptime(r[0], '%d/%m/%Y %H:%M:%S')
+                if hasattr(FUSO_BAHIA, 'localize'):
+                    ts = FUSO_BAHIA.localize(ts)
+                else:
+                    ts = ts.replace(tzinfo=FUSO_BAHIA)
+                if ts < limite:
+                    antigos.append(r)
+                else:
+                    recentes.append(r)
+            except Exception:
+                recentes.append(r)  # se não parsear, mantém
+
+        if not antigos:
+            # Nada a rotacionar — só atualiza a flag
+            with open(flag_arq, 'w') as f:
+                f.write(datetime.now(FUSO_BAHIA).isoformat())
+            return
+
+        # Salva antigos em CSV mensal por timestamp
+        pasta_arq = f'{CAMINHO_PASTA}/logs_arquivo'
+        os.makedirs(pasta_arq, exist_ok=True)
+        # Agrupa por mês
+        por_mes = {}
+        for r in antigos:
+            try:
+                ts = datetime.strptime(r[0], '%d/%m/%Y %H:%M:%S')
+                chave = ts.strftime('%Y_%m')
+            except Exception:
+                chave = 'sem_data'
+            por_mes.setdefault(chave, []).append(r)
+
+        for chave, linhas_mes in por_mes.items():
+            arq_csv = f'{pasta_arq}/log_{chave}.csv'
+            modo = 'a' if os.path.exists(arq_csv) else 'w'
+            df_export = pd.DataFrame(linhas_mes, columns=cab[:len(linhas_mes[0])] if linhas_mes else cab)
+            df_export.to_csv(arq_csv, mode=modo, header=(modo == 'w'),
+                              index=False, encoding='utf-8')
+
+        # Reescreve a aba apenas com recentes
+        aba_log.clear()
+        aba_log.update(values=[cab] + recentes, range_name='A1',
+                       value_input_option='USER_ENTERED')
+
+        with open(flag_arq, 'w') as f:
+            f.write(datetime.now(FUSO_BAHIA).isoformat())
+        print(f"[Rotação] {len(antigos)} log(s) movido(s) para CSV em {pasta_arq}.")
+    except Exception as e:
+        print(f"[Rotação] Falha não-fatal: {e}")
+
+
+def registrar_log(num_linha, texto, cat_original, cat_ia, confianca, criticidade, origem, decisao):
+    try:
+        aba_log = obter_aba(
+            "LOG_CLASSIFICACAO", linhas=5000, colunas=10,
+            cabecalho=["Timestamp", "Linha", "Texto", "Cat_Original",
+                       "Cat_IA", "Confianca", "Criticidade", "Origem", "Decisao"]
+        )
+        timestamp = datetime.now(FUSO_BAHIA).strftime('%d/%m/%Y %H:%M:%S')
+        nova_linha = [timestamp, num_linha, texto[:120], cat_original, cat_ia,
+                      confianca_para_decimal(confianca), criticidade, origem, decisao]
+        aba_log.append_row(nova_linha, value_input_option='USER_ENTERED')
+    except Exception as e:
+        print(f"[Aviso] Falha ao gravar log da linha {num_linha}: {e}")
+
+# =====================================================================
+# 14. CLASSIFICAÇÃO POR LLM EXTERNO — REMOVIDA EM v4.0.0
+# =====================================================================
+# Em v4.0.0, a classificação passou a ser 100% LOCAL, executada pela LSTM
+# Bidirecional (`treinar_classificador_lstm`) com fallback opcional para
+# RandomForest. As chamadas a Groq/Gemini/DeepSeek/OpenRouter/SambaNova
+# foram completamente removidas do fluxo operacional.
+#
+# A função `chamar_llm_batch` permanece definida apenas como STUB que
+# levanta NotImplementedError caso algum código antigo ainda a invoque,
+# garantindo falha rápida e explícita ao invés de comportamento silencioso.
+#
+# O código original das APIs externas foi removido. Caso seja necessário
+# resgatá-lo no futuro, consultar a versão v3.7.x no histórico do git.
+# =====================================================================
+class _ErroLLMTransitorio(Exception):
+    """[v4.0.0 — DESATIVADO] Marca erro que justificaria retry. Não usado."""
+    pass
+
+class _ErroLLMPermanente(Exception):
+    """[v4.0.0 — DESATIVADO] Marca erro que não deve ser retentado. Não usado."""
+    pass
+
+
+def chamar_llm_batch(itens, categorias_validas):
+    """
+    [v4.0.0 — STUB] APIs externas de LLM foram REMOVIDAS do motor.
+    Esta função permanece definida apenas para detectar e bloquear
+    chamadas legadas. Toda classificação é feita localmente pela LSTM
+    (ou fallback RandomForest) em iniciar_motor_operacional().
+    """
+    raise NotImplementedError(
+        "[v4.0.0] chamar_llm_batch foi removido. "
+        "Toda classificação é local (LSTM/RF). "
+        "Se você chegou aqui, há código legado que precisa ser atualizado."
+    )
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Código original das APIs externas (Groq/Gemini/DeepSeek/OpenRouter/
+# SambaNova) foi removido em v4.0.0. As funções abaixo são mantidas
+# como NO-OP apenas para evitar NameError em qualquer caller residual.
+# ─────────────────────────────────────────────────────────────────────
 
 
 # =====================================================================
-# 14. MODO OPERACIONAL E ENTRY POINT
+# 15. MOTOR PRINCIPAL
 # =====================================================================
+# =====================================================================
+# [v4.0.4] MODOS DE EXECUÇÃO ESPECIALIZADOS
+# Cada modo faz só uma parte do pipeline, viabilizando 4 workflows
+# GitHub Actions com cadências distintas.
+# =====================================================================
+def _modo_classificacao():
+    """[v4.0.4] Treina/carrega LSTM + processa 1 lote de 15 chamados. Rápido."""
+    LIMIAR_CONFIANCA = 70
+    LIMIAR_ALTA_CONFIANCA = 95.0
+    TAMANHO_LOTE = 15
+    try:
+        todas_linhas = planilha.get_all_values()
+    except APIError as e:
+        print(f"[Modo classificacao] Falha ao ler planilha: {e}")
+        return
+    dados_op = todas_linhas[1:]
+    atualizar_categorias(dados_op)
+    df_treino = carregar_dados_rotulados(dados_op)
+    pipeline, _ = (treinar_classificador_lstm(df_treino)
+                   if df_treino is not None else (None, None))
+    _eh_lstm = isinstance(pipeline, LSTMClassifier)
+    nome_origem_alta  = "Supervisionado_LSTM"            if _eh_lstm else "RF_Fallback"
+    nome_origem_baixa = "Supervisionado_LSTM_baixa_conf" if _eh_lstm else "RF_Fallback_baixa_conf"
+    print(f"[Modo classificacao] Classificador ativo: {'LSTM' if _eh_lstm else ('RF' if pipeline else 'NENHUM')}")
+
+    # Coleta lote de pendentes
+    lote = []
+    for i, linha in enumerate(todas_linhas):
+        if i == 0:
+            continue
+        cat_ia = linha[COL_CAT_IA].strip() if len(linha) > COL_CAT_IA else ""
+        if cat_ia == "":
+            texto = montar_texto_classificacao(linha)
+            if not texto:
+                continue
+            cat_orig = linha[COL_CATEGORIA_HIERARQUICA] if len(linha) > COL_CATEGORIA_HIERARQUICA else ""
+            lote.append({"num_linha": i + 1, "texto": texto, "cat_original": cat_orig})
+            if len(lote) >= TAMANHO_LOTE:
+                break
+
+    if not lote:
+        print("[Modo classificacao] Nenhum chamado pendente. Encerrando.")
+        return
+
+    for item in lote:
+        if pipeline is None:
+            item['cat_predita'] = item['cat_original'] or 'PENDENTE_REVISAO'
+            item['confianca'] = 0
+            item['origem'] = 'SemClassificador'
+            continue
+        cat, conf = classificar_supervisionado(pipeline, item['texto'], categorias_unicas)
+        if cat == "PENDENTE_REVISAO" or conf < LIMIAR_CONFIANCA:
+            item['cat_predita'] = item['cat_original'] or 'PENDENTE_REVISAO'
+            item['confianca'] = conf; item['origem'] = nome_origem_baixa
+        elif conf >= LIMIAR_ALTA_CONFIANCA:
+            item['cat_predita'] = cat
+            item['confianca'] = conf; item['origem'] = nome_origem_alta
+        else:
+            item['cat_predita'] = cat
+            item['confianca'] = conf; item['origem'] = nome_origem_baixa
+
+    celulas = []
+    for item in lote:
+        if item['cat_predita'] not in categorias_unicas and item['cat_predita'] != 'PENDENTE_REVISAO':
+            item['cat_predita'] = 'PENDENTE_REVISAO'
+        crit = estimar_criticidade(item['texto'])
+        executor = extrair_nome_executor(item['origem'])
+        num = item['num_linha']
+        celulas.append(gspread.Cell(num, COL_CAT_IA_OUT, item['cat_predita']))
+        celulas.append(gspread.Cell(num, COL_AVALIACAO_OUT, confianca_para_decimal(item['confianca'])))
+        celulas.append(gspread.Cell(num, COL_EXECUTOR_OUT, executor))
+        celulas.append(gspread.Cell(num, COL_CRITICIDADE_OUT, crit))
+        registrar_log(num, item['texto'], item['cat_original'], item['cat_predita'],
+                      item['confianca'], crit, item['origem'], "Processado")
+
+    try:
+        planilha.update_cells(celulas, value_input_option='USER_ENTERED')
+        print(f"[Modo classificacao] {len(lote)} chamados classificados e gravados.")
+    except APIError as e:
+        print(f"[Modo classificacao] Erro ao gravar: {e}")
+
+
+def _modo_previsao_global():
+    """[v4.0.4] Previsão global combinada (chamados + custos). Sem filtros. Sem ODS.
+    Mantida para workflow_dispatch manual e compatibilidade legada.
+    Em produção prefer usar --apenas-previsao-chamados e --apenas-previsao-custos
+    em workflows separados para evitar timeout de 60 min. [v4.0.8]
+    """
+    try:
+        todas_linhas = planilha.get_all_values()
+    except APIError as e:
+        print(f"[Modo previsao_global] Falha: {e}"); return
+    dados_op = todas_linhas[1:]
+    atualizar_categorias(dados_op)
+    executar_analise_preditiva_avancada(dados_op, sufixo="")
+    try:
+        executar_previsao_custo(dados_op, sufixo="")
+    except Exception as e:
+        print(f"[Custo] Erro na previsão global de custos: {e}")
+
 
 def _modo_previsao_chamados():
     """[v4.0.8] Só previsão global de chamados (contagem). Sem custos, sem filtros, sem ODS.
     Projetado para rodar uma vez por dia (workflow previsao_chamados_global).
     Gera as 14 abas PREVISAO_* sem sufixo (TEMPORAL, DETALHES, INCERTEZAS, etc.).
     """
-    if previsao_recente_existe():
-        print(f"[Modo previsao_chamados] Previsão recente encontrada "
-              f"(< {INTERVALO_HORAS_PREVISAO_BOOT}h). Abortando para evitar re-execução.")
-        return
     try:
         todas_linhas = planilha.get_all_values()
     except APIError as e:
@@ -4597,23 +6349,456 @@ def _modo_previsao_chamados():
     executar_analise_preditiva_avancada(dados_op, sufixo="")
 
 
-# =====================================================================
-# ENTRY POINT
-# =====================================================================
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser(
-        description="Motor Malha IA — módulo de previsão de chamados (v4.0.8)"
-    )
-    parser.add_argument(
-        "--apenas-previsao-chamados",
-        action="store_true",
-        help="Executa APENAS o pipeline de previsão global de chamados/mês."
-    )
-    args = parser.parse_args()
+def _modo_previsao_custos():
+    """[v4.0.8] Só previsão global de custos (R$/mês — coluna Q). Sem chamados, sem filtros, sem ODS.
+    Projetado para rodar uma vez por dia com 12h de defasagem em relação a
+    _modo_previsao_chamados (workflow previsao_custo_global).
+    Gera as 4 abas PREVISAO_CUSTO_* sem sufixo (TEMPORAL, DETALHES, INCERTEZAS, VALIDACAO).
+    """
+    try:
+        todas_linhas = planilha.get_all_values()
+    except APIError as e:
+        print(f"[Modo previsao_custos] Falha: {e}"); return
+    dados_op = todas_linhas[1:]
+    atualizar_categorias(dados_op)
+    try:
+        executar_previsao_custo(dados_op, sufixo="")
+    except Exception as e:
+        print(f"[Custo] Erro na previsão global de custos: {e}")
 
-    if args.apenas_previsao_chamados:
-        _modo_previsao_chamados()
+
+def _modo_previsao_filtros():
+    """[v4.0.4] Só filtros (campus/tipo/categoria). Sem global. Sem ODS."""
+    try:
+        todas_linhas = planilha.get_all_values()
+    except APIError as e:
+        print(f"[Modo previsao_filtros] Falha: {e}"); return
+    dados_op = todas_linhas[1:]
+    atualizar_categorias(dados_op)
+    executar_todos_filtros(dados_op, executar_ods=False)
+
+
+def _modo_reclassificacao():
+    """[v4.0.5] Reavalia chamados classificados com baixa confiança usando
+    LSTM atual (já mais treinado) e os 4 campos textuais (B+W+X+Y).
+
+    Critério de seleção:
+      - COL_CAT_IA_OUT preenchida (já classificado)
+      - confiança < LIMIAR_RECLASSIFICACAO (default 0.80)
+      - COL_CONFERENCIA (AF) != TRUE (preserva revisão humana)
+
+    Critério de sobrescrita:
+      - nova_confianca > confianca_antiga + DELTA_MELHORIA_MINIMA
+      - OU categoria mudou e nova_confianca >= LIMIAR_RECLASSIFICACAO
+
+    Loga cada mudança em LOG_CLASSIFICACAO com origem 'Reclassificacao_LSTM'.
+    """
+    try:
+        todas_linhas = planilha.get_all_values()
+    except APIError as e:
+        print(f"[Modo reclassificacao] Falha ao ler planilha: {e}")
+        return
+    dados_op = todas_linhas[1:]
+    atualizar_categorias(dados_op)
+
+    # Treina/recarrega o classificador (precisa estar atualizado)
+    df_treino = carregar_dados_rotulados(dados_op)
+    pipeline, _ = (treinar_classificador_lstm(df_treino)
+                   if df_treino is not None else (None, None))
+    if pipeline is None:
+        print("[Modo reclassificacao] Sem classificador disponível. Encerrando.")
+        return
+    _eh_lstm = isinstance(pipeline, LSTMClassifier)
+    nome_origem = "Reclassificacao_LSTM" if _eh_lstm else "Reclassificacao_RF"
+    print(f"[Modo reclassificacao] Classificador: "
+          f"{'LSTM' if _eh_lstm else 'RF'} | "
+          f"Limiar={LIMIAR_RECLASSIFICACAO} | Delta={DELTA_MELHORIA_MINIMA}")
+
+    # Identifica candidatos: classificado + baixa confiança + sem conferência
+    candidatos = []
+    for i, linha in enumerate(todas_linhas):
+        if i == 0:
+            continue
+        if len(linha) <= COL_AVALIACAO_OUT:
+            continue
+        cat_atual = (linha[COL_CAT_IA_OUT] or '').strip() if len(linha) > COL_CAT_IA_OUT else ''
+        if not cat_atual:
+            continue  # ainda não classificado — workflow 1 cuida
+        # Respeita conferência humana (caixa de seleção AF)
+        conf_marcada = ''
+        if len(linha) > COL_CONFERENCIA:
+            conf_marcada = (linha[COL_CONFERENCIA] or '').strip().upper()
+        if conf_marcada in ('TRUE', 'VERDADEIRO', '1', 'SIM'):
+            continue
+        # Lê confiança antiga (string '0.85' → float)
+        try:
+            conf_antiga = float(str(linha[COL_AVALIACAO_OUT]).replace(',', '.'))
+        except (ValueError, TypeError):
+            continue
+        if conf_antiga >= LIMIAR_RECLASSIFICACAO:
+            continue
+        texto = montar_texto_classificacao(linha)
+        if not texto or len(texto) < 5:
+            continue
+        cat_original = linha[COL_CATEGORIA_HIERARQUICA] if len(linha) > COL_CATEGORIA_HIERARQUICA else ''
+        candidatos.append({
+            'num_linha': i + 1,
+            'texto': texto,
+            'cat_original': cat_original,
+            'cat_atual': cat_atual,
+            'conf_antiga': conf_antiga
+        })
+        if len(candidatos) >= LOTE_RECLASSIFICACAO:
+            break
+
+    if not candidatos:
+        print("[Modo reclassificacao] Nenhum chamado elegível para reclassificação.")
+        return
+
+    print(f"[Modo reclassificacao] {len(candidatos)} candidato(s) com "
+          f"confiança < {LIMIAR_RECLASSIFICACAO}.")
+
+    celulas_update = []
+    n_alterados = 0
+    n_inalterados = 0
+    for c in candidatos:
+        nova_cat, nova_conf_pct = classificar_supervisionado(
+            pipeline, c['texto'], categorias_unicas
+        )
+        nova_conf = nova_conf_pct / 100.0
+        # Política de sobrescrita
+        sobrescrever = False
+        motivo = ''
+        if nova_cat == 'PENDENTE_REVISAO':
+            sobrescrever = False; motivo = 'nova_cat=PENDENTE_REVISAO'
+        elif nova_cat == c['cat_atual'] and nova_conf > c['conf_antiga'] + DELTA_MELHORIA_MINIMA:
+            sobrescrever = True; motivo = 'mesma cat, +confiança'
+        elif nova_cat != c['cat_atual'] and nova_conf >= LIMIAR_RECLASSIFICACAO:
+            sobrescrever = True; motivo = 'nova cat, alta confiança'
+        elif nova_conf > c['conf_antiga'] + DELTA_MELHORIA_MINIMA:
+            sobrescrever = True; motivo = 'melhoria forte'
+
+        if not sobrescrever:
+            n_inalterados += 1
+            continue
+
+        crit = estimar_criticidade(c['texto'])
+        executor = extrair_nome_executor(nome_origem)
+        num = c['num_linha']
+        celulas_update.append(gspread.Cell(num, COL_CAT_IA_OUT, nova_cat))
+        celulas_update.append(gspread.Cell(num, COL_AVALIACAO_OUT,
+                                           confianca_para_decimal(nova_conf_pct)))
+        celulas_update.append(gspread.Cell(num, COL_EXECUTOR_OUT, executor))
+        celulas_update.append(gspread.Cell(num, COL_CRITICIDADE_OUT, crit))
+        registrar_log(num, c['texto'], c['cat_original'], nova_cat,
+                      nova_conf_pct, crit, nome_origem,
+                      f"Reclass: {c['cat_atual']}→{nova_cat} "
+                      f"({c['conf_antiga']:.2f}→{nova_conf:.2f}) [{motivo}]")
+        n_alterados += 1
+
+    if celulas_update:
+        try:
+            planilha.update_cells(celulas_update, value_input_option='USER_ENTERED')
+            print(f"[Modo reclassificacao] {n_alterados} reclassificado(s), "
+                  f"{n_inalterados} mantido(s).")
+        except APIError as e:
+            print(f"[Modo reclassificacao] Erro ao gravar: {e}")
     else:
-        print("[motor_previsao_chamados] Nenhum modo ativo. "
-              "Use --apenas-previsao-chamados para executar.")
+        print(f"[Modo reclassificacao] Nenhuma alteração: nenhum candidato "
+              f"melhorou o suficiente (>{DELTA_MELHORIA_MINIMA} ou mudança "
+              f"para nova cat ≥{LIMIAR_RECLASSIFICACAO}).")
+
+
+def _modo_ods():
+    """[v4.0.4] Só indicadores ODS + aba PESOS_ODS."""
+    try:
+        todas_linhas = planilha.get_all_values()
+    except APIError as e:
+        print(f"[Modo ods] Falha: {e}"); return
+    dados_op = todas_linhas[1:]
+    atualizar_categorias(dados_op)
+    try:
+        print("[ODS] Calculando indicadores brutos por campus...")
+        calcular_indicadores_ods_por_campus(dados_op)
+        garantir_aba_pesos_ods()
+    except Exception as e:
+        print(f"[Modo ods] Falha: {e}")
+
+
+def iniciar_motor_operacional():
+    print("=" * 70)
+    print(f"MOTOR DE GOVERNANÇA PREDITIVA — {_VERSAO_MOTOR}")
+    print("Classificação 100% LOCAL: LSTM Bidirecional (fallback RF)")
+    print("APIs externas de LLM: REMOVIDAS")
+    print("=" * 70)
+
+    # [v4.0.4] Dispatcher por modo de execução
+    MODO = os.environ.get('MOTOR_MODO', 'completo').strip().lower()
+    print(f"[Motor] MODO = {MODO}")
+    rotacionar_logs_se_necessario()
+
+    if MODO == 'classificacao':
+        return _modo_classificacao()
+    if MODO == 'reclassificacao':
+        return _modo_reclassificacao()
+    if MODO == 'previsao_global':
+        return _modo_previsao_global()
+    if MODO == 'previsao_chamados':      # [v4.0.8] workflow separado — só chamados
+        return _modo_previsao_chamados()
+    if MODO == 'previsao_custos':        # [v4.0.8] workflow separado — só custos
+        return _modo_previsao_custos()
+    if MODO == 'previsao_filtros':
+        return _modo_previsao_filtros()
+    if MODO == 'ods':
+        return _modo_ods()
+    # MODO == 'completo' → comportamento existente (Colab/legado)
+
+    TAMANHO_LOTE = 15
+    LIMIAR_CONFIANCA = 70
+    PAUSA_ATIVA = 30
+    PAUSA_OCIOSA = 300
+
+    # [v4.0.1] Limite de ciclos via env var — viabiliza execução agendada
+    # (Task Scheduler, GitHub Actions, cron). Default 0 = loop infinito (Colab).
+    try:
+        MAX_CICLOS = int(os.environ.get('MOTOR_MAX_CICLOS', '0'))
+    except ValueError:
+        MAX_CICLOS = 0
+    if MAX_CICLOS > 0:
+        print(f"[Motor] MOTOR_MAX_CICLOS={MAX_CICLOS} — executando ciclos limitados "
+              f"e encerrando ao final (modo agendado).")
+    else:
+        print("[Motor] MOTOR_MAX_CICLOS=0 (ilimitado) — loop contínuo (modo Colab).")
+
+    pipeline_supervisionado = None
+    contador_ciclos = 0
+
+    # G10: rotação de logs já feita pelo dispatcher (v4.0.4)
+
+    try:
+        primeiras = planilha.get_all_values()
+        atualizar_categorias(primeiras[1:])
+        df_treino = carregar_dados_rotulados(primeiras[1:])
+        # [v4.0.0] Classificador PRIMÁRIO: LSTM Bidirecional.
+        # Se TF indisponível ou falha de treino, fallback RandomForest.
+        # NUNCA cai para LLM externo (removido em v4.0.0).
+        pipeline_supervisionado, metricas_clf = (
+            treinar_classificador_lstm(df_treino)
+            if df_treino is not None else (None, None)
+        )
+        # Flag para identificar o tipo de classificador ativo
+        _eh_lstm = isinstance(pipeline_supervisionado, LSTMClassifier)
+        _tipo_clf = "LSTM" if _eh_lstm else ("RF_Fallback" if pipeline_supervisionado else "Nenhum")
+        print(f"[Motor] Classificador ativo: {_tipo_clf}")
+        # Boot: roda previsão apenas se não há execução recente
+        if not previsao_recente_existe(horas=INTERVALO_HORAS_PREVISAO_BOOT):
+            print("[Boot] Última previsão >24h ou inexistente — executando agora.")
+            executar_analise_preditiva_avancada(primeiras[1:], sufixo="")
+            # [v4.0.4] Previsão de custos paralela no boot
+            try:
+                executar_previsao_custo(primeiras[1:], sufixo="")
+            except Exception as e:
+                print(f"[Custo] Erro na previsão global de custos (boot): {e}")
+            if FILTROS_ATIVOS:
+                print("[Boot] FILTROS_ATIVOS=True — rodando análise por campus/tipo/categoria...")
+                executar_todos_filtros(primeiras[1:])
+        else:
+            print(f"[Boot] Previsão recente (<{INTERVALO_HORAS_PREVISAO_BOOT}h) detectada — pulando.")
+    except Exception as e:
+        print(f"[Boot] Falha na inicialização opcional: {e}")
+
+    while True:
+        try:
+            todas_as_linhas = planilha.get_all_values()
+        except APIError as e:
+            print(f"[Cota] Erro ao ler planilha: {e}. Aguardando 10 minutos.")
+            time.sleep(600)
+            continue
+
+        dados_operacionais = todas_as_linhas[1:]
+        atualizar_categorias(dados_operacionais)
+
+        lote_reserva = []
+        for i, linha in enumerate(todas_as_linhas):
+            if i == 0:
+                continue
+            cat_ia = linha[COL_CAT_IA].strip() if len(linha) > COL_CAT_IA else ""
+            if cat_ia == "":
+                texto = montar_texto_classificacao(linha)
+                if not texto:
+                    continue
+                cat_original = linha[COL_CATEGORIA_HIERARQUICA] if len(linha) > COL_CATEGORIA_HIERARQUICA else ""
+                lote_reserva.append({
+                    "num_linha": i + 1,
+                    "texto": texto,
+                    "cat_original": cat_original
+                })
+                if len(lote_reserva) >= TAMANHO_LOTE:
+                    break
+
+        if not lote_reserva:
+            print("[Idle] Nenhum item a processar.")
+            # Em modo idle, roda previsão apenas se não há execução recente
+            if not previsao_recente_existe(horas=INTERVALO_HORAS_PREVISAO_BOOT):
+                executar_analise_preditiva_avancada(dados_operacionais, sufixo="")
+                # [v4.0.6] Previsão de custos no idle (espelha chamados)
+                try:
+                    executar_previsao_custo(dados_operacionais, sufixo="")
+                except Exception as _e_idle:
+                    print(f"[Custo] Erro na previsão de custos (idle): {_e_idle}")
+                if FILTROS_ATIVOS:
+                    executar_todos_filtros(dados_operacionais)
+            # [v4.0.1] Em modo agendado, encerra após o idle (não dorme PAUSA_OCIOSA)
+            if MAX_CICLOS > 0:
+                print(f"[Motor] Modo agendado: encerrando após ciclo idle.")
+                return
+            time.sleep(PAUSA_OCIOSA)
+            continue
+
+        # ─────────────────────────────────────────────────────────────────
+        # [v4.0.0] CLASSIFICAÇÃO 100% LOCAL — LSTM (ou RF em emergência).
+        # APIs externas de LLM foram REMOVIDAS. O bloco antigo de
+        # chamar_llm_batch() ficou apenas como comentário no final do
+        # módulo, para referência histórica.
+        #
+        # Limiares de confiança:
+        #   ≥ 95% → "Supervisionado_LSTM" (alta confiança, aceita)
+        #   ≥ LIMIAR_CONFIANCA (70%) e < 95% → aceita com tag de baixa conf
+        #   <  LIMIAR_CONFIANCA → mantém categoria original ou PENDENTE_REVISAO
+        # ─────────────────────────────────────────────────────────────────
+        LIMIAR_ALTA_CONFIANCA = 95.0
+        nome_origem_alta  = "Supervisionado_LSTM"   if _eh_lstm else "RF_Fallback"
+        nome_origem_baixa = "Supervisionado_LSTM_baixa_conf" if _eh_lstm else "RF_Fallback_baixa_conf"
+
+        for item in lote_reserva:
+            item['cat_predita'] = None
+            item['confianca'] = 0
+            item['origem'] = ''
+            if pipeline_supervisionado is None:
+                # Sem classificador algum: mantém categoria original (se houver)
+                # ou marca para revisão manual. Nada de LLM.
+                item['cat_predita'] = item['cat_original'] if item['cat_original'] else 'PENDENTE_REVISAO'
+                item['confianca'] = 0
+                item['origem'] = 'SemClassificador'
+                continue
+
+            cat, conf = classificar_supervisionado(
+                pipeline_supervisionado, item['texto'], categorias_unicas
+            )
+
+            if cat == "PENDENTE_REVISAO" or conf < LIMIAR_CONFIANCA:
+                # Baixa confiança absoluta: respeita rótulo original quando existir
+                item['cat_predita'] = item['cat_original'] if item['cat_original'] else 'PENDENTE_REVISAO'
+                item['confianca']   = conf
+                item['origem']      = nome_origem_baixa
+            elif conf >= LIMIAR_ALTA_CONFIANCA:
+                # Alta confiança: aceita previsão da LSTM/RF
+                item['cat_predita'] = cat
+                item['confianca']   = conf
+                item['origem']      = nome_origem_alta
+            else:
+                # Faixa intermediária [LIMIAR_CONFIANCA, 95): aceita mas marca como baixa conf
+                item['cat_predita'] = cat
+                item['confianca']   = conf
+                item['origem']      = nome_origem_baixa
+
+        celulas_update = []
+        for item in lote_reserva:
+            if item['cat_predita'] is None:
+                item['cat_predita'] = item['cat_original'] if item['cat_original'] else 'PENDENTE_REVISAO'
+                item['confianca'] = 0
+                item['origem'] = 'NaoProcessado'
+            if item['cat_predita'] not in categorias_unicas and item['cat_predita'] != 'PENDENTE_REVISAO':
+                item['cat_predita'] = 'PENDENTE_REVISAO'
+
+            criticidade = estimar_criticidade(item['texto'])
+            executor = extrair_nome_executor(item['origem'])
+            num = item['num_linha']
+
+            celulas_update.append(gspread.Cell(num, COL_CAT_IA_OUT, item['cat_predita']))
+            celulas_update.append(gspread.Cell(num, COL_AVALIACAO_OUT, confianca_para_decimal(item['confianca'])))
+            celulas_update.append(gspread.Cell(num, COL_EXECUTOR_OUT, executor))
+            celulas_update.append(gspread.Cell(num, COL_CRITICIDADE_OUT, criticidade))
+
+            registrar_log(num, item['texto'], item['cat_original'],
+                          item['cat_predita'], item['confianca'], criticidade,
+                          item['origem'], "Processado")
+
+        try:
+            planilha.update_cells(celulas_update, value_input_option='USER_ENTERED')
+        except APIError as e:
+            print(f"[Cota] Erro ao gravar resultados: {e}. Aguardando 10 minutos.")
+            time.sleep(600)
+            continue
+
+        contador_ciclos += 1
+        print(f"[Sucesso] Ciclo {contador_ciclos}: {len(lote_reserva)} itens processados "
+              f"(total acumulado ≈ {contador_ciclos * TAMANHO_LOTE} chamados).")
+
+        if contador_ciclos % INTERVALO_PREVISAO_CICLOS == 0:
+            print(f"[Cadência] Ciclo {contador_ciclos} (≈ {contador_ciclos * TAMANHO_LOTE} chamados): "
+                  f"executando previsão temporal completa.")
+            executar_analise_preditiva_avancada(dados_operacionais)
+            # [v4.0.6] Previsão de custos na cadência (espelha chamados)
+            try:
+                executar_previsao_custo(dados_operacionais, sufixo="")
+            except Exception as _e_cad:
+                print(f"[Custo] Erro na previsão de custos (cadência): {_e_cad}")
+
+        if contador_ciclos % INTERVALO_RETREINO_CICLOS == 0:
+            print(f"[Retreino] Ciclo {contador_ciclos}: avaliando classificador (LSTM).")
+            df_treino = carregar_dados_rotulados(dados_operacionais)
+            if df_treino is not None:
+                # [v4.0.1] Retreino também usa LSTM (era RF — inconsistência v4.0.0)
+                novo_pipeline, _ = treinar_classificador_lstm(df_treino)
+                if novo_pipeline is not None:
+                    pipeline_supervisionado = novo_pipeline
+                    _eh_lstm = isinstance(pipeline_supervisionado, LSTMClassifier)
+                    nome_origem_alta  = "Supervisionado_LSTM" if _eh_lstm else "RF_Fallback"
+                    nome_origem_baixa = ("Supervisionado_LSTM_baixa_conf"
+                                         if _eh_lstm else "RF_Fallback_baixa_conf")
+
+        # [v4.0.1] Encerra limpo se atingiu o limite de ciclos (modo agendado)
+        if MAX_CICLOS > 0 and contador_ciclos >= MAX_CICLOS:
+            print(f"[Motor] Atingido MOTOR_MAX_CICLOS={MAX_CICLOS}. "
+                  f"Encerrando após {contador_ciclos} ciclo(s) processado(s).")
+            return
+
+        time.sleep(PAUSA_ATIVA)
+
+# =====================================================================
+# ENTRY POINT [v4.0.1]
+# Suporta:
+#   - Execução direta (Colab/notebook): roda em loop infinito (default)
+#   - Execução agendada (Task Scheduler/cron):
+#       python motor_v36.py --ciclo-unico
+#     ou definindo a env var:
+#       MOTOR_MAX_CICLOS=1 python motor_v36.py
+#       MOTOR_MAX_CICLOS=3 python motor_v36.py   (processa 3 lotes e sai)
+# =====================================================================
+import sys as _sys_entry
+_argv = _sys_entry.argv
+
+if '--ciclo-unico' in _argv:
+    os.environ['MOTOR_MAX_CICLOS'] = '1'
+    print("[Entry] Flag --ciclo-unico detectada → MOTOR_MAX_CICLOS=1")
+
+# [v4.0.4] Flags de modo — dispatcher em iniciar_motor_operacional()
+# [v4.0.8] Adicionados --apenas-previsao-chamados e --apenas-previsao-custos
+_MODOS_CLI = {
+    '--apenas-classificacao':    'classificacao',
+    '--apenas-reclassificacao':  'reclassificacao',
+    '--apenas-previsao-global':  'previsao_global',
+    '--apenas-previsao-chamados': 'previsao_chamados',
+    '--apenas-previsao-custos':   'previsao_custos',
+    '--apenas-previsao-filtros': 'previsao_filtros',
+    '--apenas-ods':              'ods',
+}
+for _flag, _modo in _MODOS_CLI.items():
+    if _flag in _argv:
+        os.environ['MOTOR_MODO'] = _modo
+        os.environ['MOTOR_MAX_CICLOS'] = '1'
+        print(f"[Entry] Flag {_flag} → MOTOR_MODO={_modo}")
+        break
+
+iniciar_motor_operacional()

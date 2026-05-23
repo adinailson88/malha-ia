@@ -1,7 +1,7 @@
 # ============================================================================
-# Malha IA v4.0.4 — Workflow 1/4: CLASSIFICAÇÃO
-# Roda a cada 15 min, processa 1 lote (15 chamados) com LSTM, encerra.
-# Salvar em: .github/workflows/classificacao.yml
+# Malha IA v4.0.8 — Workflow 1: CLASSIFICAÇÃO
+# Roda a cada 15 min, processa 1 lote (15 chamados) com BiLSTM, encerra.
+# Módulo: motor_classificacao_v1.py
 # ============================================================================
 name: 1 - Classificacao (rapido)
 
@@ -42,4 +42,4 @@ jobs:
           echo "{}" > chaves_api.json
 
       - name: Executar classificacao
-        run: python motor_v36.py --apenas-classificacao
+        run: python motor_classificacao_v1.py --apenas-classificacao

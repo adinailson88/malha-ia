@@ -44,4 +44,4 @@ jobs:
           echo "{}" > chaves_api.json
 
       - name: Executar previsao de chamados
-        run: python motor_v36.py --apenas-previsao-chamados
+        run: python motor_previsao_chamados.py --apenas-previsao-chamados

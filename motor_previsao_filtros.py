@@ -1,16 +1,37 @@
 # -*- coding: utf-8 -*-
 """
 MOTOR DE GOVERNANÇA PREDITIVA – BIOSSISTEMAS CONSTRUÍDOS
-Módulo 2: motor_previsao_chamados.py
+Módulo 5: motor_previsao_filtros.py
 Extraído de motor_v36.py (v4.0.8) — contém APENAS o pipeline de previsão
-de chamados/mês (contagem). Sem classificação LSTM, sem custos, sem filtros,
-sem ODS, sem APIs de LLM externas.
+por filtros (campus / tipo / categoria), incluindo previsão de custos por
+recorte (executar_previsao_custo via extrator=extrair_serie_custo).
+Sem classificação LSTM, sem previsão global de chamados, sem ODS.
 
 Execução:
-    python motor_previsao_chamados.py --apenas-previsao-chamados
+    python motor_previsao_filtros.py --apenas-filtros
 
-Gera as 14 abas PREVISAO_* na planilha Google Sheets CHAMADOS.
+Gera/atualiza as abas na planilha Google Sheets CHAMADOS (para cada filtro):
+    PREVISAO_TEMPORAL__<sufixo>    — série histórica + previsão 12 meses
+    PREVISAO_DETALHES__<sufixo>    — comparativo dos 8 modelos
+    PREVISAO_INCERTEZAS__<sufixo>  — intervalos de confiança
+    PREVISAO_VALIDACAO__<sufixo>   — métricas de validação cruzada
+    PREVISAO_CUSTO__<sufixo>       — equivalentes de custo R$ por recorte
+    FILTROS_DISPONIVEIS            — inventário de filtros com sufixos de aba
+
+Filtros executados:
+    Por campus  : sufixo __{campus_sanitizado}
+    Por tipo    : __Preventiva / __Corretiva
+    Por categoria dentro de tipo : __Prev_{cat} / __Corr_{cat}
+
+ODS: delegado ao motor_ods.py (executar_ods=False hardcoded).
+APIs externas de LLM: REMOVIDAS.
 """
+
+
+
+# =====================================================================
+# 1. INSTALAÇÃO INTELIGENTE DE DEPENDÊNCIAS COM CACHE PERSISTENTE
+# =====================================================================
 
 # =====================================================================
 # 1. INSTALAÇÃO INTELIGENTE DE DEPENDÊNCIAS COM CACHE PERSISTENTE
@@ -34,11 +55,12 @@ else:
     CAMINHO_PASTA = os.path.dirname(os.path.abspath(__file__))
 
 PASTA_LIBS = f'{CAMINHO_PASTA}/libs'
-ARQUIVO_LOCK = f'{PASTA_LIBS}/requirements_previsao_chamados.lock'
+ARQUIVO_LOCK = f'{PASTA_LIBS}/requirements.lock'
 
 PACOTES_REQUERIDOS = {
     'gspread': '6.1.4',
     'requests': '2.32.3',
+    'groq': '0.13.0',
     'pandas': '2.2.3',
     'numpy': '1.26.4',
     'statsmodels': '0.14.4',
@@ -47,9 +69,10 @@ PACOTES_REQUERIDOS = {
     'pmdarima': '2.0.4',
     'prophet': '1.1.6',
     'scipy': '1.13.1',
-    'arch': '7.2.0',
-    'shap': '0.46.0',
-    'tensorflow': '2.17.0',
+    'arch': '7.2.0',         # block bootstrap (Künsch 1989) — G2
+    'tenacity': '9.0.0',     # retry exponencial em APIs LLM — G9
+    'shap': '0.46.0',        # interpretabilidade do GBR — G12 (v3.6)
+    'tensorflow': '2.17.0',  # LSTM classificação + previsão — v3.8
 }
 
 def carregar_lock():
@@ -68,10 +91,10 @@ def salvar_lock(pacotes):
 
 def precisa_instalar():
     if not os.path.exists(PASTA_LIBS):
-        return True, "pasta libs nao existe"
+        return True, "pasta libs não existe"
     lock_atual = carregar_lock()
     if lock_atual is None:
-        return True, "requirements_previsao_chamados.lock ausente"
+        return True, "requirements.lock ausente"
     if lock_atual != PACOTES_REQUERIDOS:
         adicionados = set(PACOTES_REQUERIDOS) - set(lock_atual)
         removidos = set(lock_atual) - set(PACOTES_REQUERIDOS)
@@ -80,19 +103,19 @@ def precisa_instalar():
         motivos = []
         if adicionados: motivos.append(f"adicionados: {', '.join(adicionados)}")
         if removidos:   motivos.append(f"removidos: {', '.join(removidos)}")
-        if alterados:   motivos.append(f"versao alterada: {', '.join(alterados)}")
+        if alterados:   motivos.append(f"versão alterada: {', '.join(alterados)}")
         return True, "; ".join(motivos)
     return False, "lock confere"
 
 def instalar_pacotes():
     print(f"[Cache] Instalando pacotes em {PASTA_LIBS}...")
-    print("[Cache] Esta operacao roda apenas na primeira vez ou quando a lista muda.")
+    print("[Cache] Esta operação roda apenas na primeira vez ou quando a lista muda.")
     os.makedirs(PASTA_LIBS, exist_ok=True)
     spec_pacotes = [f"{nome}=={ver}" for nome, ver in PACOTES_REQUERIDOS.items()]
     cmd = ['pip', 'install', '--target', PASTA_LIBS, '--upgrade'] + spec_pacotes
     resultado = subprocess.run(cmd, capture_output=True, text=True)
     if resultado.returncode != 0:
-        print("[Cache] ERRO na instalacao:")
+        print("[Cache] ERRO na instalação:")
         print(resultado.stderr[-2000:])
         raise RuntimeError("Falha ao instalar pacotes — veja stderr acima.")
     salvar_lock(PACOTES_REQUERIDOS)
@@ -101,20 +124,20 @@ def instalar_pacotes():
 if _EM_COLAB:
     deve_instalar, motivo = precisa_instalar()
     if deve_instalar:
-        print(f"[Cache] Reinstalacao necessaria: {motivo}")
+        print(f"[Cache] Reinstalação necessária: {motivo}")
         instalar_pacotes()
         print("\n" + "="*70)
-        print("PACOTES INSTALADOS PELA PRIMEIRA VEZ (ou apos mudanca de versao).")
+        print("⚠️  PACOTES INSTALADOS PELA PRIMEIRA VEZ (ou após mudança de versão).")
         print("    Reinicie o runtime do Colab agora:")
-        print("        Menu superior -> Ambiente de execucao -> Reiniciar sessao")
-        print("    Depois execute esta celula novamente.")
+        print("        Menu superior → Ambiente de execução → Reiniciar sessão")
+        print("    Depois execute esta célula novamente — será instantâneo.")
         print("="*70 + "\n")
         try:
             import IPython
             IPython.Application.instance().kernel.do_shutdown(restart=True)
         except Exception:
             pass
-        raise SystemExit("Aguardando reinicio do runtime.")
+        raise SystemExit("Aguardando reinício do runtime.")
     else:
         print(f"[Cache] {len(PACOTES_REQUERIDOS)} pacotes carregados do cache em {PASTA_LIBS}.")
 
@@ -123,8 +146,14 @@ if _EM_COLAB:
 else:
     print("[Local] Modo offline — pacotes carregados do ambiente Python local.")
 
+
+
 # =====================================================================
-# 2. IMPORTACOES
+# 2. IMPORTAÇÕES
+# =====================================================================
+
+# =====================================================================
+# 2. IMPORTAÇÕES
 # =====================================================================
 import gspread
 from gspread.exceptions import WorksheetNotFound, APIError
@@ -137,9 +166,15 @@ import numpy as np
 from datetime import datetime, timedelta
 import pytz
 
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.calibration import CalibratedClassifierCV   # G4 — v3.5
+from sklearn.metrics import (
+    classification_report, mean_absolute_error, mean_squared_error,
+    f1_score, balanced_accuracy_score
+)
+from sklearn.pipeline import Pipeline
 
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 from statsmodels.tsa.arima.model import ARIMA
@@ -150,40 +185,50 @@ from statsmodels.stats.stattools import jarque_bera, durbin_watson
 from statsmodels.stats.outliers_influence import variance_inflation_factor, OLSInfluence
 import statsmodels.api as sm_api
 from statsmodels.tsa.stattools import (
-    adfuller, kpss, grangercausalitytests, acf, pacf
+    adfuller, kpss, grangercausalitytests, acf, pacf   # G15, G20 — v3.5
 )
-from statsmodels.tsa.seasonal import STL
+from statsmodels.tsa.seasonal import STL                 # G17 — v3.5
 
 from scipy import stats as sps
-from scipy.stats import boxcox, norm, ks_2samp, shapiro
-from scipy.signal import periodogram
+from scipy.stats import boxcox, norm, ks_2samp, shapiro  # G6 — v3.5; shapiro para pressupostos
+from scipy.signal import periodogram                     # G19 — v3.5
 
+# Block bootstrap (G2) e retry (G9) — v3.5
 from arch.bootstrap import MovingBlockBootstrap
+from tenacity import (
+    retry, stop_after_attempt, wait_exponential,
+    retry_if_exception_type
+)
 
 warnings.filterwarnings('ignore')
 import logging
 logging.getLogger('cmdstanpy').setLevel(logging.WARNING)
 logging.getLogger('prophet').setLevel(logging.WARNING)
 
+# v3.6.3 — pmdarima e Prophet são opcionais. Quando indisponíveis ou
+# quebrados (quebra binária com numpy, falta de cmdstanpy, etc.), o motor
+# cai para implementações nativas baseadas em statsmodels via grid-search
+# de ordem com seleção por AIC, que são cientificamente equivalentes.
 _PMDARIMA_OK = False
 _PROPHET_OK = False
 try:
     import pmdarima as pm
+    # Teste real de funcionamento — não basta importar, precisa ter auto_arima
     if hasattr(pm, 'auto_arima'):
-        _teste = pm.auto_arima(
-            np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]),
-            seasonal=False, suppress_warnings=True,
-            error_action='ignore', stepwise=True, max_p=1, max_q=1)
+        _teste = pm.auto_arima(np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]),
+                                seasonal=False, suppress_warnings=True,
+                                error_action='ignore', stepwise=True, max_p=1, max_q=1)
         _PMDARIMA_OK = True
-        print("[Imports] pmdarima OK — auto_arima disponivel.")
+        print("[Imports] pmdarima OK — auto_arima disponível.")
     else:
         print("[Imports] pmdarima importou mas SEM auto_arima — usando fallback statsmodels.")
 except Exception as _e_pm:
-    print(f"[Imports] pmdarima indisponivel ({type(_e_pm).__name__}) — "
+    print(f"[Imports] pmdarima indisponível ({type(_e_pm).__name__}) — "
           f"usando fallback baseado em statsmodels (grid-search + AIC).")
 
 try:
     from prophet import Prophet
+    # Teste real — Prophet em ambientes sem cmdstanpy quebra silenciosamente
     _df_teste = pd.DataFrame({
         'ds': pd.date_range('2020-01-01', periods=24, freq='MS'),
         'y': np.arange(24, dtype=float)
@@ -197,12 +242,27 @@ try:
     else:
         print("[Imports] Prophet importou mas SEM stan_backend — usando UnobservedComponents.")
 except Exception as _e_p:
-    print(f"[Imports] Prophet indisponivel ({type(_e_p).__name__}) — "
-          f"usando UnobservedComponents (statsmodels).")
+    print(f"[Imports] Prophet indisponível ({type(_e_p).__name__}) — "
+          f"usando UnobservedComponents (decomposição estrutural via statsmodels).")
 
+# Imports para fallback statsmodels (sempre disponíveis)
 from statsmodels.tsa.statespace.sarimax import SARIMAX as _SM_SARIMAX
 from statsmodels.tsa.statespace.structural import UnobservedComponents
 
+# v3.8 — TensorFlow/Keras para LSTM de classificação e de previsão.
+# Opcional: se indisponível, classificador cai para Random Forest e
+# previsão ignora o 8º modelo (LSTM Forecast).
+#
+# IMPORTANTE (NumPy 2.0 / Colab — fix v3.8.1):
+#   - O TF cacheado em PASTA_LIBS foi compilado com NumPy 1.x e quebra
+#     no Colab atual (NumPy 2.0.2). É preciso forçar o TF nativo do Colab.
+#   - Não basta remover PASTA_LIBS de sys.path: quando uma tentativa
+#     anterior falhou, módulos `tensorflow.*` parciais ficam em
+#     `sys.modules` apontando para o cache. Python consulta sys.modules
+#     ANTES de sys.path, então a próxima import volta a usar o cache.
+#   - Fix definitivo: limpar TODAS as entradas tensorflow*/keras* de
+#     sys.modules, invalidar caches do importlib, remover PASTA_LIBS
+#     de sys.path durante a importação, e tentar APENAS o TF nativo.
 _TF_OK = False
 tf = None
 Sequential = None
@@ -227,6 +287,7 @@ def _importar_tf():
     global to_categorical, LabelEncoder, MinMaxScaler
     import sys as _sys
 
+    # 1. Purga sys.modules de qualquer referência parcial a TF/Keras
     _mods_remover = [
         m for m in list(_sys.modules.keys())
         if m == 'tensorflow' or m.startswith('tensorflow.')
@@ -239,24 +300,29 @@ def _importar_tf():
         except KeyError:
             pass
     if _mods_remover:
-        print(f"[Imports] Limpou {len(_mods_remover)} modulos TF/Keras de sys.modules.")
+        print(f"[Imports] Limpou {len(_mods_remover)} módulos TF/Keras "
+              f"de sys.modules (resíduos de tentativa anterior).")
 
+    # 2. Invalida caches do mecanismo de import (path_importer_cache etc.)
     try:
         import importlib
         importlib.invalidate_caches()
     except Exception:
         pass
 
+    # 3. Remove cache do Drive de sys.path durante a importação
     _path_orig = _sys.path[:]
     _sys.path[:] = [p for p in _path_orig if p != PASTA_LIBS]
 
     try:
         import tensorflow as _tf_mod
+        # Sanity-check: o arquivo do TF carregado precisa NÃO estar no cache
         _tf_file = getattr(_tf_mod, '__file__', '') or ''
         if PASTA_LIBS in _tf_file:
             raise ImportError(
                 f"TF carregado do cache do Drive ({_tf_file}); "
-                f"esperado caminho nativo do Colab."
+                f"esperado caminho nativo do Colab. "
+                f"Limpe a pasta {PASTA_LIBS}/tensorflow no Drive."
             )
         from tensorflow.keras.models import Sequential as _Seq, Model as _Mod
         from tensorflow.keras.layers import (
@@ -267,6 +333,7 @@ def _importar_tf():
         from tensorflow.keras.preprocessing.sequence import pad_sequences as _pad
         from tensorflow.keras.utils import to_categorical as _to_cat
         from sklearn.preprocessing import LabelEncoder as _LE, MinMaxScaler as _MMS
+        # Atribui as globais
         tf = _tf_mod
         Sequential = _Seq; Model = _Mod
         Embedding = _Emb; Bidirectional = _Bid; KerasLSTM = _KLSTM
@@ -275,13 +342,14 @@ def _importar_tf():
         LabelEncoder = _LE; MinMaxScaler = _MMS
         tf.get_logger().setLevel('ERROR')
         _TF_OK = True
-        print(f"[Imports] TensorFlow nativo OK ({_tf_file}) — LSTM disponivel.")
+        print(f"[Imports] TensorFlow nativo OK ({_tf_file}) — LSTM disponível.")
     except Exception as _e_tf:
         msg = str(_e_tf)
         if len(msg) > 180:
             msg = msg[:180] + '...'
-        print(f"[Imports] TensorFlow indisponivel ({type(_e_tf).__name__}: {msg}) — "
-              f"LSTM desativado.")
+        print(f"[Imports] TensorFlow indisponível ({type(_e_tf).__name__}: {msg}) — "
+              f"LSTM desativado; fallback Random Forest para classificação.")
+        # Limpa de novo o que tentou carregar nesta tentativa
         for _m in [k for k in list(_sys.modules.keys())
                    if k == 'tensorflow' or k.startswith('tensorflow.')
                    or k == 'keras' or k.startswith('keras.')]:
@@ -290,18 +358,46 @@ def _importar_tf():
             except KeyError:
                 pass
     finally:
-        _sys.path[:] = _path_orig
+        _sys.path[:] = _path_orig  # restaura sempre
 
 _importar_tf()
 
+# G12 (v3.6) — SHAP para interpretabilidade do GBR
 try:
     import shap
     _SHAP_DISPONIVEL = True
 except ImportError:
     _SHAP_DISPONIVEL = False
-    print("[Imports] SHAP indisponivel — interpretabilidade do GBR ficara limitada.")
+    print("[Imports] SHAP indisponível — interpretabilidade do GBR ficará limitada.")
 
-_VERSAO_MOTOR = "v4.0.8-previsao_chamados"
+# Versão única do motor (v4.0.5): usada em logs, METRICAS_TREINO e header.
+# v4.0.5 (2026-05-14):
+#   - Novo modo `reclassificacao`: reavalia chamados já classificados
+#     com baixa confiança (< LIMIAR_RECLASSIFICACAO) usando o LSTM atual
+#     (mais treinado) e os 4 campos textuais (B + W + X + Y).
+#   - Respeita coluna AF (CONFERENCIA): se TRUE, motor NUNCA sobrescreve
+#     — preserva revisão humana.
+#   - Só sobrescreve se nova confiança > antiga + DELTA_MELHORIA_MINIMA.
+#   - Workflow GitHub Actions dedicado roda 1× por dia.
+# v4.0.4 (2026-05-14):
+#   - Suporte a execução por MODO via env var MOTOR_MODO ou flag CLI:
+#       * classificacao      → só LSTM + 1 lote (rápido, 15min)
+#       * previsao_global    → só previsão global (médio, 45min)
+#       * previsao_filtros   → só campus/tipo/categoria (pesado, 5h)
+#       * ods                → só indicadores + PESOS_ODS (rápido)
+#       * completo (default) → tudo (compatibilidade Colab/legado)
+#     Permite dividir em 4 workflows GitHub Actions com cadências distintas.
+# v4.0.3 (2026-05-14):
+#   - Previsão temporal de custos mensais (Coluna Q, "Valor do chamado") —
+#     série + parser preparados (Fase 4A). Refatoração de previsão para
+#     reaproveitamento será aplicada em Fase 4B (sessão dedicada).
+#   - Indicadores brutos por localização para painel ODS (ODS 9, 11, 12).
+#   - Nova aba PESOS_ODS (configurável pelo usuário; lida pelo HTML).
+# v4.0.2 (2026-05-14):
+#   - Detecção automática Colab vs. local; google.colab.drive opcional.
+#   - Imports do TensorFlow (Keras) elevados a escopo global para uso
+#     em treinar_classificador_lstm() fora da função _importar_tf().
+_VERSAO_MOTOR = "v4.0.8-previsao_filtros"
 
 print(f"[Imports] OK · pandas={pd.__version__} · {_VERSAO_MOTOR} "
       f"(pmdarima={'ON' if _PMDARIMA_OK else 'fallback'}, "
@@ -309,11 +405,15 @@ print(f"[Imports] OK · pandas={pd.__version__} · {_VERSAO_MOTOR} "
       f"TF={'ON' if _TF_OK else 'OFF/fallback_RF'})")
 
 # ─────────────────────────────────────────────────────────────────────
+# NumPy 2.0 compat: np.isnan() é mais estrito com tipos não-numéricos.
+# _safe_isnan() converte para float antes do teste, evitando TypeError.
+# _safe_float() garante Python float a partir de qualquer escalar.
+# ─────────────────────────────────────────────────────────────────────
 def _safe_isnan(val):
-    """Retorna True se val e NaN; False para nao-NaN ou nao-numerico."""
+    """Retorna True se val é NaN; False para não-NaN ou não-numérico."""
     try:
         f = float(val)
-        return f != f
+        return f != f  # NaN é o único valor onde x != x é verdadeiro
     except (TypeError, ValueError):
         return False
 
@@ -324,15 +424,24 @@ def _safe_float(val, default=float('nan')):
     except (TypeError, ValueError):
         return default
 
+
+
 # =====================================================================
-# 3. CONFIGURACOES INICIAIS
+# 3. CONFIGURAÇÕES INICIAIS
+# =====================================================================
+
+# =====================================================================
+# 3. CONFIGURAÇÕES INICIAIS
 # =====================================================================
 ARQUIVO_GOOGLE = f'{CAMINHO_PASTA}/autenticacao_google.json'
 gc = gspread.service_account(filename=ARQUIVO_GOOGLE)
 
 NOME_PLANILHA = "CHAMADOS"
 NOME_MAQUINA = "GOOGLE_COLAB_CLOUD"
-
+# v3.6.5 — Fuso horário com fallback resiliente. O pytz cacheado pode
+# ter tzdata incompleto/corrompido. America/Bahia, America/Sao_Paulo e
+# America/Fortaleza compartilham o mesmo offset (UTC-3) sem DST desde
+# 2019, então a substituição é semanticamente equivalente para o motor.
 def _resolver_fuso_brasil():
     candidatos = [
         'America/Bahia',
@@ -345,90 +454,114 @@ def _resolver_fuso_brasil():
         try:
             tz = pytz.timezone(nome)
             if nome != 'America/Bahia':
-                print(f"[Fuso] America/Bahia indisponivel. Usando {nome} (UTC-3).")
+                print(f"[Fuso] America/Bahia indisponível no pytz instalado. "
+                      f"Usando {nome} (offset equivalente UTC-3).")
             return tz
         except Exception:
             continue
-    print("[Fuso] Nenhum fuso brasileiro disponivel no pytz. Usando offset fixo UTC-3.")
+    # Último recurso: offset fixo manual via datetime
+    print("[Fuso] Nenhum fuso brasileiro disponível no pytz. "
+          "Usando offset fixo UTC-3.")
     from datetime import timezone as _tz_dt, timedelta as _td_dt
     return _tz_dt(_td_dt(hours=-3))
 
 FUSO_BAHIA = _resolver_fuso_brasil()
 
-INTERVALO_PREVISAO_CICLOS = 10
+INTERVALO_PREVISAO_CICLOS = 10    # 10 × 15 = 150 chamados
 INTERVALO_RETREINO_CICLOS = 10
 MIN_AMOSTRAS_TREINO = 10
 MIN_PONTOS_SERIE = 6
-MIN_PONTOS_SERIE_CUSTO = 12
+MIN_PONTOS_SERIE_CUSTO = 12        # mínimo 12 meses para previsão de custos [v4.0.7 — reduzido de 24]
 MIN_EXEMPLOS_POR_CLASSE = 3
 
+# Eixo 2
+# v3.6.5 — Holdout estendido para 12 meses (backtest visual).
+# O modelo treina com dados até T-12 e prevê os 12 meses seguintes.
+# Isso permite comparar visualmente previsão × real no último ano,
+# além dos 12 meses futuros puros. No dashboard, o período T-12..T
+# mostra dados reais + linha pontilhada de cada modelo.
 HORIZONTE_HOLDOUT = 12
 HORIZONTE_FORECAST = 12
 N_BOOTSTRAP = 1000
-N_FOLDS_CV = 3
+N_FOLDS_CV = 3                    # v3.6.5: reduzido de 5 para 3 (holdout=12 × 3=36 meses)
 SEED = 42
 THRESH_OUTLIER_Z = 3.0
 INTERVALO_HORAS_PREVISAO_BOOT = 24
 
-BLOCK_BOOTSTRAP_AUTO = True
-BLOCK_SIZE_FIXO = 6
-GRANGER_MAX_LAG = 6
-ACF_PACF_LAGS = 24
-ROTACAO_LOG_DIAS = 90
-THRESH_DRIFT_KS = 0.15
-PESO_RMSE = 0.5
+# Constantes v3.5
+BLOCK_BOOTSTRAP_AUTO = True       # tamanho do bloco via Politis-White; senão usa fixo
+BLOCK_SIZE_FIXO = 6                # fallback se PW falhar (~ raiz cubica de N para N=200)
+GRANGER_MAX_LAG = 6                # lag máximo para teste de Granger (meses)
+ACF_PACF_LAGS = 24                 # número de lags ACF/PACF
+ROTACAO_LOG_DIAS = 90              # logs com mais de N dias vão para CSV no Drive
+THRESH_DRIFT_KS = 0.15             # estatística KS acima deste valor força retreino
+PESO_RMSE = 0.5                    # critério multicritério G14
 PESO_CRPS = 0.3
 PESO_DESVIO_CV = 0.2
 LLM_RETRY_MAX = 3
-LLM_RETRY_WAIT_BASE = 1
+LLM_RETRY_WAIT_BASE = 1            # segundos (cresce exponencialmente)
 
-INTERVALO_DIAS_ABLATION = 90
-INTERVALO_DIAS_EXPORT = 30
+# Constantes v3.6
+INTERVALO_DIAS_ABLATION = 90       # ablation rodado a cada 90 dias (trimestral)
+INTERVALO_DIAS_EXPORT = 30         # exportação científica mensal
 
-EXECUTAR_POR_CATEGORIA = True
-MIN_REGISTROS_FILTRO = 12
-LSTM_VOCAB_SIZE = 8000
-LSTM_MAX_LEN = 120
-LSTM_EMBED_DIM = 128
-LSTM_UNITS = 64
-LSTM_FORECAST_WINDOW = 12
+# Constantes v3.8
+EXECUTAR_POR_CATEGORIA = True      # gera PREVISAO_*__Cat_* por categoria hierárquica
+MIN_REGISTROS_FILTRO = 12          # mín. chamados por categoria para gerar previsão
+LSTM_VOCAB_SIZE = 8000             # vocabulário tokenizador LSTM classificação
+LSTM_MAX_LEN = 120                 # comprimento fixo de sequência (tokens)
+LSTM_EMBED_DIM = 128               # dimensão de embedding
+LSTM_UNITS = 64                    # unidades LSTM bidirecionais
+LSTM_FORECAST_WINDOW = 12          # janela de entrada do LSTM de previsão
 
-COL_TITULO = 1
-COL_DATA_ABERTURA = 2
-COL_CATEGORIA_TOPO = 4
-COL_CAMPUS = 7
-COL_CATEGORIA_HIERARQUICA = 12
-COL_VALOR = 16
-COL_DESCRICAO_GLPI = 22
-COL_TITULO_OSM = 23
-COL_DESCRICAO_OSM = 24
-COL_CAT_IA = 25
+# Mapeamento de colunas
+COL_TITULO = 1                   # B
+COL_DATA_ABERTURA = 2            # C
+COL_CATEGORIA_TOPO = 4           # E
+COL_CAMPUS = 7                   # H
+COL_CATEGORIA_HIERARQUICA = 12   # M
+COL_VALOR = 16                   # Q  — "Valor do chamado" (R$) [v4.0.3]
+COL_DESCRICAO_GLPI = 22          # W
+COL_TITULO_OSM = 23              # X
+COL_DESCRICAO_OSM = 24           # Y
+COL_CAT_IA = 25                  # Z
 
-COL_DATA_CONCLUSAO = None
-COL_LOCAL = None
+# Colunas opcionais (podem não existir em todas as bases) — tratar None
+COL_DATA_CONCLUSAO = None        # se a planilha não tem, indicadores que dependem
+                                 # disso ficam em branco. Atribua manualmente se existir.
+COL_LOCAL = None                 # idem — proxy para "chamados repetidos no mesmo local"
 
-FILTROS_ATIVOS = True
+# Filtragem por campus/tipo/categoria
+FILTROS_ATIVOS = True            # True = roda análise completa por filtro após análise principal
 
-COL_CAT_IA_OUT = 26
-COL_AVALIACAO_OUT = 28
-COL_EXECUTOR_OUT = 29
-COL_CRITICIDADE_OUT = 30
-COL_CONFERENCIA = 31
+COL_CAT_IA_OUT = 26              # Z
+COL_AVALIACAO_OUT = 28           # AB
+COL_EXECUTOR_OUT = 29            # AC
+COL_CRITICIDADE_OUT = 30         # AD
+COL_CONFERENCIA = 31             # AF — caixa de seleção [v4.0.5]
+                                  # TRUE = revisado pelo usuário; motor não sobrescreve.
 
-LIMIAR_RECLASSIFICACAO = 0.80
-DELTA_MELHORIA_MINIMA = 0.05
-LOTE_RECLASSIFICACAO = 200
+# Reclassificação (v4.0.5)
+LIMIAR_RECLASSIFICACAO = 0.80    # reavalia tudo com confiança < 80%
+DELTA_MELHORIA_MINIMA = 0.05     # só sobrescreve se nova_conf > antiga + 5pp
+LOTE_RECLASSIFICACAO = 200       # máx. de chamados por execução
 
 try:
     doc = gc.open(NOME_PLANILHA)
     planilha = doc.worksheet("CHAMADOS")
-    print(f"Conectado a planilha: {NOME_PLANILHA}, aba: CHAMADOS")
+    print(f"✅ Conectado à planilha: {NOME_PLANILHA}, aba: CHAMADOS")
 except Exception as e:
-    print(f"Erro critico: {e}")
+    print(f"❌ Erro crítico: {e}")
     raise
 
+
+
 # =====================================================================
-# 4. UTILITARIO DE ABAS COM CACHE
+# 4. UTILITÁRIO DE ABAS COM CACHE
+# =====================================================================
+
+# =====================================================================
+# 4. UTILITÁRIO DE ABAS COM CACHE
 # =====================================================================
 _cache_abas = {}
 
@@ -445,16 +578,16 @@ def obter_aba(nome, linhas=100, colunas=10, cabecalho=None):
             if not valores_atuais or all(c == "" for c in valores_atuais[0]):
                 aba.update(values=[cabecalho], range_name='A1', value_input_option='USER_ENTERED')
         except Exception as e:
-            print(f"[Aviso] Nao foi possivel gravar cabecalho em {nome}: {e}")
+            print(f"[Aviso] Não foi possível gravar cabeçalho em {nome}: {e}")
     _cache_abas[nome] = aba
     return aba
 
 def recriar_aba(nome, linhas=500, colunas=10, cabecalho=None):
-    """Apaga e recria aba, util para correcao de cabecalho."""
+    """Apaga e recria aba, útil para correção de cabeçalho."""
     try:
         aba_antiga = doc.worksheet(nome)
         doc.del_worksheet(aba_antiga)
-        print(f"[Migracao] Aba '{nome}' apagada para recriacao.")
+        print(f"[Migração] Aba '{nome}' apagada para recriação.")
     except WorksheetNotFound:
         pass
     if nome in _cache_abas:
@@ -465,22 +598,28 @@ def recriar_aba(nome, linhas=500, colunas=10, cabecalho=None):
     _cache_abas[nome] = aba
     return aba
 
+# Migração v3.3 → v3.4: METRICAS_TREINO precisa do novo cabeçalho
 ARQUIVO_FLAG_MIGRACAO = f'{CAMINHO_PASTA}/migracao_v34.flag'
 if not os.path.exists(ARQUIVO_FLAG_MIGRACAO):
-    print("[Migracao v3.4] Executando migracoes de aba uma unica vez...")
+    print("[Migração v3.4] Executando migrações de aba uma única vez...")
     try:
         recriar_aba("METRICAS_TREINO", linhas=500, colunas=12,
                     cabecalho=["Timestamp", "N_Amostras", "N_Classes", "Acuracia",
                                "Precision_Macro", "Recall_Macro", "F1_Macro",
                                "F1_Weighted", "Balanced_Accuracy", "Hash_Base", "Maquina", "Versao_Motor"])
-        print("[Migracao v3.4] METRICAS_TREINO recriada com cabecalho v3.4.")
+        print("[Migração v3.4] METRICAS_TREINO recriada com cabeçalho v3.4.")
     except Exception as e:
-        print(f"[Migracao v3.4] Falha (nao-critica): {e}")
+        print(f"[Migração v3.4] Falha (não-crítica): {e}")
     with open(ARQUIVO_FLAG_MIGRACAO, 'w') as f:
-        f.write(f"Migracao v3.4 executada em {datetime.now(FUSO_BAHIA).isoformat()}")
+        f.write(f"Migração v3.4 executada em {datetime.now(FUSO_BAHIA).isoformat()}")
+
 
 # =====================================================================
-# 5. UTILITARIOS GERAIS
+# 5. UTILITÁRIOS GERAIS
+# =====================================================================
+
+# =====================================================================
+# 5. UTILITÁRIOS GERAIS
 # =====================================================================
 def montar_texto_classificacao(linha):
     campos = []
@@ -495,6 +634,17 @@ def montar_texto_classificacao(linha):
     return " | ".join(campos)
 
 def extrair_nome_executor(origem):
+    """
+    [v4.0.0] Mapeia origem da classificação para nome do executor.
+    Origens suportadas (todas LOCAIS):
+        - "Supervisionado_LSTM"            → "LSTM"
+        - "Supervisionado_LSTM_baixa_conf" → "LSTM_BAIXA_CONF"
+        - "RF_Fallback"                    → "RF_Fallback"
+        - "RF_Fallback_baixa_conf"         → "RF_Fallback_BAIXA_CONF"
+        - "SemClassificador"               → "SemClassificador"
+        - "NaoProcessado"                  → "NaoProcessado"
+    APIs externas (Groq/Gemini/DeepSeek/etc) foram REMOVIDAS em v4.0.0.
+    """
     if not origem:
         return "Desconhecido"
     if origem == "Supervisionado_LSTM":
@@ -509,6 +659,7 @@ def extrair_nome_executor(origem):
         return "SemClassificador"
     if origem == "NaoProcessado":
         return "NaoProcessado"
+    # Compatibilidade reversa para entradas antigas no log (não geradas mais):
     if origem == "Supervisionado":
         return "Supervisionado_legado"
     return origem.split(' ')[0].split('(')[0].strip()
@@ -517,12 +668,22 @@ def confianca_para_decimal(valor):
     return round(valor / 100.0, 2)
 
 def extrair_tipo_categoria(texto):
+    """Interpreta coluna M para retornar (tipo, categoria).
+
+    Preventiva: texto contém 'Manutenção Preventiva' (ou 'Manutencao Preventiva'
+                após normalização ASCII) → categoria = primeiro nível após '>',
+                ex.: 'Manutenção Preventiva > Hidráulica > Instalação' → 'Hidráulica'.
+    Corretiva:  demais → categoria = texto antes do primeiro '>',
+                ex.: 'Elétrica > Iluminação' → 'Elétrica'.
+    """
     if not texto or not texto.strip():
         return ('Desconhecida', 'Desconhecida')
     t = texto.strip()
+    # Normaliza para comparação insensível a encoding (ã/a~)
     t_norm = _ud.normalize('NFKD', t).encode('ascii', 'ignore').decode('ascii').lower()
-    if 'manutencao preventiva' in t_norm or 'manutencao preventiva' in t.lower():
+    if 'manutencao preventiva' in t_norm or 'manutenção preventiva' in t.lower():
         partes = t.split('>')
+        # Primeiro subcategoria real (índice 1); fallback para texto completo
         cat = partes[1].strip() if len(partes) > 1 else t.strip()
         return ('Preventiva', cat or 'Preventiva')
     else:
@@ -532,19 +693,27 @@ def extrair_tipo_categoria(texto):
 
 import unicodedata as _ud, re as _re
 def sanitizar_sufixo(label):
+    """Converte label em sufixo seguro para nome de aba do Google Sheets (≤ 20 chars)."""
     s = _ud.normalize('NFKD', label).encode('ascii', 'ignore').decode('ascii')
     s = _re.sub(r'[^\w]', '_', s)
     s = _re.sub(r'_+', '_', s).strip('_')
     return s[:20]
 
 def hash_base_treino(df):
+    """Hash determinístico da base de treino para detectar mudanças."""
     if df is None or len(df) == 0:
         return "vazio"
     s = df[['Texto', 'Categoria']].sort_values(['Categoria', 'Texto']).to_csv(index=False)
     return hashlib.md5(s.encode('utf-8')).hexdigest()[:16]
 
+
+
 # =====================================================================
-# 6. CATEGORIAS VALIDAS
+# 6. CATEGORIAS VÁLIDAS
+# =====================================================================
+
+# =====================================================================
+# 6. CATEGORIAS VÁLIDAS
 # =====================================================================
 ARQUIVO_CATEGORIAS = f'{CAMINHO_PASTA}/categorias_validas.txt'
 categorias_unicas = []
@@ -558,7 +727,7 @@ def atualizar_categorias(dados_linhas):
          and linha[COL_CATEGORIA_HIERARQUICA].strip()]
     )))
     categorias_unicas = cats
-    print(f"[Dicionario] {len(cats)} categorias hierarquicas unicas detectadas em M.")
+    print(f"[Dicionário] {len(cats)} categorias hierárquicas únicas detectadas em M.")
     try:
         with open(ARQUIVO_CATEGORIAS, 'w', encoding='utf-8') as f:
             f.write("usados\n")
@@ -567,8 +736,20 @@ def atualizar_categorias(dados_linhas):
     except Exception:
         pass
 
+
+
 # =====================================================================
 # 7. CREDENCIAIS [retrocompatibilidade — APIs externas removidas v4.0.0]
+# =====================================================================
+
+# =====================================================================
+# 7. CREDENCIAIS [v4.0.0]
+# ---------------------------------------------------------------------
+# APIs externas de LLM (Groq, Gemini, DeepSeek, OpenRouter, SambaNova)
+# foram REMOVIDAS em v4.0.0. Classificação agora é 100% LOCAL via LSTM
+# (fallback RandomForest em emergência). As chaves continuam sendo
+# carregadas em modo opcional apenas para retrocompatibilidade — não
+# são mais consultadas em runtime de classificação.
 # =====================================================================
 ARQUIVO_CREDENCIAIS = f'{CAMINHO_PASTA}/chaves_api.json'
 matriz_chaves = {}
@@ -579,24 +760,37 @@ if os.path.exists(ARQUIVO_CREDENCIAIS):
     except Exception:
         matriz_chaves = {}
 
+# Variáveis mantidas para retrocompatibilidade (não usadas em v4.0.0):
 CHAVES_GROQ       = matriz_chaves.get("GROQ", {})
 CHAVES_GEMINI     = matriz_chaves.get("GEMINI", {})
 CHAVES_DEEPSEEK   = matriz_chaves.get("DEEPSEEK", {})
 CHAVES_OPENROUTER = matriz_chaves.get("OPENROUTER", {})
 CHAVES_SAMBANOVA  = matriz_chaves.get("SAMBANOVA", {})
 
-print(f"[{NOME_MAQUINA}] {_VERSAO_MOTOR} — Modulo previsao_chamados carregado.")
+print(f"[{NOME_MAQUINA}] {_VERSAO_MOTOR} — Classificação LOCAL apenas "
+      f"(LSTM/RF). APIs externas de LLM desativadas.")
+
+
 
 # =====================================================================
-# 8. CONTEXTO SAZONAL (precipitacao + periodo letivo)
+# 8. CONTEXTO SAZONAL + EXÓGENAS (precipitação, período letivo, área)
+# =====================================================================
+
+# =====================================================================
+# 8. CONTEXTO SAZONAL (precipitação + período letivo)
 # =====================================================================
 def gerar_contexto_sazonal_padrao(periodos_pandas):
+    """
+    Para cada período (pd.Period mensal), devolve linha com valores-exemplo:
+    - Precipitação aleatória entre 30 e 250 mm (faixa típica do sul da Bahia)
+    - Período letivo: Sim para mar-jun e ago-dez, Não para jan-fev e jul
+    """
     np.random.seed(SEED)
     linhas = []
     for p in periodos_pandas:
         mes = p.month
         precip = float(np.round(np.random.uniform(30, 250), 1))
-        letivo = "Sim" if (3 <= mes <= 6 or 8 <= mes <= 12) else "Nao"
+        letivo = "Sim" if (3 <= mes <= 6 or 8 <= mes <= 12) else "Não"
         linhas.append({
             'Mes_Ano': p.strftime('%m/%Y'),
             'Precipitacao_mm': precip,
@@ -605,6 +799,10 @@ def gerar_contexto_sazonal_padrao(periodos_pandas):
     return linhas
 
 def ler_contexto_sazonal():
+    """
+    [v3.5] Lê a aba CONTEXTO_SAZONAL e retorna DataFrame com colunas
+    padronizadas. Uso em testes de Granger e auditoria.
+    """
     try:
         aba = obter_aba("CONTEXTO_SAZONAL", linhas=500, colunas=4)
         valores = aba.get_all_values()
@@ -612,6 +810,7 @@ def ler_contexto_sazonal():
         return None
     if not valores or len(valores) < 2:
         return None
+    cab = valores[0]
     rows = []
     for linha in valores[1:]:
         if not linha or not linha[0]:
@@ -643,9 +842,18 @@ def ler_contexto_sazonal():
 
 
 def ler_area_manutencao():
+    """
+    [v3.8 — Fase 1.0] Lê a aba "Área Manutenção" da planilha Google Sheets.
+    Estrutura esperada:
+      Coluna A: Ano (ex.: 2015, 2016, ..., 2026)
+      Coluna B: Área Construída m² (área das edificações)
+      Coluna C: Área Total m²     (área total do campus)
+    Retorna DataFrame com colunas: Ano, Area_Construida_m2, Area_Total_m2.
+    Retorna None se a aba não existir ou estiver vazia.
+    """
     try:
-        aba = obter_aba("Area Manutencao", linhas=50, colunas=3,
-                        cabecalho=["Ano", "Area Construida m2", "Area Total m2"])
+        aba = obter_aba("Área Manutenção", linhas=50, colunas=3,
+                        cabecalho=["Ano", "Área Construída m²", "Área Total m²"])
         valores = aba.get_all_values()
     except Exception:
         return None
@@ -668,11 +876,24 @@ def ler_area_manutencao():
 
 
 def sincronizar_area_manutencao(periodos_historicos, periodos_futuros):
+    """
+    [v3.8 — Fase 1.0] Expande os valores anuais de área para todos os meses
+    do período histórico + futuro (forward fill para anos sem dados).
+
+    Equação de expansão: para todo mês m pertencente ao ano a,
+      Area_Construida_m2(m) = Area_Construida_m2(a)   (forward fill)
+
+    Retorna DataFrame com colunas: Mes_Ano (Period), Area_Construida_m2, Area_Total_m2.
+    Retorna None se a aba "Área Manutenção" não existir.
+    """
     df_area = ler_area_manutencao()
     if df_area is None:
         return None
+
     mapa_area = df_area.set_index('Ano')[['Area_Construida_m2', 'Area_Total_m2']].to_dict('index')
     todos_periodos = list(periodos_historicos) + list(periodos_futuros)
+
+    # Forward fill: para anos sem dados usa último valor conhecido
     anos_disponiveis = sorted(mapa_area.keys())
     ultimo_constr = 0.0
     ultimo_total = 0.0
@@ -680,6 +901,7 @@ def sincronizar_area_manutencao(periodos_historicos, periodos_futuros):
         ult = anos_disponiveis[-1]
         ultimo_constr = mapa_area[ult]['Area_Construida_m2']
         ultimo_total = mapa_area[ult]['Area_Total_m2']
+
     rows = []
     for p in todos_periodos:
         ano = p.year
@@ -687,6 +909,7 @@ def sincronizar_area_manutencao(periodos_historicos, periodos_futuros):
             ac = mapa_area[ano]['Area_Construida_m2']
             at = mapa_area[ano]['Area_Total_m2']
         else:
+            # Usa o último ano disponível ≤ ano alvo
             anos_ant = [a for a in anos_disponiveis if a <= ano]
             if anos_ant:
                 ref = max(anos_ant)
@@ -699,9 +922,17 @@ def sincronizar_area_manutencao(periodos_historicos, periodos_futuros):
 
 
 def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
+    """
+    Garante que CONTEXTO_SAZONAL contém todos os meses (histórico + futuro).
+    Linhas existentes preservam valores do usuário; novas linhas recebem
+    valores-exemplo automáticos.
+
+    Devolve um DataFrame com as colunas Mes_Ano, Precipitacao_mm, Periodo_Letivo
+    cobrindo todo o range histórico + futuro, lido da planilha após sincronização.
+    """
     aba = obter_aba(
         "CONTEXTO_SAZONAL", linhas=500, colunas=4,
-        cabecalho=["Mes_Ano", "Precipitacao_mm", "Periodo_Letivo", "Observacao"]
+        cabecalho=["Mes_Ano", "Precipitacao_mm", "Periodo_Letivo", "Observação"]
     )
     try:
         valores = aba.get_all_values()
@@ -709,6 +940,7 @@ def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
         print(f"[Contexto] Erro ao ler CONTEXTO_SAZONAL: {e}")
         return None
 
+    # Mapa de meses já cadastrados → linha do usuário
     existentes = {}
     if len(valores) > 1:
         for linha in valores[1:]:
@@ -717,12 +949,14 @@ def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
                 existentes[mes_ano] = {
                     'Precipitacao_mm': linha[1].strip() if len(linha) > 1 else "",
                     'Periodo_Letivo': linha[2].strip() if len(linha) > 2 else "",
-                    'Observacao': linha[3].strip() if len(linha) > 3 else ""
+                    'Observação': linha[3].strip() if len(linha) > 3 else ""
                 }
 
+    # Conjunto-alvo: todos os períodos históricos + futuros
     todos_periodos = list(periodos_historicos) + list(periodos_futuros)
     contexto_padrao = gerar_contexto_sazonal_padrao(todos_periodos)
 
+    # Monta linhas finais preservando o que o usuário já preencheu
     linhas_finais = []
     for ctx in contexto_padrao:
         mes = ctx['Mes_Ano']
@@ -730,29 +964,34 @@ def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
             ex = existentes[mes]
             precip = ex['Precipitacao_mm'] if ex['Precipitacao_mm'] else ctx['Precipitacao_mm']
             letivo = ex['Periodo_Letivo'] if ex['Periodo_Letivo'] else ctx['Periodo_Letivo']
-            obs = ex['Observacao']
+            obs = ex['Observação']
         else:
             precip = ctx['Precipitacao_mm']
             letivo = ctx['Periodo_Letivo']
             obs = "(valor-exemplo, preencher com dado real)"
         linhas_finais.append([mes, precip, letivo, obs])
 
+    # Reescreve a aba inteira (preservando edições do usuário linha-a-linha)
     try:
         aba.clear()
         aba.update(
-            values=[["Mes_Ano", "Precipitacao_mm", "Periodo_Letivo", "Observacao"]] + linhas_finais,
+            values=[["Mes_Ano", "Precipitacao_mm", "Periodo_Letivo", "Observação"]] + linhas_finais,
             range_name='A1', value_input_option='USER_ENTERED'
         )
     except Exception as e:
         print(f"[Contexto] Erro ao gravar CONTEXTO_SAZONAL: {e}")
 
-    df = pd.DataFrame(linhas_finais, columns=['Mes_Ano', 'Precipitacao_mm', 'Periodo_Letivo', 'Observacao'])
+    # Re-lê para retornar DataFrame consolidado
+    df = pd.DataFrame(linhas_finais, columns=['Mes_Ano', 'Precipitacao_mm', 'Periodo_Letivo', 'Observação'])
     df['Precipitacao_mm'] = pd.to_numeric(df['Precipitacao_mm'], errors='coerce').fillna(0.0)
     df['Periodo_Letivo_bin'] = (df['Periodo_Letivo'].str.strip().str.lower().isin(['sim', 's', 'yes', '1', 'true'])).astype(int)
 
+    # [v3.8 — Fase 1.0] Mescla dados da aba "Área Manutenção" como variáveis exógenas.
+    # Usa Period como chave de junção; forward fill para períodos sem registro.
     try:
         df_area_mes = sincronizar_area_manutencao(periodos_historicos, periodos_futuros)
         if df_area_mes is not None:
+            # Garante que Mes_Ano esteja no mesmo formato (string mm/YYYY)
             df['_per'] = df['Mes_Ano'].apply(lambda m: pd.Period(
                 pd.to_datetime('01/' + m, dayfirst=True), freq='M'
             ) if '/' in str(m) else pd.Period(m, freq='M'))
@@ -764,23 +1003,31 @@ def sincronizar_contexto_sazonal(periodos_historicos, periodos_futuros):
                 lambda p: df_area_mes.loc[p, 'Area_Total_m2'] if p in df_area_mes.index else np.nan
             ).ffill().bfill().fillna(0.0)
             df.drop(columns=['_per'], inplace=True)
-            print(f"[Contexto] Area Manutencao integrada: "
-                  f"{df['Area_Construida_m2'].max():.0f} m2 construida, "
-                  f"{df['Area_Total_m2'].max():.0f} m2 total.")
+            print(f"[Contexto] Área Manutenção integrada: "
+                  f"{df['Area_Construida_m2'].max():.0f} m² construída, "
+                  f"{df['Area_Total_m2'].max():.0f} m² total.")
         else:
             df['Area_Construida_m2'] = 0.0
             df['Area_Total_m2'] = 0.0
-            print("[Contexto] Aba 'Area Manutencao' nao encontrada — area zerada nos exogenos.")
+            print("[Contexto] Aba 'Área Manutenção' não encontrada — área zerada nos exógenos.")
     except Exception as _e_area:
         df['Area_Construida_m2'] = 0.0
         df['Area_Total_m2'] = 0.0
-        print(f"[Contexto] Falha ao integrar area ({_e_area}) — area zerada.")
+        print(f"[Contexto] Falha ao integrar área ({_e_area}) — área zerada.")
 
     return df
 
 def construir_exog(df_contexto, periodos_alvo):
+    """
+    [v3.8 — Fase 1.0] Recebe df_contexto consolidado e lista de periodos (pd.Period).
+    Retorna matriz X (n×4) com:
+      [Precipitacao_mm, Periodo_Letivo_bin, Area_Construida_m2, Area_Total_m2]
+    Períodos sem dado em df_contexto recebem média histórica (precipitação),
+    regra mar-jun/ago-dez (letivo) e último valor de área (forward fill).
+    """
     tem_area = ('Area_Construida_m2' in df_contexto.columns and
                 'Area_Total_m2' in df_contexto.columns)
+
     if tem_area:
         mapa = {row['Mes_Ano']: (row['Precipitacao_mm'], row['Periodo_Letivo_bin'],
                                   row['Area_Construida_m2'], row['Area_Total_m2'])
@@ -811,19 +1058,28 @@ def construir_exog(df_contexto, periodos_alvo):
     return np.array(linhas)
 
 def construir_exog_futuro_climatologico(df_contexto, periodos_futuros):
+    """
+    [v3.8 — Fase 1.0] Para forecast: usa média histórica do mesmo mês (Opção α)
+    para precipitação, regra do calendário acadêmico para período letivo e
+    último valor de área (forward fill) para Area_Construida_m2 / Area_Total_m2.
+    Retorna matriz X (n×4) compatível com construir_exog.
+    """
     df_aux = df_contexto.copy()
     df_aux['mes_num'] = df_aux['Mes_Ano'].str[:2].astype(int)
     medias_mes = df_aux.groupby('mes_num')['Precipitacao_mm'].mean().to_dict()
     media_global = float(df_aux['Precipitacao_mm'].mean())
+
     tem_area = ('Area_Construida_m2' in df_aux.columns and
                 'Area_Total_m2' in df_aux.columns)
     if tem_area:
+        # Último valor de área disponível (forward fill para forecast)
         ultimo_ac = float(df_aux['Area_Construida_m2'].replace(0, np.nan).dropna().iloc[-1]) \
                     if df_aux['Area_Construida_m2'].any() else 0.0
         ultimo_at = float(df_aux['Area_Total_m2'].replace(0, np.nan).dropna().iloc[-1]) \
                     if df_aux['Area_Total_m2'].any() else 0.0
     else:
         ultimo_ac, ultimo_at = 0.0, 0.0
+
     linhas = []
     for p in periodos_futuros:
         precip_clim = medias_mes.get(p.month, media_global)
@@ -834,24 +1090,62 @@ def construir_exog_futuro_climatologico(df_contexto, periodos_futuros):
 
 
 # =====================================================================
-# 9. EXTRAÇÃO DE SÉRIE TEMPORAL
+# 9. PARSER DE VALOR (dependência de extrair_serie_custo)
 # =====================================================================
 
-def extrair_serie_temporal(dados_linhas):
+# =====================================================================
+# [v4.0.3 — Fase 4A] Parser e série de custos (Coluna Q)
+# =====================================================================
+def parse_valor_chamado(valor_raw):
+    """Converte valor da coluna Q em float. Retorna None se inválido.
+
+    Tolera: 'R$ 1.234,56', '1234.56', '1234,56', número Sheets nativo, vazio.
     """
-    [v3.6.5] Extrai série mensal contínua.
-    - Datas futuras (> agora) são descartadas.
-    - O mês corrente (incompleto) é removido: o modelo só usa meses
-      100% finalizados. Um mês com dados parciais cria ponto baixo
-      irreal que contamina tendência e sazonalidade.
-    - Períodos sem chamados ficam com 0 (interpolação por preenchimento).
+    if valor_raw is None or valor_raw == '':
+        return None
+    if isinstance(valor_raw, (int, float)):
+        v = float(valor_raw)
+        return v if v >= 0 else None
+    s = str(valor_raw).strip()
+    if not s:
+        return None
+    s = s.replace('R$', '').replace(' ', '').strip()
+    if ',' in s and '.' in s:
+        # Formato '1.234,56' — remove pontos de milhar, troca vírgula por ponto
+        s = s.replace('.', '').replace(',', '.')
+    elif ',' in s:
+        s = s.replace(',', '.')
+    try:
+        v = float(s)
+        return v if v >= 0 else None
+    except (ValueError, TypeError):
+        return None
+
+
+
+
+# =====================================================================
+# 10. EXTRATOR DE SÉRIE DE CUSTOS (coluna Q — R$/mês)
+# =====================================================================
+
+def extrair_serie_custo(dados_linhas):
+    """[v4.0.4] Variante de extrair_serie_temporal que agrega por SOMA da
+    coluna Q (Valor do chamado) em vez de COUNT. Devolve DataFrame com
+    estrutura idêntica (Mes_Ano, Quantidade, Mes_Ano_Str) onde a coluna
+    "Quantidade" passa a conter o valor financeiro mensal em R$.
+
+    Filtros aplicados:
+      - Datas futuras (> agora) descartadas
+      - Mês corrente (incompleto) removido
+      - Valor parseável e > 0 (via parse_valor_chamado)
+    Devolve None quando não houver dados suficientes.
     """
     agora = datetime.now(FUSO_BAHIA)
     registros = []
     for linha in dados_linhas:
-        if len(linha) <= COL_DATA_ABERTURA:
+        if len(linha) <= max(COL_DATA_ABERTURA, COL_VALOR):
             continue
-        data_str = linha[COL_DATA_ABERTURA].strip()
+        data_str = (linha[COL_DATA_ABERTURA] or '').strip()
         if not data_str:
             continue
         data = pd.to_datetime(data_str, format='%d/%m/%Y %H:%M:%S', errors='coerce')
@@ -861,54 +1155,58 @@ def extrair_serie_temporal(dados_linhas):
             data = pd.to_datetime(data_str, dayfirst=True, errors='coerce')
         if pd.isna(data):
             continue
-        # Descarta datas futuras (timezone-naive comparison)
         try:
             if data.tz is None and data > agora.replace(tzinfo=None):
                 continue
             elif data.tz is not None and data > agora:
                 continue
         except Exception:
-            pass  # em caso de incompatibilidade de tz, mantém
-        registros.append({'data': data})
+            pass
+        valor = parse_valor_chamado(linha[COL_VALOR])
+        if valor is None or valor <= 0:
+            continue
+        registros.append({'data': data, 'valor': valor})
 
     if not registros:
         return None
 
     df = pd.DataFrame(registros)
     df['Mes_Ano'] = df['data'].dt.to_period('M')
-    contagem = df.groupby('Mes_Ano').size().reset_index(name='Quantidade')
+    contagem = df.groupby('Mes_Ano')['valor'].sum().reset_index()
+    contagem = contagem.rename(columns={'valor': 'Quantidade'})
     inicio = contagem['Mes_Ano'].min()
     fim = contagem['Mes_Ano'].max()
     if pd.isna(inicio) or pd.isna(fim):
         return None
     todos_meses = pd.period_range(inicio, fim, freq='M')
-    contagem = contagem.set_index('Mes_Ano').reindex(todos_meses, fill_value=0).reset_index()
+    contagem = contagem.set_index('Mes_Ano').reindex(todos_meses, fill_value=0.0).reset_index()
     contagem = contagem.rename(columns={'index': 'Mes_Ano'})
     contagem['Mes_Ano_Str'] = contagem['Mes_Ano'].dt.strftime('%m/%Y')
 
-    # REMOVE MÊS CORRENTE INCOMPLETO — só usa meses 100% finalizados.
     try:
         mes_atual = pd.Period(year=agora.year, month=agora.month, freq='M')
         n_antes = len(contagem)
         contagem = contagem[contagem['Mes_Ano'] < mes_atual].reset_index(drop=True)
         n_removidos = n_antes - len(contagem)
         if n_removidos > 0:
-            print(f"[Série] Mês corrente ({mes_atual.strftime('%m/%Y')}) e posteriores "
+            print(f"[Custo] Mês corrente ({mes_atual.strftime('%m/%Y')}) e posteriores "
                   f"removidos ({n_removidos} período(s)). Série encerra em "
                   f"{contagem['Mes_Ano'].max().strftime('%m/%Y')}.")
     except Exception as e:
-        print(f"[Série] Aviso ao remover mês incompleto: {e}")
+        print(f"[Custo] Aviso ao remover mês incompleto: {e}")
 
     if len(contagem) < 2:
         return None
 
-    print(f"[Série] {len(contagem)} meses completos, "
-          f"de {contagem['Mes_Ano_Str'].iloc[0]} a {contagem['Mes_Ano_Str'].iloc[-1]}")
+    print(f"[Custo] {len(contagem)} meses completos com valor > 0, "
+          f"de {contagem['Mes_Ano_Str'].iloc[0]} a {contagem['Mes_Ano_Str'].iloc[-1]} "
+          f"(soma total R$ {contagem['Quantidade'].sum():,.2f}).")
     return contagem
 
 
+
 # =====================================================================
-# 10. UTILITÁRIOS ESTATÍSTICOS E BOOTSTRAP
+# 11. UTILITÁRIOS ESTATÍSTICOS E BOOTSTRAP
 # =====================================================================
 
 def tratar_outliers(serie, z_thresh=THRESH_OUTLIER_Z, janela=5):
@@ -1154,7 +1452,7 @@ def calcular_qqplot_pontos(residuos):
 
 
 # =====================================================================
-# 11. MODELOS DO EIXO 2 (8 modelos de previsão)
+# 12. MODELOS DO EIXO 2 (8 modelos de previsão)
 # =====================================================================
 
 # =====================================================================
@@ -2281,7 +2579,7 @@ def ajustar_theta(serie, periodo=12):
 
 
 # =====================================================================
-# 11.3 ENSEMBLE, VALIDAÇÃO CRUZADA E TESTES ESTATÍSTICOS
+# 12.3 ENSEMBLE, VALIDAÇÃO CRUZADA E TESTES ESTATÍSTICOS
 # =====================================================================
 
 # ---------- ENSEMBLE (média ponderada por inverso do RMSE) ----------
@@ -2807,7 +3105,7 @@ def selecionar_modelo_multicriterio(resultados_sucesso, cv_por_modelo, crps_por_
 
 
 # =====================================================================
-# 11.6 HEATMAP DE ERRO, ABLATION, EXPORTAÇÃO CIENTÍFICA, SHAP
+# 12.6 HEATMAP DE ERRO, ABLATION, EXPORTAÇÃO CIENTÍFICA, SHAP
 # =====================================================================
 
 # =====================================================================
@@ -3329,7 +3627,7 @@ def gravar_aba_shap(resultados_modelos):
 
 
 # =====================================================================
-# 12. EXECUTAR ANÁLISE PREDITIVA AVANÇADA (pipeline principal)
+# 13. EXECUTAR ANÁLISE PREDITIVA AVANÇADA (pipeline principal)
 # =====================================================================
 
 # =====================================================================
@@ -4551,7 +4849,277 @@ def executar_analise_preditiva_avancada(dados_linhas, sufixo="",
 
 
 # =====================================================================
-# 13. UTILITÁRIO DE CONTROLE DE EXECUÇÃO
+# 14. WRAPPER DE PREVISÃO DE CUSTO POR RECORTE
+# =====================================================================
+
+def executar_previsao_custo(dados_linhas, sufixo=""):
+    """[v4.0.6] Wrapper que aplica o pipeline completo de previsão temporal
+    sobre a série mensal de custos em R$ (soma da coluna Q). Reusa a
+    infraestrutura de executar_analise_preditiva_avancada via parametrização
+    de prefixo de aba e extrator de série. Gera 14 abas com prefixo
+    PREVISAO_CUSTO espelhando o pipeline de chamados.
+
+    Validação prévia: exige MIN_PONTOS_SERIE_CUSTO (12) meses com valor > 0
+    para que os modelos de sazonalidade tenham dados suficientes. Séries mais
+    curtas são puladas com log — mesma regra documentada no dashboard v4.1.2.
+    """
+    _lbl = f" [{sufixo}]" if sufixo else ""
+    # Pré-valida série de custos antes de delegar ao pipeline completo
+    serie_custo = extrair_serie_custo(dados_linhas)
+    if serie_custo is None or len(serie_custo) < MIN_PONTOS_SERIE_CUSTO:
+        n = 0 if serie_custo is None else len(serie_custo)
+        print(f"[Custo{_lbl}] Série insuficiente: {n} meses com custo > 0 "
+              f"(mínimo {MIN_PONTOS_SERIE_CUSTO}) — pulado.")
+        return
+    print(f"[Custo{_lbl}] {len(serie_custo)} meses válidos — iniciando previsão de custos.")
+    return executar_analise_preditiva_avancada(
+        dados_linhas,
+        sufixo=sufixo,
+        prefixo_aba="PREVISAO_CUSTO",
+        extrator=extrair_serie_custo,
+        rotulo_alvo="Custo Real (R$)",
+        unidade="reais"
+    )
+
+
+
+# =====================================================================
+# 15. GRAVAR FILTROS DISPONÍVEIS (inventário de recortes)
+# =====================================================================
+
+def gravar_filtros_disponiveis(dados_linhas):
+    """Escreve FILTROS_DISPONIVEIS com campus, tipos e categorias extraídos de dados_linhas."""
+    try:
+        campuses = sorted({
+            l[COL_CAMPUS].strip()
+            for l in dados_linhas
+            if len(l) > COL_CAMPUS and l[COL_CAMPUS].strip()
+        })
+        prev_cats = set()
+        corr_cats = set()
+        for l in dados_linhas:
+            if len(l) <= COL_CATEGORIA_HIERARQUICA:
+                continue
+            val_m = l[COL_CATEGORIA_HIERARQUICA].strip()
+            if not val_m:
+                continue
+            tipo, cat = extrair_tipo_categoria(val_m)
+            if not cat or cat == 'Desconhecida':
+                continue
+            if tipo == 'Preventiva':
+                prev_cats.add(cat)
+            elif tipo == 'Corretiva':
+                corr_cats.add(cat)
+
+        aba_f = obter_aba("FILTROS_DISPONIVEIS", linhas=300, colunas=4,
+                          cabecalho=["Tipo_Filtro", "Label", "Sufixo_Aba", "N_Registros"])
+        rows = [["Tipo_Filtro", "Label", "Sufixo_Aba", "N_Registros"],
+                ["global", "Todos", "", len(dados_linhas)]]
+        for c in campuses:
+            n = sum(1 for l in dados_linhas if len(l) > COL_CAMPUS and l[COL_CAMPUS].strip() == c)
+            rows.append(["campus", c, f"__{sanitizar_sufixo(c)}", n])
+        for tipo in ("Preventiva", "Corretiva"):
+            filt = [l for l in dados_linhas
+                    if len(l) > COL_CATEGORIA_HIERARQUICA
+                    and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[0] == tipo]
+            rows.append(["tipo", tipo, f"__{tipo}", len(filt)])
+        for cat in sorted(prev_cats):
+            filt_c = [l for l in dados_linhas
+                      if len(l) > COL_CATEGORIA_HIERARQUICA
+                      and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip()) == ('Preventiva', cat)]
+            suf = f"__Prev_{sanitizar_sufixo(cat)}"[:24]
+            rows.append(["cat_prev", cat, suf, len(filt_c)])
+        for cat in sorted(corr_cats):
+            filt_c = [l for l in dados_linhas
+                      if len(l) > COL_CATEGORIA_HIERARQUICA
+                      and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip()) == ('Corretiva', cat)]
+            suf = f"__Corr_{sanitizar_sufixo(cat)}"[:24]
+            rows.append(["cat_corr", cat, suf, len(filt_c)])
+
+        aba_f.clear()
+        aba_f.update(values=rows, range_name='A1', value_input_option='USER_ENTERED')
+        print(f"[Filtros] FILTROS_DISPONIVEIS atualizada: {len(campuses)} campi, "
+              f"{len(prev_cats)} cats preventivas, {len(corr_cats)} cats corretivas.")
+    except Exception as e:
+        print(f"[Filtros] Falha ao gravar FILTROS_DISPONIVEIS: {e}")
+
+
+
+# =====================================================================
+# 16. EXECUTAR TODOS OS FILTROS (campus / tipo / categoria)
+# =====================================================================
+
+def executar_todos_filtros(dados_linhas, executar_ods=False):
+    """Roda executar_analise_preditiva_avancada para cada combinação de filtro e grava FILTROS_DISPONIVEIS.
+
+    dados_linhas: lista de linhas SEM o cabeçalho (já vem assim do main loop).
+    executar_ods: se True (default, modo completo), grava também INDICADORES_ODS
+                  e PESOS_ODS ao final. Workflows separados (v4.0.4) podem
+                  passar False para deixar essas abas para outro workflow.
+    O limiar mínimo para tentar rodar é MIN_REGISTROS_FILTRO chamados — a função
+    interna descartará se os meses resultantes forem < MIN_PONTOS_SERIE.
+    """
+    # Mínimo de chamados brutos para valer a pena tentar (heurística: ~5 por mês × 6 meses)
+    MIN_REGISTROS_FILTRO = max(MIN_PONTOS_SERIE * 5, 30)
+
+    gravar_filtros_disponiveis(dados_linhas)
+
+    # ── Por campus ──────────────────────────────────────────────────────────
+    campuses = sorted({
+        l[COL_CAMPUS].strip()
+        for l in dados_linhas
+        if len(l) > COL_CAMPUS and l[COL_CAMPUS].strip()
+    })
+    for campus in campuses:
+        filtrados = [l for l in dados_linhas
+                     if len(l) > COL_CAMPUS and l[COL_CAMPUS].strip() == campus]
+        if len(filtrados) < MIN_REGISTROS_FILTRO:
+            print(f"[Filtros] Campus '{campus}': {len(filtrados)} registros (< {MIN_REGISTROS_FILTRO}) — pulado.")
+            continue
+        suf = f"__{sanitizar_sufixo(campus)}"
+        print(f"[Filtros] Campus '{campus}' → sufixo '{suf}' ({len(filtrados)} registros)")
+        try:
+            executar_analise_preditiva_avancada(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro no campus '{campus}': {e}")
+        # [v4.0.4] Previsão de custos paralela para este recorte
+        try:
+            executar_previsao_custo(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro custos no campus '{campus}': {e}")
+
+    # ── Por tipo (Preventiva / Corretiva) e suas categorias ─────────────────
+    for tipo in ("Preventiva", "Corretiva"):
+        filtrados = [l for l in dados_linhas
+                     if len(l) > COL_CATEGORIA_HIERARQUICA
+                     and l[COL_CATEGORIA_HIERARQUICA].strip()
+                     and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[0] == tipo]
+        if len(filtrados) < MIN_REGISTROS_FILTRO:
+            print(f"[Filtros] Tipo '{tipo}': {len(filtrados)} registros (< {MIN_REGISTROS_FILTRO}) — pulado.")
+            continue
+        suf = f"__{tipo}"
+        print(f"[Filtros] Tipo '{tipo}' → sufixo '{suf}' ({len(filtrados)} registros)")
+        try:
+            executar_analise_preditiva_avancada(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro no tipo '{tipo}': {e}")
+        # [v4.0.4] Previsão de custos paralela para este recorte
+        try:
+            executar_previsao_custo(filtrados, sufixo=suf)
+        except Exception as e:
+            print(f"[Filtros] Erro custos no tipo '{tipo}': {e}")
+
+        # Categorias dentro do tipo
+        cats = sorted({
+            extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[1]
+            for l in filtrados
+            if len(l) > COL_CATEGORIA_HIERARQUICA and l[COL_CATEGORIA_HIERARQUICA].strip()
+        })
+        pfx = "Prev" if tipo == "Preventiva" else "Corr"
+        for cat in cats:
+            if not cat or cat == 'Desconhecida':
+                continue
+            filtrados_cat = [l for l in filtrados
+                             if len(l) > COL_CATEGORIA_HIERARQUICA
+                             and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[1] == cat]
+            if len(filtrados_cat) < MIN_REGISTROS_FILTRO:
+                print(f"[Filtros] Cat '{cat}' ({tipo}): {len(filtrados_cat)} registros — pulado.")
+                continue
+            suf_cat = f"__{pfx}_{sanitizar_sufixo(cat)}"[:24]
+            print(f"[Filtros] Cat '{cat}' ({tipo}) → sufixo '{suf_cat}' ({len(filtrados_cat)} registros)")
+            try:
+                executar_analise_preditiva_avancada(filtrados_cat, sufixo=suf_cat)
+            except Exception as e:
+                print(f"[Filtros] Erro na categoria '{cat}': {e}")
+            # [v4.0.4] Previsão de custos paralela para esta categoria
+            try:
+                executar_previsao_custo(filtrados_cat, sufixo=suf_cat)
+            except Exception as e:
+                print(f"[Filtros] Erro custos na categoria '{cat}': {e}")
+
+    # ── [v3.8 — Fase 1.3] PREVISAO_POR_CATEGORIA — aba resumo de todas as cats ──
+    # Coleta resultados das análises por categoria para um resumo executivo.
+    if EXECUTAR_POR_CATEGORIA:
+        try:
+            _cab_cat = ["Categoria", "Tipo", "N_Chamados",
+                        "Modelo_Vencedor", "RMSE", "MAE", "MAPE", "Sufixo_Aba"]
+            _linhas_cat = [_cab_cat]
+            for tipo in ("Preventiva", "Corretiva"):
+                filtrados_t = [l for l in dados_linhas
+                               if len(l) > COL_CATEGORIA_HIERARQUICA
+                               and l[COL_CATEGORIA_HIERARQUICA].strip()
+                               and extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[0] == tipo]
+                cats_t = sorted({
+                    extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[1]
+                    for l in filtrados_t
+                    if len(l) > COL_CATEGORIA_HIERARQUICA and l[COL_CATEGORIA_HIERARQUICA].strip()
+                })
+                pfx_t = "Prev" if tipo == "Preventiva" else "Corr"
+                for cat_t in cats_t:
+                    if not cat_t or cat_t == 'Desconhecida':
+                        continue
+                    filtrados_c = [l for l in filtrados_t
+                                   if extrair_tipo_categoria(l[COL_CATEGORIA_HIERARQUICA].strip())[1] == cat_t]
+                    suf_c = f"__{pfx_t}_{sanitizar_sufixo(cat_t)}"[:24]
+                    # Tenta ler PREVISAO_TEMPORAL desta categoria para extrair métricas
+                    _rmse, _mae, _mape, _venc = "—", "—", "—", "—"
+                    try:
+                        _aba_t = obter_aba(f"PREVISAO_TEMPORAL{suf_c}", linhas=10, colunas=20)
+                        _vals_t = _aba_t.get_all_values()
+                        # Procura linha de métricas (contém "MAE" no cabeçalho da sub-tabela)
+                        for _row in _vals_t:
+                            if len(_row) >= 5 and str(_row[0]).strip().lower() not in ('', 'período', 'modelo', 'coluna'):
+                                # Linha de dados do modelo
+                                try:
+                                    _venc_h = [c for c in _vals_t[0] if 'Vencedor' in str(c)]
+                                    if _venc_h and len(_row) > len(_vals_t[0]) - 1:
+                                        _venc = str(_row[-1])
+                                except Exception:
+                                    pass
+                                break
+                        # Busca linha de métricas resumidas (RMSE/MAE)
+                        for _row in _vals_t:
+                            if len(_row) >= 3 and _row[0] and _row[0] not in ('', 'Período', 'Modelo'):
+                                try:
+                                    _mae  = round(float(str(_row[1]).replace(',','.')), 2)
+                                    _rmse = round(float(str(_row[2]).replace(',','.')), 2)
+                                    if len(_row) >= 5:
+                                        _mape = round(float(str(_row[4]).replace(',','.')), 2)
+                                    break
+                                except Exception:
+                                    pass
+                    except Exception:
+                        pass
+                    _linhas_cat.append([cat_t, tipo, len(filtrados_c),
+                                        _venc, _rmse, _mae, _mape, suf_c])
+
+            aba_pc = obter_aba(
+                "PREVISAO_POR_CATEGORIA", linhas=200, colunas=8,
+                cabecalho=_cab_cat
+            )
+            aba_pc.clear()
+            aba_pc.update(values=_linhas_cat, range_name='A1',
+                          value_input_option='USER_ENTERED')
+            print(f"[Filtros] PREVISAO_POR_CATEGORIA gravada com {len(_linhas_cat)-1} categorias.")
+        except Exception as _e_pc:
+            print(f"[Filtros] PREVISAO_POR_CATEGORIA falhou: {_e_pc}")
+
+    # ── [v4.0.3 — Fase 4A] Indicadores ODS + Pesos ODS ──────────────────────
+    if executar_ods:
+        try:
+            print("[ODS] Calculando indicadores brutos por campus...")
+            calcular_indicadores_ods_por_campus(dados_linhas)
+            garantir_aba_pesos_ods()
+        except Exception as _e_ods:
+            print(f"[ODS] Bloco de indicadores/pesos falhou: {_e_ods}")
+    else:
+        print("[ODS] Pulado (workflow separado v4.0.4 — modo previsao_filtros).")
+
+    print("[Filtros] Execução por filtros concluída.")
+
+
+# =====================================================================
+# 17. UTILITÁRIO DE CONTROLE DE EXECUÇÃO
 # =====================================================================
 
 def previsao_recente_existe(horas=INTERVALO_HORAS_PREVISAO_BOOT):
@@ -4576,25 +5144,23 @@ def previsao_recente_existe(horas=INTERVALO_HORAS_PREVISAO_BOOT):
 
 
 # =====================================================================
-# 14. MODO OPERACIONAL E ENTRY POINT
+# 18. MODO OPERACIONAL FILTROS
 # =====================================================================
 
-def _modo_previsao_chamados():
-    """[v4.0.8] Só previsão global de chamados (contagem). Sem custos, sem filtros, sem ODS.
-    Projetado para rodar uma vez por dia (workflow previsao_chamados_global).
-    Gera as 14 abas PREVISAO_* sem sufixo (TEMPORAL, DETALHES, INCERTEZAS, etc.).
-    """
+def _modo_previsao_filtros():
+    """[v4.0.4] Só filtros (campus/tipo/categoria). Sem global. Sem ODS."""
     if previsao_recente_existe():
-        print(f"[Modo previsao_chamados] Previsão recente encontrada "
+        print(f"[Modo previsao_filtros] Previsão recente encontrada "
               f"(< {INTERVALO_HORAS_PREVISAO_BOOT}h). Abortando para evitar re-execução.")
         return
     try:
         todas_linhas = planilha.get_all_values()
     except APIError as e:
-        print(f"[Modo previsao_chamados] Falha: {e}"); return
+        print(f"[Modo previsao_filtros] Falha: {e}"); return
     dados_op = todas_linhas[1:]
     atualizar_categorias(dados_op)
-    executar_analise_preditiva_avancada(dados_op, sufixo="")
+    executar_todos_filtros(dados_op, executar_ods=False)
+
 
 
 # =====================================================================
@@ -4603,17 +5169,18 @@ def _modo_previsao_chamados():
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(
-        description="Motor Malha IA — módulo de previsão de chamados (v4.0.8)"
+        description="Motor Malha IA — módulo Filtros (v4.0.8)"
     )
     parser.add_argument(
-        "--apenas-previsao-chamados",
+        "--apenas-filtros",
         action="store_true",
-        help="Executa APENAS o pipeline de previsão global de chamados/mês."
+        help="Executa APENAS o pipeline de previsão por filtros "
+             "(campus / tipo / categoria). ODS delegado ao motor_ods.py."
     )
     args = parser.parse_args()
 
-    if args.apenas_previsao_chamados:
-        _modo_previsao_chamados()
+    if args.apenas_filtros:
+        _modo_previsao_filtros()
     else:
-        print("[motor_previsao_chamados] Nenhum modo ativo. "
-              "Use --apenas-previsao-chamados para executar.")
+        print("[motor_previsao_filtros] Nenhum modo ativo. "
+              "Use --apenas-filtros para executar.")

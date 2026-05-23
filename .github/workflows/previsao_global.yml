@@ -1,10 +1,10 @@
 # ============================================================================
-# Malha IA v4.0.8 — Workflow: PREVISÃO GLOBAL COMBINADA (manual)
-# Executa chamados + custos juntos. Sem cron — uso manual via workflow_dispatch
-# ou emergência. Em produção, prefer os workflows separados:
-#   previsao_chamados_global.yml  (06:30 UTC)
-#   previsao_custo_global.yml     (18:30 UTC)
-# Salvar em: .github/workflows/previsao_global.yml
+# Malha IA v4.0.8 — Workflow: PREVISÃO GLOBAL COMBINADA (manual/emergência)
+# Executa chamados + custos juntos em sequência. Sem cron — uso manual via
+# workflow_dispatch. Em produção, prefira os workflows separados:
+#   previsao_chamados_global.yml  (06:30 UTC, diário)
+#   previsao_custo_global.yml     (18:30 UTC, diário)
+# Módulos: motor_previsao_chamados.py + motor_previsao_custos.py
 # ============================================================================
 name: 2 - Previsao Global Combinada (manual)
 
@@ -18,7 +18,7 @@ on:
 jobs:
   previsao_global:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 600      # 10h — executa chamados + custos em sequência
 
     steps:
       - name: Checkout do codigo
@@ -42,5 +42,8 @@ jobs:
           echo "$AUTENTICACAO_GOOGLE" | base64 -d > autenticacao_google.json
           echo "{}" > chaves_api.json
 
-      - name: Executar previsao global combinada
-        run: python motor_v36.py --apenas-previsao-global
+      - name: Executar previsao de chamados
+        run: python motor_previsao_chamados.py --apenas-previsao-chamados
+
+      - name: Executar previsao de custos
+        run: python motor_previsao_custos.py --apenas-previsao-custos
