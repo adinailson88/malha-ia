@@ -3379,6 +3379,12 @@ function filtrarPressupostos() {
   renderTabelaPressupostos(cab, linhas, modelo, status);
 }
 
+function iconePressupostoPorClasse(cls) {
+  if (cls === 'badge-ok') return '✓';
+  if (cls === 'badge-err') return '✗';
+  return '⚠';
+}
+
 /* renderTabelaPressupostos(cab, linhas, filtroModelo, filtroStatus)
    Renderiza a tabela detalhada de pressupostos estatísticos por modelo,
    já aplicando o filtro de modelo e o filtro de status (ok/atenção/falhou)
@@ -3405,7 +3411,8 @@ function renderTabelaPressupostos(cab, linhas, filtroModelo, filtroStatus) {
       if (i === idxRes && c) {
         const txt = c.toString().trim();
         const cls = classificarStatus(txt);
-        return `<td><span class="badge ${cls}">${txt}</span></td>`;
+        const icone = iconePressupostoPorClasse(cls);
+        return `<td><span class="badge ${cls}" title="${txt}">${icone} ${txt}</span></td>`;
       }
       return `<td>${c != null ? c : ''}</td>`;
     }).join('')}</tr>`).join('') + `</tbody></table>`;
