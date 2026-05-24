@@ -372,6 +372,21 @@ footer.app-footer { margin-top: 2rem; padding: 1rem 24px; border-top: 1px solid 
     </div>
 
     <div class="card">
+      <div class="card-title">Resíduos do modelo vencedor — inspeção rápida</div>
+      <div id="residuos-rapido-info" style="font-size:12px;color:var(--ufsb-cinza-medio);margin-bottom:8px;">Aguardando resíduos...</div>
+      <div class="grid-2">
+        <div>
+          <div style="font-family:var(--font-inst);font-size:11px;font-weight:700;color:var(--ufsb-azul);text-transform:uppercase;margin-bottom:6px;">Histograma</div>
+          <div class="chart-wrap-sm"><canvas id="chartHistRapido"></canvas></div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-inst);font-size:11px;font-weight:700;color:var(--ufsb-azul);text-transform:uppercase;margin-bottom:6px;">Q-Q plot</div>
+          <div class="chart-wrap-sm"><canvas id="chartQQRapido"></canvas></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
       <div class="card-title">Matriz de correlação de Pearson</div>
       <div id="corr-info" style="font-size:12px;color:var(--ufsb-cinza-medio);margin-bottom:8px;">Correlações entre chamados/mês, precipitação, período letivo e defasagens (lag 1, 6, 12 meses). Verde = correlação positiva · Vermelho = negativa · Intensidade reflete a força.</div>
       <div id="corr-matrix"><div class="empty-state">Aguardando dados de contexto...</div></div>
@@ -2572,6 +2587,7 @@ function processarPrevisao() {
         return `<td>${c != null ? c : ''}</td>`;
       }).join('')}</tr>`).join('') + `</tbody></table>`;
   } else if (elDiag) elDiag.innerHTML = '<div class="empty-state">Diagnóstico não disponível.</div>';
+  renderResumoResiduosRapido();
 }
 
 /* resetRangePrevisao()
@@ -2845,6 +2861,7 @@ function processarResiduos() {
   }
   select.innerHTML = lista.map(m => `<option value="${m}">${m}</option>`).join('');
   renderGraficosResiduos();
+  renderResumoResiduosRapido();
 }
 
 /* renderGraficosResiduos()
@@ -3085,6 +3102,93 @@ function invNormal(p) {
     q = Math.sqrt(-2 * Math.log(1-p));
     return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1);
   }
+}
+
+function renderResumoResiduosRapido() {
+  const info = document.getElementById('residuos-rapido-info');
+  const ctxHist = document.getElementById('chartHistRapido');
+  const ctxQQ = document.getElementById('chartQQRapido');
+  if (!info || !ctxHist || !ctxQQ) return;
+  if (!dadosResiduos.length || dadosResiduos.length < 2) {
+    info.innerHTML = '<em>Aguardando PREVISAO_RESIDUOS para exibir a inspeção rápida.</em>';
+    return;
+  }
+  const cab = dadosResiduos[0] || [];
+  const idxModelo = cab.findIndex(h => h && h.toString().trim() === 'Modelo');
+  const idxResiduo = cab.findIndex(h => h && h.toString().trim() === 'Residuo');
+  if (idxModelo < 0 || idxResiduo < 0) return;
+  const coletar = nome => dadosResiduos.slice(1)
+    .filter(l => l && l[idxModelo]?.toString().trim() === nome)
+    .map(l => parseNum(l[idxResiduo]))
+    .filter(v => v !== null);
+
+  let modelo = dadosGraficoPrevisao?.modeloVencedorRMSE || dadosGraficoPrevisao?.modeloVencedor || '';
+  let residuos = modelo ? coletar(modelo) : [];
+  if (!residuos.length) {
+    modelo = dadosResiduos[1]?.[idxModelo]?.toString().trim() || '';
+    residuos = modelo ? coletar(modelo) : [];
+  }
+  if (!residuos.length) {
+    info.innerHTML = '<em>Sem resíduos numéricos para o modelo vencedor.</em>';
+    return;
+  }
+
+  const n = residuos.length;
+  const media = residuos.reduce((a,b) => a + b, 0) / n;
+  const desvio = Math.sqrt(residuos.reduce((a,b) => a + (b - media) ** 2, 0) / Math.max(1, n - 1));
+  info.innerHTML = `<strong>${modelo}</strong> · n=${n} · média=${media.toFixed(3)} · desvio=${desvio.toFixed(3)}`;
+
+  const sorted = [...residuos].sort((a,b) => a-b);
+  const min = sorted[0], max = sorted[n - 1];
+  const nBins = Math.max(8, Math.ceil(Math.sqrt(n)));
+  const largura = max > min ? (max - min) / nBins : 1;
+  const bins = new Array(nBins).fill(0);
+  const labels = [];
+  for (let i = 0; i < nBins; i++) labels.push((min + (i + 0.5) * largura).toFixed(1));
+  residuos.forEach(v => {
+    let idx = Math.floor((v - min) / largura);
+    if (idx < 0) idx = 0;
+    if (idx >= nBins) idx = nBins - 1;
+    bins[idx]++;
+  });
+  if (charts.histRapido) charts.histRapido.destroy();
+  charts.histRapido = new Chart(ctxHist, {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Frequência', data: bins, backgroundColor: 'rgba(0,40,120,0.65)', borderWidth: 0 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true }, x: { ticks: { font: { size: 9 }, maxRotation: 45 } } } }
+  });
+
+  let pontos = [];
+  if (dadosQQ.length > 1) {
+    const cabQQ = dadosQQ[0] || [];
+    const idxModQQ = cabQQ.findIndex(h => h && h.toString().trim() === 'Modelo');
+    const idxTeo = cabQQ.findIndex(h => h && h.toString().trim() === 'Quantil_Teorico');
+    const idxObs = cabQQ.findIndex(h => h && h.toString().trim() === 'Quantil_Observado_Padronizado');
+    if (idxModQQ >= 0 && idxTeo >= 0 && idxObs >= 0) {
+      pontos = dadosQQ.slice(1)
+        .filter(l => l && l[idxModQQ]?.toString().trim() === modelo)
+        .map(l => ({ x: parseNum(l[idxTeo]), y: parseNum(l[idxObs]) }))
+        .filter(p => p.x !== null && p.y !== null);
+    }
+  }
+  if (!pontos.length && desvio > 0) {
+    pontos = sorted.map((r, i) => ({ x: invNormal((i + 0.5) / n), y: (r - media) / desvio }));
+  }
+  if (!pontos.length) {
+    if (charts.qqRapido) charts.qqRapido.destroy();
+    return;
+  }
+  const xs = pontos.map(p => p.x);
+  const minX = Math.min(...xs), maxX = Math.max(...xs);
+  if (charts.qqRapido) charts.qqRapido.destroy();
+  charts.qqRapido = new Chart(ctxQQ, {
+    type: 'scatter',
+    data: { datasets: [
+      { label: 'Q-Q', data: pontos, backgroundColor: '#002878', pointRadius: 2.5 },
+      { label: 'y=x', type: 'line', data: [{ x: minX, y: minX }, { x: maxX, y: maxX }], borderColor: '#8b1a1a', borderDash: [5,5], borderWidth: 1.3, pointRadius: 0, fill: false }
+    ] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Quantil teórico' } }, y: { title: { display: true, text: 'Quantil observado' } } } }
+  });
 }
 
 /* =========================================================
