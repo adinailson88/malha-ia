@@ -1324,6 +1324,8 @@ Dense (unidades = 12, ativação linear)
    CONFIGURAÇÃO
 ========================================================= */
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyLQMA7D9sohZ-nqo-Z2ydVuBi-7igmEFPmhYy3gbOLMsawx78E-DyfnvecMSb-00om/exec";
+const DADOS_JSON_BASE = "dados";
+const USAR_JSON_ESTATICO = true;
 
 let dadosChamados = [];
 let dadosPrevisao = [];
@@ -1387,7 +1389,36 @@ let clusterMonitor = null;
    `?sheet=...`, retorna a matriz [linhas][colunas] já em JSON. Em caso de
    falha ou retorno com chave `error`, registra log e retorna lista vazia.
    Toda comunicação entre o dashboard e a planilha passa por esta função. */
+function slugAbaJson(nomeAba) {
+  return (nomeAba || '')
+    .toString()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^A-Za-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '')
+    .toLowerCase() || 'aba';
+}
+
+async function fetchAbaJsonEstatico(nomeAba) {
+  if (!USAR_JSON_ESTATICO) return null;
+  const slug = slugAbaJson(nomeAba);
+  const url = `${DADOS_JSON_BASE}/${slug}.json?v=${Date.now()}`;
+  try {
+    const resp = await fetch(url, { cache: 'no-store' });
+    if (resp.status === 404) return null;
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    registrarLog(`JSON ${slug}.json: ${Math.max(0, data.length - 1)} linhas`, 'ok');
+    return data;
+  } catch (e) {
+    registrarLog(`JSON indisponivel para ${nomeAba}: ${e.message}. Usando Apps Script.`, 'warn');
+    return null;
+  }
+}
+
 async function fetchAba(nomeAba) {
+  const jsonEstatico = await fetchAbaJsonEstatico(nomeAba);
+  if (jsonEstatico) return jsonEstatico;
   try {
     const url = `${APPS_SCRIPT_URL}?sheet=${encodeURIComponent(nomeAba)}`;
     const resp = await fetch(url);
