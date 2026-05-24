@@ -139,4 +139,4 @@ async function fetchAbaJsonEstatico(nomeAba) {
             git push
           fi
 
-# trigger: json-estatico-2
+# trigger: json-estatico-3
