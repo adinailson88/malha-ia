@@ -115,9 +115,23 @@ body { font-family: var(--font-body); color: var(--ufsb-cinza); background: var(
 .tbl tr:hover td { background: var(--ufsb-cinza-claro); }
 .tbl-num { text-align: right; font-variant-numeric: tabular-nums; }
 
-.tbl-scroll { max-height: 360px; overflow-y: auto; border: 1px solid var(--ufsb-cinza-borda); border-radius: 2px; }
+.tbl-scroll { max-height: 360px; overflow: auto; max-width: 100%; border: 1px solid var(--ufsb-cinza-borda); border-radius: 2px; }
 .tbl-scroll table { font-size: 11px; }
 .tbl-scroll th { position: sticky; top: 0; z-index: 1; }
+#incertezas-bootstrap table,
+#custo-incertezas table {
+  table-layout: fixed;
+  min-width: 980px;
+  width: 100%;
+}
+#incertezas-bootstrap th,
+#incertezas-bootstrap td,
+#custo-incertezas th,
+#custo-incertezas td {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
 
 .doc-content { max-width: 920px; margin: 0 auto; font-size: 14px; line-height: 1.75; }
 .doc-content h2 { font-family: var(--font-inst); color: var(--ufsb-azul); font-size: 20px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 6px; border-bottom: 2px solid var(--ufsb-azul); }
@@ -448,15 +462,14 @@ footer.app-footer { margin-top: 2rem; padding: 1rem 24px; border-top: 1px solid 
     </div>
 
     <!-- Incertezas bootstrap de custos -->
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-title">Detalhes paramétricos — custos</div>
-        <div class="tbl-scroll" id="custo-detalhes"><div class="empty-state">Carregando...</div></div>
-      </div>
-      <div class="card">
-        <div class="card-title">Incertezas bootstrap (IC 1σ e 2σ) — custos</div>
-        <div class="tbl-scroll" id="custo-incertezas"><div class="empty-state">Carregando...</div></div>
-      </div>
+    <div class="card">
+      <div class="card-title">Incertezas bootstrap (IC 1σ e 2σ) — custos</div>
+      <div class="tbl-scroll" id="custo-incertezas"><div class="empty-state">Carregando...</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Detalhes paramétricos — custos</div>
+      <div class="tbl-scroll" id="custo-detalhes"><div class="empty-state">Carregando...</div></div>
     </div>
 
     <div class="info-box">
