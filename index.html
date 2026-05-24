@@ -22,10 +22,11 @@
     header p  { color: #94a3b8; margin-top: 0.4rem; font-size: 0.95rem; }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: minmax(260px, 420px);
       gap: 1.2rem;
       width: 100%;
-      max-width: 900px;
+      max-width: 420px;
+      justify-content: center;
     }
     .card {
       background: #1e293b;
@@ -56,36 +57,6 @@
     <div class="num">Visão geral</div>
     <h2>Dashboard Completo</h2>
     <p>Todos os módulos consolidados: classificação, previsão, custos, ODS e filtros.</p>
-  </a>
-
-  <a class="card" href="dashboard_classificacao.html">
-    <div class="num">Módulo 1</div>
-    <h2>Classificação</h2>
-    <p>BiLSTM — classificação e reclassificação automática de chamados.</p>
-  </a>
-
-  <a class="card" href="dashboard_previsao_chamados.html">
-    <div class="num">Módulo 2</div>
-    <h2>Previsão de Chamados</h2>
-    <p>8 modelos + ensemble — previsão global de chamados/mês.</p>
-  </a>
-
-  <a class="card" href="dashboard_previsao_custos.html">
-    <div class="num">Módulo 3</div>
-    <h2>Previsão de Custos</h2>
-    <p>Previsão de gastos mensais em R$ (coluna Q) com intervalos de confiança.</p>
-  </a>
-
-  <a class="card" href="dashboard_ods.html">
-    <div class="num">Módulo 4</div>
-    <h2>Indicadores ODS</h2>
-    <p>MCDM-ESG por campus — ODS 9, 11 e 12 com pesos editáveis.</p>
-  </a>
-
-  <a class="card" href="dashboard_filtros.html">
-    <div class="num">Módulo 5</div>
-    <h2>Previsão por Filtros</h2>
-    <p>Previsão segmentada por campus, tipo de chamado e categoria.</p>
   </a>
 
 </div>
