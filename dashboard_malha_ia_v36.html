@@ -642,40 +642,19 @@ footer.app-footer { margin-top: 2rem; padding: 1rem 24px; border-top: 1px solid 
       </div>
     </div>
 
-    <!-- [v4.1.1] Curva ABC (Pareto) — Preventiva e Corretiva -->
-    <div class="card">
-      <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
-        <span>Curva ABC (Pareto) — Manutenção Preventiva [v4.1.1]</span>
-        <span style="font-size:11px;font-weight:400;text-transform:none;letter-spacing:0;">
-          Base:
-          <select class="model-select" id="abc-prev-base" onchange="renderCurvasABC()" style="font-size:10px;">
-            <option value="qtd">Quantidade de chamados</option>
-            <option value="valor">Valor total gasto (R$, coluna Q)</option>
-          </select>
-        </span>
-      </div>
-      <div style="font-size:11px;color:var(--ufsb-cinza-medio);margin-bottom:8px;">
-        Categorias ordenadas em ordem decrescente. <strong>Faixa A (≤ 80% acumulado)</strong> = poucos itens responsáveis pela maior parte do volume; demandam atenção prioritária no planejamento preventivo.
-        <strong>Faixa B (80–95%)</strong> = item de volume intermediário. <strong>Faixa C (&gt; 95%)</strong> = cauda longa, individualmente pouco relevante.
-      </div>
-      <div class="chart-wrap" style="height:340px;"><canvas id="chart-abc-preventiva"></canvas></div>
+    <!-- [v4.1.2] Curva ABC (Pareto) — quantidade × valor -->
+    <div style="font-size:11px;color:var(--ufsb-cinza-medio);margin-bottom:8px;">
+      Categorias ordenadas em ordem decrescente. <strong>Faixa A (≤ 80% acumulado)</strong> = poucos itens responsáveis pela maior parte do volume ou custo; <strong>Faixa B (80–95%)</strong> = relevância intermediária; <strong>Faixa C (&gt; 95%)</strong> = cauda longa.
     </div>
-
-    <div class="card">
-      <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
-        <span>Curva ABC (Pareto) — Manutenção Corretiva [v4.1.1]</span>
-        <span style="font-size:11px;font-weight:400;text-transform:none;letter-spacing:0;">
-          Base:
-          <select class="model-select" id="abc-corr-base" onchange="renderCurvasABC()" style="font-size:10px;">
-            <option value="qtd">Quantidade de chamados</option>
-            <option value="valor">Valor total gasto (R$, coluna Q)</option>
-          </select>
-        </span>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title" id="abc-qtd-title">Curva ABC — quantidade</div>
+        <div class="chart-wrap" style="height:340px;"><canvas id="chart-abc-qtd"></canvas></div>
       </div>
-      <div style="font-size:11px;color:var(--ufsb-cinza-medio);margin-bottom:8px;">
-        Mesma lógica anterior aplicada às ocorrências corretivas. Concentração elevada da faixa A indica oportunidade de migração para manutenção preventiva sobre essas categorias.
+      <div class="card">
+        <div class="card-title" id="abc-valor-title">Curva ABC — valor</div>
+        <div class="chart-wrap" style="height:340px;"><canvas id="chart-abc-valor"></canvas></div>
       </div>
-      <div class="chart-wrap" style="height:340px;"><canvas id="chart-abc-corretiva"></canvas></div>
     </div>
 
   </section>
@@ -1365,6 +1344,7 @@ const COL_TITULO = 1;
 const COL_DATA_ABERTURA = 2;
 const COL_STATUS = 3;
 const COL_CAT_HUMANA = 12;
+const COL_VALOR = 16;
 const COL_LOCAL = 20;          // [v4.1.1] Coluna U — "lat, lng"
 const COL_CAT_IA = 25;
 const COL_AVALIACAO = 27;
@@ -1578,13 +1558,27 @@ function formatBRL(v) {
   return 'R$ ' + Number(v).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-/* [v4.1.1] Detecta o tipo de manutenção a partir da categoria hierárquica.
-   - "Preventiva > X > Y" → "Preventiva"
-   - "Corretiva > X > Y"  → "Corretiva"
-   - Qualquer outro caso  → "Outros" */
-function detectarTipoChamado(cat) {
-  if (!cat) return 'Outros';
-  const s = cat.toString().trim().toLowerCase();
+function categoriaOriginalChamado(linha) {
+  return (linha?._catOriginal || linha?.[COL_CAT_HUMANA] || '').toString().trim();
+}
+
+function categoriaIAChamado(linha) {
+  return (linha?._catIA || linha?.[COL_CAT_IA] || '').toString().trim();
+}
+
+function categoriaAnaliticaChamado(linha) {
+  return categoriaIAChamado(linha) || categoriaOriginalChamado(linha);
+}
+
+/* [v4.1.2] Detecta o tipo de manutenção priorizando a categoria hierárquica
+   original (coluna M), como no motor Python. A categoria IA (coluna Z) entra
+   apenas como fallback quando a original está vazia. */
+function detectarTipoChamado(catOriginal, catIA = '') {
+  const base = [catOriginal, catIA]
+    .map(v => (v || '').toString().trim())
+    .find(Boolean);
+  if (!base) return 'Outros';
+  const s = base.toLowerCase();
   if (/preventiv/.test(s)) return 'Preventiva';
   if (/corretiv/.test(s))  return 'Corretiva';
   return 'Outros';
@@ -1719,6 +1713,10 @@ function processarChamados() {
 
   linhas.forEach(linha => {
     const catIA = (linha[COL_CAT_IA] || '').toString().trim();
+    const catOriginal = (linha[COL_CAT_HUMANA] || '').toString().trim();
+    linha._catIA = catIA;
+    linha._catOriginal = catOriginal;
+    linha._tipoManutencao = detectarTipoChamado(catOriginal, catIA);
     const conf = parseNum(linha[COL_AVALIACAO]);
     const executor = (linha[COL_EXECUTOR] || '').toString().trim();
     const crit = (linha[COL_CRITICIDADE] || '').toString().trim();
@@ -1758,8 +1756,8 @@ function processarChamados() {
 function _aplicarFiltroTipoNaCache() {
   if (!filtroTipoCategorizacao) return linhasCategorizadasCache;
   return linhasCategorizadasCache.filter(l => {
-    const catIA = (l[COL_CAT_IA] || '').toString();
-    return detectarTipoChamado(catIA) === filtroTipoCategorizacao;
+    const tipo = l._tipoManutencao || detectarTipoChamado(categoriaOriginalChamado(l), categoriaIAChamado(l));
+    return tipo === filtroTipoCategorizacao;
   });
 }
 
@@ -1789,9 +1787,9 @@ function renderCategorizacaoComFiltro() {
   const linhas = _aplicarFiltroTipoNaCache();
   const distCat = {};
   linhas.forEach(l => {
-    const catIA = (l[COL_CAT_IA] || '').toString().trim();
-    if (!catIA) return;
-    const catRes = categoriaResumida(catIA);
+    const cat = categoriaAnaliticaChamado(l);
+    if (!cat) return;
+    const catRes = categoriaResumida(cat);
     if (catRes) distCat[catRes] = (distCat[catRes] || 0) + 1;
   });
   renderChartCategorias(distCat);
@@ -1826,14 +1824,12 @@ function parseValorChamadoJS(v) {
 function _construirABC(linhas, modo) {
   const agreg = {};
   linhas.forEach(l => {
-    const catIA = (l[COL_CAT_IA] || '').toString().trim();
-    if (!catIA) return;
-    const catRes = categoriaResumida(catIA);
+    const cat = categoriaAnaliticaChamado(l);
+    if (!cat) return;
+    const catRes = categoriaResumida(cat);
     if (!catRes) return;
     if (modo === 'valor') {
-      const v = parseValorChamadoJS(l[20]);  // coluna U? não — coluna Q = índice 16
-      // Coluna Q de CHAMADOS (Valor do chamado) — índice numerical da letra Q (A=0..Q=16)
-      const valor = parseValorChamadoJS(l[16]);
+      const valor = parseValorChamadoJS(l[COL_VALOR]);
       if (valor === null || valor <= 0) return;
       agreg[catRes] = (agreg[catRes] || 0) + valor;
     } else {
@@ -1865,14 +1861,20 @@ function _desenharCurvaABC(canvasId, dados, modo, charKey) {
   const ctx = document.getElementById(canvasId);
   if (!ctx) return;
   if (charts[charKey]) charts[charKey].destroy();
+  const parent = ctx.parentElement;
+  const vazioExistente = parent.querySelector('.chart-empty-state');
   if (!dados.length) {
-    const parent = ctx.parentElement;
-    parent.innerHTML = '<div class="empty-state">' +
-      (modo === 'valor'
-        ? 'Sem chamados com valor preenchido (coluna Q) para esta categoria de manutenção.'
-        : 'Sem chamados para esta categoria.') + '</div>';
+    ctx.style.display = 'none';
+    if (!vazioExistente) {
+      parent.insertAdjacentHTML('beforeend', '<div class="empty-state chart-empty-state">' +
+        (modo === 'valor'
+          ? 'Sem chamados com valor preenchido (coluna Q) para esta categoria de manutenção.'
+          : 'Sem chamados para esta categoria.') + '</div>');
+    }
     return;
   }
+  ctx.style.display = '';
+  if (vazioExistente) vazioExistente.remove();
   const corBanda = b => b === 'A' ? '#c62828' : b === 'B' ? '#fb8c00' : '#1565c0';
   const labels = dados.map(d => d.nome);
   const valores = dados.map(d => d.valor);
@@ -1936,22 +1938,19 @@ function _desenharCurvaABC(canvasId, dados, modo, charKey) {
 }
 
 /* renderCurvasABC()
-   Coordena a renderização das duas curvas ABC da aba Categorização. Separa
-   `linhasCategorizadasCache` em chamados preventivos e corretivos via
-   `detectarTipoChamado`, lê a opção de base (quantidade ou valor) dos dois
-   seletores independentes e delega o desenho a `_desenharCurvaABC`. As duas
-   curvas operam em paralelo, com seletores próprios e seleção de base
-   independente. */
+   Coordena as duas curvas ABC da aba Categorização para o tipo ativo:
+   quantidade de chamados e valor total gasto (coluna Q). O tipo ativo vem
+   dos rádios Preventiva/Corretiva/Todos; não há seletor de base. */
 function renderCurvasABC() {
   if (!linhasCategorizadasCache.length) return;
-  const linhasPrev = linhasCategorizadasCache.filter(l =>
-    detectarTipoChamado((l[COL_CAT_IA] || '').toString()) === 'Preventiva');
-  const linhasCorr = linhasCategorizadasCache.filter(l =>
-    detectarTipoChamado((l[COL_CAT_IA] || '').toString()) === 'Corretiva');
-  const modoPrev = (document.getElementById('abc-prev-base')?.value || 'qtd');
-  const modoCorr = (document.getElementById('abc-corr-base')?.value || 'qtd');
-  _desenharCurvaABC('chart-abc-preventiva', _construirABC(linhasPrev, modoPrev), modoPrev, 'abcPrev');
-  _desenharCurvaABC('chart-abc-corretiva', _construirABC(linhasCorr, modoCorr), modoCorr, 'abcCorr');
+  const linhas = _aplicarFiltroTipoNaCache();
+  const tipoRotulo = filtroTipoCategorizacao || 'Todos os tipos';
+  const tituloQtd = document.getElementById('abc-qtd-title');
+  const tituloValor = document.getElementById('abc-valor-title');
+  if (tituloQtd) tituloQtd.textContent = `Curva ABC — ${tipoRotulo} (quantidade)`;
+  if (tituloValor) tituloValor.textContent = `Curva ABC — ${tipoRotulo} (valor)`;
+  _desenharCurvaABC('chart-abc-qtd', _construirABC(linhas, 'qtd'), 'qtd', 'abcQtd');
+  _desenharCurvaABC('chart-abc-valor', _construirABC(linhas, 'valor'), 'valor', 'abcValor');
 }
 
 /* renderPainelExecutorCriticidade()
@@ -2103,7 +2102,15 @@ function renderChartCategorias(dist) {
   if (!ctx) return;
   if (charts.cats) charts.cats.destroy();
   const ord = Object.entries(dist).sort((a,b) => b[1]-a[1]).slice(0,15);
-  if (!ord.length) { ctx.parentElement.innerHTML = '<div class="empty-state">Sem categorias.</div>'; return; }
+  const wrap = ctx.parentElement;
+  const vazioExistente = wrap.querySelector('.chart-empty-state');
+  if (!ord.length) {
+    ctx.style.display = 'none';
+    if (!vazioExistente) wrap.insertAdjacentHTML('beforeend', '<div class="empty-state chart-empty-state">Sem categorias para o filtro selecionado.</div>');
+    return;
+  }
+  ctx.style.display = '';
+  if (vazioExistente) vazioExistente.remove();
   charts.cats = new Chart(ctx, {
     type: 'bar',
     data: { labels: ord.map(e => e[0]), datasets: [{ data: ord.map(e => e[1]), backgroundColor: '#002878' }] },
@@ -2249,7 +2256,7 @@ function renderTopCategorias(linhas, distCat) {
   }
   const confPorCat = {};
   linhas.forEach(linha => {
-    const cat = (linha[COL_CAT_IA] || '').toString().trim();
+    const cat = categoriaAnaliticaChamado(linha);
     const catRes = categoriaResumida(cat);
     const conf = parseNum(linha[COL_AVALIACAO]);
     if (catRes && conf !== null) {
