@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import re
 import subprocess
+import tempfile
 from pathlib import Path
 
 ARQUIVO_HTML = Path("dashboard_malha_ia_v36.html")
@@ -89,8 +90,9 @@ FETCH_NOVO = FUNCOES_JSON + """async function fetchAba(nomeAba) {
 
 def validar_scripts_js(texto: str) -> None:
     scripts = re.findall(r"<script>(.*?)</script>", texto, flags=re.S)
+    tmp_dir = Path(tempfile.gettempdir())
     for idx, script in enumerate(scripts):
-        tmp = Path(f"/tmp/malha_dashboard_script_{idx}.js")
+        tmp = tmp_dir / f"malha_dashboard_script_{idx}.js"
         tmp.write_text(script, encoding="utf-8")
         subprocess.run(["node", "--check", str(tmp)], check=True)
 

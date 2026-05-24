@@ -214,20 +214,20 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
                 continue
             dados_json = limitar_linhas_json(nome, dados)
 
-                salvar_json(saida / arquivo, dados_json)
-                
-                manifesto["abas"][nome] = {
-                    "arquivo": arquivo,
-                    "linhas": max(0, len(dados_json) - 1),
-                    "linhas_origem": max(0, len(dados) - 1),
-                    "colunas": len(dados_json[0]) if dados_json else 0,
-                    "limitado_json": len(dados_json) != len(dados),
-                }
-                
-                print(
-                    f"OK {nome}: {manifesto['abas'][nome]['linhas']} linhas exportadas "
-                    f"de {manifesto['abas'][nome]['linhas_origem']} origem -> dados/{arquivo}"
-                )
+            salvar_json(saida / arquivo, dados_json)
+
+            manifesto["abas"][nome] = {
+                "arquivo": arquivo,
+                "linhas": max(0, len(dados_json) - 1),
+                "linhas_origem": max(0, len(dados) - 1),
+                "colunas": len(dados_json[0]) if dados_json else 0,
+                "limitado_json": len(dados_json) != len(dados),
+            }
+
+            print(
+                f"OK {nome}: {manifesto['abas'][nome]['linhas']} linhas exportadas "
+                f"de {manifesto['abas'][nome]['linhas_origem']} origem -> dados/{arquivo}"
+            )
 
     manifesto["total_abas_exportadas"] = len(manifesto["abas"])
     manifesto["total_falhas"] = len(manifesto["falhas"])
