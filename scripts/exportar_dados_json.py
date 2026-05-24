@@ -27,6 +27,8 @@ APPS_SCRIPT_URL_PADRAO = (
     "AKfycbyLQMA7D9sohZ-nqo-Z2ydVuBi-7igmEFPmhYy3gbOLMsawx78E-DyfnvecMSb-00om/exec"
 )
 
+ABAS_CRITICAS = {"CHAMADOS"}
+
 ABAS_BASE = [
     "CHAMADOS",
     "PREVISAO_TEMPORAL",
@@ -150,8 +152,11 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
         "gerado_em_utc": datetime.now(timezone.utc).isoformat(),
         "fonte": "Apps Script / Google Sheets",
         "total_abas_planejadas": len(abas),
+        "abas_criticas": sorted(ABAS_CRITICAS),
         "abas": {},
         "falhas": {},
+        "falhas_criticas": {},
+        "falhas_opcionais": {},
     }
 
     def tarefa(nome: str) -> tuple[str, list[list[Any]] | None, str | None]:
@@ -168,7 +173,12 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
             arquivo = f"{slug}.json"
             if erro:
                 manifesto["falhas"][nome] = erro
-                print(f"ERRO {nome}: {erro}", file=sys.stderr)
+                if nome in ABAS_CRITICAS:
+                    manifesto["falhas_criticas"][nome] = erro
+                    print(f"ERRO CRITICO {nome}: {erro}", file=sys.stderr)
+                else:
+                    manifesto["falhas_opcionais"][nome] = erro
+                    print(f"AVISO {nome}: {erro}", file=sys.stderr)
                 continue
             salvar_json(saida / arquivo, dados)
             manifesto["abas"][nome] = {
@@ -180,6 +190,8 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
 
     manifesto["total_abas_exportadas"] = len(manifesto["abas"])
     manifesto["total_falhas"] = len(manifesto["falhas"])
+    manifesto["total_falhas_criticas"] = len(manifesto["falhas_criticas"])
+    manifesto["total_falhas_opcionais"] = len(manifesto["falhas_opcionais"])
     salvar_json(saida / "manifest.json", manifesto)
     return manifesto
 
@@ -199,10 +211,17 @@ def main() -> int:
         workers=max(1, args.workers),
     )
 
-    if manifesto["total_falhas"]:
-        print(f"Concluido com {manifesto['total_falhas']} falhas.", file=sys.stderr)
+    if manifesto["total_falhas_criticas"]:
+        print(f"Concluido com {manifesto['total_falhas_criticas']} falha(s) critica(s).", file=sys.stderr)
         return 1
-    print("Exportacao concluida sem falhas.")
+    if "CHAMADOS" not in manifesto["abas"]:
+        print("Falha critica: CHAMADOS nao foi exportada.", file=sys.stderr)
+        return 1
+    print(
+        "Exportacao concluida. "
+        f"Abas exportadas: {manifesto['total_abas_exportadas']}; "
+        f"falhas opcionais: {manifesto['total_falhas_opcionais']}."
+    )
     return 0
 
 
