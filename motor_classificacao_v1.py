@@ -44,7 +44,6 @@ ARQUIVO_LOCK = f'{PASTA_LIBS}/requirements_clf.lock'
 
 PACOTES_REQUERIDOS = {
     'gspread': '6.1.4',
-    'requests': '2.32.3',
     'pandas': '2.2.3',
     'numpy': '1.26.4',
     'scikit-learn': '1.5.2',
@@ -124,8 +123,6 @@ else:
 # =====================================================================
 import gspread
 from gspread.exceptions import WorksheetNotFound, APIError
-import time
-import re
 import warnings
 import pandas as pd
 import numpy as np
@@ -417,18 +414,6 @@ def atualizar_categorias(dados_linhas):
                 f.write(f"{cat}\n")
     except Exception:
         pass
-
-# =====================================================================
-# 7. CREDENCIAIS (carregamento opcional — APIs externas desativadas)
-# =====================================================================
-ARQUIVO_CREDENCIAIS = f'{CAMINHO_PASTA}/chaves_api.json'
-matriz_chaves = {}
-if os.path.exists(ARQUIVO_CREDENCIAIS):
-    try:
-        with open(ARQUIVO_CREDENCIAIS, 'r') as arquivo:
-            matriz_chaves = json.load(arquivo)
-    except Exception:
-        matriz_chaves = {}
 
 print(f"[{NOME_MAQUINA}] {_VERSAO_MOTOR} — Classificação LOCAL apenas (LSTM/RF).")
 
