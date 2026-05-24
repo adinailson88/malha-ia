@@ -19,7 +19,6 @@ import os
 import sys
 import json
 import subprocess
-import hashlib
 
 try:
     from google.colab import drive
@@ -38,7 +37,6 @@ ARQUIVO_LOCK = f'{PASTA_LIBS}/requirements_previsao_chamados.lock'
 
 PACOTES_REQUERIDOS = {
     'gspread': '6.1.4',
-    'requests': '2.32.3',
     'pandas': '2.2.3',
     'numpy': '1.26.4',
     'statsmodels': '0.14.4',
@@ -130,15 +128,13 @@ import gspread
 from gspread.exceptions import WorksheetNotFound, APIError
 import time
 import re
-import requests
 import warnings
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 import pytz
 
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingRegressor
-from sklearn.model_selection import train_test_split
+from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
@@ -206,25 +202,12 @@ from statsmodels.tsa.statespace.structural import UnobservedComponents
 _TF_OK = False
 tf = None
 Sequential = None
-Model = None
-Embedding = None
-Bidirectional = None
 KerasLSTM = None
 Dense = None
-Dropout = None
-Input = None
-concatenate = None
-Tokenizer = None
-pad_sequences = None
-to_categorical = None
-LabelEncoder = None
-MinMaxScaler = None
 
 def _importar_tf():
-    """Importa TF nativo do Colab; ignora cache do Drive (NumPy 1.x)."""
-    global _TF_OK, tf, Sequential, Model, Embedding, Bidirectional, KerasLSTM
-    global Dense, Dropout, Input, concatenate, Tokenizer, pad_sequences
-    global to_categorical, LabelEncoder, MinMaxScaler
+    """Importa apenas os componentes TensorFlow usados no LSTM de previsão."""
+    global _TF_OK, tf, Sequential, KerasLSTM, Dense
     import sys as _sys
 
     _mods_remover = [
@@ -258,30 +241,22 @@ def _importar_tf():
                 f"TF carregado do cache do Drive ({_tf_file}); "
                 f"esperado caminho nativo do Colab."
             )
-        from tensorflow.keras.models import Sequential as _Seq, Model as _Mod
-        from tensorflow.keras.layers import (
-            Embedding as _Emb, Bidirectional as _Bid, LSTM as _KLSTM, Dense as _Den,
-            Dropout as _Dro, Input as _Inp, concatenate as _conc
-        )
-        from tensorflow.keras.preprocessing.text import Tokenizer as _Tok
-        from tensorflow.keras.preprocessing.sequence import pad_sequences as _pad
-        from tensorflow.keras.utils import to_categorical as _to_cat
-        from sklearn.preprocessing import LabelEncoder as _LE, MinMaxScaler as _MMS
+        from tensorflow.keras.models import Sequential as _Seq
+        from tensorflow.keras.layers import LSTM as _KLSTM, Dense as _Den
+
         tf = _tf_mod
-        Sequential = _Seq; Model = _Mod
-        Embedding = _Emb; Bidirectional = _Bid; KerasLSTM = _KLSTM
-        Dense = _Den; Dropout = _Dro; Input = _Inp; concatenate = _conc
-        Tokenizer = _Tok; pad_sequences = _pad; to_categorical = _to_cat
-        LabelEncoder = _LE; MinMaxScaler = _MMS
+        Sequential = _Seq
+        KerasLSTM = _KLSTM
+        Dense = _Den
         tf.get_logger().setLevel('ERROR')
         _TF_OK = True
-        print(f"[Imports] TensorFlow nativo OK ({_tf_file}) — LSTM disponivel.")
+        print(f"[Imports] TensorFlow nativo OK ({_tf_file}) — LSTM Forecast disponivel.")
     except Exception as _e_tf:
         msg = str(_e_tf)
         if len(msg) > 180:
             msg = msg[:180] + '...'
         print(f"[Imports] TensorFlow indisponivel ({type(_e_tf).__name__}: {msg}) — "
-              f"LSTM desativado.")
+              f"LSTM Forecast desativado.")
         for _m in [k for k in list(_sys.modules.keys())
                    if k == 'tensorflow' or k.startswith('tensorflow.')
                    or k == 'keras' or k.startswith('keras.')]:
@@ -306,7 +281,7 @@ _VERSAO_MOTOR = "v4.0.8-previsao_chamados"
 print(f"[Imports] OK · pandas={pd.__version__} · {_VERSAO_MOTOR} "
       f"(pmdarima={'ON' if _PMDARIMA_OK else 'fallback'}, "
       f"Prophet={'ON' if _PROPHET_OK else 'UnobservedComponents'}, "
-      f"TF={'ON' if _TF_OK else 'OFF/fallback_RF'})")
+      f"TF={'ON' if _TF_OK else 'OFF/sem_LSTM'})")
 
 # ─────────────────────────────────────────────────────────────────────
 def _safe_isnan(val):
@@ -355,12 +330,7 @@ def _resolver_fuso_brasil():
 
 FUSO_BAHIA = _resolver_fuso_brasil()
 
-INTERVALO_PREVISAO_CICLOS = 10
-INTERVALO_RETREINO_CICLOS = 10
-MIN_AMOSTRAS_TREINO = 10
 MIN_PONTOS_SERIE = 6
-MIN_PONTOS_SERIE_CUSTO = 12
-MIN_EXEMPLOS_POR_CLASSE = 3
 
 HORIZONTE_HOLDOUT = 12
 HORIZONTE_FORECAST = 12
@@ -374,50 +344,20 @@ BLOCK_BOOTSTRAP_AUTO = True
 BLOCK_SIZE_FIXO = 6
 GRANGER_MAX_LAG = 6
 ACF_PACF_LAGS = 24
-ROTACAO_LOG_DIAS = 90
 THRESH_DRIFT_KS = 0.15
 PESO_RMSE = 0.5
 PESO_CRPS = 0.3
 PESO_DESVIO_CV = 0.2
-LLM_RETRY_MAX = 3
-LLM_RETRY_WAIT_BASE = 1
 
-INTERVALO_DIAS_ABLATION = 90
-INTERVALO_DIAS_EXPORT = 30
 
-EXECUTAR_POR_CATEGORIA = True
-MIN_REGISTROS_FILTRO = 12
-LSTM_VOCAB_SIZE = 8000
-LSTM_MAX_LEN = 120
-LSTM_EMBED_DIM = 128
 LSTM_UNITS = 64
 LSTM_FORECAST_WINDOW = 12
 
-COL_TITULO = 1
 COL_DATA_ABERTURA = 2
-COL_CATEGORIA_TOPO = 4
-COL_CAMPUS = 7
-COL_CATEGORIA_HIERARQUICA = 12
-COL_VALOR = 16
-COL_DESCRICAO_GLPI = 22
-COL_TITULO_OSM = 23
-COL_DESCRICAO_OSM = 24
-COL_CAT_IA = 25
 
-COL_DATA_CONCLUSAO = None
-COL_LOCAL = None
 
-FILTROS_ATIVOS = True
 
-COL_CAT_IA_OUT = 26
-COL_AVALIACAO_OUT = 28
-COL_EXECUTOR_OUT = 29
-COL_CRITICIDADE_OUT = 30
-COL_CONFERENCIA = 31
 
-LIMIAR_RECLASSIFICACAO = 0.80
-DELTA_MELHORIA_MINIMA = 0.05
-LOTE_RECLASSIFICACAO = 200
 
 try:
     doc = gc.open(NOME_PLANILHA)
@@ -449,141 +389,6 @@ def obter_aba(nome, linhas=100, colunas=10, cabecalho=None):
     _cache_abas[nome] = aba
     return aba
 
-def recriar_aba(nome, linhas=500, colunas=10, cabecalho=None):
-    """Apaga e recria aba, util para correcao de cabecalho."""
-    try:
-        aba_antiga = doc.worksheet(nome)
-        doc.del_worksheet(aba_antiga)
-        print(f"[Migracao] Aba '{nome}' apagada para recriacao.")
-    except WorksheetNotFound:
-        pass
-    if nome in _cache_abas:
-        del _cache_abas[nome]
-    aba = doc.add_worksheet(title=nome, rows=linhas, cols=colunas)
-    if cabecalho:
-        aba.update(values=[cabecalho], range_name='A1', value_input_option='USER_ENTERED')
-    _cache_abas[nome] = aba
-    return aba
-
-ARQUIVO_FLAG_MIGRACAO = f'{CAMINHO_PASTA}/migracao_v34.flag'
-if not os.path.exists(ARQUIVO_FLAG_MIGRACAO):
-    print("[Migracao v3.4] Executando migracoes de aba uma unica vez...")
-    try:
-        recriar_aba("METRICAS_TREINO", linhas=500, colunas=12,
-                    cabecalho=["Timestamp", "N_Amostras", "N_Classes", "Acuracia",
-                               "Precision_Macro", "Recall_Macro", "F1_Macro",
-                               "F1_Weighted", "Balanced_Accuracy", "Hash_Base", "Maquina", "Versao_Motor"])
-        print("[Migracao v3.4] METRICAS_TREINO recriada com cabecalho v3.4.")
-    except Exception as e:
-        print(f"[Migracao v3.4] Falha (nao-critica): {e}")
-    with open(ARQUIVO_FLAG_MIGRACAO, 'w') as f:
-        f.write(f"Migracao v3.4 executada em {datetime.now(FUSO_BAHIA).isoformat()}")
-
-# =====================================================================
-# 5. UTILITARIOS GERAIS
-# =====================================================================
-def montar_texto_classificacao(linha):
-    campos = []
-    if len(linha) > COL_TITULO and linha[COL_TITULO].strip():
-        campos.append(linha[COL_TITULO].strip())
-    if len(linha) > COL_DESCRICAO_GLPI and linha[COL_DESCRICAO_GLPI].strip():
-        campos.append(linha[COL_DESCRICAO_GLPI].strip())
-    if len(linha) > COL_TITULO_OSM and linha[COL_TITULO_OSM].strip():
-        campos.append(linha[COL_TITULO_OSM].strip())
-    if len(linha) > COL_DESCRICAO_OSM and linha[COL_DESCRICAO_OSM].strip():
-        campos.append(linha[COL_DESCRICAO_OSM].strip())
-    return " | ".join(campos)
-
-def extrair_nome_executor(origem):
-    if not origem:
-        return "Desconhecido"
-    if origem == "Supervisionado_LSTM":
-        return "LSTM"
-    if origem == "Supervisionado_LSTM_baixa_conf":
-        return "LSTM_BAIXA_CONF"
-    if origem == "RF_Fallback":
-        return "RF_Fallback"
-    if origem == "RF_Fallback_baixa_conf":
-        return "RF_Fallback_BAIXA_CONF"
-    if origem == "SemClassificador":
-        return "SemClassificador"
-    if origem == "NaoProcessado":
-        return "NaoProcessado"
-    if origem == "Supervisionado":
-        return "Supervisionado_legado"
-    return origem.split(' ')[0].split('(')[0].strip()
-
-def confianca_para_decimal(valor):
-    return round(valor / 100.0, 2)
-
-def extrair_tipo_categoria(texto):
-    if not texto or not texto.strip():
-        return ('Desconhecida', 'Desconhecida')
-    t = texto.strip()
-    t_norm = _ud.normalize('NFKD', t).encode('ascii', 'ignore').decode('ascii').lower()
-    if 'manutencao preventiva' in t_norm or 'manutencao preventiva' in t.lower():
-        partes = t.split('>')
-        cat = partes[1].strip() if len(partes) > 1 else t.strip()
-        return ('Preventiva', cat or 'Preventiva')
-    else:
-        partes = t.split('>')
-        cat = partes[0].strip() if partes else t.strip()
-        return ('Corretiva', cat or t.strip())
-
-import unicodedata as _ud, re as _re
-def sanitizar_sufixo(label):
-    s = _ud.normalize('NFKD', label).encode('ascii', 'ignore').decode('ascii')
-    s = _re.sub(r'[^\w]', '_', s)
-    s = _re.sub(r'_+', '_', s).strip('_')
-    return s[:20]
-
-def hash_base_treino(df):
-    if df is None or len(df) == 0:
-        return "vazio"
-    s = df[['Texto', 'Categoria']].sort_values(['Categoria', 'Texto']).to_csv(index=False)
-    return hashlib.md5(s.encode('utf-8')).hexdigest()[:16]
-
-# =====================================================================
-# 6. CATEGORIAS VALIDAS
-# =====================================================================
-ARQUIVO_CATEGORIAS = f'{CAMINHO_PASTA}/categorias_validas.txt'
-categorias_unicas = []
-
-def atualizar_categorias(dados_linhas):
-    global categorias_unicas
-    cats = sorted(list(set(
-        [linha[COL_CATEGORIA_HIERARQUICA].strip()
-         for linha in dados_linhas
-         if len(linha) > COL_CATEGORIA_HIERARQUICA
-         and linha[COL_CATEGORIA_HIERARQUICA].strip()]
-    )))
-    categorias_unicas = cats
-    print(f"[Dicionario] {len(cats)} categorias hierarquicas unicas detectadas em M.")
-    try:
-        with open(ARQUIVO_CATEGORIAS, 'w', encoding='utf-8') as f:
-            f.write("usados\n")
-            for cat in cats:
-                f.write(f"{cat}\n")
-    except Exception:
-        pass
-
-# =====================================================================
-# 7. CREDENCIAIS [retrocompatibilidade — APIs externas removidas v4.0.0]
-# =====================================================================
-ARQUIVO_CREDENCIAIS = f'{CAMINHO_PASTA}/chaves_api.json'
-matriz_chaves = {}
-if os.path.exists(ARQUIVO_CREDENCIAIS):
-    try:
-        with open(ARQUIVO_CREDENCIAIS, 'r') as arquivo:
-            matriz_chaves = json.load(arquivo)
-    except Exception:
-        matriz_chaves = {}
-
-CHAVES_GROQ       = matriz_chaves.get("GROQ", {})
-CHAVES_GEMINI     = matriz_chaves.get("GEMINI", {})
-CHAVES_DEEPSEEK   = matriz_chaves.get("DEEPSEEK", {})
-CHAVES_OPENROUTER = matriz_chaves.get("OPENROUTER", {})
-CHAVES_SAMBANOVA  = matriz_chaves.get("SAMBANOVA", {})
 
 print(f"[{NOME_MAQUINA}] {_VERSAO_MOTOR} — Modulo previsao_chamados carregado.")
 
@@ -4593,7 +4398,6 @@ def _modo_previsao_chamados():
     except APIError as e:
         print(f"[Modo previsao_chamados] Falha: {e}"); return
     dados_op = todas_linhas[1:]
-    atualizar_categorias(dados_op)
     executar_analise_preditiva_avancada(dados_op, sufixo="")
 
 
