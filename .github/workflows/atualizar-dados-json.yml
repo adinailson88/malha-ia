@@ -1,0 +1,60 @@
+name: Atualizar dados JSON
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-dados-json
+  cancel-in-progress: true
+
+jobs:
+  exportar-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Exportar abas para JSON
+        run: |
+          python scripts/exportar_dados_json.py --saida dados --workers 6
+
+      - name: Validar JSON gerado
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          base = Path('dados')
+          if not base.exists():
+              raise SystemExit('Diretorio dados/ nao foi criado.')
+          arquivos = sorted(base.glob('*.json'))
+          if not arquivos:
+              raise SystemExit('Nenhum JSON foi gerado.')
+          for arq in arquivos:
+              json.loads(arq.read_text(encoding='utf-8'))
+          manifest = json.loads((base / 'manifest.json').read_text(encoding='utf-8'))
+          if 'CHAMADOS' not in manifest.get('abas', {}):
+              raise SystemExit('CHAMADOS nao foi exportado.')
+          print(f"JSON validado: {len(arquivos)} arquivos.")
+          PY
+
+      - name: Commitar JSON atualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados/*.json
+          if git diff --cached --quiet; then
+            echo "Sem alteracoes nos JSON."
+          else
+            git commit -m "Atualiza dados JSON estaticos"
+            git push
+          fi
