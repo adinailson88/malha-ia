@@ -655,18 +655,17 @@ def extrair_serie_custo(dados_linhas):
     # Remove mês corrente (série incompleta)
     periodo_atual = pd.Period(agora, freq='M')
     contagem = contagem[contagem['Mes_Ano'] < periodo_atual].copy()
-    # 2. Mantém apenas meses com valor total > 0
-    contagem = contagem[contagem['Quantidade'] > 0]
-
-    # 3. Verifica se há meses suficientes (mínimo 12)
-    if len(contagem) < MIN_PONTOS_SERIE_CUSTO:
-        print(f"[Custo] Série filtrada com {len(contagem)} meses (>0) – mínimo {MIN_PONTOS_SERIE_CUSTO} não atingido. Abortando.")
-        return None
+    contagem['Quantidade'] = pd.to_numeric(contagem['Quantidade'], errors='coerce').fillna(0.0)
+    contagem = contagem[contagem['Quantidade'] > 0].copy()
 
     if contagem.empty:
         return None
 
     contagem = contagem.sort_values('Mes_Ano').reset_index(drop=True)
+    if len(contagem) < MIN_PONTOS_SERIE_CUSTO:
+        print(f"[Serie Custo] Série insuficiente: {len(contagem)} meses com custo > 0 "
+              f"(mínimo {MIN_PONTOS_SERIE_CUSTO}).")
+        return None
     contagem['Mes_Ano_Str'] = contagem['Mes_Ano'].dt.strftime('%m/%Y')
     print(f"[Serie Custo] {len(contagem)} meses de custo extraídos "
           f"de {contagem['Mes_Ano_Str'].iloc[0]} a {contagem['Mes_Ano_Str'].iloc[-1]}")
