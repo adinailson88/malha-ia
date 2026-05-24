@@ -33,80 +33,7 @@ jobs:
 
       - name: Aplicar consumo de JSON estatico no dashboard
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          import subprocess
-
-          path = Path('dashboard_malha_ia_v36.html')
-          raw = path.read_text(encoding='utf-8')
-          usa_crlf = '\r\n' in raw
-          text = raw.replace('\r\n', '\n')
-
-          if 'const DADOS_JSON_BASE = "dados";' not in text:
-              marcador = 'const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyLQMA7D9sohZ-nqo-Z2ydVuBi-7igmEFPmhYy3gbOLMsawx78E-DyfnvecMSb-00om/exec";'
-              novo = marcador + '\nconst DADOS_JSON_BASE = "dados";\nconst USAR_JSON_ESTATICO = true;'
-              if marcador not in text:
-                  raise SystemExit('Marcador APPS_SCRIPT_URL nao encontrado.')
-              text = text.replace(marcador, novo, 1)
-
-          if 'function slugAbaJson(nomeAba)' not in text:
-              funcao_slug = r'''
-function slugAbaJson(nomeAba) {
-  return (nomeAba || '')
-    .toString()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^A-Za-z0-9]+/g, '_')
-    .replace(/^_+|_+$/g, '')
-    .toLowerCase() || 'aba';
-}
-
-async function fetchAbaJsonEstatico(nomeAba) {
-  if (!USAR_JSON_ESTATICO) return null;
-  const slug = slugAbaJson(nomeAba);
-  const url = `${DADOS_JSON_BASE}/${slug}.json?v=${Date.now()}`;
-  try {
-    const resp = await fetch(url, { cache: 'no-store' });
-    if (resp.status === 404) return null;
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = await resp.json();
-    registrarLog(`JSON ${slug}.json: ${Math.max(0, data.length - 1)} linhas`, 'ok');
-    return data;
-  } catch (e) {
-    registrarLog(`JSON indisponivel para ${nomeAba}: ${e.message}. Usando Apps Script.`, 'warn');
-    return null;
-  }
-}
-'''
-              marcador_fetch = 'async function fetchAba(nomeAba) {'
-              if marcador_fetch not in text:
-                  raise SystemExit('Funcao fetchAba nao encontrada para inserir slugAbaJson.')
-              text = text.replace(marcador_fetch, funcao_slug + '\n' + marcador_fetch, 1)
-
-          padrao_fetch = r"async function fetchAba\(nomeAba\) \{\n  try \{\n    const url = `\$\{APPS_SCRIPT_URL\}\?sheet=\$\{encodeURIComponent\(nomeAba\)\}`;\n    const resp = await fetch\(url\);"
-          novo_fetch = "async function fetchAba(nomeAba) {\n  const jsonEstatico = await fetchAbaJsonEstatico(nomeAba);\n  if (jsonEstatico) return jsonEstatico;\n  try {\n    const url = `${APPS_SCRIPT_URL}?sheet=${encodeURIComponent(nomeAba)}`;\n    const resp = await fetch(url);"
-          if 'const jsonEstatico = await fetchAbaJsonEstatico(nomeAba);' not in text:
-              text, n = re.subn(padrao_fetch, novo_fetch, text, count=1)
-              if n != 1:
-                  raise SystemExit('Bloco inicial de fetchAba nao encontrado para patch.')
-
-          if 'const DADOS_JSON_BASE = "dados";' not in text:
-              raise SystemExit('Validacao falhou: DADOS_JSON_BASE ausente.')
-          if 'function slugAbaJson(nomeAba)' not in text:
-              raise SystemExit('Validacao falhou: slugAbaJson ausente.')
-          if 'const jsonEstatico = await fetchAbaJsonEstatico(nomeAba);' not in text:
-              raise SystemExit('Validacao falhou: fetchAba nao tenta JSON estatico.')
-
-          path.write_text(text.replace('\n', '\r\n') if usa_crlf else text, encoding='utf-8', newline='')
-
-          scripts = re.findall(r'<script>(.*?)</script>', text, flags=re.S)
-          for i, script in enumerate(scripts):
-              tmp = Path(f'/tmp/dashboard_script_{i}.js')
-              tmp.write_text(script, encoding='utf-8')
-              subprocess.run(['node', '--check', str(tmp)], check=True)
-          print('Dashboard validado com consumo de JSON estatico e fallback Apps Script.')
-          PY
+          python scripts/aplicar_json_dashboard.py
 
       - name: Validar JSON gerado
         run: |
@@ -139,4 +66,4 @@ async function fetchAbaJsonEstatico(nomeAba) {
             git push
           fi
 
-# trigger: json-estatico-3
+# trigger: json-estatico-4
