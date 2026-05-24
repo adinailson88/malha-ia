@@ -138,3 +138,5 @@ async function fetchAbaJsonEstatico(nomeAba) {
             git commit -m "Atualiza dados JSON estaticos e dashboard"
             git push
           fi
+
+# trigger: json-estatico-2
