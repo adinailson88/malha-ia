@@ -1515,6 +1515,24 @@ function formatarMesAno(input) {
   return s;
 }
 
+function indiceMesAno(label) {
+  if (!label) return null;
+  const meses = {jan:0, fev:1, mar:2, abr:3, mai:4, jun:5, jul:6, ago:7, set:8, out:9, nov:10, dez:11};
+  const s = label.toString().trim().toLowerCase();
+  let m = s.match(/^([a-zç]{3})\/(\d{4})$/i);
+  if (m && meses[m[1]] !== undefined) return parseInt(m[2], 10) * 12 + meses[m[1]];
+  m = s.match(/^(\d{1,2})\/(\d{4})$/);
+  if (m) return parseInt(m[2], 10) * 12 + (parseInt(m[1], 10) - 1);
+  return null;
+}
+
+function labelMesAnoPorIndice(idx) {
+  const meses = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+  const ano = Math.floor(idx / 12);
+  const mes = idx % 12;
+  return `${meses[mes]}/${ano}`;
+}
+
 /* [v4.1.1] Categoria reduzida para exibição:
    - Quando a categoria contém "Preventiva": prefixo "Preventiva > " + último
      segmento (item específico, p.ex. "Preventiva > Lâmpada queimada")
@@ -3979,6 +3997,7 @@ function processarPrevisaoCusto() {
   let secao = 'historico';
   const metricasArr = [];
   let idxFimInsample = -1, idxFimBacktest = -1;
+  let ultimoIdxCustoReal = null;
 
   for (let i = 1; i < dadosPrevisaoCusto.length; i++) {
     const linha = dadosPrevisaoCusto[i];
@@ -3993,10 +4012,22 @@ function processarPrevisaoCusto() {
       if (upper.includes('MÉTRICAS') || upper.includes('METRICAS') || upper.includes('VALIDAÇÃO') || upper.startsWith('MODELO')) {
         secao = 'metricas'; metricasArr.push(linha); continue;
       }
+      const periodoFmt = formatarMesAno(primeiro);
+      let realValor = parseNum(linha[1]);
+      if (realValor === 0) realValor = null;
+      const idxMesAtual = indiceMesAno(periodoFmt);
+      if (realValor !== null && idxMesAtual !== null && ultimoIdxCustoReal !== null && idxMesAtual - ultimoIdxCustoReal > 1) {
+        for (let idxGap = ultimoIdxCustoReal + 1; idxGap < idxMesAtual; idxGap++) {
+          periodos.push(labelMesAnoPorIndice(idxGap));
+          reais.push(null);
+          modeloCols.forEach(m => forecasts[m.nome].push(null));
+        }
+      }
       const rowIdx = periodos.length;
-      periodos.push(formatarMesAno(primeiro));
-      reais.push(parseNum(linha[1]));
+      periodos.push(periodoFmt);
+      reais.push(realValor);
       modeloCols.forEach(m => forecasts[m.nome].push(parseNum(linha[m.idx])));
+      if (realValor !== null && idxMesAtual !== null) ultimoIdxCustoReal = idxMesAtual;
       const vencCell = (idxVencCol >= 0 ? linha[idxVencCol] : linha[linha.length - 1] || '').toString().trim();
       if (vencCell === 'In-sample') { idxFimInsample = rowIdx; }
       else if (vencCell.includes('Backtest')) { idxFimBacktest = rowIdx; }
@@ -4176,7 +4207,7 @@ function atualizarGraficoCusto() {
     i <= sepIns ? 'rgba(21,101,192,0.12)' : i <= sepBt ? 'rgba(230,81,0,0.12)' : 'rgba(46,125,50,0.12)');
   datasets.push({
     label: 'Real (R$)', data: reaisSlice, borderColor: '#002878', backgroundColor: realBg,
-    borderWidth: 2, pointRadius: 3, pointHoverRadius: 5, order: 0, fill: false, tension: 0.25
+    borderWidth: 2, pointRadius: 3, pointHoverRadius: 5, order: 0, fill: false, tension: 0.25, spanGaps: false
   });
 
   // Modelos
@@ -4191,7 +4222,7 @@ function atualizarGraficoCusto() {
       backgroundColor: 'transparent',
       borderWidth: isWin ? 2.5 : 1.5,
       borderDash: isWin ? [] : [4,3],
-      pointRadius: 0, pointHoverRadius: 4, order: 1, fill: false, tension: 0.2
+      pointRadius: 0, pointHoverRadius: 4, order: 1, fill: false, tension: 0.2, spanGaps: false
     });
   });
 
@@ -4204,12 +4235,12 @@ function atualizarGraficoCusto() {
     datasets.push({
       label: `IC 2σ Sup (${icSel})`, data: supS,
       borderColor: cor, backgroundColor: cor.replace(')',',0.08)').replace('rgb','rgba'),
-      borderWidth: 1, borderDash: [2,4], pointRadius: 0, fill: '+1', order: 2
+      borderWidth: 1, borderDash: [2,4], pointRadius: 0, fill: '+1', order: 2, spanGaps: false
     });
     datasets.push({
       label: `IC 2σ Inf (${icSel})`, data: infS,
       borderColor: cor, backgroundColor: 'transparent',
-      borderWidth: 1, borderDash: [2,4], pointRadius: 0, fill: false, order: 2
+      borderWidth: 1, borderDash: [2,4], pointRadius: 0, fill: false, order: 2, spanGaps: false
     });
   }
 
