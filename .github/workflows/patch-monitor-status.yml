@@ -24,7 +24,6 @@ jobs:
           from pathlib import Path
           import re
           import subprocess
-          import sys
 
           path = Path('dashboard_malha_ia_v36.html')
           raw = path.read_text(encoding='utf-8')
@@ -196,3 +195,5 @@ function obterStatusMonitorSelecionados() {
             git commit -m "Corrige filtro de status do monitor"
             git push
           fi
+
+# trigger: 2
