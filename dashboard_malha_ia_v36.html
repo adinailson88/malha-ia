@@ -4206,7 +4206,7 @@ function processarPrevisaoCusto() {
     if (dadosIncertezasCusto && dadosIncertezasCusto.length > 1) {
       const cab = dadosIncertezasCusto[0] || [];
       const lins = dadosIncertezasCusto.slice(1).filter(l => l && l[0] && l[0].toString().trim());
-      elInc.innerHTML = `<table class="tbl"><thead><tr>${cab.map(h=>`<th class="${h!==cab[0]?'tbl-num':''}">${h||''}</th>`).join('')}</tr></thead><tbody>` +
+      elInc.innerHTML = `<table class="tbl"><thead><tr>${cab.map(h=>thIncertezaBootstrap(h, h!==cab[0]?'tbl-num':'')).join('')}</tr></thead><tbody>` +
         lins.map(l=>`<tr>${l.map((c,i)=>`<td class="${i>0?'tbl-num':''}">${c!=null?c:'—'}</td>`).join('')}</tr>`).join('') + '</tbody></table>';
     } else elInc.innerHTML = '<div class="empty-state">Não disponível.</div>';
   }
@@ -4347,6 +4347,20 @@ async function carregarDadosCusto() {
   }
 }
 
+function thIncertezaBootstrap(h, cls = '') {
+  const txt = (h || '').toString();
+  const low = txt.toLowerCase();
+  let title = '';
+  if (/ic\s*1|1σ|1ïƒ|1Ïƒ/i.test(txt)) {
+    title = 'IC 1σ: intervalo de confiança aproximado de 68%, calculado por bootstrap com 1000 iterações.';
+  } else if (/ic\s*2|2σ|2ïƒ|2Ïƒ/i.test(txt)) {
+    title = 'IC 2σ: intervalo de confiança aproximado de 95%, calculado por bootstrap com 1000 iterações.';
+  } else if (low.includes('p10') || low.includes('p25') || low.includes('p50') || low.includes('p75') || low.includes('p90')) {
+    title = 'Percentil empírico da distribuição bootstrap com 1000 iterações.';
+  }
+  return `<th class="${cls}"${title ? ` title="${title}"` : ''}>${txt}</th>`;
+}
+
 /* =========================================================
    [v3.8 — Fase 2.1] INCERTEZAS COLORIDAS POR TIPO
    Sobrescreve o render padrão para diferenciar Histórico /
@@ -4367,7 +4381,7 @@ function renderizarIncertezasComTipo() {
   const corTipo = { 'Histórico': '#e3f2fd', 'Backtest': '#fff8e1', 'Forecast': '#e8f5e9' };
   const bdTipo  = { 'Histórico': '#1565c0', 'Backtest': '#e65100', 'Forecast': '#2e7d32' };
 
-  elInc.innerHTML = `<table class="tbl"><thead><tr>${cab.map(h=>`<th>${h||''}</th>`).join('')}</tr></thead><tbody>` +
+  elInc.innerHTML = `<table class="tbl"><thead><tr>${cab.map(h=>thIncertezaBootstrap(h)).join('')}</tr></thead><tbody>` +
     linhas.map(l => {
       const tipo = idxTipo >= 0 ? (l[idxTipo]||'').toString().trim() : '';
       const bg = corTipo[tipo] || '';
