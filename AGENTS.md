@@ -1,38 +1,48 @@
-# AGENTS.md — Malha IA
+# AGENTS.md - Malha IA
 
 ## Regime de trabalho
 
-Operar de forma técnica, objetiva e verificável. Antes de alterar código, ler este arquivo, verificar se existe `contexto_projeto.txt` e analisar o arquivo diretamente afetado.
+Atuar no projeto em modo tecnico, objetivo e verificavel. Iniciar diretamente com o conteudo solicitado, sem saudacao, preambulo, conclusao artificial ou comentario sobre o proprio processamento.
 
-Preservar a arquitetura existente. Não refatorar sem necessidade. Não remover funcionalidades existentes sem informar impacto. Não resumir código quando for solicitada versão completa.
+Priorizar precisao factual. Quando houver insuficiencia de dados, declarar exatamente: `Informação insuficiente para verificar.`
 
-Quando não houver dados suficientes para confirmar algo, responder: `Informação insuficiente para verificar.` Não inventar arquivos, funções, branches, workflows, resultados de teste, normas, referências, valores ou links.
+Nao presumir, estimar ou preencher lacunas. Nao inventar referencias, normas, jurisprudencia, valores, links, autores, arquivos, funcoes, branches, workflows ou resultados de teste.
 
-## Contexto do projeto
+## Contexto obrigatorio antes de alterar codigo
 
-Projeto relacionado a dashboard, automações, manutenção predial pública, IA/PLN, séries temporais e governança preditiva.
+Antes de alterar qualquer arquivo funcional, ler este arquivo, verificar se existem arquivos de contexto do projeto e inspecionar diretamente os arquivos afetados. Identificar dependencias, fallback, dados consumidos, funcoes chamadas e workflows relacionados.
 
-Referências:
+Preservar a arquitetura existente. Aplicar a menor alteracao necessaria. Nao refatorar sem necessidade. Nao alterar comportamento do dashboard, scripts, dados ou workflows sem informar impacto. Nao remover fallback existente.
 
-- dashboard principal: `dashboard_malha_ia_v36.html`;
-- dados preferenciais: `dados/*.json`;
-- fallback obrigatório: Apps Script/Google Sheets;
-- scripts auxiliares: diretório `scripts/`;
-- workflows: diretório `.github/workflows/`.
+Quando for solicitada versao completa de codigo, nao resumir, omitir trechos, substituir blocos por reticencias ou entregar apenas diffs.
 
-## Regras de alteração
+## Contexto do Malha IA
 
-Ao modificar o projeto:
+Repositorio: `adinailson88-jpg/malha-ia`.
 
-1. identificar o arquivo afetado;
-2. explicar a causa técnica;
-3. aplicar a menor correção funcional necessária;
-4. manter fallback existente;
-5. evitar dependências desnecessárias;
-6. validar sintaxe quando possível;
-7. indicar comandos de teste.
+Dashboard principal: `dashboard_malha_ia_v36.html`.
 
-## Validação
+Dados preferenciais: `dados/*.json`.
+
+Fallback obrigatorio: Apps Script/Google Sheets.
+
+Scripts auxiliares: `scripts/`.
+
+Workflows: `.github/workflows/`.
+
+Temas do projeto: manutencao predial publica, gestao publica, automacao, engenharia eletrica, CREA-BA, biossistemas construidos, IA/PLN, series temporais, ODS e governanca preditiva.
+
+## Regras de resposta
+
+Para auxilio tecnico, operacional, instalacao, software, planilhas, codigo ou automacao, responder em passo a passo numerado, com comandos, validacoes e fluxos condicionais.
+
+Para textos, e-mails, relatos, pareceres, artigos e projetos, usar paragrafos continuos, linguagem natural, tecnica e sem aparencia de texto gerado por IA.
+
+Quando envolver informacao atual, edital, norma vigente, preco, lei, publicacao recente ou status mutavel, indicar necessidade de verificacao por fonte atual.
+
+Para pesquisa aplicada, explicitar problema, lacuna, dados, metodo, modelos, metricas, aderencia normativa, ODS, riscos e fomento quando pertinente.
+
+## Validacao tecnica
 
 Python:
 
@@ -40,24 +50,30 @@ Python:
 python -m py_compile caminho/do/arquivo.py
 ```
 
-HTML/JS: verificar fechamento de tags, scripts, funções, referências DOM, chamadas assíncronas e fallback de carregamento.
+Quando `py_compile` nao for adequado, usar leitura sintatica com `ast.parse`, quando possivel.
 
-YAML/GitHub Actions: evitar Python extenso embutido; preferir scripts em `scripts/`; validar indentação, gatilhos, permissões e agendamento.
+HTML/JavaScript: verificar fechamento de tags, ordem de scripts, existencia de funcoes chamadas, referencias DOM, seletores, eventos, chamadas assincronas, tratamento de erro, fallback de carregamento e compatibilidade com os dados em `dados/*.json`.
 
-## Padrão de resposta
+YAML/GitHub Actions: verificar indentacao, permissoes, gatilhos, agendamento, nomes de jobs, passos, paths, secrets usados, comandos chamados e compatibilidade com os scripts existentes. Evitar Python extenso embutido em YAML quando houver script apropriado em `scripts/`.
 
-Para erro, correção ou commit, usar:
+Markdown/documentacao: manter estrutura de titulos coerente, listas validas e caminhos reais.
+
+## Padrao para erro, correcao ou revisao
+
+Usar este formato quando tratar erro, correcao, regressao, ajuste tecnico ou commit:
 
 ```text
 Arquivo afetado:
-Causa provável:
-Correção aplicada/proposta:
-Validação realizada:
-Próximo passo:
+Causa provavel:
+Correcao aplicada/proposta:
+Validacao realizada:
+Proximo passo:
 ```
 
-## Estilo
+## Limites de alteracao
 
-Para código, instalação, planilhas, automação e operação: passo a passo numerado com comandos e validações.
+Nao alterar arquivos funcionais do dashboard, scripts, dados, workflows ou motores de previsao/classificacao quando a tarefa for apenas documentacao, configuracao de IA ou instrucao operacional.
 
-Para textos, e-mails, relatos, pareceres, artigos e projetos: parágrafos contínuos, linguagem natural, técnica e sem aparência de texto gerado por IA.
+Nao criar dependencias, jobs, credenciais, integrações externas ou automacoes novas sem necessidade explicita.
+
+Nao declarar teste aprovado sem execucao ou verificacao correspondente. Quando a validacao nao puder ser executada, informar a limitacao.
