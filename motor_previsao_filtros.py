@@ -32,10 +32,6 @@ APIs externas de LLM: REMOVIDAS.
 # =====================================================================
 # 1. INSTALAÇÃO INTELIGENTE DE DEPENDÊNCIAS COM CACHE PERSISTENTE
 # =====================================================================
-
-# =====================================================================
-# 1. INSTALAÇÃO INTELIGENTE DE DEPENDÊNCIAS COM CACHE PERSISTENTE
-# =====================================================================
 import os
 import sys
 import json
@@ -59,8 +55,6 @@ ARQUIVO_LOCK = f'{PASTA_LIBS}/requirements.lock'
 
 PACOTES_REQUERIDOS = {
     'gspread': '6.1.4',
-    'requests': '2.32.3',
-    'groq': '0.13.0',
     'pandas': '2.2.3',
     'numpy': '1.26.4',
     'statsmodels': '0.14.4',
@@ -70,7 +64,6 @@ PACOTES_REQUERIDOS = {
     'prophet': '1.1.6',
     'scipy': '1.13.1',
     'arch': '7.2.0',         # block bootstrap (Künsch 1989) — G2
-    'tenacity': '9.0.0',     # retry exponencial em APIs LLM — G9
     'shap': '0.46.0',        # interpretabilidade do GBR — G12 (v3.6)
     'tensorflow': '2.17.0',  # LSTM classificação + previsão — v3.8
 }
@@ -151,15 +144,10 @@ else:
 # =====================================================================
 # 2. IMPORTAÇÕES
 # =====================================================================
-
-# =====================================================================
-# 2. IMPORTAÇÕES
-# =====================================================================
 import gspread
 from gspread.exceptions import WorksheetNotFound, APIError
 import time
 import re
-import requests
 import warnings
 import pandas as pd
 import numpy as np
@@ -167,14 +155,10 @@ from datetime import datetime, timedelta
 import pytz
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingRegressor
-from sklearn.model_selection import train_test_split
-from sklearn.calibration import CalibratedClassifierCV   # G4 — v3.5
+from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import (
-    classification_report, mean_absolute_error, mean_squared_error,
-    f1_score, balanced_accuracy_score
+    mean_absolute_error, mean_squared_error
 )
-from sklearn.pipeline import Pipeline
 
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 from statsmodels.tsa.arima.model import ARIMA
@@ -193,12 +177,8 @@ from scipy import stats as sps
 from scipy.stats import boxcox, norm, ks_2samp, shapiro  # G6 — v3.5; shapiro para pressupostos
 from scipy.signal import periodogram                     # G19 — v3.5
 
-# Block bootstrap (G2) e retry (G9) — v3.5
+# Block bootstrap (G2) — v3.5
 from arch.bootstrap import MovingBlockBootstrap
-from tenacity import (
-    retry, stop_after_attempt, wait_exponential,
-    retry_if_exception_type
-)
 
 warnings.filterwarnings('ignore')
 import logging
@@ -429,10 +409,6 @@ def _safe_float(val, default=float('nan')):
 # =====================================================================
 # 3. CONFIGURAÇÕES INICIAIS
 # =====================================================================
-
-# =====================================================================
-# 3. CONFIGURAÇÕES INICIAIS
-# =====================================================================
 ARQUIVO_GOOGLE = f'{CAMINHO_PASTA}/autenticacao_google.json'
 gc = gspread.service_account(filename=ARQUIVO_GOOGLE)
 
@@ -559,10 +535,6 @@ except Exception as e:
 # =====================================================================
 # 4. UTILITÁRIO DE ABAS COM CACHE
 # =====================================================================
-
-# =====================================================================
-# 4. UTILITÁRIO DE ABAS COM CACHE
-# =====================================================================
 _cache_abas = {}
 
 def obter_aba(nome, linhas=100, colunas=10, cabecalho=None):
@@ -613,10 +585,6 @@ if not os.path.exists(ARQUIVO_FLAG_MIGRACAO):
     with open(ARQUIVO_FLAG_MIGRACAO, 'w') as f:
         f.write(f"Migração v3.4 executada em {datetime.now(FUSO_BAHIA).isoformat()}")
 
-
-# =====================================================================
-# 5. UTILITÁRIOS GERAIS
-# =====================================================================
 
 # =====================================================================
 # 5. UTILITÁRIOS GERAIS
@@ -707,10 +675,6 @@ def hash_base_treino(df):
     return hashlib.md5(s.encode('utf-8')).hexdigest()[:16]
 
 
-
-# =====================================================================
-# 6. CATEGORIAS VÁLIDAS
-# =====================================================================
 
 # =====================================================================
 # 6. CATEGORIAS VÁLIDAS
