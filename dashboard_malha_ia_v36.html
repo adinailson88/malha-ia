@@ -241,6 +241,14 @@ footer.app-footer { margin-top: 2rem; padding: 1rem 24px; border-top: 1px solid 
       <div class="metric"><div class="metric-label">Alta criticidade</div><div class="metric-val" id="m-crit">—</div><div class="metric-sub">priorização imediata</div></div>
     </div>
     <div class="card">
+      <div class="card-title">Indicadores de desempenho do classificador</div>
+      <div class="metrics" style="margin-bottom:0;">
+        <div class="metric"><div class="metric-label">Alta confiança</div><div class="metric-val" id="clf-alta">—</div><div class="metric-sub">confiança ≥ 0,95</div></div>
+        <div class="metric"><div class="metric-label">Baixa confiança</div><div class="metric-val" id="clf-baixa">—</div><div class="metric-sub">confiança &lt; 0,70 ou baixa_conf</div></div>
+        <div class="metric"><div class="metric-label">Fallback RF</div><div class="metric-val" id="clf-rf">—</div><div class="metric-sub">executor contém RF/fallback</div></div>
+      </div>
+    </div>
+    <div class="card">
       <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;">
         <span>Distribuição geográfica dos chamados [v4.1.1]</span>
         <span style="font-size:11px;font-weight:400;color:var(--ufsb-cinza-medio);text-transform:none;letter-spacing:0;">
@@ -1709,6 +1717,7 @@ function processarChamados() {
   atualizarResumoFiltroStatusMonitor(linhas.length, linhasValidas.length);
   const total = linhas.length;
   let categorizados = 0, pendentes = 0, somaConf = 0, countConf = 0, altaCrit = 0;
+  let altaConfianca = 0, baixaConfianca = 0, fallbackRF = 0;
   const distCrit = {'Alta':0,'Média':0,'Baixa':0}, distExecutor = {};
 
   linhas.forEach(linha => {
@@ -1724,6 +1733,10 @@ function processarChamados() {
       categorizados++;
       if (conf !== null) { somaConf += conf; countConf++; }
       if (executor) distExecutor[executor] = (distExecutor[executor] || 0) + 1;
+      const confNorm = conf !== null ? (conf > 1 ? conf / 100 : conf) : null;
+      if (confNorm !== null && confNorm >= 0.95) altaConfianca++;
+      if ((confNorm !== null && confNorm < 0.70) || /baixa[_\s-]?conf/i.test(executor)) baixaConfianca++;
+      if (/rf|fallback/i.test(executor)) fallbackRF++;
     } else { pendentes++; }
     if (crit === 'Alta') altaCrit++;
     if (distCrit[crit] !== undefined) distCrit[crit]++;
@@ -1734,6 +1747,10 @@ function processarChamados() {
   document.getElementById('m-fila').textContent = pendentes.toLocaleString('pt-BR');
   document.getElementById('m-conf').textContent = countConf > 0 ? fmtConf(somaConf / countConf) : '—';
   document.getElementById('m-crit').textContent = altaCrit.toLocaleString('pt-BR');
+  const pctBase = categorizados || 1;
+  document.getElementById('clf-alta').textContent = categorizados ? `${((altaConfianca / pctBase) * 100).toFixed(1)}%` : '—';
+  document.getElementById('clf-baixa').textContent = categorizados ? `${((baixaConfianca / pctBase) * 100).toFixed(1)}%` : '—';
+  document.getElementById('clf-rf').textContent = categorizados ? `${((fallbackRF / pctBase) * 100).toFixed(1)}%` : '—';
 
   // Cache para o filtro de Categorização (radios Preventiva/Corretiva/Todos)
   linhasCategorizadasCache = linhas;
