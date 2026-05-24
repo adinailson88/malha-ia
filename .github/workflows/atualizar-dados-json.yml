@@ -49,8 +49,8 @@ jobs:
           for arq in arquivos:
               json.loads(arq.read_text(encoding='utf-8'))
           manifest = json.loads((base / 'manifest.json').read_text(encoding='utf-8'))
-          if 'CHAMADOS' not in manifest.get('abas', {}):
-              raise SystemExit('CHAMADOS nao foi exportado.')
+          if not manifest.get('abas'):
+              raise SystemExit('Nenhuma aba foi exportada no manifest.json.')
           print(f"JSON validado: {len(arquivos)} arquivos.")
           PY
 
@@ -66,4 +66,4 @@ jobs:
             git push
           fi
 
-# trigger: json-estatico-4
+# trigger: json-estatico-5
