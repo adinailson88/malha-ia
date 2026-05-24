@@ -1402,9 +1402,10 @@ function slugAbaJson(nomeAba) {
 async function fetchAbaJsonEstatico(nomeAba) {
   if (!USAR_JSON_ESTATICO) return null;
   const slug = slugAbaJson(nomeAba);
-  const url = `${DADOS_JSON_BASE}/${slug}.json?v=${Date.now()}`;
+  const cacheJanela = Math.floor(Date.now() / (15 * 60 * 1000));
+  const url = `${DADOS_JSON_BASE}/${slug}.json?v=${cacheJanela}`;
   try {
-    const resp = await fetch(url, { cache: 'no-store' });
+    const resp = await fetch(url, { cache: 'force-cache' });
     if (resp.status === 404) return null;
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
