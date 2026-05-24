@@ -249,7 +249,8 @@ FUSO_BAHIA = _resolver_fuso_brasil()
 # Limites e limiares de classificação
 MIN_AMOSTRAS_TREINO     = 10
 MIN_EXEMPLOS_POR_CLASSE = 3
-ROTACAO_LOG_DIAS        = 90
+ROTACAO_LOG_DIAS        = 30
+LIMITE_LOG_ATIVO        = 5000
 LIMIAR_RECLASSIFICACAO  = 0.80
 DELTA_MELHORIA_MINIMA   = 0.05
 LOTE_RECLASSIFICACAO    = 200
@@ -769,9 +770,18 @@ def classificar_supervisionado(pipeline, texto, categorias_validas):
 # 9. LOG DE AUDITORIA
 # =====================================================================
 def rotacionar_logs_se_necessario():
-    """Move logs com mais de ROTACAO_LOG_DIAS dias para CSV — roda 1×/dia."""
+    """
+    Rotaciona LOG_CLASSIFICACAO uma vez por dia.
+
+    Política:
+    1. arquiva registros com mais de ROTACAO_LOG_DIAS dias;
+    2. se ainda houver mais de LIMITE_LOG_ATIVO registros, arquiva os mais antigos;
+    3. mantém na aba ativa apenas os registros recentes;
+    4. preserva histórico em CSV mensal na pasta logs_arquivo.
+    """
     flag_arq = f'{CAMINHO_PASTA}/.ultima_rotacao_log'
     hoje = datetime.now(FUSO_BAHIA).date()
+
     if os.path.exists(flag_arq):
         try:
             with open(flag_arq, 'r') as f:
@@ -782,13 +792,30 @@ def rotacionar_logs_se_necessario():
             pass
 
     try:
-        aba_log = obter_aba("LOG_CLASSIFICACAO", linhas=5000, colunas=10)
+        aba_log = obter_aba(
+            "LOG_CLASSIFICACAO",
+            linhas=5000,
+            colunas=9,
+            cabecalho=[
+                "Timestamp", "Linha", "Texto", "Cat_Original",
+                "Cat_IA", "Confianca", "Criticidade", "Origem", "Decisao"
+            ]
+        )
+
         valores = aba_log.get_all_values()
         if len(valores) < 2:
+            with open(flag_arq, 'w') as f:
+                f.write(datetime.now(FUSO_BAHIA).isoformat())
             return
-        cab, rows = valores[0], valores[1:]
-        limite = datetime.now(FUSO_BAHIA) - timedelta(days=ROTACAO_LOG_DIAS)
-        antigos, recentes = [], []
+
+        cab = valores[0]
+        rows = valores[1:]
+
+        limite_data = datetime.now(FUSO_BAHIA) - timedelta(days=ROTACAO_LOG_DIAS)
+
+        antigos = []
+        recentes = []
+
         for r in rows:
             try:
                 ts = datetime.strptime(r[0], '%d/%m/%Y %H:%M:%S')
@@ -796,17 +823,29 @@ def rotacionar_logs_se_necessario():
                     ts = FUSO_BAHIA.localize(ts)
                 else:
                     ts = ts.replace(tzinfo=FUSO_BAHIA)
-                (antigos if ts < limite else recentes).append(r)
+
+                if ts < limite_data:
+                    antigos.append(r)
+                else:
+                    recentes.append(r)
             except Exception:
                 recentes.append(r)
+
+        # Limite por quantidade: mantém apenas os últimos LIMITE_LOG_ATIVO registros.
+        if len(recentes) > LIMITE_LOG_ATIVO:
+            excedentes_por_volume = recentes[:-LIMITE_LOG_ATIVO]
+            recentes = recentes[-LIMITE_LOG_ATIVO:]
+            antigos.extend(excedentes_por_volume)
 
         if not antigos:
             with open(flag_arq, 'w') as f:
                 f.write(datetime.now(FUSO_BAHIA).isoformat())
+            print(f"[Rotação] LOG_CLASSIFICACAO dentro do limite: {len(recentes)} registro(s).")
             return
 
         pasta_arq = f'{CAMINHO_PASTA}/logs_arquivo'
         os.makedirs(pasta_arq, exist_ok=True)
+
         por_mes = {}
         for r in antigos:
             try:
@@ -818,16 +857,35 @@ def rotacionar_logs_se_necessario():
         for chave, linhas_mes in por_mes.items():
             arq_csv = f'{pasta_arq}/log_{chave}.csv'
             modo = 'a' if os.path.exists(arq_csv) else 'w'
-            df_export = pd.DataFrame(linhas_mes, columns=cab[:len(linhas_mes[0])])
-            df_export.to_csv(arq_csv, mode=modo, header=(modo == 'w'),
-                             index=False, encoding='utf-8')
+
+            largura = min(len(cab), max(len(l) for l in linhas_mes))
+            cab_export = cab[:largura]
+            linhas_export = [l[:largura] + [''] * max(0, largura - len(l)) for l in linhas_mes]
+
+            df_export = pd.DataFrame(linhas_export, columns=cab_export)
+            df_export.to_csv(
+                arq_csv,
+                mode=modo,
+                header=(modo == 'w'),
+                index=False,
+                encoding='utf-8'
+            )
 
         aba_log.clear()
-        aba_log.update(values=[cab] + recentes, range_name='A1',
-                       value_input_option='USER_ENTERED')
+        aba_log.update(
+            values=[cab] + recentes,
+            range_name='A1',
+            value_input_option='USER_ENTERED'
+        )
+
         with open(flag_arq, 'w') as f:
             f.write(datetime.now(FUSO_BAHIA).isoformat())
-        print(f"[Rotação] {len(antigos)} log(s) arquivado(s).")
+
+        print(
+            f"[Rotação] {len(antigos)} log(s) arquivado(s). "
+            f"{len(recentes)} registro(s) mantido(s) em LOG_CLASSIFICACAO."
+        )
+
     except Exception as e:
         print(f"[Rotação] Falha não-fatal: {e}")
 
