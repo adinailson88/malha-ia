@@ -35,6 +35,18 @@ LIMITE_LINHAS_JSON = {
     "LOG_CLASSIFICACAO": 1000,
 }
 
+COLUNAS_JSON = {
+    # Mantem os indices usados pelo Monitor/Categorizacao e remove textos longos
+    # que nao participam do dashboard, reduzindo o peso de dados/chamados.json.
+    "CHAMADOS": {0, 1, 2, 3, 7, 12, 16, 20, 25, 27, 28, 29},
+}
+
+CONFIG_BUSCA_ABA = {
+    # CHAMADOS e a maior aba; em execucoes anteriores respondia depois de
+    # ~100s, enquanto o timeout padrao de 75s abortava antes da resposta.
+    "CHAMADOS": {"timeout": 240, "tentativas": 1},
+}
+
 ABAS_BASE = [
     "CHAMADOS",
     "PREVISAO_TEMPORAL",
@@ -113,6 +125,16 @@ def buscar_aba(base_url: str, nome_aba: str, timeout: int = 75, tentativas: int 
     raise RuntimeError(f"Falha ao buscar aba {nome_aba}: {ultimo_erro}")
 
 
+def buscar_aba_configurada(base_url: str, nome_aba: str) -> list[list[Any]]:
+    config = CONFIG_BUSCA_ABA.get(nome_aba, {})
+    return buscar_aba(
+        base_url,
+        nome_aba,
+        timeout=int(config.get("timeout", 75)),
+        tentativas=int(config.get("tentativas", 2)),
+    )
+
+
 def salvar_json(caminho: Path, dados: Any) -> None:
     caminho.parent.mkdir(parents=True, exist_ok=True)
     texto = json.dumps(dados, ensure_ascii=False, separators=(",", ":")) + "\n"
@@ -144,6 +166,26 @@ def limitar_linhas_json(nome_aba: str, dados: list[list[Any]]) -> list[list[Any]
     return cabecalho + linhas[-limite:]
 
 
+def reduzir_colunas_json(nome_aba: str, dados: list[list[Any]]) -> list[list[Any]]:
+    colunas = COLUNAS_JSON.get(nome_aba)
+    if not colunas or not isinstance(dados, list) or not dados:
+        return dados
+
+    max_col = max(colunas)
+    reduzido: list[list[Any]] = []
+    for linha in dados:
+        nova = ["" for _ in range(max_col + 1)]
+        for idx in colunas:
+            if idx < len(linha):
+                nova[idx] = linha[idx]
+        reduzido.append(nova)
+    return reduzido
+
+
+def preparar_dados_json(nome_aba: str, dados: list[list[Any]]) -> list[list[Any]]:
+    return reduzir_colunas_json(nome_aba, limitar_linhas_json(nome_aba, dados))
+
+
 def extrair_sufixos_filtros(filtros: list[list[Any]]) -> list[str]:
     """Extrai sufixos da aba FILTROS_DISPONIVEIS.
 
@@ -165,7 +207,7 @@ def montar_lista_abas(base_url: str, incluir_filtradas: bool) -> list[str]:
         return abas
 
     try:
-        filtros = buscar_aba(base_url, "FILTROS_DISPONIVEIS")
+        filtros = buscar_aba_configurada(base_url, "FILTROS_DISPONIVEIS")
         sufixos = extrair_sufixos_filtros(filtros)
     except RuntimeError as exc:
         print(f"Aviso: nao foi possivel ler FILTROS_DISPONIVEIS para sufixos: {exc}", file=sys.stderr)
@@ -193,7 +235,7 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
 
     def tarefa(nome: str) -> tuple[str, list[list[Any]] | None, str | None]:
         try:
-            return nome, buscar_aba(base_url, nome), None
+            return nome, buscar_aba_configurada(base_url, nome), None
         except RuntimeError as exc:
             return nome, None, str(exc)
 
@@ -212,7 +254,7 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
                     manifesto["falhas_opcionais"][nome] = erro
                     print(f"AVISO {nome}: {erro}", file=sys.stderr)
                 continue
-            dados_json = limitar_linhas_json(nome, dados)
+            dados_json = preparar_dados_json(nome, dados)
 
             salvar_json(saida / arquivo, dados_json)
 
@@ -221,7 +263,9 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
                 "linhas": max(0, len(dados_json) - 1),
                 "linhas_origem": max(0, len(dados) - 1),
                 "colunas": len(dados_json[0]) if dados_json else 0,
+                "colunas_origem": len(dados[0]) if dados else 0,
                 "limitado_json": len(dados_json) != len(dados),
+                "colunas_reduzidas_json": bool(COLUNAS_JSON.get(nome)),
             }
 
             print(
