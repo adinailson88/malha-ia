@@ -10,6 +10,7 @@ on:
     branches: [main]
     paths:
       - '**.html'
+      - 'dados/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
