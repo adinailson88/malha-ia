@@ -143,15 +143,13 @@ import gspread
 from gspread.exceptions import WorksheetNotFound, APIError
 import time
 import re
-import requests
 import warnings
 import pandas as pd
 import numpy as np
-from datetime import datetime, timedelta
+from datetime import datetime
 import pytz
 
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingRegressor
-from sklearn.model_selection import train_test_split
+from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
@@ -376,11 +374,8 @@ def _resolver_fuso_brasil():
 FUSO_BAHIA = _resolver_fuso_brasil()
 
 INTERVALO_PREVISAO_CICLOS = 10
-INTERVALO_RETREINO_CICLOS = 10
-MIN_AMOSTRAS_TREINO = 10
 MIN_PONTOS_SERIE = 6
 MIN_PONTOS_SERIE_CUSTO = 12   # mínimo 12 meses com custo > 0 para rodar modelos sazonais
-MIN_EXEMPLOS_POR_CLASSE = 3
 
 HORIZONTE_HOLDOUT = 12
 HORIZONTE_FORECAST = 12
@@ -399,46 +394,22 @@ THRESH_DRIFT_KS = 0.15
 PESO_RMSE = 0.5
 PESO_CRPS = 0.3
 PESO_DESVIO_CV = 0.2
-LLM_RETRY_MAX = 3
-LLM_RETRY_WAIT_BASE = 1
 
 INTERVALO_DIAS_ABLATION = 90
 INTERVALO_DIAS_EXPORT = 30
 
-EXECUTAR_POR_CATEGORIA = True
-MIN_REGISTROS_FILTRO = 12
-LSTM_VOCAB_SIZE = 8000
-LSTM_MAX_LEN = 120
-LSTM_EMBED_DIM = 128
 LSTM_UNITS = 64
 LSTM_FORECAST_WINDOW = 12   # janela de entrada para LSTM Forecast (modelo 8)
 
 # Índices de coluna (0-based) — aba CHAMADOS
-COL_TITULO = 1
 COL_DATA_ABERTURA = 2
-COL_CATEGORIA_TOPO = 4
 COL_CAMPUS = 7
 COL_CATEGORIA_HIERARQUICA = 12
 COL_VALOR = 16              # coluna Q — "Valor do chamado" em R$
-COL_DESCRICAO_GLPI = 22
-COL_TITULO_OSM = 23
-COL_DESCRICAO_OSM = 24
 COL_CAT_IA = 25
 
 COL_DATA_CONCLUSAO = None
 COL_LOCAL = None
-
-FILTROS_ATIVOS = True
-
-COL_CAT_IA_OUT = 26
-COL_AVALIACAO_OUT = 28
-COL_EXECUTOR_OUT = 29
-COL_CRITICIDADE_OUT = 30
-COL_CONFERENCIA = 31
-
-LIMIAR_RECLASSIFICACAO = 0.80
-DELTA_MELHORIA_MINIMA = 0.05
-LOTE_RECLASSIFICACAO = 200
 
 try:
     doc = gc.open(NOME_PLANILHA)
