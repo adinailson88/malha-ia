@@ -31,6 +31,10 @@ APPS_SCRIPT_URL_PADRAO = (
 # o dashboard mantem fallback automatico para o Apps Script apenas naquela aba.
 ABAS_CRITICAS: set[str] = set()
 
+LIMITE_LINHAS_JSON = {
+    "LOG_CLASSIFICACAO": 1000,
+}
+
 ABAS_BASE = [
     "CHAMADOS",
     "PREVISAO_TEMPORAL",
@@ -115,6 +119,31 @@ def salvar_json(caminho: Path, dados: Any) -> None:
     caminho.write_text(texto, encoding="utf-8", newline="\n")
 
 
+def limitar_linhas_json(nome_aba: str, dados: list[list[Any]]) -> list[list[Any]]:
+    """
+    Limita linhas exportadas para JSON em abas muito grandes.
+
+    Mantém:
+    - cabeçalho;
+    - últimas N linhas definidas em LIMITE_LINHAS_JSON.
+
+    A planilha continua com política própria de retenção.
+    Este limite afeta apenas o JSON usado pelo dashboard.
+    """
+    limite = LIMITE_LINHAS_JSON.get(nome_aba)
+
+    if not limite:
+        return dados
+
+    if not isinstance(dados, list) or len(dados) <= limite + 1:
+        return dados
+
+    cabecalho = dados[:1]
+    linhas = dados[1:]
+
+    return cabecalho + linhas[-limite:]
+
+
 def extrair_sufixos_filtros(filtros: list[list[Any]]) -> list[str]:
     """Extrai sufixos da aba FILTROS_DISPONIVEIS.
 
@@ -183,13 +212,22 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
                     manifesto["falhas_opcionais"][nome] = erro
                     print(f"AVISO {nome}: {erro}", file=sys.stderr)
                 continue
-            salvar_json(saida / arquivo, dados)
-            manifesto["abas"][nome] = {
-                "arquivo": arquivo,
-                "linhas": max(0, len(dados) - 1),
-                "colunas": len(dados[0]) if dados else 0,
-            }
-            print(f"OK {nome}: {manifesto['abas'][nome]['linhas']} linhas -> dados/{arquivo}")
+            dados_json = limitar_linhas_json(nome, dados)
+
+                salvar_json(saida / arquivo, dados_json)
+                
+                manifesto["abas"][nome] = {
+                    "arquivo": arquivo,
+                    "linhas": max(0, len(dados_json) - 1),
+                    "linhas_origem": max(0, len(dados) - 1),
+                    "colunas": len(dados_json[0]) if dados_json else 0,
+                    "limitado_json": len(dados_json) != len(dados),
+                }
+                
+                print(
+                    f"OK {nome}: {manifesto['abas'][nome]['linhas']} linhas exportadas "
+                    f"de {manifesto['abas'][nome]['linhas_origem']} origem -> dados/{arquivo}"
+                )
 
     manifesto["total_abas_exportadas"] = len(manifesto["abas"])
     manifesto["total_falhas"] = len(manifesto["falhas"])
