@@ -71,6 +71,12 @@ body { font-family: var(--font-body); color: var(--ufsb-cinza); background: var(
 .metric-label { font-family: var(--font-inst); font-size: 11px; font-weight: 600; color: var(--ufsb-azul); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
 .metric-val { font-family: var(--font-inst); font-size: 28px; font-weight: 700; color: var(--ufsb-azul); line-height: 1; }
 .metric-sub { font-size: 11px; color: var(--ufsb-cinza-medio); margin-top: 4px; }
+.monitor-filter { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 10px 14px; margin-bottom: 1rem; border: 1px solid var(--ufsb-cinza-borda); border-left: 3px solid var(--ufsb-azul); background: var(--ufsb-branco); border-radius: 0 3px 3px 0; }
+.monitor-filter-title { font-family: var(--font-inst); font-size: 12px; font-weight: 700; color: var(--ufsb-azul); letter-spacing: 0.06em; text-transform: uppercase; }
+.monitor-filter-options { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.monitor-filter-options label { display: flex; align-items: center; gap: 5px; cursor: pointer; padding: 4px 8px; background: var(--ufsb-azul-claro); border-radius: 3px; font-family: var(--font-inst); font-size: 11px; font-weight: 600; color: var(--ufsb-azul); letter-spacing: 0.04em; text-transform: uppercase; }
+.monitor-filter-options input[type="checkbox"] { accent-color: var(--ufsb-azul); }
+.monitor-filter-count { font-size: 11px; color: var(--ufsb-cinza-medio); margin-left: auto; }
 
 .card { background: var(--ufsb-branco); border: 1px solid var(--ufsb-cinza-borda); border-top: 3px solid var(--ufsb-azul); border-radius: 0 0 3px 3px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
 .card-title { font-family: var(--font-inst); font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ufsb-azul); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--ufsb-azul-claro); }
@@ -203,6 +209,16 @@ footer.app-footer { margin-top: 2rem; padding: 1rem 24px; border-top: 1px solid 
 
   <!-- ========== MONITOR ========== -->
   <section id="screen-monitor" class="screen active">
+    <div class="monitor-filter" aria-label="Filtro de status dos chamados">
+      <span class="monitor-filter-title">Filtrar por status:</span>
+      <div class="monitor-filter-options">
+        <label><input type="checkbox" class="monitor-status-filter" value="Aberto" checked onchange="onFiltroStatusMonitor()"> Aberto</label>
+        <label><input type="checkbox" class="monitor-status-filter" value="Em execução" checked onchange="onFiltroStatusMonitor()"> Em execução</label>
+        <label><input type="checkbox" class="monitor-status-filter" value="Concluído" checked onchange="onFiltroStatusMonitor()"> Concluído</label>
+        <label><input type="checkbox" class="monitor-status-filter" value="Cancelado" checked onchange="onFiltroStatusMonitor()"> Cancelado</label>
+      </div>
+      <span class="monitor-filter-count" id="monitor-status-resumo"></span>
+    </div>
     <div class="metrics">
       <div class="metric"><div class="metric-label">Total chamados</div><div class="metric-val" id="m-total">—</div><div class="metric-sub">na aba CHAMADOS</div></div>
       <div class="metric"><div class="metric-label">Categorizados</div><div class="metric-val" id="m-categ">—</div><div class="metric-sub">coluna Z preenchida</div></div>
@@ -1341,6 +1357,8 @@ const COL_CAT_IA = 25;
 const COL_AVALIACAO = 27;
 const COL_EXECUTOR = 28;
 const COL_CRITICIDADE = 29;
+const STATUS_MONITOR_OPCOES = ['Aberto', 'Em execução', 'Concluído', 'Cancelado'];
+let statusMonitorSelecionados = new Set(STATUS_MONITOR_OPCOES);
 
 /* [v4.1.1] Instância única do mapa Leaflet em Monitor. */
 let mapaMonitor = null;
@@ -1607,6 +1625,30 @@ function classificarStatus(txt) {
   return 'badge-warn';
 }
 
+function obterStatusMonitorSelecionados() {
+  const checks = Array.from(document.querySelectorAll('.monitor-status-filter'));
+  if (!checks.length) return new Set(STATUS_MONITOR_OPCOES);
+  const marcados = checks
+    .filter(chk => chk.checked)
+    .map(chk => chk.value);
+  return new Set(marcados);
+}
+
+function atualizarResumoFiltroStatusMonitor(totalFiltrado, totalValido) {
+  const el = document.getElementById('monitor-status-resumo');
+  if (!el) return;
+  const selecionados = Array.from(statusMonitorSelecionados);
+  const rotulo = selecionados.length
+    ? selecionados.join(', ')
+    : 'nenhum status selecionado';
+  el.textContent = `${totalFiltrado.toLocaleString('pt-BR')} de ${totalValido.toLocaleString('pt-BR')} chamados exibidos · ${rotulo}`;
+}
+
+function onFiltroStatusMonitor() {
+  statusMonitorSelecionados = obterStatusMonitorSelecionados();
+  processarChamados();
+}
+
 /* =========================================================
    PROCESSAMENTO DE CHAMADOS (MONITOR)
 ========================================================= */
@@ -1629,11 +1671,17 @@ let linhasCategorizadasCache = [];
    sem nova chamada à API. */
 function processarChamados() {
   if (!dadosChamados.length) return;
-  const linhas = dadosChamados.slice(1).filter(linha => {
+  statusMonitorSelecionados = obterStatusMonitorSelecionados();
+  const linhasValidas = dadosChamados.slice(1).filter(linha => {
     const dataAbertura = (linha[COL_DATA_ABERTURA] || '').toString().trim();
     const status = (linha[COL_STATUS] || '').toString().trim();
     return dataAbertura !== '' && status !== '';
   });
+  const linhas = linhasValidas.filter(linha => {
+    const status = (linha[COL_STATUS] || '').toString().trim();
+    return statusMonitorSelecionados.has(status);
+  });
+  atualizarResumoFiltroStatusMonitor(linhas.length, linhasValidas.length);
   const total = linhas.length;
   let categorizados = 0, pendentes = 0, somaConf = 0, countConf = 0, altaCrit = 0;
   const distCrit = {'Alta':0,'Média':0,'Baixa':0}, distExecutor = {};
@@ -1979,7 +2027,17 @@ function renderChartOrigem(dist) {
   if (charts.origem) charts.origem.destroy();
   const labels = Object.keys(dist);
   const values = Object.values(dist);
-  if (!labels.length) { ctx.parentElement.innerHTML = '<div class="empty-state">Sem dados.</div>'; return; }
+  const wrap = ctx.parentElement;
+  const vazioExistente = wrap.querySelector('.chart-empty-state');
+  if (!labels.length) {
+    ctx.style.display = 'none';
+    if (!vazioExistente) {
+      wrap.insertAdjacentHTML('beforeend', '<div class="empty-state chart-empty-state">Sem dados para o filtro selecionado.</div>');
+    }
+    return;
+  }
+  ctx.style.display = '';
+  if (vazioExistente) vazioExistente.remove();
   charts.origem = new Chart(ctx, {
     type: 'doughnut',
     data: { labels, datasets: [{ data: values, backgroundColor: ['#002878','#003399','#8b3a00','#1a6e35','#b07000','#8b1a1a','#888888','#5a5a5a'], borderWidth: 1, borderColor: '#fff' }] },
