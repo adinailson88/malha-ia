@@ -27,7 +27,9 @@ APPS_SCRIPT_URL_PADRAO = (
     "AKfycbyLQMA7D9sohZ-nqo-Z2ydVuBi-7igmEFPmhYy3gbOLMsawx78E-DyfnvecMSb-00om/exec"
 )
 
-ABAS_CRITICAS = {"CHAMADOS"}
+# Todas as abas sao exportadas em modo tolerante. Se uma aba nao for gerada,
+# o dashboard mantem fallback automatico para o Apps Script apenas naquela aba.
+ABAS_CRITICAS: set[str] = set()
 
 ABAS_BASE = [
     "CHAMADOS",
@@ -83,7 +85,7 @@ def url_aba(base_url: str, nome_aba: str) -> str:
     return f"{base_url}?{urlencode({'sheet': nome_aba})}"
 
 
-def buscar_aba(base_url: str, nome_aba: str, timeout: int = 60, tentativas: int = 3) -> list[list[Any]]:
+def buscar_aba(base_url: str, nome_aba: str, timeout: int = 75, tentativas: int = 2) -> list[list[Any]]:
     """Busca uma aba no Apps Script com tentativas simples."""
     ultimo_erro: Exception | None = None
     for tentativa in range(1, tentativas + 1):
@@ -153,6 +155,7 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
         "fonte": "Apps Script / Google Sheets",
         "total_abas_planejadas": len(abas),
         "abas_criticas": sorted(ABAS_CRITICAS),
+        "observacao": "Abas ausentes usam fallback automatico via Apps Script no dashboard.",
         "abas": {},
         "falhas": {},
         "falhas_criticas": {},
@@ -201,7 +204,7 @@ def main() -> int:
     parser.add_argument("--apps-script-url", default=os.getenv("MALHA_APPS_SCRIPT_URL", APPS_SCRIPT_URL_PADRAO))
     parser.add_argument("--saida", default="dados", help="Diretorio de saida dos arquivos JSON.")
     parser.add_argument("--incluir-filtradas", action="store_true", help="Exporta tambem abas com sufixos de filtros.")
-    parser.add_argument("--workers", type=int, default=6, help="Numero de requisicoes paralelas.")
+    parser.add_argument("--workers", type=int, default=4, help="Numero de requisicoes paralelas.")
     args = parser.parse_args()
 
     manifesto = exportar(
@@ -213,9 +216,6 @@ def main() -> int:
 
     if manifesto["total_falhas_criticas"]:
         print(f"Concluido com {manifesto['total_falhas_criticas']} falha(s) critica(s).", file=sys.stderr)
-        return 1
-    if "CHAMADOS" not in manifesto["abas"]:
-        print("Falha critica: CHAMADOS nao foi exportada.", file=sys.stderr)
         return 1
     print(
         "Exportacao concluida. "
