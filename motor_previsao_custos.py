@@ -655,6 +655,13 @@ def extrair_serie_custo(dados_linhas):
     # Remove mês corrente (série incompleta)
     periodo_atual = pd.Period(agora, freq='M')
     contagem = contagem[contagem['Mes_Ano'] < periodo_atual].copy()
+    # 2. Mantém apenas meses com valor total > 0
+    contagem = contagem[contagem['Quantidade'] > 0]
+
+    # 3. Verifica se há meses suficientes (mínimo 12)
+    if len(contagem) < MIN_PONTOS_SERIE_CUSTO:
+        print(f"[Custo] Série filtrada com {len(contagem)} meses (>0) – mínimo {MIN_PONTOS_SERIE_CUSTO} não atingido. Abortando.")
+        return None
 
     if contagem.empty:
         return None
