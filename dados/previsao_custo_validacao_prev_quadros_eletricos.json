@@ -1,0 +1,1 @@
+[["Modelo","RMSE_Médio_CV","RMSE_DesvPad_CV","N_Folds","Fold_1","Fold_2","Fold_3","Fold_4","Fold_5","Interpretação"],["—","—","—","—","","","","","","CV não executada (série curta)"],["","","","","","","","","",""],["Validação Rolling-Origin com 3 folds × 12 meses cada. Compara robustez relativa entre modelos sob diferentes janelas de treino.","","","","","","","","",""]]
