@@ -1,6 +1,6 @@
 # ============================================================================
 # Malha IA — Deploy automático no GitHub Pages
-# Roda sempre que um HTML é alterado no main. Publica todos os dashboards.
+# Publica o dashboard em todo push na main e após atualização dos JSONs.
 # URL base: https://adinailson88.github.io/malha-ia/
 # ============================================================================
 name: Deploy GitHub Pages
@@ -8,10 +8,6 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - '**.html'
-      - 'dados/**'
-      - '.github/workflows/pages.yml'
   workflow_run:
     workflows: ["Atualizar dados JSON"]
     types: [completed]
@@ -41,7 +37,7 @@ jobs:
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Empacotar arquivos HTML
+      - name: Empacotar arquivos do site
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
