@@ -28,12 +28,13 @@ jobs:
           python-version: '3.11'
 
       - name: Exportar abas para JSON
+        env:
+          MALHA_APPS_SCRIPT_URL: ${{ secrets.MALHA_APPS_SCRIPT_URL }}
         run: |
-          python scripts/exportar_dados_json.py --saida dados --workers 6
-
-      - name: Aplicar consumo de JSON estatico no dashboard
-        run: |
-          python scripts/aplicar_json_dashboard.py
+          python scripts/exportar_dados_json.py \
+            --saida dados \
+            --workers 6 \
+            --incluir-filtradas
 
       - name: Exportar CSVs canonicos para analise
         run: |
@@ -58,16 +59,16 @@ jobs:
           print(f"JSON validado: {len(arquivos)} arquivos.")
           PY
 
-      - name: Commitar JSON e dashboard atualizados
+      - name: Commitar JSON atualizados
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dados/*.json dados_csv/*.csv dashboard.html dashboard_malha_ia_v36.html
+          git add dados/ dados_csv/ dashboard.html dashboard_malha_ia_v36.html
           if git diff --cached --quiet; then
-            echo "Sem alteracoes nos JSON/dashboard."
+            echo "Sem alteracoes nos JSON."
           else
-            git commit -m "Atualiza dados JSON estaticos e dashboard"
+            git commit -m "Atualiza dados JSON estaticos [skip ci]"
             git push
           fi
 
-# trigger: json-estatico-5
+# trigger: json-estatico-6
