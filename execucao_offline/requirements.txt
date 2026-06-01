@@ -1,0 +1,39 @@
+# ============================================================================
+# Malha IA v4.0.1 — dependências Python para execução local Windows
+# Instalação: pip install -r requirements.txt
+# Python recomendado: 3.11 ou 3.12 (NÃO usar 3.13+)
+# ============================================================================
+
+# --- IO e Google Sheets ---
+gspread==6.1.4
+google-auth==2.35.0
+google-auth-oauthlib==1.2.1
+oauth2client==4.1.3
+requests==2.32.3
+
+# --- Cálculo numérico e data science ---
+numpy>=1.26,<2.1
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.5.2
+statsmodels==0.14.2
+
+# --- Séries temporais ---
+arch==7.2.0                                 # block bootstrap (Künsch 1989) — OBRIGATÓRIO
+pmdarima==2.0.4 ; python_version<'3.13'     # binário Windows não publicado p/ 3.13
+prophet==1.1.6                              # opcional (fallback automático p/ UnobservedComponents)
+holidays==0.57
+
+# --- Deep learning (LSTM) ---
+tensorflow==2.17.0
+
+# --- Interpretabilidade (opcional) ---
+shap==0.46.0
+
+# --- Misc ---
+pytz==2024.2
+tenacity==9.0.0
+joblib==1.4.2
+
+# --- Utilitários CLI ---
+tqdm==4.66.5
