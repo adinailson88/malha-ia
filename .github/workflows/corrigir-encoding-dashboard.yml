@@ -1,0 +1,55 @@
+name: Corrigir encoding dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/corrigir-encoding-dashboard.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  corrigir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Corrigir somente encoding do dashboard
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('dashboard.html')
+          txt = p.read_text(encoding='utf-8-sig')
+          original = txt
+          base = txt.lstrip('\ufeff')
+          try:
+              novo = base.encode('cp1252').decode('utf-8')
+          except UnicodeError as e:
+              raise SystemExit(f'Conversao abortada: {e}')
+          if 'Manutenção' not in novo[:1000]:
+              raise SystemExit('Conversao abortada: titulo esperado nao ficou legivel.')
+          if novo != original:
+              p.write_text(novo, encoding='utf-8', newline='\n')
+              print('dashboard.html corrigido quanto ao encoding.')
+          else:
+              print('Nenhuma alteracao necessaria.')
+          PY
+
+      - name: Conferir alteracoes
+        run: |
+          git diff -- dashboard.html
+
+      - name: Commit se houver alteracao
+        run: |
+          if git diff --quiet -- dashboard.html; then
+            echo "Sem alteracoes para commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dashboard.html
+          git commit -m "fix: corrige encoding do dashboard"
+          git push
