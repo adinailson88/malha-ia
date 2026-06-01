@@ -1,0 +1,47 @@
+# ============================================================================
+# Malha IA v4.0.8 — Workflow 5: RECLASSIFICAÇÃO
+# Roda 1× por dia às 04:30 BR (07:30 UTC) — depois dos outros workflows.
+# Reavalia até 200 chamados com confiança < 0.80, respeitando a coluna
+# AF (CONFERENCIA): se marcada TRUE, motor NÃO sobrescreve (revisão humana).
+# Salvar em: .github/workflows/reclassificacao.yml
+# ============================================================================
+name: 5 - Reclassificacao (a cada 3h)
+
+concurrency:
+  group: malha-ia-reclassificacao
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '17 */3 * * *'   # a cada 3 horas, em UTC
+  workflow_dispatch:
+
+jobs:
+  reclassificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r execucao_offline/requirements.txt
+
+      - name: Reconstruir credenciais Google
+        env:
+          AUTENTICACAO_GOOGLE: ${{ secrets.AUTENTICACAO_GOOGLE }}
+        run: |
+          echo "$AUTENTICACAO_GOOGLE" | base64 -d > autenticacao_google.json
+          echo "{}" > chaves_api.json
+
+      - name: Executar reclassificacao
+        run: python motor_classificacao_v1.py --apenas-reclassificacao

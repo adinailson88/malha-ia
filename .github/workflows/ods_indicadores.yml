@@ -1,0 +1,46 @@
+# ============================================================================
+# Malha IA v4.0.8 — Workflow 4: INDICADORES ODS + PESOS_ODS
+# Roda 1× por dia às 04:00 BR (07:00 UTC) — depois dos filtros terminarem.
+# Atualiza INDICADORES_ODS por campus; cria PESOS_ODS se não existir.
+# Salvar em: .github/workflows/ods_indicadores.yml
+# ============================================================================
+name: 4 - Indicadores ODS (rapido, 1x ao dia)
+
+concurrency:
+  group: malha-ia-ods
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 7 * * *'       # 07:00 UTC = 04:00 Brasília
+  workflow_dispatch:
+
+jobs:
+  ods:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r execucao_offline/requirements.txt
+
+      - name: Reconstruir credenciais Google
+        env:
+          AUTENTICACAO_GOOGLE: ${{ secrets.AUTENTICACAO_GOOGLE }}
+        run: |
+          echo "$AUTENTICACAO_GOOGLE" | base64 -d > autenticacao_google.json
+          echo "{}" > chaves_api.json
+
+      - name: Executar indicadores ODS
+        run: python motor_ods.py --apenas-ods

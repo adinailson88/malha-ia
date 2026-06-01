@@ -1,0 +1,26 @@
+# Configuracao do formulario manual de release no GitHub.
+# Este arquivo nao publica releases automaticamente.
+
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+  categories:
+    - title: Funcionalidades
+      labels:
+        - enhancement
+        - feature
+    - title: Correcoes
+      labels:
+        - bug
+        - fix
+    - title: Documentacao
+      labels:
+        - documentation
+    - title: Manutencao
+      labels:
+        - maintenance
+        - chore
+    - title: Outras mudancas
+      labels:
+        - "*"

@@ -1,0 +1,46 @@
+# ============================================================================
+# Malha IA v4.0.4 — Workflow 3/4: PREVISÃO POR FILTROS (campus/tipo/categoria)
+# Roda 1× por dia às 03:00 BR (06:00 UTC) — quando ninguém está olhando.
+# Mais pesado: ~25-30 min por campus × 5 campi + tipos + categorias.
+# Salvar em: .github/workflows/previsao_filtros.yml
+# ============================================================================
+name: 3 - Previsao por Filtros (pesado, 1x ao dia)
+
+concurrency:
+  group: malha-ia-previsao-filtros
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 6 * * *'       # 06:00 UTC = 03:00 Brasília
+  workflow_dispatch:
+
+jobs:
+  previsao_filtros:
+    runs-on: ubuntu-latest
+    timeout-minutes: 600      # 10h — pipeline pesado (N campi × tipos × categorias × 8 modelos)
+
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r execucao_offline/requirements.txt
+
+      - name: Reconstruir credenciais Google
+        env:
+          AUTENTICACAO_GOOGLE: ${{ secrets.AUTENTICACAO_GOOGLE }}
+        run: |
+          echo "$AUTENTICACAO_GOOGLE" | base64 -d > autenticacao_google.json
+          echo "{}" > chaves_api.json
+
+      - name: Executar previsao por filtros
+        run: python motor_previsao_filtros.py --apenas-filtros

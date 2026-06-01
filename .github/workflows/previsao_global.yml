@@ -1,0 +1,49 @@
+# ============================================================================
+# Malha IA v4.0.8 — Workflow: PREVISÃO GLOBAL COMBINADA (manual/emergência)
+# Executa chamados + custos juntos em sequência. Sem cron — uso manual via
+# workflow_dispatch. Em produção, prefira os workflows separados:
+#   previsao_chamados_global.yml  (06:30 UTC, diário)
+#   previsao_custo_global.yml     (18:30 UTC, diário)
+# Módulos: motor_previsao_chamados.py + motor_previsao_custos.py
+# ============================================================================
+name: 2 - Previsao Global Combinada (manual)
+
+concurrency:
+  group: malha-ia-previsao-global
+  cancel-in-progress: false
+
+on:
+  workflow_dispatch:
+
+jobs:
+  previsao_global:
+    runs-on: ubuntu-latest
+    timeout-minutes: 600      # 10h — executa chamados + custos em sequência
+
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r execucao_offline/requirements.txt
+
+      - name: Reconstruir credenciais Google
+        env:
+          AUTENTICACAO_GOOGLE: ${{ secrets.AUTENTICACAO_GOOGLE }}
+        run: |
+          echo "$AUTENTICACAO_GOOGLE" | base64 -d > autenticacao_google.json
+          echo "{}" > chaves_api.json
+
+      - name: Executar previsao de chamados
+        run: python motor_previsao_chamados.py --apenas-previsao-chamados
+
+      - name: Executar previsao de custos
+        run: python motor_previsao_custos.py --apenas-previsao-custos

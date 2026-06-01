@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Se este repositorio for util em pesquisa, desenvolvimento ou gestao, cite conforme os metadados abaixo."
+title: "Malha IA"
+type: software
+authors:
+  - family-names: "Oliveira"
+    given-names: "Adinailson Guimaraes de"
+    orcid: "https://orcid.org/0009-0004-3941-1648"
+repository-code: "https://github.com/adinailson88-jpg/malha-ia"
+url: "https://adinailson88-jpg.github.io/malha-ia/"
+abstract: "Dashboard e motores de governanca preditiva aplicados a manutencao predial publica, com classificacao, previsao de chamados, previsao de custos, filtros, indicadores ODS e publicacao via GitHub Pages."
+keywords:
+  - manutencao predial publica
+  - governanca preditiva
+  - inteligencia artificial
+  - processamento de linguagem natural
+  - series temporais
+  - ODS
+  - biossistemas construidos
+license: "NOASSERTION"

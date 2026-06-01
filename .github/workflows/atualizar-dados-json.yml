@@ -1,0 +1,73 @@
+name: Atualizar dados JSON
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/atualizar-dados-json.yml'
+  schedule:
+    - cron: '0 6 * * 1,3,5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-dados-json
+  cancel-in-progress: true
+
+jobs:
+  exportar-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Exportar abas para JSON
+        run: |
+          python scripts/exportar_dados_json.py --saida dados --workers 6
+
+      - name: Aplicar consumo de JSON estatico no dashboard
+        run: |
+          python scripts/aplicar_json_dashboard.py
+
+      - name: Exportar CSVs canonicos para analise
+        run: |
+          python scripts/exportar_dados_csv.py
+
+      - name: Validar JSON gerado
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          base = Path('dados')
+          if not base.exists():
+              raise SystemExit('Diretorio dados/ nao foi criado.')
+          arquivos = sorted(base.glob('*.json'))
+          if not arquivos:
+              raise SystemExit('Nenhum JSON foi gerado.')
+          for arq in arquivos:
+              json.loads(arq.read_text(encoding='utf-8'))
+          manifest = json.loads((base / 'manifest.json').read_text(encoding='utf-8'))
+          if not manifest.get('abas'):
+              raise SystemExit('Nenhuma aba foi exportada no manifest.json.')
+          print(f"JSON validado: {len(arquivos)} arquivos.")
+          PY
+
+      - name: Commitar JSON e dashboard atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados/*.json dados_csv/*.csv dashboard.html dashboard_malha_ia_v36.html
+          if git diff --cached --quiet; then
+            echo "Sem alteracoes nos JSON/dashboard."
+          else
+            git commit -m "Atualiza dados JSON estaticos e dashboard"
+            git push
+          fi
+
+# trigger: json-estatico-5

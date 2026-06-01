@@ -1,0 +1,47 @@
+# ============================================================================
+# Malha IA v4.0.8 — Workflow 2B: PREVISÃO GLOBAL DE CUSTOS
+# Roda 1×/dia às 18:30 UTC (15:30 BRT). Executa apenas o pipeline de custos
+# R$/mês sobre a coluna Q. Gera 4 abas PREVISAO_CUSTO_* sem sufixo.
+# 12 horas depois do workflow de chamados (previsao_chamados_global.yml).
+# Salvar em: .github/workflows/previsao_custo_global.yml
+# ============================================================================
+name: 2B - Previsao Global Custos (diario)
+
+concurrency:
+  group: malha-ia-previsao-custos
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '30 18 * * *'    # 18:30 UTC = 15:30 BRT (diário)
+  workflow_dispatch:
+
+jobs:
+  previsao_custos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 600
+
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r execucao_offline/requirements.txt
+
+      - name: Reconstruir credenciais Google
+        env:
+          AUTENTICACAO_GOOGLE: ${{ secrets.AUTENTICACAO_GOOGLE }}
+        run: |
+          echo "$AUTENTICACAO_GOOGLE" | base64 -d > autenticacao_google.json
+          echo "{}" > chaves_api.json
+
+      - name: Executar previsao de custos
+        run: python motor_previsao_custos.py --apenas-previsao-custos
