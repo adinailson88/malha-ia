@@ -7,14 +7,19 @@ Doutorado UFSB – Versão 1.0.0
 Extraído de motor_v36.py v4.0.8 em 2026-05-22.
 Workflows cobertos:
   • classificacao.yml    → --apenas-classificacao    (a cada 15 min)
-  • reclassificacao.yml  → --apenas-reclassificacao  (diário 07:30 UTC)
+  • reclassificacao.yml  → --apenas-reclassificacao  (a cada 3 h, UTC)
 
 Dependências removidas em relação ao motor completo:
   statsmodels, pmdarima, prophet, scipy, arch, tenacity, shap
   (usadas apenas nos módulos de previsão temporal)
 
-Classificador primário: LSTM Bidirecional (100% local)
-Fallback de emergência: RandomForest (sklearn)
+Classificador primário: TF-IDF + LinearSVC calibrado (100% local)
+  — modelo vencedor da avaliação out-of-fold de 7 IAs no repo
+    adinailson88/classificacao-chamados (80,26% de concordância com o
+    histórico vs 67,57% do LSTM Bidirecional, 13.825 chamados, kfold_5).
+Fallback de emergência: RandomForest calibrado (sklearn)
+Legado: LSTM Bidirecional mantido no código (treinar_classificador_lstm),
+  fora do fluxo padrão desde clf-v1.2.0.
 APIs externas de LLM: removidas desde v4.0.0, não retornam
 """
 
@@ -131,6 +136,7 @@ import pytz
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import LinearSVC
 from sklearn.model_selection import train_test_split
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.metrics import (
@@ -215,7 +221,7 @@ def _importar_tf():
 
 _importar_tf()
 
-_VERSAO_MOTOR = "clf-v1.0.1-reclass"
+_VERSAO_MOTOR = "clf-v1.2.0-svc"
 print(f"[Imports] OK · {_VERSAO_MOTOR} · TF={'ON' if _TF_OK else 'OFF/fallback_RF'}")
 
 # =====================================================================
@@ -252,8 +258,8 @@ MIN_AMOSTRAS_TREINO     = 10
 MIN_EXEMPLOS_POR_CLASSE = 3
 ROTACAO_LOG_DIAS        = 30
 LIMITE_LOG_ATIVO        = 5000
-LIMIAR_RECLASSIFICACAO  = 0.90
-DELTA_MELHORIA_MINIMA   = 0.03
+LIMIAR_RECLASSIFICACAO  = 0.80   # v1.2.0: revertido de 0.90 (pool elegível ficava grande demais)
+DELTA_MELHORIA_MINIMA   = 0.05   # v1.2.0: revertido de 0.03 (evita churn por ganho marginal)
 LOTE_RECLASSIFICACAO    = 500
 LIMIAR_CONFIANCA        = 70
 LIMIAR_ALTA_CONFIANCA   = 95.0
@@ -377,6 +383,9 @@ def extrair_nome_executor(origem):
     if not origem:
         return "Desconhecido"
     mapa = {
+        "Supervisionado_SVC":             "SVC",
+        "Supervisionado_SVC_baixa_conf":  "SVC_BAIXA_CONF",
+        "Reclass_SVC":                    "Reclass_SVC",
         "Supervisionado_LSTM":            "LSTM",
         "Supervisionado_LSTM_baixa_conf": "LSTM_BAIXA_CONF",
         "RF_Fallback":                    "RF_Fallback",
@@ -611,7 +620,112 @@ def treinar_classificador(df_treino, forcar=False):
 
 
 # =====================================================================
-# LSTM DE CLASSIFICAÇÃO TEXTUAL (classificador primário — v4.0.0)
+# TF-IDF + LINEAR SVC CALIBRADO (classificador primário — clf-v1.2.0)
+# Espelha o modelo 'linear_svc' de src/modelos_zoo.py do repo
+# adinailson88/classificacao-chamados — melhor concordância out-of-fold
+# entre 7 IAs (80,26%). Determinístico (sem inicialização aleatória de
+# pesos), treina em segundos em CPU e dispensa TensorFlow.
+# CalibratedClassifierCV fornece predict_proba calibrado, mantendo as
+# faixas de confiança existentes (LIMIAR_CONFIANCA/LIMIAR_ALTA_CONFIANCA).
+# =====================================================================
+def treinar_classificador_svc(df_treino, forcar=False):
+    """Treina TF-IDF + LinearSVC calibrado. Fallback: RandomForest calibrado."""
+    global _ultimo_hash_treino
+
+    if df_treino is None or len(df_treino) < MIN_AMOSTRAS_TREINO:
+        n = 0 if df_treino is None else len(df_treino)
+        print(f"[Treino SVC] Base insuficiente ({n}) — fallback RF.")
+        return treinar_classificador(df_treino, forcar=forcar)
+
+    contagem = df_treino['Categoria'].value_counts()
+    MIN_PARA_ISOTONIC = 5
+    MIN_PARA_SIGMOID  = 4
+    classes_validas = contagem[contagem >= MIN_EXEMPLOS_POR_CLASSE].index
+    n_descartadas = (contagem < MIN_EXEMPLOS_POR_CLASSE).sum()
+    if n_descartadas > 0:
+        print(f"[Treino SVC] {n_descartadas} categorias descartadas.")
+    df_treino = df_treino[df_treino['Categoria'].isin(classes_validas)]
+    if len(df_treino) < MIN_AMOSTRAS_TREINO:
+        print("[Treino SVC] Após filtro, ficou abaixo do mínimo — fallback RF.")
+        return treinar_classificador(df_treino, forcar=forcar)
+
+    h = hash_base_treino(df_treino)
+    if not forcar and h == _ultimo_hash_treino and hash_existe_em_metricas(h):
+        print(f"[Treino SVC] Base inalterada (hash {h}). Métricas não regravadas.")
+        skip_metrics = True
+    else:
+        skip_metrics = False
+
+    print(f"[Treino SVC] {len(classes_validas)} categorias, {len(df_treino)} amostras.")
+    X, y = df_treino['Texto'], df_treino['Categoria']
+    try:
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, stratify=y, random_state=SEED)
+    except ValueError:
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, random_state=SEED)
+
+    contagem_treino = pd.Series(y_train).value_counts()
+    min_por_classe = int(contagem_treino.min())
+    base_svc = LinearSVC(class_weight='balanced', random_state=SEED)
+
+    if min_por_classe >= MIN_PARA_ISOTONIC:
+        clf = CalibratedClassifierCV(base_svc, method='isotonic', cv=3)
+        metodo = 'isotonic (cv=3)'
+    elif min_por_classe >= MIN_PARA_SIGMOID:
+        clf = CalibratedClassifierCV(base_svc, method='sigmoid', cv=3)
+        metodo = 'sigmoid (cv=3)'
+    elif min_por_classe >= 2:
+        clf = CalibratedClassifierCV(base_svc, method='sigmoid', cv=2)
+        metodo = 'sigmoid (cv=2)'
+    else:
+        print("[Treino SVC] Calibração inviável (classe com 1 exemplo no treino) "
+              "— fallback RF.")
+        return treinar_classificador(df_treino, forcar=forcar)
+
+    print(f"[Treino SVC] Calibração: {metodo} (min exemplos/classe treino = {min_por_classe})")
+
+    # Vetorização idêntica à do modelo vencedor (modelos_zoo._tfidf)
+    pipeline = Pipeline([
+        ('tfidf', TfidfVectorizer(strip_accents='unicode', lowercase=True,
+                                  ngram_range=(1, 2), min_df=1,
+                                  max_features=30000)),
+        ('clf', clf)
+    ])
+    try:
+        pipeline.fit(X_train, y_train)
+    except ValueError as e:
+        print(f"[Treino SVC] Falha na calibração ({str(e)[:80]}) — fallback RF.")
+        return treinar_classificador(df_treino, forcar=forcar)
+
+    y_pred = pipeline.predict(X_test)
+    report = classification_report(y_test, y_pred, output_dict=True, zero_division=0)
+    f1_w    = f1_score(y_test, y_pred, average='weighted', zero_division=0)
+    bal_acc = balanced_accuracy_score(y_test, y_pred)
+    metrics = {
+        'accuracy': report['accuracy'],
+        'f1_macro': report['macro avg']['f1-score'],
+        'f1_weighted': float(f1_w),
+        'balanced_accuracy': float(bal_acc),
+        'n_amostras': len(df_treino),
+        'n_classes': len(classes_validas),
+        'hash_base': h,
+        'modelo': 'TFIDF_LinearSVC_Calibrado'
+    }
+    print(f"[Treino SVC] Acc={metrics['accuracy']:.3f} | F1_macro={metrics['f1_macro']:.3f} | "
+          f"F1_w={metrics['f1_weighted']:.3f} | Bal.Acc={metrics['balanced_accuracy']:.3f}")
+
+    pipeline.nome_modelo_malha = 'SVC'
+
+    if not skip_metrics:
+        _gravar_metricas(metrics, sufixo='[SVC]')
+        _ultimo_hash_treino = h
+
+    return pipeline, metrics
+
+
+# =====================================================================
+# LSTM DE CLASSIFICAÇÃO TEXTUAL (legado desde clf-v1.2.0 — fora do fluxo padrão)
 # Arquitetura:
 #   Embedding(8000, 128) → BiLSTM(64) → Dropout(0.5) → Dense(64,ReLU) → Dense(K,Softmax)
 # =====================================================================
@@ -931,7 +1045,7 @@ def registrar_log(num_linha, texto, cat_original, cat_ia, confianca,
 # =====================================================================
 
 def _modo_classificacao():
-    """Treina/carrega LSTM + processa 1 lote de 15 chamados pendentes."""
+    """Treina SVC calibrado + processa 1 lote de 15 chamados pendentes."""
     print("[Modo classificacao] Iniciando.")
     try:
         todas_linhas = planilha.get_all_values()
@@ -943,12 +1057,12 @@ def _modo_classificacao():
     atualizar_categorias(dados_op)
 
     df_treino = carregar_dados_rotulados(dados_op)
-    pipeline, _ = (treinar_classificador_lstm(df_treino)
+    pipeline, _ = (treinar_classificador_svc(df_treino)
                    if df_treino is not None else (None, None))
-    _eh_lstm = isinstance(pipeline, LSTMClassifier)
-    nome_orig_alta  = "Supervisionado_LSTM"            if _eh_lstm else "RF_Fallback"
-    nome_orig_baixa = "Supervisionado_LSTM_baixa_conf" if _eh_lstm else "RF_Fallback_baixa_conf"
-    print(f"[Modo classificacao] Classificador: {'LSTM' if _eh_lstm else ('RF' if pipeline else 'NENHUM')}")
+    _eh_svc = getattr(pipeline, 'nome_modelo_malha', '') == 'SVC'
+    nome_orig_alta  = "Supervisionado_SVC"            if _eh_svc else "RF_Fallback"
+    nome_orig_baixa = "Supervisionado_SVC_baixa_conf" if _eh_svc else "RF_Fallback_baixa_conf"
+    print(f"[Modo classificacao] Classificador: {'SVC' if _eh_svc else ('RF' if pipeline else 'NENHUM')}")
 
     # Coleta lote de pendentes (coluna Z vazia)
     lote = []
@@ -1069,6 +1183,9 @@ def _executor_baixa_confianca(executor):
     """
     executor_norm = str(executor or '').strip().upper()
     return executor_norm in (
+        'SVC_BAIXA_CONF',
+        'SUPERVISIONADO_SVC_BAIXA_CONF',
+        'RECLASS_SVC_BAIXA_CONF',
         'LSTM_BAIXA_CONF',
         'RF_FALLBACK_BAIXA_CONF',
         'RF_FALLBACK',
@@ -1111,18 +1228,18 @@ def _modo_reclassificacao():
     atualizar_categorias(dados_op)
 
     df_treino = carregar_dados_rotulados(dados_op)
-    pipeline, _ = (treinar_classificador_lstm(df_treino)
+    pipeline, _ = (treinar_classificador_svc(df_treino)
                    if df_treino is not None else (None, None))
 
     if pipeline is None:
         print("[Modo reclassificacao] Sem classificador disponível. Encerrando.")
         return
 
-    _eh_lstm = isinstance(pipeline, LSTMClassifier)
-    nome_origem = "Reclass_LSTM" if _eh_lstm else "Reclass_RF"
+    _eh_svc = getattr(pipeline, 'nome_modelo_malha', '') == 'SVC'
+    nome_origem = "Reclass_SVC" if _eh_svc else "Reclass_RF"
 
     print(
-        f"[Modo reclassificacao] Classificador: {'LSTM' if _eh_lstm else 'RF'} | "
+        f"[Modo reclassificacao] Classificador: {'SVC' if _eh_svc else 'RF'} | "
         f"Limiar={LIMIAR_RECLASSIFICACAO:.2f} | "
         f"Delta={DELTA_MELHORIA_MINIMA:.2f} | "
         f"Lote={LOTE_RECLASSIFICACAO}"

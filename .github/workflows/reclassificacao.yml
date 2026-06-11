@@ -1,8 +1,9 @@
 # ============================================================================
 # Malha IA v4.0.8 — Workflow 5: RECLASSIFICAÇÃO
-# Roda 1× por dia às 04:30 BR (07:30 UTC) — depois dos outros workflows.
-# Reavalia até 200 chamados com confiança < 0.80, respeitando a coluna
-# AF (CONFERENCIA): se marcada TRUE, motor NÃO sobrescreve (revisão humana).
+# Roda a cada 3 h (UTC). Reavalia até 500 chamados elegíveis (confiança
+# < 0.80, PENDENTE_REVISAO ou executor de baixa confiança), respeitando a
+# coluna AF (CONFERENCIA): se marcada TRUE, motor NÃO sobrescreve (revisão
+# humana). Classificador: TF-IDF + LinearSVC calibrado (clf-v1.2.0).
 # Salvar em: .github/workflows/reclassificacao.yml
 # ============================================================================
 name: 5 - Reclassificacao (a cada 3h)

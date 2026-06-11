@@ -1,6 +1,7 @@
 # ============================================================================
 # Malha IA v4.0.8 — Workflow 1: CLASSIFICAÇÃO
-# Roda a cada 15 min, processa 1 lote (15 chamados) com BiLSTM, encerra.
+# Roda a cada 15 min, processa 1 lote (15 chamados) com TF-IDF + LinearSVC
+# calibrado (clf-v1.2.0; fallback RF), encerra.
 # Módulo: motor_classificacao_v1.py
 # ============================================================================
 name: 1 - Classificacao (rapido)
