@@ -11,6 +11,8 @@ Dashboard publicado: [adinailson88.github.io/malha-ia](https://adinailson88.gith
 
 O projeto consolida dados de chamados de manutencao, resultados de classificacao automatizada e previsoes temporais em um dashboard HTML estatico. A arquitetura atual usa arquivos JSON em `dados/` como fonte preferencial para o dashboard e mantem fallback para Apps Script / Google Sheets quando necessario.
 
+A partir do particionamento do projeto, este repositorio passa a cumprir o papel de hub central de dados e contratos. Os artigos e paineis especificos ficam em repositorios menores, mantendo o `malha-ia` como fonte comum para snapshots JSON, CSVs canonicos, workflows centrais e documentacao transversal.
+
 Principais componentes:
 
 1. `dashboard.html`: dashboard principal publicado no GitHub Pages.
@@ -26,6 +28,22 @@ Principais componentes:
 11. `motor_previsao_custos.py`: previsao temporal de custos.
 12. `motor_previsao_filtros.py`: previsoes segmentadas por filtros.
 13. `motor_ods.py`: indicadores ODS.
+
+## Repositorios derivados
+
+O particionamento atual separa os eixos analiticos em repositorios proprios:
+
+1. Previsao de chamados e estatisticas: [malha-previsao-chamados](https://github.com/adinailson88/malha-previsao-chamados)
+2. Previsao de custos e estatisticas: [malha-previsao-custos](https://github.com/adinailson88/malha-previsao-custos)
+3. ODS/ESG: [malha-ods-esg](https://github.com/adinailson88/malha-ods-esg)
+4. Estatisticas associadas: [malha-estatisticas-associadas](https://github.com/adinailson88/malha-estatisticas-associadas)
+5. Previsao por filtros: [malha-previsao-filtros](https://github.com/adinailson88/malha-previsao-filtros)
+
+Documentos centrais:
+
+1. `docs/PARTICIONAMENTO_REPOSITORIOS.md`: mapa entre artigos, repositorios e responsabilidades.
+2. `docs/SECRETS_E_APIS.md`: politica de secrets, APIs e importacao de dados do hub.
+3. `docs/INVENTARIO_HUB_MALHA_IA.md`: inventario do que permanece no hub e do que deve ir para repositorios filhos.
 
 ## Escopo tecnico
 
