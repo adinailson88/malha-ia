@@ -44,6 +44,7 @@ Documentos centrais:
 1. `docs/PARTICIONAMENTO_REPOSITORIOS.md`: mapa entre artigos, repositorios e responsabilidades.
 2. `docs/SECRETS_E_APIS.md`: politica de secrets, APIs e importacao de dados do hub.
 3. `docs/INVENTARIO_HUB_MALHA_IA.md`: inventario do que permanece no hub e do que deve ir para repositorios filhos.
+4. `docs/PORTAL_CENTRAL_DASHBOARDS.md`: protocolo do portal central e status dos dashboards.
 
 ## Escopo tecnico
 
