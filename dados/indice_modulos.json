@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-06-14T00:32:06.436901+00:00",
+  "gerado_em_utc": "2026-06-14T00:34:00.892017+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,9 +37,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "153b7d5bd9d2",
-        "html_url": "https://github.com/adinailson88/malha-ia/commit/153b7d5bd9d2b2848a2475ae3baa56143c954e1a",
-        "data": "2026-06-13T21:02:59Z"
+        "sha": "ddb8a2459ace",
+        "html_url": "https://github.com/adinailson88/malha-ia/commit/ddb8a2459ace16ec207efdb6b10488fa940ddecc",
+        "data": "2026-06-14T00:33:23Z"
       },
       "dados_atualizados_em_utc": "2026-06-12T10:17:03.515187+00:00",
       "resumo_dados": {
