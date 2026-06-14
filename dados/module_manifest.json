@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "id": "hub_malha_ia",
+  "titulo": "Hub Malha IA",
+  "artigo": "Hub central de dados e dashboards",
+  "repositorio": "malha-ia",
+  "repo_url": "https://github.com/adinailson88/malha-ia",
+  "pages_url": "https://adinailson88.github.io/malha-ia/",
+  "dashboard_url": "https://adinailson88.github.io/malha-ia/dashboard.html",
+  "hub_url": "https://github.com/adinailson88/malha-ia",
+  "manifest_hub_path": "dados/manifest.json",
+  "modo_dados": "json_publico_central",
+  "usa_secret": true,
+  "secret_principal": "AUTENTICACAO_GOOGLE",
+  "workflow_leve": "atualizar-dados-json.yml",
+  "workflow_pesado": "previsao_global.yml",
+  "dashboard_tipo": "portal_e_dashboard_geral",
+  "status_operacional": "ativo",
+  "observacao": "Fonte central dos snapshots JSON, CSVs canonicos, contratos e portal de dashboards."
+}

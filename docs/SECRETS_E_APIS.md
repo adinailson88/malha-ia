@@ -41,6 +41,7 @@ Exemplos:
 2. `scripts/exportar_dados_csv.py`;
 3. dashboards que leem `dados/*.json`;
 4. workflows leves de sincronizacao a partir do hub.
+5. portal central que le `dados/module_manifest.json` e `dados/manifest_hub.json` dos repositorios filhos.
 
 ## Quando precisa de secret
 
@@ -61,6 +62,17 @@ Como todos os repositorios derivados acessam a mesma base principal, o procedime
 3. usar o hub `malha-ia` para publicar JSONs publicos reduzidos;
 4. evitar que repositorios filhos acessem a planilha sem necessidade;
 5. nunca versionar `autenticacao_google.json`, `credenciais*.json`, chaves privadas ou TXT de preenchimento.
+
+## Portal central
+
+O portal central do `malha-ia` nao usa secrets. Ele le apenas URLs publicas:
+
+1. dashboards publicados no GitHub Pages;
+2. `dados/module_manifest.json`;
+3. `dados/manifest_hub.json`;
+4. metadados publicos do GitHub para commit da branch `main`.
+
+Se um repositorio filho precisar recalcular dados, isso continua sendo responsabilidade do workflow proprio daquele repositorio e do secret correspondente.
 
 ## TXT de preenchimento de secrets
 

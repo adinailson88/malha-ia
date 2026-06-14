@@ -1,0 +1,30 @@
+name: Atualizar indice de modulos
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "40 8 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar_indice:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Gerar indice dos modulos
+        run: python scripts/gerar_indice_modulos.py
+
+      - name: Commit indice atualizado
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Atualiza indice de modulos [skip ci]"
+          file_pattern: dados/indice_modulos.json

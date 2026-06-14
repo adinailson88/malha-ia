@@ -1,69 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malha IA — UFSB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Malha IA - Portal de Dashboards</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+    :root {
+      --bg: #f6f7f4;
+      --ink: #17201b;
+      --muted: #5b665f;
+      --line: #d8ddd4;
+      --panel: #ffffff;
+      --green: #2d6a4f;
+      --blue: #26547c;
+      --gold: #a16207;
+      --red: #9b2c2c;
     }
-    header { text-align: center; margin-bottom: 2.5rem; }
-    header h1 { font-size: 1.9rem; color: #38bdf8; letter-spacing: 0.02em; }
-    header p  { color: #94a3b8; margin-top: 0.4rem; font-size: 0.95rem; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      padding: 28px 24px 20px;
+    }
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+    .subtitle {
+      max-width: 980px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    main { padding: 22px 0 46px; }
+    .status {
+      margin-bottom: 18px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffdf7;
+      color: #59410a;
+      line-height: 1.4;
+    }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .kpi, .card, .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .kpi {
+      padding: 15px;
+      min-height: 98px;
+    }
+    .kpi span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .kpi strong {
+      display: block;
+      font-size: 29px;
+      line-height: 1;
+    }
     .grid {
       display: grid;
-      grid-template-columns: minmax(260px, 420px);
-      gap: 1.2rem;
-      width: 100%;
-      max-width: 420px;
-      justify-content: center;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
     }
     .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 1.4rem 1.6rem;
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.2s, transform 0.15s;
+      padding: 16px;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    .card:hover { border-color: #38bdf8; transform: translateY(-2px); }
-    .card .num  { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
-    .card h2    { font-size: 1.05rem; color: #f1f5f9; margin-bottom: 0.4rem; }
-    .card p     { font-size: 0.83rem; color: #94a3b8; line-height: 1.5; }
-    footer { margin-top: 3rem; font-size: 0.78rem; color: #475569; text-align: center; }
+    .card h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+    .meta {
+      display: grid;
+      gap: 6px;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #edf3ee;
+      color: var(--green);
+    }
+    .pill.warn {
+      background: #fff6d6;
+      color: var(--gold);
+    }
+    .pill.err {
+      background: #ffe7e7;
+      color: var(--red);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      color: var(--blue);
+      background: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .actions a.primary {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    .panel {
+      margin-top: 18px;
+      padding: 16px;
+    }
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 9px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f5f0;
+      color: #233027;
+    }
+    code {
+      font-family: Consolas, monospace;
+      font-size: 12px;
+    }
+    footer {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 18px;
+      line-height: 1.45;
+    }
+    @media (max-width: 980px) {
+      .grid, .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .grid, .kpis { grid-template-columns: 1fr; }
+      h1 { font-size: 24px; }
+    }
   </style>
 </head>
 <body>
+  <header>
+    <div class="wrap">
+      <h1>Malha IA - Portal de Dashboards</h1>
+      <p class="subtitle">Hub central dos dashboards, repositórios e snapshots públicos do ecossistema Malha IA. Cada módulo permanece independente, mas todos são monitorados neste ponto de entrada.</p>
+    </div>
+  </header>
 
-<header>
-  <h1>Malha IA — Governança Preditiva UFSB</h1>
-  <p>PPG Biossistemas · Doutorado · v4.0.8</p>
-</header>
+  <main class="wrap">
+    <div id="status" class="status">Carregando índice dos módulos...</div>
 
-<div class="grid">
+    <section class="kpis" aria-label="Resumo operacional">
+      <div class="kpi"><span>Módulos catalogados</span><strong id="kpiTotal">-</strong></div>
+      <div class="kpi"><span>Módulos online</span><strong id="kpiOnline">-</strong></div>
+      <div class="kpi"><span>Sem secret no modo leve</span><strong id="kpiSemSecret">-</strong></div>
+      <div class="kpi"><span>Com workflow pesado</span><strong id="kpiPesados">-</strong></div>
+    </section>
 
-  <a class="card" href="dashboard_malha_ia_v36.html">
-    <div class="num">Visão geral</div>
-    <h2>Dashboard Completo</h2>
-    <p>Todos os módulos consolidados: classificação, previsão, custos, ODS e filtros.</p>
-  </a>
+    <section id="cards" class="grid" aria-label="Dashboards"></section>
 
-</div>
+    <section class="panel">
+      <h2>Status técnico</h2>
+      <div style="overflow:auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Módulo</th>
+              <th>Status</th>
+              <th>Dados atualizados</th>
+              <th>Workflow leve</th>
+              <th>Workflow pesado</th>
+              <th>Commit main</th>
+            </tr>
+          </thead>
+          <tbody id="tabelaStatus"></tbody>
+        </table>
+      </div>
+    </section>
 
-<footer>
-  Adinailson Guimarães de Oliveira · UFSB · Dados lidos em tempo real do Google Sheets
-</footer>
+    <footer>
+      Documentação: <a href="docs/PORTAL_CENTRAL_DASHBOARDS.md">Portal central</a> ·
+      <a href="docs/PARTICIONAMENTO_REPOSITORIOS.md">Particionamento</a> ·
+      <a href="docs/SECRETS_E_APIS.md">Secrets e APIs</a>
+    </footer>
+  </main>
 
+  <script>
+    const INDEX_URL = 'dados/indice_modulos.json';
+
+    function fmtDate(value) {
+      if (!value) return 'Informação insuficiente para verificar.';
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return date.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
+    }
+
+    function statusClass(status) {
+      if (status === 'online') return '';
+      if (status === 'sem_manifesto') return 'warn';
+      return 'err';
+    }
+
+    function statusLabel(status) {
+      const labels = {
+        online: 'Online',
+        sem_manifesto: 'Sem manifesto',
+        dashboard_indisponivel: 'Dashboard indisponível',
+        indisponivel: 'Indisponível'
+      };
+      return labels[status] || status || 'Indefinido';
+    }
+
+    function renderCards(modulos) {
+      const cards = document.getElementById('cards');
+      cards.innerHTML = modulos.map(modulo => {
+        const manifest = modulo.manifest_modulo || {};
+        const descricao = manifest.observacao || 'Módulo integrado ao portal central por manifesto público.';
+        return `
+          <article class="card">
+            <span class="pill ${statusClass(modulo.status)}">${statusLabel(modulo.status)}</span>
+            <h2>${modulo.titulo}</h2>
+            <p>${descricao}</p>
+            <div class="meta">
+              <span><strong>Artigo:</strong> ${modulo.artigo || manifest.artigo || '-'}</span>
+              <span><strong>Dados:</strong> <code>${modulo.modo_dados || '-'}</code></span>
+              <span><strong>Secret:</strong> ${modulo.usa_secret ? 'modo pesado usa AUTENTICACAO_GOOGLE' : 'modo leve sem secret'}</span>
+              <span><strong>Atualização:</strong> ${fmtDate(modulo.dados_atualizados_em_utc)}</span>
+            </div>
+            <div class="actions">
+              <a class="primary" href="${modulo.dashboard_url}">Abrir dashboard</a>
+              <a href="${modulo.repo_url}">GitHub</a>
+              <a href="${modulo.manifest_hub_url}">Manifesto</a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderTabela(modulos) {
+      const tbody = document.getElementById('tabelaStatus');
+      tbody.innerHTML = modulos.map(modulo => `
+        <tr>
+          <td>${modulo.titulo}</td>
+          <td><span class="pill ${statusClass(modulo.status)}">${statusLabel(modulo.status)}</span></td>
+          <td>${fmtDate(modulo.dados_atualizados_em_utc)}</td>
+          <td><code>${modulo.workflow_leve || '-'}</code></td>
+          <td><code>${modulo.workflow_pesado || '-'}</code></td>
+          <td>${modulo.commit_main?.sha ? `<a href="${modulo.commit_main.html_url}"><code>${modulo.commit_main.sha}</code></a>` : '-'}</td>
+        </tr>
+      `).join('');
+    }
+
+    async function main() {
+      const resposta = await fetch(INDEX_URL, { cache: 'no-store' });
+      if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+      const indice = await resposta.json();
+      const modulos = indice.modulos || [];
+      document.getElementById('kpiTotal').textContent = indice.total_modulos ?? modulos.length;
+      document.getElementById('kpiOnline').textContent = indice.modulos_online ?? modulos.filter(m => m.online).length;
+      document.getElementById('kpiSemSecret').textContent = indice.modulos_sem_secret ?? modulos.filter(m => !m.usa_secret).length;
+      document.getElementById('kpiPesados').textContent = modulos.filter(m => m.workflow_pesado).length;
+      renderCards(modulos);
+      renderTabela(modulos);
+      document.getElementById('status').textContent = `Índice gerado em ${fmtDate(indice.gerado_em_utc)}. Integração v1 por manifesto público e status, sem orquestração automática de workflows pesados.`;
+    }
+
+    main().catch(err => {
+      document.getElementById('status').textContent = `Falha ao carregar índice dos módulos: ${err.message}`;
+      console.error(err);
+    });
+  </script>
 </body>
 </html>

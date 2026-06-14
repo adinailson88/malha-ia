@@ -83,3 +83,15 @@ Nao mover para "Demais" arquivos que sejam fonte central, credenciais, dados bru
 4. manter secrets iguais quando todos acessarem a mesma planilha;
 5. criar o repositorio "Demais" somente apos inventario final dos arquivos residuais;
 6. registrar no artigo de cada etapa qual repositorio, snapshot e workflow produziram os resultados.
+
+## Comunicacao entre repositorios
+
+A integracao v1 usa manifesto publico e status consolidado:
+
+1. cada repositorio filho publica `dados/module_manifest.json`;
+2. cada repositorio filho preserva `dados/manifest_hub.json` quando consome snapshots do hub;
+3. o hub lista todos os repositorios em `dados/repositorios_malha.json`;
+4. o script `scripts/gerar_indice_modulos.py` gera `dados/indice_modulos.json`;
+5. o `index.html` do hub apresenta todos os dashboards em um portal central.
+
+Essa integracao nao dispara workflows pesados automaticamente. O objetivo e fazer os repositorios "conversarem" por metadados publicos e manter a execucao pesada sob controle manual ou agenda propria de cada modulo.
