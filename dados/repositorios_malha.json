@@ -76,7 +76,7 @@
     "manifest_hub_url": "https://adinailson88.github.io/malha-estatisticas-associadas/dados/manifest_hub.json",
     "modo_dados": "json_publico_hub_agregado",
     "usa_secret": false,
-    "workflow_leve": "atualizar-dados-hub.yml",
+    "workflow_leve": "atualizar-estatisticas.yml",
     "workflow_pesado": null
   },
   {

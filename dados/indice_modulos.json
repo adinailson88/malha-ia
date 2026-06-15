@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-06-15T11:30:50.827402+00:00",
+  "gerado_em_utc": "2026-06-15T11:38:32.590702+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,9 +37,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "a1bc9302dead",
-        "html_url": "https://github.com/adinailson88/malha-ia/commit/a1bc9302dead7f64449fbbc93d62436ac6bd272c",
-        "data": "2026-06-14T11:19:34Z"
+        "sha": "1fca88d75a64",
+        "html_url": "https://github.com/adinailson88/malha-ia/commit/1fca88d75a6467023e1e68b26d36272035705ae7",
+        "data": "2026-06-15T11:31:43Z"
       },
       "dados_atualizados_em_utc": "2026-06-12T10:17:03.515187+00:00",
       "resumo_dados": {
@@ -256,7 +256,7 @@
       "manifest_hub_url": "https://adinailson88.github.io/malha-estatisticas-associadas/dados/manifest_hub.json",
       "modo_dados": "json_publico_hub_agregado",
       "usa_secret": false,
-      "workflow_leve": "atualizar-dados-hub.yml",
+      "workflow_leve": "atualizar-estatisticas.yml",
       "workflow_pesado": null,
       "status": "online",
       "online": true,
@@ -273,11 +273,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "2191cc66e647",
-        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/2191cc66e647e9b083b4924e34f43b63350eec5a",
-        "data": "2026-06-14T10:33:27Z"
+        "sha": "8a7afaebd775",
+        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/8a7afaebd77526f331fbf248fc2306b60b1abe87",
+        "data": "2026-06-15T11:37:08Z"
       },
-      "dados_atualizados_em_utc": "2026-06-13T20:28:03.945345+00:00",
+      "dados_atualizados_em_utc": "2026-06-14T10:33:27.498511+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -293,7 +293,7 @@
         "modo_dados": "json_publico_hub_agregado",
         "usa_secret": false,
         "secret_principal": null,
-        "workflow_leve": "atualizar-dados-hub.yml",
+        "workflow_leve": "atualizar-estatisticas.yml",
         "workflow_pesado": null,
         "dashboard_tipo": "estatisticas_agregadas",
         "status_operacional": "ativo",
