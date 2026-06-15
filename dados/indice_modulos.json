@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-06-15T12:48:40.482692+00:00",
+  "gerado_em_utc": "2026-06-15T14:46:30.381329+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,9 +37,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "0f4665e15a8a",
-        "html_url": "https://github.com/adinailson88/malha-ia/commit/0f4665e15a8a0e0713fca5ea05baeb1cb3080407",
-        "data": "2026-06-15T12:36:12Z"
+        "sha": "10c83d1dd1df",
+        "html_url": "https://github.com/adinailson88/malha-ia/commit/10c83d1dd1df35f5d07a2e8fb590820a9d3c6f75",
+        "data": "2026-06-15T12:48:42Z"
       },
       "dados_atualizados_em_utc": "2026-06-15T12:18:35.804898+00:00",
       "resumo_dados": {
@@ -215,9 +215,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "a6ed1b41d01c",
-        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/a6ed1b41d01c86b65b3c97c38a6116954e552709",
-        "data": "2026-06-15T12:47:28Z"
+        "sha": "dd66c4917947",
+        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/dd66c4917947efff616db7a0d1e1a0939ba57bcf",
+        "data": "2026-06-15T13:22:57Z"
       },
       "dados_atualizados_em_utc": "2026-06-15T12:45:56.366313+00:00",
       "resumo_dados": {},
@@ -273,11 +273,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "5051d6befc96",
-        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/5051d6befc964b08cb0930c3edd79e7921afb2c6",
-        "data": "2026-06-15T12:45:59Z"
+        "sha": "becab4f8ae72",
+        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/becab4f8ae7202b1d435d9061143f3878d088686",
+        "data": "2026-06-15T13:05:14Z"
       },
-      "dados_atualizados_em_utc": "2026-06-15T12:43:00.161994+00:00",
+      "dados_atualizados_em_utc": "2026-06-15T13:05:14.776131+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
