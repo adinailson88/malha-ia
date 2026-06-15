@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-06-15T11:38:32.590702+00:00",
+  "gerado_em_utc": "2026-06-15T12:48:40.482692+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,11 +37,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "1fca88d75a64",
-        "html_url": "https://github.com/adinailson88/malha-ia/commit/1fca88d75a6467023e1e68b26d36272035705ae7",
-        "data": "2026-06-15T11:31:43Z"
+        "sha": "0f4665e15a8a",
+        "html_url": "https://github.com/adinailson88/malha-ia/commit/0f4665e15a8a0e0713fca5ea05baeb1cb3080407",
+        "data": "2026-06-15T12:36:12Z"
       },
-      "dados_atualizados_em_utc": "2026-06-12T10:17:03.515187+00:00",
+      "dados_atualizados_em_utc": "2026-06-15T12:18:35.804898+00:00",
       "resumo_dados": {
         "abas_exportadas": 357,
         "falhas": 123,
@@ -99,11 +99,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "4bdfca7d99c1",
-        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/4bdfca7d99c175690d093014868148cd44892124",
-        "data": "2026-06-14T10:26:24Z"
+        "sha": "8bcf87e39210",
+        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/8bcf87e3921099d7e3c7df041930155fa61cd5b7",
+        "data": "2026-06-15T12:47:52Z"
       },
-      "dados_atualizados_em_utc": "2026-06-14T10:26:22.877060+00:00",
+      "dados_atualizados_em_utc": "2026-06-15T12:46:03.951554+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -117,13 +117,13 @@
         "hub_url": "https://github.com/adinailson88/malha-ia",
         "manifest_hub_path": "dados/manifest_hub.json",
         "modo_dados": "json_publico_hub",
-        "usa_secret": true,
-        "secret_principal": "AUTENTICACAO_GOOGLE",
+        "usa_secret": false,
+        "secret_principal": null,
         "workflow_leve": "atualizar-dados-hub.yml",
-        "workflow_pesado": "previsao_chamados_global.yml",
+        "workflow_pesado": null,
         "dashboard_tipo": "temporal_volume",
         "status_operacional": "ativo",
-        "observacao": "Consome snapshots publicos do hub no modo leve e recalcula previsao temporal no modo pesado."
+        "observacao": "Consome snapshots publicos do hub. A leitura da planilha e o recalculo pesado ficam centralizados no repositorio malha-ia."
       },
       "erros": []
     },
@@ -157,11 +157,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "a7d232c7b4fa",
-        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/a7d232c7b4fafc5d1149f8b9c0d2eeddf600bf21",
-        "data": "2026-06-14T10:23:51Z"
+        "sha": "e18e632f7e56",
+        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/e18e632f7e5618f812c80f1c4f1d223cd1828237",
+        "data": "2026-06-15T12:47:15Z"
       },
-      "dados_atualizados_em_utc": "2026-06-14T10:23:50.037076+00:00",
+      "dados_atualizados_em_utc": "2026-06-15T12:45:55.790720+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -175,13 +175,13 @@
         "hub_url": "https://github.com/adinailson88/malha-ia",
         "manifest_hub_path": "dados/manifest_hub.json",
         "modo_dados": "json_publico_hub",
-        "usa_secret": true,
-        "secret_principal": "AUTENTICACAO_GOOGLE",
+        "usa_secret": false,
+        "secret_principal": null,
         "workflow_leve": "atualizar-dados-hub.yml",
-        "workflow_pesado": "previsao_custo_global.yml",
+        "workflow_pesado": null,
         "dashboard_tipo": "temporal_custos",
         "status_operacional": "ativo",
-        "observacao": "Consome snapshots publicos do hub no modo leve e recalcula custos em reais no modo pesado."
+        "observacao": "Consome snapshots publicos do hub. A leitura da planilha e o recalculo pesado ficam centralizados no repositorio malha-ia."
       },
       "erros": []
     },
@@ -215,11 +215,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "2ca3ada47ba3",
-        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/2ca3ada47ba32512b1799b9b39bc4bc20e60fefa",
-        "data": "2026-06-14T10:31:17Z"
+        "sha": "a6ed1b41d01c",
+        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/a6ed1b41d01c86b65b3c97c38a6116954e552709",
+        "data": "2026-06-15T12:47:28Z"
       },
-      "dados_atualizados_em_utc": "2026-06-14T10:31:16.554401+00:00",
+      "dados_atualizados_em_utc": "2026-06-15T12:45:56.366313+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -233,13 +233,13 @@
         "hub_url": "https://github.com/adinailson88/malha-ia",
         "manifest_hub_path": "dados/manifest_hub.json",
         "modo_dados": "json_publico_hub",
-        "usa_secret": true,
-        "secret_principal": "AUTENTICACAO_GOOGLE",
+        "usa_secret": false,
+        "secret_principal": null,
         "workflow_leve": "atualizar-dados-hub.yml",
-        "workflow_pesado": "ods_indicadores.yml",
+        "workflow_pesado": null,
         "dashboard_tipo": "ods_esg_multicriterio",
         "status_operacional": "ativo",
-        "observacao": "Consome indicadores ODS/ESG do hub no modo leve e recalcula indicadores no modo pesado."
+        "observacao": "Consome indicadores ODS/ESG publicos do hub. A leitura da planilha e o recalculo pesado ficam centralizados no repositorio malha-ia."
       },
       "erros": []
     },
@@ -273,11 +273,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "8a7afaebd775",
-        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/8a7afaebd77526f331fbf248fc2306b60b1abe87",
-        "data": "2026-06-15T11:37:08Z"
+        "sha": "5051d6befc96",
+        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/5051d6befc964b08cb0930c3edd79e7921afb2c6",
+        "data": "2026-06-15T12:45:59Z"
       },
-      "dados_atualizados_em_utc": "2026-06-14T10:33:27.498511+00:00",
+      "dados_atualizados_em_utc": "2026-06-15T12:43:00.161994+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -331,14 +331,14 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "82957a751a2d",
-        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/82957a751a2df6f801dd90460339afb8a5b8b95d",
-        "data": "2026-06-14T10:32:55Z"
+        "sha": "ef894befac58",
+        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/ef894befac58a39404e441bf8109a19e6636bbdd",
+        "data": "2026-06-15T12:47:22Z"
       },
-      "dados_atualizados_em_utc": "2026-06-14T10:32:54.597971+00:00",
+      "dados_atualizados_em_utc": "2026-06-15T12:46:05.386046+00:00",
       "resumo_dados": {
         "arquivos": 3,
-        "linhas_dados": 152
+        "linhas_dados": 173
       },
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -352,13 +352,13 @@
         "hub_url": "https://github.com/adinailson88/malha-ia",
         "manifest_hub_path": "dados/manifest_hub.json",
         "modo_dados": "json_publico_hub",
-        "usa_secret": true,
-        "secret_principal": "AUTENTICACAO_GOOGLE",
+        "usa_secret": false,
+        "secret_principal": null,
         "workflow_leve": "atualizar-dados-hub.yml",
-        "workflow_pesado": "previsao_filtros.yml",
+        "workflow_pesado": null,
         "dashboard_tipo": "catalogo_recortes",
         "status_operacional": "ativo",
-        "observacao": "Mostra catalogo de filtros no modo leve e recalcula recortes por campus/tipo/categoria no modo pesado."
+        "observacao": "Mostra catalogo de filtros e snapshots publicos do hub. A leitura da planilha e o recalculo pesado ficam centralizados no repositorio malha-ia."
       },
       "erros": []
     }
