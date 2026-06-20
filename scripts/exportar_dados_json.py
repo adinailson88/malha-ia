@@ -38,7 +38,16 @@ LIMITE_LINHAS_JSON = {
 COLUNAS_JSON = {
     # Mantem os indices usados pelo Monitor/Categorizacao e remove textos longos
     # que nao participam do dashboard, reduzindo o peso de dados/chamados.json.
-    "CHAMADOS": {0, 1, 2, 3, 7, 12, 16, 20, 25, 27, 28, 29},
+    #
+    # Indices 0-based -> colunas da aba CHAMADOS:
+    #   0=A ID Chamado | 1=B TITULO | 2=C | 3=D | 7=H | 12=M CATEGORIA COMPLETA
+    #   16=Q Valor | 20=U Lat/Long | 22=W DESCRICAO GLPI | 23=X TITULO O.S.M.
+    #   24=Y DESCRICAO O.S.M. | 25=Z Classificacao IA | 27=AB Avaliacao %
+    #   28=AC Executor | 29=AD Criticidade
+    # W,X,Y (22,23,24) sao a entrada textual da classificacao e alimentam o
+    # CSV publicado consumido por CHAMADOS_ESQUELETO_REDUZIDO (Col23/Col24/Col25).
+    # A reducao preserva os indices absolutos, entao nada e deslocado no dashboard.
+    "CHAMADOS": {0, 1, 2, 3, 7, 12, 16, 20, 22, 23, 24, 25, 27, 28, 29},
 }
 
 CONFIG_BUSCA_ABA = {
