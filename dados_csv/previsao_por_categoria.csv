@@ -7,7 +7,7 @@ Elevador,Preventiva,83,â€”,â€”,â€”,â€”,__Prev_Elevador
 Esgoto,Preventiva,33,Vencedor (menor RMSE holdout = 0.28),0,1,0,__Prev_Esgoto
 Extintor,Preventiva,59,Vencedor (menor RMSE holdout = 0.68),0,1,-1,__Prev_Extintor
 Gerador,Preventiva,1209,Vencedor (menor RMSE holdout = 0.40),0,1,-1,__Prev_Gerador
-Hidráulica,Preventiva,31,Vencedor (menor RMSE holdout = 0.35),0,1,0,__Prev_Hidraulica
+Hidráulica,Preventiva,32,Vencedor (menor RMSE holdout = 0.35),0,1,0,__Prev_Hidraulica
 Iluminação,Preventiva,132,â€”,â€”,â€”,â€”,__Prev_Iluminacao
 Manutenção Preventiva,Preventiva,1,â€”,â€”,â€”,â€”,__Prev_Manutencao_Preven
 Nobreak,Preventiva,10,â€”,â€”,â€”,â€”,__Prev_Nobreak
@@ -17,12 +17,12 @@ Reservatório,Preventiva,279,Vencedor (menor RMSE holdout = 2.46),0,1,1,__Prev_R
 Sistemas de incêndio,Preventiva,4,â€”,â€”,â€”,â€”,__Prev_Sistemas_de_incen
 "Telhados, calhas, rufos, etc.",Preventiva,43,Vencedor (menor RMSE holdout = 0.43),0,2,0,__Prev_Telhados_calhas_r
 Vistoria em Instalações,Preventiva,247,Vencedor (menor RMSE holdout = 0.43),0,2,-1,__Prev_Vistoria_em_Insta
-Climatização,Corretiva,1660,Vencedor (menor RMSE holdout = 3.36),0,1,-3,__Corr_Climatizacao
+Climatização,Corretiva,1661,Vencedor (menor RMSE holdout = 3.36),0,1,-3,__Corr_Climatizacao
 Elétrica,Corretiva,1867,Vencedor (menor RMSE holdout = 2.91),0,1,1,__Corr_Eletrica
 Equipamentos de Transporte,Corretiva,22,â€”,â€”,â€”,â€”,__Corr_Equipamentos_de_T
-Estrutura Predial,Corretiva,2881,Vencedor (menor RMSE holdout = 6.87),0,1,3,__Corr_Estrutura_Predial
-Hidrossanitária,Corretiva,1322,Vencedor (menor RMSE holdout = 3.72),0,3,-1,__Corr_Hidrossanitaria
-Instalação de Acessórios e Mobiliário,Corretiva,305,Vencedor (menor RMSE holdout = 8.25),0,1,1,__Corr_Instalacao_de_Ace
+Estrutura Predial,Corretiva,2886,Vencedor (menor RMSE holdout = 6.87),0,1,3,__Corr_Estrutura_Predial
+Hidrossanitária,Corretiva,1324,Vencedor (menor RMSE holdout = 3.72),0,3,-1,__Corr_Hidrossanitaria
+Instalação de Acessórios e Mobiliário,Corretiva,307,Vencedor (menor RMSE holdout = 8.25),0,1,1,__Corr_Instalacao_de_Ace
 Outros,Corretiva,276,Vencedor (menor RMSE holdout = 1.93),0,1,0,__Corr_Outros
 Posto de trabalho,Corretiva,102,Vencedor (menor RMSE holdout = 0.72),0,1,1,__Corr_Posto_de_trabalho
 Projetos e Reformas,Corretiva,108,Vencedor (menor RMSE holdout = 0.22),0,1,0,__Corr_Projetos_e_Reform
