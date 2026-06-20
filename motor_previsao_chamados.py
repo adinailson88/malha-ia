@@ -360,12 +360,41 @@ COL_DATA_ABERTURA = 2
 
 
 
+def _erro_transitorio(e):
+    """True para erros temporarios do backend Google (429 / 5xx) que nao devem
+    abortar o run agendado (ex.: APIError [503] 'service currently unavailable')."""
+    cod = getattr(getattr(e, "response", None), "status_code", None)
+    if cod in (429, 500, 502, 503, 504):
+        return True
+    msg = str(e).lower()
+    return any(s in msg for s in ("429", "500", "502", "503", "504",
+                                  "currently unavailable", "rate limit",
+                                  "internal error", "backend error"))
+
+def _conectar_planilha(tentativas=5, espera_base=15):
+    """Abre a planilha com retry/backoff. O agendado caia por APIError transitorio
+    do Google ja na 1a chamada (open_by_key); aqui reententamos antes de falhar."""
+    ultimo = None
+    for i in range(1, tentativas + 1):
+        try:
+            doc = gc.open_by_key(ID_PLANILHA)
+            planilha = doc.worksheet("CHAMADOS")
+            print(f"Conectado a planilha: {NOME_PLANILHA}, aba: CHAMADOS")
+            return doc, planilha
+        except APIError as e:
+            ultimo = e
+            if i >= tentativas or not _erro_transitorio(e):
+                raise
+            espera = espera_base * i
+            print(f"[Conexao] APIError transitorio; tentativa {i}/{tentativas}; "
+                  f"novo retry em {espera}s")
+            time.sleep(espera)
+    raise ultimo
+
 try:
-    doc = gc.open_by_key(ID_PLANILHA)
-    planilha = doc.worksheet("CHAMADOS")
-    print(f"Conectado a planilha: {NOME_PLANILHA}, aba: CHAMADOS")
+    doc, planilha = _conectar_planilha()
 except Exception as e:
-    print(f"Erro critico: {e}")
+    print(f"Erro critico de conexao: {e}")
     raise
 
 # =====================================================================
