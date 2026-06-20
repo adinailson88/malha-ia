@@ -12,8 +12,12 @@ concurrency:
   cancel-in-progress: false
 
 on:
-  schedule:
-    - cron: '17 */3 * * *'   # a cada 3 horas, em UTC
+  # PAUSADO 2026-06-20: reclassificacao ao vivo desativada (a v1.0.1-reclass agressiva
+  # degradava a qualidade). A reclassificacao validada vive no repo classificacao-chamados;
+  # o malha-ia importa o melhor modelo via scripts/importar_classificacao_validada.py.
+  # Mantido workflow_dispatch para execucao manual pontual.
+  # schedule:
+  #   - cron: '17 */3 * * *'   # a cada 3 horas, em UTC
   workflow_dispatch:
 
 jobs:

@@ -1,0 +1,50 @@
+# ============================================================================
+# Importa o MELHOR modelo de classificacao VALIDADA do repo classificacao-chamados
+# (bancada de pesquisa) e grava dados/classificacao_validada*.json no malha-ia.
+# Substitui a classificacao AO VIVO (workflows 1 e 5, pausados): aqui so copiamos
+# o melhor resultado ja validado, de forma adaptativa (se o lider mudar, troca).
+# Leve: so baixa JSON publico, sem TensorFlow e sem credenciais.
+# ============================================================================
+name: Importar classificacao validada
+
+concurrency:
+  group: malha-ia-importar-classificacao
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '40 6 * * *'   # 1x ao dia, 03:40 BR (06:40 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Importar melhor modelo validado
+        run: python scripts/importar_classificacao_validada.py
+
+      - name: Commit dos dados importados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/classificacao_validada.json dados/classificacao_validada_resumo.json
+          git diff --cached --quiet && { echo "sem mudancas na classificacao validada"; exit 0; }
+          git commit -m "dados: classificacao validada importada da bancada [skip ci]"
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash -X theirs origin main && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            echo "push rejeitado (tentativa $i/5); novo rebase em 5s"; sleep 5
+          done
+          echo "push falhou apos 5 tentativas" >&2; exit 1
