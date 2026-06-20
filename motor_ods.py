@@ -300,9 +300,6 @@ def calcular_indicadores_ods_por_campus(dados_linhas):
         'auditório', 'auditorio', 'banheiro coletivo', 'cantina',
         'estacionamento', 'corredor'
     ]
-    # Categorias de COL_CAT_IA que não representam manutenção real e por isso
-    # não contam como corretiva (nem como preventiva) na razão.
-    NAO_CATEGORIAS = ['erro de chamado']
     SLA_DIAS = {'Alta': 3, 'Média': 7, 'Media': 7, 'Baixa': 15}
 
     # Agrupa por campus
@@ -397,10 +394,9 @@ def calcular_indicadores_ods_por_campus(dados_linhas):
         # Razão preventiva/corretiva.
         # A taxonomia de COL_CAT_IA NÃO possui rótulo "corretiva" explícito:
         # "Manutenção Preventiva > ..." é o único ramo nomeado; todos os demais
-        # ramos técnicos (Climatização, Hidrossanitária, Elétrica, Estrutura
-        # Predial, etc.) são chamados reativos, isto é, corretivos por definição.
-        # Por isso n_corr = chamados COM classificação que NÃO são preventiva,
-        # excluindo não-categorias (ex.: "Outros > Erro de chamado").
+        # chamados classificados são reativos, isto é, corretivos por definição.
+        # Logo: preventiva = classificação contém "preventiv"; corretiva = qualquer
+        # outra classificação não vazia.
         # Correção (2026-06-20, ratificada): a versão anterior procurava a
         # substring 'corretiv', inexistente na fonte, deixando n_corr ≡ 0 e o
         # indicador sem variância (quase-lacuna). Esta definição por exclusão
@@ -411,7 +407,7 @@ def calcular_indicadores_ods_por_campus(dados_linhas):
             if len(l) <= COL_CAT_IA:
                 continue
             cat = (l[COL_CAT_IA] or '').strip().lower()
-            if not cat or any(nc in cat for nc in NAO_CATEGORIAS):
+            if not cat:
                 continue
             if 'preventiv' in cat:
                 n_prev += 1
