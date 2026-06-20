@@ -300,6 +300,9 @@ def calcular_indicadores_ods_por_campus(dados_linhas):
         'auditório', 'auditorio', 'banheiro coletivo', 'cantina',
         'estacionamento', 'corredor'
     ]
+    # Categorias de COL_CAT_IA que não representam manutenção real e por isso
+    # não contam como corretiva (nem como preventiva) na razão.
+    NAO_CATEGORIAS = ['erro de chamado']
     SLA_DIAS = {'Alta': 3, 'Média': 7, 'Media': 7, 'Baixa': 15}
 
     # Agrupa por campus
@@ -391,22 +394,31 @@ def calcular_indicadores_ods_por_campus(dados_linhas):
         area_m2 = area_por_campus.get(campus, 0)
         densidade = (n_total / area_m2 * 1000) if area_m2 > 0 else 0.0
 
-        # Razão preventiva/corretiva
-        n_prev = sum(
-            1 for l in chamados_c
-            if len(l) > COL_CAT_IA and 'preventiv' in (l[COL_CAT_IA] or '').lower()
-        )
-        n_corr = sum(
-            1 for l in chamados_c
-            if len(l) > COL_CAT_IA and 'corretiv' in (l[COL_CAT_IA] or '').lower()
-        )
-        # Proporção de manutenção preventiva, limitada ao intervalo [0, 1].
-        # Correção (2026-06-20): a versão anterior calculava n_prev / n_corr e, quando
-        # n_corr == 0, devolvia float(n_prev) — uma contagem absoluta em escala
-        # incompatível com os demais campi, inflando o indicador e distorcendo a
-        # normalização min-max (sentido maximizar). A proporção n_prev/(n_prev+n_corr)
-        # é contínua, interpretável e limitada: 1,0 quando só há preventiva, 0,0 quando
-        # só há corretiva e 0,5 no equilíbrio. Preserva-se o nome histórico da coluna.
+        # Razão preventiva/corretiva.
+        # A taxonomia de COL_CAT_IA NÃO possui rótulo "corretiva" explícito:
+        # "Manutenção Preventiva > ..." é o único ramo nomeado; todos os demais
+        # ramos técnicos (Climatização, Hidrossanitária, Elétrica, Estrutura
+        # Predial, etc.) são chamados reativos, isto é, corretivos por definição.
+        # Por isso n_corr = chamados COM classificação que NÃO são preventiva,
+        # excluindo não-categorias (ex.: "Outros > Erro de chamado").
+        # Correção (2026-06-20, ratificada): a versão anterior procurava a
+        # substring 'corretiv', inexistente na fonte, deixando n_corr ≡ 0 e o
+        # indicador sem variância (quase-lacuna). Esta definição por exclusão
+        # restaura a discriminação entre campi.
+        n_prev = 0
+        n_corr = 0
+        for l in chamados_c:
+            if len(l) <= COL_CAT_IA:
+                continue
+            cat = (l[COL_CAT_IA] or '').strip().lower()
+            if not cat or any(nc in cat for nc in NAO_CATEGORIAS):
+                continue
+            if 'preventiv' in cat:
+                n_prev += 1
+            else:
+                n_corr += 1
+        # Proporção de manutenção preventiva, contínua e limitada a [0, 1]:
+        # 1,0 só preventiva, 0,0 só corretiva, 0,5 no equilíbrio.
         denom_pc = n_prev + n_corr
         if denom_pc > 0:
             razao_pc = n_prev / denom_pc
