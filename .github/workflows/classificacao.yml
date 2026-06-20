@@ -10,8 +10,12 @@ concurrency:
   cancel-in-progress: false
 
 on:
-  schedule:
-    - cron: '*/15 * * * *'    # a cada 15 minutos
+  # PAUSADO 2026-06-20: a classificacao passou a viver no repo classificacao-chamados
+  # (bancada com validacao humana). O malha-ia agora importa o melhor modelo validado
+  # via scripts/importar_classificacao_validada.py (workflow "Importar classificacao
+  # validada"). Mantido workflow_dispatch para execucao manual pontual.
+  # schedule:
+  #   - cron: '*/15 * * * *'    # a cada 15 minutos
   workflow_dispatch:
 
 jobs:

@@ -1,0 +1,73 @@
+{
+  "gerado_em_utc": "2026-06-20T03:42:46.267635Z",
+  "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
+  "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
+  "melhor_modelo": "linear_svc",
+  "acerto_validado": 0.6787,
+  "ic95": [
+    0.623,
+    0.728
+  ],
+  "n": 305,
+  "validados_na_bancada": 305,
+  "ranking": [
+    {
+      "modelo": "linear_svc",
+      "acerto_validado": 0.6787,
+      "ic95": [
+        0.623,
+        0.728
+      ]
+    },
+    {
+      "modelo": "regressao_logistica",
+      "acerto_validado": 0.6689,
+      "ic95": [
+        0.6163,
+        0.7213
+      ]
+    },
+    {
+      "modelo": "sgd",
+      "acerto_validado": 0.6689,
+      "ic95": [
+        0.6164,
+        0.7213
+      ]
+    },
+    {
+      "modelo": "random_forest",
+      "acerto_validado": 0.6066,
+      "ic95": [
+        0.5541,
+        0.6623
+      ]
+    },
+    {
+      "modelo": "extra_trees",
+      "acerto_validado": 0.5836,
+      "ic95": [
+        0.5279,
+        0.6393
+      ]
+    },
+    {
+      "modelo": "lstm",
+      "acerto_validado": 0.5672,
+      "ic95": [
+        0.5148,
+        0.6262
+      ]
+    },
+    {
+      "modelo": "naive_bayes",
+      "acerto_validado": 0.5377,
+      "ic95": [
+        0.482,
+        0.5934
+      ]
+    }
+  ],
+  "n_registros": 13825,
+  "observacao": "Classificacao validada importada do repo classificacao-chamados; sem texto do chamado. NAO substitui log_classificacao.json."
+}
