@@ -34,6 +34,28 @@ ESQUELETO_DESTINO = "chamados_esqueleto.csv"
 ESQUELETO_COLUNAS = [0, 1, 12, 22, 23, 24]
 ESQUELETO_COL_ID = 0
 
+# Versao por coluna: um CSV de coluna unica para cada campo do esqueleto.
+# A coluna DESCRICAO GLPI sozinha ja se aproxima de 3 MB; o IMPORTDATA do
+# Google Sheets recusa arquivos grandes ("recurso excedeu o tamanho maximo").
+# Dividindo um arquivo por coluna, cada IMPORTDATA baixa um arquivo pequeno e a
+# planilha monta as 6 colunas lado a lado (uma formula por coluna). Todas as
+# linhas com ID sao mantidas na MESMA ordem em todos os arquivos, garantindo o
+# alinhamento por linha entre as colunas.
+#
+# Cada item: (nome_base, indice_0based, n_partes). n_partes > 1 quebra a coluna
+# em arquivos _p1.._pN por faixa de linhas (so a parte 1 leva cabecalho), para
+# que mesmo a DESCRICAO GLPI fique bem abaixo do limite do IMPORTDATA e tenha
+# folga para o crescimento da base. Na planilha as partes sao reunidas em UMA
+# unica formula por empilhamento de array: ={IMPORTDATA(p1);IMPORTDATA(p2);...}.
+ESQUELETO_COLUNAS_INDIVIDUAIS = [
+    ("chamados_col_a_id", 0, 1),
+    ("chamados_col_b_titulo", 1, 1),
+    ("chamados_col_c_categoria", 12, 1),
+    ("chamados_col_d_descricao_glpi", 22, 4),
+    ("chamados_col_e_titulo_osm", 23, 1),
+    ("chamados_col_f_descricao_osm", 24, 1),
+]
+
 
 def carregar_tabela(caminho: Path) -> tuple[list[str], list[list[object]]]:
     dados = json.loads(caminho.read_text(encoding="utf-8"))
@@ -50,7 +72,8 @@ def escrever_csv(headers: list[str], rows: list[list[object]], destino: Path) ->
     destino.parent.mkdir(parents=True, exist_ok=True)
     with destino.open("w", encoding="utf-8-sig", newline="") as arquivo:
         writer = csv.writer(arquivo)
-        writer.writerow(headers)
+        if headers:  # partes 2..N saem sem cabecalho p/ empilhar sem linha vazia
+            writer.writerow(headers)
         writer.writerows(rows)
 
 
@@ -77,6 +100,31 @@ def gerar_esqueleto(entrada: Path, saida: Path) -> bool:
     destino = saida / ESQUELETO_DESTINO
     escrever_csv([str(h) for h in novo_header], novas_linhas, destino)
     print(f"CSV esqueleto gerado: {destino} ({len(novas_linhas)} linhas, {len(novo_header)} colunas)")
+
+    # Arquivos por coluna (uma formula IMPORTDATA por coluna na planilha).
+    pad_headers = headers + [""] * (max_idx + 1 - len(headers))
+    com_id = [
+        linha
+        for linha in rows
+        if ESQUELETO_COL_ID < len(linha) and str(linha[ESQUELETO_COL_ID]).strip()
+    ]
+    n_linhas = len(com_id)
+    for nome_base, idx, n_partes in ESQUELETO_COLUNAS_INDIVIDUAIS:
+        cabecalho = str(pad_headers[idx]) if idx < len(pad_headers) else ""
+        coluna = [[linha[idx] if idx < len(linha) else ""] for linha in com_id]
+        if n_partes <= 1:
+            escrever_csv([cabecalho], coluna, saida / f"{nome_base}.csv")
+            print(f"CSV coluna gerado: {saida / nome_base}.csv ({len(coluna)} linhas)")
+            continue
+        tamanho = -(-n_linhas // n_partes)  # ceil
+        for parte in range(n_partes):
+            fatia = coluna[parte * tamanho : (parte + 1) * tamanho]
+            # So a primeira parte leva cabecalho (empilhamento de array na planilha).
+            hdr = [cabecalho] if parte == 0 else []
+            destino_p = saida / f"{nome_base}_p{parte + 1}.csv"
+            escrever_csv(hdr, fatia, destino_p)
+            print(f"CSV coluna gerado: {destino_p} ({len(fatia)} linhas, parte {parte + 1}/{n_partes})")
+
     return True
 
 
