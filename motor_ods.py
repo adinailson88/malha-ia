@@ -400,10 +400,16 @@ def calcular_indicadores_ods_por_campus(dados_linhas):
             1 for l in chamados_c
             if len(l) > COL_CAT_IA and 'corretiv' in (l[COL_CAT_IA] or '').lower()
         )
-        if n_corr > 0:
-            razao_pc = n_prev / n_corr
-        elif n_prev > 0:
-            razao_pc = float(n_prev)
+        # Proporção de manutenção preventiva, limitada ao intervalo [0, 1].
+        # Correção (2026-06-20): a versão anterior calculava n_prev / n_corr e, quando
+        # n_corr == 0, devolvia float(n_prev) — uma contagem absoluta em escala
+        # incompatível com os demais campi, inflando o indicador e distorcendo a
+        # normalização min-max (sentido maximizar). A proporção n_prev/(n_prev+n_corr)
+        # é contínua, interpretável e limitada: 1,0 quando só há preventiva, 0,0 quando
+        # só há corretiva e 0,5 no equilíbrio. Preserva-se o nome histórico da coluna.
+        denom_pc = n_prev + n_corr
+        if denom_pc > 0:
+            razao_pc = n_prev / denom_pc
         else:
             razao_pc = 0.0
 
