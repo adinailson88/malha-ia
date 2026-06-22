@@ -37659,10 +37659,20 @@ Local: Núcleo Pedagógico",,,Manutenção Preventiva > Ar condicionado split,,0
 2026060276,Suporte para papel higiênico solto ou quebrado,2026-06-19 10:52,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,0,,,,"-14.770883343840165, -39.23605772449692",,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,0.58,LSTM_BAIXA_CONF,Média
 2026060277,Tampa do vaso sanitário solta,2026-06-19 10:53,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,0,,,,"-14.770883343840165, -39.23605772449692",,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,0.48,LSTM_BAIXA_CONF,Baixa
 2026060278,Mictório entupido,2026-06-19 10:54,Processando (atribuído),,,,Campus Jorge Amado,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-14.770883343840165, -39.23605772449692",,,,,Hidrossanitária > Hidráulica,,0.47,LSTM_BAIXA_CONF,Baixa
-2026060281,VAZAMENTO NA PIA DO BANHEIRO MASCULINO - TÉRREO,2026-06-19 13:39,Processando (atribuído),,,,Campus Paulo Freire,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-17.534828808942148, -39.72394543442796",,,,,Hidrossanitária > Hidráulica,,0.82,LSTM_BAIXA_CONF,Baixa
+2026060281,VAZAMENTO NA PIA DO BANHEIRO MASCULINO - TÉRREO,2026-06-19 13:39,Processando (atribuído),,,,Campus Paulo Freire,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-17.534828808942148, -39.72394543442796",,VAZAMENTO NA PIA DO BANHEIRO MASCULINO - TÉRREO,,,Hidrossanitária > Hidráulica,,0.82,LSTM_BAIXA_CONF,Baixa
 2026060282,AR CONDICIONADO NÃO ESTÁ GELANDO - GABINETE 19,2026-06-19 13:47,Processando (atribuído),,,,Campus Paulo Freire,,,,,Climatização > Ar condicionado,,,,0,,,,"-17.534828808942148, -39.72394543442796",,,,,Climatização > Ar condicionado,,0.98,LSTM,Baixa
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026060285,Infraestrutura de Telecomunicação na portaria,2026-06-21 19:20,Novo,,,,Campus Sosígenes Costa,,,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,,0,,,,"-16.420061877245463, -39.136391365397536",,"Prezada equipe de manutenção,
+Solicito a criação de uma infraestrutura com dutos (aproximadamente 15 metros de extensão) para interligar:
+Ponto de origem: caixa de passagem na entrada do campus
+Ponto de destino: cone da esquerda, próximo à entrada do campus
+Segue em anexo a imagem com o local exato onde deverá ser realizado o serviço.
+No local de destino (cone da esquerda), será:
+Instalado um rack de rede (que já possuímos)
+Ativado um cabo de rede já existente
+Este ponto funcionará como o ponto de encontro das operações de telecomunicação com o campus. Desta forma, a princípio, não haverá necessidade de levar cabos de fibra ótica até a sala técnica quando um novo provedor surgir.
+A urgência se justifica pois a empresa contratada pela Telebras fará a fusão das fibras, com o objetivo de evitar a necessidade de uma nova infraestrutura. Portanto, é essencial que esta implantação seja realizada antes dessa execução.",,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.45,LSTM_BAIXA_CONF,Baixa
+2026060286,Manutenção Preventiva - Limpeza Ralos Cobertura Reitoria,2026-06-22 00:00,Processando (atribuído),,,,Reitoria,,,,,"Manutenção Preventiva > Telhados, calhas, rufos, etc.",,,,0,,,,"-14.788316740297745, -39.27483123836992",,"Verificação e limpeza dos ralos e calhas da cobertura e das áreas externas (jardins e passeios) para evitar entupimentos e áreas alagadas.
+Registrar com foto a situação dos ralos antes de fechar o chamado.",,,"Manutenção Preventiva > Telhados, calhas, rufos, etc.",,0.25,LSTM_BAIXA_CONF,Baixa
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
