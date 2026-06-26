@@ -36560,7 +36560,7 @@ Local: Vestiário Masculino Funcionários",,
 2026040185,Vistoria,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Por gentileza, solicito reparo nas telas do sistema de aquicultura que ficam próximas ao sistema de tratamento de água do Campus.",,
 2026040191,Mudança de gaveteiro,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários","Solicito, por gentileza, a mudança de gaveteiro da lateral direita da mesa para esquerda. Grato!",,
 2026040192,Vazamento - ar condicionado,Climatização > Ar condicionado,"Solicitamos verificação do ar condicionado na sala do setor de apoio administrativo, pois apresenta vazamento de água pelo lado interno da sala.",,
-2026040195,Vedação nas portas,"Estrutura Predial > Esquadrias, porta, portão e janelas","Solicito que seja instalada uma vedação nas portas dos laboratórios de arte e corpos, igual a que tem na porta da biblioteca, para evitar a entrada de escorpiões e outros insetos.",,
+2026040195,Vedação nas portas,"Estrutura Predial > Esquadrias, porta, portão e janelas","Solicito que seja instalada uma vedação nas portas dos laboratórios de arte e corpos, igual a que tem na porta da biblioteca, para evitar a entrada de escorpiões e outros insetos.",Vedação nas portas,Vedação nas portas
 2026040199,Troca de placas,Instalação de Acessórios e Mobiliário > Placas de identificação,"Prezados, bom dia.
 
 Socilito troca de placa. A placa escrita ""Apoio técnico"" que está nos laboratórios da pétala A do núcleo pedagógico vai para a sala que está escrito ""Consultório 01"" no laboratório de habilidades médicas 1.
@@ -36576,7 +36576,7 @@ Solicito que seja feita uma nova placa escrita ""Apoio técnico"" para uma sala 
 Desde já, agradeço
 
 Att,
-Thiago",,
+Thiago",Placa de identificação de porta,Placa de identificação de porta
 2026040202,Trocar TV da sala 05,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários","Olá prezados, tudo bem?
 Gostaria que a TV da sala 05, Complexo 1, fosse trocada. Ela apresenta problemas no menu, como se o botão estivesse pressionado, impossibilitando de escolher a porta correta. Vamos acionar a garantia para ver o que pode ser feito.
 Obrigado.",,
@@ -36612,7 +36612,7 @@ Rosane",,
 2026040233,Inspeção Luminária de emergência - CPF Núcleo Pedagógico,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
 2026040234,Troca da fechadura,"Estrutura Predial > Esquadrias, porta, portão e janelas","Bom dia!!
 por gentileza, solicito a troca da fechadura da porta do banheiro da clinica SEP com urgência.
-Desde já, agradeço pela atenção.",,
+Desde já, agradeço pela atenção.",Troca da fechadura de banheiro,Troca da fechadura de banheiro
 2026040240,Instalação,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários","Instalar 2 porta-papel toalha no banheiro feminino do segundo andar, E um porta papel toalha no banheiro PCD também do segundo andar.
 Obs: Já temos o porta papel toalha, precisamos apenas da mão de obra.",,
 2026040243,Compra de 3 ADAPTADORES DE NYLON PARA ROÇADEIRAS STHILL,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
@@ -36728,7 +36728,7 @@ Boa tarde,
 Enacminho o chamado novamente sobre o concerto da roda da cadeira , ja falei com o Sr. Carlos da manuntenção, é um conceto simples , so colocar colocar a rodinha na cadeira que soltou.
 
 Atenmciosamente,",,
-2026040387,Manutenção de Bombas do Ar condicionado central.,Climatização > Ar condicionado central,"Necessitamos fazer uma manutenção em todas as bombas, que fazer o sistema de ar condicionado central funcionar. como alinhado com Simon, irmos retirar 1 de cada vez e levar par fazer a manutenção iniciaremos logo pelas bombas de agua gelada e depois pelas de condensação, assim deixando todas sem anomalias, com funcionamento de rolamentos normais e sem apresentar algum superaquecimento nos circuitos da mesma.",Manutenção de bombas no ar condicionado central - CSC,"Serviço de rebobinamento, troca de selamento mecanico e rolamento"
+2026040387,Manutenção de Bombas do Ar condicionado central.,Climatização > Ar condicionado central,"Necessitamos fazer uma manutenção em todas as bombas, que fazer o sistema de ar condicionado central funcionar. como alinhado com Simon, irmos retirar 1 de cada vez e levar par fazer a manutenção iniciaremos logo pelas bombas de agua gelada e depois pelas de condensação, assim deixando todas sem anomalias, com funcionamento de rolamentos normais e sem apresentar algum superaquecimento nos circuitos da mesma.",Manutenção de bombas no ar condicionado central - CSC; Complementar de Manutenção de Bombas do Ar condicionado central,"Serviço de rebobinamento, troca de selamento mecanico e rolamento; Complementar de Manutenção de Bombas do Ar condicionado central"
 2026040389,Substituição de luminarias das salas de aulas antigas do feiras.,Estrutura Predial > Forro,"Prezados estaremos fazendo a mudança das luminárias nas salas antigas do feiras, onde substituiremos as luminárias existente de lâmpadas tipo E-27 para as lâmpadas tubulares T* de 1,20cm, porem nessa mudança necessitaremos mexer no forro para adequar nosso sistema.
 
 será necessário liberar o seguinte material:
@@ -36771,7 +36771,7 @@ Local: Banheiro Feminino próx a Biblioteca",,
 2026040427,Solicitação de Fechamento de Abrigo e Reparos em Alvenaria – Complexo I (Biblioteca),Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados, bom dia!
 Solicito a execução do fechamento do abrigo da caixa d’água localizado na parte posterior do prédio da Biblioteca do Complexo I, bem como a realização de serviços de reboco em pontos específicos da edificação que atualmente apresentam aberturas.
 Ressalta-se que tais intervenções são necessárias para impedir a entrada de insetos e animais peçonhentos, a exemplo de escorpiões, visando à mitigação de riscos e à prevenção de possíveis incidentes.
-Atenciosamente,",,
+Atenciosamente,",Fechamento de Abrigo e Reparos em Alvenaria – Complexo I,Fechamento de Abrigo e Reparos em Alvenaria – Complexo I
 2026040429,Troca de bateria de 6 nobreak's,Elétrica > Nobreak,"Solicito, por gentileza, a substituição das baterias de seis unidades de nobreak.",,
 2026040430,Fixar mural na parede,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários","Prezado,
 
@@ -37054,7 +37054,7 @@ Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um
 2026050091,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2026050092,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2026050095,Substituição de fechadura,"Estrutura Predial > Esquadrias, porta, portão e janelas","Prezados, bom dia!
-Solicito, por gentileza, a verificação da porta da sala de aula 14, tendo em vista que a mesma apresenta defeito em sua fechadura.",,
+Solicito, por gentileza, a verificação da porta da sala de aula 14, tendo em vista que a mesma apresenta defeito em sua fechadura.",Substituição de fechadura,Substituição de fechadura
 2026050097,Troca de fechaduras dos Laboratórios Intedisciplinares 01 e 02,"Estrutura Predial > Esquadrias, porta, portão e janelas","As chaves das portas dos Laboratórios Interdisciplinares 01 e 02 estão desaparecidas. Em função dos valores dos equipamentos dentro dos laboratórios não podemos correr o risco de manter as fechaduras atuais. Mediante essa situação, é imperativa a substituição das fechaduras.",,
 2026050104,Privada entupida,Hidrossanitária > Hidráulica,"Privada entupida
 Local: Banheiro Masculino no Pavilhão administrativo, próximo ao DML",,
@@ -37537,7 +37537,8 @@ Solicito, por gentileza, a realização da limpeza e desobstrução das caixas d
 Tal situação tem ocasionado o retorno de esgoto para o ambiente, causando transtornos aos usuários e comprometendo as condições adequadas de higiene e salubridade do local.
 
 Atenciosamente,",,
-2026060060,Manutenção Preventiva Bimensal - Quadros Elétricos de BT - Reitoria,Manutenção Preventiva > Quadros Elétricos,,,
+2026060060,Manutenção Preventiva Bimensal - Quadros Elétricos de BT - Reitoria,Manutenção Preventiva > Quadros Elétricos,"Solicito manutenção preventiva/inspeção dos quadros elétrico de baixa tensão conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 02.
+É OBRIGATÓRIA a entrega deste documento à UFSB, de modo a dar retorno aos serviços executados e atualização dos cadastros dos quadros elétricos.",,
 2026060061,Manutenção Preventiva Mensal - Ar condicionado - CJA - Laboratório CEPLAC,Manutenção Preventiva > Ar condicionado split,,,
 2026060062,Manutenção Preventiva Mensal - Ar condicionado - CJA - NUPED,Manutenção Preventiva > Ar condicionado split,,,
 2026060063,Manutenção Preventiva Mensal - Ar condicionado - CJA - NVGA,Manutenção Preventiva > Ar condicionado split,,,
@@ -37606,7 +37607,9 @@ Atenciosamente,",,
 Local: Núcleo Pedagógico",,
 2026060108,Defletor no ar condicionado,"Estrutura Predial > Telhados, calhas, rufos, etc.","Por favor, colocar 01 defletor no ar condicionado na sala do engenheiro na torre.",,
 2026060113,Troca de fechadura,"Estrutura Predial > Esquadrias, porta, portão e janelas",Trocar fechadura do portão do complexo 2.,Troca de fechadura,Troca de fechadura
-2026060115,Troca de tampas do vaso sanitário,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,Troca de tampas do vaso sanitário,Troca de tampas do vaso sanitário
+2026060115,Troca de tampas do vaso sanitário,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários","Prezados bom dia,
+Se faz necessário a troca de 01 tampas dos vasos sanitário do banheiro feminíno no segundo pavimento e 01 tampa do banheiro feminino do térreo.
+Agradeço a atenção.",Troca de tampas do vaso sanitário,Troca de tampas do vaso sanitário
 2026060128,Janela emperrada,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
 2026060137,Limpeza do Laboratório Interdisciplinar de Ensino,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,
 2026060139,REFLETORES QUEIMADOS NOS CONSULTÓRIOS EXTERNOS,Elétrica > Iluminação,,,
@@ -37640,25 +37643,41 @@ Local: Núcleo Pedagógico",,
 2026060220,Limpeza Geral/Manutenção Semestral dos Ar condicionados - Posto de Saúde CPF,Manutenção Preventiva > Ar condicionado split,,,
 2026060221,Limpeza Geral/Manutenção Semestral dos Ar condicionados - CEAME CPF,Manutenção Preventiva > Ar condicionado split,,,
 2026060222,Limpeza Geral/Manutenção Semestral dos Ar condicionados - Clínica Escola Psicologia CPF,Manutenção Preventiva > Ar condicionado split,,,
-2026060223,"Prezados, bom dia.  O bebedouro do pavilhão administrativo, próximo ao","Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,
+2026060223,"Prezados, bom dia.  O bebedouro do pavilhão administrativo, próximo ao","Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários","Prezados, bom dia.
+O bebedouro do pavilhão administrativo, próximo ao banheiro masculino está apresentando um vazamento, poderia verificar por favor.",,
 2026060224,"Prezado, bom dia. Poderia verificar por favor a troca da saboneteira d","Estrutura Predial > Esquadrias, porta, portão e janelas",,,
 2026060227,Instalar suporte para sabonete líquido,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,
 2026060237,Disponibilização de Ponto de lógica,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
 2026060238,Reparo Balança,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,
-2026060239,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,
+2026060239,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados colegas,
+Boa tarde! Peço a gentileza de roçar a área do meliponário. O mato está bem alto e está favorecendo a permanência de cobras na área, eu mesma vi uma na semana passada.
+Desde já agradeço.
+Atenciosamente,
+Rosane",,
 2026060240,Solicitação de iluminação e ponto de tomada no meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,
 2026060246,Marceneta quebrada,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
 2026060253,Vazamento mictório CFCAF,Hidrossanitária > Hidráulica,,,
 2026060267,Solicitação de Troca de Televisores,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,
-2026060269,Manutenção do Forro do Auditório,Estrutura Predial > Forro,,,
-2026060271,Solicitação de compra de porta-cadeado com cadeado,"Estrutura Predial > Esquadrias, porta, portão e janelas",,Fornecimento de porta cadeado com cadeado,Fornecimento de porta cadeado com cadeado
+2026060269,Manutenção do Forro do Auditório,Estrutura Predial > Forro,"Prezados, bom dia!
+
+Solicito, por gentileza, a realização de manutenção corretiva no forro do Auditório do Núcleo Pedagógico, tendo em vista que foram constatados sinais de deslocamento e comprometimento de sua estabilidade.
+
+Ressalta-se que o referido espaço é utilizado com grande frequência para a realização de atividades acadêmicas e institucionais, de modo que a situação atual representa risco potencial à segurança dos usuários, podendo ocasionar a queda de elementos do forro e resultar em acidentes.
+
+Atenciosamente,",,
+2026060271,Solicitação de compra de porta-cadeado com cadeado,"Estrutura Predial > Esquadrias, porta, portão e janelas","Prezados, bom dia!
+Solicito, por gentileza, a aquisição de 2 (duas) unidades de porta-cadeado com cadeado (30 mm), a fim de manter fechadas as portas de acesso ao terraço do Núcleo Pedagógico.
+A medida se faz necessária em razão da recorrente entrada de pessoas nesses locais, havendo inclusive registros de indivíduos utilizando o espaço para pernoite. Tal situação poderá ocasionar problemas de segurança e conservação do patrimônio no futuro.
+
+Atenciosamente,",Fornecimento de porta cadeado com cadeado,Fornecimento de porta cadeado com cadeado
 2026060272,Infiltração em pontos críticos no campus,Estrutura Predial > Infiltração,,,
 2026060273,Cupula de vidro com vazamento (Telhado),Estrutura Predial > Infiltração,,,
 2026060274,Instalação (confecção) de tampas para reservatórios inferiores e do dafra,Manutenção Preventiva > Hidráulica,,,
 2026060275,Janela emperrada (Não fecha),"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
 2026060276,Suporte para papel higiênico solto ou quebrado,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,
 2026060277,Tampa do vaso sanitário solta,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,
-2026060278,Mictório entupido,Hidrossanitária > Hidráulica,,,
+2026060278,Mictório entupido,Hidrossanitária > Hidráulica,"Mictório entupido
+Local: Banheiro Masculino próximo a biblioteca",,
 2026060281,VAZAMENTO NA PIA DO BANHEIRO MASCULINO - TÉRREO,Hidrossanitária > Hidráulica,VAZAMENTO NA PIA DO BANHEIRO MASCULINO - TÉRREO,,
 2026060282,AR CONDICIONADO NÃO ESTÁ GELANDO - GABINETE 19,Climatização > Ar condicionado,,,
 2026060285,Infraestrutura de Telecomunicação na portaria,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Prezada equipe de manutenção,
@@ -37673,3 +37692,39 @@ Este ponto funcionará como o ponto de encontro das operações de telecomunica�
 A urgência se justifica pois a empresa contratada pela Telebras fará a fusão das fibras, com o objetivo de evitar a necessidade de uma nova infraestrutura. Portanto, é essencial que esta implantação seja realizada antes dessa execução.",,
 2026060286,Manutenção Preventiva - Limpeza Ralos Cobertura Reitoria,"Manutenção Preventiva > Telhados, calhas, rufos, etc.","Verificação e limpeza dos ralos e calhas da cobertura e das áreas externas (jardins e passeios) para evitar entupimentos e áreas alagadas.
 Registrar com foto a situação dos ralos antes de fechar o chamado.",,
+2026060297,Entupimento,Hidrossanitária > Hidráulica,"Realizar o desentupimento da pia da cozinha do HMTF, onde fica o conforto dos alunos.",,
+2026060306,Aparelhos de ar condicionado que não estão funcionando nos laboratórios,Climatização > Ar condicionado,"Prezados(as),
+Na última terça-feira, 23/06/2026, realizamos testes nos aparelhos de ar-condicionado dos laboratórios e identificamos os seguintes problemas:
+Aparelhos que não estão ligando:
+
+Laboratório de Biologia Celular, Molecular e Histologia;
+Laboratório de Microscopia;
+Laboratório de Química, Bioquímica e Farmacologia;
+Um dos aparelhos instalados no Laboratório de Habilidades Médicas 2.
+
+Aparelho que liga, mas não está resfriando:
+
+Laboratório de Ciências Ambientais 2.
+
+Solicitamos, por gentileza, a verificação dos equipamentos mencionados e as providências cabíveis para restabelecimento do seu funcionamento.
+Colocamo-nos à disposição para quaisquer esclarecimentos adicionais.
+Atenciosamente,
+
+Mariana Neto Rosa Lima
+Setor de Laboratórios - CPF
+UFSB",,
+2026060307,"Prezados, bom dia.  poderia por favor verificar um vazamento no ar con",Climatização > Ar condicionado,"Prezados, bom dia.
+poderia por favor verificar um vazamento no ar condicionada na SECAD.",,
+2026060314,Entupimento de rede de esgoto,Hidrossanitária > Hidráulica,"Solicito desentupimento de sifão de cuba no Laboratório de Pedologia, do CFCAm.
+O encanamento foi entupido pois a estudante lançou amostras de solo na cuba.
+Atenciosamente,
+Caio Gabrig Turbay",,
+2026060317,Instalação de abafador de ruído em porta,"Estrutura Predial > Esquadrias, porta, portão e janelas","Prezados,
+
+Como forma de atender alguns apontamentos realizados pelo Conselho Regional de Psicologia, solicito a instalação de abafador de ruído em porta da sala de atendimento de psicologia. (complexo 1)
+
+OBS: O produto já foi comprado e se encontra sobre a minha mesa.
+
+At.te
+
+Samuel",,
