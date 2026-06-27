@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-06-26T11:29:51.958143+00:00",
+  "gerado_em_utc": "2026-06-27T10:35:18.905352+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,9 +37,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "02eb2de5ba6e",
-        "html_url": "https://github.com/adinailson88/malha-ia/commit/02eb2de5ba6e02ffb43e17bd81dc4efdf37f297d",
-        "data": "2026-06-26T10:00:41Z"
+        "sha": "7e686a9483e8",
+        "html_url": "https://github.com/adinailson88/malha-ia/commit/7e686a9483e87260f1a0a8f40d2086ee0585a8fa",
+        "data": "2026-06-27T09:15:42Z"
       },
       "dados_atualizados_em_utc": "2026-06-26T09:31:17.360522+00:00",
       "resumo_dados": {
@@ -99,11 +99,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "df20751aa12c",
-        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/df20751aa12c7d8cf3b66a5a1a5ee87663e13ff7",
-        "data": "2026-06-26T11:26:35Z"
+        "sha": "c7332b4021aa",
+        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/c7332b4021aaea87ef1c68a1a54699cdabf399a3",
+        "data": "2026-06-27T09:09:33Z"
       },
-      "dados_atualizados_em_utc": "2026-06-26T11:26:30.744388+00:00",
+      "dados_atualizados_em_utc": "2026-06-27T08:48:06.156720+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -157,11 +157,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "e50392563428",
-        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/e503925634288a090ea3bbbaf91adda3ab3b8a6f",
-        "data": "2026-06-26T08:30:47Z"
+        "sha": "f4f0f8fbcd8b",
+        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/f4f0f8fbcd8bc1c671b60b01a7d125c9d77411c6",
+        "data": "2026-06-27T09:29:09Z"
       },
-      "dados_atualizados_em_utc": "2026-06-26T08:30:46.183717+00:00",
+      "dados_atualizados_em_utc": "2026-06-27T09:29:08.871500+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -215,11 +215,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "ed7e3cbe42fa",
-        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/ed7e3cbe42fa6beace48a90ba3cb34ab5f647033",
-        "data": "2026-06-26T10:50:07Z"
+        "sha": "f63829c05077",
+        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/f63829c050775ab098be02c408e4154b90e3844e",
+        "data": "2026-06-27T10:07:02Z"
       },
-      "dados_atualizados_em_utc": "2026-06-26T10:50:07.059061+00:00",
+      "dados_atualizados_em_utc": "2026-06-27T10:07:02.545219+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -273,9 +273,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "ed4c9ba79ffa",
-        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/ed4c9ba79ffa861f8a0c94d57a5b6e36644aa30c",
-        "data": "2026-06-26T11:25:20Z"
+        "sha": "bbf0bbc116fc",
+        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/bbf0bbc116fc9295264477c8260c7f5af5bd0db1",
+        "data": "2026-06-27T08:43:35Z"
       },
       "dados_atualizados_em_utc": "2026-06-15T13:05:14.776131+00:00",
       "resumo_dados": {},
@@ -331,11 +331,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "007085bfc8e2",
-        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/007085bfc8e290fbe4bf44201e299a404fac0afc",
-        "data": "2026-06-26T11:25:07Z"
+        "sha": "ca2098fd79e2",
+        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/ca2098fd79e2b62516c3cdc0e79798f33fe8bd44",
+        "data": "2026-06-27T08:42:43Z"
       },
-      "dados_atualizados_em_utc": "2026-06-26T11:25:06.451765+00:00",
+      "dados_atualizados_em_utc": "2026-06-27T08:42:42.796392+00:00",
       "resumo_dados": {
         "arquivos": 3,
         "linhas_dados": 167
