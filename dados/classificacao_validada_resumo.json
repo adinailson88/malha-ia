@@ -1,5 +1,5 @@
 {
-  "gerado_em_utc": "2026-06-27T09:15:42.368662Z",
+  "gerado_em_utc": "2026-06-28T09:46:03.995028Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
