@@ -37546,7 +37546,7 @@ Atenciosamente,",,
 2026060065,Manutenção Preventiva Mensal - Ar condicionado - CPF - Bloco Administrativo,Manutenção Preventiva > Ar condicionado split,,,
 2026060066,Manutenção Preventiva Mensal - Ar condicionado - CPF - Bloco de Aulas 1,Manutenção Preventiva > Ar condicionado split,,,
 2026060067,Manutenção Preventiva Mensal - Ar condicionado - CPF - Bloco de Aulas 2,Manutenção Preventiva > Ar condicionado split,,,
-2026060068,Manutenção Preventiva Mensal - Ar condicionado - CPF - Laboratório 1° Ciclo CFCS,Manutenção Preventiva > Ar condicionado split,,,
+2026060068,Manutenção Preventiva Mensal - Ar condicionado - CPF - Laboratório 1° Ciclo CFCS,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026060069,Manutenção Preventiva Mensal - Ar condicionado - CPF - Pavilhão Anexo de Aulas,Manutenção Preventiva > Ar condicionado split,,,
 2026060070,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão Administrativo,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026060071,Manutenção Preventiva Mensal - Ar condicionado - CSC - Bloco de Serviços,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
@@ -37674,8 +37674,10 @@ Atenciosamente,",Fornecimento de porta cadeado com cadeado,Fornecimento de porta
 2026060273,Cupula de vidro com vazamento (Telhado),Estrutura Predial > Infiltração,,,
 2026060274,Instalação (confecção) de tampas para reservatórios inferiores e do dafra,Manutenção Preventiva > Hidráulica,,,
 2026060275,Janela emperrada (Não fecha),"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
-2026060276,Suporte para papel higiênico solto ou quebrado,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,
-2026060277,Tampa do vaso sanitário solta,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,
+2026060276,Suporte para papel higiênico solto ou quebrado,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários","Suporte para papel higiênico solto ou quebrado
+Local: Banheiro Feminino - próximo a Biblioteca",,
+2026060277,Tampa do vaso sanitário solta,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários","Há 2 Tampas de vaso sanitário solta
+Local: Banheiro Feminino - próximo a Biblioteca",Substituição de assento sanitário,Substituição de assento sanitário
 2026060278,Mictório entupido,Hidrossanitária > Hidráulica,"Mictório entupido
 Local: Banheiro Masculino próximo a biblioteca",,
 2026060281,VAZAMENTO NA PIA DO BANHEIRO MASCULINO - TÉRREO,Hidrossanitária > Hidráulica,VAZAMENTO NA PIA DO BANHEIRO MASCULINO - TÉRREO,,
@@ -37728,3 +37730,10 @@ OBS: O produto já foi comprado e se encontra sobre a minha mesa.
 At.te
 
 Samuel",,
+2026060336,Troca de Lâmpadas na Sala da NTI (Nucleo de TI),Elétrica > Iluminação,Solicito Verificação das Luminárias da Sala no Núcleo de Tecnoligia da Informação. Foram sinalizados que as mesmas estão com 3 lâmpadas queimadas e prejudicando a iluminação da Sala. Diante disso solicito a troca das referidas lâmpadas.,,
+2026060338,Manutenção Preventiva Bimensal - Gerador 75 kVA - Reitoria,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva bimensal do gerador de 75 kVA do Campus Sosígenes Costa conforme documento em anexo. Favor seguir roteiro conforme Anexo I, pág. 04 e 05. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
+2026060352,Solicitação de manutenção – Cadeira de trabalho,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",Gostaria de solicitar a manutenção da cadeira que utilizo em minha estação de trabalho. Ela está com o braço solto e com problemas na regulagem de altura.,,
+2026060355,"Prezados, boa tarde.  Poderia por favor realizar a instalação de uma t",Elétrica > Instalações elétricas,"Prezados, boa tarde.
+Poderia por favor realizar a instalação de uma tomada no DML (sala de André).",,
+2026060356,"Prezados, boa tarde.  Poderiam verificar a possibilidade de trocas de",Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezados, boa tarde.
+Poderiam verificar a possibilidade de trocas de espelhos nos banheiros no NGVA.",,
