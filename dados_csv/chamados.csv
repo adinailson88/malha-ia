@@ -32616,7 +32616,7 @@ Atenciosamente",,,Outros > Erro de chamado,,0.27,LSTM_BAIXA_CONF,Baixa
 Solicito Instalação de Pia no CONE Esquerdo à guarita e entrada do campus. Justifico o pedido, pois, o espaço sera utilziado para triagem de material de pesquisa.
 
 Obs.: Já alinhei com o Encarregado Rodrigo o uso de uma das pias que estavam disponíveis no campus.",Instalação de Pia - CONE Portaria; Complementar de Instalação de Pia - CONE Portaria,Instalação de Pia - CONE Portaria; Complementar de Instalação de Pia - CONE Portaria,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,0.11,LSTM_BAIXA_CONF,Baixa
-2025012618,infiltração no laboratório de zoologia e ecologia,2025-06-16 14:20,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Estrutura Predial > Infiltração,,,,0,,,,"-16.424101724531493, -39.13626270686903",,"Infiltração atrás dos armários do Lab. de Zoologia e Ecologia, possivelmente por conta do ar condicionado.
+2025012618,infiltração no laboratório de zoologia e ecologia,2025-06-16 14:20,Solucionado,,,,Campus Sosígenes Costa,,,,,Estrutura Predial > Infiltração,,,,0,,,,"-16.424101724531493, -39.13626270686903",,"Infiltração atrás dos armários do Lab. de Zoologia e Ecologia, possivelmente por conta do ar condicionado.
 Há infiltração pelas paredes e armários, com acúmulo de água na pia.
 Há urgência devido à umidade nos armários que podem ser danificados",,,Outros > Erro de chamado,,0.23,LSTM_BAIXA_CONF,Baixa
 2025012620,TROCA DE LAMPADAS EXTERNAS NA ENTRADA DO COMPLEXO I,2025-06-16 15:55,Fechado,,,,Campus Paulo Freire,,,,,Elétrica > Iluminação,,,,0,,,,"-17.532979931742542, -39.7220601067383",,TROCA DE LAMPADAS EXTERNAS NA ENTRADA DO COMPLEXO I,,,Manutenção Preventiva > Ar condicionado split,,0.99,LSTM,Baixa
@@ -33223,7 +33223,7 @@ Portanto, solicito a adequação das tomadas elétricas.
 OBS: Como as bancadas foram colocadas como ilhas no meio das salas, o decano sugeriu que, se possível, as tomadas viessem do alto e ficassem penduradas sobre as bancadas (como no laboratório interdisciplinar 1)
 
 At.te",,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,0.42,LSTM_BAIXA_CONF,Baixa
-2025013293,"Troca de lâmpada queimada na sala dos docentes do CFCAm, ao lado da SECAD.",2025-08-18 07:38,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Elétrica > Iluminação,,,,0,,,,"-16.424101724531493, -39.13626270686903",,"Preazados.
+2025013293,"Troca de lâmpada queimada na sala dos docentes do CFCAm, ao lado da SECAD.",2025-08-18 07:38,Solucionado,,,,Campus Sosígenes Costa,,,,,Elétrica > Iluminação,,,,0,,,,"-16.424101724531493, -39.13626270686903",,"Preazados.
 
 Solicito a troca de lâmpadas queimadas na sala dos docentes do CFCAm, ao lado da SECAD.
 
@@ -33610,7 +33610,7 @@ Preciso relatar um episódio que por pouco não virou uma tragédia. Na semana p
 O aparelho de ar condicionado da sala do colegiado de Engenharia de Aquicultura não está funcionando corretamente. Gostaria de solicitar, por gentileza, a verificação do mesmo.
 Grata!",,,Manutenção Preventiva > Elevador,,0.98,LSTM,Baixa
 2025013695,Vaso entupido,2025-09-10 09:15,Fechado,,,,Campus Sosígenes Costa,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-16.424310442233665, -39.1367972326299",,"O vaso do banheiro feminino no laboratório Néa está entupido até em cima, não desce.",,,Manutenção Preventiva > Elevador,,0.98,LSTM,Baixa
-2025013700,Banco no mirante do Buranhém - fundo do CSC,2025-09-10 10:42,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,,0,,,,"-16.423909554595376, -39.13629623502169",,"Prezados/as, bom dia.
+2025013700,Banco no mirante do Buranhém - fundo do CSC,2025-09-10 10:42,Solucionado,,,,Campus Sosígenes Costa,,,,,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,,0,,,,"-16.423909554595376, -39.13629623502169",,"Prezados/as, bom dia.
 
 Recentemente foi instalada a placa do projeto Geoturismo no fundo do CSC. É um ponto de interesse geológico que deverá ser visitado em atividades de extensão (incluindo SNCT, na semana do dia 20/10).
 
@@ -33869,7 +33869,7 @@ Capacidade: 9 mil btus
 Capacidade: 9 mil btus
 4) Patrimônio e Almoxarifado
 Capacidade: 22 mil btus",,,Climatização > Ar condicionado,,1,LSTM,Baixa
-2025014005,Instalação de película,2025-10-02 14:04,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,,0,,,,"-14.770309469288907, -39.23560995592077",,Solicito a instalação de película no Laboratório de Ciências III (Laboratório de Física),,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.66,LSTM_BAIXA_CONF,Baixa
+2025014005,Instalação de película,2025-10-02 14:04,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,,4474.08,,,,"-14.770309469288907, -39.23560995592077",,Solicito a instalação de película no Laboratório de Ciências III (Laboratório de Física),Instalação de películas,Instalação de películas,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.66,LSTM_BAIXA_CONF,Baixa
 2025014089,"Prezados/as  Bom dia,  Solicito a manutenção do ar condicionado na sal",2025-10-07 09:03,Fechado,,,,Reitoria,,,,,Climatização > Ar condicionado,,,,0,,,,"-14.788316740297745, -39.27483123836992",,"Prezados/as
 Bom dia,
 Solicito a manutenção do ar condicionado na sala do Pró-reitor o mesmo não esta refrigerando desde da semana passada, se possível, concertar essa problema com urgência.
@@ -34840,13 +34840,13 @@ Materiais necessários:
 2025015054,Ar condicionado sem funcionar,2025-11-28 10:51,Fechado,,,,Campus Jorge Amado,,,,,Climatização > Ar condicionado,,,,0,,,,"-14.770883343840165, -39.23605772449692",,"Ar condicionado sem funcionar
 Todas as Salas estudantis estão com o ar condicionado sem funcionar",,,Elétrica > Nobreak,,0.11,LSTM_BAIXA_CONF,Baixa
 2025015062,Manutenção Semestral - Ar condicionado - Reitoria,2025-12-01 00:00,Fechado,,,,Reitoria,,,,,Manutenção Preventiva > Ar condicionado split,,,,57855.98,,,,"-14.788316740297745, -39.27483123836992",,Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados na Reitoria. Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do documento em anexo que versa sobre as tarefas semestrais que devem ser feitas nos equipamentos de Ar condicionados do tipo SPLIT.,Manutenção Semestral - Ar condicionado - Reitoria,Manutenção Semestral - Ar condicionado - Reitoria,Climatização > Ar condicionado,,1,LSTM,Baixa
-2025015064,Substituir antiderrapante,2025-12-01 08:47,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,0,,,,#N/A,,"Prezado,
+2025015064,Substituir antiderrapante,2025-12-01 08:47,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,661.5,,,,#N/A,,"Prezado,
 
 O antiderrapante da escada de entrada está bastante desgastado precisando substituição.
 
 Cordialmente
 
-Débora Oliveira",,,Estrutura Predial > Infiltração,,0.61,LSTM_BAIXA_CONF,Baixa
+Débora Oliveira",Substituição de antiderrapante,Substituição de antiderrapante,Estrutura Predial > Infiltração,,0.61,LSTM_BAIXA_CONF,Baixa
 2025015074,Instalação de forro na sala de eventos,2025-12-01 13:12,Fechado,,,,Campus Jorge Amado,,,,,Estrutura Predial > Forro,,,,0,,,,"-14.770883343840165, -39.23605772449692",,"Solicito a instalação de forro na sala de eventos. Conforme as plantas arquitetônicas, a área do ambiente é de 244 m². Considerando a geometria do espaço, que implicará perdas significativas nos recortes, peço que seja acrescido um percentual de 20% à metragem. Assim, a Ordem de Serviço deve contemplar o total de 292 m² .",,,Climatização > Ar condicionado,,1,LSTM,Baixa
 2025015081,Verificar ar condicionado,2025-12-01 15:19,Fechado,,,,Campus Sosígenes Costa,,,,,Climatização > Ar condicionado,,,,0,,,,"-16.424036771315144, -39.13615281834591",,"Verificar o ar condicionado da sala do apoio adm.
 O ar está saindo com cheiro de mofo.",,,Elétrica > Iluminação,,1,LSTM,Baixa
@@ -35115,7 +35115,7 @@ gentileza resolver o problema do ar-condicionado central da Biblioteca do CPF. S
 solicito reposição de placas de identificação de banheiros CSC.
 
 Obs.: observar o que rege a Portaria 447/2018 da UFSB.",,,Manutenção Preventiva > Ar condicionado split,,1,LSTM,Baixa
-2025015424,Manutenção Preventiva Bimensal - Gerador 75 kVA - Reitoria,2025-12-30 00:00,Processando (atribuído),,,,Reitoria,,,,,Manutenção Preventiva > Gerador,,,,0,,,,"-14.788316740297745, -39.27483123836992",,"Solicito manutenção preventiva bimensal do gerador de 75 kVA do Campus Sosígenes Costa conforme documento em anexo. Favor seguir roteiro conforme Anexo I, pág. 04 e 05. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,,Manutenção Preventiva > Ar condicionado split,,0.98,LSTM,Baixa
+2025015424,Manutenção Preventiva Bimensal - Gerador 75 kVA - Reitoria,2025-12-30 00:00,Processando (atribuído),,,,Reitoria,,,,,Manutenção Preventiva > Gerador,,,,3276.1000000000004,,,,"-14.788316740297745, -39.27483123836992",,"Solicito manutenção preventiva bimensal do gerador de 75 kVA do Campus Sosígenes Costa conforme documento em anexo. Favor seguir roteiro conforme Anexo I, pág. 04 e 05. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",Manutenção Preventiva Bimensal - Gerador 75 kVA - Reitoria,Manutenção Preventiva Bimensal - Gerador 75 kVA - Reitoria,Manutenção Preventiva > Ar condicionado split,,0.98,LSTM,Baixa
 2025015430,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,2026-01-03 00:00,Fechado,,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado central,,,,0,,,,"-16.424307884397862, -39.136705238608734",,"Solicito manutenção preventiva mensal do ar condicionado central do CSC de acordo ao arquivo em anexo ""DINFRA.CM.17 - MANUTENÇÃO PREVENTIVA DE AR CONDICIONADO CENTRAL (CHILLER) - PMOC"".
 O acompanhamento deste chamado deve ser de acordo com as atividades descritas no ANEXO I .
 O retorno destas atividades devem ser dados à Coordenação de Manutenção ou à Coordenação de Campus do CSC, de modo que a UFSB tenha ciência das atividades preventivas realizadas no equipamento.
@@ -35243,7 +35243,7 @@ O ar condicionado das salas da Secad não estão funcionando, poderia por favor 
 2025015528,Ponto de rede,2026-01-09 09:11,Fechado,,,,Campus Paulo Freire,,,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,,0,,,,"-17.534583079307623, -39.723940092553796",,"Ponto de rede PL88 não está funcionando.
 
 Localização: Laboratório de Habilidades Médicas 1 - Complexo 2",,,Hidrossanitária > Hidráulica,,0.93,LSTM_BAIXA_CONF,Média
-2025015529,SOLICITAÇÃO PARA CONSERTO DE PORTÃO,2026-01-09 09:29,Pendente,,,,Campus Sosígenes Costa,,,,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,,0,,,,"-16.420061877245463, -39.136391365397536",,"Prezados(a), bom dia.
+2025015529,SOLICITAÇÃO PARA CONSERTO DE PORTÃO,2026-01-09 09:29,Solucionado,,,,Campus Sosígenes Costa,,,,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,,0,,,,"-16.420061877245463, -39.136391365397536",,"Prezados(a), bom dia.
 Venho solicitar, por gentileza, o conserto dos Portões da entrada do Campus.
 01 - O portão quebrou na ligação metálica (VER FOTOS 08 e 09) e está impedindo o funcionamento normal de abrir e fechar.
 02 - Os demais portões estão com as ligações estouradas no concreto (VER FOTOS 03, 04 e 05).
@@ -35840,7 +35840,7 @@ Gostaria de pedir a substituição dos cabos HDMI dos projetores das salas 02, 0
 2026020326,Instalação elétrica sala Porto Seguro,2026-02-25 16:35,Fechado,,,,Campus Sosígenes Costa,,,,,Outros > Outros,,,,0,,,,"-16.423909554595376, -39.13629623502169",,"Prezados, precisaremos instalar um laboratório de informática com 25 máquinas na sala Porto Seguro e é necessário a ampliação dos pontos elétricos para atender todos os equipamentos",,,Estrutura Predial > Infiltração,,0.72,LSTM_BAIXA_CONF,Baixa
 2026020327,Troca de DPS,2026-02-25 15:23,Fechado,,,,Campus Sosígenes Costa,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-16.424310442233665, -39.1367972326299",,"Necessidade de troca de DPS, no quadro Interdisciplinar. devido a oscilação na rede os mesmos foram acionados.
 Temos nos estoque",,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,0.29,LSTM_BAIXA_CONF,Baixa
-2026020331,Aleta do ar-condicionado - Sala de acessibilidade,2026-02-26 08:56,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Climatização > Ar condicionado,,,,0,,,,"-16.423822637563376, -39.13549260894328",,"Bom dia
+2026020331,Aleta do ar-condicionado - Sala de acessibilidade,2026-02-26 08:56,Solucionado,,,,Campus Sosígenes Costa,,,,,Climatização > Ar condicionado,,,,0,,,,"-16.423822637563376, -39.13549260894328",,"Bom dia
 Gostaria de pedir, por gentileza, que alguém viesse na sala de acessibilidade verificar a aleta do ar-condicionado, pois creio que ela não está atingindo todos os níveis possíveis de mobilidade.",,,Elétrica > Instalações elétricas,,0.81,LSTM_BAIXA_CONF,Baixa
 2026020339,"Prezados,   Favor enviar alguém para verificar o ar-condicionado da sa",2026-02-26 10:57,Fechado,,,,Reitoria,,,,,Climatização > Ar condicionado,,,,0,,,,"-14.788316740297745, -39.27483123836992",,"Prezados,
 Favor enviar alguém para verificar o ar-condicionado da sala de Lívia (tombo nº: 2019005826), pois o mesmo não está funcionando corretamente.
@@ -35872,7 +35872,7 @@ Atenciosamente,
 Jorge Costa",,,Outros > Erro de chamado,,0.16,LSTM_BAIXA_CONF,Baixa
 2026020362,Reoorganização de tomada do laboratorio de informatica,2026-02-27 11:38,Fechado,,,,Campus Sosígenes Costa,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-16.423058409985778, -39.136850127779546",,"Esta sendo reorganizado as tomada que alimentam os notebooks do laboratório
 Atividade em andamento pelo eletricista.",,,Hidrossanitária > Hidráulica,,0.77,LSTM_BAIXA_CONF,Baixa
-2026020366,Instalação de câmera na sala dos conselhos,2026-02-27 14:01,Processando (atribuído),,,,Reitoria,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,0,,,,"-14.788316740297745, -39.27483123836992",,Solicito instalação de Câmeras na sala dos conselhos,,,Elétrica > Instalações elétricas,,0.68,LSTM_BAIXA_CONF,Baixa
+2026020366,Instalação de câmera na sala dos conselhos,2026-02-27 14:01,Processando (atribuído),,,,Reitoria,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,65.8,,,,"-14.788316740297745, -39.27483123836992",,Solicito instalação de Câmeras na sala dos conselhos,Instalação de câmera na sala dos conselhos,Instalação de câmera na sala dos conselhos,Elétrica > Instalações elétricas,,0.68,LSTM_BAIXA_CONF,Baixa
 2026020368,Manutenção do Telhado CUNI Helvécia,2026-02-27 14:53,Processando (atribuído),,,,Campus Paulo Freire,,,,,"Estrutura Predial > Telhados, calhas, rufos, etc.",,,,0,,,,"-17.806897203757305, -39.66460824860207",,"Prezados, Boa tarde!
 
 Venho, por meio deste, solicitar manutenção no prédio do cuni de helvécia, em visita realizada hoje, puder verificar algumas infiltrações no telhado/forro, bem como a presença de cupins.
@@ -36105,9 +36105,9 @@ CAA CJA",,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.94,LSTM
 Atenciosamente,
 Karla de Souza.",,,Elétrica > Instalações elétricas,,0.91,LSTM_BAIXA_CONF,Baixa
 2026030268,MONTAGEM DA EXTENSÃO DE MESA EM L,2026-03-12 20:47,Fechado,,,,Campus Paulo Freire,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,0,,,,"-17.53294195326467, -39.72258736378763",,"Prezados, se possível, gentileza montar a extensão da mesa em L localizada nos fundos da Biblioteca. Pelo que observei serão necessários 4 parafusos grandes. Desde já agradeço o apoio de sempre",,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,0.38,LSTM_BAIXA_CONF,Baixa
-2026030273,Ar Condicionado,2026-03-13 13:49,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Climatização > Ar condicionado,,,,0,,,,"-16.423822637563376, -39.13549260894328",,"Boa tarde!
+2026030273,Ar Condicionado,2026-03-13 13:49,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Climatização > Ar condicionado,,,,354.6,,,,"-16.423822637563376, -39.13549260894328",,"Boa tarde!
 Solicito, por gentileza, a verificação do ar-condicionado da sala da psicóloga. Mesmo estando desligado, continua aparecendo um número no visor, como se estivesse ligado.
-Se possível, peço também a verificação da pintura da sala, pois a tinta está descascando em alguns pontos.",,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.51,LSTM_BAIXA_CONF,Baixa
+Se possível, peço também a verificação da pintura da sala, pois a tinta está descascando em alguns pontos.",Pintura de parede,Pintura de parede,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.51,LSTM_BAIXA_CONF,Baixa
 2026030275,Solicitação de manutenção em ar-condicionado,2026-03-13 14:50,Fechado,,,,Campus Paulo Freire,,,,,Climatização > Ar condicionado,,,,0,,,,#N/A,,"Prezados, boa tarde!
 Solicito, por gentileza, a realização de manutenção no aparelho de ar-condicionado instalado na UBS do Kaikan Sul, tendo em vista que o equipamento está apresentando vazamento de água.",,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,0.91,LSTM_BAIXA_CONF,Baixa
 2026030278,Remoçao de abelhas,2026-03-13 15:03,Solucionado,,,,Campus Sosígenes Costa,,,,,Outros > Outros,,,,321.64,,,,"-16.423822637563376, -39.13549260894328",,Necessitamos da retiradas de abelhas que estão alojadas na parede do fundo do banheiro feminino da área externa do pórtico.,Remoção de abelhas,Contratação de pessoa especializada em resgate de abelhas com caixa.,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,0.27,LSTM_BAIXA_CONF,Baixa
@@ -36308,13 +36308,13 @@ Diovani Favoreto",,,Estrutura Predial > Infiltração,,0.83,LSTM_BAIXA_CONF,Baix
 
 Sala temática 1, 2, 3 no Laboratório morfofuncional
 Microscopia",,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,0.34,LSTM_BAIXA_CONF,Baixa
-2026030476,Instalação de piso tátil,2026-03-27 14:11,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,0,,,,"-16.423058409985778, -39.136850127779546",,"Prezado/a, boa tarde!
+2026030476,Instalação de piso tátil,2026-03-27 14:11,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,21988.799999999996,,,,"-16.423058409985778, -39.136850127779546",,"Prezado/a, boa tarde!
 Solicito a implantação de piso tátil no pavilhão de feiras, na área das novas salas que ainda não possuem essa sinalização.
 A medida é essencial para garantir acessibilidade, segurança e autonomia às pessoas com deficiência visual, além de atender à legislação vigente, conforme a Lei nº 10.098/2000 (art. 10-A, que prevê sinalização tátil para evitar riscos) e a ABNT NBR 9050 , que estabelece a obrigatoriedade da sinalização tátil em áreas de circulação.
 A ausência desse recurso configura barreira de acessibilidade e deve ser regularizada.
 Agradeço antecipadamente.
 
-Helen Oliveira.",,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.83,LSTM_BAIXA_CONF,Baixa
+Helen Oliveira.",Instalação de piso tátil,Instalação de piso tátil,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.83,LSTM_BAIXA_CONF,Baixa
 2026030493,Adequação de sala para armazenar reagentes - Retirada de tubulação externa de energia/internet,2026-03-30 10:55,Fechado,,,,Campus Paulo Freire,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-17.534828808942148, -39.72394543442796",,"Prezados,
 Bom dia!
 Estamos adequando a antiga sala do Setor de Laboratórios para armazenar reagentes.
@@ -37062,7 +37062,7 @@ Local: Banheiro Masculino no Pavilhão administrativo, próximo ao DML",,,Manute
 Local: Banheiro Masculino próximo a Biblioteca",,,Manutenção Preventiva > Ar condicionado split,,0.89,LSTM_BAIXA_CONF,Baixa
 2026050106,Descarga não está enchendo de água,2026-05-05 11:06,Solucionado,,,,Campus Jorge Amado,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-14.770883343840165, -39.23605772449692",,"Descarga não está enchendo de água
 Local: Banheiro Feminino próximo a Biblioteca",,,Climatização > Ar condicionado,,0.95,LSTM,Baixa
-2026050108,Retirada de telhas do restaurante,2026-05-05 11:34,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Suprimentos / Apoio Técnico > Materiais,,,,0,,,,"-16.426141435445587, -39.135649217286215",,"Durante a reforma do restaurante, incluindo a substituição completa do telhado, foram identificadas telhas que foram trocadas há menos de cinco anos e ainda se encontram em bom estado. Essas telhas poderão ser reaproveitadas como estoque para futuros reparos.
+2026050108,Retirada de telhas do restaurante,2026-05-05 11:34,Solucionado,,,,Campus Sosígenes Costa,,,,,Suprimentos / Apoio Técnico > Materiais,,,,0,,,,"-16.426141435445587, -39.135649217286215",,"Durante a reforma do restaurante, incluindo a substituição completa do telhado, foram identificadas telhas que foram trocadas há menos de cinco anos e ainda se encontram em bom estado. Essas telhas poderão ser reaproveitadas como estoque para futuros reparos.
 Dessa forma, será necessária a retirada dessas telhas do restaurante e o seu transporte para um local apropriado de armazenamento, uma vez que atualmente estão em uma área que interfere no fluxo da obra.",,,Climatização > Ar condicionado,,0.97,LSTM,Baixa
 2026050110,Descarga do banheiro feminino quebrada,2026-05-05 13:57,Solucionado,,,,Campus Jorge Amado,,,,,Hidrossanitária > Hidráulica,,,,0,,,,#N/A,,"Prezado.
 
@@ -37187,7 +37187,7 @@ Troca apenas das 18 torneiras com vazamento/pingamento
 Troca dos 18 engates correspondentes
 
 Dessa forma, podemos avaliar a melhor opção entre uma substituição total do sistema antigo ou uma intervenção apenas nos pontos com problemas identificados.",Substituição de torneiras dos banheiros,Substituição de torneiras dos banheiros,Hidrossanitária > Hidráulica,,0.96,LSTM,Baixa
-2026050155,Infiltração e gotejamento na sala da PROPPG - Reitoria,2026-05-07 15:14,Processando (atribuído),,,,Reitoria,,,,,Estrutura Predial > Infiltração,,,,0,,,,"-14.788316740297745, -39.27483123836992",,"Prezados/as
+2026050155,Infiltração e gotejamento na sala da PROPPG - Reitoria,2026-05-07 15:14,Solucionado,,,,Reitoria,,,,,Estrutura Predial > Infiltração,,,,0,,,,"-14.788316740297745, -39.27483123836992",,"Prezados/as
 Boa tarde,
 
 Solicitamos, em caráter de urgência, a manutenção do teto da sala da Pró-Reitoria de Pesquisa e Pós-Graduação (PROPPG).
@@ -37507,7 +37507,7 @@ por gentileza solicito a manutenção.
 Grata!!",,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.29,LSTM_BAIXA_CONF,Baixa
 2026060036,Reparo em Mesa,2026-06-02 16:35,Fechado,,,,Campus Paulo Freire,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,0,,,,"-17.535306322127855, -39.72446535585202",,"Boa tarde!!
 Solicito o reparo na mesa do consultório 03 da clinica de psicologia. A mesma se encontra danificada.",,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.79,LSTM_BAIXA_CONF,Baixa
-2026060039,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,2026-06-03 00:00,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado central,,,,0,,,,"-16.424307884397862, -39.136705238608734",,"Solicito manutenção preventiva mensal do ar condicionado central do CSC de acordo ao arquivo em anexo ""DINFRA.CM.17 - MANUTENÇÃO PREVENTIVA DE AR CONDICIONADO CENTRAL (CHILLER) - PMOC"".
+2026060039,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,2026-06-03 00:00,Solucionado,,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado central,,,,0,,,,"-16.424307884397862, -39.136705238608734",,"Solicito manutenção preventiva mensal do ar condicionado central do CSC de acordo ao arquivo em anexo ""DINFRA.CM.17 - MANUTENÇÃO PREVENTIVA DE AR CONDICIONADO CENTRAL (CHILLER) - PMOC"".
 O acompanhamento deste chamado deve ser de acordo com as atividades descritas no ANEXO I .
 O retorno destas atividades devem ser dados à Coordenação de Manutenção ou à Coordenação de Campus do CSC, de modo que a UFSB tenha ciência das atividades preventivas realizadas no equipamento.
 Caso haja alguma necessidade de material(is) para manutenção corretiva, este(s) deverá(ão) ser solicitado(s) de imediato de modo que a aquisição seja o mais rápido possível.
@@ -37553,7 +37553,7 @@ Atenciosamente,",,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.2
 2026060072,Manutenção Preventiva Mensal - Ar condicionado - CSC - Espaço de Leitura,2026-06-05 00:00,Solucionado,,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado split,,,,0,,,,"-16.424657613462742, -39.135949237122865",,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,,Manutenção Preventiva > Ar condicionado central,,0.99,LSTM,Baixa
 2026060073,Manutenção Preventiva Mensal - Ar condicionado - CSC - Laboratórios,2026-06-05 00:00,Solucionado,,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado split,,,,0,,,,"-16.424310442233665, -39.1367972326299",,,,,Manutenção Preventiva > Ar condicionado split,,0.57,LSTM_BAIXA_CONF,Baixa
 2026060074,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Convenções,2026-06-05 00:00,Solucionado,,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado split,,,,0,,,,"-16.425315471783644, -39.1356215455011",,,,,"Estrutura Predial > Telhados, calhas, rufos, etc.",,0.14,LSTM_BAIXA_CONF,Baixa
-2026060075,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Feiras,2026-06-05 00:00,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado split,,,,0,,,,"-16.423058409985778, -39.136850127779546",,,,,Estrutura Predial > Infiltração,,0.26,LSTM_BAIXA_CONF,Baixa
+2026060075,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Feiras,2026-06-05 00:00,Solucionado,,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado split,,,,0,,,,"-16.423058409985778, -39.136850127779546",,,,,Estrutura Predial > Infiltração,,0.26,LSTM_BAIXA_CONF,Baixa
 2026060076,Manutenção Preventiva Mensal - Ar Condicionado - CSC - Pórtico,2026-06-05 00:00,Solucionado,,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado split,,,,0,,,,"-16.423822637563376, -39.13549260894328",,,,,Climatização > Ar condicionado,,0.91,LSTM_BAIXA_CONF,Baixa
 2026060077,Manutenção Preventiva Mensal - Ar condicionado - CPF - Laboratório de Habilidades,2026-06-05 00:00,Fechado,,,,Campus Paulo Freire,,,,,Manutenção Preventiva > Ar condicionado split,,,,0,,,,"-17.534583079307623, -39.723940092553796",,,,,Elétrica > Iluminação,,0.9,LSTM_BAIXA_CONF,Baixa
 2026060078,Manutenção Preventiva Mensal - Ar condicionado - CSC - LABMOL,2026-06-05 00:00,Solucionado,,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado split,,,,0,,,,"-16.424310442233665, -39.1367972326299",,,,,Hidrossanitária > Hidráulica,,0.77,LSTM_BAIXA_CONF,Baixa
@@ -37658,7 +37658,7 @@ Rosane",,,Área Externa e Ambiental > Manutenção área externa / meio ambiente
 2026060246,Marceneta quebrada,2026-06-18 10:01,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,,0,,,,#N/A,,,,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.49,LSTM_BAIXA_CONF,Média
 2026060253,Vazamento mictório CFCAF,2026-06-18 14:35,Solucionado,,,,Campus Jorge Amado,,,,,Hidrossanitária > Hidráulica,,,,0,,,,#N/A,,,,,Hidrossanitária > Hidráulica,,0.89,LSTM_BAIXA_CONF,Baixa
 2026060267,Solicitação de Troca de Televisores,2026-06-18 22:49,Fechado,,,,Campus Paulo Freire,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,0,,,,"-17.53335341230621, -39.72217542816204",,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,0.22,LSTM_BAIXA_CONF,Baixa
-2026060269,Manutenção do Forro do Auditório,2026-06-19 08:42,Solucionado,,,,Campus Paulo Freire,,,,,Estrutura Predial > Forro,,,,0,,,,"-17.534582646209113, -39.72461446135704",,"Prezados, bom dia!
+2026060269,Manutenção do Forro do Auditório,2026-06-19 08:42,Fechado,,,,Campus Paulo Freire,,,,,Estrutura Predial > Forro,,,,0,,,,"-17.534582646209113, -39.72461446135704",,"Prezados, bom dia!
 
 Solicito, por gentileza, a realização de manutenção corretiva no forro do Auditório do Núcleo Pedagógico, tendo em vista que foram constatados sinais de deslocamento e comprometimento de sua estabilidade.
 
@@ -37730,21 +37730,21 @@ OBS: O produto já foi comprado e se encontra sobre a minha mesa.
 At.te
 
 Samuel",,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.63,LSTM_BAIXA_CONF,Baixa
-2026060336,Troca de Lâmpadas na Sala da NTI (Nucleo de TI),2026-06-29 11:59,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Elétrica > Iluminação,,,,0,,,,"-16.424036771315144, -39.13615281834591",,Solicito Verificação das Luminárias da Sala no Núcleo de Tecnoligia da Informação. Foram sinalizados que as mesmas estão com 3 lâmpadas queimadas e prejudicando a iluminação da Sala. Diante disso solicito a troca das referidas lâmpadas.,,,Elétrica > Iluminação,,0.96,LSTM,Baixa
+2026060336,Troca de Lâmpadas na Sala da NTI (Nucleo de TI),2026-06-29 11:59,Solucionado,,,,Campus Sosígenes Costa,,,,,Elétrica > Iluminação,,,,0,,,,"-16.424036771315144, -39.13615281834591",,Solicito Verificação das Luminárias da Sala no Núcleo de Tecnoligia da Informação. Foram sinalizados que as mesmas estão com 3 lâmpadas queimadas e prejudicando a iluminação da Sala. Diante disso solicito a troca das referidas lâmpadas.,,,Elétrica > Iluminação,,0.96,LSTM,Baixa
 2026060338,Manutenção Preventiva Bimensal - Gerador 75 kVA - Reitoria,2026-06-30 00:00,Processando (atribuído),,,,Reitoria,,,,,Manutenção Preventiva > Gerador,,,,0,,,,"-14.788316740297745, -39.27483123836992",,"Solicito manutenção preventiva bimensal do gerador de 75 kVA do Campus Sosígenes Costa conforme documento em anexo. Favor seguir roteiro conforme Anexo I, pág. 04 e 05. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,,Manutenção Preventiva > Gerador,,0.99,LSTM,Baixa
 2026060352,Solicitação de manutenção – Cadeira de trabalho,2026-06-30 15:37,Solucionado,,,,Reitoria,,,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,,,0,,,,"-14.788316740297745, -39.27483123836992",,Gostaria de solicitar a manutenção da cadeira que utilizo em minha estação de trabalho. Ela está com o braço solto e com problemas na regulagem de altura.,,,"Instalação de Acessórios e Mobiliário > Instalação/Reparo de Equipamentos, Acessórios e Mobiliários",,0.22,LSTM_BAIXA_CONF,Baixa
-2026060355,"Prezados, boa tarde.  Poderia por favor realizar a instalação de uma t",2026-06-30 16:12,Novo,,,,Campus Jorge Amado,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-14.77147998352185, -39.23434744042999",,"Prezados, boa tarde.
+2026060355,"Prezados, boa tarde.  Poderia por favor realizar a instalação de uma t",2026-06-30 16:12,Processando (atribuído),,,,Campus Jorge Amado,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-14.77147998352185, -39.23434744042999",,"Prezados, boa tarde.
 Poderia por favor realizar a instalação de uma tomada no DML (sala de André).",,,Elétrica > Instalações elétricas,,0.32,LSTM_BAIXA_CONF,Baixa
-2026060356,"Prezados, boa tarde.  Poderiam verificar a possibilidade de trocas de",2026-06-30 16:14,Novo,,,,Campus Jorge Amado,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,0,,,,"-14.77147998352185, -39.23434744042999",,"Prezados, boa tarde.
+2026060356,"Prezados, boa tarde.  Poderiam verificar a possibilidade de trocas de",2026-06-30 16:14,Processando (atribuído),,,,Campus Jorge Amado,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,0,,,,"-14.77147998352185, -39.23434744042999",,"Prezados, boa tarde.
 Poderiam verificar a possibilidade de trocas de espelhos nos banheiros no NGVA.",,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,0.52,LSTM_BAIXA_CONF,Baixa
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026070001,Manutenção portão Reitoria,2026-07-01 08:44,Solucionado,,,,Reitoria,,,,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,,0,,,,"-14.788316740297745, -39.27483123836992",,,,,"Estrutura Predial > Esquadrias, porta, portão e janelas",,0.58,LSTM_BAIXA_CONF,Baixa
+2026070007,Aujuda com mão de obra para instalção de horta escolar,2026-07-01 09:57,Processando (atribuído),,,,Campus Jorge Amado,,,,,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,,0,,,,"-14.77147998352185, -39.23434744042999",,,,,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,0.49,LSTM_BAIXA_CONF,Baixa
+2026070013,Acesso para lançamento das notas,2026-07-01 13:31,Solucionado,,,,Campus Jorge Amado,,,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,,0,,,,"-14.77147998352185, -39.23434744042999",,,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.35,LSTM_BAIXA_CONF,Baixa
+2026070017,Problema com o ar condicionado,2026-07-01 15:11,Processando (atribuído),,,,Reitoria,,,,,Climatização > Ar condicionado,,,,0,,,,"-14.788316740297745, -39.27483123836992",,,,,Climatização > Ar condicionado,,0.91,LSTM_BAIXA_CONF,Baixa
+2026070022,Boa noite!  Por alguma razão não estou recebendo e-mails. Meus alunos,2026-07-01 19:45,Novo,,,,Campus Sosígenes Costa,,,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,,0,,,,"-16.423909554595376, -39.13629623502169",,,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.26,LSTM_BAIXA_CONF,Baixa
+2026070024,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,2026-07-03 00:00,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado central,,,,0,,,,"-16.424307884397862, -39.136705238608734",,,,,Manutenção Preventiva > Ar condicionado central,,0.5,LSTM_BAIXA_CONF,Baixa
+2026070025,Manutenção Preventiva Mensal - Ar Condicionado Central - CSC - Tratamento Químico Mensal da Água de Condensação,2026-07-03 00:00,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Ar condicionado central,,,,0,,,,"-16.424307884397862, -39.136705238608734",,,,,Manutenção Preventiva > Ar condicionado central,,0.96,LSTM,Baixa
+2026070026,Manutenção Preventiva Mensal - Ar condicionado - Reitoria,2026-07-03 00:00,Processando (atribuído),,,,Reitoria,,,,,Manutenção Preventiva > Ar condicionado split,,,,0,,,,"-14.788316740297745, -39.27483123836992",,,,,Manutenção Preventiva > Ar condicionado split,,0.91,LSTM_BAIXA_CONF,Baixa
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,2 +1,2 @@
 ﻿Timestamp,N_Amostras,N_Classes,Acuracia,Precision_Macro,Recall_Macro,F1_Macro,F1_Weighted,Balanced_Accuracy,Hash_Base,Maquina,Versao_Motor
-2026-07-01T09:40:50.000Z,13877,51,0.777,0.4023,0.4019,0.3934,0.7559,0.4019,9a09990af65bbba4,GOOGLE_COLAB_CLOUD [LSTM],v4.0.8
+2026-07-03T09:08:17.000Z,13877,51,0.7759,0.3783,0.3816,0.3731,0.7504,0.3816,9a09990af65bbba4,GOOGLE_COLAB_CLOUD [LSTM],v4.0.8
