@@ -1,30 +1,38 @@
 {
-  "gerado_em_utc": "2026-07-03T09:44:23.949370Z",
+  "gerado_em_utc": "2026-07-04T09:07:40.886489Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
-  "acerto_validado": 0.9558,
+  "acerto_validado": 0.9549,
   "ic95": [
-    0.9498,
-    0.9611
+    0.9489,
+    0.9603
   ],
   "n": 4681,
   "validados_na_bancada": 4681,
   "ranking": [
     {
       "modelo": "linear_svc",
-      "acerto_validado": 0.9558,
+      "acerto_validado": 0.9549,
       "ic95": [
-        0.9498,
-        0.9611
+        0.9489,
+        0.9603
       ]
     },
     {
       "modelo": "sgd",
-      "acerto_validado": 0.9519,
+      "acerto_validado": 0.95,
       "ic95": [
-        0.946,
-        0.9579
+        0.9436,
+        0.9562
+      ]
+    },
+    {
+      "modelo": "random_forest",
+      "acerto_validado": 0.9477,
+      "ic95": [
+        0.9413,
+        0.9539
       ]
     },
     {
@@ -37,18 +45,10 @@
     },
     {
       "modelo": "regressao_logistica",
-      "acerto_validado": 0.9468,
+      "acerto_validado": 0.9442,
       "ic95": [
-        0.9404,
-        0.9532
-      ]
-    },
-    {
-      "modelo": "random_forest",
-      "acerto_validado": 0.9449,
-      "ic95": [
-        0.9385,
-        0.9511
+        0.9374,
+        0.9509
       ]
     },
     {
@@ -60,6 +60,6 @@
       ]
     }
   ],
-  "n_registros": 13884,
+  "n_registros": 13898,
   "observacao": "Classificacao validada importada do repo classificacao-chamados; sem texto do chamado. NAO substitui log_classificacao.json."
 }
