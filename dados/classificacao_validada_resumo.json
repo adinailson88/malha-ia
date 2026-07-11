@@ -1,5 +1,5 @@
 {
-  "gerado_em_utc": "2026-07-10T10:03:49.869925Z",
+  "gerado_em_utc": "2026-07-11T08:25:46.159166Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
@@ -60,6 +60,6 @@
       ]
     }
   ],
-  "n_registros": 13924,
+  "n_registros": 13942,
   "observacao": "Classificacao validada importada do repo classificacao-chamados; sem texto do chamado. NAO substitui log_classificacao.json."
 }
