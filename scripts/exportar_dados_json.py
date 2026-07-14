@@ -286,6 +286,28 @@ def exportar(base_url: str, saida: Path, incluir_filtradas: bool, workers: int) 
     manifesto["total_falhas"] = len(manifesto["falhas"])
     manifesto["total_falhas_criticas"] = len(manifesto["falhas_criticas"])
     manifesto["total_falhas_opcionais"] = len(manifesto["falhas_opcionais"])
+
+    # Uma indisponibilidade temporaria do Apps Script nao deve apagar o ultimo
+    # conjunto de dados valido. Quando nenhuma aba nova for obtida, conserva o
+    # manifesto anterior se ele ainda referencia exportacoes validas. Os JSONs
+    # existentes tambem permanecem intactos porque cada arquivo so e escrito
+    # depois que a respectiva aba e recebida com sucesso.
+    caminho_manifesto = saida / "manifest.json"
+    if not manifesto["abas"] and caminho_manifesto.exists():
+        try:
+            manifesto_anterior = json.loads(caminho_manifesto.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            print(f"Aviso: manifesto anterior invalido; sera substituido: {exc}", file=sys.stderr)
+        else:
+            if manifesto_anterior.get("abas"):
+                manifesto["manifesto_anterior_preservado"] = True
+                print(
+                    "Aviso: nenhuma aba nova foi exportada; "
+                    "o ultimo manifesto valido foi preservado.",
+                    file=sys.stderr,
+                )
+                return manifesto
+
     salvar_json(saida / "manifest.json", manifesto)
     return manifesto
 
