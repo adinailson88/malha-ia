@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - '.github/workflows/atualizar-dados-json.yml'
+      - 'scripts/exportar_dados_json.py'
   schedule:
     - cron: '0 6 * * 1,3,5'
 
