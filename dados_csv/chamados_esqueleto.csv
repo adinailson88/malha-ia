@@ -37268,7 +37268,7 @@ Atenciosamente,",,
 2026050277,Forro,Estrutura Predial > Forro,"Bom dia! Peço a gentileza de por essas placas que saíram, na sala do serviço social.",,
 2026050283,Instalar suporte para sabonete líquido,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Instalar suporte para sabonete líquido
 Local: BANHEIRO FEMININO - Ala administrativa",,
-2026050289,Montagem de subestação,Elétrica > Subestação,"Montagem de subestação de 225 kVA próximo ao setor de transportes da Ceplac, para atendimento das demandas de iluminação da portaria, rodovia e via de entrada da Ceplac/UFSB.",Montagem de subestação aérea,Montagem de subestação aérea de 225 KVA. Alguns materiais estão disponíveis e o restante precisa ser comprado.
+2026050289,Montagem de subestação,Elétrica > Subestação,"Montagem de subestação de 225 kVA próximo ao setor de transportes da Ceplac, para atendimento das demandas de iluminação da portaria, rodovia e via de entrada da Ceplac/UFSB.",Montagem de subestação aérea; Complementar de Montagem de subestação aérea,Montagem de subestação aérea de 225 KVA. Alguns materiais estão disponíveis e o restante precisa ser comprado.; Complementar de Montagem de subestação aérea
 2026050292,Problema com o freio da porta de entrada da biblioteca,"Estrutura Predial > Esquadrias, porta, portão e janelas",Solicito a regulagem do freio da porta de entrada da biblioteca. Ele demora alguns minutos para retornar a posição e os estudantes forçam a porta para acelerar o processo o que incorre no risco de dano a estrutura.,,
 2026050295,Porta com dificuldade para abrir e fechar,"Estrutura Predial > Esquadrias, porta, portão e janelas","Porta com dificuldade para abrir e fechar
 Favor Ajustar
@@ -37422,7 +37422,7 @@ Local: Pavilhão Administrativo",,
 Após verificação em campo, foi identificado que toda a rede alimentada pelo gerador (rede de emergência) não estava funcionando. Diante disso, foi acionado um técnico externo para análise do sistema, sendo constatado que a contatora apresentou defeito.
 Foi realizada busca no comércio local, porém não foi encontrada uma peça disponível para substituição imediata. Para restabelecer o funcionamento do sistema emergencial, o técnico disponibilizou temporariamente uma contatora de sua propriedade, permitindo a normalização provisória da operação até a aquisição de uma nova peça.
 Será encaminhado um orçamento referente à mão de obra do atendimento realizado no dia 25/05/2026, bem como outro orçamento referente ao fornecimento e substituição da nova contatora que será adquirida.",Troca de contatora,Serviço de manutenção no quadro de emergência.
-2026050403,AQUISICAO DE BOMBA DO POCO DE DETRITOS,Hidrossanitária > ETA / ETE,Necessidade de aquisição de bomba centrífuga para lancamento de esgoto na rede da embasa. As bombas existentes nao estao suportando o processo,Compra de nova bomba do poço; Serviços complementares de instalação da bomba de esgoto,"Compra de nova bomba para o poço de detritos do Campus Sosígenes Costa. A bomba referenciada é idêntica a atualmente instalada, modelo HT. A bomba deve vir acompanhada do chumbador químico.; Serviços complementares de instalação da bomba de esgoto"
+2026050403,AQUISICAO DE BOMBA DO POCO DE DETRITOS,Hidrossanitária > ETA / ETE,Necessidade de aquisição de bomba centrífuga para lancamento de esgoto na rede da embasa. As bombas existentes nao estao suportando o processo,Compra de nova bomba do poço; Serviços complementares de instalação da bomba de esgoto; Limpeza de fossa,"Compra de nova bomba para o poço de detritos do Campus Sosígenes Costa. A bomba referenciada é idêntica a atualmente instalada, modelo HT. A bomba deve vir acompanhada do chumbador químico.; Serviços complementares de instalação da bomba de esgoto; Limpeza de fossa"
 2026050406,Instalação de Pontos Elétricos e de Lógica,Elétrica > Instalações elétricas,"Prezados, boa tarde!
 Solicito, por gentileza, a instalação de dois pontos de tomadas no Gabinete 28 e de um ponto de lógica no Gabinete 20, ambos localizados na Pétala E do Núcleo Pedagógico.
 Atenciosamente,",,
@@ -37933,3 +37933,15 @@ Deste modo não consigo finalizar a inserção do plano de ensino da disciplina.
 CCS0829 - METODOLOGIA CIENTÍFICA E TECNOLÓGICA [ FG-EPT ] (60h) - Turma: 04 (2026.1)",,
 2026070150,Fotovoltaico da Reitoria,Elétrica > Sistema Fotovoltaico (FV),"Chamado para apoio à instalação do fotovoltaico da Reitoria. Aqui serão liberados todas as OSs relativos a esse serviço.
 Por enquanto, liberar confecção de placa de pvc de sinalização.",Placa de sinalização de sistema fotovoltáico,Placa de sinalização de sistema fotovoltáico
+2026070152,Compra de  6 lamina para roçadeira Sthill,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,
+2026070154,Manutenção ar condicionado,Climatização > Ar condicionado,,,
+2026070157,VAZAMENTO INTENSO DE ÁGUA PELO AR CONDICIONADO,Climatização > Ar condicionado,,,
+2026070160,Remoção de Torneira,Hidrossanitária > Hidráulica,,,
+2026070161,Placa de identificação Laboratório Interdisciplinar 2,Instalação de Acessórios e Mobiliário > Placas de identificação,,Placa de identificação Laboratório Interdisciplinar 2,Placa de identificação Laboratório Interdisciplinar 2
+2026070162,"Prezados,     Fiz contato com Edcarllos solicitando a liberação do ace",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026070164,Inserção de email nas listas/grupos de email,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026070168,Solicitação de ajuda em projeto de extensão,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026070176,Gerador com defeito,Elétrica > Gerador,,,
+2026070177,Soliclitação de perfil de gestor da proex no SIGAA,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026070179,Troca de papeleira e tampa sanitário.,Hidrossanitária > Hidráulica,,,
+2026070188,Problema com disjuntores.,Elétrica > Instalações elétricas,,,
