@@ -6,7 +6,7 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 
 - Referências selecionadas nesta etapa: **118**
 - Fichas com resumo já disponível: **73**
-- Fichas que ainda exigem leitura integral: **45**
+- Fichas com arquivo disponível e resumo analítico ainda não cadastrado no índice: **45**
 - Índice geral: [00_INDICE_ACERVO.xlsx](https://docs.google.com/spreadsheets/d/1hpSUv-qeEBpCTeQ0CFDROuTq8rSrmraV/edit)
 - Pasta principal do acervo: [Google Drive](https://drive.google.com/drive/folders/1cNnLTU6ENFIUX5yi6M17QO-o-kfaf5al)
 
@@ -16,12 +16,12 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 2. Leia o resumo e a indicação de uso no repositório.
 3. Antes de citar método, número ou conclusão específica, abra o PDF pelo link do Drive e confirme a informação in loco.
 4. Não trate “aderência” como qualidade metodológica; ela indica proximidade temática com o projeto.
-5. Itens marcados como leitura pendente servem apenas como candidatos até a conferência integral.
+5. Itens sem resumo analítico cadastrado possuem arquivo disponível no Drive; confirme no documento os dados específicos antes de citar.
 
 ## Plano de atualização por etapas
 
 - **Etapa 1 — concluída neste arquivo:** inventário, seleção por aderência, links diretos e incorporação dos resumos já existentes.
-- **Etapa 2:** leitura integral dos itens pendentes, processada por pasta do Drive na ordem 01 a 08.
+- **Etapa 2:** elaboração de resumos analíticos completos dos itens ainda sem síntese cadastrada, processados por pasta do Drive na ordem 01 a 08, com citações, páginas e conferência no texto original.
 - **Etapa 3:** revisão da aderência específica ao repositório e inclusão de trechos de uso recomendado, limitações e páginas relevantes.
 - **Etapa 4:** atualização contínua quando novos documentos forem adicionados ao índice do acervo.
 
@@ -35,8 +35,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** APO; ambientes escolares; manutenção; segurança
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “APO”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “APO”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1aqYZCchOFKeLs7K6FuRPtndwQ5MR7BNL/view?usp=drivesdk)
 
 ### 2. Abiko, A. K.; Ornstein, S. W. (orgs.) (2002) — Inserção Urbana e Avaliação Pós-Ocupação (APO) da Habitação de Interesse Social (Coletânea HABITARE, v.1)
@@ -47,8 +47,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** APO; habitação de interesse social; inserção urbana
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “APO”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “APO”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1tg0vxIgNll3R6-WwGBiZRFv73ClGdneB/view?usp=drivesdk)
 
 ### 3. Lateef, O. A.; Khamidi, M. F.; Idrus, A. (2010) — Building Maintenance Management in Malaysian University Campuses: A Case Study
@@ -143,8 +143,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Facility management; manutenção predial; UFPE
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “FacilityManagement”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “FacilityManagement”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1hVlog7jo06UzzVlceHh-AC_kHuVbGH-0/view?usp=drivesdk)
 
 ### 11. Aldairi, J.; Khan, M. K.; Munive-Hernandez, J. E. (2017) — Knowledge-based Lean Six Sigma maintenance system for sustainable buildings
@@ -239,8 +239,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Norma técnica; facility management; sistema de gestão
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “FacilityManagement”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “FacilityManagement”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1MfNeUn4dNirTsthzWTSW59a7o_tsLUcr/view?usp=drivesdk)
 
 ### 19. Hardt (2021) — TPM Industry 4 0
@@ -251,8 +251,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “TPM”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “TPM”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1E0NxQ6VTYACrHwrPDl8a25_39umJt1W9/view?usp=drivesdk)
 
 ### 20. Brandão, N. L. S. (2021) — Gestão da manutenção predial em Instituições Federais de Ensino do Estado de Sergipe: proposição de diretrizes
@@ -407,8 +407,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “ManutencaoPreditiva”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “ManutencaoPreditiva”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/16_ARpNT5IVTkeC-0NxeTu_swt6V7I6f4/view?usp=drivesdk)
 
 ### 33. Pimenta, D.; Silva, E. C. R. da; Santana, E. R. de; Nascimento, F. A. R. do; Teixeira, G. A. da S.; Santos, G. S.; Pipa, H. D. C. (2024) — Aplicação de soluções de inteligência artificial para análise e melhoria da estratégia de manutenção
@@ -481,8 +481,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** IA neuro-fuzzy; manutenção predial; predição de vida útil; cadeia de Markov
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “IA”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “IA”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1S2hC9FvNzaY5tCngL9WrfzpPJWPlNgp_/view?usp=drivesdk)
 
 ### 2. Manning, C. D.; Raghavan, P.; Schütze, H. (2009) — An Introduction to Information Retrieval
@@ -601,8 +601,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “DigitalTwin”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “DigitalTwin”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1X3mKeRrvnHyk8wGfuHY3UG72lDIYgxrF/view?usp=drivesdk)
 
 ### 12. Siqueira, M. B.; Santos, V. M. dos; Diniz, E. H.; Cruz, A. P. A. (2024) — Artificial Intelligence for Sustainability: A Systematic Literature Review in Information Systems
@@ -685,8 +685,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “IA”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “IA”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1WrTdA5Q6QecQdmKMAo92DO-E3XMH-3Sx/view?usp=drivesdk)
 
 ### 19. Udemy Business (2025) — O manual da era do desempenho: um guia para potencializar a força de trabalho humana + IA
@@ -697,8 +697,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** IA; capacitação; força de trabalho (material corporativo)
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “IA”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “IA”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1OgXhZnOYe4SZEI2rhfNKVs3JyWtHFjNG/view?usp=drivesdk)
 
 ### 20. Prates, R. M. (2025) — Aprendizagem de Máquina – Parte 1 (Aula síncrona, Residência)
@@ -733,8 +733,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “IA”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “IA”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1I7o3nX2_yobfbiBvmi5SwapOPKEjYnv5/view?usp=drivesdk)
 
 ### 23. Cao (2026) — End Software Engineering AI Agents
@@ -745,8 +745,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “IA”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “IA”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/16LLLBNVmT4fF22h-eTHRl44cNBpHBeyS/view?usp=drivesdk)
 
 ### 24. Huang (2026) — Why Larger Models Learn More
@@ -757,8 +757,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “IA”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “IA”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1NqPjdaRP01FkITwr27uHU9RN5TRqO5HU/view?usp=drivesdk)
 
 ### 25. Kontonis (2026) — MEMENTO LLM Manage Context
@@ -769,8 +769,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “IA”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “IA”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1qNX9gNVhKTQsf82SJAUEtb4SrT9r4kIC/view?usp=drivesdk)
 
 ### 26. Osmani, A. (com Steinberger, P.; Cherny, B.) (2026) — Loop Engineering: The Anthropic Playbook for Designing Systems That Prompt Your Agents
@@ -807,8 +807,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Estatistica”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Estatistica”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1qDYxOoL5zhLZVTBxq-8LlixoVVh2mfnU/view?usp=drivesdk)
 
 ### 3. Fornara, F.; Bonaiuto, M.; Bonnes, M. (2010) — Cross-Validation of Abbreviated Perceived Residential Environment Quality (PREQ) and Neighborhood Attachment (NA) Indicators
@@ -819,8 +819,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Psicometria; qualidade ambiental percebida; apego ao bairro
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Psicometria”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Psicometria”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1shasc9eKJOtvR-Mbzai3LjHo283BbhKJ/view?usp=drivesdk)
 
 ### 4. Razali (2011) — Power Comparisons Normality Tests
@@ -831,8 +831,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Estatistica”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Estatistica”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/14y9niXJ4DTQDXrvc55ti2nTcFxq41cPV/view?usp=drivesdk)
 
 ### 5. Landeiro (2011) — Introducao Programa R
@@ -843,8 +843,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Estatistica”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Estatistica”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1W6pPxFvhwUuDXbPVb-XwdEHZb5N1bZ1w/view?usp=drivesdk)
 
 ### 6. Suh, D.; Chang, S. (2012) — An Energy and Water Resource Demand Estimation Model for Multi-Family Housing Complexes in Korea
@@ -903,8 +903,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Contratação de energia; otimização; análise de sensibilidade
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Energia”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Energia”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/11z3lphEPUJ2rbB0qlg3HpQ-wvvS4vxUF/view?usp=drivesdk)
 
 ### 11. Hassanizadeh, N.; Noorzai, E. (2020) — Improving lighting efficiency in existing art museums: a case study
@@ -975,8 +975,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Financiamento”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Financiamento”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1jGcyFoXCROEFPLDnRtu8ibZlQmOMPB4Y/view?usp=drivesdk)
 
 ### 17. Bhadiyadra, V. (2025) — Life Cycle Cost Analysis of Green Industrial Buildings
@@ -987,8 +987,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Custo de ciclo de vida (LCC); edifícios industriais verdes
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Custos”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Custos”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1qFYACnvV0_yO3cccY98m6idLdoXwuinf/view?usp=drivesdk)
 
 ### 18. Leite Ribeiro, L. M.; Piccinini Scolaro, T.; Ghisi, E. (2025) — LEED Certification in Building Energy Efficiency: A Review of Its Performance Efficacy and Global Applicability
@@ -999,8 +999,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** LEED; eficiência energética; certificação de edifícios
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “EficienciaEnergetica”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “EficienciaEnergetica”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1LsPT_XkuwKVDUX2gGDNx4SHsmbZW4Flj/view?usp=drivesdk)
 
 ## 05_Sustentabilidade_ODS_e_Ambiental
@@ -1013,8 +1013,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Epistemologia ambiental; interdisciplinaridade; racionalidade ambiental
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Ambiental”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Ambiental”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1zS9ZRaE2MXvQTccEwcHS4kqKINy-1pgR/view?usp=drivesdk)
 
 ### 2. (não identificado – PDF digitalizado) (2006) — Métodos e Técnicas de Análise Ambiental
@@ -1025,8 +1025,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Análise ambiental; métodos e técnicas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Ambiental”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Ambiental”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1njp8Q5A_bWY3jR6k_wbY6iNHTeRZz7eF/view?usp=drivesdk)
 
 ### 3. Gonçalves, T. M. (2009) — Habitação e sustentabilidade urbana
@@ -1037,8 +1037,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Habitação; sustentabilidade urbana; psicologia ambiental
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1gk1F7pOxoluymUAs6uz_E6l6k-0ON6GP/view?usp=drivesdk)
 
 ### 4. Souza, M. J. N. de; Oliveira, V. P. V. de (2011) — Análise ambiental – uma prática da interdisciplinaridade no ensino e na pesquisa
@@ -1049,8 +1049,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Análise ambiental; interdisciplinaridade; geossistemas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Ambiental”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Ambiental”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1FrWEr_rIqTOdoKaMGvlSyOxSF7mPP_n8/view?usp=drivesdk)
 
 ### 5. Ribeiro, C. A. B. C.; Fortunato, R. A.; Machado, C. C. L. (2012) — Caminhos da sustentabilidade urbana: o desafio da construção da gestão dos riscos socioambientais urbanos
@@ -1061,8 +1061,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Sustentabilidade urbana; riscos socioambientais; governança
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1xuSCxJBbOmdcxbyXNXwP7bB8-YNDbJSA/view?usp=drivesdk)
 
 ### 6. Ribeiro, J. A. G.; Cavassan, O. (2013) — As quatro dimensões da relação homem-meio ambiente
@@ -1097,8 +1097,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Escola sustentável; educação ambiental; espaços criativos
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1NBUwZTDJ78SKU5JQTg_XhNnyNTuo8bjk/view?usp=drivesdk)
 
 ### 9. Matthews, E.; Friedland, C. J.; Orooji, F. (2016) — Optimization of Sustainability and Flood Hazard Resilience for Home Designs
@@ -1133,8 +1133,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1vg1GnAQg4FTioplKMEO2Yt8q9vBxip4L/view?usp=drivesdk)
 
 ### 12. Vien (2024) — SDGs Higher Education
@@ -1145,8 +1145,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “ODS”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “ODS”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1SIjuQFKxH7B4AOQcnVF61QNrIeXZUyH8/view?usp=drivesdk)
 
 ### 13. Araújo, H. B.; Soares, P. V.; Espuny, M.; Oliveira, O. J. de (2024) — Improving water efficiency in higher education institutions: contributions from the Boa Vista Campus of the Federal Institute of Roraima
@@ -1193,8 +1193,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Percepção; sustentabilidade urbana; Brasil
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Sustentabilidade”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1fntW77p-PH_J8xuJ2xyjCgm36IIjtckA/view?usp=drivesdk)
 
 ### 17. Rodrigues, J. A. M.; Cândido, L. F.; Lima, S. H. de O.; Alexandre, A. M. B. (2024) — Barreiras e vetores da adoção do reúso de água em edificações: uma análise sociotécnica no Estado do Ceará, Brasil
@@ -1219,8 +1219,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Biossistemas”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Biossistemas”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1NS4YKwpTek_X11KS3I8Hbc-MeDsobpmA/view?usp=drivesdk)
 
 ## 07_Contexto_Universitario_e_Urbano
@@ -1233,8 +1233,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Habitação de interesse social; sustentabilidade; MCMV
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Habitacao”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Habitacao”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1TrS12gb_hwYOqbceC3NpBfSxWYpn6s7t/view?usp=drivesdk)
 
 ### 2. Denez (2016) — Dilemas Universidades Multicampi
@@ -1245,8 +1245,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Multicampi”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Multicampi”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1pNF8b26izcfJykbd0V5RSD1OJf0zyWkV/view?usp=drivesdk)
 
 ### 3. Macke, J.; Casagrande, R. M.; Sarate, J. A. R.; Silva, K. A. (2018) — Smart City and Quality of Life: citizens' perception in a Brazilian case study
@@ -1257,8 +1257,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Smart city; qualidade de vida; percepção
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “SmartCity”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “SmartCity”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1EAYK_AkXNytvDm1llSSIvbILjiDwj3qO/view?usp=drivesdk)
 
 ### 4. Curi Filho, W. R. (2018) — Impacto da universidade na comunidade: um estudo de caso em uma instituição pública brasileira
@@ -1269,8 +1269,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Universidade; impacto na comunidade; estudo de caso
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Universidade”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Universidade”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1hwghWKzLBoKnWGUl55z-ya1kpnm9DBnO/view?usp=drivesdk)
 
 ### 5. Faganello, A. M. P. (2019) — Estudo sistêmico das inter-relações dos construtos que influenciam a satisfação residencial (modelo a partir da percepção cognitiva do indivíduo)
@@ -1281,8 +1281,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Satisfação residencial; construtos; modelo sistêmico
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “SatisfacaoResidencial”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “SatisfacaoResidencial”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1mY03B3tqUjQt1Y23Qf6o9LccAEktkEVi/view?usp=drivesdk)
 
 ### 6. Calderari, E. S.; Felipe, J. P. (orgs.) (2021) — Novos Campi Universitários Brasileiros: Processos e Impactos – Volume 1
@@ -1293,8 +1293,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Campi universitários; expansão universitária
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Campi”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Campi”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1ORhe8uRCMUcCf-bycjRyOzDqlrsaaa4E/view?usp=drivesdk)
 
 ### 7. Araujo, C. I. P. da R. de; Machado, G. A.; Silva, L. S. da; Oliveira, A. da S.; Macke, J. (2023) — Smart city como promotora de qualidade de vida, atividade física e saúde: análise da cidade que acolhe a COP 30 – Belém
@@ -1305,8 +1305,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Smart city; qualidade de vida; Belém
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “SmartCity”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “SmartCity”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1bVwndpWZruRbK22ZympEFpWompkfdMSd/view?usp=drivesdk)
 
 ### 8. Alici, N. (2026) — IoT-enabled indoor environments in smart cities: a systematic review on energy efficiency, user comfort, and environmental sustainability
@@ -1329,8 +1329,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Campi universitários; expansão universitária
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Campi”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Campi”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1AgkHMzQYdZb1hAAklTgTd3OGdZMyQKN5/view?usp=drivesdk)
 
 ## 08_Metodologia
@@ -1343,8 +1343,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Metodologia; redação de tese; pesquisa bibliográfica
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1Bfwp7nhN8eBt_AQK0L9uEPU8EePL0Wc6/view?usp=drivesdk)
 
 ### 2. Marconi, M. de A.; Lakatos, E. M. (2003) — Fundamentos de Metodologia Científica
@@ -1355,8 +1355,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Metodologia científica
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1fPjuI0Nq3uk8zztzI_1Jg8fo1lOpvFgG/view?usp=drivesdk)
 
 ### 3. Gil, A. C. (2008) — Métodos e Técnicas de Pesquisa Social
@@ -1367,8 +1367,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Metodologia; pesquisa social
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/17uUmcVnWBbGfpwr6Svt-HPFfz26g7-EI/view?usp=drivesdk)
 
 ### 4. Ford (2010) — Scientific Method Ecological Research
@@ -1379,8 +1379,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** não registradas
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1LZcN4fyNYxwKDwio7FnKi7LE_ioAbLcJ/view?usp=drivesdk)
 
 ### 5. Prodanov, C. C.; Freitas, E. C. de (2013) — Metodologia do Trabalho Científico: Métodos e Técnicas da Pesquisa e do Trabalho Acadêmico
@@ -1391,8 +1391,8 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Aderência geral registrada:** a avaliar
 - **Palavras-chave:** Metodologia do trabalho científico
 - **Como pode fundamentar este repositório:** Pode apoiar a fundamentação transversal da governança preditiva e da manutenção predial universitária.
-- **Resumo:** O índice atual identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém síntese validada do conteúdo. Consulte o documento no Drive antes de atribuir método, resultados ou conclusões.
-- **Situação da ficha:** Leitura integral pendente; não usar como evidência específica sem conferir o PDF.
+- **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “Metodologia”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
+- **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1NSMLiAou9n-gE3nGLUnRO8oLLpYnOVJE/view?usp=drivesdk)
 
 ### 6. Jiang, Y.; Lin, C.; Meng, W.; Yu, C.; Cohen, A. M.; Smalheiser, N. R. (2014) — Rule-based deduplication of article records from bibliographic databases
