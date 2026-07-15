@@ -38,6 +38,7 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “APO”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
 - **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1aqYZCchOFKeLs7K6FuRPtndwQ5MR7BNL/view?usp=drivesdk)
+- **Ficha detalhada:** [Consultar resumo completo, citações e páginas](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/1997_ARTIGO_APO_Arquitetura_Manutencao_Seguranca_Ambientes_Escolares.md)
 
 ### 2. Abiko, A. K.; Ornstein, S. W. (orgs.) (2002) — Inserção Urbana e Avaliação Pós-Ocupação (APO) da Habitação de Interesse Social (Coletânea HABITARE, v.1)
 
@@ -76,6 +77,7 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Resumo:** Norma técnica (2ª edição, 16 páginas) que estabelece os requisitos mínimos para elaboração e apresentação dos conteúdos do manual de uso, operação e manutenção das edificações, a ser entregue pelo construtor/incorporador. Define estrutura em 7 capítulos (apresentação, garantias, memorial descritivo, fornecedores, operação/uso/limpeza, manutenção, informações complementares), com ênfase no programa de manutenção preventiva (conforme NBR 5674), registros e inspeções. O Anexo A relaciona cerca de 35 documentos técnicos e legais do condomínio/edificação, indicando incumbência de fornecimento e renovação e a periodicidade de cada um (ex.: certificado de dedetização a cada seis meses, medição ôhmica a cada 3-5 anos).
 - **Situação da ficha:** Resumo disponível no índice do acervo.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1CgJgIJCb4LyjVLJ-ZaEDHpAJGZq3PwO8/view?usp=drivesdk)
+- **Ficha detalhada:** [Consultar resumo completo, citações e páginas](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2011_OUTRO_ManutencaoPredial_ABNT_NBR_14037_Manuais_Operacao.md)
 
 ### 5. ABNT - Associação Brasileira de Normas Técnicas (2012) — NBR 5674 - Manutenção de edificações - Requisitos para o sistema de gestão de manutenção
 
@@ -88,6 +90,7 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Resumo:** Norma técnica (2ª edição, 25 páginas) que estabelece os requisitos para a gestão do sistema de manutenção de edificações, cobrindo organização, tipos de manutenção (rotineira, corretiva, preventiva), conteúdo do relatório de inspeção, programa de manutenção, planejamento anual e previsão orçamentária, controle do processo (orçamento/contratação), documentação (fluxo, registros, arquivo) e indicadores gerenciais. Inclui anexos informativos com modelos de programa de manutenção preventiva por periodicidade (semanal a trienal) e listas de registros/checklists por sistema predial.
 - **Situação da ficha:** Resumo disponível no índice do acervo.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1NTQClUozckrSlTpshLK3n19MTxxM0-tT/view?usp=drivesdk)
+- **Ficha detalhada:** [Consultar resumo completo, citações e páginas](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2012_OUTRO_ManutencaoPredial_ABNT_NBR_5674_Manutencao_Edificacoes.md)
 
 ### 6. Talib, Y.; Rajagopalan, P.; Yang, R. J. (2013) — Evaluation of building performance for strategic facilities management in healthcare: A case study of a public hospital in Australia
 
