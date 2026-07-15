@@ -50,6 +50,7 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Resumo:** O arquivo completo está disponível no Google Drive. O índice identifica a obra pelo título e pelo tema “APO”, mas ainda não contém um resumo analítico completo cadastrado. A síntese detalhada, com citações e páginas, será produzida na próxima etapa; até lá, confirme no documento qualquer método, resultado, número ou conclusão.
 - **Situação da ficha:** Arquivo completo disponível no Drive; resumo analítico completo ainda não cadastrado no índice.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1tg0vxIgNll3R6-WwGBiZRFv73ClGdneB/view?usp=drivesdk)
+- **Ficha detalhada:** [Consultar resumo completo, citações e páginas](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2002_LIVRO_APO_Insercao_Urbana_APO_Habitacao_Interesse_Social.md)
 
 ### 3. Lateef, O. A.; Khamidi, M. F.; Idrus, A. (2010) — Building Maintenance Management in Malaysian University Campuses: A Case Study
 
@@ -62,6 +63,7 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Resumo:** Estudo de caso qualitativo (entrevistas semiestruturadas com 5 executivos) em uma universidade pública da Malásia, com cerca de 40.000 m² de área construída em 111 edifícios, 34 elevadores e cerca de 850 equipamentos de climatização. A manutenção é predominantemente corretiva e cíclica, sem sistema informatizado (CMMS), sem indicadores de desempenho claros, com terceirização de mais de 95% dos serviços elétricos/mecânicos e fluxo de reclamações fragmentado (dockets em papel). O gasto médio anual em manutenção foi de RM 15 milhões nos últimos 5 anos; identifica 13 fragilidades de gestão e recomenda um framework de manutenção mais sistemático.
 - **Situação da ficha:** Resumo disponível no índice do acervo.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/16TYNnHpEGytumgAsRLRjG07RqbUHYjSY/view?usp=drivesdk)
+- **Ficha detalhada:** [Consultar resumo completo, citações e páginas](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2010_ARTIGO_ManutencaoPredial_Building_Maintenance_Malaysian_University_Campus.md)
 
 ### 4. ABNT - Associação Brasileira de Normas Técnicas (2011) — NBR 14037 - Diretrizes para elaboração de manuais de uso, operação e manutenção das edificações - Requisitos para elaboração e apresentação dos conteúdos
 
