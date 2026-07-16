@@ -1460,3 +1460,12 @@ Esta pasta reúne referências do acervo bibliográfico mantido no Google Drive 
 - **Situação da ficha:** Resumo disponível no índice do acervo.
 - **Acesso:** [Abrir o arquivo no Google Drive](https://drive.google.com/file/d/1R-aQQ7DJ7pwwQBz_HocLtM7o48WOV_MW/view?usp=drivesdk)
 
+## Fichas detalhadas concluídas — lote 02 (2013–2016)
+
+- [Talib, Rajagopalan e Yang (2013) — desempenho de edifícios hospitalares](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2013_ARTIGO_FacilityManagement_Talib_Building_Performance_Healthcare.md) — Indicadores de funcionalidade, impacto, qualidade e validação estatística.
+- [Araújo Neto (2015) — manutenção predial pública e legislação](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2015_ARTIGO_ManutencaoPredial_Araujo_Neto_Manutencao_Publica_Legislacao.md) — Inspeção, criticidade, banco de dados, planejamento e ciclo de vida.
+- [Chew, Conejos e Asmone (2016) — manutenibilidade de paredes verdes](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2016_ARTIGO_ManutencaoPredial_Chew_Green_Walls_Maintainability_Framework.md) — Sustentabilidade, defeitos, custo do ciclo de vida e critérios multicritério.
+- [Maia, Scheer e Freitas (2016) — gestão da informação na manutenção](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2016_ARTIGO_ManutencaoPredial_Maia_Manutencao_Gestao_Informacao.md) — Ordens abertas/atendidas, passivo, sazonalidade, ERP, categorias e dashboards.
+- [Barbosa (2016) — facilities e manutenção terceirizada na UFPE](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2016_RELATORIO_FacilityManagement_Barbosa_Gestao_Facilities_UFPE.md) — Caso de IFES sobre preventiva/corretiva, contrato, materiais, sistemas e padronização.
+
+As fichas completas incluem síntese, método, resultados, citações verificadas, limitações e link do texto integral no Drive.
