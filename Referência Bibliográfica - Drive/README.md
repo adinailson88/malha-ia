@@ -1521,3 +1521,11 @@ As fichas distinguem evidência empírica, revisão e relato técnico. Em especi
 - [Fonteles et al. (2025) — patologia e recuperação de pilares](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2025_ARTIGO_ManutencaoPredial_Fonteles_Avaliacao_Patologica_Pilares_Concreto.md) — Nove pilares, infiltração, corrosão e intervenção; sem ensaios quantitativos ou pós-monitoramento. [Texto completo no Drive](https://drive.google.com/file/d/1joMGAoiRvUSWsNKbjtT6cZmqmIj8xzId/view?usp=drivesdk).
 
 As fichas incluem alertas de qualidade para impedir que números não auditáveis ou referências normativas imprecisas sejam reutilizados como evidência.
+
+
+## Fichas detalhadas concluídas — lote 08 (2025–2026)
+
+- [Wu e Mundt-Petersen (2025) — previsão de idade de componentes danificados com GNN](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2025_ARTIGO_ManutencaoPreditiva_Wu_GNN_Lifespan_Building_Components.md) — GCN com R² 0,83 em dados suecos; idade na detecção não equivale a vida útil e há risco de seleção/vazamento. [Texto completo no Drive](https://drive.google.com/file/d/1N95fm-wj6gbRsQwOHwq0Y3S0gp9Xh21k/view?usp=drivesdk).
+- [Adebowale, Agumba e Chileshe (2026) — UAV para condição predial e segurança](https://github.com/adinailson88/lerArquivosReferencias/blob/main/Refer%C3%AAncia%20Bibliogr%C3%A1fica%20-%20Drive/fichas/2026_ARTIGO_ManutencaoPredial_Adebowale_UAV_Building_Condition_Assessment.md) — Revisão de 33 estudos sobre drones, visão computacional, BIM, gêmeos digitais e governança. [Texto completo no Drive](https://drive.google.com/file/d/1WRhxOiTYrW5Pigm2BoilY1TXRHqC4rOp/view?usp=drivesdk).
+
+Com este lote, os 37 documentos de 01_Manutencao_e_Governanca possuem ficha detalhada, link do texto integral, limitações e orientação de citação.
