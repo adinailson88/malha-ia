@@ -1,78 +1,78 @@
 {
-  "gerado_em_utc": "2026-07-18T08:26:18.113128Z",
+  "gerado_em_utc": "2026-07-19T08:56:32.064442Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
-  "acerto_validado": 0.9599,
+  "acerto_validado": 0.9219,
   "ic95": [
-    0.9542,
-    0.9651
+    0.9146,
+    0.9287
   ],
-  "n": 4668,
-  "validados_na_bancada": 4668,
+  "n": 5875,
+  "validados_na_bancada": 5875,
   "ranking": [
     {
       "modelo": "linear_svc",
-      "acerto_validado": 0.9599,
+      "acerto_validado": 0.9219,
       "ic95": [
-        0.9542,
-        0.9651
-      ]
-    },
-    {
-      "modelo": "regressao_logistica",
-      "acerto_validado": 0.9563,
-      "ic95": [
-        0.9505,
-        0.9617
+        0.9146,
+        0.9287
       ]
     },
     {
       "modelo": "sgd",
-      "acerto_validado": 0.9554,
+      "acerto_validado": 0.9171,
       "ic95": [
-        0.9492,
-        0.961
+        0.9101,
+        0.9241
+      ]
+    },
+    {
+      "modelo": "regressao_logistica",
+      "acerto_validado": 0.9142,
+      "ic95": [
+        0.9071,
+        0.9215
       ]
     },
     {
       "modelo": "extra_trees",
-      "acerto_validado": 0.9505,
+      "acerto_validado": 0.9011,
       "ic95": [
-        0.9441,
-        0.9563
+        0.8936,
+        0.9088
       ]
     },
     {
       "modelo": "random_forest",
-      "acerto_validado": 0.949,
+      "acerto_validado": 0.8979,
       "ic95": [
-        0.9428,
-        0.9554
+        0.8904,
+        0.9055
       ]
     },
     {
       "modelo": "lstm",
-      "acerto_validado": 0.9445,
+      "acerto_validado": 0.8911,
       "ic95": [
-        0.9381,
-        0.9507
+        0.8834,
+        0.8987
       ]
     },
     {
       "modelo": "transformer_ft",
-      "acerto_validado": 0.9439,
+      "acerto_validado": 0.8875,
       "ic95": [
-        0.9372,
-        0.9503
+        0.8793,
+        0.8951
       ]
     },
     {
       "modelo": "naive_bayes",
-      "acerto_validado": 0.9229,
+      "acerto_validado": 0.8349,
       "ic95": [
-        0.9152,
-        0.9304
+        0.8248,
+        0.8446
       ]
     }
   ],
