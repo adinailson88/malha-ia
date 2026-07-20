@@ -1,1 +1,1 @@
-[["Timestamp","N_Amostras","N_Classes","Acuracia","Precision_Macro","Recall_Macro","F1_Macro","F1_Weighted","Balanced_Accuracy","Hash_Base","Maquina","Versao_Motor"],["2026-07-17T08:05:20.000Z",11937,48,0.7856,0.4552,0.4334,0.437,0.7711,0.4334,"08ca235509c1c73b","GOOGLE_COLAB_CLOUD [LSTM]","v4.0.8"]]
+[["Timestamp","N_Amostras","N_Classes","Acuracia","Precision_Macro","Recall_Macro","F1_Macro","F1_Weighted","Balanced_Accuracy","Hash_Base","Maquina","Versao_Motor"]]
