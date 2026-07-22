@@ -4,7 +4,7 @@ Ar condicionado central,Preventiva,165,Vencedor (menor RMSE holdout = 1.44),0,2,
 Ar condicionado split,Preventiva,1795,Vencedor (menor RMSE holdout = 23.78),0,1,-2,__Prev_Ar_condicionado_s
 Bomba,Preventiva,3,â€”,â€”,â€”,â€”,__Prev_Bomba
 Elevador,Preventiva,86,Vencedor (menor RMSE holdout = 2.13),0,1,0,__Prev_Elevador
-Esgoto,Preventiva,33,Vencedor (menor RMSE holdout = 0.26),0,1,0,__Prev_Esgoto
+Esgoto,Preventiva,33,Vencedor (menor RMSE holdout = 0.28),0,1,0,__Prev_Esgoto
 Gerador,Preventiva,1211,Vencedor (menor RMSE holdout = 0.59),0,1,0,__Prev_Gerador
 Hidráulica,Preventiva,32,Vencedor (menor RMSE holdout = 0.41),0,1,0,__Prev_Hidraulica
 Iluminação,Preventiva,132,â€”,â€”,â€”,â€”,__Prev_Iluminacao
