@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-07-23T10:49:55.233767+00:00",
+  "gerado_em_utc": "2026-07-24T10:36:20.169051+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,14 +37,15 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "f3d83eb2b85c",
-        "html_url": "https://github.com/adinailson88/malha-ia/commit/f3d83eb2b85cdf58ed5e95f941c29c7a73757c6f",
-        "data": "2026-07-23T09:13:34Z"
+        "sha": null,
+        "html_url": null,
+        "data": null,
+        "erro": "HTTP Error 504: Gateway Timeout"
       },
-      "dados_atualizados_em_utc": "2026-07-22T08:02:13.253453+00:00",
+      "dados_atualizados_em_utc": "2026-07-24T08:02:00.867752+00:00",
       "resumo_dados": {
-        "abas_exportadas": 366,
-        "falhas": 114,
+        "abas_exportadas": 374,
+        "falhas": 106,
         "falhas_criticas": 0
       },
       "manifest_modulo": {
@@ -99,11 +100,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "a091ef3b0fb4",
-        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/a091ef3b0fb4973b79ecf43b9fe99a80a78d41ae",
-        "data": "2026-07-23T09:10:59Z"
+        "sha": "7afaf51d3a96",
+        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/7afaf51d3a9645fff921120f0df1c7a1696acf2f",
+        "data": "2026-07-24T09:03:04Z"
       },
-      "dados_atualizados_em_utc": "2026-07-23T09:10:55.916029+00:00",
+      "dados_atualizados_em_utc": "2026-07-24T09:03:03.210627+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -157,11 +158,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "87c0f0940b9d",
-        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/87c0f0940b9d1a6522ca9c3a4946afba731900a4",
-        "data": "2026-07-23T09:10:58Z"
+        "sha": "7182082515df",
+        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/7182082515df893a0137289f38a751abd91adc49",
+        "data": "2026-07-24T09:02:55Z"
       },
-      "dados_atualizados_em_utc": "2026-07-23T09:10:56.161859+00:00",
+      "dados_atualizados_em_utc": "2026-07-24T09:02:53.455059+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -215,11 +216,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "6a458fc6b54e",
-        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/6a458fc6b54e2d3af87039deaa829ac402bef490",
-        "data": "2026-07-23T09:26:11Z"
+        "sha": "4efea9f9f2a5",
+        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/4efea9f9f2a58f8783e34bcd2d2ee851e2072089",
+        "data": "2026-07-24T09:18:17Z"
       },
-      "dados_atualizados_em_utc": "2026-07-23T09:26:11.549184+00:00",
+      "dados_atualizados_em_utc": "2026-07-24T09:05:40.266279+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -273,9 +274,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "2249e882f5c9",
-        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/2249e882f5c987759f9d485a0c10af1472ae2ea8",
-        "data": "2026-07-23T09:25:17Z"
+        "sha": "b86a935393ed",
+        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/b86a935393edba443775ee15c0b152dd306f1b57",
+        "data": "2026-07-24T09:04:55Z"
       },
       "dados_atualizados_em_utc": "2026-06-15T13:05:14.776131+00:00",
       "resumo_dados": {},
@@ -331,14 +332,14 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "b4aba137b7ea",
-        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/b4aba137b7ea497c61008450733134852dd7ce96",
-        "data": "2026-07-23T10:37:41Z"
+        "sha": "2f300232aba6",
+        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/2f300232aba6e626876156c1c5424857a82e374f",
+        "data": "2026-07-24T10:08:43Z"
       },
-      "dados_atualizados_em_utc": "2026-07-23T10:37:40.937107+00:00",
+      "dados_atualizados_em_utc": "2026-07-24T10:08:42.647374+00:00",
       "resumo_dados": {
         "arquivos": 3,
-        "linhas_dados": 138
+        "linhas_dados": 182
       },
       "manifest_modulo": {
         "schema_version": "1.0",
