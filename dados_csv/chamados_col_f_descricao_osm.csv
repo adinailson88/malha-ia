@@ -12585,7 +12585,7 @@ Manutenção Semestral - Ar condicionado - CPF - Lab. Habilidades CFCS
 ""
 ""
 ""
-""
+Limpeza das calhas do Núcleo Pedagógico
 Instalação de Pia - CONE Portaria; Complementar de Instalação de Pia - CONE Portaria
 ""
 ""
@@ -13403,7 +13403,22 @@ Reparo em lava olhos
 ""
 ""
 ""
-"Compra de paineis fotovoltaicos para substituicao dos paineis defeituosos no CJA. Os painéis devem ter fabricação recente, ser todos de mesmo fabricante e potência.; Compra de paineis complementares à compra feita da OSM 098/2026."
+"Compra de paineis fotovoltaicos para substituicao dos paineis defeituosos no CJA. Os painéis devem ter fabricação recente, ser todos de mesmo fabricante e potência.; Compra de paineis complementares à compra feita da OSM 098/2026.; Compra de inversor para substituição do defeituoso do NUPED CJA. O atualmente instalado é Weg/Huawei. O inversor deve ser compatível com a instalação existente em quantidade de MPPTs, nível de tensão, corrente e potência.
+
+Padrões mínimos:
+* Eficiência de catálogo máxima: acima de 97,5%
+* Tensão máxima de entrada: 1100 V
+* Corrente máxima por MPPT: 22 A
+* Número de entradas: 8
+* Número de MPPTS: 4
+* Potência ativa CA nominal: 36000W
+* Proteções padrão antiilhamento, desconexão, polaridade CC reversa, sobrecorrente AC, DPS, detecção de resistência e corrente residual
+* Indicador LED e Bluetooth ou Wifi
+* Capacidade de conexão com sistema Solarview por RS485 ou outro
+* Conexão USB/Ethernet ou outro
+* Registros em conformidade com a rede elétrica brasileira (Inmetro, NBR, etc)
+
+Antes da compra fornecer catálogo para verificação de atendimento aos requisitos de conexão à rede da UFSB"
 ""
 ""
 ""
@@ -14110,7 +14125,7 @@ Solicito recarga dos extintores do campus CSC
 ""
 ""
 "Serviço de rebobinamento, troca de selamento mecanico e rolamento; Complementar de Manutenção de Bombas do Ar condicionado central"
-Compra de materiais para para forro do pavilhão de feiras
+Compra de materiais para para forro do pavilhão de feiras; Substituição de forro nas antigas salas do Pav. de Feiras; Substituição de forro nas antigas salas do Pav. de Feiras
 ""
 ""
 ""
@@ -14387,7 +14402,7 @@ Substituição de bomba de poço artesiano do lado da Esarm que abastece o CEPEC
 ""
 ""
 ""
-""
+Pintura de meio fio do Nuped
 "Solicito a compra de 5 datalogger para ser instalado na usina fotovoltaica do CJA, sendo 3 no NUPED e 2 no NVGA
 Especificação - SUN2000 24.7KTL-50KTL, Datalogger SolarView para inversor HUAWEI
 
@@ -14548,7 +14563,7 @@ Substituição de assento sanitário
 ""
 ""
 ""
-""
+Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA
 ""
 ""
 ""
@@ -14604,11 +14619,45 @@ Placa de identificação Laboratório Interdisciplinar 2
 ""
 ""
 ""
+Reparo em gerador com defeito
 ""
 ""
 ""
 ""
 ""
+""
+""
+""
+""
+""
+"OBS: Chumbador de 2"" e 3""; Complementar de Instalação de quadros de vidro"
+Instalação de TVs (suporte para TVs)
+""
+""
+""
+""
+""
+""
+""
+""
+Impermeabilização do Dafa do CJA
+""
+Reposição dos assentos sanitários no banheiro feminino do Pórtico
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+Compra de lâmpadas para substituição
 ""
 ""
 ""

@@ -32610,7 +32610,7 @@ Solicito a realização do serviço de limpeza das calhas do Núcleo Pedagógico
 
 Diante disso, faz-se necessária a contratação de empresa especializada ou a disponibilização de equipamentos adequados, como plataforma elevatória, guincho/guindaste com cesto aéreo, ou outro meio seguro, além de profissionais devidamente habilitados para trabalho em altura, em conformidade com as normas de segurança vigentes.
 
-Atenciosamente",,
+Atenciosamente",Limpeza das calhas do Núcleo Pedagógico,Limpeza das calhas do Núcleo Pedagógico
 2025012615,Instalação de Pia - CONE Portaria,Hidrossanitária > Hidráulica,"Prezados,
 
 Solicito Instalação de Pia no CONE Esquerdo à guarita e entrada do campus. Justifico o pedido, pois, o espaço sera utilziado para triagem de material de pesquisa.
@@ -34872,7 +34872,22 @@ Local: Sala do servidor.",,
 2025015097,Infiltração,Hidrossanitária > Hidráulica,"Infiltração
 Local : Sala Estudantil Empresa Junior",,
 2025015099,Manutenção de ar condicionado,Climatização > Ar condicionado split,"Prezados, o ar condicionado da sala que uso não está refrigerando e apresenta mensagem de erro com frequência.",,
-2025015102,Manutenção do parque gerador fotovoltaico CJA,Elétrica > Sistema Fotovoltaico (FV),"Atividade de manutenção do parque gerador fotovoltaico do CJA, com substituição dos painéis defeituosos. Comprar 40 painéis para substituição, conforme relatório.",Compra de paineis fotovoltaicos; Compra de paineis fotovoltaicos - complementar,"Compra de paineis fotovoltaicos para substituicao dos paineis defeituosos no CJA. Os painéis devem ter fabricação recente, ser todos de mesmo fabricante e potência.; Compra de paineis complementares à compra feita da OSM 098/2026."
+2025015102,Manutenção do parque gerador fotovoltaico CJA,Elétrica > Sistema Fotovoltaico (FV),"Atividade de manutenção do parque gerador fotovoltaico do CJA, com substituição dos painéis defeituosos. Comprar 40 painéis para substituição, conforme relatório.",Compra de paineis fotovoltaicos; Compra de paineis fotovoltaicos - complementar; Compra de inversor para substituição,"Compra de paineis fotovoltaicos para substituicao dos paineis defeituosos no CJA. Os painéis devem ter fabricação recente, ser todos de mesmo fabricante e potência.; Compra de paineis complementares à compra feita da OSM 098/2026.; Compra de inversor para substituição do defeituoso do NUPED CJA. O atualmente instalado é Weg/Huawei. O inversor deve ser compatível com a instalação existente em quantidade de MPPTs, nível de tensão, corrente e potência.
+
+Padrões mínimos:
+* Eficiência de catálogo máxima: acima de 97,5%
+* Tensão máxima de entrada: 1100 V
+* Corrente máxima por MPPT: 22 A
+* Número de entradas: 8
+* Número de MPPTS: 4
+* Potência ativa CA nominal: 36000W
+* Proteções padrão antiilhamento, desconexão, polaridade CC reversa, sobrecorrente AC, DPS, detecção de resistência e corrente residual
+* Indicador LED e Bluetooth ou Wifi
+* Capacidade de conexão com sistema Solarview por RS485 ou outro
+* Conexão USB/Ethernet ou outro
+* Registros em conformidade com a rede elétrica brasileira (Inmetro, NBR, etc)
+
+Antes da compra fornecer catálogo para verificação de atendimento aos requisitos de conexão à rede da UFSB"
 2025015104,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,Manutenção Preventiva > Ar condicionado central,"Solicito manutenção preventiva mensal do ar condicionado central do CSC de acordo ao arquivo em anexo ""DINFRA.CM.17 - MANUTENÇÃO PREVENTIVA DE AR CONDICIONADO CENTRAL (CHILLER) - PMOC"".
 O acompanhamento deste chamado deve ser de acordo com as atividades descritas no ANEXO I .
 O retorno destas atividades devem ser dados à Coordenação de Manutenção ou à Coordenação de Campus do CSC, de modo que a UFSB tenha ciência das atividades preventivas realizadas no equipamento.
@@ -36735,7 +36750,7 @@ será necessário liberar o seguinte material:
 
 19 Kg de Arame galvanizado BWG 10 (O arame galvanizado BWG 10 é ideal por sua alta resistência e capacidade de sustentação)
 75 und de placa de forro mineral onde iremos dividir no meio e da o acabamento além de estrutura de acabamento para o forro
-150 und de Travessa para Forro 24x26x1250mm",Substituição de luminarias das salas de aulas antigas do feiras - CSC,Compra de materiais para para forro do pavilhão de feiras
+150 und de Travessa para Forro 24x26x1250mm",Substituição de luminarias das salas de aulas antigas do feiras - CSC; Substituição de forro nas antigas salas do Pav. de Feiras; Substituição de forro nas antigas salas do Pav. de Feiras,Compra de materiais para para forro do pavilhão de feiras; Substituição de forro nas antigas salas do Pav. de Feiras; Substituição de forro nas antigas salas do Pav. de Feiras
 2026040393,"Prezados, boa tarde!     A pedido, solicito limpeza do filtro do ar-co",Climatização > Ar condicionado split,"Prezados, boa tarde!
 
 A pedido, solicito limpeza do filtro do ar-condicionado da PROGEPE, quando possível.
@@ -37376,7 +37391,7 @@ O controle do ar-condicionado não está funcionando , com isso não consigo lig
 
 Atenciosamente,",,
 2026050368,"Prezados, bom dia.  Solicitamos a pintura de ""meio frio"" na lateral do",Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezados, bom dia.
-Solicitamos a pintura de ""meio frio"" na lateral do prédio.",,
+Solicitamos a pintura de ""meio frio"" na lateral do prédio.",Pintura de meio fio do Nuped,Pintura de meio fio do Nuped
 2026050371,Aquisição de dataloggers para sistema fotovoltaico,Elétrica > Sistema Fotovoltaico (FV),"Solicito a compra de 5 dataloggers para sistema fotovoltaico
 especificação do equipamento SUN2000 24.7KTL-50KTL
 https://www.lojasolarview.com.br/datalogger/datalogger-solarview-1-0-para-inversor-huawei",Aquisição de dataloggers e smartmeter para sistema fotovoltaico - CJA,"Solicito a compra de 5 datalogger para ser instalado na usina fotovoltaica do CJA, sendo 3 no NUPED e 2 no NVGA
@@ -37834,7 +37849,7 @@ Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um
 O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 04.",,
 2026070029,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | Laboratórios CEPEC,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas nos laboratórios da UFSB no CEPEC da CEPLAC. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
 2026070030,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | NUPED,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no NUPED. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
-2026070031,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | NVGA,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no NVGA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
+2026070031,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | NVGA,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no NVGA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA
 2026070032,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas nos em todo o CPF (Exceto Núcleo Pedagógico). Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
 2026070033,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF | NUPED,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no Núcleo Pedagógico do CPF . Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
 2026070037,Instalação de Desktop,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito a instalação/transporte de desktop na minha mesa professor Thalis Ferreira (gabinete 31, bloco E02). O desktop está na mesa que anteriormente era usada pela professora Isabel Belasco, no mesmo gabinete. A professora Isabel trocou de gabinete deixando o desktop que me foi oferecido pelo gestor do campus, Paulo Borges.",,
@@ -37872,7 +37887,7 @@ Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do d
 2026070059,Manutenção Preventiva Mensal - Ar condicionado - CPF - Laboratório de Habilidades,Manutenção Preventiva > Ar condicionado split,,,
 2026070060,Manutenção Preventiva Mensal - Ar condicionado - CPF - Clínica escola de Psicologia,Manutenção Preventiva > Ar condicionado split,,,
 2026070061,Manutenção Preventiva Mensal - Ar condicionado - CPF - Salas de Tutoria,Manutenção Preventiva > Ar condicionado split,,,
-2026070062,Manutenção preventiva mensal do elevador da Reitoria,Manutenção Preventiva > Elevador,,,
+2026070062,Manutenção preventiva mensal do elevador da Reitoria,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores da Reitoria. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção.",,
 2026070063,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire,Manutenção Preventiva > Elevador,,,
 2026070064,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2026070065,Limpeza Geral/Manutenção Semestral dos Ar condicionados - N.P CJA,Manutenção Preventiva,"Solicito limpeza geral dos equipamentos de ar condicionados localizados no Núcleo Pedagógico e cadastro do equipamento com tombo. A limpeza e manutenção devem estar de acordo com o anexo iii que versa sobre as tarefas semestrais a serem feitas nos equipamentos de ar condicionados do tipo split. Segue também em anexo uma lista dos equipamentos já cadastrados por ambiente, para atualização e/ou correção.",,
@@ -37968,7 +37983,7 @@ Desde já, agradeço a atenção.",,
 Informamos que o gerador instalado no Complexo I apresentou uma falha de funcionamento na manhã desta segunda-feira, decorrente de uma explosão na bateria do equipamento.
 Diante do exposto, solicitamos, por gentileza, o envio imediato de um técnico para vistoria e manutenção do ativo. Ressaltamos a urgência do atendimento, uma vez que o bloco administrativo do Complexo I encontra-se desprovido de sistema de contingência, permanecendo vulnerável a eventuais interrupções no fornecimento de energia elétrica.
 
-Atenciosamente,",,
+Atenciosamente,",Reparo em gerador com defeito,Reparo em gerador com defeito
 2026070177,Soliclitação de perfil de gestor da proex no SIGAA,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Solicitação de perfil de gestor da PROEX no SIGAA, para realização de todas as atividades necessárias à Seção de Fomento e Captação de Recursos da PROEX.
 Habilitação das funções como aba de ""Informações Gerais"", ""Cadastros"", entre outras, conforme a imagem anexada.",,
 2026070179,Troca de papeleira e tampa sanitário.,Hidrossanitária > Hidráulica,"Prezado, favor trocar a papeleira do banheiro do terceiro pavimento feminino e troca da papeleira do segundo pavimento Pcd.
@@ -38007,19 +38022,113 @@ At.te",,
 O portão 03 da garagem da Reitoria está parando ao abrir e ao fechar .
 Verificar o ar condicionado da copa térreo que encontra-se pingando.",,
 2026070225,Instalação de Ar condicionado,Climatização > Ar condicionado split,Solicito instalação de Ar condicionado (climatização) na SALA DE EVENTOS - NVGA,,
-2026070226,Instalação de Quadro Branco ou quadro de vidro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito instalação de Quadro Branco ou quadro de vidro para as SALAS 210, 212, 214 - NUPED",,
-2026070227,Instalação de TVs (suporte para TVs),"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito Instalação de TVs (suporte para TVs) nas SALAS 210,212, 214 - NUPED",,
+2026070226,Instalação de Quadro Branco ou quadro de vidro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito instalação de Quadro Branco ou quadro de vidro para as SALAS 210, 212, 214 - NUPED",Instalação de quadros de vidro; Complementar de Instalação de quadros de vidro,"OBS: Chumbador de 2"" e 3""; Complementar de Instalação de quadros de vidro"
+2026070227,Instalação de TVs (suporte para TVs),"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito Instalação de TVs (suporte para TVs) nas SALAS 210,212, 214 - NUPED",Instalação de TVs (suporte para TVs),Instalação de TVs (suporte para TVs)
 2026070228,Criação de Email da Seção de Planejamento Acadêmico e Projetos,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Solicito a criação de email para a seção de ""Apoio ao planejamento acadêmico"". Sugestão de email: ""planejamento.cja@ufsb.edu.br""",,
+2026070409,"Prezados, boa tarde.  Solicito a troca das torneiras do banheiro femin",Hidrossanitária > Hidráulica,,,
+2026070401,Conserto de torneira,Hidrossanitária > Hidráulica,,,
 2026070253,PROBLEMA DE ACESSO NO SIGAA DO ALUNO ANTONIO DOS REIS SILVA FILHO,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Solicito, por gentileza, a análise da situação do discente Antonio dos Reis Silva Filho , matrícula 2026006156 , do curso de Medicina.
 O aluno informa que não consegue acessar o SIGAA, pois o sistema indica que os dados informados estão incorretos. Ao tentar redefinir a senha, insere o e-mail cadastrado, porém a mensagem para recuperação de acesso não é recebida. Segundo o discente, já foram verificadas todas as pastas da caixa de entrada (inclusive spam, lixo eletrônico e demais pastas), sem que houvesse o recebimento de qualquer e-mail referente à redefinição de senha.
 Diante do exposto, encaminho a demanda para análise e adoção das providências cabíveis, considerando que o período de matrícula nos componentes curriculares se encerra em 20/07 , sendo necessário o restabelecimento do acesso do discente.
 Atenciosamente,
 Vanessa de Jesus
 Setor de Apoio Acadêmico-CPF",,
-2026070261,Troca da lâmpada,Elétrica > Iluminação,,,
+2026070261,Troca da lâmpada,Elétrica > Iluminação,"Bom dia!
+Por gentileza, solicito a troca da lâmpada do banheiro da guarita.
+grata!!",,
 2026070264,Manutenção de Ar condicionado Split da DINFRA,Climatização > Ar condicionado split,,,
-2026070266,Torca de saboneteira,Hidrossanitária > Hidráulica,,,
+2026070266,Torca de saboneteira,Hidrossanitária > Hidráulica,"Prezados, por gentileza efetuar a troca da saboneteira no primeiro pavimento banheiro feminino.
+Cordialmente.",,
 2026070277,Reparo do DAFA da estação de tratamento de esgosto do CJA,Estrutura Predial > Infiltração,,,
-2026070278,URGÊNCIA - Correção de Vazamento no DAFRA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,
+2026070278,URGÊNCIA - Correção de Vazamento no DAFA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito manutenção em caráter de urgência para corrigir o vazamento no Dafa, em anexo imagens do local",Impermeabilização do Dafa do CJA,Impermeabilização do Dafa do CJA
 2026070284,Caixa dagua com vazamento,Hidrossanitária > Hidráulica,,,
-2026070287,Reposição dos assentos sanitários no banheiro feminino do Pórtico,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026070287,Reposição dos assentos sanitários no banheiro feminino do Pórtico,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito reposição dos assentos sanitários das 3 cabines sanitárias do banheiro feminino do pavilhão Pórtico, que atualmente encontram-se sem os assentos.",Reposição dos assentos sanitários no banheiro feminino do Pórtico,Reposição dos assentos sanitários no banheiro feminino do Pórtico
+2026070289,Vazamento no banheiro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Bom dia!
+Por gentileza solicito reparo no banheiro da CEAME. O mesmo se encontra com vazamento.
+Obrigada pela atenção.",,
+2026070290,forro,Estrutura Predial > Forro,"Bom dia, sairam algumas placas do teto na sala de acessibilidade, se possível colocar outras placas.",,
+2026070298,Solicitação de verificação urgente de infiltração no Data Center - Reitoria,Estrutura Predial > Infiltração,"Prezada DINFRA,
+Solicito, com urgência, a verificação da infiltração identificada no Data Center - Reitoria, a fim de evitar possíveis danos aos equipamentos e, consequentemente, a interrupção dos serviços de dados.
+Segue em anexo algumas fotos registradas no ambiente, que evidenciam a situação.
+Agradeço pela atenção e peço prioridade no atendimento da demanda.
+Atenciosamente,",,
+2026070299,Fechadura quebrada,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezado,
+
+A fechadura da porta do Herbário está com defeito.
+
+Cordialmente,
+
+Débora Oliveira",,
+2026070309,o ar condicionado central do laboratório de Biologia Molecular não está resfriando o local  como deveria,Climatização > Ar condicionado split,"O ar condicionado central do laboratorio de biologia Molecular não está conseguindo manter a temperatura como deveria. Por favor envar alguém para avaliar as condições locais do ar condicionado.
+At.te
+Fabiana Félix",,
+2026070313,Troca de fechadura,"Estrutura Predial > Esquadrias, porta, portão e janelas","Solicito por gentileza, a troca da fechadura da porta do Laboratório de Ciências III ( a porta que fica em frente da rampa de acessibilidade).",,
+2026070315,Ar condicionado com defeito,Climatização > Ar condicionado split,"Boa tarde,
+
+Aqui na proaf tem 2 ar condicionado com defeito, o de fora ta fazendo um barulho estranho e o da sala da pró-reitora esta com defeito.
+
+Solicito, por gentileza que verifiquem.
+Grata!",,
+2026070318,Vistoria em banheiros,Manutenção Preventiva > Hidráulica,"Vistoria dos banheiros da reitoria. Verificar fixação de tubos, engates, vasos sanitários, funcionamento de válvulas, possíveis vazamentos, fechamento de portas e limpeza de exaustores.",,
+2026070319,Instalação de quadro branco,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, booa tarde!
+Solicito a instalação de dois quadros brancos, uma unidade na sala de Simulação Avançada 1 e uma unidade na sala de Simulação Avançada 2.",,
+2026070322,"Instalação de quadros, suporte de tv e tvs","Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados,
+
+Como forma de atender as aulas do próximo semestre, a pedido do coord. adm. Paulo Borges, solicito a instalação dos seguintes recursos no Núcleo Pedagógico:
+
+Lab. Simulação Avançada 01 (futura Sala B001):
+Quadro
+Suporte de TV
+Instalação de TV
+Instalação de computador com internet
+
+Lab. Simulação Avançada 02 (futura Sala B002):
+
+Quadro
+Suporte de TV
+Instalação de TV
+Instalação de computador com internet
+
+At.te",,
+2026070324,Substituição de lâmpadas queimadas e tampa de vaso sanitário do Conforto do Internato de medicina no HMTF,Elétrica > Iluminação,"Prezados,
+
+Solicito a avaliação e, se necessário, a substituição das lâmpadas defeituosas do Conforto Do Internato da UFSB no HMTF.
+Recebi relatos dos internos que várias lâmpadas estão queimadas o que pode comprometer a qualidade do aprendizado.
+Aproveitando, solicito também a substituição da tampa do vaso sanitário que está quebrada.
+
+At.te",,
+2026070334,O ar condicioonado da sala de reuniões da STI não está desligando. Fic,Climatização > Ar condicionado split,O ar condicioonado da sala de reuniões da STI não está desligando. Fica com uma luz piscando e aparecendo o número 3 na placa de display do aparelho.,,
+2026070345,Verificação de aparelhos de ar condicionado.,Climatização > Ar condicionado split,"Saudações!
+Gostaria de solicitar a verificação de aparelhos de ar condicionado para o laboratório de proteção florestal.
+Este espaço é anexo ao de laboratório de mirmecologia e está incluído no novo acordo de cooperação/plano de trabalho como coleção de entomologia (anexo).
+Este espaço abriga uma importante coleção entomológica que precisa urgentemente de refrigeração e também um espaço que utilizaremos para aulas.
+Sendo assim, gostaria de solicitar a verificação do estado dos aparelhos de ar condicionado, sua li9mpeza quando isso for possível e até mesmo a sua substituição se for o caso e haja disponibilidade de aparelhos.
+Desde já agradeço pela colaboração.
+Att.,
+Alexandre.",,
+2026070347,Revisão de instalação elétrica.,Elétrica > Instalações elétricas,"Saudações!
+Gostaria de solicitar a revisão das instalações elétricas do laboratório de proteção florestal, especificamente as tomadas.
+Este espaço é anexo ao de laboratório de mirmecologia e está incluído no novo acordo de cooperação/plano de trabalho como coleção de entomologia (anexo).
+Este espaço abriga uma importante coleção entomológica e também um espaço que utilizaremos para aulas.
+Sendo assim, gostaria de solicitar a verificação do estado das instalações elétricas, principalmente das tomadas, para evitar curto circuitos e poder utilizar equipamentos elétricos sem riscos de acidentes.
+Desde já agradeço pela colaboração.
+Att.,
+Alexandre.",,
+2026070352,Compra de lâmpadas,Elétrica > Iluminação,"Compra de lâmpadas para atender as necessidades de iluminação do CFCA. Comprar 150 lâmpadas de 1,20cm tubulares 18/20W led.",Compra de lâmpadas,Compra de lâmpadas para substituição
+2026070357,Iluminação,Elétrica > Iluminação,,,
+2026070364,Recebimento de emails instituicionais,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026070366,Reparo na porta do banheiro,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026070370,Porta do banheiro,Elétrica > Iluminação,,,
+2026070371,Troca de lâmpada,Elétrica > Iluminação,,,
+2026070372,Instalação de novos pontos,Elétrica > Instalações elétricas,,,
+2026070374,PEDIDO DE AVALIAÇÃO E APOIO EM CONSERTO DE RODAS DE 02 CADEIRAS GIRATÓRIAS,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026070376,Fixação da papeleira na cantina,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026070377,Iluminação com defeito,Elétrica > Iluminação,,,
+2026070382,Porta da biblioteca,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026070394,Manutenção Preventiva/Inspeção Semestral de Quadros de Energia do Painel Fotovoltaico  - Campus CJA,Manutenção Preventiva > Quadros Elétricos,,,
+2026070395,Manutenção Preventiva/Inspeção Semestral de Quadros de Energia do Painel Fotovoltaico  - Campus Paulo Freire,Manutenção Preventiva > Quadros Elétricos,,,
+2026070397,Janela travada e com risco de queda,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026070398,URGÊNCIA - Janela com vidro solto (Risco de acidente),"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026070413,Lâmpada queimada,Elétrica > Iluminação,,,
+2026070415,Substituição de tubulação,Hidrossanitária > Hidráulica,,,
+2026070419,Conserto porta de armário,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
