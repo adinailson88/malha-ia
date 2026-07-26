@@ -1,70 +1,70 @@
 {
-  "gerado_em_utc": "2026-07-25T08:49:03.916039Z",
+  "gerado_em_utc": "2026-07-26T09:01:44.584061Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
-  "acerto_validado": 0.9494,
+  "acerto_validado": 0.9493,
   "ic95": [
     0.9447,
-    0.9539
+    0.9538
   ],
   "n": 9096,
   "validados_na_bancada": 9096,
   "ranking": [
     {
       "modelo": "linear_svc",
-      "acerto_validado": 0.9494,
+      "acerto_validado": 0.9493,
       "ic95": [
         0.9447,
-        0.9539
+        0.9538
       ]
     },
     {
       "modelo": "sgd",
-      "acerto_validado": 0.9391,
+      "acerto_validado": 0.9392,
       "ic95": [
-        0.934,
-        0.9439
+        0.9343,
+        0.944
       ]
     },
     {
       "modelo": "regressao_logistica",
-      "acerto_validado": 0.9349,
+      "acerto_validado": 0.9355,
       "ic95": [
-        0.9295,
-        0.9399
+        0.9302,
+        0.9404
       ]
     },
     {
       "modelo": "extra_trees",
-      "acerto_validado": 0.9265,
+      "acerto_validado": 0.9274,
       "ic95": [
-        0.9211,
-        0.9316
+        0.9222,
+        0.9325
       ]
     },
     {
       "modelo": "random_forest",
-      "acerto_validado": 0.921,
+      "acerto_validado": 0.9227,
       "ic95": [
-        0.9153,
-        0.9262
+        0.9171,
+        0.928
       ]
     },
     {
       "modelo": "lstm",
-      "acerto_validado": 0.8869,
+      "acerto_validado": 0.879,
       "ic95": [
-        0.8805,
-        0.8929
+        0.8724,
+        0.8857
       ]
     },
     {
       "modelo": "naive_bayes",
-      "acerto_validado": 0.8607,
+      "acerto_validado": 0.8609,
       "ic95": [
-        0.8531,
-        0.8676
+        0.8533,
+        0.868
       ]
     }
   ],
