@@ -1,70 +1,70 @@
 {
-  "gerado_em_utc": "2026-07-26T09:01:44.584061Z",
+  "gerado_em_utc": "2026-07-27T10:29:03.902157Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
-  "acerto_validado": 0.9493,
+  "acerto_validado": 0.9513,
   "ic95": [
-    0.9447,
-    0.9538
+    0.947,
+    0.9559
   ],
-  "n": 9096,
-  "validados_na_bancada": 9096,
+  "n": 8975,
+  "validados_na_bancada": 8975,
   "ranking": [
     {
       "modelo": "linear_svc",
-      "acerto_validado": 0.9493,
+      "acerto_validado": 0.9513,
       "ic95": [
-        0.9447,
-        0.9538
+        0.947,
+        0.9559
       ]
     },
     {
       "modelo": "sgd",
-      "acerto_validado": 0.9392,
+      "acerto_validado": 0.9425,
       "ic95": [
-        0.9343,
-        0.944
+        0.9378,
+        0.9475
       ]
     },
     {
       "modelo": "regressao_logistica",
-      "acerto_validado": 0.9355,
+      "acerto_validado": 0.9384,
       "ic95": [
-        0.9302,
-        0.9404
+        0.9334,
+        0.9432
       ]
     },
     {
       "modelo": "extra_trees",
-      "acerto_validado": 0.9274,
+      "acerto_validado": 0.9299,
       "ic95": [
-        0.9222,
-        0.9325
+        0.9249,
+        0.9354
       ]
     },
     {
       "modelo": "random_forest",
-      "acerto_validado": 0.9227,
+      "acerto_validado": 0.9252,
       "ic95": [
-        0.9171,
-        0.928
+        0.9199,
+        0.9306
       ]
     },
     {
       "modelo": "lstm",
-      "acerto_validado": 0.879,
+      "acerto_validado": 0.8837,
       "ic95": [
-        0.8724,
-        0.8857
+        0.8773,
+        0.8906
       ]
     },
     {
       "modelo": "naive_bayes",
-      "acerto_validado": 0.8609,
+      "acerto_validado": 0.8638,
       "ic95": [
-        0.8533,
-        0.868
+        0.8566,
+        0.871
       ]
     }
   ],
