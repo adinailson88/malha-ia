@@ -1,70 +1,70 @@
 {
-  "gerado_em_utc": "2026-07-27T10:29:03.902157Z",
+  "gerado_em_utc": "2026-07-28T09:22:22.665989Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
-  "acerto_validado": 0.9513,
+  "acerto_validado": 0.9527,
   "ic95": [
-    0.947,
-    0.9559
+    0.9482,
+    0.9569
   ],
-  "n": 8975,
-  "validados_na_bancada": 8975,
+  "n": 8895,
+  "validados_na_bancada": 8895,
   "ranking": [
     {
       "modelo": "linear_svc",
-      "acerto_validado": 0.9513,
+      "acerto_validado": 0.9527,
       "ic95": [
-        0.947,
-        0.9559
+        0.9482,
+        0.9569
       ]
     },
     {
       "modelo": "sgd",
-      "acerto_validado": 0.9425,
+      "acerto_validado": 0.9442,
       "ic95": [
-        0.9378,
-        0.9475
+        0.9394,
+        0.949
       ]
     },
     {
       "modelo": "regressao_logistica",
-      "acerto_validado": 0.9384,
+      "acerto_validado": 0.9404,
       "ic95": [
-        0.9334,
-        0.9432
+        0.9355,
+        0.9453
       ]
     },
     {
       "modelo": "extra_trees",
-      "acerto_validado": 0.9299,
+      "acerto_validado": 0.9314,
       "ic95": [
-        0.9249,
-        0.9354
+        0.9261,
+        0.9365
       ]
     },
     {
       "modelo": "random_forest",
-      "acerto_validado": 0.9252,
+      "acerto_validado": 0.9268,
       "ic95": [
-        0.9199,
-        0.9306
+        0.9213,
+        0.932
       ]
     },
     {
       "modelo": "lstm",
-      "acerto_validado": 0.8837,
+      "acerto_validado": 0.8872,
       "ic95": [
-        0.8773,
-        0.8906
+        0.8805,
+        0.894
       ]
     },
     {
       "modelo": "naive_bayes",
-      "acerto_validado": 0.8638,
+      "acerto_validado": 0.8659,
       "ic95": [
-        0.8566,
-        0.871
+        0.8588,
+        0.8731
       ]
     }
   ],
