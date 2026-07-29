@@ -606,7 +606,7 @@ Local tem alguns móveis de propriedade do condomínio e precisam ser retirados.
 6116,Substituição de Lampada,Elétrica > Iluminação,A primeira lâmpada do corredor queimou. Na escola não tem para substituição.,,
 6121,Instalação de medidor no quadro de ar condicionado QDAC-A. O serviço s,Climatização > Ar condicionado split,Instalação de medidor no quadro de ar condicionado QDAC-A. O serviço será acompanhado pelo Eng. Adinailson.,,
 6133,Realizar teste de descarga dos Nobreaks.,Manutenção Preventiva > Nobreak,Realizar teste de descarga dos Nobreaks.,,
-6147,Poda de árvore,Área Externa e Ambiental > Poda de Árvore / Roçagem,"Solicito a poda de uma árvore na área dos laboratórios em execução. A árvore está acima da cobertura, podendo danificar a cobertura de polietileno e quebrar telhas, devido a queda de frutos e galhos podres, além da sujeira, manchando a cobertura e o próprio piso.",,
+6147,Poda de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a poda de uma árvore na área dos laboratórios em execução. A árvore está acima da cobertura, podendo danificar a cobertura de polietileno e quebrar telhas, devido a queda de frutos e galhos podres, além da sujeira, manchando a cobertura e o próprio piso.",,
 6165,"Solicito troca da porta interna do Estúdio da ARI, localizado entre o",Estrutura Predial > Alvenaria / Pisos / Estrutura,"Solicito troca da porta interna do Estúdio da ARI, localizado entre o pavilhão administrativos e de aulas.
 Obs: A porta já foi removida.
 Foi solicitado a Coordenação Operacional a detetização do local, porém não tem contratos vigentes para realizar tal serviço no momento.",,
@@ -2225,7 +2225,7 @@ Referencia: ar-condicionado que fica na parte dos fundos.",,
 Numero do Tombo: 2015002262",Manutenção e realocação de equipamentos de ar condicionado de 48.000 Btu's no Campus Sosígenes Costa,"1. Em atendimento aos chamados: 2018030259, 2018020409, 2018030238.								"
 2018030270,Ar condicionado da sala de leitura não está funcionando.,Climatização > Ar condicionado split,Ar condicionado da sala de leitura não está funcionando.,Manutenção de aparelho de ar condicionado da sala de leitura do CPF,"1. Serviço será acompanhado pela engenheira Eduarda Lopes.								
 2. Aparelho com número de tombo 960818.								"
-2018030273,Solicito a poda de 8 árvores e retirada dos entulhos. * 3 árvores no C,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito a poda de 8 árvores e retirada dos entulhos.
+2018030273,Solicito a poda de 8 árvores e retirada dos entulhos. * 3 árvores no C,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a poda de 8 árvores e retirada dos entulhos.
 * 3 árvores no Campus, onde estão acima do telhado da copa. Recentemente uma galha quebrou e danificou parte do telhado.
 * 5 árvores no CFS, essas árvores encontram-se no fundo da sala de tutoria (onde está sendo reformado) e estão por cima do telhado, o que pode vim a causar prejuízos, já que o telhado está sendo todo revisado.
 * Retirada do entulho proveniente da poda das árvores : 12 m³",Execução de serviços de poda de arvores no CPF; Poda de árvores no IHAC do CPF; Complementar a OS 130/2020; Complementar de Poda de Árvore; Retirada de galhos de árvore,"1 - Em atendimento ao chamado 2018030273.; Poda de 3 árvores na área do IHAC do CPF, com equipe especializada, caminhão cesto e bota fora de entulho.; Adicionando poda e remoção de materia orgânica na área do CFS, e ajuste no volume a retirar da poda do IHAC do CPF.; Complementar de Poda de Árvore; Retirada de galhos de árvore"
@@ -6181,6 +6181,8 @@ Grato.",Placas de identificação para Laboratórios,Placas de identificação p
 2019010340,AR CONDICIONADO SALA DE ESTUDOS (SALA 8),Climatização > Ar condicionado split,"Prezados, boa tarde!
 Gentileza verificar o funcionamento do ar condicionado localizado na Sala de Estudos da Biblioteca (Sala 8), pois após uma queda de energia o mesmo parou de funcionar.",,
 2019010347,Telhado e forro quebrados,"Estrutura Predial > Telhados, calhas, rufos, etc.",Uma jaca caiu em cima do telhado quebrando as telhas e o forro da sala do bibliotecário,,
+2019010349,Solicito instalação de um Suporte de TV na parede na Sala 7A.  O Supor,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito instalação de um Suporte de TV na parede na Sala 7A.
+O Suporte encontra-se disponível com a equipe do Patrimônio - CJA.",,
 2019010356,Manutenção em ar condicionado,Climatização > Ar condicionado split,Ar condicionado do espaço de atendimento precisa de manutenção,,
 2019010366,"Boa tarde,  Visto que só temos transformadores com pinagem de 20A para",Elétrica > Instalações elétricas,"Boa tarde,
 Visto que só temos transformadores com pinagem de 20A para usar com a impressora Brother 8952 em 110V, solicito a troca de uma tomada de 10 A da sala da Procuradoria Federal por uma de 20A. A tomada fica localizada no rodapé próxima a impressora. Grato pela atenção.",,
@@ -6239,7 +6241,7 @@ Coordenadores de Cursos - Psicologia/Medicina",Placa de identificação para Lab
 2019010431,Solicito instalação de ar condicionado 18.000 BTUs,Climatização > Ar condicionado split,"Solicito instalação de ar condicionado 18.000 BTUs na sala do vice-reitor, em substituição do aparelho antigo que apresentou problema.
 Necessário troca de tubulação.",Fornecimento e instalação de tubulação para ar condicionado split - Reitoria,
 2019010439,Descarga de sanitario,Hidrossanitária > Hidráulica,Solicito repara na descarga do sanitário que fica entre a sala do coordenador e do apoio administrativo. A mesma está vazando água.,,
-2019010441,Poda de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito a poda de uma jaqueira localizada no fundo da sala do bibliotecário e do museólogo, essa semana já caíram duas jacas no telhado quebrando o telhado e o forro e caindo dentro das salas, com o risco de comprometer a integridade física dos servidores.",,
+2019010441,Poda de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a poda de uma jaqueira localizada no fundo da sala do bibliotecário e do museólogo, essa semana já caíram duas jacas no telhado quebrando o telhado e o forro e caindo dentro das salas, com o risco de comprometer a integridade física dos servidores.",,
 2019020003,Pontos de rede- Cabrália 3,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Os pontos de rede localizados na sala Cabrália 3 encontram-se em estado precário para utilização.
 Os cabos e keystones ficam expostos o que acarreta retrabalhos constantes, pois param de funcionar.",,
 2019020004,Pontos de rede- Cabrália 2,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Os pontos de rede localizados na sala Cabrália 2 encontram-se em estado precário para utilização.
@@ -6278,6 +6280,7 @@ W.C.
 
 TOTAL: 10 placas.",Placas de identificação; Placa de identificação,"Confecção e instalação de placas de identificação, conforme modelo do arquivo anexado no chamado; Confecção e instalação de placas de identificação de ambiente.                                                                                                                          O.S. Complementar a 019/2019"
 2019020016,Contratação de pedreiro,Posto de trabalho > Contratação de Posto de trabalho,Solicito contratação de pedreiro mensalista para o Campus Sosígenes Costa.,Contratação de pessoal - CSC,Contratação de pedreiro para o Campus Sosígenes Costa
+2019020017,Troca de quadros brancos,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Solicito a troca das lousa das salas de aula conforme levantamento anexo no chamado.,,
 2019020020,Cortar o vidro do balcão de atendimento da SECAD,"Estrutura Predial > Esquadrias, porta, portão e janelas","A abertura do vidro do balcão de atendimento da SECAD é pequena, dificultando a comunicação entre os servidores do Setor e o público. Por isso, frequentemente precisamos fazer atendimento por meio da porta, ao invés do balcão.
 Sendo assim, solicitamos o corte de uma abertura maior no vidro.",,
 2019020029,Manutenção/Conserto da fechadura da Cozinha,"Estrutura Predial > Esquadrias, porta, portão e janelas",Manutenção/Conserto da fechadura da Cozinha,,
@@ -6374,8 +6377,11 @@ Potência: 4 KW
 Atenciosamente.",Material para ponto de eletricidade - CFCS/CPF,"100 metros - Cabo de cabo 4mm² cor verde;
 100 metros - Cabo de cabo 4mm² cor azul;
 100 metros - Cabo de cabo 4mm² cor preta ou vermelha ou branca."
+2019020203,Solicito fixação de um claviculário no Setor de Operações de TIC - CJA,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito fixação de um claviculário no Setor de Operações de TIC - CJA.
+O equipamento já está disponível.",,
 2019020209,Ar condicionado com barulho,Climatização > Ar condicionado split,"Prezados, o Ar condicionado da sala de Operações Multimídia está apresentando um barulho constante.",,
 2019020210,Lâmpada queimada,Elétrica > Iluminação,A lâmpada da copa do pavilhão administrativo não está funcionando,,
+2019020211,Solicito a instalação do quadro e da TV na sala da Pró reitor da Proti,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Solicito a instalação do quadro e da TV na sala da Pró reitor da Protic.,,
 2019020212,Solicito o concerto da tomada que fica no fundo do frigobar.  Solicito,Elétrica > Instalações elétricas,"Solicito o concerto da tomada que fica no fundo do frigobar.
 Solicito a instalação de um braço de mola para manter a porta fechado na anti sala da Pró-reitoria.",,
 2019020213,Conserto da fechadura Banheiro Feminino-Pavilhão II,Estrutura Predial > Alvenaria / Pisos / Estrutura,Conserto da fechadura Banheiro Feminino-Pavilhão II,,
@@ -6387,7 +6393,11 @@ Gostaria de solicitar a reserva de duas máquinas fotográficas para os dias 26/
 Desde já agradeço.
 Cordialmente,
 Fabiana Carneiro da Silva.",,
+2019020223,Instalação de banner,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito instalação de banner da reitoria no prédio do antigo fórum, cedido para a UFSB, conforme orientação da equipe da DINFRA.
+
+OBS: O banner encontra-se guardado na Reitoria atual da UFSB. Para maiores informações, procurar o servidor José Hélder Pereira.",Instalação de banner,Materiais para instalação de banner na Reitoria
 2019020243,Substituição de lâmpadas queimadas,Elétrica > Iluminação,Solicito a presença do pessoal da manutenção (eletrica) para a troca de Lâmpadas queimadas e possibilidade de reatores também com defeito na sala do NATIC/PROTIC.,,
+2019020244,Solicitação de colocação de Quadro Branco,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Solicito a retirada do quadro Branco (tombo n 959184) localizado na sala do NATIC/PROTIC para a sala do Pró-Reitor/PROTIC.,,
 2019020256,Ponto de Telecomunicações,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,Solicito a instalação de um Ponto de Telecomunicação na secretaria do colégio Dona Amélia Amado que está funcionando em uma das salas do CUNI Itabuna. Procurar a Diretora Benedita.,Ponto de Telecomunicações; Complementar de Ponto de Telecomunicações,Materiais para ponto de telecomunicações; Complementar a O.S. 054/2019
 2019020263,Solicitação de vistoria no ar condicionado,Climatização > Ar condicionado split,"Olá, boa tarde!
 
@@ -6511,7 +6521,7 @@ Desta forma, os itens 1.3 e 2.11 que eram vinculados ao CJA serão agora vincula
 2019020428,Solicito verificação/manutenção da iluminação do sanitário masculino d,Elétrica > Iluminação,"Solicito verificação/manutenção da iluminação do sanitário masculino do Pav. de anexo ao Administrativo.
 Motivo: Luz não ascende.",,
 2019020431,Entupimento do Mictório,Hidrossanitária > Hidráulica,Um dos mictórios do banheiro do pavilhão de salas de aula está entupido e prestes a derramar.,,
-2019020432,Retirada de árvore,Área Externa e Ambiental > Poda de Árvore / Roçagem,Solicito retirada de árvore do CSC.,Poda de árvore no CSC,
+2019020432,Retirada de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,Solicito retirada de árvore do CSC.,Poda de árvore no CSC,
 2019020437,Solicito vistoria/manutenção do aparelho de Ar condicionado da sala 07,Climatização > Ar condicionado split,Solicito vistoria/manutenção do aparelho de Ar condicionado da sala 07 que não liga.,,
 2019020462,Instalação de Ar condicionado,Climatização > Ar condicionado split,"Segue Solicitação da Vice Decana do IHAC-CSC de instalações de aparelhos de Ar condicionado nas sala do CIEPS utilizadas pelo UFSB.
 
@@ -6557,7 +6567,10 @@ Caso não possa instalar ar condicionado, peço que consertem os ventiladores de
 Agradeço de antemão pela atenção.
 
 Prof. Andrei Nunes",,
+2019020549,Gostaria que fosse instalado um reforço na tranca de um armário alto d,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Gostaria que fosse instalado um reforço na tranca de um armário alto de 02 portas que está alocado na sala Cabrália 01, que serve ao laboratório de propedêutica. O serviço deve ser igual ao realizado nas portas de um armário que se encontra na sala Barra Velha, onde foi criado uma forma de passar uma corrente com cadeado.",Cadeado para armário,Fornecimento de cadeado para armário
+2019020500,Estrutura de suporte para Microondas na copa do ADM,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Solicito a instalação de mão francesa na copa do ADM para apoio do Micro ondas que foi disponibilizado para o espaço e a colocação de um ponto de tomada dupla para ligar o equipamento. A mão francesa deve ser instalada acima do frigobar.,,
 2019020501,Reposição de Lâmpadas,Elétrica > Iluminação,Solicito a reposição de lâmpadas do corredor das salas do CUNI de Santa Cruz Cabrália. Duas tipo tubular e duas de bocal.,,
+2019020512,Suporte para Quadro branco,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Solicito reparo no suporte para quadro branco que está com sua estrutura que apoia no chão solta. O mesmo se encontra localizado encostado na parede das salas cabrálias.,Suporte para Quadro Branco,Suporte para quadro branco
 2019020522,Manutenção preventiva semanal do gerador 155 kVA do Pavilhão de Aulas do CJA,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 155 kVA do Pavilhão de Aulas do Campus Jorge Amado conforme documento em anexo.
 Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2019020523,Manutenção semanal do gerador  de 55 kVA do CPF,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 55 kVA do Campus Paulo Freire conforme documento em anexo.
@@ -6576,6 +6589,7 @@ Caso haja alguma necessidade de material(is) para manutenção corretiva, este(s
 O fechamento deste chamado está condicionado ao retorno deste documento.",,
 2019020552,Tomada ventilador,Elétrica > Instalações elétricas,"Em visita ao Cuni observei que a ligação do ventilador da sala 11 está sendo feita de forma direta( Segue foto em anexo), pois na parte externa do cabo não possui o plug Macho. Da maneira que está ligado pode ocasionar possíveis problemas",Tomada para ventilador; Tomada para Ventilador,Fornecimento de material para instalação de ventilador no CUNI Porto Seguro; Material para instalação de tomada para ventilador
 2019020555,Ar condicionado com problema - PROTIC/Reitoria,Climatização > Ar condicionado split,Solicito verificar problema com os dois equipamentos de ar condicionado da sala técnica da PROTIC - Reitoria,,
+2019020556,Colocação de quadros na sala de docentes de Artes do CSC-UFSB,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Solicitamos a realização de furos (com orientação específica de localização) para fixação de quadros na sala de professoras/es de artes no Pavilhão Administrativo do CSC-UFSB.,,
 2019020569,Manutenção preventiva SEMESTRAL do gerador 55 kVA da Reitoria CJA,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva semestral do gerador de 55 kVA da Reitoria do Campus Jorge Amado conforme documento em anexo. Favor seguir roteiro conforme Anexo II, pág. 06 e 07.
 Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2019020580,Bededouros do Feiras,Hidrossanitária > Hidráulica,"Solicito manutenção nos bebedouros que estão alocados no pavilhão de feiras, pois os mesmo não estão funcionando normalmente. Caso não tenha como resolver o problema solicito que seja instalado purificador de água no lugar do bebedouro.",,
@@ -6599,6 +6613,7 @@ O laboratório de Ciências aqui do CSC começará a utilizar a rede de gás. Go
 2019020613,Instalação de hidrômetro - Bloco docentes - CPF,Hidrossanitária > Hidráulica,Solicito instalação de hidrometro no reservatorio do bloco docentes do CPF,,
 2019020614,Instalação de hidrômetro - Quadra/Vestiários - CPF,Hidrossanitária > Hidráulica,Solicito instalação de hidrômetro em reservatorio que abastece o vestiário próximo à quadra do CPF,,
 2019020630,"Fechaduras com problemas : são elas Caraíva 2,  taperapuã 2, essas portas estão sem condições de fechar","Estrutura Predial > Esquadrias, porta, portão e janelas",Local pv 3 ala Oeste precisando de reparos nas fechaduras!,Reforço em portas; Fechadura para porta corta fogo,Material para reforço em portas; Complementar O.S. 130/2019
+2019020631,Troca de chave de armário,Outros > Erro de chamado,"Solicito que abram o armário do laboratório de avaliação psicológica, o mesmo encontrasse sem chave. Aparentemente nuca foi utilizado. Entretanto a chave não foi localizada.",,
 2019020633,Solicitação de manutenção no ar condicionado,Climatização > Ar condicionado split,"Olá, boa tarde!
 
 Gostaria de solicitar a vistoria do ar condicionado da sala de tutoria 06, pois o mesmo não está funcionando.
@@ -6870,6 +6885,8 @@ Atenciosamente,
 Gioto Novais",Registro de Gás para a copa da Reitoria,Troca do registro de gás da copa da Reitoria
 2019030135,"Colocação de saboneteira banheiro feminino,pavilhão II",Estrutura Predial > Alvenaria / Pisos / Estrutura,"Colocação de saboneteira banheiro feminino,pavilhão II",,
 2019030139,Problemas com o ar da sala 12,Climatização > Ar condicionado split,"O ar condicionado da sala de aula 12 soltou duas aletas, as peças foram levadas por um discente para a SECAD.",,
+2019030149,EDINALVA NASCIMENTO GONZAGA,Outros > Erro de chamado,"Solicito uma caixa de som para deixar fixa aqui no CUNI de Teixeira de Freitas, devido à vários problemas
+ocorrido nas aulas meta presenciais.",,
 2019030154,Solicito vistoria/manutenção do ponto do rede/elétrico do AP da Recepç,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Solicito vistoria/manutenção do ponto do rede/elétrico do AP da Recepção do CJA.
 Motivo: Não liga",,
 2019030157,Solicitação de desratização,Estrutura Predial > Alvenaria / Pisos / Estrutura,Solicito desratização devido ao aparecimento de roedores mortos na área do Cuni Coaraci e ontem tinha um dentro do armário da sala 02. Já estava em estado de decomposição deixando o armário com bastante mau cheiro e cheio de larvas. O que é uma ameaça à saúde dos funcionários e estudantes bem como a integridade do patrimônio público da rede estadual e federal incluindo a fiação elétrica e de internet.,,
@@ -6907,6 +6924,8 @@ Caso seja detectado alguma anomalia ou algum dos serviços descritos no document
 Motivo: Entupido",,
 2019030218,"À Coordenação de Manutenção - DINFRA,  Ontem dia 11/03/2019 após avali",Hidrossanitária > Hidráulica,"À Coordenação de Manutenção - DINFRA,
 Ontem dia 11/03/2019 após avaliação in loco do MEC para reconhecimento de cursos, um dos ítens analisados é a infraestrutura/acessibilidade. Foi apontado que é necessário o funcionamento pleno do Sanitário PNE localizado no Pavilhão de Aulas em caráter de urgência além do que receberemos no próximo quadrimestre estudante cadeirante que atualmente estuda no CUNI Ilhéus entre outros que poderão ingressar no processo seletivo vigente.",Troca de sanitário PNE do Pav. de Aulas,Troca de vaso sanitário no pavilhão de aulas do CJA
+2019030223,Inserção de quadro na parede,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Boa tarde, gostaria de solicitar a instalação de quadro na sala da diretoria de infraestrutura da Protic",,
+2019030224,Instalação de quadro 90 cm x 60 cm na DINFRA - Reitoria,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Instalação de quadro branco próximo à mesa de Adinailson. O quadro já se encontra no local.,,
 2019030225,Solicitação de manutenção no ar condicionado,Climatização > Ar condicionado split,"Olá, boa tarde!
 
 Gostaria de solicitar manutenção no ar condicionado da Sala 2 (ANEXO), pois o mesmo não está ligando.
@@ -7135,6 +7154,7 @@ Grata!
 
 Regiane Silva dos Santos
 (73)3214-3288",,
+2019030557,Solicito ajuste/manutenção numa cadeira da biblioteca - CJA.,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Solicito ajuste/manutenção numa cadeira da biblioteca - CJA.,,
 2019030561,Substituição de lâmpadas queimadas,Elétrica > Iluminação,Sala do Núcleo Administrativo da PROTIC,,
 2019030562,Invasão de gatos em laboratório.,"Estrutura Predial > Esquadrias, porta, portão e janelas","Venho solicitar, por gentileza, que façam uma vedação definitiva nas janelas, porta e outras entradas no laboratório anexo ao laboratório de mirmecologia, pois estas se encontram muito precárias como mostram as fotos em anexo.
 A vedação se faz necessária pois estamos enfrentando uma invasão de gatos neste ambiente. Os gatos entram por buracos, principalmente nas janelas e não conseguem mais sair. Os animais que ficam presos neste ambiente acabam defecando e urinando, o que traz um forte mau cheiro ao ambiente e proximidades, tornando-os insalubres.
@@ -7254,6 +7274,7 @@ DPS 275 V / 45 kA",Substituição de DPS,Fornecimento de material para substitui
 2019040135,Reparos em caixa d'água bloco de manutenção,Manutenção Preventiva > Hidráulica,"Solicito reparos em caixa d'água do bloco de manutenção, que apresentou vazamento.
 Ressalto a urgência do serviço, pois a laje do espaço foi inundada e a água está entrando nos depósitos, danificando materiais.",Reparos em caixa d'água,Material para reparo em caixa d'água no bloco de manutenção
 2019040150,Lâmpadas queimadas,Elétrica > Iluminação,"4 lâmpadas fluorescente tubular, da sala 05, estão queimadas.",,
+2019040148,Fixação de quadros pequenos na parede,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Solicito um profissional para instalação de quadros pequenos na parede da sala de Enfermagem localizada na coordenação de apoio administrativo do CJA.,,
 2019040155,Solicito confecção de cópias das chaves (2 unidades) do Laboratório do,Outros > Erro de chamado,"Solicito confecção de cópias das chaves (2 unidades) do Laboratório do CFTCI - Sala 08 do Pav Aulas - CJA.
 Motivo: Duas chaves empenadas, caso continue o uso poderá quebrar na fechadura.",,
 2019040158,Aparelho de ar condicionado da sala de reuniões dos professores no CJA não liga,Climatização > Ar condicionado split,"Hoje em reunião com discente, a professora Regina Soares precisou utilizar a sala de reuniões ao lado da sala dos professores no mezanino do pavilhão de aulas do campus Jorge Amado, porém o aparelho não funcionou.
@@ -7263,6 +7284,12 @@ Não ligou com o controle remoto nem respondeu a comandos de display.",,
 O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 04.",,
 2019040183,Reparo,"Estrutura Predial > Esquadrias, porta, portão e janelas",Fechar basculante na sala de psicologia.,,
 2019040208,Aquisição e instalação de fechadura,"Estrutura Predial > Esquadrias, porta, portão e janelas",Aquisição e instalação de fechadura resistente no armário que fica na sala do Cuni de Itamaraju.,,
+2019040210,Concerto do quadro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados,
+
+Solicito o concerto do quadro da sala do CUNI de Teixeira de Freitas.
+
+Att,
+Caroline Caputo",,
 2019040214,Manutenção preventiva semanal do gerador 155 kVA do Pavilhão de Aulas do CJA,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 155 kVA do Pavilhão de Aulas do Campus Jorge Amado conforme documento em anexo.
 Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2019040215,Manutenção semanal do gerador  de 55 kVA do CPF,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 55 kVA do Campus Paulo Freire conforme documento em anexo.
@@ -7296,7 +7323,10 @@ O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 0
 2019040256,Manutenção preventiva Mensal - Ar condicionado Split System - Pavilhão de Aulas CJA,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo.
 O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 04.",,
 2019040259,Manutenção Ar Condicionado Sala 7 (Entupimento),Climatização > Ar condicionado split,Manutenção Ar Condicionado Sala 7 (Entupimento),,
+2019040262,Ajuste de quadro na sala do enfermeiro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Solicito um profissional para fazer um pequeno ajuste em um quadro na sala do Enfermagem localizada na coordenação de apoio administrativo do CJA.,,
 2019040269,"Fixar espelho banheiro feminino do Centro de Formação.Foi retirado por Marcelo,cabo de turma da ARAÙNA pelo risco de soltar-se totalmente e quebrar.",Estrutura Predial > Alvenaria / Pisos / Estrutura,"Fixar espelho banheiro feminino do Centro de Formação.Foi retirado por Marcelo,cabo de turma da ARAÙNA pelo risco de soltar-se totalmente e quebrar.",,
+2019040282,Solicito instalação do suporte para desktop na mesa do Setor de Operaç,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito instalação do suporte para desktop na mesa do Setor de Operações em TIC.
+Suporte já se encontra disponível no local, instalação na mesa sem gaveteiro.",,
 2019040283,Solicitação para Construção de Tampas para PV,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Solicitamos material para construção de tampas de concreto para caixas de PV localizadas no pavilhão de convenções, no pórtico e no bloco de serviços, que estão quebradas oferecendo riscos a pedestres.",Tampas para PV no CSC; Confecção de tampas de concreto do Pavihão de Feiras,Confecção para restauração das tampas de concreto das canaletas do pavilhão de feiras.
 2019040284,Aparelho não liga,Climatização > Ar condicionado split,O aparelho de ar-condicionado da salinha de reunião no mezanino da sala dos professores não está está ligando.,,
 2019040288,Manutenção preventiva bimensal do gerador 155 kVA do CPF,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva bimensal do gerador de 155 kVA do Campus Paulo Freire conforme documento em anexo. Favor seguir roteiro conforme Anexo I, pág. 04 e 05.
@@ -7425,6 +7455,7 @@ Caso seja detectado alguma anomalia ou algum dos serviços descritos no document
 Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2019040428,Manutenção preventiva bimensal do gerador 55 kVA da Reitoria CJA,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva bimensal do gerador de 55 kVA da Reitoria do Campus Jorge Amado conforme documento em anexo. Favor seguir roteiro conforme Anexo I, pág. 04 e 05.
 Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
+2019040439,Reparo em Armário para pastas suspensas,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Uma das baias do armário soltou o trilho de suporte das pastas,,
 2019040447,Transporte do Gerador,Elétrica > Gerador,Solicito que seja trazido para a Reitoria o Gerador que se encontra na oficina.,Transporte do Gerador,
 2019040451,Instalação de Ar condicionado de 18.000 BTU's - Pavilhão de Feiras - CSC,Climatização > Ar condicionado split,Solicito instalação de ar condicionado split no pavilhão de feiras do CSC,Instalação de ar condicionado de 18.000 BTU's - CSC,
 2019040455,INSTALAÇÃO DE QUADRO DE PINTURA NA PAREDE,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Solicito ajuda para pregar uma tela de arte, pintura, da parede da sala de professores do BI-Saúde.
@@ -8267,7 +8298,7 @@ Débora Oliveira",,
 2019060306,Infiltração no Teto da DINFRA,Estrutura Predial > Infiltração,Solicito verificação de uma infiltração no forro da DINFRA.,,
 2019060312,Infiltração na biblioteca,Estrutura Predial > Infiltração,"Devido as fortes chuvas foi possível identificar vazamentos (goteiras) em 2 locais da biblioteca: acervo geral e sala de processamento técnico (sobre uma das estações de trabalho). Ambos os vazamentos são oriundos de vazamentos identificados na sala dos professores no piso superior.
 Outros pontos de vazamento (apenas manchas no forro) foram identificados e causam preocupação, pois a maioria está localizada em áreas acima das estantes. Fortes chuvas podem causar o rompimento do forro e causar danos ao acervo de livros comprados pela universidade. Anexei fotos para ilustrar a ocorrência.",,
-2019060313,Roçagem e Capina na trilha ecológica do JB Floras,Área Externa e Ambiental > Poda de Árvore / Roçagem,"Diante da demanda apresentada pelo professor Jorge Costa, solicitamos a realização de roçagem e capina na trilha ecológica do Jardim Botânico Floras. Esta trilha será aberta na mata que margeia o campus e perfaz uma distância de 800m. Na avaliação do Setor de Meio Ambiente concluímos ser necessário uma roçagem prévia, com roçadeira costal em uma faixa de 5m de largura. Em seguida, deve ser feita uma capina manual com retirada de tocos e raízes numa faixa de 3m de largura. Anexamos a este chamado um croqui da área com a localização da trilha.
+2019060313,Roçagem e Capina na trilha ecológica do JB Floras,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Diante da demanda apresentada pelo professor Jorge Costa, solicitamos a realização de roçagem e capina na trilha ecológica do Jardim Botânico Floras. Esta trilha será aberta na mata que margeia o campus e perfaz uma distância de 800m. Na avaliação do Setor de Meio Ambiente concluímos ser necessário uma roçagem prévia, com roçadeira costal em uma faixa de 5m de largura. Em seguida, deve ser feita uma capina manual com retirada de tocos e raízes numa faixa de 3m de largura. Anexamos a este chamado um croqui da área com a localização da trilha.
 Atenciosamente",,
 2019060314,Solicitação de instalação de torneira próximo às salas de tutoria,Hidrossanitária > Hidráulica,"Olá, bom dia!
 Gostaria de solicitar a instalação de outra torneira próximo às salas de tutoria. Já existe uma torneira no local, porém na mesma está acoplada uma mangueira que está sendo utilizada para abastecer a obra, ou seja, ela fica indisponível para outros usos. Isso dificulta o trabalho dos auxiliares de limpeza, que agora precisam se deslocar até os laboratórios para buscar água.
@@ -8275,7 +8306,7 @@ Gostaria de solicitar a instalação de outra torneira próximo às salas de tut
 Atenciosamente,
 
 Bruna Nico.",,
-2019060318,"Prezado Coordenador de Manutenção,  Como é de conhecimento de toda a D",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezado Coordenador de Manutenção,
+2019060318,"Prezado Coordenador de Manutenção,  Como é de conhecimento de toda a D",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezado Coordenador de Manutenção,
 Como é de conhecimento de toda a Diretoria de Infraestrutura, estamos em fase de elaboração do projeto de paisagismo do Campus Jorge Amado e estamos constantemente avaliando as condições do local de implantação. Há algum tempo, percebemos que duas árvores (cajazeiras) estão apresentando algum tipo de limitação que as impede de lançar novas folhas. Nossa avaliação é que isto ocorreu por causa do serviço de raspagem da camada superficial do solo, material mais rico em relação aos nutrientes, seguida da colocação de aterro de qualidade química inferior. Tentando corrigir este problema, fizemos uma substituição do solo de aterro por um solo mais apropriado para o desenvolvimento das raízes e da planta como um todo.
 Neste sentido, visando complementar a oferta de nutrientes do solo que foi adicionado às cajazeiras, consultamos a possibilidade de adquirir 2 sacos de adubo orgânico (160L de esterco bovino), para a fertilização destas árvores.
 Atenciosamente,",Compra de adubo,"Compra de adubo para aplicação no solo de aterro do Núcleo Pedagógico do CJA, para manutenção das áreas verdes."
@@ -8617,7 +8648,7 @@ Bom dia. É necessária a instalação de um nobreak na DGP, ficamos no aguardo.
 
 Atenciosamente,",,
 2019070263,Bomba centífuga 1/3 Cv,Hidrossanitária > Bomba,Solicito substituição de Bomba centrifuga de 1/3 CV na casa de bombas do CSC.,"Aquisição de Bomba de 0,5 CV - CSC","Aquisição de Bomba de 0,5 CV - CSC"
-2019070266,Galho solto prezo em árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados, Solicito providenciar a retirada de um galho de árvore que está prezo na árvore e corre o risco de cair no telhado do corredor próximo da varanda norte do pavilhão de convenções e provocar um acidente com vitimas. Segue anexo ao chamado foto comprovativas da situação.",,
+2019070266,Galho solto prezo em árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, Solicito providenciar a retirada de um galho de árvore que está prezo na árvore e corre o risco de cair no telhado do corredor próximo da varanda norte do pavilhão de convenções e provocar um acidente com vitimas. Segue anexo ao chamado foto comprovativas da situação.",,
 2019070267,Alteração do Local da Rack do ponto de rede das Salas Administrativas,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Prezado,
 
 Conforme solicitado, foi instalado uma rack na sala do setor de Laboratórios, afim de se disponibilizar a estrutura de rede necessária para as salas administrativas do CFCS. Todavia, a mesma foi instalada perto da porta de acesso, na altura dos ombros/cabeça, de modo que já tem acontecido acidentes (três pessoas já bateram a cabeça na rack recém instalada).
@@ -10767,7 +10798,7 @@ Alexandre.",,
 2019120052,Realocação de fotossensor,Elétrica > Iluminação,"Solicito realocação de fotossensor da área externa do IHAC. O local atual encontra-se sob uma sobra, fazendo com que os refletores sejam acionados em horário que ainda possui iluminação natural satisfatória.",,
 2019120054,Pia com vazamento,Hidrossanitária > Hidráulica,"Boa tarde,
 Uma pia do Laboratório de Carcinologia e Biodiversidade Aquática (CFCAf/CEPLAC) está com vazamento.",Pia com vazamento,Pia com vazamento
-2019120059,"Solicitamos a roçagem de uma área de aproximadamente 1.000 m², próxima",Área Externa e Ambiental > Poda de Árvore / Roçagem,"Solicitamos a roçagem de uma área de aproximadamente 1.000 m², próxima ao Baobá, que está plantado na frente do Núcleo Pedagógico, cerca de 50 m da rampa de acesso ao prédio.
+2019120059,"Solicitamos a roçagem de uma área de aproximadamente 1.000 m², próxima",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicitamos a roçagem de uma área de aproximadamente 1.000 m², próxima ao Baobá, que está plantado na frente do Núcleo Pedagógico, cerca de 50 m da rampa de acesso ao prédio.
 O serviço não apresenta grande complexidade para execução, podendo ser realizado com roçadeira costal e concluído em poucas horas.
 Atenciosamente,",Roçagem de área,Roçagem de área
 2019120060,Manutenção em Ar,Climatização > Ar condicionado split,"Ar condicionado não está refrigerando, percebemos um odor de componente queimado.",,
@@ -10855,7 +10886,7 @@ Observação ( Está se soltando)",,
 Vaso sanitário do meio (lado direito/do espelho) não está descendo da forma correta.",,
 2019120188,Tomada para Alimentação da Câmera 05,Elétrica > Instalações elétricas,"Solicitamos a instalação de uma tomada para alimentação elétrica da Câmera de Segurança nº 05, localizada ao (lado dos banheiros) no Pórtico.",Tomada para Alimentação da Câmera 05,Tomada para Alimentação da Câmera 05
 2019120189,Tomada para Alimentação da Câmera 30,Elétrica > Instalações elétricas,"Solicitamos a instalação de uma tomada para alimentação elétrica da Câmera de Segurança nº 30, localizada no fundo (da sala de aula principal/telhado) do CUNI Cabrália.",Tomada para Alimentação da Câmera 30,Tomada para Alimentação da Câmera 30
-2019120190,Compra de adubo para correção de fertilidade de solo/substratos no CSC,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Compra de adubo para correção de fertilidade de solo/substratos no CSC.
+2019120190,Compra de adubo para correção de fertilidade de solo/substratos no CSC,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Compra de adubo para correção de fertilidade de solo/substratos no CSC.
 
 1 Saco de 50 kg de NPK 04-14-08
 2 Sacos de 50 Kg de NPK 10-10-10",Compra de adubo para correção de fertilidade de solo/substratos,Compra de adubo para correção de fertilidade de solo/substratos
@@ -11196,10 +11227,10 @@ Funcionamento de iluminação e tomadas;
 Infiltrações;
 Goteiras nos telhados;
 Limpeza nos quadros elétricos.",,
-2020010089,Cortar peças de madeira usadas para reaproveitamento das mesmas.  Obs:,Área Externa e Ambiental > Poda de Árvore / Roçagem,"Cortar peças de madeira usadas para reaproveitamento das mesmas.
+2020010089,Cortar peças de madeira usadas para reaproveitamento das mesmas.  Obs:,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Cortar peças de madeira usadas para reaproveitamento das mesmas.
 Obs: Essas madeiras eram usadas como vigas, mas algumas estavam comprometidas com cupim, preciso que sejam cortadas para que o serralheiro possa fazer tábuas que serão usadas como mesas.",Cortar peças de madeira usadas para reaproveitamento das mesmas,Cortar peças de madeira usadas para reaproveitamento das mesmas
 2020010086,Manutenção de ar condicionado - não está gelando,Climatização > Ar condicionado split,"Prezados, por gentileza, solicitamos manutenção do ar condicionado da sala da Diretoria de de Gestão de Pessoas, pois o mesmo não esta gelando adequadamente.",,
-2020010088,Fazer a poda de alguns galhos que estão encostando na cerca elétrica d,Área Externa e Ambiental > Manutenção área externa / meio ambiente,Fazer a poda de alguns galhos que estão encostando na cerca elétrica da policlínica.,Fazer a poda de alguns galhos que estão encostando na cerca elétrica da policlínica - CFCS/CPF,Fazer a poda de alguns galhos que estão encostando na cerca elétrica da policlínica - CFCS/CPF
+2020010088,Fazer a poda de alguns galhos que estão encostando na cerca elétrica d,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,Fazer a poda de alguns galhos que estão encostando na cerca elétrica da policlínica.,Fazer a poda de alguns galhos que estão encostando na cerca elétrica da policlínica - CFCS/CPF,Fazer a poda de alguns galhos que estão encostando na cerca elétrica da policlínica - CFCS/CPF
 2020010091,Solicito para atendimento dos serviços relacionados à manutenção de de,Elétrica > Instalações elétricas,Solicito para atendimento dos serviços relacionados à manutenção de desktop e notebooks a adição de 05 tomadas e 08 pontos de rede no Setor de Operações TIC - CJA.,Instalação de Pontos de tomada e lógica,Instalação de Pontos de tomada e lógica
 2020010092,Manutenção semanal do gerador  de 55 kVA do CPF,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 55 kVA do Campus Paulo Freire conforme documento em anexo.
 Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
@@ -11732,7 +11763,7 @@ Solicito o fornecimento de uma caixa de forro para compor estoque.",Material par
 2020020311,Maçaneta danificada,"Estrutura Predial > Esquadrias, porta, portão e janelas",Solicito substituição da maçaneta danificada no CUNI Teixeira de Freitas.,,
 2020020317,Instalação de televisores,Estrutura Predial > Alvenaria / Pisos / Estrutura,"prezados, precisamos do apoio da equipe de manutenção para a instalação dos televisores nas salas novas.",,
 2020020318,Realocação,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezados, precisamos do apoio do pessoal da manutenção para realocação do televisor do administrativo para a sala Guaratinga",,
-2020020322,Avaliação de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Senhores, boa tarde.
+2020020322,Avaliação de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Senhores, boa tarde.
 
 Recentemente um galho de uma das árvores que ficam no estacionamento do IHAC caiu em cima de um carro. Não ocorreram ventos fortes neste dia que pudessem ocasionar a queda deste galho. Solicito avaliação dos engenheiros agrônomos para verificar a necessidade de poda ou remoção desta árvore. Parte do estacionamento foi isolado para que ninguém estacionasse em sua sombra.",,
 2020020327,Verificação de ar condicionado.,Climatização > Ar condicionado split,"Boa tarde.
@@ -12363,7 +12394,7 @@ Caso seja detectado alguma anomalia ou algum dos serviços descritos no document
 Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Recarga de Extintores - CSC; Complementar de Recarga de Extintores - CSC,Recarga de Extintores - CSC; Complementar de Recarga de Extintores - CSC
 2020050029,Substituição de Refletores,Elétrica > Iluminação,"Solicito substituição de 4 refletores, sendo 03 próximos ao campo de futebol e 01 no fundo do Anexo de Aulas.
 Motivo: Queimados.",Substituição de Refletores,Substituição de Refletores
-2020050035,Supressão de Árvore no Hospital Municipal de Teixeira de Freitas,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito serviço de supressão de árvore no Hospital Municipal de Teixeira de Freitas, conforme fotos e autorização em anexo.",,
+2020050035,Supressão de Árvore no Hospital Municipal de Teixeira de Freitas,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito serviço de supressão de árvore no Hospital Municipal de Teixeira de Freitas, conforme fotos e autorização em anexo.",,
 2020050039,Reparo em vazamento na cumeeira,"Estrutura Predial > Telhados, calhas, rufos, etc.",Solicito reparo em vazamento na cumeeira do telhado da Clínica Escola de Psicologia e substituição de forros danificados.,Reparo em vazamento na cumeeira,Reparo em vazamento na cumeeira
 2020050041,Pintura de paredes com tinta antimofo,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Solicito a pintura das paredes com tinta anti mofo na Coleção de Zoologia, visando preservação da coleção e do espaço A coleção de Zoologia encontra-se próxima da sala Trancoso",Pintura de parede - CSC,Pintura de parede - CSC
 2020050042,Armários do laboratório de Zoologia,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Solicito a instalação de armários abaixo das bancadas do laboratório de Zoologia, visando preservação de material e aumento de área de alocação de material do laboratório.",,
@@ -13331,7 +13362,7 @@ At.te
 Renê Moura",,
 2020110080,Desvio de rede de drenagem e esgoto,Hidrossanitária > Hidráulica,"Desvio da rede de drenagem ou esgoto que passa sob a area do LAB NEA.
 Arquivos em anexo.",Desvio de rede de drenagem e esgoto,Desvio de rede de drenagem e esgoto
-2020110082,Compra e plantio de mudas - paisagismo da Área de convivência - CPF,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito a compra e plantio de 3 mudas de plantas parao paisagismo da área de convivencia do Campus Paulo Freire
+2020110082,Compra e plantio de mudas - paisagismo da Área de convivência - CPF,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a compra e plantio de 3 mudas de plantas parao paisagismo da área de convivencia do Campus Paulo Freire
 1 Jasmim (Gardenia jasminoides)
 2 Jabuticabeira (Plinia cauliflora)
 1 Ipê Rosa (Handroanthus spp.)
@@ -14145,7 +14176,7 @@ Para continuidade solicito:
 
 Troca dos conectores RJ45 dos pontos externos, caso mesmo assim não seja possível a conexão a substituição dos cabos;
 Reinstalação das referidas Câmeras na parte frontal Esquerda (pegando o corredor ao lado do pavilhão/acesso aos sanitários) e Direita (lateral do pav/acesso ao fundo).",,
-2021030139,"Solicito a retirada de um tronco de árvore no alojamento de medicina,",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito a retirada de um tronco de árvore no alojamento de medicina, localizado no Hospital Municipal de Teixeira de Freitas. É necessário a retirada para que possa ser executado o projeto de cobertura da área que está sendo desenvolvido.",,
+2021030139,"Solicito a retirada de um tronco de árvore no alojamento de medicina,",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a retirada de um tronco de árvore no alojamento de medicina, localizado no Hospital Municipal de Teixeira de Freitas. É necessário a retirada para que possa ser executado o projeto de cobertura da área que está sendo desenvolvido.",,
 2021030142,Manutenção semanal do gerador  de 55 kVA do CPF,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 55 kVA do Campus Paulo Freire conforme documento em anexo.
 Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2021030143,Manutenção preventiva semanal do gerador 170 kVA do CSC,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 170 kVA do Campus Sosigenes Costa conforme documento em anexo.
@@ -14728,6 +14759,7 @@ Dentre as ações, será instalado na Sala de Multimídia/Antiga SECAD um rack c
 - 3 Switchs
 Possivelmente ligados em um Nobreak vindo da PROTIC.
 Existe no local duas tomadas com a Etiqueta E05, gostaria de saber se elas suportam essa carga, e caso negativo com uma certa urgência, o que pode ser feito de ajuste, a equipe estará mobilizada na segunda feira (24/05) para realizar a montagem dos equipamentos.",,
+2021050162,Manutenção preventiva semestral do gerador 75 kVA do Núcleo Pedagógico CJA,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva semestral do gerador de 75 kVA conforme documento em anexo. Favor seguir roteiro conforme Anexo II, pág. 06 e 07. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2021050163,Manutenção preventiva SEMESTRAL do gerador 155 kVA do Pavilhão de Aulas do CJA,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva semestral do gerador de 155 kVA conforme documento em anexo. Favor seguir roteiro conforme Anexo II, pág. 06 e 07. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2021050166,Manutenção preventiva SEMESTRAL do gerador 55 kVA do CPF,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva semestral do gerador de 55 kVA do Campus Paulo Freire conforme documento em anexo. Favor seguir roteiro conforme Anexo II, pág. 06 e 07.
 Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
@@ -15264,7 +15296,7 @@ Motivo: Ar não refrigera/saindo quente.",,
 2021070166,Entupimento no Banheiro Masculino,Hidrossanitária > Hidráulica,Entupimento no Banheiro Masculino próximo ao administrativo do IHAC,,
 2021070171,"Boa tarde, o usuário FABIANO SANTOS solicita manutenção para o nobreak",Outros > Erro de chamado,"Boa tarde, o usuário FABIANO SANTOS solicita manutenção para o nobreak, número de série 272890008821, tombo 2018007720, localizado na sala setor de operações de TIC.
 Obs.: nobreak se encontra em cima da mesa ao lado da porta de entrada.",,
-2021070177,Poda de árvores no IHAC,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados, bom dia.
+2021070177,Poda de árvores no IHAC,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, bom dia.
 
 Solicito a poda de árvores do IHAC. Uma apresenta galhas em risco de eminente queda e as demais estão constantemente entupindo calhas da biblioteca, além de deslocarem telhas do telhado. Segue em anexo foto das árvores e orçamento da empresa para execução do serviço.",Poda de árvore e limpeza de terreno; Complementar de poda de árvore e limpeza de terreno,Poda de árvore e limpeza de terreno; Complementar de poda de árvore e limpeza de terreno
 2021070179,Placa da UFSB Caindo  - CFCS,Estrutura Predial > Infiltração,"Placa da UFSB que fica no Centro de Formação, em frente a SEP, está prestes a cair.",,
@@ -15845,7 +15877,7 @@ Caso seja detectado alguma anomalia ou algum dos serviços descritos no document
 Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2021090076,Manutenção preventiva semanal do gerador 155 kVA do CSC,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 155 kVA do Campus Sosigenes Costa conforme documento em anexo. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2021090077,Manutenção preventiva semanal do gerador 75 kVA do Núcleo Pedagógico CJA,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 75 kVA conforme documento em anexo. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
-2021090081,Solicitação de adubação do jardim da Reitoria,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Estimado Coordenador e demais colegas da COMAN,
+2021090081,Solicitação de adubação do jardim da Reitoria,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Estimado Coordenador e demais colegas da COMAN,
 Em virtude da instalação da nova Reitoria da UFSB no Centro de Itabuna e da criação de novas áreas de jardins, consultamos esta Coordenação quanto a possibilidade de aquisição de fertilizantes e disponibilização de um funcionário da empresa de Manutenção para, sob a orientação da Seção de Meio Ambiente da Dinfra, realizarmos a adubação dos canteiros. Para isto, será necessário adquirir os seguintes insumos:
 2 sacos de 50 kg de fertilizante, fórmula 04-14-08.
 20 sacos de esterco de gado curtido.
@@ -15965,7 +15997,7 @@ Solicito manutenção das prateleiras do armário na sala da Diretoria de Integr
 
 Cordialmente,",,
 2021090279,Manutenção Exaustor - Banheiro Proximo a sala da Coord de Campus,Elétrica > Instalações elétricas,Solicito manutenção do exaustor do banheiro próximo a Sala da Coord de Campus (não esta funcionando).,Manutenção do exaustor do banheiro,Manutenção do exaustor do banheiro
-2021090293,Supressão de abacateiro,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados, boa tarde.
+2021090293,Supressão de abacateiro,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, boa tarde.
 
 Solicito avaliação para supressão ou não de abacateiro do IHAC. Segue imagem em anexo.",Supressão de árvore e limpeza de terreno,Supressão de árvore e limpeza de terreno
 2021090295,Manutenção semanal do gerador  de 55 kVA do CPF,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 55 kVA do Campus Paulo Freire conforme documento em anexo.
@@ -16262,7 +16294,7 @@ A pedido do Coordenador do Câmpus, o sr. Paulo Borges Júnior, solicito a demol
 2021100376,Pia com vazamento,Hidrossanitária > Hidráulica,"Solicito substituição de sifão em pia do banheiro feminino, ao lado da protic, que está com vazamento.",,
 2021100377,Substituição de relé fotocélula,Elétrica > Iluminação,"Solicito substituição do relé fotocélula da área externa do IHAC, que não está acionando os refletores do circuito a que pertence.",,
 2021100378,Desinstalação de Destilador,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezado(a), bom dia. Solicito desinstalação de destilador para manutenção. Devido ao mau funcionamento o equipamento não pode ser utilizado e necessita passar por um conserto. Ele está instalado no Laboratório Interdisciplinar 2.",,
-2021100382,Prevenção de acidente,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito a podas das árvores da via no fundo do pórtico que estão com vários galhos secos pendurados e outros podres prestes a desprender. Podar também uma Jaqueira perto dos laboratórios pois já ouve queda de galhos na passarela e como temos um fluxo considerável de atividade nos laboratórios e também do pessoal que está realizando obras próximas pode a vim ocorrer acidentes. Solicito também que seja verificado, nos outros local onde temos fluxos de pessoas e veículos, se tem mais alguma árvore que necessite de realização de poda na intenção de prevenir e mitigar a ocorrência de acidentes.",,
+2021100382,Prevenção de acidente,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a podas das árvores da via no fundo do pórtico que estão com vários galhos secos pendurados e outros podres prestes a desprender. Podar também uma Jaqueira perto dos laboratórios pois já ouve queda de galhos na passarela e como temos um fluxo considerável de atividade nos laboratórios e também do pessoal que está realizando obras próximas pode a vim ocorrer acidentes. Solicito também que seja verificado, nos outros local onde temos fluxos de pessoas e veículos, se tem mais alguma árvore que necessite de realização de poda na intenção de prevenir e mitigar a ocorrência de acidentes.",,
 2021100388,Furos Para Banner,Estrutura Predial > Alvenaria / Pisos / Estrutura,Furos para colocar Banner para colação de grau no auditório.,,
 2021100391,Goteira no Forro da Sala de Suprimentos,Estrutura Predial > Forro,"Solicitamos manutenção no forro da sala de suprimentos que está apresentando goteira, inclusive com furo aparente.",Substituição de forro e estoque,Substituição de forro e estoque
 2021100395,Manutenção semanal do gerador  de 55 kVA do CPF,Manutenção Preventiva > Gerador,"Solicito acompanhamento do gerador de 55 kVA do Campus Paulo Freire conforme documento em anexo.
@@ -16282,7 +16314,7 @@ Grata!",Reparo em ar condicionado,Reparo em ar condicionado
 2021110013,Reparo em aparelho de ar condicionado da recepção,Climatização > Ar condicionado split,Solicito reparo no aparelho de ar condicionado da recepção do IHAC.,Reparo em aparelho de ar condicionado; Reparo em ar condicionado da recepção,Reparo em aparelho de ar condicionado; Reparo em ar condicionado da recepção
 2021110014,Reparo em bebedouro dos laboratórios,Hidrossanitária > Hidráulica,"Solicito reparo no bebedouro que atende aos laboratórios e à CEAME, que não está gelando.",,
 2021110020,Ar condicionado parou de funcionar,Climatização > Ar condicionado split,Solicito manutenção do ar condicionado da Auditoria Interna que parou de funcionar.,,
-2021110025,Manutenção de árvores  CSC,Área Externa e Ambiental > Manutenção área externa / meio ambiente,Segue relatório com necessidades de manutenção na vegetação do CSC. Muitos pontos estão colocando pessoas e edificações em risco.,"Manutenção de árvores, poda, supressão, capina, transplantio e roçagem - CSC; O.S. COMPLEMENTAR - Manutenção de árvores, poda, supressão, capina, transplantio e roçagem - CSC; Manutenção de árvores; Complementar de Manutenção de Árvores; Serviço complementar de Manutenção de Árvores","Manutenção de árvores, poda, supressão, capina e roçagem - CSC; Complementar à O.S. 021/2022; Manutenção de árvores; Complementar de Manutenção de Árvores; Serviço complementar de Manutenção de Árvores"
+2021110025,Manutenção de árvores  CSC,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,Segue relatório com necessidades de manutenção na vegetação do CSC. Muitos pontos estão colocando pessoas e edificações em risco.,"Manutenção de árvores, poda, supressão, capina, transplantio e roçagem - CSC; O.S. COMPLEMENTAR - Manutenção de árvores, poda, supressão, capina, transplantio e roçagem - CSC; Manutenção de árvores; Complementar de Manutenção de Árvores; Serviço complementar de Manutenção de Árvores","Manutenção de árvores, poda, supressão, capina e roçagem - CSC; Complementar à O.S. 021/2022; Manutenção de árvores; Complementar de Manutenção de Árvores; Serviço complementar de Manutenção de Árvores"
 2021110034,Telhado vazando água.,"Estrutura Predial > Telhados, calhas, rufos, etc.","Calha do telhado em frente a entrada do pavilhão de aulas, lado direito, esta caindo muita água da chuva.
 Exatamente em cima da janela do banheiro feminino.
 Solicito reparos urgentes",,
@@ -16301,7 +16333,7 @@ Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um
 2021110078,Queda de circuitos de tomadas secretaria acadêmica,Elétrica > Instalações elétricas,Informo que algumas tomadas da secretaria acadêmica não estão funcionando. Solicito verificação da equipe de manuetnção.,"Fornecimento de cabos 2,5mm para circuitos",- 200 metros AZUL;                                                                                                                                                                                                                                                                                                                                  - 100 metros VERMELHO;                                                                                                                                                                                                                                                                                                                - 100 metros VERDE
 2021110083,Iluminação externas,Elétrica > Iluminação,Lampadas queimadas em dois postes,Substituição de lâmpadas,Substituição de lâmpadas
 2021110084,Ajuste em dreno de ar condicionado/exaustor,Climatização > Ar condicionado split,"Solicito ajuste em dreno, para que o mesmo possa ter sua saída direcionada para a valeta e não fique molhando a parede, causando limo e infiltração, conforme imagem.",,
-2021110085,Deslizamento de terra do jardim dos fundos da Reitoria,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito melhorias no jardim dos fundos da reitoria, visto que as chuvas estão ocasionando deslizamento da terra e entupindo a canaleta de escoamento de água, bem como sujando a entrada de veículos oficiais, conforme fotos em anexo",Manutenção de áreas verdes da Reitoria,Manutenção de áreas verdes da Reitoria
+2021110085,Deslizamento de terra do jardim dos fundos da Reitoria,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito melhorias no jardim dos fundos da reitoria, visto que as chuvas estão ocasionando deslizamento da terra e entupindo a canaleta de escoamento de água, bem como sujando a entrada de veículos oficiais, conforme fotos em anexo",Manutenção de áreas verdes da Reitoria,Manutenção de áreas verdes da Reitoria
 2021110089,Lâmpada do Negatoscópio do consultório 1 da Ceame não está ligando,Elétrica > Iluminação,"Lâmpada do Negatoscópio do consultório 1 da Ceame não está ligando. Favor, se possível, avaliar.",Substituição de reator de lâmpada,Substituição de reator de lâmpada
 2021110090,"Boa tarde, gostaria que fosse identificado o cabo de rede no patch pai",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Boa tarde, gostaria que fosse identificado o cabo de rede no patch painel, que vem da nova câmera instalada na parte de trás do prédio da reitoria.",,
 2021110095,Escoramento cobertura restaurante,"Manutenção Preventiva > Telhados, calhas, rufos, etc.","Solicito escoramento da estrutura do restaurante nos pontos indicados ao encarregado Rodrigo pelo consultor Alberto em sua visita no dia 27/10.
@@ -17439,7 +17471,7 @@ A transferência foi colocada para o Setor de Infra (Victor) e o setor de Patrim
 2022030136,Mofo/ umidade na parede do novo laboratório de zoologia,Estrutura Predial > Infiltração,As paredes do recem pintado e novo laboratório de zoologia encontram-se com umidade e mofo. Verificar possível vazamento ou outra causa e realizar reparo,,
 2022030137,Recarga de extintores do Laboratório do CEPEC - CJA,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito recarga dos extintores. Considerar os extintores localizados nos laboratórios da UFSB localizados no CEPEC da CEPLAC. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Recarga de extintores CEPEC - CJA,Recarga de extintores CEPEC - CJA
 2022030138,Recarga de extintores do NUPED - CJA,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito recarga dos extintores. Considerar os extintores localizados no Núcleo Pedagógico do CJA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Recarga de extintores do NUPED; Complementar de recarga de extintores NUPED,Recarga de extintores do NUPED; complementar de recarga de extintores NUPED
-2022030139,Teste Hidrostático nas Mangueiras de incêndio - NUPED CJA,Manutenção Preventiva > Sistemas de incêndio,Solicito teste hidrostático nas mangueiras de Incêndio localizadas no Núcleo Pedagógico do CJA,,
+2022030139,Teste Hidrostático nas Mangueiras de incêndio - NUPED CJA,"Segurança contra Incêndio > Sistemas de combate a incêndio (extintores, hidrantes)",Solicito teste hidrostático nas mangueiras de Incêndio localizadas no Núcleo Pedagógico do CJA,,
 2022030141,Bancos de jardim em concreto,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezados,
 
 conforme alinhamento com Diretora Lívia, solicito a confecção de 30 bancos de jardim em concreto. (ver modelo com o engenheiro Victor).",,
@@ -18000,7 +18032,7 @@ Solicito a instalação de um forro de pvc na sala do Cuni Posto da Mata. Há in
 2022050041,Ar condicionado vice-reitoria,Climatização > Ar condicionado split,"Prezados (as),
 
 Por gentileza, verificar o ar condicionado da sala do Prof. Mesquita, pois não está funcionando.",,
-2022050042,Poda de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados, boa tarde.
+2022050042,Poda de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, boa tarde.
 
 Solicito avaliação do setor de meio ambiente e solução para um problema causado por 2 pés de jamelão que constantemente deixam as calçadas de acesso aos laboratórios e à CEAME sujas. Segue fotos em anexo.",,
 2022050045,Recebimento e-mails lista todos,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Boa tarde.
@@ -18583,7 +18615,7 @@ Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do d
 2022060062,Reparos em sala de aula,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezados,
 
 Solicito reparo em nova sala cedida para a UFSB no Cuni Posto da Mata. Será necessário reparo em revestimento cerâmico, em porta, fechadura de porta e reposição de lâmpadas.",Reparos em sala de aula no CUNI Posto da Mata; Complementar de Reparos em sala de aula do CUNI Posto da Mata,Reparos em sala de aula no CUNI Posto da Mata; Complementar de Reparos em sala de aula do CUNI Posto da Mata
-2022060066,Aquisição de tapete de grama para área externa da Reitoria da UFSB,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2022060066,Aquisição de tapete de grama para área externa da Reitoria da UFSB,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Tudo bem?
 Solicito a aquisição de 44 m² de grama esmeralda, para implantação de 2 faixas gramadas com uma de 2 m (largura) por 20 m (Comprimento) e outra de 0,4 m (largura) por 10 m (comprimento), a fim de reduzir a erosão do solo e escoamento de lama para o sistema de drenagem externo da Reitoria da UFSB.
 Informo que os funcionário da terceirizada já constataram o entupimento do sistema externo de drenagem devido o escoamento do solo causado pela erosão.
@@ -18945,7 +18977,7 @@ a disposição para quaisquer duvidas.",,
 
 Cordialmente.
 Israel Ribeiro",,
-2022060398,Poda de árvore acesso CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,Solicito poda da arvore que está bem avançada sobre os cabos de energia e fibra na via principal de acesso ao CJA.,,
+2022060398,Poda de árvore acesso CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,Solicito poda da arvore que está bem avançada sobre os cabos de energia e fibra na via principal de acesso ao CJA.,,
 2022060407,Pontos de Rede,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Prezado,
 Solicito 4 pontos de lógica para nova sala dos professores.
 OBS: Solicito que os 4 pontos de tomadas sejam estendidos ao nível do nobreak.
@@ -20585,7 +20617,7 @@ Débora Oliveira",,
 Gostaria de solicitar, por gentileza, a verificação do ar condicionado na sala de apoio técnico do CFCAf. Quando ligamos o aparelho, o mesmo apresenta um forte odor de barata e mofo.
 Grata!",,
 2022100096,Ar Condicionado - Aparelho não liga - Secretaria Executiva,Climatização > Ar condicionado split,Ar Condicionado - Aparelho não liga - Secretaria Executiva,,
-2022100100,ROÇAGEM DA ESTRADA DE  ACESSO AO CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde.
+2022100100,ROÇAGEM DA ESTRADA DE  ACESSO AO CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde.
 
 Em virtude do tráfego intenso na estrada vicinal que dá acesso ao Núcleo Pedagógico. Considerando que a estada é estreita e o mato está atrapalhando as ultrapassagem dos veículos. Solicitamos a roçagem das laterais da estrada.
 Em tempo, informamos que a estrada necessita de uma manutenção ""tapa buracos"" urgente.
@@ -21000,10 +21032,10 @@ Caso possível liberar um estoque mínimo de materiais para reparo dos banheiros
 2022120136,vazamento da torneira da pia,Hidrossanitária > Hidráulica,Uma das pias do laboratório /coleção de zoologia está vazando água e escorrendo pela parede. A pia fica encharcada.,,
 2022120137,luz possivelmente queimada,Elétrica > Iluminação,As duas últimas lâmpadas do laboratório;coleção de zoologia não acendem. Possivelmente queimadas ou problema de corrente.,Aquisição de lâmpadas,Aquisição de lâmpadas do tipo E27 10W
 2022120138,porta que separa a coleção do laboratório,"Estrutura Predial > Esquadrias, porta, portão e janelas","A porta que fica na coleção de zoologia, separando o espaço da coleção com o laboratório, está empenada e a maçaneta caiu",,
-2022120139,Poda de árvore acesso CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito poda da arvore que caiu sob a rede elétrica, e apresenta risco a rede lógica do campus Jorge Amado.
+2022120139,Poda de árvore acesso CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito poda da arvore que caiu sob a rede elétrica, e apresenta risco a rede lógica do campus Jorge Amado.
 A arvore fica na entrada do CJA, no sentido da subestação, as duas outras que estão atrás, balançam muito.",,
 2022120140,Reparo descarga,Hidrossanitária > Hidráulica,Solicito reparo da descarga do banheiro feminino do terceiro andar.,,
-2023010025,"Limpeza do córrego e da manilha, de drenagem pluvial do Campus Jorge Amado, Ilhéus - BA.",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa Tarde
+2023010025,"Limpeza do córrego e da manilha, de drenagem pluvial do Campus Jorge Amado, Ilhéus - BA.",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa Tarde
 Solicito a Limpeza do Leito (é o espaço ocupado pelas águas, isto é, é o caminho que o rio percorre) e da Margem do Córrego (é o local onde a água se encontra com a terra).
 A Limpeza do Leito deverá ser feita com a retirada dos resíduos (Galhos, Folhas, bromélias e etc.), que estão obstruído o fluxo de água, a fim de prevenir futura obstrução do fluxo de água. Além disso, solicito o aprofundamento da profundidade do leito do rio próximo a manilha e retirada dos resíduos na ""boca da manilha"".
 A Limpeza da Margem do Córrego deverá se dar com a Roçagem com roçadeira costal e retirada de resíduos orgânicos próximo ao Leito do Rio. A Limpeza da Margem deverá se dar, principalmente, próximo a manilha.
@@ -21039,7 +21071,7 @@ Matias Costa de Oliveira",,
 Estou tentando há 5 dias enviar um relatório pelo sigaa para a PROAF e aparece um erro.
 
 Preciso encaminhar antes que o prazo acabe. Poderiam verificar?",,
-2022120162,Queda de árvore em linha de transmissão de energia,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito análise para poda de árvore que caiu sobre linhas de transmissão de energia, conforme imagens.",,
+2022120162,Queda de árvore em linha de transmissão de energia,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito análise para poda de árvore que caiu sobre linhas de transmissão de energia, conforme imagens.",,
 2022120164,Solicitação de manutenção em ar condicionado,Climatização > Ar condicionado split,"O aparelho de ar condicionado da sala da Coordenação de Compras e Licitações está sem funcionar, apontando mensagem de erro.
 
 Favor verificar o aparelho para conserto.",,
@@ -21214,7 +21246,7 @@ Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um
 2023030441,Solicitação para afixar ganchos de rede na sala de professores das Artes,Estrutura Predial > Alvenaria / Pisos / Estrutura,Solicito que sejam afixados dois ganchos de modo a afixar uma rede nas paredes do fundo da sala de docentes das Artes no Pavilhão administrativo.,,
 2023030442,Reparo em tubulação,Hidrossanitária > Hidráulica,Solicito reparo da tubulação de água que está aparente na cobertura do Núcleo Pedagógico,Reparo em tubulação,Reparo em tubulação
 2023030443,Porta da sala de docentes das artes avariada,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Informo que a porta da sala de docentes das artes está avariada, o que impede seu fechamento. Solicito manutenção.",,
-2023030444,Limpeza da Ponta de ala de drenagem e da malha de drenagem no Campus Jorge Amado,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa Tarde
+2023030444,Limpeza da Ponta de ala de drenagem e da malha de drenagem no Campus Jorge Amado,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa Tarde
 Solicito a limpeza da drenagem da ponta de ala da drenagem do Campus Jorge Amado e da manilha localizada na quadra ao lado da CEPLAC. Além disso, necessita-se fazer uma restauração nesta manilha de concreto de drenagem no córrego, na qual esta desencaixada e o solo da estrada esta em processo de erosão, direcionando material edáfico para dentro da manilha.
 Atenciosamente
 Yuri Amorim",,
@@ -21227,7 +21259,7 @@ Gostaria de solicitar os seguintes materiais para que possamos realizar alguns r
 02 Tubos de veda trinca
 04 rolos de fita impermeabilizante para vedação de telhados 10cm
 02 primer",Reparo no telhado das salas de aula,Reparo no telhado das salas de aula
-2023020262,Porta de Arvore - Entrada do Feiras,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados(as),
+2023020262,Porta de Arvore - Entrada do Feiras,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados(as),
 
 Solicito a poda do pé de jaborão que fica localizado na entrada do pavilhão de feiras. Segundo relato do Jardineiro necessita de uma poda drástica na árvore para ela poder recuperar. Tem ocorrido queda de galho na mesma e segundo o jardineiro se não for realizada essa poda isso será constante.
 
@@ -21379,7 +21411,7 @@ José Júnior",Pontos de tomadas na lanchonete,Pontos de tomadas na lanchonete
 Solicito instalação de novo ponto de rede.
 
 Desde já agradeço!",,
-2023020123,Compra de insumos para manutenção de Motoserras,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa Tarde
+2023020123,Compra de insumos para manutenção de Motoserras,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa Tarde
 Solicito a compra de insumos para manutenção de Motosserras, para serviços de poda vegetal no Campus Jorge Amado, município de Ilhéus -BA.
 Quantidade| Descrição
 2 | LIMA 5,2 MM (13/64) STIHLL;
@@ -21684,7 +21716,7 @@ Atenciosamente,",,
 2023070409,Ar condicionado vazando,Climatização > Ar condicionado split,"Bom dia,
 O aparelho de ar condicionado da sala de Física da Madeira do Laboratório de Tecnologias de Produtos Florestais está com vazamento.",,
 2023030046,Bebedouro com pouco caimento de água nas torneiras,Hidrossanitária > Hidráulica,Bebedouro próximo ao auditório no setor de habilidades.,,
-2023030053,Compra de Mudas e insumos,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2023030053,Compra de Mudas e insumos,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Tudo bem?
 Solicito a compra de 8 mudas de Tumbêrgia Azul e 24 (360 litros ou 0,36 m³) latas de substrato (Terra vegetal + esterco). A fim de executar a instalação da cortina vegetal, na Núcleo Pedagógico do Campus Jorge Amado.
 
@@ -22164,7 +22196,7 @@ At.te",,
 2023040217,Limpeza Clarabóias Pav. Feiras,"Manutenção Preventiva > Telhados, calhas, rufos, etc.","Solicito Limpeza das Clarabóias do Pavilhão de feiras. Sugiro que o serviço seja executado no momento da aplicação da manta aluminizada que está prevista e antes da revisão dos cravejamentos, para evitar que seja danificado. Segue imagens das clarabóias no final de 2020, quando foram substituídas e o estado atual (com uma crosta de sujeira).",,
 2023040221,Banheiro,Hidrossanitária > Hidráulica,"Boa tarde,
 Um dos vasos sanitários do banheiro masculino do CFCAf está entupido.",,
-2023040225,Poda de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados,
+2023040225,Poda de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 
 Solicito avaliação para poda de árvore no Complexo 2, próximo à Clínica Escola de Psicologia, que está tensionando a fiação elétrica de nossa rede.",,
 2023040248,Pias com vazamentos,Hidrossanitária > Hidráulica,"Boa tarde!
@@ -22527,7 +22559,7 @@ Solicito:
 Solicito reparo em 02 tomadas de embutir da sala do Assistente Operacional e 02 Entradas de sobrepor de conector de rede RJ45.",,
 2023050216,Reparo na pia da copa do CFCAF,Hidrossanitária > Hidráulica,O sifão da pia da copa do CFCAF/CEPEC está quebrado e vazando.,Reparo na pia da copa do CFCAF,troca de sifão
 2023050237,Vazamento de pia na copa do Terreo.,Hidrossanitária > Hidráulica,Pia da copa do Térreo com vazamento.,,
-2023050230,"Boa tarde,  Solicito que seja realizada a supressão de 04 árvores loca",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde,
+2023050230,"Boa tarde,  Solicito que seja realizada a supressão de 04 árvores loca",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde,
 Solicito que seja realizada a supressão de 04 árvores localizadas na área externa do complexo 2, na divisa com a Policlínica. Foi identificado que algumas dessas árvores estão com a base comprometida e podem causar algum tipo de acidente ou prejuízos.",Supressão de árvores - CPF,Supressão de árvores de árvores localizada na área externa do complexo 2 do CPF. Inclui também retirada do entulho
 2023050239,Pintura da Sala do Assistente Operacional,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezados,
 Com as fortes chuvas do dia 21/04 aqui na região, fomos atingidos por uma tromba d'água que invadiu as salas do Colégio e afetaram as paredes da sala do assistente operacional com lama. Percebeu-se após a lavagem do local, a necessidade de realizar uma pintura para manter o local acessível para uso.",,
@@ -22817,7 +22849,7 @@ Atenciosamente,
 
 Luiz Guimarães
 DIT",Aplicação de insulfilm nos vidros das salas de reunião da Reitoria,Aplicação de insulfilm nos vidros das salas de reunião da Reitoria
-2023060098,"Replantio da Cortina Vegetal do Núcleo de Vivência e Gestão Acadêmica, com Heliconia Rostrata",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito o replantio do da Cortina Vegetal do Núcleo de Vivência e Gestão Acadêmica.
+2023060098,"Replantio da Cortina Vegetal do Núcleo de Vivência e Gestão Acadêmica, com Heliconia Rostrata",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito o replantio do da Cortina Vegetal do Núcleo de Vivência e Gestão Acadêmica.
 O Replantio deverá ser realizado no local onde foi plantado o Bambu (Morto devido a falta de drenagem das áreas em volta do NVGA) e as mudas de Heliconia Rostrata podem ser retidas das áreas vizinhas ao Campus.",,
 2023060101,Mictório entupido,Hidrossanitária > Hidráulica,Solicito reparo no mictório do banheiro masculino próximo a biblioteca NVGA,,
 2023060104,Instalar painel de drywall,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezados
@@ -23166,7 +23198,7 @@ Solicito atendimento urgente, para as salas 204 / 208, as mesmas estão com toma
 
 Solicito verificação nas tomadas do auditório e recepção, as mesmas encontram-se em curto.",,
 2023070227,Instalação saboneteira,Estrutura Predial > Alvenaria / Pisos / Estrutura,Solicito instalação de saboneteira no sanitário PNE próximo a biblioteca. O equipamento já está no local,,
-2023070228,Supressão Vegetal,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados,
+2023070228,Supressão Vegetal,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 
 Em virtude da execução das obras do Contrato 04/2023, solicito a supressão vegetal de 6 unidades arbóreas que se encontram no espaço locado para construção da Subestação e do Canteiro de Obras no Complexo 2 do CPF. Por fim, para ajudar no dimensionamento da demanda, seguem algumas imagens do local.
 
@@ -23735,7 +23767,7 @@ O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 0
 
 Solicito o fornecimento de 2 caixas de placas de forro mineral para eventuais substituições das placas danificadas no Campus.",Fornecimento de placas de forro mineral,Fornecimento de placas de forro mineral
 2023090020,Portão de entrada do CSC,Estrutura Predial > Alvenaria / Pisos / Estrutura,O portão de entrada do CSC está com uma dobradiça quebrada. Solicito a verificação e indicação dos insumos necessários para o reparar.,Reparo no portão de entrada do CSC,Reparo no portão de entrada do CSC
-2023090021,Manutenção dos Fancoils,Climatização > Ar condicionado central,"O Sr. Raimundo informou a necessidade de substituição de insumos para os fancoils da central de ar. Rodrigo, Favor listar os materiais necessários.",Manutenção dos Fancoils,Manutenção dos Fancoils
+2023090021,Manutenção dos Fancoils,Climatização > Ar condicionado central,"O Sr. Raimundo informou a necessidade de substituição de insumos para os fancoils da central de ar. Rodrigo, Favor listar os materiais necessários.",Manutenção dos Fancoils; Manutenção dos Fancoils,Manutenção dos Fancoils; Manutenção dos Fancoils
 2023090022,Revisão Banheiros,Manutenção Preventiva > Hidráulica,"Solicito revisão de todos os banheiros do CSC. Indicar quantitativo necessários de:
 
 Reparos de válvulas;
@@ -24368,7 +24400,7 @@ Cordialmente,
 
 Thiago Mafra",Instalação de vedação em portas,Instalação de vedação em portas
 2023100320,Iluminação Herbário,Elétrica > Iluminação,"Solicito adequação da iluminação da coleção de duplicatas, sala ao lado do depósito, incluindo a mudança de interruptores. Todo a iluminação antigo parou de funcionar.",,
-2023100333,Limpeza da Ponta de Ala de Drenagem e limpeza e Roçagem do córrego do CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2023100333,Limpeza da Ponta de Ala de Drenagem e limpeza e Roçagem do córrego do CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Devido o inicio do período de chuvas em novembro, solicito a limpeza da área entorno da Ponta de Ala do sistema de Drenagem e limpeza e roçagem do Córrego (Iniciando na Ponta de Ala até a manilha que foi recuperada, na QUADRA da CEPLAC).
 
 Atenciosamente
@@ -24825,7 +24857,7 @@ Saudações,",,
 2023110283,Ar condicionado não está gelando adequamente  Sala do Professor Luiz F,Climatização > Ar condicionado split,"Ar condicionado não está gelando adequamente
 Sala do Professor Luiz Fernando Silva Magnago, Centro de Formação em Ciências Agroflorestais, CJA
 Obrigado",,
-2023110284,Irrigação da área verde da Reitoria,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde
+2023110284,Irrigação da área verde da Reitoria,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde
 Devido o estresse hídrico das plantas das áreas verdes, que está causando a mortalidade das mesmas. Solicito a compra dos equipamentos de irrigação para as áreas verdes da Reitoria.
 Segue orçamento a baixo.",Irrigação da área verde da Reitoria; Complementar de irrigação da área verde da Reitoria,Irrigação da área verde da Reitoria; Complementar de irrigação da área verde da Reitoria
 2023110285,Ar condicionado,Climatização > Ar condicionado split,Solicito que o ar condicionado de decanato do CFTCI seja verificado porque o mesmo não está resfriando,,
@@ -25292,7 +25324,7 @@ Gostaríamos de solicitar a instalação - nos locais que acharem mais convenien
 Em caso de dúvidas, estamos à disposição.
 Desde já, agradecemos!",,
 2023120170,Reparo em telhado,"Estrutura Predial > Telhados, calhas, rufos, etc.",Solicito reparo em telhado do laboratório 2 que apresenta um caibro rompido,Reparo em telhado do Laboratório 2,Reparo em telhado do Laboratório 2
-2023120172,Limpeza e Roçagem do córrego do CJA acima Ponta de Ala de Drenagem,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2023120172,Limpeza e Roçagem do córrego do CJA acima Ponta de Ala de Drenagem,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Devido o inicio do período de chuvas em janeiro solicito a limpeza e roçagem do corrego, da área do corrego acima da Ponta de Ala do sistema de Drenagem, correspondente a 737 m lineares.
 Segue imagem ilustrativa da área.
 Atenciosamente
@@ -26224,7 +26256,7 @@ Nadabe Reis",,
 MOTIVO: Os quadros foram transferidos de local.
 Gentileza providenciar.",,
 2024020060,O ar condicionado não está funcionando. Solicito apoio aqui,Climatização > Ar condicionado split,"O ar condicionado da ARI- UFSB, 3 ANDAR, dentro da secretaria executiva não está funcionando. Solicito apoio aqui",Reparo ar condicionado da Assessoria de Relações Internacionais,Reparo ar condicionado da Assessoria de Relações Internacionais
-2025010257,Compra de Pulverizador a combustação SR 450,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2025010257,Compra de Pulverizador a combustação SR 450,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Solicito a aquisição de um Pulverizador a combustão, para melhor a eficiência de aplicação de herbicida nas áreas externas do Campus Jorge Amado.
 Segue especificação do equipamento.
 Especificações Técnicas
@@ -27101,7 +27133,7 @@ Solicito a substituição de 4 refletores defeituosos na quadra.",,
 2024040026,Reparo em aparelho de ar condicionado,Climatização > Ar condicionado split,"Prezados,
 
 Solicito reparo em aparelho de ar condicionado da sala de prescrição do conforto estudantil do HMTF.",Reparo em aparelho de ar condicionado ,Reparo em aparelho de ar condicionado da sala de prescrição do conforto estudantil do HMTF
-2024040027,Poda de árvore no complexo 2,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados,
+2024040027,Poda de árvore no complexo 2,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 
 Solicito poda de árvore do complexo 2, que apresenta galhos instáveis.",,
 2024040029,Problema na caixa de água do vaso sanitario do Banheiro masculino,Hidrossanitária > Hidráulica,"Prezado,
@@ -27277,7 +27309,7 @@ Atenciosamente,",,
 2024090102,Banheiro feminino,Hidrossanitária > Hidráulica,"Bom dia,
 A descarga de um dos sanitários do banheiro feminino do CFCAf não está funcionando. Gostaria de solicitar, por gentileza, a verificação da mesma.
 Grata!",,
-2024040168,"Poda de árvores no Complexo 2, do Campus Paulo Freire em Teixeira de Freitas - BA",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2024040168,"Poda de árvores no Complexo 2, do Campus Paulo Freire em Teixeira de Freitas - BA",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Solicito a poda de individuos arboreos que estão com galhos com risco de queda em pedestre e veiculos estacionados. Deverá ser realizados nestes individuos uma PODA FITOSSANITÁRIA, retirando os galhos com problemas fitossanitários.
 A ordem de Serviço deverá ser emitida para codigo:
 
@@ -28039,7 +28071,7 @@ Venho por meio deste solicitar a instalação de 1(uma) tomada e 1(um) ponto de 
 O motivo desta solicitação, é por causa da mudança do layout na sala do Procurador.",,
 2024060133,Manutenção Semestral - Ar condicionado - CJA - Núcleo Pedagógico,Manutenção Preventiva > Ar condicionado split,Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados no NUPED do CJA. Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do documento em anexo que versa sobre as tarefas semestrais que devem ser feitas nos equipamentos de Ar condicionados do tipo SPLIT.,Manutenção Semestral - Ar condicionado - CJA - Núcleo Pedagógico,Manutenção Semestral - Ar condicionado - CJA - Núcleo Pedagógico
 2024060136,vaso sanitário,Hidrossanitária > Hidráulica,Vaso sanitário do 4º pavimento se encontra entupido.,,
-2024060137,Limpeza da Faixa Vegetal Circuvizinha da Área das Lagoas de Polimento da ETE do CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa Tarde
+2024060137,Limpeza da Faixa Vegetal Circuvizinha da Área das Lagoas de Polimento da ETE do CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa Tarde
 Solicito a Limpeza da Faixa Vegetal Circuvizinha da Área das Lagoas de Polimento da ETE do CJA:
 Neste serviço solicito a contratação dos seguintes serviços?
 
@@ -28748,7 +28780,7 @@ A guarita fica localizada no complexo 2 (CFCS)",,
 2024080288,Ar condicionado vazando,Climatização > Ar condicionado split,"Bom dia,
 O aparelho de ar condicionado do Laboratório Central de Biodiversidade está com vazamento. Gostaria de solicitar, por gentileza, a verificação do mesmo.
 Atenciosamente,",,
-2024080295,Solicitação de retirada de árvore caída e drenagem do acesso ao Meliponário,Área Externa e Ambiental > Poda de Árvore / Roçagem,"Prezados colegas,
+2024080295,Solicitação de retirada de árvore caída e drenagem do acesso ao Meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados colegas,
 Bom dia! Por favor, solicito a retirada de uma árvore caída e a drenagem do acesso ao Meliponário. Justifico a urgência, pois precisamos oferecer segurança aos frequentadores do espaço. Estaremos recebendo público externo (crianças de 5 a 8 anos) e produtores rurais a partir da próxima semana. Após a manutenção do canal do entorno do CJA passou-se a acumular água no acesso ao meliponário.
 Desde já agradeço.
 Atenciosamente,
@@ -29114,7 +29146,7 @@ Atenciosamente.",,
 Gostaria de solicitar mais uma Mesa de trabalhos com bancos no Laboratório de Expressões Gráficas, CJA, no modelo existente. Para a viabilização e facilitação das aulas de desenho técnicos que ocorrem no laboratório.
 
 Atenciosamente.",,
-2024090256,Compra de Insumos para limpeza das áreas externas do CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2024090256,Compra de Insumos para limpeza das áreas externas do CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Solicito a compra dos seguintes insumos para limpeza das áreas externas do CJA:
 
 20 litros de herbicida;
@@ -29782,7 +29814,7 @@ Alexandre.",,
 2024110092,Suporte de sabão liquído vazando,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Há um suporte de sabão liquido vazando (quebrado)
 Favor substituir
 Local: Copa dos funcionários (cozinha)",,
-2024110100,Retirada de caixa de sistema de combate a incêndio,Manutenção Preventiva > Sistemas de incêndio,"Solicito retirada e fechamento de caixa do sistema de combate a incêndio no Pavilhão de Convenções, conforme imagens em anexo.",,
+2024110100,Retirada de caixa de sistema de combate a incêndio,"Segurança contra Incêndio > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito retirada e fechamento de caixa do sistema de combate a incêndio no Pavilhão de Convenções, conforme imagens em anexo.",,
 2024110113,quadro branco,Outros > Erro de chamado,"Caro (a) colega, boa tarde
 Por gentileza, para viabilizar aulas e melhor desenvolvimento dos trabalhos, gostaria de solicitar, se possível, a instalação de um quadro branco para o laboratório de melhoramento florestal e análise de dados.
 Se fosse possível instalar antes da próxima quinta-feira (14/11), já seria de imensa ajuda na aula que tenho neste dia.
@@ -30024,7 +30056,7 @@ Boa tarde! Por favor, solicito a roçagem no entorno do meliponário Jardim das 
 Desde já agradeço.
 Atenciosamente,
 Rosane",,
-2024110316,Poda de árvores no complexo 2,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados,
+2024110316,Poda de árvores no complexo 2,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 
 Solicito, com urgência, poda de árvores no complexo 2 que estão em contato com a rede elétrica pública.",Poda de árvores no Complexo 2,Poda de árvores no Complexo 2
 2024110322,Manutenção da porta,"Estrutura Predial > Esquadrias, porta, portão e janelas","Solicitamos a realização de manutenção na porta, que está apresentando travamento e dificuldades ao ser aberta.
@@ -30526,7 +30558,7 @@ A manutenção identificou 3 torneiras quebradas no campus, é necessário a com
 2025010095,Buraco na rotatoria para acesso ao campu,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezados,
 
 solicito lançamento de asfalto frio em 02 buracos na entrada da rotatória de acesso ao campus. Os buracos podem gerar acidente.",,
-2025010102,Compra de Herbicida para a Limpeza e Manuteção do Campus Jorge Amado,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"oi
+2025010102,Compra de Herbicida para a Limpeza e Manuteção do Campus Jorge Amado,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"oi
 Tudo bem?
 Solicito a compra de 40 litros Herbicida Sistemico (Glifosato ou similar) , para manuteção das áreas externas das Estações de tratamento de água e esgoto, faixa de seguraça da Rede Eletrica, Acostamento da estrada que da acesso ao Campus Jorge Amado.
 Atenciosamente,
@@ -30649,7 +30681,7 @@ Grata!",,
 2025010166,Maçaneta da porta quebrada,"Estrutura Predial > Esquadrias, porta, portão e janelas","Maçaneta da porta quebrada
 Local: Sala de apoio Roçagem próximo a escadaria da antiga copa.
 Para mais informações procurar André da limpeza",Reparo em Maçaneta da porta quebrada,Reparo em Maçaneta da porta quebrada
-2025010167,Aquisição de Roçadeiras Costais,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia,
+2025010167,Aquisição de Roçadeiras Costais,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia,
 Solicito a aquisição de 3 r oçadeiras à combustão STIHL FS 460 (2,2 kW/cv, 750 ml) , equipadas com lâmina de 3 pontas de 300 mm. Esta compra se faz necessária para otimizar os serviços de limpeza e manutenção das áreas verdes, incluindo faixas de segurança da rede elétrica, estações de tratamento de água e esgoto, acostamentos das vias vicinais e beira de córregos.
 Atualmente, a equipe está utilizando equipamentos de potência inferior, que não são adequados para o trabalho intenso em vegetação alta e lenhosa de até 2 cm de diâmetro. Esses equipamentos frequentemente apresentam falhas e quebras, o que tem prejudicado o andamento dos serviços de roçagem nas áreas verdes do campus.
 A roçadeira em questão é ideal para os tipos de serviço realizados no Campus Jorge Amado, especialmente no corte de vegetação densa, lenhosa e em terrenos desafiadores.
@@ -30683,7 +30715,7 @@ Tomada da impressora ""estourou"" e fez fumaça. Solicito conserto.
 Atenciosamente,
 Jorge Costa",,
 2025010185,Retirada e instalação,Elétrica > Instalações elétricas,"Retirar luminárias e tomadas da atual sala do Cuni, em Posto da Mata, para a nova sala provisória.",,
-2025010222,Solicitação de roçagem da área no entorno do meliponario,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as colegas,
+2025010222,Solicitação de roçagem da área no entorno do meliponario,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as colegas,
 
 Bom dia! Por favor, gostaria de solicitar a roçagem da área no entorno do meliponario Jardim das Meliponas. As aulas já reiniciaram e precisaremos manejar a área durante as aulas práticas.
 
@@ -30758,14 +30790,14 @@ Yuri Amorim",Compra de um Medidor de Cloro 0.00 a 3.50 ppm e resolução de 0.01
 Atenciosamente,
 
 Jader Vieira",,
-2025010260,Poda árvores,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados
+2025010260,Poda árvores,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados
 Solicito poda e retirada de duas árvores caídas na área do Centro de Treinamento. Além disso, é necessário avaliar o risco de quedas das outras árvores do local.",,
 2025010262,Limpeza luminárias,Elétrica > Iluminação,Solicito limpeza das luminárias que serão utilizadas nas salas que estão sendo reformadas.,,
 2025010263,Aluguel de andaimes,Suprimentos / Apoio Técnico > Materiais,Solicito andaimes para execução de serviços de manutenção,Aluguel de andaimes; Aluguel de andaimes,Aluguel de andaimes; Aluguel de andaimes
 2025010264,abertura de divisõrias,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezados ocorrera um evento dia 05-02-2024 será necessário abrir as divisórias do auditório monte pascoal
 a atividade de abertura do painel ocorrera dia 23-01-2024 pelo nosso pedreiro para que ocorra a montagem das cadeiras e limpeza do espaço!",,
 2025010272,"Sem acesso a internet, TV não liga.",Elétrica > Instalações elétricas,"O nobreak que alimenta o switch do laboratório liga mas no mesmo instante desliga, além disso, o LED vermelho da TV aparece aceso, mas a mesma também não liga. Peço, por gentileza para verificarem a energia das tomadas e o nobreak.",,
-2025010279,Aquisição de Soprador de folhas BR 600 STIHL,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde
+2025010279,Aquisição de Soprador de folhas BR 600 STIHL,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde
 Solicito a aquisição de um Soprador BR 600 da STIHL, com o objetivo de aumentar a eficiência na remoção de detritos e folhas em grandes áreas, especialmente após a roçagem nas Estações de Tratamento de Água e Esgoto do Campus Jorge Amado. Este equipamento também contribuirá na remoção de espuma e de lodo nas lagoas de polimento, otimizando o tratamento das lagoas ao possibilitar maior incidência solar.
 Segue abaixos as especificações:
 Especificações Técnicas
@@ -30939,7 +30971,7 @@ O fechamento deste chamado está condicionado ao retorno deste documento.",,
 2025010433,Manutenção Preventiva Mensal - Ar Condicionado Central - CSC - Tratamento Químico Mensal da Água de Condensação,Manutenção Preventiva > Ar condicionado central,"Solicito tratamento químico de água de condensação de ar condicionado central. Este procedimento deverá acompanhar o documento em anexo ""DINFRA.CM.17 - MANUTENÇÃO PREVENTIVA DE AR CONDICIONADO CENTRAL (CHILLER) - PMOC"", com informações sobre o sistema de refrigeração no Item 7.
 Os padrões técnicos a serem alcançados após o tratamento devem estar de acordo ao que consta no ANEXO IV do documento em anexo.
 Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um relatório técnico informando sobre o processo.",,
-2025010434,Manutenção Preventiva Anual - Antichama - Ocas,Manutenção Preventiva > Sistemas de incêndio,"Solicito manutenção preventiva com aplicação de produto antichama nas Ocas, conforme procedimento operacional em anexo. Este serviço deve ser feito anualmente.",Manutenção nas ocas; Manutenção nas ocas,Manutenção nas ocas; Manutenção nas ocas
+2025010434,Manutenção Preventiva Anual - Antichama - Ocas,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito manutenção preventiva com aplicação de produto antichama nas Ocas, conforme procedimento operacional em anexo. Este serviço deve ser feito anualmente.",Manutenção nas ocas; Manutenção nas ocas,Manutenção nas ocas; Manutenção nas ocas
 2025010436,porta,"Estrutura Predial > Esquadrias, porta, portão e janelas","Prezado, bom dia!
 Porta da sala de reunião do 3º pavimento não está abrindo.",,
 2025010439,Troca de miolo de fechadura da sala de reunião 2º andar,"Estrutura Predial > Esquadrias, porta, portão e janelas",Solicito troca de miolo da fechadura da sala de reuniões do 2º andar (em frente à DINFRA) pois a fechadura atual está com problemas.,,
@@ -31129,7 +31161,7 @@ favor verificar o motor do portão 5. O mesmo apresenta lentidão ao abrir e fec
 2025010691,CONCERTO EM BEBEDOURO DA CEAME,Hidrossanitária > Hidráulica,CONCERTO EM BEBEDOURO DA CEAME (NÃO ESTÁ MANTENDO TEMPERATURA),Reparo e limpeza em bebedouro; Reparo em bebedouro no CEAME,Reparo e limpeza em bebedouro; Reparo em bebedouro no CEAME
 2025010698,Instalação de ponto de rede,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"A sala de Apoio Institucional possui quatro dispositivos que necessitam de conexões de rede. No entanto, há apenas dois pontos de rede disponíveis, sendo necessário adicionar mais dois pontos para conectar todos os dispositivos.
 Sala de Apoio Instutional - Bloco D2 - Complexo 2 - CPF",,
-2025010704,Compra Nylon e peças para roçadeira costal,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde
+2025010704,Compra Nylon e peças para roçadeira costal,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde
 Gostaria de solicitar a aquisição dos seguintes itens, descritos abaixo, para dar continuidade aos serviços de roçagem nas estações de Tratamento do CJA.
 
 Suporte do Guidão da roçadeira;
@@ -31479,7 +31511,7 @@ Sala Corumbau 2"
 Para atendar a demanda de curso a ser realizado na sala Eunápolis (previsaõ de mais de 40 participantes), solicito ajuste no arcondicionado que não está funcionando.",,
 2025011247,Reparo em porta (sala de Multimidia),Estrutura Predial > Alvenaria / Pisos / Estrutura,"Bom dia.
 Porta da sala de Multimidia com problema. Provavelmente por fallta de lubrificação nas dobradiças.",,
-2025011259,"Compra de equipamento para Equipe Responsável pela Roçagem, com a roçadeira Costal",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa Tarde
+2025011259,"Compra de equipamento para Equipe Responsável pela Roçagem, com a roçadeira Costal",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa Tarde
 Solicito a compra dos Seguintes equipamentos:
 
 03 Protetores Faciais(E.P.I para utilização da Roçadeira Costal);
@@ -31538,7 +31570,7 @@ O ar condicionado da recepção está com dreno pingando.
 Cordialmente,
 
 Débora Oliveira",,
-2025011363,Solicitação de roçagem do entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as,
+2025011363,Solicitação de roçagem do entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as,
 
 Boa tarde! Gostaria de solicitar a roçagem no entorno do Meliponário Jardim das Meliponas, no CJA. Por favor, peço que o serviço seja realizado antes do dia 02/04 (quarta-feira) pois nesse dia haverá uma atividade da semana de acolhimento aos/as calouros/as. Além disso, na semana seguinte haverão atividades com crianças, estudantes de escolas de Itabuna e Ilhéus. Hoje o mato está muito alto, impossibilitando a permanecia de pessoas no local.
 
@@ -31632,7 +31664,7 @@ Caso a docente não esteja no CFCAF no momento da visita tem uma chave reserva d
 2025011542,SPDA E REDE HIDRÁULICA COBERTURA,Elétrica > Instalações elétricas,Fazer a retirada do distema de SPDA da cobertura do prédio para instalação de cobertura metálica e relocação da rede de abastecimento de água.,,
 2025011544,Bancos com assento solto,Outros > Erro de chamado,"Bancos com assento solto
 Favor parafusar bancos no Laboratório de Expressões Gráficas 2° andar",,
-2025011546,Compra de Herbicida para a Limpeza e Manuteção do Campus Jorge Amado,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2025011546,Compra de Herbicida para a Limpeza e Manuteção do Campus Jorge Amado,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Tudo bem?
 Solicito a compra de 100 litros de GLifosato (Herbicida)",Compra de Herbicida para a Limpeza e Manuteção do Campus Jorge Amado,Compra de Herbicida para a Limpeza e Manuteção do Campus Jorge Amado
 2025011549,Privada entupida,Hidrossanitária > Hidráulica,"Privada entupida
@@ -32097,7 +32129,7 @@ Att.",,
 2025012024,Solicito o cancelamento da reserva do laboratório de Ciências II que e,Outros > Erro de chamado,"Solicito o cancelamento da reserva do laboratório de Ciências II que estava sob análise para uso e agendada para hoje a noite.
 Desde já agradeço e solicito nova reserva deste mesmo laboratório para a próxima quarta, dia 14/05, período noturno, a partir das 18h40.
 Att.",,
-2025012032,Corte e remoção de arvore caida,Área Externa e Ambiental > Poda de Árvore / Roçagem,"Prezados,
+2025012032,Corte e remoção de arvore caida,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 
 solicito corte e remoção de arvore que caiu proximo ao Pav. Adm.
 
@@ -32213,7 +32245,7 @@ Em anexo, fotos da sala no estado em que foi encontrada hoje.
 
 Agradeço,",,
 2025012191,Revisão da instalação elétrica em Itamaraju,Elétrica > Instalações elétricas,"O Cuni de Itamaraju apresentou um curto em um dos equipamentos, e recentemente um equipamento da Oi acabou queimando. Gostaria que fosse realizada uma revisão da parte elétrica para verificar o que está ocorrendo.",,
-2025012195,Solicitação de roçagem do entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as,
+2025012195,Solicitação de roçagem do entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as,
 Boa tarde! Por favor, solicito roçagem no entorno do meliponário do CJA para que possamos plantar mudas de amendoim forrageiro. Essa ação auxiliará, futuramente, no controle de plantas daninhas na área, reduzindo a necessidade de roçagens. Peço, se possível, que essa ação seja realizada antes de quinta-feira (22/05), pois nesse dia teremos estudantes disponíveis para fazer o plantio dessa forrageira.
 Desde já agradeço.
 Atenciosamente,
@@ -32221,7 +32253,7 @@ Rosane",,
 2025012197,Porta de entrada da Proaf,"Estrutura Predial > Esquadrias, porta, portão e janelas","Bom dia, pessoal! A porta da entrada da proaf está emperrada. Tem que empurrar forte para abrir após destrancar.",,
 2025012198,Reinstalação de Persiana na Seção de Apoio aos Laboratórios,"Estrutura Predial > Esquadrias, porta, portão e janelas","A persiana da Seção de Apoio aos Laboratórios desprendeu-se do suporte e caiu. Não sabemos como colocá-la de volta. Solicito que seja colocada novamente, pois o sol incide diretamente no computador, dificultando assim a atividade laboral.",,
 2025012199,Manutenção no telhado do Laboratório Interdisciplinar 01,"Estrutura Predial > Telhados, calhas, rufos, etc.",Solicito manutenção no telhado do Laboratório Interdisciplinar 01. Há goteiras em cima de bancada. Isso danifica a bancada de madeira. Existem placas de gesso que precisam ser repostas.,,
-2025012208,Travamento das janelas,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde,
+2025012208,Travamento das janelas,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde,
 Precisamos de um suporte pra fechar as janelas uma vez que os estudantes abrem mesmo com o ar condicionado ligado. Em caso de travamento, peço por gentileza para instalar botões de pânico e martelinhos de emergência de acordo com os critérios de segurança. Aproveito e peço revisão dos extintores.",,
 2025012212,Pia entupida,Hidrossanitária > Hidráulica,Desentupir pia da cozinha,,
 2025012213,Ar condicionado,Climatização > Ar condicionado split,"O ar condicionado da UBS Urbis, parou de funcionar. Solicito manutenção.",,
@@ -32575,7 +32607,7 @@ Aguardo retorno.
 Atenciosamente,
 Profa. Victória Regina.
 P.S.: Como não tinha a categoria adequada para o chamado, assinalei a opção ""instalações elétricas"" que, dentre as opções disponíveis, acredito ser a que mais chegou perto.",,
-2025012590,"KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes. Para Utilização no Medidor Digital de Cloro Residual.",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa Tarde
+2025012590,"KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes. Para Utilização no Medidor Digital de Cloro Residual.",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa Tarde
 Tudo bem?
 Solicito a compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes. Para Utilização no Medidor Digital de Cloro Residual.","KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes. Para Utilização no Medidor Digital de Cloro Residual","KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes. Para Utilização no Medidor Digital de Cloro Residual"
 2025012593,Problemas técnicos no sistema do SIGAA UFSB,Outros > Erro de chamado,"#54dfb936-d9d62df8-684d7440773c97.85102419#
@@ -32806,7 +32838,7 @@ Bom dia!
 Gostaria de solicitar, por gentileza, a instalação de uma tomada para estufa de circulação e renovação de ar, 4000W, na sala de Química da Madeira do Laboratório Central de Tecnologia de Produtos Florestais.
 Grata!",,
 2025012850,Substituição de bombas do sistema de hidrantes,Hidrossanitária > Bomba,Solicito substituição das duas bombas do sistema de hidrantes do Campus Jorge Amado.,Manutenção em bombas do sistema de emergência; Serviço de reparo em bomba do sistema de hidrante,"Manutenção em bombas do sistema de emergência. A análise será feita por engenheiro eletricista terceirizado especializado nessas bombas e sistemas, e a manutenção por empresa especializada.; Serviço de reparo em bomba do sistema de hidrante"
-2025012851,Solicitação de Supressão de Indivíduo Arbóreo,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados,
+2025012851,Solicitação de Supressão de Indivíduo Arbóreo,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 Venho por meio deste solicitar a supressão de um indivíduo arbóreo localizado nas proximidades do refeitório do NVGA (Núcleo de Vivência e Gestão Acadêmica).
 O referido exemplar encontra-se em avançado estado de deterioração, apresentando as seguintes condições:
 
@@ -33119,7 +33151,7 @@ Laboratório de Habilidades 2
 Laboratório de Habilidades 3
 Laboratório de Base Morfofuncionais",,
 2025013234,Substituição de lâmpadas queimadas na sala de docentes das Artes,Elétrica > Iluminação,"Prezados, informo que há duas lâmpadas queimadas na sala de docentes das artes no pavilhão administrativo. Solicito substituição no equipamento avariado.",,
-2025013235,"Analises Físico-químicas e Bacteriologicas para o Campus Sosígenes Costa, Município de Porto Seguro-BA",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito as seguintes análises, no Campus Sosígenes Costa – CSC, BR 367, Km 10, Nº S/N - Porto Seguro - Ba:
+2025013235,"Analises Físico-químicas e Bacteriologicas para o Campus Sosígenes Costa, Município de Porto Seguro-BA",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito as seguintes análises, no Campus Sosígenes Costa – CSC, BR 367, Km 10, Nº S/N - Porto Seguro - Ba:
 Tipo da Amostra: Análise Água Bruta
 Quantidade: 2 análises;
 Parâmetros: Coliformes Fecais (E.coli); Coliformes totais; Contagem bactérias heterotróficas; Cloro Residual; Cádmio; Chumbo; Cianeto; Cobre; Cromo Total; Cromo Hexavalente; Fluoreto; Nitrato; Nitrito; Alumínio; Cloreto; Cor aparente; Dureza Total; Ferro Solúvel; Manganês; pH; Sulfato; Sulfeto; Turbidez e Zinco;
@@ -33403,7 +33435,7 @@ Obrigado,
 
 Prof José",,
 2025013525,Fechadura quebrada,"Estrutura Predial > Esquadrias, porta, portão e janelas","A porta do DML do 1° andar não está trancando, acredito que o problema seja na fechadura",,
-2025013528,Recomposição da estrada de acesso ao campus,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados
+2025013528,Recomposição da estrada de acesso ao campus,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados
 
 Solicito que seja realizada intervenção com máquinas para regularizar a estrada de acesso ao CJA. As manutenções realizadas com a equipe local não está mais dando conta dos buracos que tem atualmente.",Recomposição da estrada de acesso ao campus,Recomposição da estrada de acesso ao campus
 2025013529,Ar-condicionado não liga,Climatização > Ar condicionado split,"Olá pessoal, boa tarde.
@@ -33471,7 +33503,7 @@ Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um
 2025013572,Manutenção Preventiva Mensal - Ar condicionado - Reitoria,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo.
 
 O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 04.",,
-2025013573,Poda de Arvores - Melhoria da Iluminação externa,Área Externa e Ambiental > Poda de Árvore / Roçagem,"Prezados,
+2025013573,Poda de Arvores - Melhoria da Iluminação externa,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 
 foi realizada instalação de luminarias externas - 2025011078 -, porem, devido a copa das arvores (alguns locais mais alto que os postes) que faz sombra, gerando pontos inseguros, solicitamos poda de arvores.
 Considerar interação com Rodrigo Passos que já fez percursso com Prof. Jorge Costa e Fagner. Estaremos tambem enviado e-mail para Yuri para esse acompanhamento.
@@ -33610,7 +33642,7 @@ Preciso relatar um episódio que por pouco não virou uma tragédia. Na semana p
 O aparelho de ar condicionado da sala do colegiado de Engenharia de Aquicultura não está funcionando corretamente. Gostaria de solicitar, por gentileza, a verificação do mesmo.
 Grata!",,
 2025013695,Vaso entupido,Hidrossanitária > Hidráulica,"O vaso do banheiro feminino no laboratório Néa está entupido até em cima, não desce.",,
-2025013700,Banco no mirante do Buranhém - fundo do CSC,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as, bom dia.
+2025013700,Banco no mirante do Buranhém - fundo do CSC,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as, bom dia.
 
 Recentemente foi instalada a placa do projeto Geoturismo no fundo do CSC. É um ponto de interesse geológico que deverá ser visitado em atividades de extensão (incluindo SNCT, na semana do dia 20/10).
 
@@ -33908,7 +33940,7 @@ O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 0
 2025014017,Torneira de jardim com vazamento próximo aos ambulatórios,Hidrossanitária > Hidráulica,Torneira de jardim com vazamento próximo aos ambulatórios,,
 2025014019,Vazamento de água no Sifão da Pia,Hidrossanitária > Hidráulica,"Vazamento de água no Sifão da Pia
 Local: Banheiro Feminino na Ala Administrativa",,
-2025014029,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as,
+2025014029,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as,
 Boa tarde! Estamos organizando o retorno das atividades no Meliponário Jardim das Meliponas.
 Assim, peço que seja realizada a roçagem de manutenção da área no entorno.
 Desde já agradeço.
@@ -33957,13 +33989,13 @@ Atenciosamente,",,
 2025014059,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2025014060,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2025014067,VASO SANITÁRIO COM VAZAMENTO (NO 2° ANDAR),Hidrossanitária > Hidráulica,VASO SANITÁRIO COM VAZAMENTO (NO 2° ANDAR),,
-2025014069,Solicitação de Plantio de amendoim forrageiro nas margens da estrada cascalhada de acesso ao CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as,
+2025014069,Solicitação de Plantio de amendoim forrageiro nas margens da estrada cascalhada de acesso ao CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as,
 
 Bom dia! Foi encaminhada, por mim para a coordenação de campus do CJA, uma proposição de ações para reduzir a exposição do Meliponário Jardim da Meliponas à agrotóxicos aplicados na manutenção sanitária e fitossanitária do CJA. Assim, senhora Ana Rita levou o assunto para a reunião da Comissão Gestora do Campus, que deliberou pela aprovação da proposta, com pequena alteração. Assim, para avançar na execução das ações propostas venho solicitar o plantio de mudas de amendoim forrageiro nas margens da estrada cascalhada de acesso ao CJA. Informo que nas áreas no entorno da ESARM (CEPLAC) possuem plantios de Amendoim Forrageiro e que, pode-se solicitar ao Sr. Benedito (CEPLAC), para que se possa fazer a retirada de mudas do amendoim dessas áreas. Segue, em anexo, a proposta de ações e a ata da reunião da comissão gestora.
 Fico à disposição para orientações e desde já agradeço.
 Atenciosamente,
 Profa. Rosane",,
-2025014070,Solicitação de Estrutura de fechamento para a entrada do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as,
+2025014070,Solicitação de Estrutura de fechamento para a entrada do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as,
 Bom dia! Foi encaminhada, por mim para a coordenação de campus do CJA, uma proposição de ações para reduzir a exposição do Meliponário Jardim da Meliponas à agrotóxicos aplicados na manutenção sanitária e fitossanitária do CJA. Assim, senhora Ana Rita levou o assunto para a reunião da Comissão Gestora do Campus, que deliberou pela aprovação da proposta, com pequena alteração. Assim, para avançar na execução das ações propostas venho solicitar a instalação de uma estrutura de proteção na entrada do meliponário (Junto a cerca e e antes da ponte de acesso). Ressalto que a estrutura deverá ser de 2,5m de altura, no mínimo, de fácil mobilidade, com rodinhas e estrutura fechada (sem aberturas, buracos), para ser acionada e impedir que uma possível deriva de agrotóxicos alcance o meliponário, em caso de erro de aplicação desses produtos.
 Segue, em anexo, a proposta de ações e a ata da reunião da comissão gestora (nesse documento tem uma foto de um modelo de estrutura de fechamento).
 Fico à disposição e desde já agradeço.
@@ -33986,7 +34018,7 @@ Solicito a instalação de banner de identificação na parede externa do confor
 O banner está em minha sala (Sala de enfermagem - Complexo 1)
 
 At.te",,
-2025014096,Solicitação de Escada,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde!
+2025014096,Solicitação de Escada,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde!
 Solicito a disponibilidade de uma escada nos seguintes dias:
 
 21 de outubro (manhã): para auxiliar a ministrante da oficina de cerâmica a organizar a exposição durante a SNCT.
@@ -34268,7 +34300,7 @@ Seguir as seguintes instruções: 1 - Examinar as condições do acesso ao reser
 2025014485,Limpeza Semestral - Reservatórios - Reitoria - inferior reuso,Manutenção Preventiva > Reservatório,"Solicito limpeza dos reservatório inferior de água de reuso da Reitoria.
 Seguir as seguintes instruções: 1 - Examinar as condições do acesso ao reservatório, avaliando se há segurança em utilizar o acesso; 2 - Informar o dia e hora de quando será feito o serviço; 3 - Esvaziar e limpar um reservatório por vez; 4 - Tirar fotografias do estado do reservatório antes do serviço; 5 - Efetuar limpeza geral do reservatório; 6 - Verificar se há vazamentos, rachaduras, se há dejetos e/ou substâncias poluentes e retirar; 7 - Tirar fotografias do estado do reservatório após o serviço; 8 - Seguir instruções de acordo com o documento em anexo.",,
 2025014487,Pia entupida,Hidrossanitária > Hidráulica,Pia entupida na copa dos funcionários,,
-2025014497,Bebedouro no Pavilhão de Feiras - Entupido,Área Externa e Ambiental > Manutenção área externa / meio ambiente,Bebedouro localizado no pavilhão de feiras encontra-se aparentemente entupido. Solicita-se a verificação por favor.,,
+2025014497,Bebedouro no Pavilhão de Feiras - Entupido,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,Bebedouro localizado no pavilhão de feiras encontra-se aparentemente entupido. Solicita-se a verificação por favor.,,
 2025014498,Necessito de uma webcam e de um fone de ouvido com microfone para dese,Outros > Erro de chamado,"Necessito de uma webcam e de um fone de ouvido com microfone para desempenhar melhor minhas atividades laborais, que incluem a participaçao em reuniões virtuais de trabalho.
 Desde já agradeço",,
 2025014499,Tampa de vaso sanitário quebrada,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Tampa de vaso sanitário quebrada
@@ -34322,7 +34354,7 @@ Muito grata,
 
 Helen.",,
 2025014574,Solicito o acesso ao email - lucas.teixeira@ufsb.edu.br. Não consigo a,Outros > Erro de chamado,Solicito o acesso ao email - lucas.teixeira@ufsb.edu.br. Não consigo acessar e preciso para cumprir as demandas institucionais como servidor.,,
-2025014577,Roçagem do Viveiro de Aquicultura,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito a Roçagem do Viveiro de Aquicultura
+2025014577,Roçagem do Viveiro de Aquicultura,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a Roçagem do Viveiro de Aquicultura
 Local: Área externa do Campus Jorge Amado, abaixo trago imagens de como está o local.",,
 2025014584,AR CONDICIONADO COM DEFEITO (NÃO ESTÁ GELANDO) SALA E104 - COMPLEXO 2,Climatização > Ar condicionado split,"AR CONDICIONADO COM DEFEITO (NÃO ESTÁ GELANDO) SALA E104 - COMPLEXO 2
 REALIZAR MANUTENÇÃO",,
@@ -34771,12 +34803,12 @@ Como proceder?",,
 2025015002,Limpeza Semestral - Reservatórios - CJA - NUPED - superior potável,Manutenção Preventiva > Reservatório,"Solicito limpeza dos reservatórios superiores de agua potavel, localizados nos Núcleo Pedagógico do CJA.
 
 Seguir as seguintes instruções: 1 - Examinar as condições do acesso ao reservatório, avaliando se há segurança em utilizar o acesso; 2 - Informar o dia e hora de quando será feito o serviço; 3 - Esvaziar e limpar um reservatório por vez; 4 - Tirar fotografias do estado do reservatório antes do serviço; 5 - Efetuar limpeza geral do reservatório; 6 - Verificar se há vazamentos, rachaduras, se há dejetos e/ou substâncias poluentes e retirar; 7 - Tirar fotografias do estado do reservatório após o serviço; 8 - Seguir instruções de acordo com o documento em anexo.",,
-2025015005,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as,
+2025015005,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as,
 Bom dia! Espero que estejam bem! Por favor, solicito roçagem da área do meliponário.
 Desde já agradeço.
 Atenciosamente,
 Rosane",,
-2025015006,"Prezados/as,  Bom dia! Por favor, solicito a retomada das atividades d",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as,
+2025015006,"Prezados/as,  Bom dia! Por favor, solicito a retomada das atividades d",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as,
 Bom dia! Por favor, solicito a retomada das atividades de cobertura dos canteiros do meliponário com plástico. Essa atividade foi interrompida devido a possibilidade de transferência do meliponário para a área da CEPLAC. Porém, essa mudança não ocorreu e precisaremos da área coberta com o plástico para receber as mudas de plantas que fornecerão alimento para as abelhas.
 Desde já agradeço.
 Atenciosamente,
@@ -34793,7 +34825,7 @@ Local: Banheiro Feminino próximo a Biblioteca",,
 Local: Banheiro Feminino próximo a Biblioteca
 Em umas cabines a descarga não está funcionando.",,
 2025015036,GOTEIRA NA PORTA DA BIBLIOTECA,"Estrutura Predial > Telhados, calhas, rufos, etc.","Prezados, gentileza verificar o local acima da porta da biblioteca pois nas últimas chuvas tem caído muita água na porta de entrada, molhando quem entra e sai da biblioteca, além de fazer poça na entrada. Imagino que seja entupimento da calha, mas faz-se necessária uma verificação in loco para resolução do problema. Desde já agradeço!",,
-2025015040,SOLICITAÇAO DE ANALISES FISICO-QUIMICA E BIOLOGICA para o CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia amigo
+2025015040,SOLICITAÇAO DE ANALISES FISICO-QUIMICA E BIOLOGICA para o CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia amigo
 Solicito as seguintes análises:
 Tipo da amostra: Análise da potabilidade da água com fornecimento de Laudo Técnico;
 Quantidade: 4 analises;
@@ -34900,7 +34932,7 @@ Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um
 O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 04.",,
 2025015108,Vazamento no banheiro masculino,Hidrossanitária > Hidráulica,"Solicito manutenção no banheiro masculino do segundo andar.
 Motivo: Há um aparente vazamento.",,
-2025015120,Contratação de serviço de roçagem,Área Externa e Ambiental > Poda de Árvore / Roçagem,"Prezados,
+2025015120,Contratação de serviço de roçagem,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 
 Considerando as pactuações feitas entre a UFSB e a SPU, solicito contratação de serviço para roçagem da área frontal do Centro de Treinamento.
 As dimensões constam na imagem anexa a esse chamado.",Contratação de serviço de roçagem,Contratação de serviço de roçagem
@@ -35185,7 +35217,7 @@ Poderia por favor verificar o ar condicionado da sala na Secad, pois não tá fu
 
 Ontem houve um problema com o ar-condicionado da DIT/OUVIDORIA. Foi trocado o controle, mas hoje não parece estar funcionando normalmente. Gostaria que verificassem, por gentileza.",,
 2025015477,Ar não está gelando,Climatização > Ar condicionado split,Ar não está gelando,,
-2025015480,SOLICITAÇAO DE ANALISES FISICO-QUIMICA E BIOLOGICA para o CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia amigo
+2025015480,SOLICITAÇAO DE ANALISES FISICO-QUIMICA E BIOLOGICA para o CJA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia amigo
 Solicito as seguintes análises:
 Tipo da amostra: Análise da potabilidade da água com fornecimento de Laudo Técnico;
 Quantidade: 5 analises;
@@ -35207,7 +35239,7 @@ Quantidade: 2 analises;
 Parâmetros: E.coli; Coliformes totais; Cloreto; Dureza, Cor aparente; Dureza Total; Ferro Solúvel; Manganês; pH; Turbidez;
 Local de coleta da Amostra: Bebedouro no NVGA e outro no NP.
 Segue em anexo orçamentos",ANALISES FISICO-QUIMICA E BIOLOGICA para o CJA,ANALISES FISICO-QUIMICA E BIOLOGICA para o CJA
-2025015481,"Solicito as seguintes análises, no Campus Sosígenes Costa – CSC",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito as seguintes análises, no Campus Sosígenes Costa – CSC, BR 367, Km 10, Nº S/N - Porto Seguro - Ba:
+2025015481,"Solicito as seguintes análises, no Campus Sosígenes Costa – CSC",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito as seguintes análises, no Campus Sosígenes Costa – CSC, BR 367, Km 10, Nº S/N - Porto Seguro - Ba:
 Tipo da Amostra: Análise Água Bruta
 Quantidade: 2 análises;
 Parâmetros: Coliformes Fecais (E.coli); Coliformes totais; Contagem bactérias heterotróficas; Cloro Residual; Cádmio; Chumbo; Cianeto; Cobre; Cromo Total; Cromo Hexavalente; Fluoreto; Nitrato; Nitrito; Alumínio; Cloreto; Cor aparente; Dureza Total; Ferro Solúvel; Manganês; pH; Sulfato; Sulfeto; Turbidez e Zinco;
@@ -35222,7 +35254,7 @@ Tipo da Amostra: Análise de Águas dos Bebedouros
 Quantidade: 2 analises;
 Parâmetros: E.coli; Coliformes totais; Cloreto; Dureza, Cor aparente; Dureza Total; Ferro Solúvel; Manganês; pH; Turbidez;
 Local de coleta da Amostra: Bebedouros no Campus.",Análise de água do CSC,Análise de água do CSC
-2025015482,"Compra de 20 kg de cloro, para Estação de Tratamento de Água do Campus Jorge Amado.",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2025015482,"Compra de 20 kg de cloro, para Estação de Tratamento de Água do Campus Jorge Amado.",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Solicito a Compra de 20 kg de cloro, para Estação de Tratamento de Água do Campus Jorge Amado.
 Atenciosamente,
 Yuri AMorim","Compra de 20 kg de cloro, para Estação de Tratamento de Água do Campus Jorge Amado","Compra de 20 kg de cloro, para Estação de Tratamento de Água do Campus Jorge Amado"
@@ -35323,14 +35355,14 @@ Gostaria de solicitar, por gentileza, que verificassem isso para mim.
 
 Att.,
 Alexandre.",,
-2025015555,Solicitação de Roçagem da área do Meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados colegas,
+2025015555,Solicitação de Roçagem da área do Meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados colegas,
 Bom dia! Por gentileza, solicito a roçagem da área do meliponário do CJA. Desde já agradeço.
 Atenciosamente,
 Rosane",,
 2025015559,Troca de compressor,Climatização > Ar condicionado split,"Olá, tudo bem?
 Solicito a substituição do compressor do ar-condicionado localizado na sala de máquinas da TIC.
 Obrigado.",Instalação de ar condicionado na sala de máquinas de TIC,Instalação de ar condicionado na sala de máquinas de TIC
-2025015560,Compra de 30 metros de Mangueira 3/4 de Jardim,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2025015560,Compra de 30 metros de Mangueira 3/4 de Jardim,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Tudo bem?
 Solicito a compra de uma mangueira 3/4 de jardim, de 30 m de comprimento.
 Atenciosamente
@@ -35391,7 +35423,7 @@ Desde já agradeço.",,
 2025015605,Ar condicionado com goteira excessiva,Climatização > Ar condicionado split,"Venho por meio deste informar que o ar condicionado do setor está apresentando muita goteira, ocasionando acúmulo de água no ambiente.
 
 Solicito, por gentileza, a verificação e manutenção do equipamento o mais breve possível, a fim de evitar danos ou transtornos.",,
-2025015609,Solicito roçagem no Viveiro de Aquicultura,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito roçagem no Viveiro de Aquicultura
+2025015609,Solicito roçagem no Viveiro de Aquicultura,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito roçagem no Viveiro de Aquicultura
 O Viveiro de Aquicultura onde ficam alguns tanques azuis, está com mato muito alto, solicito a roçagem do local",,
 2025015611,SOLICITAÇÃO DE CRIAÇÃO DE CHAVE PIN E PROBLEMA DE IMPRESSÃO,Outros > Erro de chamado,"SOLICITA-SE CRIAÇÃO DE CHAVE PIN DE ACESSO PARA UTILIZAÇÃO DAS FUNCIONALIDADES DA IMPRESSORA DA SECRETARIA ACADÊMICA, COMPLEXO 2 UFSB - CAMPUS PAULO FREIRE, SETOR ESSE ONDE ESTOU LOTADO ATUALMENTE.",,
 2025015619,Serviço de Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire,"Manutenção preventiva dos equipamentos, sem reposição de peças"
@@ -35460,7 +35492,7 @@ Desde já, agradeço.",,
 Local: Banheiro Feminino NVGA",Fornecimento de assento sanitário,Fornecimento de assento sanitário
 2025015707,Mictório entupido,Hidrossanitária > Hidráulica,"Mictório entupido
 Local: Banheiro Masculino NVGA",,
-2025015715,Solicitação de Limpeza e Manutenção das Áreas Ajardinadas da Reitoria da UFSB,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde,
+2025015715,Solicitação de Limpeza e Manutenção das Áreas Ajardinadas da Reitoria da UFSB,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde,
 Em razão da recente demissão do jardineiro, do Campus Jorge Amado, responsável pela manutenção da área externa da Reitoria, verifica-se que os espaços ajardinados encontram-se em estado de abandono e necessitam urgentemente de limpeza e manutenção .
 A ausência desses serviços vem contribuindo para a degradação do ambiente , comprometendo a estética institucional, a segurança e a salubridade do local. Além disso, o crescimento excessivo da vegetação e o acúmulo de resíduos favorecem o surgimento de esconderijos para animais peçonhentos , representando risco à integridade física de servidores, estudantes e visitantes.
 Diante disso, solicito a limpeza e manutenção das áreas ajardinadas da Reitoria da UFSB , sendo necessária a execução dos seguintes serviços:
@@ -35498,7 +35530,7 @@ Desde já agradeço.",Substituição de torneira,Substituição de torneira
 2026010020,Manutenção Preventiva Anual - Ar condicionado Central - CSC,Manutenção Preventiva > Ar condicionado central,"Solicito manutenção preventiva anual do ar condicionado central do CSC de acordo ao arquivo em anexo ""DINFRA.CM.05 - Manutenção preventiva de ar condicionado central (Chiller) - PMOC"". O acompanhamento deste chamado deve ser de acordo com as atividades descritas no ANEXO III. O retorno destas atividades devem ser dados à Coordenação de Manutenção ou à Coordenação de Campus do CSC, de modo que a UFSB tenha ciência das atividades preventivas realizadas no equipamento. Caso haja alguma necessidade de material(is) para manutenção corretiva, este(s) deverá(ão) ser solicitado(s) de imediato de modo que a aquisição seja o mais rápido possível. O fechamento deste chamado está condicionado ao retorno deste documento.",,
 2026010022,Registro de água vazando,Hidrossanitária > Hidráulica,"Registro de água vazando
 Local: Banheiro Masculino - 1° Andar",,
-2026010025,Remoção de equipamentos do Ruy Barbosa,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Olá,
+2026010025,Remoção de equipamentos do Ruy Barbosa,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Olá,
 Gostaria que todos os equipamentos da sala do Cuni, no Colégio Ruy Barbosa, fossem removidos e realocados no novo espaço da escola.
 Obrigado.",,
 2026010027,Reparos,Hidrossanitária > Hidráulica,"Bom dia prezados,
@@ -35594,7 +35626,7 @@ Tel.:3256-8529
 Grata,
 Diovani Favoreto",,
 2026020056,"Instalação de computador de mesa e monitor no gabinete de n. 26 do segundo andar, no bloco 2.",Outros > Erro de chamado,"Em qualidade de professor recém-chegado, me foi liberado o acesso para uso do gabinete de n. 26, no segundo andar do Bloco 2 do CPF. Para maior segurança, sendo meu computador portátil já velho, gostaria de poder usar um computador fixo com monitor, na minha mesa, marcada com número 2 na sala 26 (a mesa mais longe da porta de entrada). Muito obrigado! Roberto Marchiori",,
-2026020047,Manutenção Preventiva Anual - Antichama - Ocas,Manutenção Preventiva > Sistemas de incêndio,"Solicito manutenção preventiva com aplicação de produto antichama nas Ocas, conforme procedimento operacional em anexo. Este serviço deve ser feito anualmente.",,
+2026020047,Manutenção Preventiva Anual - Antichama - Ocas,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito manutenção preventiva com aplicação de produto antichama nas Ocas, conforme procedimento operacional em anexo. Este serviço deve ser feito anualmente.",,
 2026020048,"Prezados(as), bom dia!  Solicito a manutenção para averiguar um vazame",Climatização > Ar condicionado split,"Prezados(as), bom dia!
 Solicito a manutenção para averiguar um vazamento de água no ar-condicionado da sala do almoxarifado.",,
 2026020049,Climatização,Climatização > Ar condicionado split,"Bom dia!
@@ -35653,7 +35685,7 @@ Retirar a TV da sala E 101 e instalar na sala D 102.",,
 2026020114,Destilador,Elétrica > Instalações elétricas,"Boa tarde,
 Gostaria de solicitar, por gentileza, a verificação do circuito do destilador de água do laboratório de Anatomia da Madeira. O disjuntor desse equipamento desliga quando este está em uso.
 Grata!",,
-2026020117,Compra de materiais e E.P.I,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde
+2026020117,Compra de materiais e E.P.I,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde
 tudo bem?
 Solicito a compra dos seguintes itens:
 
@@ -35691,7 +35723,7 @@ Está sem gás e apenas ventilando, não gela.
 Desde já, agradeço!",,
 2026020153,Janela / Vidro solto,"Estrutura Predial > Esquadrias, porta, portão e janelas","Janela / Vidro solto
 Local: Sala de Eventos - Procurar Moacy da Limpeza",,
-2026020155,Solicitação de medidas provisórias de prevenção à dengue,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados,
+2026020155,Solicitação de medidas provisórias de prevenção à dengue,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 
 Solicito, conforme acordado em reunião com Rodrigo e Matheus (engenheiro), a seguinte medida provisória de prevenção de focos do mosquito da dengue :
 
@@ -35733,7 +35765,7 @@ Local: Banheiro Masculino 1° Andar",,
 2026020189,Suporte para computadores,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","A sala de informática do complexo 1 funciona com notebooks (que estão sendo furtados frequentemente), que serão substituídos por computadores de mesa, porém o campus não dispõe de mobiliário adequado, sendo necessário um suporte simples que fique ao lado da mesa para sustentar o computador, pois o mesmo não cabe na mesa escolar juntamente com monitor, mouse e teclado.
 Solicito a colocação de suportes para PC´s na sala de informática.",,
 2026020191,Troca de porta,"Estrutura Predial > Esquadrias, porta, portão e janelas","Trocar a porta da sala do coordenador do campus, pois está infestada de cupins e toda oca.",,
-2026020192,Fechamento do muro,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados, bom dia!
+2026020192,Fechamento do muro,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, bom dia!
 Solicito, por gentileza, a realização do fechamento do muro com telhas metálicas na área que faz divisa com o Condomínio Recanto do Lago, em atendimento a uma queixa já formalizada pelo síndico. A medida se faz necessária com o objetivo de evitar a entrada de animais no local.",,
 2026020194,Instalação de ar-condicionado na UBS - Colina Verde,Climatização > Ar condicionado split,"Prezados, bom dia!
 
@@ -35776,7 +35808,7 @@ Universidade Federal do Sul da Bahia",,
 2026020235,Ar condicionado,Climatização > Ar condicionado split,"Bom dia,
 O aparelho de ar condicionado do laboratório de Anatomia da Madeira não está resfriando. Gostaria de solicitar, por gentileza, a verificação do mesmo.
 Grata!",,
-2026020237,Reparo na calçada do SEP,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia!!
+2026020237,Reparo na calçada do SEP,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia!!
 Por gentileza, solicito o reparo da calçada da clínica de SEP. A mesma se encontra com buracos estando sucessível a risco de queda.
 Desde já, agradeço.",,
 2026020238,Solicitação de Aquisição de Bombas Submersas,Hidrossanitária > Bomba,"Prezados, bom dia.
@@ -35894,7 +35926,7 @@ Venho, por meio deste, solicitar manutenção no prédio do cuni de helvécia, e
 
 Atenciosamente,
 Christyan Dias",,
-2026030001,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as colegas,
+2026030001,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as colegas,
 Boa tarde! Gostaria de solicitar a roçagem no entorno do meliponário, se possível no início da semana, pois com o início do semestre letivo de 2026.1, haverá atividades no referido espaço durante as atividades de acolhimento no dia 04/03/2026.
 Na semana seguinte haverá atividades de recebimento de estudantes do ensino fundamental de Itabuna.
 Desde já agradeço.
@@ -36029,7 +36061,7 @@ Divisória entre box está descolando. Correndo o risco da divisória de granito
 2026030174,Manutenção,Climatização > Ar condicionado split,"Verificar a necessidade de manutenção dos aparelhos de ar condicionado das três salas do complexo Ubirajara.
 
 Obs: Em uma das salas o aparelho não está funcionando.",Manutenção em aparelhos de ar condicionado,Manutenção em aparelhos de ar condicionado
-2026030175,Poda de galhos,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito a poda de galhos de árvores que ficam próximas a janela da biblioteca, pois tem aumentado a quantidade de escorpiões dentro da biblioteca.",,
+2026030175,Poda de galhos,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a poda de galhos de árvores que ficam próximas a janela da biblioteca, pois tem aumentado a quantidade de escorpiões dentro da biblioteca.",,
 2026030180,Verificação de iluminação – duas lâmpadas queimadas,Elétrica > Iluminação,"Bom dia,
 há duas lâmpadas queimadas na secretaria Acadêmica. Favor verificar, pois a sala está escura.",,
 2026030181,Registro de água vazando,Hidrossanitária > Hidráulica,"Registro de água vazando
@@ -36400,7 +36432,7 @@ Conforme levantamento técnico realizado, a área aproximada do prédio é de 23
 Para melhor especificação do material, será disponibilizado, abaixo, o link para visualização do item pretendido.
 
 https://www.mercadolivre.com.br/lona-impermeavel-310-micras-4x6-mts-pretoprata--primelonas/up/MLBU607272715?pdp_filters=item_id:MLB3800609093#reviews",Aquisição de lona plástica; Complementar de Aquisição de lona plástica; Complementar de lona plástica; Material complementar para reparo na Biblioteca,Aquisição de lona plástica; Complementar de Aquisição de lona plástica; Complementar de lona plástica; Material complementar para reparo na Biblioteca
-2026040032,Supressão de 5 árvores exoticas,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2026040032,Supressão de 5 árvores exoticas,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 
 Tudo bem?
 
@@ -36572,7 +36604,7 @@ Local: Sala 08",,
 2026040171,Suporte para sabonete líquido quebrado/vazando,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Suporte para sabonete líquido quebrado/vazando
 Local: Vestiário Masculino Funcionários",,
 2026040183,Tomadas - Rede Elétrica - Sala Coroa Vermelha 2 - Pavilhão de Conveções,Elétrica > Instalações elétricas,"Solicito, por gentileza, testagem e verificação do funcionamento de todas as tomadas instaladas na sala Coroa Vermelha 2 (Pavilhão de Convenções) para que possamos instalar um novo laboratório do Centro de Formação em Artes e Comunicação.",,
-2026040185,Vistoria,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Por gentileza, solicito reparo nas telas do sistema de aquicultura que ficam próximas ao sistema de tratamento de água do Campus.",,
+2026040185,Vistoria,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Por gentileza, solicito reparo nas telas do sistema de aquicultura que ficam próximas ao sistema de tratamento de água do Campus.",,
 2026040191,Mudança de gaveteiro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito, por gentileza, a mudança de gaveteiro da lateral direita da mesa para esquerda. Grato!",,
 2026040192,Vazamento - ar condicionado,Climatização > Ar condicionado split,"Solicitamos verificação do ar condicionado na sala do setor de apoio administrativo, pois apresenta vazamento de água pelo lado interno da sala.",,
 2026040195,Vedação nas portas,"Estrutura Predial > Esquadrias, porta, portão e janelas","Solicito que seja instalada uma vedação nas portas dos laboratórios de arte e corpos, igual a que tem na porta da biblioteca, para evitar a entrada de escorpiões e outros insetos.",Vedação nas portas; Complementar de vedação nas portas,Vedação nas portas; Complementar de vedação nas portas
@@ -36595,7 +36627,7 @@ Thiago",Placa de identificação de porta,Placa de identificação de porta
 2026040202,Trocar TV da sala 05,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Olá prezados, tudo bem?
 Gostaria que a TV da sala 05, Complexo 1, fosse trocada. Ela apresenta problemas no menu, como se o botão estivesse pressionado, impossibilitando de escolher a porta correta. Vamos acionar a garantia para ver o que pode ser feito.
 Obrigado.",,
-2026040206,Solicitação de Roçagem da área do Meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados/as colegas,
+2026040206,Solicitação de Roçagem da área do Meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados/as colegas,
 
 Boa tarde! Por favor, solicito a roçagem no entorno do meliponário do CJA para recebermos, na próxima semana, as crianças do Projeto O Mundo das Abelhas.
 Precisaremos caminhar no pasto melitófilo, e como tem chovido bastante, o mato está alto, sendo potencial abrigo de animal peçonhento.
@@ -36630,7 +36662,7 @@ por gentileza, solicito a troca da fechadura da porta do banheiro da clinica SEP
 Desde já, agradeço pela atenção.",Troca da fechadura de banheiro,Troca da fechadura de banheiro
 2026040240,Instalação,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Instalar 2 porta-papel toalha no banheiro feminino do segundo andar, E um porta papel toalha no banheiro PCD também do segundo andar.
 Obs: Já temos o porta papel toalha, precisamos apenas da mão de obra.",,
-2026040243,Compra de 3 ADAPTADORES DE NYLON PARA ROÇADEIRAS STHILL,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia
+2026040243,Compra de 3 ADAPTADORES DE NYLON PARA ROÇADEIRAS STHILL,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
 Tudo bem?
 Solicito a Compra de 3 ADAPTADORES DE NYLON PARA ROÇADEIRAS STHILL, para viabilizar o serviço de roçagem no Campus Jorge Amado.
 Atenciosamente
@@ -36699,7 +36731,7 @@ Local: Sala 02",,
 COPA EXCLUSIVA DOS SERVIDORES (02 PLACAS)
 COPA EXCLUSIVA DOS ESTUDANTES (02 PLACAS)
 COPA EXCLUSIVA DOS PRESTADORES DE SERVIÇO (01 PLACA)",,
-2026040333,Aplicação de herbicida  no acostamento do Campus Jorge Amado,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa tarde,
+2026040333,Aplicação de herbicida  no acostamento do Campus Jorge Amado,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa tarde,
 Solicito a aplicação de herbicida no acostamento da estrada que dá acesso ao Campus Jorge Amado.
 Atualmente, a equipe de manutenção não está conseguindo realizar a roçagem com a frequência necessária. Dessa forma, torna-se indispensável o uso de herbicida para garantir a manutenção do espaço limpo por um período mais prolongado.
 Esse manejo é importante para assegurar maior efetividade nas atividades de manutenção, além de contribuir para a segurança do local, evitando que animais como serpentes se abriguem às margens da estrada, área de circulação frequente de pedestres (estudantes e servidores).
@@ -36783,7 +36815,7 @@ Local: Campus Jorge",Reparo em placas antiderrapantes,Reparo em placas antiderra
 Local: Banheiro Feminino próx a Biblioteca",,
 2026040425,Janela travada,"Estrutura Predial > Esquadrias, porta, portão e janelas","Janela travada ou pino Travado, Moacir identificou uma janela travada na cozinha dos alunos.",,
 2026040426,TROCA DE REFLETORES QUEIMADOS NA CEAME E NA SEP,Elétrica > Iluminação,TROCA DE REFLETORES QUEIMADOS NA CEAME E NA SEP,,
-2026040427,Solicitação de Fechamento de Abrigo e Reparos em Alvenaria – Complexo I (Biblioteca),Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados, bom dia!
+2026040427,Solicitação de Fechamento de Abrigo e Reparos em Alvenaria – Complexo I (Biblioteca),Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, bom dia!
 Solicito a execução do fechamento do abrigo da caixa d’água localizado na parte posterior do prédio da Biblioteca do Complexo I, bem como a realização de serviços de reboco em pontos específicos da edificação que atualmente apresentam aberturas.
 Ressalta-se que tais intervenções são necessárias para impedir a entrada de insetos e animais peçonhentos, a exemplo de escorpiões, visando à mitigação de riscos e à prevenção de possíveis incidentes.
 Atenciosamente,",Fechamento de Abrigo e Reparos em Alvenaria – Complexo I,Fechamento de Abrigo e Reparos em Alvenaria – Complexo I
@@ -37304,7 +37336,7 @@ Desde já, agradeço pela atenção.",,
 Solicito, por gentileza, a instalação de uma televisão no corredor do Bloco Administrativo do Complexo I.
 
 Atenciosamente,",,
-2026050310,Solicitação de Locação de Caçamba para Remoção de Entulho,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados, boa tarde!
+2026050310,Solicitação de Locação de Caçamba para Remoção de Entulho,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, boa tarde!
 Solicitamos, por gentileza, a locação de uma caçamba de entulho para realização da remoção dos materiais remanescentes da obra executada para implantação da antena de TV no Complexo II.
 Ressaltamos que a solicitação se faz necessária em virtude da cerimônia de inauguração do sinal da TV pública em Teixeira de Freitas-BA, prevista para o dia 29/05.
 Dessa forma, a retirada dos materiais é indispensável para adequação e organização do local antes da realização do evento.
@@ -37507,7 +37539,7 @@ Solicito retirada de 2 negatoscópios da CEAME e colocação na sala E103 para r
 Na próxima semana reinstalar novamente na CEAME por gentileza.
 
 Desde já, obrigado.",,
-2026060031,Solicitação de intervenção para reparo urgente,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados,
+2026060031,Solicitação de intervenção para reparo urgente,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados,
 Venho, por meio desta solicitaçao verificar, com maior urgência, caso seja de nossa alçada, o reparo na rotatória de acesso ao campus a partir da BR 415, onde os Onibus param para atendimento aos nossos alunos dentre outros usuários, no sentido Itabuna-Ilheus. Acontece que já faz um bom tempo, um buraco se formou através do afundamento da via, logo na saída após o ponto de onibus, fazendo com que os veículos tenham que se posicionar em angulo de 45 graus em relação à rodovia, para retornar à ela e isso tem feito que alguns onibus, principalmente pela noite, nao entrem mais na rotatória e deixam nossos estudantes na pista (os onibus parando tb na pista da direita da rodovia -sempre no sentido Itabuna-Ilheus. O buraco em questão, cuja foto segue em anexo, já possui profundidade aproximada de 40 cm em seu ponto mais profundo (ao final desta poça de agua que se formou no buraco por conta da chuva. Isto posto, sendo possivel a intervenção o mais rapidamente possivel, poderá auxiliar tb no posicionamento correto dos onibus novamente (entrando na rotatoria para deixar os estudantes.
 Atenciosamente
 Fernando Soares",Reparo na pista de acesso ao CJA,Reparo na pista de acesso ao CJA
@@ -37584,10 +37616,10 @@ Atenciosamente,",,
 2026060081,Manutenção preventiva mensal do elevador da Reitoria,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores da Reitoria. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção.",,
 2026060082,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2026060083,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
-2026060084,"compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes",Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa noite
+2026060084,"compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa noite
 tudo bem?
 SOlicito a compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes. Para utilização do medidor de cloro Digital do Campus de Porto Seguro.","Compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes","Compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes"
-2026060085,Aplicaçao de Herbicida na area do setor de transporte ate a Portaria da Ceplac,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Boa noite,
+2026060085,Aplicaçao de Herbicida na area do setor de transporte ate a Portaria da Ceplac,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Boa noite,
 Solicito a execução do serviço de capina química (aplicação de herbicida) nos passeios e áreas pavimentadas compreendidas entre o Setor de Transporte e a portaria da CEPLAC.
 Informo que a atividade deverá ser realizada com o devido isolamento e sinalização da área, de modo a impedir a circulação de pedestres durante o período mínimo de 24 horas após a aplicação (tempo de reentrada), preferencialmente com a execução do serviço aos sábados, visando reduzir a exposição de trabalhadores e visitantes.
 Recomendações para uma aplicação segura:
@@ -37637,7 +37669,7 @@ Se faz necessário a troca de 01 tampas dos vasos sanitário do banheiro feminí
 Agradeço a atenção.",Troca de tampas do vaso sanitário,Troca de tampas do vaso sanitário
 2026060128,Janela emperrada,"Estrutura Predial > Esquadrias, porta, portão e janelas","Janela emperrada
 Local: COPA DOS ALUNOS",,
-2026060137,Limpeza do Laboratório Interdisciplinar de Ensino,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados(as),
+2026060137,Limpeza do Laboratório Interdisciplinar de Ensino,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados(as),
 Solicito, por gentileza, a realização da limpeza do Laboratório Interdisciplinar de Ensino, localizado no segundo andar do Complexo 2. Foram construídos alguns experimentos didáticos no espaço, o que ocasionou sujeira no chão e no mobiliário.
 Agradeço antecipadamente pela atenção e colaboração.",,
 2026060139,REFLETORES QUEIMADOS NOS CONSULTÓRIOS EXTERNOS,Elétrica > Iluminação,REFLETORES QUEIMADOS NOS CONSULTÓRIOS EXTERNOS,,
@@ -37713,16 +37745,16 @@ O bebedouro do pavilhão administrativo, próximo ao banheiro masculino está ap
 Poderia verificar por favor a troca da saboneteira do vestiário de funcionários, por favor.",,
 2026060227,Instalar suporte para sabonete líquido,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Instalar suporte para sabonete líquido
 Local: Vestiário Feminino Funcionário",,
-2026060237,Disponibilização de Ponto de lógica,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,Solicito a disponibilização de ponto de lógica na cantina do campus Sosigenes Costa.,,
+2026060237,Disponibilização de Ponto de lógica,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,Solicito a disponibilização de ponto de lógica na cantina do campus Sosigenes Costa.,Instalação de ponto de rede lógica na cantina,Instalação de ponto de rede lógica na cantina
 2026060238,Reparo Balança,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, boa noite.
 A balança de adulto do consultório 2 (tutoria) da CEAME não está ligando.
 Peço gentileza em verificar.",,
-2026060239,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados colegas,
+2026060239,Solicitação de roçagem da área no entorno do meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados colegas,
 Boa tarde! Peço a gentileza de roçar a área do meliponário. O mato está bem alto e está favorecendo a permanência de cobras na área, eu mesma vi uma na semana passada.
 Desde já agradeço.
 Atenciosamente,
 Rosane",,
-2026060240,Solicitação de iluminação e ponto de tomada no meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezados colegas,
+2026060240,Solicitação de iluminação e ponto de tomada no meliponário,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados colegas,
 Boa tarde! Por favor, solicito a instalação de uma tomada e iluminação no meliponário. Temos realizado atividades de manutenção à noite, e estamos com dificuldades e inseguras, por falta de iluminação e ponto de tomada.
 
 Desde já agradeço,
@@ -37825,7 +37857,7 @@ Poderiam verificar a possibilidade de trocas de espelhos nos banheiros no NGVA."
 2026070001,Manutenção portão Reitoria,"Estrutura Predial > Esquadrias, porta, portão e janelas","Rafael,
 
 Peço para dar uma olhada no portão da reitoria que não ta conseguindo abrir",,
-2026070007,Aujuda com mão de obra para instalção de horta escolar,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Bom dia,
+2026070007,Aujuda com mão de obra para instalção de horta escolar,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia,
 Sou coordenadora do projeto de Extensão Solo na Escola. No ambito desse projeto, estamos iniciando a contrução de uma horta escolar nas imediações do CJA (na parte da frente, ao lado das casinhas de sombrite). A horta será utilizada para visitas escolares ao projeto e também para aulas práticas pelos estudantes dos cursos de ciências agrárias da UFSB.
 Gostaria de solicitar ajuda com mão de obra para a construção dos canteiros da horta. A ajuda de, pelo menos, um trabalhador mais experiente, seria muito importante nesse momento para os trabalhos mais pesados, visto que algumas atividades os estudantes não têm condições (força física e experiência) de fazer sozinhos.
 Agradeço desde já a atenção e ajuda constumeira.
@@ -37847,29 +37879,29 @@ Os padrões técnicos a serem alcançados após o tratamento devem estar de acor
 Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um relatório técnico informando sobre o processo.",,
 2026070026,Manutenção Preventiva Mensal - Ar condicionado - Reitoria,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo.
 O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 04.",,
-2026070029,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | Laboratórios CEPEC,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas nos laboratórios da UFSB no CEPEC da CEPLAC. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
-2026070030,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | NUPED,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no NUPED. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
-2026070031,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | NVGA,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no NVGA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA
-2026070032,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas nos em todo o CPF (Exceto Núcleo Pedagógico). Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
-2026070033,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF | NUPED,Manutenção Preventiva > Sistemas de incêndio,"Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no Núcleo Pedagógico do CPF . Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
+2026070029,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | Laboratórios CEPEC,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas nos laboratórios da UFSB no CEPEC da CEPLAC. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
+2026070030,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | NUPED,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no NUPED. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
+2026070031,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | NVGA,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no NVGA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA
+2026070032,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas nos em todo o CPF (Exceto Núcleo Pedagógico). Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
+2026070033,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF | NUPED,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no Núcleo Pedagógico do CPF . Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
 2026070037,Instalação de Desktop,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito a instalação/transporte de desktop na minha mesa professor Thalis Ferreira (gabinete 31, bloco E02). O desktop está na mesa que anteriormente era usada pela professora Isabel Belasco, no mesmo gabinete. A professora Isabel trocou de gabinete deixando o desktop que me foi oferecido pelo gestor do campus, Paulo Borges.",,
 2026070040,Manutenção Preventiva Mensal - Ar condicionado - CSC - LABMOL,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
-2026070041,Manutenção Preventiva Mensal - Ar condicionado - CJA - Laboratório CEPLAC,Manutenção Preventiva > Ar condicionado split,,,
-2026070042,Manutenção Preventiva Mensal - Ar condicionado - CJA - NUPED,Manutenção Preventiva > Ar condicionado split,,,
+2026070041,Manutenção Preventiva Mensal - Ar condicionado - CJA - Laboratório CEPLAC,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
+2026070042,Manutenção Preventiva Mensal - Ar condicionado - CJA - NUPED,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070043,Manutenção Preventiva Mensal - Ar condicionado - CJA - NVGA,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
-2026070044,Manutenção Preventiva Mensal - Ar condicionado - CJA - Auditório CEPLAC,Manutenção Preventiva > Ar condicionado split,,,
+2026070044,Manutenção Preventiva Mensal - Ar condicionado - CJA - Auditório CEPLAC,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070045,Manutenção Preventiva Mensal - Ar condicionado - CPF - Bloco Administrativo,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070046,Manutenção Preventiva Mensal - Ar condicionado - CPF - Bloco de Aulas 1,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070047,Manutenção Preventiva Mensal - Ar condicionado - CPF - Bloco de Aulas 2,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070048,Manutenção Preventiva Mensal - Ar condicionado - CPF - Laboratório 1° Ciclo CFCS,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070049,Manutenção Preventiva Mensal - Ar condicionado - CPF - Pavilhão Anexo de Aulas,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070050,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão Administrativo,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
-2026070051,Manutenção Preventiva Mensal - Ar condicionado - CSC - Bloco de Serviços,Manutenção Preventiva > Ar condicionado split,,,
-2026070052,Manutenção Preventiva Mensal - Ar condicionado - CSC - Espaço de Leitura,Manutenção Preventiva > Ar condicionado split,,,
-2026070053,Manutenção Preventiva Mensal - Ar condicionado - CSC - Laboratórios,Manutenção Preventiva > Ar condicionado split,,,
-2026070054,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Convenções,Manutenção Preventiva > Ar condicionado split,,,
-2026070055,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Feiras,Manutenção Preventiva > Ar condicionado split,,,
-2026070056,Manutenção Preventiva Mensal - Ar Condicionado - CSC - Pórtico,Manutenção Preventiva > Ar condicionado split,,,
+2026070051,Manutenção Preventiva Mensal - Ar condicionado - CSC - Bloco de Serviços,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
+2026070052,Manutenção Preventiva Mensal - Ar condicionado - CSC - Espaço de Leitura,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
+2026070053,Manutenção Preventiva Mensal - Ar condicionado - CSC - Laboratórios,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
+2026070054,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Convenções,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
+2026070055,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Feiras,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
+2026070056,Manutenção Preventiva Mensal - Ar Condicionado - CSC - Pórtico,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070057,Manutenção Semestral - Ar condicionado - CJA - CFCA/CEPLAC,Manutenção Preventiva > Ar condicionado split,"Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados no CFCA/CEPLAC do CJA.
 Segue lista com quantidade e potência dos aparelhos:
 BTU CFCAF
@@ -37888,7 +37920,7 @@ Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do d
 2026070060,Manutenção Preventiva Mensal - Ar condicionado - CPF - Clínica escola de Psicologia,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070061,Manutenção Preventiva Mensal - Ar condicionado - CPF - Salas de Tutoria,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070062,Manutenção preventiva mensal do elevador da Reitoria,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores da Reitoria. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção.",,
-2026070063,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire,Manutenção Preventiva > Elevador,,,
+2026070063,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2026070064,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado,Manutenção Preventiva > Elevador,"Solicito manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado. Caso seja detectado alguma anomalia ou algum dos serviços não for concluído, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2026070065,Limpeza Geral/Manutenção Semestral dos Ar condicionados - N.P CJA,Manutenção Preventiva,"Solicito limpeza geral dos equipamentos de ar condicionados localizados no Núcleo Pedagógico e cadastro do equipamento com tombo. A limpeza e manutenção devem estar de acordo com o anexo iii que versa sobre as tarefas semestrais a serem feitas nos equipamentos de ar condicionados do tipo split. Segue também em anexo uma lista dos equipamentos já cadastrados por ambiente, para atualização e/ou correção.",,
 2026070068,Instalação de TVs,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Instalação de TVs
@@ -37925,7 +37957,8 @@ O ar condicionado do Laboratório de Carcinologia e Biodiversidade Aquática est
 Cordialmente,
 
 Débora Oliveira",,
-2026070114,Reparo na porta da DINFRA,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026070114,Reparo na porta da DINFRA,"Estrutura Predial > Esquadrias, porta, portão e janelas","Solicito reparo na porta da DINFRA.
+Motivo: Pino da dobradiça está solto e a porta está pegando ao abrir.",,
 2026070133,Limpeza luminária led laboratórios,Elétrica > Iluminação,"Prezados, bom dia,
 
 Solicito limpeza das luminárias led dos laboratórios interdisciplinares 1 e 2, na parte interna, .
@@ -37948,7 +37981,9 @@ Deste modo não consigo finalizar a inserção do plano de ensino da disciplina.
 CCS0829 - METODOLOGIA CIENTÍFICA E TECNOLÓGICA [ FG-EPT ] (60h) - Turma: 04 (2026.1)",,
 2026070150,Fotovoltaico da Reitoria,Elétrica > Sistema Fotovoltaico (FV),"Chamado para apoio à instalação do fotovoltaico da Reitoria. Aqui serão liberados todas as OSs relativos a esse serviço.
 Por enquanto, liberar confecção de placa de pvc de sinalização.",Placa de sinalização de sistema fotovoltáico; Complementar de Placa de sinalização de sistema fotovoltáico,Placa de sinalização de sistema fotovoltáico; Complementar de Placa de sinalização de sistema fotovoltáico
-2026070152,Compra de  6 lamina para roçadeira Sthill,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,
+2026070152,Compra de  6 lamina para roçadeira Sthill,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
+Solicito a compra de 6
+Lâmina Para Roçadeira Stihl FS 160/220/280/290/300/350/380 - 305mm 20mm",,
 2026070154,Manutenção ar condicionado,Climatização > Ar condicionado split,"Prezados,
 ar condicionado da sala dos terceirizados encontra-se pingando favor verificar e dá providência o quanto antes.
 
@@ -37964,8 +37999,16 @@ Atenciosamente,
 Mattheus Begali - técnico de laboratório",,
 2026070160,Remoção de Torneira,Hidrossanitária > Hidráulica,"Remover Torneira da Pia
 Local: Banheiro Feminino NVGA",,
-2026070161,Placa de identificação Laboratório Interdisciplinar 2,Instalação de Acessórios e Mobiliário > Placas de identificação,,Placa de identificação Laboratório Interdisciplinar 2,Placa de identificação Laboratório Interdisciplinar 2
-2026070162,"Prezados,     Fiz contato com Edcarllos solicitando a liberação do ace",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026070161,Placa de identificação Laboratório Interdisciplinar 2,Instalação de Acessórios e Mobiliário > Placas de identificação,"Prezados, boa tarde,
+
+Solicito, se possível, a confecção de uma placa de identificação para o Laboratório Interdisciplinar 2, semelhante à apresentada na foto em anexo.
+Obrigado.
+
+Atenciosamente,
+Thiago",Placa de identificação Laboratório Interdisciplinar 2,Placa de identificação Laboratório Interdisciplinar 2
+2026070162,"Prezados,     Fiz contato com Edcarllos solicitando a liberação do ace",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Prezados,
+
+Fiz contato com Edcarllos solicitando a liberação do acesso de dados como CPF dos estudantes através do SIGAA acadêmico no SIPAC. Isso porque a recomendação dos órgãos superiores é de que eu registre toda manifestação recebida por e-mail na plataforma fala br, mas a plataforma exige um numero de documento para fazer o cadastro daqueles cidadãos que ainda não possuem o cadastro. Sem esse dado, algumas manifestações são tramitadas apenas no e-mail, sem registro formal no fala BR, o que prejudica as métricas que são geradas pela plataforma em termos de quantidade de manifestações, assuntos e outros indicadores. Ele me orientou a abrir esse chamado para a liberação. Aguardo retorno.",,
 2026070164,Inserção de email nas listas/grupos de email,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Olá, boa noite!
 
 Sou novo docente na universidade e gostaria de solicitar a inclusão do meu email institucional nas listas de comunicados da universidade. Não tenho recebido nenhum email institucional informativo sobre as ações, eventos, comunicados e divulgações em geral. Além disso, noto que as categorias aqui no help Desk são todas estruturais, não encontrei uma categoria adequada para solicitação desta adição na lista de emails.
@@ -38039,12 +38082,18 @@ Setor de Apoio Acadêmico-CPF",,
 2026070261,Troca da lâmpada,Elétrica > Iluminação,"Bom dia!
 Por gentileza, solicito a troca da lâmpada do banheiro da guarita.
 grata!!",,
-2026070264,Manutenção de Ar condicionado Split da DINFRA,Climatização > Ar condicionado split,,,
+2026070264,Manutenção de Ar condicionado Split da DINFRA,Climatização > Ar condicionado split,O aparelho não está resfriando,,
 2026070266,Torca de saboneteira,Hidrossanitária > Hidráulica,"Prezados, por gentileza efetuar a troca da saboneteira no primeiro pavimento banheiro feminino.
 Cordialmente.",,
-2026070277,Reparo do DAFA da estação de tratamento de esgosto do CJA,Estrutura Predial > Infiltração,,,
-2026070278,URGÊNCIA - Correção de Vazamento no DAFA,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Solicito manutenção em caráter de urgência para corrigir o vazamento no Dafa, em anexo imagens do local",Impermeabilização do Dafa do CJA,Impermeabilização do Dafa do CJA
-2026070284,Caixa dagua com vazamento,Hidrossanitária > Hidráulica,,,
+2026070277,Reparo do DAFA da estação de tratamento de esgosto do CJA,Estrutura Predial > Infiltração,Reparo do DAFA da estação de tratamento de esgosto do CJA,,
+2026070278,URGÊNCIA - Correção de Vazamento no DAFA,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito manutenção em caráter de urgência para corrigir o vazamento no Dafa, em anexo imagens do local",Impermeabilização do Dafa do CJA,Impermeabilização do Dafa do CJA
+2026070284,Caixa dagua com vazamento,Hidrossanitária > Hidráulica,"Prezado,
+
+Banheiro masculino com vazamento.
+
+Cordialmente,
+
+Débora Oliveira",,
 2026070287,Reposição dos assentos sanitários no banheiro feminino do Pórtico,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito reposição dos assentos sanitários das 3 cabines sanitárias do banheiro feminino do pavilhão Pórtico, que atualmente encontram-se sem os assentos.",Reposição dos assentos sanitários no banheiro feminino do Pórtico,Reposição dos assentos sanitários no banheiro feminino do Pórtico
 2026070289,Vazamento no banheiro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Bom dia!
 Por gentileza solicito reparo no banheiro da CEAME. O mesmo se encontra com vazamento.
@@ -38055,7 +38104,7 @@ Solicito, com urgência, a verificação da infiltração identificada no Data C
 Segue em anexo algumas fotos registradas no ambiente, que evidenciam a situação.
 Agradeço pela atenção e peço prioridade no atendimento da demanda.
 Atenciosamente,",,
-2026070299,Fechadura quebrada,Área Externa e Ambiental > Manutenção área externa / meio ambiente,"Prezado,
+2026070299,Fechadura quebrada,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezado,
 
 A fechadura da porta do Herbário está com defeito.
 
@@ -38117,6 +38166,12 @@ Sendo assim, gostaria de solicitar a verificação do estado das instalações e
 Desde já agradeço pela colaboração.
 Att.,
 Alexandre.",,
+2026070473,"Colegas, boa tarde.  Inicialmente, solicitei, via WhatsApp, a manutenç",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Colegas, boa tarde.
+Inicialmente, solicitei, via WhatsApp, a manutenção da página da Coordenação do Curso no SIGAA do BIH-CPF. Na ocasião, fui orientado a formalizar a solicitação por meio da abertura de um chamado.
+O problema consiste na impossibilidade de enviar mensagens coletivas aos docentes e estudantes por meio da página da Coordenação, funcionalidade que anteriormente estava disponível. Essa indisponibilidade tem prejudicado significativamente as atividades administrativas e a comunicação da Coordenação de Curso.
+Dessa forma, solicito, por gentileza, a verificação e o reparo dessa funcionalidade, restabelecendo o envio de mensagens coletivas pelo portal SIGAA da Coordenação do Curso.
+Segue em anexo imagens que ilustram o problema.
+Atenciosamente,",,
 2026070352,Compra de lâmpadas,Elétrica > Iluminação,"Compra de lâmpadas para atender as necessidades de iluminação do CFCA. Comprar 150 lâmpadas de 1,20cm tubulares 18/20W led.",Compra de lâmpadas,Compra de lâmpadas para substituição
 2026070357,Iluminação,Elétrica > Iluminação,"Prezados, bom dia.
 
@@ -38168,10 +38223,28 @@ Atenciosamente,",,
 2026070419,Conserto porta de armário,"Estrutura Predial > Esquadrias, porta, portão e janelas","Prezados
 Solicito conserto da dobradiça da porta do armário n. 29, localizado no Laboratório de Ciências I, no 1º andar do prédio do CJA.
 Grata",,
-2026070429,Calhas do LECOMAR com vazamento e possível entupimento por folhas,"Estrutura Predial > Telhados, calhas, rufos, etc.",,,
-2026070430,Poda de árvore na sobre escada próxima ao LECOMAR,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,,
-2026070435,Ar Condicionado - possível fuga de refrigerante,Climatização > Ar condicionado split,,,
-2026070451,queda de forro,Estrutura Predial > Forro,,,
-2026070454,Manutenção Preventiva Semestral - Gerador 170 kVA - CSC,Manutenção Preventiva > Gerador,,,
-2026070455,Manutenção Preventiva Semestral - Gerador 55 kVA - CPF,Manutenção Preventiva > Gerador,,,
-2026070456,Manutenção Preventiva Semestral - Gerador 155 kVA - CSC,Manutenção Preventiva > Gerador,,,
+2026070429,Calhas do LECOMAR com vazamento e possível entupimento por folhas,"Estrutura Predial > Telhados, calhas, rufos, etc.","Solicito revisão e limpeza das calhas do LECOMAR, neste período de chuva duas das três saídas (tubos de pvc que escoam agua da calha) estão vazando e quando chove fica impossível transitar por baixo do telhado. Alérm da limpeza esses tubos precisam de manutenção corretiva.
+Grato
+#54dfb936-d9d62df8-6a63568e2f7854.42623242#
+#54dfb936-d9d62df8-6a635695e09021.06418005#
+#54dfb936-d9d62df8-6a63569dd99736.70592807#",Reparo nas calhas do Lecomar,Reparo nas calhas do Lecomar
+2026070430,Poda de árvore na sobre escada próxima ao LECOMAR,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a poda corretiva de uma árvore que fica na escada que da acesso do estacionamento dos fundos do pavilhão de feiras a área de laboratórios, bem próxima ao LECOMAR. Essa árvore vêm crescendo muito e está impedindo tanto o estacionamento quanto a passagem de pessoas para terem acesso a escada.
+Grato",,
+2026070435,Ar Condicionado - possível fuga de refrigerante,Climatização > Ar condicionado split,"Bom dia!
+Hoje de manhã o ar condicionado do Herbário, localizado anexo ao Lab. Interdisciplinar III, parou de funcionar. De acordo com o LED no painel e com o manual do modelo em questão, ele parou devido à detecção de fuga de gás refrigerante. Peço que ele seja avaliado tão rápido quanto possível, já que o Herbário exige seu funcionamento constante.
+
+Atenciosamente,
+Mattheus Begali",,
+2026070451,queda de forro,Estrutura Predial > Forro,solicito reparo do forro da biblioteca CSC que caou em diversos pontos do prédio,,
+2026070454,Manutenção Preventiva Semestral - Gerador 170 kVA - CSC,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva do gerador conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo II, página 06. As referências se encontram no anexo III do mesmo documento.",,
+2026070455,Manutenção Preventiva Semestral - Gerador 55 kVA - CPF,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva do gerador conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo II, página 06. As referências se encontram no anexo III do mesmo documento.",,
+2026070456,Manutenção Preventiva Semestral - Gerador 155 kVA - CSC,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva do gerador conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo II, página 06. As referências se encontram no anexo III do mesmo documento.",,
+2026070461,Substituição de fechadura do banheiro masculino do Lab NEA,"Estrutura Predial > Esquadrias, porta, portão e janelas","A chave da fechadura do banheiro masculino do Laboratório do Núcleo de estudos em Agroecologia e produção orgânica Pau Brasil (NEA-PB) foi removida e desde então o banheiro está trancado, impossibilitando dessa forma o uso. Foi procurada a chave reserva, mas não foi encontrada. Desse modo, solicito a troca da fechadura para que possamos voltar a utilizar o banheiro.",,
+2026070469,Instalação de TV e quadro na sala C 105 do Núcleo Pedagógico,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados,
+Com a abertura da nova Sala C 105 do Núcleo Pedagógico, solicito a instalação de TV e quadro.
+
+At.te",,
+2026070476,Troca de lâmpadas,Elétrica > Iluminação,"Bom dia!!
+Solicito a troca de lâmpadas da CEAME.
+grata!",,
+2026070489,DESMONTAGEM/MONTAGEM DE CABINES DE ESTUDO INDIVIDUAL,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, com a necessidade de desocupação do espaço físico para a reforma da Biblioteca, solicitamos gentilmente que nos ajudem com a desmontagem de 10 cabines de estudo individual na Biblioteca, e montagem de 5 delas na Sala 04. Essa solicitação se faz necessária pois as mesmas são muito largas e não passam pelas portas. Desde já agradecemos o apoio de sempre",,

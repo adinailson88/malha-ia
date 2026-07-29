@@ -264,7 +264,7 @@ Elétrica > Iluminação
 Elétrica > Iluminação
 Climatização > Ar condicionado split
 Manutenção Preventiva > Nobreak
-Área Externa e Ambiental > Poda de Árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Projetos e Reformas > Reforma
 Climatização > Ar condicionado split
@@ -901,7 +901,7 @@ Elétrica > Instalações elétricas
 Elétrica > Iluminação
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Posto de trabalho > Contratação de Posto de trabalho
 Elétrica > Iluminação
@@ -2549,6 +2549,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Suprimentos / Apoio Técnico > Materiais
 Climatização > Ar condicionado split
 "Estrutura Predial > Telhados, calhas, rufos, etc."
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Climatização > Ar condicionado split
 Elétrica > Instalações elétricas
 Manutenção Preventiva > Gerador
@@ -2568,13 +2569,14 @@ Suprimentos / Apoio Técnico > Materiais
 "Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Estrutura Predial > Infiltração
 Suprimentos / Apoio Técnico > Materiais
 Posto de trabalho > Contratação de Posto de trabalho
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Hidrossanitária > Hidráulica
@@ -2619,12 +2621,16 @@ Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Elétrica > Iluminação
 Elétrica > Instalações elétricas
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Climatização > Ar condicionado split
 Elétrica > Iluminação
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Instalações elétricas
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Outros > Erro de chamado
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Iluminação
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Climatização > Ar condicionado split
 Elétrica > Instalações elétricas
@@ -2676,14 +2682,17 @@ Manutenção Preventiva > Gerador
 Posto de trabalho > Contratação de Posto de trabalho
 Elétrica > Iluminação
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Poda de Árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Projetos e Reformas > Projeto
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Iluminação
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -2692,6 +2701,7 @@ Manutenção Preventiva > Gerador
 Manutenção Preventiva > Ar condicionado central
 Elétrica > Instalações elétricas
 Climatização > Ar condicionado split
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Manutenção Preventiva > Gerador
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
@@ -2706,6 +2716,7 @@ Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
+Outros > Erro de chamado
 Climatização > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -2826,6 +2837,7 @@ Projetos e Reformas > Projeto
 "Estrutura Predial > Instalações Especiais (gás, ar comprimido, etc.)"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
+Outros > Erro de chamado
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Outros > Erro de chamado
@@ -2846,6 +2858,8 @@ Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Hidráulica
@@ -2938,6 +2952,7 @@ Elétrica > Instalações elétricas
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Iluminação
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Outros > Erro de chamado
@@ -2984,12 +2999,14 @@ Hidrossanitária > Hidráulica
 Elétrica > Instalações elétricas
 Manutenção Preventiva > Hidráulica
 Elétrica > Iluminação
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Outros > Erro de chamado
 Climatização > Ar condicionado split
 Elétrica > Iluminação
 Manutenção Preventiva > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -3004,7 +3021,9 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
 Manutenção Preventiva > Gerador
@@ -3056,6 +3075,7 @@ Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Gerador
 Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -3391,9 +3411,9 @@ Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
 Estrutura Predial > Infiltração
 Estrutura Predial > Infiltração
-Área Externa e Ambiental > Poda de Árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Manutenção Preventiva > Telhados, calhas, rufos, etc."
 Hidrossanitária > Hidráulica
 Estrutura Predial > Infiltração
@@ -3549,7 +3569,7 @@ Elétrica > Instalações elétricas
 Elétrica > Instalações elétricas
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Bomba
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Elétrica > Iluminação
 Hidrossanitária > Hidráulica
@@ -4380,7 +4400,7 @@ Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Elétrica > Iluminação
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Poda de Árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -4421,7 +4441,7 @@ Estrutura Predial > Forro
 Manutenção Preventiva > Esgoto
 Elétrica > Instalações elétricas
 Elétrica > Instalações elétricas
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Iluminação
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
@@ -4553,9 +4573,9 @@ Hidrossanitária > Hidráulica
 Estrutura Predial > Forro
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Manutenção Preventiva > Vistoria em Instalações
-Área Externa e Ambiental > Poda de Árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Instalações elétricas
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -4757,7 +4777,7 @@ Suprimentos / Apoio Técnico > Materiais
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Elétrica > Instalações elétricas
 Hidrossanitária > Hidráulica
@@ -4989,7 +5009,7 @@ Manutenção Preventiva > Gerador
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 "Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
 Elétrica > Iluminação
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Telhados, calhas, rufos, etc."
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -5370,7 +5390,7 @@ Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
 Elétrica > Iluminação
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Manutenção Preventiva > Telhados, calhas, rufos, etc."
 Estrutura Predial > Forro
 Elétrica > Instalações elétricas
@@ -5683,7 +5703,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -5873,6 +5893,7 @@ Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Elétrica > Nobreak
+Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -6081,7 +6102,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
 Outros > Erro de chamado
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Estrutura Predial > Infiltração
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Ar condicionado split
@@ -6284,7 +6305,7 @@ Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Nobreak
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
@@ -6323,7 +6344,7 @@ Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Instalações elétricas
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -6456,7 +6477,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Hidráulica
 Elétrica > Iluminação
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Estrutura Predial > Forro
 Manutenção Preventiva > Gerador
@@ -6471,7 +6492,7 @@ TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Telhados, calhas, rufos, etc."
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -6484,7 +6505,7 @@ Hidrossanitária > Hidráulica
 Elétrica > Instalações elétricas
 Elétrica > Iluminação
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Iluminação
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 "Manutenção Preventiva > Telhados, calhas, rufos, etc."
@@ -6939,7 +6960,7 @@ Hidrossanitária > Hidráulica
 Estrutura Predial > Infiltração
 "Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
 "Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
-Manutenção Preventiva > Sistemas de incêndio
+"Segurança contra Incêndio > Sistemas de combate a incêndio (extintores, hidrantes)"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -7139,7 +7160,7 @@ Estrutura Predial > Forro
 Manutenção Preventiva > Hidráulica
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Manutenção Preventiva > Gerador
 "Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
@@ -7337,7 +7358,7 @@ Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Instalações elétricas
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
@@ -7476,7 +7497,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Climatização > Ar condicionado split
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -7901,7 +7922,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
@@ -8060,9 +8081,9 @@ Elétrica > Nobreak
 Hidrossanitária > Hidráulica
 Elétrica > Iluminação
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Manutenção Preventiva > Telhados, calhas, rufos, etc."
 Climatização > Ar condicionado split
 "Estrutura Predial > Telhados, calhas, rufos, etc."
@@ -8070,7 +8091,7 @@ Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Instalações elétricas
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Instalações elétricas
@@ -8135,13 +8156,13 @@ Manutenção Preventiva > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Hidráulica
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Posto de trabalho > Contratação de Posto de trabalho
 Estrutura Predial > Infiltração
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Elétrica > Iluminação
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
@@ -8200,7 +8221,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
 Elétrica > Instalações elétricas
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Instalações elétricas
 Climatização > Ar condicionado split
@@ -8299,7 +8320,7 @@ Outros > Erro de chamado
 Elétrica > Instalações elétricas
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Instalações elétricas
 Elétrica > Iluminação
@@ -8447,7 +8468,7 @@ Estrutura Predial > Forro
 Elétrica > Iluminação
 "Manutenção Preventiva > Telhados, calhas, rufos, etc."
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
@@ -8555,7 +8576,7 @@ Hidrossanitária > Hidráulica
 Elétrica > Instalações elétricas
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
@@ -8660,7 +8681,7 @@ Manutenção Preventiva > Quadros Elétricos
 Climatização > Ar condicionado split
 Elétrica > Nobreak
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
@@ -8815,7 +8836,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Instalações elétricas
 Elétrica > Instalações elétricas
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Estrutura Predial > Forro
 Elétrica > Iluminação
 Hidrossanitária > Hidráulica
@@ -9233,7 +9254,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Nobreak
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Iluminação
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -9385,7 +9406,7 @@ Elétrica > Iluminação
 Elétrica > Iluminação
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -9631,7 +9652,7 @@ Elétrica > Instalações elétricas
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Hidrossanitária > Hidráulica
 "Estrutura Predial > Telhados, calhas, rufos, etc."
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Posto de trabalho > Contratação de Posto de trabalho
@@ -9850,7 +9871,7 @@ Manutenção Preventiva > Quadros Elétricos
 Elétrica > Iluminação
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 Elétrica > Instalações elétricas
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -10106,7 +10127,7 @@ Hidrossanitária > Hidráulica
 Elétrica > Iluminação
 Elétrica > Iluminação
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 Manutenção Preventiva > Ar condicionado central
 Manutenção Preventiva > Ar condicionado central
@@ -10192,7 +10213,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Manutenção Preventiva > Iluminação
 Manutenção Preventiva > Iluminação
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Iluminação
 Elétrica > Instalações elétricas
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -10452,7 +10473,7 @@ Hidrossanitária > ETA / ETE
 Elétrica > Instalações elétricas
 Manutenção Preventiva > Ar condicionado split
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -10708,7 +10729,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Elétrica > Instalações elétricas
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Poda de Árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
@@ -10846,7 +10867,7 @@ Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Outros > Erro de chamado
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
 Elétrica > Instalações elétricas
@@ -11079,7 +11100,7 @@ Manutenção Preventiva > Reservatório
 Manutenção Preventiva > Reservatório
 Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Manutenção Preventiva > Sistemas de incêndio
+"Segurança contra Incêndio > Sistemas de combate a incêndio (extintores, hidrantes)"
 Outros > Erro de chamado
 Manutenção Preventiva > Bomba
 "Estrutura Predial > Telhados, calhas, rufos, etc."
@@ -11152,7 +11173,7 @@ Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
@@ -11356,7 +11377,7 @@ Climatização > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > ETA / ETE
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -11373,10 +11394,10 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Climatização > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Instalações elétricas
 Elétrica > Instalações elétricas
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
 Estrutura Predial > Infiltração
@@ -11390,12 +11411,12 @@ Manutenção Preventiva > Quadros Elétricos
 Manutenção Preventiva > Quadros Elétricos
 Hidrossanitária > ETA / ETE
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Iluminação
 Suprimentos / Apoio Técnico > Materiais
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Instalações elétricas
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -11440,7 +11461,7 @@ Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
 Manutenção Preventiva > Ar condicionado central
 Manutenção Preventiva > Ar condicionado central
-Manutenção Preventiva > Sistemas de incêndio
+"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Manutenção Preventiva > Quadros Elétricos
@@ -11510,7 +11531,7 @@ Hidrossanitária > Hidráulica
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Hidrossanitária > Hidráulica
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Outros > Outros
 Outros > Outros
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -11621,7 +11642,7 @@ Outros > Erro de chamado
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Instalações elétricas
 Hidrossanitária > Hidráulica
 Elétrica > Instalações elétricas
@@ -11634,7 +11655,7 @@ Elétrica > Instalações elétricas
 Elétrica > Instalações elétricas
 Manutenção Preventiva > Reservatório
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Hidrossanitária > Hidráulica
 Outros > Erro de chamado
@@ -11664,7 +11685,7 @@ Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Elétrica > Instalações elétricas
 Outros > Erro de chamado
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 "Segurança contra Incêndio > Sistemas de combate a incêndio (extintores, hidrantes)"
 Manutenção Preventiva > Hidráulica
@@ -11858,7 +11879,7 @@ Climatização > Ar condicionado split
 Outros > Erro de chamado
 Climatização > Ar condicionado split
 Outros > Erro de chamado
-Área Externa e Ambiental > Poda de Árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Hidráulica
@@ -11893,11 +11914,11 @@ Elétrica > Iluminação
 Climatização > Ar condicionado split
 Estrutura Predial > Forro
 Elétrica > Instalações elétricas
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Telhados, calhas, rufos, etc."
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -12027,7 +12048,7 @@ Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Outros > Erro de chamado
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Outros > Erro de chamado
 Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Ar condicionado split
@@ -12140,7 +12161,7 @@ Suprimentos / Apoio Técnico > Materiais
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Instalações elétricas
 Hidrossanitária > Bomba
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Outros > Erro de chamado
 Outros > Erro de chamado
@@ -12249,7 +12270,7 @@ Climatização > Ar condicionado split
 Elétrica > Iluminação
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Iluminação
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Iluminação
 Outros > Erro de chamado
@@ -12322,7 +12343,7 @@ Instalação de Acessórios e Mobiliário > Placas de identificação
 Manutenção Preventiva > Gerador
 Outros > Erro de chamado
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Outros > Erro de chamado
@@ -12343,7 +12364,7 @@ Hidrossanitária > Hidráulica
 Manutenção Preventiva > Ar condicionado central
 Manutenção Preventiva > Ar condicionado central
 Manutenção Preventiva > Ar condicionado split
-Área Externa e Ambiental > Poda de Árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Outros > Erro de chamado
 Outros > Erro de chamado
 "Estrutura Predial > Telhados, calhas, rufos, etc."
@@ -12402,7 +12423,7 @@ Elétrica > Iluminação
 Elétrica > Iluminação
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Elétrica > Instalações elétricas
 Manutenção Preventiva > Nobreak
@@ -12503,7 +12524,7 @@ Manutenção Preventiva > Ar condicionado central
 Manutenção Preventiva > Ar condicionado split
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Elétrica > Instalações elétricas
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -12532,8 +12553,8 @@ Equipamentos de Transporte > Elevador
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Hidrossanitária > Hidráulica
@@ -12542,7 +12563,7 @@ Manutenção Preventiva > Hidráulica
 Manutenção Preventiva > Quadros Elétricos
 Elétrica > Instalações elétricas
 Instalação de Acessórios e Mobiliário > Placas de identificação
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Instalações elétricas
 Outros > Outros
 Manutenção Preventiva > Iluminação
@@ -12643,7 +12664,7 @@ Manutenção Preventiva > Reservatório
 Manutenção Preventiva > Reservatório
 Manutenção Preventiva > Reservatório
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Outros > Erro de chamado
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Hidrossanitária > Hidráulica
@@ -12663,7 +12684,7 @@ Elétrica > Iluminação
 Estrutura Predial > Pintura
 Elétrica > Iluminação
 Outros > Erro de chamado
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Elétrica > Instalações elétricas
 Climatização > Ar condicionado split
@@ -12823,14 +12844,14 @@ Elétrica > Instalações elétricas
 Outros > Erro de chamado
 Outros > Erro de chamado
 Manutenção Preventiva > Reservatório
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Área Externa e Ambiental > Drenagem
 Outros > Erro de chamado
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Hidrossanitária > Hidráulica
 "Estrutura Predial > Telhados, calhas, rufos, etc."
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 Estrutura Predial > Pintura
 Climatização > Ar condicionado split
@@ -12853,7 +12874,7 @@ Manutenção Preventiva > Ar condicionado central
 Manutenção Preventiva > Ar condicionado central
 Manutenção Preventiva > Ar condicionado split
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Poda de Árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Nobreak
 Manutenção Preventiva > Quadros Elétricos
@@ -12989,9 +13010,9 @@ Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Estrutura Predial > Forro
@@ -13017,9 +13038,9 @@ Posto de trabalho > Contratação de Posto de trabalho
 Posto de trabalho > Contratação de Posto de trabalho
 Posto de trabalho > Contratação de Posto de trabalho
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -13040,7 +13061,7 @@ Hidrossanitária > Hidráulica
 Outros > Erro de chamado
 Elétrica > Instalações elétricas
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Outros > Erro de chamado
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
@@ -13077,7 +13098,7 @@ Hidrossanitária > Hidráulica
 Elétrica > Instalações elétricas
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
@@ -13086,7 +13107,7 @@ Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Manutenção Preventiva > Ar condicionado central
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
@@ -13110,7 +13131,7 @@ Hidrossanitária > Hidráulica
 Outros > Erro de chamado
 Outros > Erro de chamado
 Outros > Erro de chamado
-Manutenção Preventiva > Sistemas de incêndio
+"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
@@ -13148,7 +13169,7 @@ Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Instalações elétricas
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
@@ -13162,7 +13183,7 @@ Elétrica > Instalações elétricas
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Climatização > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Estrutura Predial > Forro
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -13178,7 +13199,7 @@ Elétrica > Sistema Fotovoltaico (FV)
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -13195,7 +13216,7 @@ TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Bomba
 Hidrossanitária > Hidráulica
 Estrutura Predial > Infiltração
@@ -13232,7 +13253,7 @@ Equipamentos de Transporte > Elevador
 Elétrica > Instalações elétricas
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Estrutura Predial > Telhados, calhas, rufos, etc."
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Nobreak
 Climatização > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
@@ -13296,7 +13317,7 @@ Estrutura Predial > Infiltração
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Iluminação
 Hidrossanitária > Hidráulica
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -13409,7 +13430,7 @@ Hidrossanitária > Hidráulica
 Elétrica > Iluminação
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 "Estrutura Predial > Telhados, calhas, rufos, etc."
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Instalações elétricas
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
@@ -13478,14 +13499,14 @@ Outros > Erro de chamado
 Elétrica > Instalações elétricas
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Instalações elétricas
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Climatização > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Instalação de Acessórios e Mobiliário > Placas de identificação
 Instalação de Acessórios e Mobiliário > Placas de identificação
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Manutenção Preventiva > Iluminação
 Manutenção Preventiva > Iluminação
@@ -13511,7 +13532,7 @@ Manutenção Preventiva > Iluminação
 Manutenção Preventiva > Iluminação
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Climatização > Ar condicionado split
@@ -13535,7 +13556,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
 Estrutura Predial > Infiltração
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 "Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
@@ -13567,7 +13588,7 @@ Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Iluminação
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Nobreak
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -13708,7 +13729,7 @@ Elétrica > Subestação
 Hidrossanitária > Hidráulica
 Elétrica > Instalações elétricas
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Iluminação
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -13768,7 +13789,7 @@ Elétrica > Instalações elétricas
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Iluminação
 "Estrutura Predial > Telhados, calhas, rufos, etc."
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -13805,8 +13826,8 @@ Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Instalações elétricas
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -13818,7 +13839,7 @@ Estrutura Predial > Infiltração
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Iluminação
 Estrutura Predial > Forro
 Hidrossanitária > Hidráulica
@@ -13855,8 +13876,8 @@ Manutenção Preventiva > Ar condicionado split
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Hidrossanitária > Hidráulica
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -13884,18 +13905,18 @@ Manutenção Preventiva > Gerador
 Elétrica > Instalações elétricas
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Climatização > Ar condicionado split
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Manutenção Preventiva > Ar condicionado central
 Manutenção Preventiva > Ar condicionado central
 Manutenção Preventiva > Ar condicionado split
-Manutenção Preventiva > Sistemas de incêndio
-Manutenção Preventiva > Sistemas de incêndio
-Manutenção Preventiva > Sistemas de incêndio
-Manutenção Preventiva > Sistemas de incêndio
-Manutenção Preventiva > Sistemas de incêndio
+"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
+"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
+"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
+"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
+"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Ar condicionado split
@@ -13941,7 +13962,7 @@ Climatização > Ar condicionado split
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Elétrica > Sistema Fotovoltaico (FV)
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
@@ -13970,13 +13991,13 @@ Elétrica > Iluminação
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
 Estrutura Predial > Infiltração
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Hidrossanitária > Hidráulica
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Estrutura Predial > Forro
 Estrutura Predial > Infiltração
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Climatização > Ar condicionado split
@@ -13987,6 +14008,7 @@ Elétrica > Iluminação
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Elétrica > Instalações elétricas
+TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Elétrica > Iluminação
 Elétrica > Iluminação
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -14006,9 +14028,13 @@ Elétrica > Iluminação
 Hidrossanitária > Hidráulica
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Telhados, calhas, rufos, etc."
-Área Externa e Ambiental > Manutenção área externa / meio ambiente
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Climatização > Ar condicionado split
 Estrutura Predial > Forro
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
+"Estrutura Predial > Esquadrias, porta, portão e janelas"
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Elétrica > Iluminação
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
