@@ -1,73 +1,73 @@
 {
-  "gerado_em_utc": "2026-07-28T09:22:22.665989Z",
-  "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
+  "gerado_em_utc": "2026-07-29T09:27:35.636114Z",
+  "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_extra_trees.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
-  "melhor_modelo": "linear_svc",
-  "acerto_validado": 0.9527,
+  "melhor_modelo": "extra_trees",
+  "acerto_validado": 0.534,
   "ic95": [
-    0.9482,
-    0.9569
+    0.5127,
+    0.5568
   ],
-  "n": 8895,
-  "validados_na_bancada": 8895,
+  "n": 1927,
+  "validados_na_bancada": 1927,
   "ranking": [
     {
-      "modelo": "linear_svc",
-      "acerto_validado": 0.9527,
-      "ic95": [
-        0.9482,
-        0.9569
-      ]
-    },
-    {
-      "modelo": "sgd",
-      "acerto_validado": 0.9442,
-      "ic95": [
-        0.9394,
-        0.949
-      ]
-    },
-    {
-      "modelo": "regressao_logistica",
-      "acerto_validado": 0.9404,
-      "ic95": [
-        0.9355,
-        0.9453
-      ]
-    },
-    {
       "modelo": "extra_trees",
-      "acerto_validado": 0.9314,
+      "acerto_validado": 0.534,
       "ic95": [
-        0.9261,
-        0.9365
+        0.5127,
+        0.5568
       ]
     },
     {
-      "modelo": "random_forest",
-      "acerto_validado": 0.9268,
+      "modelo": "linear_svc",
+      "acerto_validado": 0.5335,
       "ic95": [
-        0.9213,
-        0.932
-      ]
-    },
-    {
-      "modelo": "lstm",
-      "acerto_validado": 0.8872,
-      "ic95": [
-        0.8805,
-        0.894
+        0.5117,
+        0.5558
       ]
     },
     {
       "modelo": "naive_bayes",
-      "acerto_validado": 0.8659,
+      "acerto_validado": 0.5324,
       "ic95": [
-        0.8588,
-        0.8731
+        0.5101,
+        0.5553
+      ]
+    },
+    {
+      "modelo": "random_forest",
+      "acerto_validado": 0.5319,
+      "ic95": [
+        0.5101,
+        0.5553
+      ]
+    },
+    {
+      "modelo": "sgd",
+      "acerto_validado": 0.5288,
+      "ic95": [
+        0.5065,
+        0.5516
+      ]
+    },
+    {
+      "modelo": "regressao_logistica",
+      "acerto_validado": 0.5241,
+      "ic95": [
+        0.5029,
+        0.5464
+      ]
+    },
+    {
+      "modelo": "lstm",
+      "acerto_validado": 0.5138,
+      "ic95": [
+        0.492,
+        0.5366
       ]
     }
   ],
-  "n_registros": 13965,
+  "n_registros": 14094,
   "observacao": "Classificacao validada importada do repo classificacao-chamados; sem texto do chamado. NAO substitui log_classificacao.json."
 }
