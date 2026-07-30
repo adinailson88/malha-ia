@@ -1,16 +1,24 @@
 {
-  "gerado_em_utc": "2026-07-29T09:27:35.636114Z",
-  "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_extra_trees.json",
+  "gerado_em_utc": "2026-07-30T09:17:22.889330Z",
+  "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_random_forest.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
-  "melhor_modelo": "extra_trees",
-  "acerto_validado": 0.534,
+  "melhor_modelo": "random_forest",
+  "acerto_validado": 0.9564,
   "ic95": [
-    0.5127,
-    0.5568
+    0.9471,
+    0.9652
   ],
   "n": 1927,
   "validados_na_bancada": 1927,
   "ranking": [
+    {
+      "modelo": "random_forest",
+      "acerto_validado": 0.9564,
+      "ic95": [
+        0.9471,
+        0.9652
+      ]
+    },
     {
       "modelo": "extra_trees",
       "acerto_validado": 0.534,
@@ -30,14 +38,6 @@
     {
       "modelo": "naive_bayes",
       "acerto_validado": 0.5324,
-      "ic95": [
-        0.5101,
-        0.5553
-      ]
-    },
-    {
-      "modelo": "random_forest",
-      "acerto_validado": 0.5319,
       "ic95": [
         0.5101,
         0.5553
@@ -68,6 +68,6 @@
       ]
     }
   ],
-  "n_registros": 14094,
+  "n_registros": 28188,
   "observacao": "Classificacao validada importada do repo classificacao-chamados; sem texto do chamado. NAO substitui log_classificacao.json."
 }
