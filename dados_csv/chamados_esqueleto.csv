@@ -38064,7 +38064,7 @@ At.te",,
 
 O portão 03 da garagem da Reitoria está parando ao abrir e ao fechar .
 Verificar o ar condicionado da copa térreo que encontra-se pingando.",,
-2026070225,Instalação de Ar condicionado,Climatização > Ar condicionado split,Solicito instalação de Ar condicionado (climatização) na SALA DE EVENTOS - NVGA,,
+2026070225,Instalação de Ar condicionado,Climatização > Ar condicionado split,Solicito instalação de Ar condicionado (climatização) na SALA DE EVENTOS - NVGA,Instalação de Ar condicionado,Instalação de Ar condicionado
 2026070226,Instalação de Quadro Branco ou quadro de vidro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito instalação de Quadro Branco ou quadro de vidro para as SALAS 210, 212, 214 - NUPED",Instalação de quadros de vidro; Complementar de Instalação de quadros de vidro,"OBS: Chumbador de 2"" e 3""; Complementar de Instalação de quadros de vidro"
 2026070227,Instalação de TVs (suporte para TVs),"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito Instalação de TVs (suporte para TVs) nas SALAS 210,212, 214 - NUPED",Instalação de TVs (suporte para TVs),Instalação de TVs (suporte para TVs)
 2026070228,Criação de Email da Seção de Planejamento Acadêmico e Projetos,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Solicito a criação de email para a seção de ""Apoio ao planejamento acadêmico"". Sugestão de email: ""planejamento.cja@ufsb.edu.br""",,
@@ -38235,6 +38235,7 @@ Hoje de manhã o ar condicionado do Herbário, localizado anexo ao Lab. Interdis
 
 Atenciosamente,
 Mattheus Begali",,
+2026070496,Fibra Rompida.,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,Reparo de fibra optica,Reparo de fibra optica
 2026070451,queda de forro,Estrutura Predial > Forro,solicito reparo do forro da biblioteca CSC que caou em diversos pontos do prédio,,
 2026070454,Manutenção Preventiva Semestral - Gerador 170 kVA - CSC,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva do gerador conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo II, página 06. As referências se encontram no anexo III do mesmo documento.",,
 2026070455,Manutenção Preventiva Semestral - Gerador 55 kVA - CPF,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva do gerador conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo II, página 06. As referências se encontram no anexo III do mesmo documento.",,
@@ -38248,3 +38249,18 @@ At.te",,
 Solicito a troca de lâmpadas da CEAME.
 grata!",,
 2026070489,DESMONTAGEM/MONTAGEM DE CABINES DE ESTUDO INDIVIDUAL,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, com a necessidade de desocupação do espaço físico para a reforma da Biblioteca, solicitamos gentilmente que nos ajudem com a desmontagem de 10 cabines de estudo individual na Biblioteca, e montagem de 5 delas na Sala 04. Essa solicitação se faz necessária pois as mesmas são muito largas e não passam pelas portas. Desde já agradecemos o apoio de sempre",,
+2026070492,Preenchimento de revestimento na parede,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,
+2026070500,Torneira vazando água (trava de fechamento não funciona),Hidrossanitária > Hidráulica,,,
+2026070503,"Prezados, bom dia.  Poderia por favor a instalação de porta papel toal","Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026070504,Instalação de ar-condicionado,Climatização > Ar condicionado central,,Instalação de ar-condicionado,Instalação de ar-condicionado
+2026070524,Instalação de televisão e quadro branco,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026070525,Reparos nas Luminárias dos Portes das Areas externas do Campus CSC,Elétrica > Iluminação,,,
+2026070533,Ponto elétrico,Elétrica > Instalações elétricas,,,
+2026070535,Ponto de energia,Elétrica > Instalações elétricas,,,
+2026070538,Troca de filtros de linha e estabilizadores por nobreaks,Elétrica > Nobreak,,,
+2026070546,Recolha de residos de resto de Serviço,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
+2026070548,Reparo em Buero de drenagem de água pluvial,Área Externa e Ambiental > Drenagem,,,
+2026070549,Reparo em tampa de caixa de passagem,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
+2026070550,Reparo em caixa hidraulica e entorno,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
+2026070554,Verificação de criação da conta Google Workspace for Education (GFE),TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026070557,Solicitação de manutenção para reestabelecimento de iluminação da área,Elétrica > Iluminação,,,
