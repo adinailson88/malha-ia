@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-07-30T10:40:06.582451+00:00",
+  "gerado_em_utc": "2026-07-31T11:08:53.407108+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,14 +37,15 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "5911380a2155",
-        "html_url": "https://github.com/adinailson88/malha-ia/commit/5911380a2155a93e307cd266fb44054f8c12a54c",
-        "data": "2026-07-30T09:17:23Z"
+        "sha": null,
+        "html_url": null,
+        "data": null,
+        "erro": "HTTP Error 403: rate limit exceeded"
       },
-      "dados_atualizados_em_utc": "2026-07-29T08:12:37.994484+00:00",
+      "dados_atualizados_em_utc": "2026-07-31T08:25:18.687249+00:00",
       "resumo_dados": {
-        "abas_exportadas": 374,
-        "falhas": 106,
+        "abas_exportadas": 376,
+        "falhas": 92,
         "falhas_criticas": 0
       },
       "manifest_modulo": {
@@ -99,11 +100,12 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "b73af73a47e1",
-        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/b73af73a47e1887b865d63156a97c121f76ac56d",
-        "data": "2026-07-30T09:13:25Z"
+        "sha": null,
+        "html_url": null,
+        "data": null,
+        "erro": "HTTP Error 403: rate limit exceeded"
       },
-      "dados_atualizados_em_utc": "2026-07-30T09:13:22.940558+00:00",
+      "dados_atualizados_em_utc": "2026-07-31T10:35:58.607845+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -157,11 +159,12 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "4416c6275914",
-        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/4416c6275914ee78d1c40a6dc0edd309c5b58cbf",
-        "data": "2026-07-30T09:13:13Z"
+        "sha": null,
+        "html_url": null,
+        "data": null,
+        "erro": "HTTP Error 403: rate limit exceeded"
       },
-      "dados_atualizados_em_utc": "2026-07-30T09:13:12.225081+00:00",
+      "dados_atualizados_em_utc": "2026-07-31T10:36:04.649617+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -215,11 +218,12 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "64f8493977fc",
-        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/64f8493977fcbcaba3348da5d566b7a12e3bd894",
-        "data": "2026-07-30T09:27:46Z"
+        "sha": null,
+        "html_url": null,
+        "data": null,
+        "erro": "HTTP Error 403: rate limit exceeded"
       },
-      "dados_atualizados_em_utc": "2026-07-30T08:31:29.474713+00:00",
+      "dados_atualizados_em_utc": "2026-07-31T10:06:11.565474+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -273,9 +277,10 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "d97a2fb8d67e",
-        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/d97a2fb8d67e31354fe0a219b1dfba6b1c5d5f6d",
-        "data": "2026-07-30T10:39:51Z"
+        "sha": null,
+        "html_url": null,
+        "data": null,
+        "erro": "HTTP Error 403: rate limit exceeded"
       },
       "dados_atualizados_em_utc": "2026-06-15T13:05:14.776131+00:00",
       "resumo_dados": {},
@@ -331,14 +336,15 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "4762c5d1e3af",
-        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/4762c5d1e3af99c839656a92fe0d79de68eeddac",
-        "data": "2026-07-30T09:59:00Z"
+        "sha": null,
+        "html_url": null,
+        "data": null,
+        "erro": "HTTP Error 403: rate limit exceeded"
       },
-      "dados_atualizados_em_utc": "2026-07-30T09:58:59.299662+00:00",
+      "dados_atualizados_em_utc": "2026-07-31T08:44:26.936853+00:00",
       "resumo_dados": {
         "arquivos": 3,
-        "linhas_dados": 163
+        "linhas_dados": 172
       },
       "manifest_modulo": {
         "schema_version": "1.0",
