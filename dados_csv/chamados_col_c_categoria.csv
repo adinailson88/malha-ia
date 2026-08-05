@@ -8285,7 +8285,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
-"Manutenção Preventiva > Telhados, calhas, rufos, etc."
+"Estrutura Predial > Telhados, calhas, rufos, etc."
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Iluminação
 Elétrica > Nobreak
@@ -13002,7 +13002,7 @@ Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
-Manutenção Preventiva
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
@@ -13699,7 +13699,7 @@ Climatização > Ar condicionado split
 Outros > Outros
 Hidrossanitária > Hidráulica
 Estrutura Predial > Forro
-Manutenção Preventiva > Hidráulica
+Hidrossanitária > Hidráulica
 Estrutura Predial > Infiltração
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Instalações elétricas
@@ -13943,7 +13943,7 @@ Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
-Manutenção Preventiva
+Manutenção Preventiva > Ar condicionado split
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -14054,3 +14054,54 @@ Elétrica > Nobreak
 Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Elétrica > Iluminação
+Estrutura Predial > Alvenaria / Pisos / Estrutura
+"Estrutura Predial > Esquadrias, porta, portão e janelas"
+Elétrica > Instalações elétricas
+TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
+Manutenção Preventiva > Ar condicionado split
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Hidrossanitária > Hidráulica
+Estrutura Predial > Forro
+TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
+Climatização > Ar condicionado split
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Climatização > Ar condicionado split
+TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
+Hidrossanitária > Hidráulica
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Estrutura Predial > Alvenaria / Pisos / Estrutura
+Elétrica > Instalações elétricas
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Manutenção Preventiva > Ar condicionado central
+Manutenção Preventiva > Ar condicionado central
+Equipamentos de Transporte > Elevador
+Hidrossanitária > Bomba
+Hidrossanitária > Hidráulica
+Elétrica > Iluminação
+Estrutura Predial > Infiltração
+TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
+Manutenção Preventiva > Esgoto
+Manutenção Preventiva > Quadros Elétricos
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Elevador
+Manutenção Preventiva > Elevador
+Manutenção Preventiva > Elevador
