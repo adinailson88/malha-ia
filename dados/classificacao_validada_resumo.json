@@ -1,22 +1,22 @@
 {
-  "gerado_em_utc": "2026-08-05T09:23:18.257929Z",
+  "gerado_em_utc": "2026-08-06T09:29:29.686528Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
-  "acerto_validado": 0.821,
+  "acerto_validado": 0.8188,
   "ic95": [
-    0.8149,
-    0.8272
+    0.8126,
+    0.8252
   ],
   "n": 14060,
   "validados_na_bancada": 14060,
   "ranking": [
     {
       "modelo": "linear_svc",
-      "acerto_validado": 0.821,
+      "acerto_validado": 0.8188,
       "ic95": [
-        0.8149,
-        0.8272
+        0.8126,
+        0.8252
       ]
     },
     {
@@ -29,10 +29,10 @@
     },
     {
       "modelo": "extra_trees",
-      "acerto_validado": 0.7992,
+      "acerto_validado": 0.8003,
       "ic95": [
-        0.7925,
-        0.8059
+        0.7936,
+        0.8069
       ]
     },
     {
@@ -68,6 +68,6 @@
       ]
     }
   ],
-  "n_registros": 14106,
+  "n_registros": 28216,
   "observacao": "Classificacao validada importada do repo classificacao-chamados; sem texto do chamado. NAO substitui log_classificacao.json."
 }
