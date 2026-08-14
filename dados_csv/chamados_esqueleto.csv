@@ -20479,6 +20479,18 @@ Seguir as seguintes instruções:
 2022100030,Manutenção Preventiva Bimensal - Quadros Elétricos de BT - CJA - CFCTAf/CEPLAC,Manutenção Preventiva > Quadros Elétricos,"Solicito manutenção preventiva/inspeção dos quadros elétrico de baixa tensão conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 02.
 É OBRIGATÓRIA a entrega deste documento à UFSB, de modo a dar retorno aos serviços executados e atualização dos cadastros dos quadros elétricos.",,
 2022100031,Manutenção Preventiva Bimensal - Gerador 155 kVA - CSC,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva bimensal do gerador de 155 kVA do Campus Sosígenes Costa conforme documento em anexo. Favor seguir roteiro conforme Anexo I, pág. 04 e 05. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
+2026080346,Verificar ponto de rede,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Olá, gostaria que os pontos de rede do gabinete 38 do NP fossem verificados. Os pontos foram configurados mas apresentam instabilidade. Foram trocados os cabos e feitos testes no switch e funcionou normalmente. Porém na sala o sinal fica intermitente.
+Obrigado.",,
+2026080344,Solicitação de Bota Fora de residuos sólidos,"Suprimentos / Apoio Técnico > Limpeza de equipamentos, ambiente e mobiliário","Prezados(as),
+
+Solicita a limpeza de área externa, estacionamento próxima a substação primária, com a recolha e descarte dos resíduos solidos de resto de materias gerados pela manutenção do campus.
+
+Segue foto dos materiais a Serem retirados.",,
+2026080349,Laboratório sem internet.,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Saudações!
+O Laboratório de Proteção Florestal/Mirmecologia está sem acesso à internet. Gostaria de solicitar que, por gentileza, desse uma olha nisso.
+
+Att.,
+Alexandre.",,
 2022090298,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Feiras,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo.
 O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 04.",,
 2022090325,problema em ar condicionado,Climatização > Ar condicionado split,O aparelho de ar-condicionado do laboratório de melhoramento florestal (antiga sala climatizada do lab da madeira cfcaf) não resfria e desliga sozinho a cada 15 minutos em média.,,
@@ -36416,9 +36428,9 @@ Atenciosamente,
 Jorge Costa",,
 2026040001,Recarga de Extintores - Reitoria,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito recarga dos extintores.
 Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
-2026040002,Recarga de Extintores - CJA - Laboratórios CEPEC,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito recarga dos extintores. Considerar os extintores localizados nos laboratórios da UFSB localizados no CEPEC da CEPLAC. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
-2026040003,Recarga de extintores - CJA - NUPED,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito recarga dos extintores. Considerar os extintores localizados no Núcleo Pedagógico do CJA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
-2026040004,Recarga de extintores - CJA - NVGA,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito recarga dos extintores. Considerar os extintores localizados no Núcleo de Vivência do CJA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
+2026040002,Recarga de Extintores - CJA - Laboratórios CEPEC,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito recarga dos extintores. Considerar os extintores localizados nos laboratórios da UFSB localizados no CEPEC da CEPLAC. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Recarga de Extintores - CJA - Laboratórios CEPEC,Recarga de Extintores - CJA - Laboratórios CEPEC
+2026040003,Recarga de extintores - CJA - NUPED,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito recarga dos extintores. Considerar os extintores localizados no Núcleo Pedagógico do CJA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Recarga de extintores - CJA - NUPED,Recarga de extintores - CJA - NUPED
+2026040004,Recarga de extintores - CJA - NVGA,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito recarga dos extintores. Considerar os extintores localizados no Núcleo de Vivência do CJA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Recarga de extintores - CJA - NVGA,Recarga de extintores - CJA - NVGA
 2026040005,Lâmpadas queimadas na sala da coordenação - Complexo 1,Elétrica > Iluminação,Lâmpadas queimadas na sala da coordenação - Complexo 1,,
 2026040010,Nuvem,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,Preciso de acesso a nuvem compartilhada de psicologia.,,
 2026040031,Solicitação de aquisição de lona reforçada,"Estrutura Predial > Telhados, calhas, rufos, etc.","Prezados, bom dia!
@@ -37696,6 +37708,7 @@ Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do d
 2026060165,Manutenção Semestral - Ar condicionado - CSC - Pav. de Feiras,Manutenção Preventiva > Ar condicionado split,Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados no Pav. de Feiras do CSC. Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do documento em anexo que versa sobre as tarefas semestrais que devem ser feitas nos equipamentos de Ar condicionados do tipo SPLIT.,,
 2026060166,Manutenção Semestral - Ar condicionado - CSC - Pórtico,Manutenção Preventiva > Ar condicionado split,Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados no Pórtico do CSC. Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do documento em anexo que versa sobre as tarefas semestrais que devem ser feitas nos equipamentos de Ar condicionados do tipo SPLIT.,,
 2026060167,Manutenção Semestral - Ar condicionado - CPF - Salas de Tutoria,Manutenção Preventiva > Ar condicionado split,Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados no Anexo de Aulas do CPF. Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do documento em anexo que versa sobre as tarefas semestrais que devem ser feitas nos equipamentos de Ar condicionados do tipo SPLIT,,
+2026060168,Manutenção Semestral - Ar condicionado - CPF - Salas Administrativas CFCS,Manutenção Preventiva > Ar condicionado split,Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados no Anexo de Aulas do CPF. Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do documento em anexo que versa sobre as tarefas semestrais que devem ser feitas nos equipamentos de Ar condicionados do tipo SPLIT,,
 2026060169,Manutenção Semestral - Ar condicionado - CPF - Lab. Habilidades CFCS,Manutenção Preventiva > Ar condicionado split,Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados no Laboratório de Habilidades do CFCS do CPF. Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do documento em anexo que versa sobre as tarefas semestrais que devem ser feitas nos equipamentos de Ar condicionados do tipo SPLIT.,,
 2026060174,Manutenção da iluminação da sala de conferência,Elétrica > Iluminação,"Prezados Colegas, bom dia
 Solicito a manutenção da iluminação da sala de conferência do Complexo II, verifique que consta mais de 07 lâmpadas queimadas.",,
@@ -37883,7 +37896,7 @@ O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 0
 2026070030,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | NUPED,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no NUPED. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
 2026070031,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA | NVGA,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no NVGA. Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CJA
 2026070032,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas nos em todo o CPF (Exceto Núcleo Pedagógico). Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
-2026070033,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF | NUPED,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no Núcleo Pedagógico do CPF . Para o cadastro dos equipamentos, utilizar os documentos em anexo.",,
+2026070033,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF | NUPED,"Manutenção Preventiva > Sistemas de combate a incêndio (extintores, hidrantes)","Solicito teste hidrostático das mangueiras de incêndio. Considerar as mangueiras localizadas no Núcleo Pedagógico do CPF . Para o cadastro dos equipamentos, utilizar os documentos em anexo.",Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF | NUPED,Manutenção Preventiva | Anual | Teste Hidrostático Mangeiras Incêndio| CPF | NUPED
 2026070037,Instalação de Desktop,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito a instalação/transporte de desktop na minha mesa professor Thalis Ferreira (gabinete 31, bloco E02). O desktop está na mesa que anteriormente era usada pela professora Isabel Belasco, no mesmo gabinete. A professora Isabel trocou de gabinete deixando o desktop que me foi oferecido pelo gestor do campus, Paulo Borges.",,
 2026070040,Manutenção Preventiva Mensal - Ar condicionado - CSC - LABMOL,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
 2026070041,Manutenção Preventiva Mensal - Ar condicionado - CJA - Laboratório CEPLAC,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
@@ -38253,7 +38266,9 @@ grata!",,
 2026070500,Torneira vazando água (trava de fechamento não funciona),Hidrossanitária > Hidráulica,,,
 2026070503,"Prezados, bom dia.  Poderia por favor a instalação de porta papel toal","Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, bom dia.
 Poderia por favor a instalação de porta papel toalha no banheiro PCD do pavilhão administrativo.",,
-2026070504,Instalação de ar-condicionado,Climatização > Ar condicionado central,,Instalação de ar-condicionado,Instalação de ar-condicionado
+2026070504,Instalação de ar-condicionado,Climatização > Ar condicionado central,"Prezados, bom dia!
+Solicito, por gentileza, a instalação de duas unidades de ar-condicionado no Laboratório de Competências digitais.
+Atenciosamente,",Instalação de ar-condicionado,Instalação de ar-condicionado
 2026070524,Instalação de televisão e quadro branco,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, boa tarde!
 Solicito a instalação de uma televisão e de um quadro branco nas seguintes salas:
 
@@ -38264,15 +38279,16 @@ E103;
 E104.
 
 Atenciosamente,",,
-2026070525,Reparos nas Luminárias dos Portes das Areas externas do Campus CSC,Elétrica > Iluminação,,,
+2026070525,Reparos nas Luminárias dos Portes das Areas externas do Campus CSC,Elétrica > Iluminação,"Prezados(as),
+Solicito a manutenção e substituição de lâmpadas, luminárias e refletores queimados/apagados nos locais listados no arquivo em anexo. Obs. Levantamento realizado dia 28/07/2026.",,
 2026070533,Ponto elétrico,Elétrica > Instalações elétricas,"Olá, gostaria de solicitar um ponto de energia perto da TV da sala E104 do Núcleo Pedagógico. Qualquer dúvida consultar Eduardo.
 Obrigado.",,
 2026070535,Ponto de energia,Elétrica > Instalações elétricas,"Olá, gostaria que fosse colocado mais um ponto de energia na sala Tutoria 08 do Núcleo Pedagógico. Qualquer dúvida consultar Eduardo.
 Obrigado.",,
 2026070538,Troca de filtros de linha e estabilizadores por nobreaks,Elétrica > Nobreak,,,
 2026070546,Recolha de residos de resto de Serviço,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
-2026070548,Reparo em Buero de drenagem de água pluvial,Área Externa e Ambiental > Drenagem,,,
-2026070549,Reparo em tampa de caixa de passagem,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
+2026070548,Reparo em Buero de drenagem de água pluvial,Área Externa e Ambiental > Drenagem,"Solicito repara na tampa do bueiro que faz a drenagem de água pluvial no canteiro da via que dá acesso ao restaurante e entrada do convenções, conforme foto em anexo. O passeio encontra com um buraco entre as placas e pode vim a acarretar algum acidente com os transeuntes.",,
+2026070549,Reparo em tampa de caixa de passagem,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,Solicito repara na tampa da caixa de passagem localizada no canteiro proximo ao restaurante e convenções. Segue foto;,,
 2026070550,Reparo em caixa hidraulica e entorno,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
 2026070554,Verificação de criação da conta Google Workspace for Education (GFE),TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
 2026070557,Solicitação de manutenção para reestabelecimento de iluminação da área,Elétrica > Iluminação,,,
@@ -38328,6 +38344,11 @@ Local: BANHEIRO FEMININO - 1° ANDAR",,
 Por gentileza, peço que verifiquem o vaso sanitário da sala da psicóloga. O reparo do vazamento que ele apresentava já foi realizado, porém o vaso está solto e balança quando é utilizado.",,
 2026080041,Solicitação de Vedação de Aberturas no Depósito 02,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Solicito a vedação das aberturas laterais existentes no teto da sala Depósito 02, localizada no pavilhão administrativo, a fim de impedir a entrada de morcegos, insetos e outros animais.",,
 2026080059,Instalar ponto elétrico,Elétrica > Instalações elétricas,"Olá, solicito a instalação de um ponto de energia e outro ponto de rede nas salas B204 e B201, do complexo 2, posicionados próximos à TV. Obrigado.",,
+2026080060,RSC - Ausência de iQ,SISTEMAS > OUTRAS SOLICITAÇÕES,"LEIA COM ATENÇÃO:
+Necessitamos das seguintes informações para melhor atendê-lo, por favor nos informe:
+Não se esqueça de colocar um título para o seu chamado.
+Sistema para o qual deseja atendimento:
+Detalhes da sua solicitação: Olá, boa noite! Não está aparecendo meu IQ no sistema, logo, não tenho como prosseguir com a solicitação.",,
 2026080061,Solicitação ao Setor de Patrimônio,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados colegas,
 
 Na semana passada nós solictamos algumas melhorias para o devido uso da sala do Decanato do CFCAm/CSC:
@@ -38354,7 +38375,7 @@ Local: Elevador próximo a sala de Força",,
 
 1 adaptador 32""
 
-1 redução de 32 para 25""",Reparo em bomba; Complementar de reparo em bomba,Reparo em bomba; Complementar de reparo em bomba
+1 redução de 32 para 25""",Reparo em bomba,Reparo em bomba
 2026080080,Vazamento de água na pia,Hidrossanitária > Hidráulica,"Vazamento de água na pia
 Local: COPA DOS ALUNOS",,
 2026080085,Lâmpada queimada,Elétrica > Iluminação,"Prezado,
@@ -38414,4 +38435,85 @@ Além disso, estamos terminando a instalação de uma cobertura nos canteiros do
 Desde já agradeço.
 Atenciosamente,
 Rosane",,
-2026080196,Vazamento de água no ar condicionado,Climatização > Ar condicionado split,,,
+2026080196,Vazamento de água no ar condicionado,Climatização > Ar condicionado split,"Olá,
+O ar-condicionado da sala da Secretaria Executiva (3º andar) voltou a pingar.",,
+2026080222,Ar Condicionado vazando,Climatização > Ar condicionado split,"Prezados,
+O ar condicionado da sala de triagem do LECOMAR está vazando dentro do lab sobre a bancada. Provavelmente o duto de vazão de água deve estar entupido. Como o ar não pode ser desligado por conta de um experimento em andamento, solicito manutenção corretiva do ar com urgência.
+Grato pela atenção.",,
+2026080233,Necessidade de ter acesso ao SIGAA,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Prezadas (os), bom dia. Meu nome é Andressa. Sou recém chegada na universidade, vim através de um processo de redistribuição. Estou lotada no campus Jorge Amado. Desde o dia 22 de julho, abri uma chamada já aqui, escrevi para o setor de Ti por email, sobre a necessidade de ter acesso ao sigaa e criar um email institucional para mim. O email institucional, eu consegui criar com a ajuda do diretor Fernando. Tentei fazer o cadastro no sigaa, mas o sistema pede uma confirmação por email, mas link que o sistema enviou para o meu email para confirmação está inativo. Então, não consigo fazer a cofirmação e , por conseguinte, não consigo ter acesso ao sigaa. As aulas já começaram. Na semana passada, em uma das disicplinas foram somente 5 estudantes, e elas informaram que ficaram na dúvida se teriam aula ou não, porque não houve nenhuma informação no sigaa. E na outra disciplina não apareceu nenhum estudante. Eu preciso preencher os tópicos de aula no sigaa e criar atividades de fórum no sistema. Essa já a segunda semana de aula, estou sem acesso direto aos estudantes, estou tentando resolver essa situação desde julho, sem sucesso. Conto com a ajuda de vocês.
+
+Att,
+Andressa Ribeiro",,
+2026080235,Solicitação de instalação de quadro Branco,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Olá, colegas!
+Solicito a instalação de quadro branco de 1,5m no Espaço Colaborar (Sala 1, Complexo 1) em substituição ao que já está lá colocado. O novo quadro deve ser instalado na mesma parede do atual.
+Nosso coordenador de campus já foi sinalizado e deu anuência.
+
+Agradeço antecipadamente.",,
+2026080244,Tomandas sem funcionar,Elétrica > Instalações elétricas,"Prezados,
+
+Algumas tomadas no laboratório de Biodiversidade estão sem funcionar.
+
+Cordialmente,
+
+Débora Oliveira",,
+2026080256,Solicitação de verificação da porta,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Solicito, por gentileza, a verificação da porta do Laboratório Morfofuncionais, pois a mesma não está trancando corretamente.",,
+2026080257,Solicitação de manutenção do filtro,Estrutura Predial > Infiltração,"Solicito, por gentileza, a realização de manutenção no filtro de água localizado na Sala de Apoio aos Laboratórios, a fim de garantir seu adequado funcionamento.",,
+2026080259,Solicitação de verificação do freezer -80°C,Elétrica > Instalações elétricas,"Solicito, por gentileza, a verificação do funcionamento do freezer -80°C localizado no Laboratório Interdisciplinar 2, pois o equipamento apresenta necessidade de avaliação técnica.",,
+2026080289,Solicitação de verificação do vaso sanitário,Estrutura Predial > Infiltração,"Solicito, por gentileza, a verificação do vaso sanitário localizado na Sala de Apoio aos Laboratórios, pois o mesmo apresenta vazamento de água.",,
+2026080296,Instalação,"Estrutura Predial > Esquadrias, porta, portão e janelas",Instalar quadro de vidro no laboratório de artes,,
+2026080300,Adaptador VGA para HDMI,Outros > Erro de chamado,"Boa tarde!
+Solicito um adaptador de VGA para HDMI para utilização na Sala 2 do CFCAf, pois o computador disponível possui saída VGA e a televisão da sala não possui essa entrada. O adaptador será necessário para conectar o computador à televisão e possibilitar a exibição das aulas.
+Desde já agradeço!",,
+2026080305,Lâmpada queimada,Elétrica > Iluminação,"Prezado,
+
+A lâmpada da recepção queimou.
+
+Cordialmente,
+
+Débora Oliveira",,
+2026080308,"Instalação de ar condicionado no Laboratório de Microbiologia, Imunologia, Parasitologia e Patologia",Climatização > Ar condicionado split,"Prezados(as),
+Por gentileza, solicitamos a instalação de um novo aparelho de ar-condicionado no Laboratório de Microbiologia, Imunologia, Parasitologia e Patologia, localizado na Pétala A do Núcleo Pedagógico.
+O laboratório já dispõe de um equipamento instalado; entretanto, o aparelho encontra-se com defeito e deverá ser submetido a manutenção. Dessa forma, solicitamos a instalação de um novo equipamento para garantir condições adequadas de climatização do ambiente e o desenvolvimento das atividades laboratoriais.
+Informamos, ainda, que a Coordenação do Campus Paulo Freire está ciente da situação.
+Desde já, agradecemos a atenção e permanecemos à disposição para quaisquer esclarecimentos.
+Atenciosamente,
+
+Mariana Neto Rosa Lima
+Setor de Laboratórios
+UFSB/CPF",,
+2026080309,"Manutenção do ar condicionado do Laboratório de Microbiologia, Imunologia, Parasitologia e Patologia",Climatização > Ar condicionado split,"Prezados(as), bom dia!
+Por gentileza, solicitamos a manutenção do aparelho de ar-condicionado do Laboratório de Microbiologia, Imunologia, Parasitologia e Patologia, localizado na Pétala A do Núcleo Pedagógico.
+O aparelho liga, porém não está resfriando o ambiente. Dessa forma, solicitamos, por gentileza, a avaliação e a realização dos procedimentos necessários para o restabelecimento de seu funcionamento adequado.
+Atenciosamente,
+Mariana Neto Rosa Lima
+Setor de Laboratórios",,
+2026080311,Verificar ponto de rede,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Olá, gostaria que os pontos de rede da sala E105 do NP fossem verificados. Os pontos foram configurados mas não apresentam conectividade. Foram trocados os cabos e feitos testes no switch e funcionou normalmente. Porém na sala não apresenta nenhum sinal.
+Obrigado.",,
+2026080312,Instalação de pontos,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Olá, gostaria que fossem instalados mais um ponto de rede e de energia no gabinete 38. Favor verificar com Eduardo os locais onde serão instalados.
+Obrigado.",,
+2026080315,Compra de 20 kg Cloro para Estação de Tratamento de Água,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia,
+Tudo bem?
+Solicito a Compra de 20 kg Cloro para Estação de Tratamento de Água, para o Campus Jorge Amado.
+Atenciosamente,
+Yuri Amorim",,
+2026080316,"compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes.",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
+tudo bem?
+SOlicito a compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes. Para utilização do medidor de cloro Digital do Campus Jorge Amado, em Ilhéus-BA.",,
+2026080317,"Compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes.",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Bom dia
+tudo bem?
+SOlicito a compra do KIT DE REAGENTE DE CLORO LIVRE Dpd 1 e Dpd 2, para 300 testes. Para utilização do medidor de cloro Digital do Campus de Porto Seguro.",,
+2026080354,Sem acesso ao SIGAA,Outros > Erro de chamado,"Prezado responsável,
+Desde o último dia 10/agosto, estou com dificuldades para acessar o Portal SIGAA. Uma mensagem de erro aparece na tela no momento que tento acessar (anexo). Como posso resolver este problema?
+Atenciosamente",,
+2026080361,Revisão do banheiro masculino próximo à área de serviço,Hidrossanitária > Hidráulica,O mictório está interditado e a descarga do vaso sanitário não está funcionando. Solicito manutenção.,,
+2026080366,Fechadura da porta travada ou com defeito,"Estrutura Predial > Esquadrias, porta, portão e janelas","Fechadura da porta travada ou com defeito
+Local: VESTIÁRIO MASCULINO FUNCIONÁRIO",,
+2026080367,Desintupimento de pia,Hidrossanitária > Hidráulica,"Bom dia prezados,
+Por gentileza realizar o desentupimento da pia da sala de materiais de limpeza do térreo.
+cordialmente.",,
+2026080372,Trocar cabo HDMI da Sala Barrolandia,Estrutura Predial > Forro,"Preciso realizar a troca do cabo HDMI do laboratório da sala barrolândia, por ser de grande uso precisamos de uma atenção maior",,
+2026080381,Conta Gfe,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,Criar conta do google (gfe) institucional para servidora Patrícia do CSC (telefone: +55 75 9938-8703/ email: Patriciadossantosandrade@gmail.com),,
+2026080382,"Caríssimos,   Solicito manutenção corretiva na Fibra Óptica do CFCAF,",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Caríssimos,
+
+Solicito manutenção corretiva na Fibra Óptica do CFCAF, estamos sem comunicação com a unidade e confirmado em visita que a via está off.",,
+2026080390,Alterar pontos elétricos,Elétrica > Instalações elétricas,,,
