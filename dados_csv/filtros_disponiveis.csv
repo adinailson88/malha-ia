@@ -1,12 +1,12 @@
 ﻿Tipo_Filtro,Label,Sufixo_Aba,N_Registros
 global,Todos,,48418
-campus,Campus Jorge Amado,__Campus_Jorge_Amado,3824
+campus,Campus Jorge Amado,__Campus_Jorge_Amado,3829
 campus,Campus Maria Felipa - Jequié,__Campus_Maria_Felipa_,8
-campus,Campus Paulo Freire,__Campus_Paulo_Freire,3764
-campus,Campus Sosígenes Costa,__Campus_Sosigenes_Cos,4147
-campus,Reitoria,__Reitoria,2408
+campus,Campus Paulo Freire,__Campus_Paulo_Freire,3775
+campus,Campus Sosígenes Costa,__Campus_Sosigenes_Cos,4152
+campus,Reitoria,__Reitoria,2410
 tipo,Preventiva,__Preventiva,4731
-tipo,Corretiva,__Corretiva,9420
+tipo,Corretiva,__Corretiva,9443
 cat_prev,Aplicação cupinicida,__Prev_Aplicacao_cupinic,3
 cat_prev,Ar condicionado central,__Prev_Ar_condicionado_c,167
 cat_prev,Ar condicionado split,__Prev_Ar_condicionado_s,1819
@@ -23,17 +23,17 @@ cat_prev,Reservatório,__Prev_Reservatorio,279
 cat_prev,"Sistemas de combate a incêndio (extintores, hidrantes)",__Prev_Sistemas_de_comba,66
 cat_prev,"Telhados, calhas, rufos, etc.",__Prev_Telhados_calhas_r,43
 cat_prev,Vistoria em Instalações,__Prev_Vistoria_em_Insta,247
-cat_corr,Climatização,__Corr_Climatizacao,1683
-cat_corr,Elétrica,__Corr_Eletrica,1902
+cat_corr,Climatização,__Corr_Climatizacao,1685
+cat_corr,Elétrica,__Corr_Eletrica,1908
 cat_corr,Equipamentos de Transporte,__Corr_Equipamentos_de_T,23
-cat_corr,Estrutura Predial,__Corr_Estrutura_Predial,2922
-cat_corr,Hidrossanitária,__Corr_Hidrossanitaria,1344
-cat_corr,Instalação de Acessórios e Mobiliário,__Corr_Instalacao_de_Ace,350
-cat_corr,Outros,__Corr_Outros,280
+cat_corr,Estrutura Predial,__Corr_Estrutura_Predial,2925
+cat_corr,Hidrossanitária,__Corr_Hidrossanitaria,1346
+cat_corr,Instalação de Acessórios e Mobiliário,__Corr_Instalacao_de_Ace,357
+cat_corr,Outros,__Corr_Outros,281
 cat_corr,Posto de trabalho,__Corr_Posto_de_trabalho,102
 cat_corr,Projetos e Reformas,__Corr_Projetos_e_Reform,108
 cat_corr,SISTEMAS,__Corr_SISTEMAS,1
 cat_corr,Segurança contra Incêndio,__Corr_Seguranca_contra_,29
 cat_corr,Suprimentos / Apoio Técnico,__Corr_Suprimentos_Apoio,101
-cat_corr,TI / Dados / Rede,__Corr_TI_Dados_Rede,456
-cat_corr,Área Externa e Ambiental,__Corr_Area_Externa_e_Am,119
+cat_corr,TI / Dados / Rede,__Corr_TI_Dados_Rede,457
+cat_corr,Área Externa e Ambiental,__Corr_Area_Externa_e_Am,120
