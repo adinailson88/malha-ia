@@ -33860,7 +33860,7 @@ No entanto, precisamos confeccionar uma placa de identificação para o local.
 
 Sugiro que essa placa tenha a identidade visual da UFSB e da Prefeitura Municipal de Teixeira de Freitas (Identidades oficiais em anexo)
 
-Sugiro que ela seja de 1,20 m x 0,70m (Comprimento x Altura) e seja afixada na parede de entrada do ""conforto"".",,
+Sugiro que ela seja de 1,20 m x 0,70m (Comprimento x Altura) e seja afixada na parede de entrada do ""conforto"".",Confecção de Placa de identificação da UFSB no HMTF,Confecção de Placa de identificação da UFSB no HMTF
 2025013961,Ar-condicionado do Laboratório Interdisciplinar 03 parou de funcionar,Climatização > Ar condicionado split,O ar-condicionado que fica situado no meio do Laboratório Interdisciplinar 03 parou de funcionar. Solicito providências.,,
 2025013965,CADEADO PORTÃO,"Estrutura Predial > Esquadrias, porta, portão e janelas","Favor verifica o conserto do portão, sob a escada de entrada, pois não está fixando o cadeado.",,
 2025013966,Secadores de mão dos banheiros,Elétrica > Instalações elétricas,"Em virtude do término do contrato com a empresa Imaster Serviços LTDA que prestava serviços de limpeza, solicito a retirada dos secadores de mão dos banheiros para devolução à mesma.",,
@@ -38519,13 +38519,15 @@ cordialmente.",,
 2026080382,"Caríssimos,   Solicito manutenção corretiva na Fibra Óptica do CFCAF,",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Caríssimos,
 
 Solicito manutenção corretiva na Fibra Óptica do CFCAF, estamos sem comunicação com a unidade e confirmado em visita que a via está off.",Manutenção corretiva na Fibra Óptica do CFCAF,Manutenção corretiva na Fibra Óptica do CFCAF
-2026080390,Alterar pontos elétricos,Elétrica > Instalações elétricas,,,
+2026080390,Alterar pontos elétricos,Elétrica > Instalações elétricas,"Olá, gostaria que os pontos de energia da Sala A103 fossem alterados, todos os pontos simples para duplos, e que ficassem todos acima do granito. O ponto que fica na parede próximo a mesa central, fosse para o meio da mesa, e se puder, colocar mais pontos nesse local.
+Obrigado.",,
 2026080394,Forro do Laboratório de Química Ambiental,Estrutura Predial > Forro,,,
 2026080395,Ponto de rede do AP,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Prezados,
 Identificamos que o ponto de rede que atende a localidade do pav de feiras próximo a lanchonete/restaurante está com falha.
 Solicitamos a correção desse ponto para restabelecer o serviço de wi-fi.",,
 2026080397,Liberação de acesso ao Google Workspace,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
-2026080404,"Prezados, boa tarde.  Poderia verificar o vazamento do mictório do ban",Hidrossanitária > Hidráulica,,,
+2026080404,"Prezados, boa tarde.  Poderia verificar o vazamento do mictório do ban",Hidrossanitária > Hidráulica,"Prezados, boa tarde.
+Poderia verificar o vazamento do mictório do banheiro no pavilhão administrativo.",,
 2026080409,Instalação,"Estrutura Predial > Esquadrias, porta, portão e janelas",Instalar tv no laboratório de ensino (professora Taina),,
 2026080421,Manutenção da estrutura do telhado,"Estrutura Predial > Telhados, calhas, rufos, etc.","Prezados, bom dia!
 Solicito, por gentileza, a realização de manutenção na estrutura do telhado, bem como nos pilares e vigas de madeira existentes no Complexo I, tendo em vista que foram identificados sinais de infestação por cupins e/ou brocas, que estão deteriorando os elementos estruturais.
@@ -38540,20 +38542,57 @@ Motivo: Está piscando (indicador de que irá queimar).",,
 2026080458,"Prezados, boa tarde.  O ar condicionado da sala de Nilton (Secad), con",Climatização > Ar condicionado split,"Prezados, boa tarde.
 O ar condicionado da sala de Nilton (Secad), continua com o vazamento forte.",,
 2026080466,Reparação de móveis,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Reparação de móvel na SECAD.,,
-2026080471,Solicitação de compra de materiais para fechamento de valas,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,Compra de materiais para fechamento de valas; Complementar de compra de materiais para fechamento de valas,Compra de materiais para fechamento de valas; Compra de materiais para fechamento de valas
-2026080481,Interruptor não funciona,Elétrica > Instalações elétricas,,,
-2026080486,Instalação de porta papel higiênico,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026080489,Vazamento ar condicionado Laboratorio genetica molecular,Climatização > Ar condicionado split,,,
-2026080491,Descarga vazando água direto pelo vaso,Hidrossanitária > Hidráulica,,,
-2026080492,Forro caindo.,Estrutura Predial > Forro,,,
-2026080496,Realocação de tomadas,Elétrica > Instalações elétricas,,,
-2026080497,Instalação suporte de sabão,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026080503,Instalação,Elétrica > Instalações elétricas,,,
-2026080509,Solicita instalação de tomada de 20A no laboratório de Pedologia - CFCAm,Elétrica > Instalações elétricas,,,
-2026080512,"A porta da Sala de reunião do 3º pavimento não esta abrindo, tem reuni","Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026080471,Solicitação de compra de materiais para fechamento de valas,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, bom dia!
+
+Solicitamos, por gentileza, a aquisição dos materiais abaixo relacionados, necessários para o fechamento de algumas valas que estão prejudicando o acesso aos ambientes do Núcleo Pedagógico.
+
+Ressaltamos que o local possui fluxo constante de pessoas e veículos, tornando necessária a realização do serviço a fim de proporcionar melhores condições de acesso e segurança.
+
+Materiais necessários:
+
+4 (quatro) sacos de cimento;
+
+1 m³ (um metro cúbico) de areia.",Compra de materiais para fechamento de valas; Complementar de compra de materiais para fechamento de valas,Compra de materiais para fechamento de valas; Compra de materiais para fechamento de valas
+2026080481,Interruptor não funciona,Elétrica > Instalações elétricas,"Interruptor não funciona
+Local: SALA 108 - 1° ANDAR",,
+2026080486,Instalação de porta papel higiênico,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados,
+Por gentileza, solicito instalação de porta papel higiênico no banheiro da sala do Setor de Laboratórios.
+Muito obrigada!
+Atenciosamente,
+Mariana Neto Rosa Lima",,
+2026080489,Vazamento ar condicionado Laboratorio genetica molecular,Climatização > Ar condicionado split,"Olá boa tarde,
+Venho informar que o ar condicionado split, localizado dentro da sala do ultrafreezer e sequenciado do laboratorio de biologia Molecular encontra-se vazando agua.
+Por favor, verificar o que está ocorrendo.
+At.te
+Fabiana Félix",,
+2026080491,Descarga vazando água direto pelo vaso,Hidrossanitária > Hidráulica,"Descarga vazando água direto pelo vaso
+Local: Banheiro Feminino - 1° Andar",,
+2026080492,Forro caindo.,Estrutura Predial > Forro,"O problema é na SECAD, forro está descascando e caindo.",,
+2026080496,Realocação de tomadas,Elétrica > Instalações elétricas,"Prezados (as),
+Solicito realocação de tomadas no laboratório de Biologia Celular, Molecular e Histologia, na bancada próximo às pias.
+Att,
+Thiago",,
+2026080497,Instalação suporte de sabão,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados (as),
+Solicito instalação de dois suportes de sabão próximo as pias do laboratório de Biologia Celular, Molecular e Histologia.
+Att,
+Thiago",,
+2026080503,Instalação,Elétrica > Instalações elétricas,Instalar ponto de rede no gabinete 26.,,
+2026080509,Solicita instalação de tomada de 20A no laboratório de Pedologia - CFCAm,Elétrica > Instalações elétricas,"Em virtude da chegada de novo equipamento (estufa), para o laboratório de Pedologia, solicito instalação de tomada de 20 amperes no local, para o referido equipamento.",,
+2026080512,"A porta da Sala de reunião do 3º pavimento não esta abrindo, tem reuni","Estrutura Predial > Esquadrias, porta, portão e janelas","A porta da Sala de reunião do 3º pavimento não esta abrindo, tem reunião as 9 horas.",,
 2026080514,Reposicionamento de tomadas no Laboratório de Biologia Celular,Elétrica > Instalações elétricas,,,
-2026080518,Fixação de quadro branco,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026080520,Instalação de Relógios de Parede,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026080526,Instalação de persianas,Outros > Outros,,,
-2026080527,"Prezados(as),  Solicito o apoio de um profissional para realizar a a",Instalação de Acessórios e Mobiliário > Placas de identificação,,,
-2026080529,Ajuste de puxador,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026080518,Fixação de quadro branco,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",Fixação de um quadro pequeno na sala de reuniões 2 no NVGA.,,
+2026080520,Instalação de Relógios de Parede,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados(as), bom dia!
+Solicito, o mais breve possível, a instalação de 4 relógios de parede nos 4 consultórios de Psicologia.",,
+2026080526,Instalação de persianas,Outros > Outros,"Prezados, bom dia!
+Solicito, por gentileza, a instalação de persianas na sala do Psicólogo do Campus Paulo Freire.",,
+2026080527,"Prezados(as),  Solicito o apoio de um profissional para realizar a a",Instalação de Acessórios e Mobiliário > Placas de identificação,"Prezados(as),
+Solicito o apoio de um profissional para realizar a abertura de dois armários que se encontram trancados e cujas chaves não estão disponíveis , localizados na Coordenação de Sistemas da da STI .
+Informo que entrei em contato previamente com o Sr. Carlos, funcionário terceirizado, que orientou sobre a necessidade de abertura de chamado junto à DINFRA para atendimento da solicitação.",,
+2026080529,Ajuste de puxador,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, bom dia!
+A pedido de Josi, por gentileza, solicito a alteração da posição do puxador no armário no Gabinete 22. O puxador está do lado de dentro da porta.
+
+Atenciosamente,
+Mariana",,
+2026080555,"Prezados(as) Senhores(as),  Solicito, respeitosamente, que seja provid",Hidrossanitária > Hidráulica,,,
+2026080557,Desentupimento de tubulação da geladeira.,Hidrossanitária > Hidráulica,,,
+2026080561,Solicitação de reparo de poste – Complexo I,Outros > Outros,,,
