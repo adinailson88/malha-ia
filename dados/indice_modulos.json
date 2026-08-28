@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-08-27T19:14:13.804731+00:00",
+  "gerado_em_utc": "2026-08-28T20:20:29.531836+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,15 +37,14 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "ed16f210f226",
+        "html_url": "https://github.com/adinailson88/malha-ia/commit/ed16f210f22698cb5036155bacb09ba3bd8c4f51",
+        "data": "2026-08-28T19:00:02Z"
       },
-      "dados_atualizados_em_utc": "2026-08-26T06:22:50.928865+00:00",
+      "dados_atualizados_em_utc": "2026-08-28T17:44:14.982290+00:00",
       "resumo_dados": {
-        "abas_exportadas": 368,
-        "falhas": 100,
+        "abas_exportadas": 383,
+        "falhas": 85,
         "falhas_criticas": 0
       },
       "manifest_modulo": {
@@ -100,12 +99,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "5d80d8cfb597",
+        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/5d80d8cfb5977b64de997c74e48edf32d38cf5e3",
+        "data": "2026-08-28T18:52:47Z"
       },
-      "dados_atualizados_em_utc": "2026-08-27T10:07:17.688146+00:00",
+      "dados_atualizados_em_utc": "2026-08-28T17:35:40.611647+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -159,12 +157,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "70c35bb7e5ad",
+        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/70c35bb7e5ad9ac1042b6868624ac38fda4a6bfa",
+        "data": "2026-08-28T17:35:46Z"
       },
-      "dados_atualizados_em_utc": "2026-08-27T10:07:37.361676+00:00",
+      "dados_atualizados_em_utc": "2026-08-28T17:35:44.904841+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -218,12 +215,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "3582220f3449",
+        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/3582220f344979b6c06fccb076d76914f5b88e17",
+        "data": "2026-08-28T19:12:52Z"
       },
-      "dados_atualizados_em_utc": "2026-08-27T10:59:43.367070+00:00",
+      "dados_atualizados_em_utc": "2026-08-28T17:38:29.579782+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -277,10 +273,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "4d206b4c615e",
+        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/4d206b4c615eaa3b1e24869f0a0ed9e15cac85b6",
+        "data": "2026-08-28T17:37:49Z"
       },
       "dados_atualizados_em_utc": "2026-06-15T13:05:14.776131+00:00",
       "resumo_dados": {},
@@ -336,12 +331,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "9e91cfcb5ae6",
+        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/9e91cfcb5ae68fa67cb3df97f5a11f259124353e",
+        "data": "2026-08-28T18:10:03Z"
       },
-      "dados_atualizados_em_utc": "2026-08-27T17:08:35.408936+00:00",
+      "dados_atualizados_em_utc": "2026-08-28T13:35:17.073615+00:00",
       "resumo_dados": {
         "arquivos": 3,
         "linhas_dados": 151
