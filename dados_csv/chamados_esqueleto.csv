@@ -26574,7 +26574,7 @@ Colocar placa de identificação da rede CUNI/UFSB na sala da assistente operaci
 Colocar placa de identificação da rede CUNI/UFSB na sala de aula do CUNI (02 SALAS)
 Colocar placa de identificação da rede CUNI/UFSB na sala da assistente operacional",Fornecimento de placas de identificação,Fornecimento de placas de identificação
 2024020304,Instalação de placas  de identificação.,Instalação de Acessórios e Mobiliário > Placas de identificação,"Colocar placa de Identificação da REDE CUNI/UFSB na entrada da escola;
-Colocar placa de identificação da rede CUNI/UFSB na sala de aula do CUNI (02 SALAS)",,
+Colocar placa de identificação da rede CUNI/UFSB na sala de aula do CUNI (02 SALAS)",Instalação de placas de identificação,Instalação de placas de identificação
 2024020305,Solicitação de espaço físico para realização de um evento,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Bom Dia.
 Solicito de espaço físico para realização de um evento. Seguem informações:
 
@@ -38336,7 +38336,7 @@ Caso seja possível, solicito a avaliação e a correção.
 
 At.te",,
 2026080031,Ar-condicionado CEAME,Climatização > Ar condicionado split,"Boa tarde
-Solicito avaliação do ar-condicionado do consultório 2 da CEAME pois o mesmo não está gelando.",,
+Solicito avaliação do ar-condicionado do consultório 2 da CEAME pois o mesmo não está gelando.",Reparo em ar condicionado do Gabinete 19; Reparo em ar condicionado CEAME,Reposição de gás refrigerante; Reparo em ar condicionado CEAME
 2026080034,SIGAA,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Prezados, meu e-mail é andrecavalcante@ufsb.edu.br, mas há dias não consigo acessar o sigaa. Nunca consegui, na verdade. Sempre diz que o cadastro não foi confirmado e não chega nada no meu email para eu confirmar o cadastro.
 Obrigado",,
 2026080036,Descarga vazando,Hidrossanitária > Hidráulica,"Descarga vazando
@@ -38588,7 +38588,7 @@ Solicito, o mais breve possível, a instalação de 4 relógios de parede nos 4 
 Solicito, por gentileza, a instalação de persianas na sala do Psicólogo do Campus Paulo Freire.",,
 2026080527,"Prezados(as),  Solicito o apoio de um profissional para realizar a a",Instalação de Acessórios e Mobiliário > Placas de identificação,"Prezados(as),
 Solicito o apoio de um profissional para realizar a abertura de dois armários que se encontram trancados e cujas chaves não estão disponíveis , localizados na Coordenação de Sistemas da da STI .
-Informo que entrei em contato previamente com o Sr. Carlos, funcionário terceirizado, que orientou sobre a necessidade de abertura de chamado junto à DINFRA para atendimento da solicitação.",,
+Informo que entrei em contato previamente com o Sr. Carlos, funcionário terceirizado, que orientou sobre a necessidade de abertura de chamado junto à DINFRA para atendimento da solicitação.",Reparo em fechaduras de armários,Reparo em fechaduras de armários
 2026080529,Ajuste de puxador,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, bom dia!
 A pedido de Josi, por gentileza, solicito a alteração da posição do puxador no armário no Gabinete 22. O puxador está do lado de dentro da porta.
 
@@ -38632,3 +38632,18 @@ Mariana",,
 2026080692,Manutenção Preventiva Bimensal - Gerador 75 kVA - Reitoria,Manutenção Preventiva > Gerador,,,
 2026080691,Suporte para jalecos no Laboratório de Microbiologia,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
 2026080694,No-break nao funciona,Elétrica > Nobreak,,,
+2026080700,Instalação de cabo e projetor na barrolandia,Estrutura Predial > Forro,,,
+2026080701,"Prezados, bom dia.  Poderia por favor verificar o vazamento do bebedou",Hidrossanitária > Hidráulica,,,
+2026080703,Solicitação de Reparo no Sistema Hidráulico das Ocas,Hidrossanitária > Hidráulica,,,
+2026080705,Boia eletrica,Manutenção Preventiva > Reservatório,,Substituição de bóias elétricas,Substituição de bóias elétricas
+2026080706,Reparo de gaveteiro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026080709,Placa na Galeria de Reitores,Instalação de Acessórios e Mobiliário > Placas de identificação,,,
+2026080711,"Prezados colegas, bom dia.     Uma vez mais estou sem acesso ao portal",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026080719,Fechadura de porta,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026080720,"Olá! Boa noite. Tudo bem? Por favor, gostaria de solicitar a senha de",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026090006,Fixação de armário,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026090007,"Prezados, bom dia.  Mictório entupido no vestiário funcionário, no fun",Hidrossanitária > Hidráulica,,,
+2026090008,Suporte para perfurocortante,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026090011,Mictório entupido,Hidrossanitária > Hidráulica,,,
+2026090019,Dispenser sabão,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026090020,Refazer ponto do painel indigena,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
