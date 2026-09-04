@@ -31101,7 +31101,7 @@ Localização: Sala de TIC.",,
 
 solicito serviço de bota-fora, para retirada de material orindo das roçagens do campus. Pedimos a interação com Rodrigo para quantificar o volume e definir as melhores ações.
 
-At.te,",Solicitação de Bota-fora de entulho,Solicitação de Bota-fora de entulho
+At.te,",Solicitação de Bota-fora de entulho; Remoção de materiais diversos do campus,Solicitação de Bota-fora de entulho; Remoção de materiais diversos do campus
 2025010591,Verificação de ar condicionado,Climatização > Ar condicionado split,"Prezados, boa tarde. O ar condicionado do Setor de Apoio Acadêmico (SECAD) está expelindo água pela parte da frente e gotejando em cima da mesa de trabalho. Gostaria de solicitar, por gentileza, a verificação do problema.",,
 2025010600,Ar condicionado pingando,Climatização > Ar condicionado split,"Saudações!
 Gostaria de solicitar, por gentileza, que verificassem dois aparelhos de ar condicionado no laboratório de proteção florestal/mirmecologia que estão pingando.
@@ -38553,7 +38553,7 @@ Materiais necessários:
 
 4 (quatro) sacos de cimento;
 
-1 m³ (um metro cúbico) de areia.",Compra de materiais para fechamento de valas; Complementar de compra de materiais para fechamento de valas,Compra de materiais para fechamento de valas; Compra de materiais para fechamento de valas
+1 m³ (um metro cúbico) de areia.",Compra de materiais para fechamento de valas; Complementar de compra de materiais para fechamento de valas; Material complementar para fechamento de valas,Compra de materiais para fechamento de valas; Compra de materiais para fechamento de valas; Material complementar para fechamento de valas
 2026080481,Interruptor não funciona,Elétrica > Instalações elétricas,"Interruptor não funciona
 Local: SALA 108 - 1° ANDAR",,
 2026080486,Instalação de porta papel higiênico,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados,
@@ -38607,8 +38607,11 @@ Mariana",,
 2026080614,Readequação de piso tátil,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,
 2026080616,Instalação de Quadro Branco,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
 2026080621,Caixa de areia para mitigação de chamas,"Segurança contra Incêndio > Sistemas de combate a incêndio (extintores, hidrantes)",,,
-2026080624,Instalação de quadro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026080625,Ligar o ar condicionado do auditório Monte Pascal no dia 31/08,Climatização > Ar condicionado central,,,
+2026080624,Instalação de quadro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, bom dia!
+Solicito, por gentileza, a instalação de quadros no laboratório de ensino, localizados no Núcleo Pedagógico.",,
+2026080625,Ligar o ar condicionado do auditório Monte Pascal no dia 31/08,Climatização > Ar condicionado central,"Ligar o ar condicionado do auditório Monte Pascal no dia 31/08 para realização de evento de extensão ""Estruturando uma petição inicial de responsabilidade civil"" e desligá-lo ao término do evento.
+Horário de início: 18h
+Horário de término: 21h",,
 2026080630,Infiltração,Estrutura Predial > Infiltração,,,
 2026080631,Infiltração,Estrutura Predial > Infiltração,,,
 2026080632,Ar-condicionado não funcionante,Climatização > Ar condicionado split,,Reparo em ar condicionado,Reparo em ar condicionado
@@ -38625,25 +38628,94 @@ Mariana",,
 2026080665,Caixa de areia para mitigação de chamas,"Segurança contra Incêndio > Sistemas de combate a incêndio (extintores, hidrantes)",,,
 2026080671,"Bom dia. Alex deu uma olhada no vaso sanitário do Pórtico, viu que o v","Estrutura Predial > Esquadrias, porta, portão e janelas",,,
 2026080673,Substitução de sifão,Hidrossanitária > Hidráulica,,,
-2026080674,Reparação das tampas das caixas de passagens,Área Externa e Ambiental > Drenagem,,Reparação das tampas das caixas de passagens,Reparação das tampas das caixas de passagens
+2026080674,Reparação das tampas das caixas de passagens,Área Externa e Ambiental > Drenagem,,Reparação das tampas das caixas de passagens; Complementar de reparação das tampas das caixas de passagens,Reparação das tampas das caixas de passagens; Complementar de reparação das tampas das caixas de passagens
 2026080676,Solicitação de instalação de aparelhos de ar-condicionado,Climatização > Ar condicionado central,,,
 2026080688,Condicionador de ar quebrado,Climatização > Ar condicionado split,,,
 2026080690,Confecção de placa de identificação - Seção de Acessibilidade CPF,Instalação de Acessórios e Mobiliário > Placas de identificação,,,
 2026080692,Manutenção Preventiva Bimensal - Gerador 75 kVA - Reitoria,Manutenção Preventiva > Gerador,,,
 2026080691,Suporte para jalecos no Laboratório de Microbiologia,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
 2026080694,No-break nao funciona,Elétrica > Nobreak,,,
-2026080700,Instalação de cabo e projetor na barrolandia,Estrutura Predial > Forro,,,
-2026080701,"Prezados, bom dia.  Poderia por favor verificar o vazamento do bebedou",Hidrossanitária > Hidráulica,,,
-2026080703,Solicitação de Reparo no Sistema Hidráulico das Ocas,Hidrossanitária > Hidráulica,,,
-2026080705,Boia eletrica,Manutenção Preventiva > Reservatório,,Substituição de bóias elétricas,Substituição de bóias elétricas
-2026080706,Reparo de gaveteiro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026080709,Placa na Galeria de Reitores,Instalação de Acessórios e Mobiliário > Placas de identificação,,,
-2026080711,"Prezados colegas, bom dia.     Uma vez mais estou sem acesso ao portal",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
-2026080719,Fechadura de porta,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
-2026080720,"Olá! Boa noite. Tudo bem? Por favor, gostaria de solicitar a senha de",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
-2026090006,Fixação de armário,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026090007,"Prezados, bom dia.  Mictório entupido no vestiário funcionário, no fun",Hidrossanitária > Hidráulica,,,
-2026090008,Suporte para perfurocortante,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026090011,Mictório entupido,Hidrossanitária > Hidráulica,,,
-2026090019,Dispenser sabão,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026090020,Refazer ponto do painel indigena,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026080700,Instalação de cabo e projetor na barrolandia,Estrutura Predial > Forro,Precisamos instalar projetor e passar um novo cabo na sala barrolandia,,
+2026080701,"Prezados, bom dia.  Poderia por favor verificar o vazamento do bebedou",Hidrossanitária > Hidráulica,"Prezados, bom dia.
+Poderia por favor verificar o vazamento do bebedouro do pavilhão administrativo.",,
+2026080703,Solicitação de Reparo no Sistema Hidráulico das Ocas,Hidrossanitária > Hidráulica,"Prezados,
+Meus cordiais cumprimentos.
+Faz-se necessário reparo urgente no sistema hidráulico do complexo de Ocas do Campus Sosígenes Costa. Mais especificamente, na Oca das Artes Visuais.
+Informo que a pia instalada na referida oca não funciona desde o primeiro semestre. Essa estrutura básica é fundamental ao desenvolvimento de atividades de ensino/aprendizagem, à realização de projetos de pesquisa e de extensão em nosso campus. Trata-se de um problema de baixa complexidade, mas de imenso impacto para as atividades desenvolvidas por todos os cursos do Centro de Formação em Artes e Comunicação.
+Em termos de ensino, os seguintes componentes do curso BI Artes se utilizam desse espaço - claro, a depender dos Planos de Ensino/Aprendizagem elaborados por pessoas docentes:
+- Ateliê em Arte e Memória
+- Ateliê em Arte e Comunidades
+- Ateliê em Corpos, Tempos e Espaços
+- Ateliê em Encontros de Saberes
+- Oficina de Artes Visuais
+- Arte, Artesanato e Artefato
+- Artes da Grafia
+- Oficina de Fotografia e Vídeo
+- Tópicos Especiais em Artes I, II, III, IV
+Em paralelo, o funcionamento dessa pia é vital para o desenvolvimento de atividades de extensão - como o projeto PJ151-2026 I Encontro de Fotografia Alternativa do Sul da Bahia (em execução).
+
+Outros pedidos foram realizados no passado, por outros colegas do Centro, e ainda se encontram sem solução. Solicito, portanto, a resolução desse problema, o reparo do encanamento e o retorno ao abastecimento de água dessa pia, o quanto antes.
+Atenciosamente,
+Coordenação do Bacharelado Interdisciplinar em Artes (BI Artes - CSC/UFSB)",,
+2026080705,Boia eletrica,Manutenção Preventiva > Reservatório,"Solicito a liberação de boia elétrica.
+
+3 und de Boia elétrica.",Substituição de bóias elétricas,Substituição de bóias elétricas
+2026080706,Reparo de gaveteiro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, boa tarde.
+
+Solicito reparo de gaveteiro embutido de mesa na sala da Proex.
+
+Grato.",,
+2026080709,Placa na Galeria de Reitores,Instalação de Acessórios e Mobiliário > Placas de identificação,"Prezados(as),
+Solicitamos à DINFRA a inserção de mais uma placa na Galeria de Reitores da UFSB.
+Pedimos, por favor, a adoção das medidas necessárias para a confecção e instalação da placa, observando o padrão já existente na Galeria.
+Atenciosamente,",,
+2026080711,"Prezados colegas, bom dia.     Uma vez mais estou sem acesso ao portal",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Prezados colegas, bom dia.
+
+Uma vez mais estou sem acesso ao portal da coordenação de curso do BIH-CPF. Essa é uma situação que atrapalha os trabalhos da coordenação de curso e prejudica seriamente os estudantes do BIH-CPF, aproximadamente 200 estudantes ativos.
+
+Segue em anexo a portaria de reconstituição do colegiado.
+
+Atenciosamente,
+
+Elizardo Costa.",,
+2026080719,Fechadura de porta,"Estrutura Predial > Esquadrias, porta, portão e janelas",Consertar fechadura das portas do auditório do Núcleo Pedagógico.,,
+2026080720,"Olá! Boa noite. Tudo bem? Por favor, gostaria de solicitar a senha de",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Olá! Boa noite. Tudo bem? Por favor, gostaria de solicitar a senha de Wi-fi do campus e a senha para a impressora. Precisei imprimir uma atividade de revisão e Paulo, coordenador de campus, fez a gentileza de imprimir para mim. Me orientou a pedir por aqui. Está correto? Agradeço.",,
+2026090006,Fixação de armário,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, bom dia!
+Solicito, por gentileza, a fixação de um armário no depósito localizado no Complexo I do CPF.",,
+2026090007,"Prezados, bom dia.  Mictório entupido no vestiário funcionário, no fun",Hidrossanitária > Hidráulica,"Prezados, bom dia.
+Mictório entupido no vestiário funcionário, no fundo da cantina.",,
+2026090008,Suporte para perfurocortante,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados (as), bom dia.
+
+Solicito instalação de suporte para perfurocortante nos laboratórios de Biologia Celular, Molecular e Histologia e no laboratório de Química, Bioquímica e Farmacologia.
+E mudança de lugar do suporte no laboratórios de Microbiologia, Imunologia, Parasitologia e Patologia.
+
+Desde já, agradeço.
+
+Att,
+Thiago",,
+2026090011,Mictório entupido,Hidrossanitária > Hidráulica,"Mictório entupido
+Local: Vestiário Masculino Funcionários",,
+2026090019,Dispenser sabão,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados (as), boa tarde.
+
+Solicito instalação de dispenser de sabão no laboratório de química, bioquímica e farmacologia.
+
+Att,
+Thiago",,
+2026090020,Refazer ponto do painel indigena,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,Precisamos refazer o ponto lateral do painel indígena,,
+2026090024,O laboratório de carcinologia no CFCAF está com a torneira pingando e,Hidrossanitária > Hidráulica,,,
+2026090030,Ar condicionado sem funcionar do laboratórioi Carcino,Climatização > Ar condicionado split,,,
+2026090031,Verificação do Bebedouro da Portaria,"Suprimentos / Apoio Técnico > Limpeza de equipamentos, ambiente e mobiliário",,,
+2026090032,Reparo em Banheiro da Guarita - Portaria,Outros > Outros,,Reparo em Banheiro da Guarita - Portaria,Reparo em Banheiro da Guarita - Portaria
+2026090033,VASAMENTO DE ÁGUA,Hidrossanitária > Hidráulica,,,
+2026090034,PALETA DO AR TRAVADA,Climatização > Ar condicionado split,,,
+2026090037,Manutenção da ponta de hala na entrada da estrada do campus,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
+2026090041,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,Manutenção Preventiva > Ar condicionado central,,,
+2026090042,Manutenção Preventiva Mensal - Ar Condicionado Central - CSC - Tratamento Químico Mensal da Água de Condensação,Manutenção Preventiva > Ar condicionado central,,,
+2026090043,Manutenção Preventiva Mensal - Ar condicionado - Reitoria,Manutenção Preventiva > Ar condicionado split,,,
+2026090044,Substituição de lâmpadas queimadas,Elétrica > Iluminação,,,
+2026090045,Manutenção do bebedouro,Estrutura Predial > Infiltração,,,
+2026090047,TETO DA SALA DE SUPRIMENTOS,Estrutura Predial > Forro,,,
+2026090049,Problema com AR CONDICIONADO,Climatização > Ar condicionado split,,,
+2026090053,Auxilio para instalação de trnacas nos armarios do Lecomar,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026090054,Elevador do Núcleo Pedagógico com problema.,Equipamentos de Transporte > Elevador,,,
+2026090055,Ar condicionado pingando,Climatização > Ar condicionado split,,,
