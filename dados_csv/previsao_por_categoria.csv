@@ -1,31 +1,31 @@
 ﻿Categoria,Tipo,N_Chamados,Modelo_Vencedor,RMSE,MAE,MAPE,Sufixo_Aba
-Aplicação cupinicida,Preventiva,3,—,—,—,—,__Prev_Aplicacao_cupinic
-Ar condicionado central,Preventiva,169,In-sample,0,2,0,__Prev_Ar_condicionado_c
-Ar condicionado split,Preventiva,1840,In-sample,22.75,18.96,415.68,__Prev_Ar_condicionado_s
-Bomba,Preventiva,3,—,—,—,—,__Prev_Bomba
-Elevador,Preventiva,92,In-sample,0,1,0,__Prev_Elevador
-Esgoto,Preventiva,34,In-sample,0,1,0,__Prev_Esgoto
-Gerador,Preventiva,1216,In-sample,0,1,-1,__Prev_Gerador
-Hidráulica,Preventiva,33,In-sample,0,1,0,__Prev_Hidraulica
-Iluminação,Preventiva,132,In-sample,0,1,1,__Prev_Iluminacao
-Nobreak,Preventiva,10,—,—,—,—,__Prev_Nobreak
-Poços artesianos,Preventiva,20,—,—,—,—,__Prev_Pocos_artesianos
-Quadros Elétricos,Preventiva,579,In-sample,0,1,-5,__Prev_Quadros_Eletricos
-Reservatório,Preventiva,280,In-sample,0,1,0,__Prev_Reservatorio
-"Sistemas de combate a incêndio (extintores, hidrantes)",Preventiva,66,In-sample,0,1,0,__Prev_Sistemas_de_comba
-"Telhados, calhas, rufos, etc.",Preventiva,43,In-sample,0,2,0,__Prev_Telhados_calhas_r
-Vistoria em Instalações,Preventiva,247,In-sample,0,2,-1,__Prev_Vistoria_em_Insta
-Climatização,Corretiva,1697,In-sample,0,1,-5,__Corr_Climatizacao
-Elétrica,Corretiva,1913,In-sample,0,1,4,__Corr_Eletrica
-Equipamentos de Transporte,Corretiva,24,—,—,—,—,__Corr_Equipamentos_de_T
-Estrutura Predial,Corretiva,2934,In-sample,0,1,4,__Corr_Estrutura_Predial
-Hidrossanitária,Corretiva,1357,In-sample,0,3,0,__Corr_Hidrossanitaria
-Instalação de Acessórios e Mobiliário,Corretiva,373,In-sample,0,1,0,__Corr_Instalacao_de_Ace
-Outros,Corretiva,283,In-sample,0,1,0,__Corr_Outros
-Posto de trabalho,Corretiva,102,In-sample,0,1,1,__Corr_Posto_de_trabalho
-Projetos e Reformas,Corretiva,108,In-sample,0,1,0,__Corr_Projetos_e_Reform
-SISTEMAS,Corretiva,1,—,—,—,—,__Corr_SISTEMAS
-Segurança contra Incêndio,Corretiva,31,—,—,—,—,__Corr_Seguranca_contra_
-Suprimentos / Apoio Técnico,Corretiva,103,In-sample,0,1,0,__Corr_Suprimentos_Apoio
-TI / Dados / Rede,Corretiva,463,In-sample,0,1,-3,__Corr_TI_Dados_Rede
-Área Externa e Ambiental,Corretiva,123,In-sample,0,1,-1,__Corr_Area_Externa_e_Am
+Aplicação cupinicida,Preventiva,3,â€”,â€”,â€”,â€”,__Prev_Aplicacao_cupinic
+Ar condicionado central,Preventiva,169,Vencedor (menor RMSE holdout = 0.89),0,2,0,__Prev_Ar_condicionado_c
+Ar condicionado split,Preventiva,1840,Vencedor (menor RMSE holdout = 11.76),0,1,2,__Prev_Ar_condicionado_s
+Bomba,Preventiva,3,â€”,â€”,â€”,â€”,__Prev_Bomba
+Elevador,Preventiva,92,Vencedor (menor RMSE holdout = 2.08),0,1,0,__Prev_Elevador
+Esgoto,Preventiva,34,Vencedor (menor RMSE holdout = 0.36),0,1,0,__Prev_Esgoto
+Gerador,Preventiva,1216,Vencedor (menor RMSE holdout = 0.45),0,1,-1,__Prev_Gerador
+Hidráulica,Preventiva,33,Vencedor (menor RMSE holdout = 0.64),0,1,0,__Prev_Hidraulica
+Iluminação,Preventiva,132,â€”,â€”,â€”,â€”,__Prev_Iluminacao
+Nobreak,Preventiva,10,â€”,â€”,â€”,â€”,__Prev_Nobreak
+Poços artesianos,Preventiva,20,â€”,â€”,â€”,â€”,__Prev_Pocos_artesianos
+Quadros Elétricos,Preventiva,579,â€”,â€”,â€”,â€”,__Prev_Quadros_Eletricos
+Reservatório,Preventiva,280,Vencedor (menor RMSE holdout = 1.24),0,1,0,__Prev_Reservatorio
+"Sistemas de combate a incêndio (extintores, hidrantes)",Preventiva,66,Vencedor (menor RMSE holdout = 1.04),0,1,0,__Prev_Sistemas_de_comba
+"Telhados, calhas, rufos, etc.",Preventiva,43,Vencedor (menor RMSE holdout = 0.46),0,2,0,__Prev_Telhados_calhas_r
+Vistoria em Instalações,Preventiva,247,Vencedor (menor RMSE holdout = 0.79),0,2,-1,__Prev_Vistoria_em_Insta
+Climatização,Corretiva,1697,Vencedor (menor RMSE holdout = 4.09),0,1,-5,__Corr_Climatizacao
+Elétrica,Corretiva,1916,Vencedor (menor RMSE holdout = 4.57),0,1,4,__Corr_Eletrica
+Equipamentos de Transporte,Corretiva,24,â€”,â€”,â€”,â€”,__Corr_Equipamentos_de_T
+Estrutura Predial,Corretiva,2938,Vencedor (menor RMSE holdout = 4.01),0,1,4,__Corr_Estrutura_Predial
+Hidrossanitária,Corretiva,1362,Vencedor (menor RMSE holdout = 4.36),0,3,0,__Corr_Hidrossanitaria
+Instalação de Acessórios e Mobiliário,Corretiva,376,Vencedor (menor RMSE holdout = 5.67),0,1,0,__Corr_Instalacao_de_Ace
+Outros,Corretiva,282,Vencedor (menor RMSE holdout = 2.34),0,1,0,__Corr_Outros
+Posto de trabalho,Corretiva,102,Vencedor (menor RMSE holdout = 0.75),0,1,1,__Corr_Posto_de_trabalho
+Projetos e Reformas,Corretiva,108,Vencedor (menor RMSE holdout = 0.21),0,1,0,__Corr_Projetos_e_Reform
+SISTEMAS,Corretiva,1,â€”,â€”,â€”,â€”,__Corr_SISTEMAS
+Segurança contra Incêndio,Corretiva,31,â€”,â€”,â€”,â€”,__Corr_Seguranca_contra_
+Suprimentos / Apoio Técnico,Corretiva,103,Vencedor (menor RMSE holdout = 0.95),0,1,0,__Corr_Suprimentos_Apoio
+TI / Dados / Rede,Corretiva,463,Vencedor (menor RMSE holdout = 3.82),0,1,-3,__Corr_TI_Dados_Rede
+Área Externa e Ambiental,Corretiva,123,Vencedor (menor RMSE holdout = 1.20),0,1,-1,__Corr_Area_Externa_e_Am
