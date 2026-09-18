@@ -1,73 +1,73 @@
 {
-  "gerado_em_utc": "2026-09-17T12:05:14.309140Z",
+  "gerado_em_utc": "2026-09-18T11:48:39.331262Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
-  "acerto_validado": 0.8121,
+  "acerto_validado": 0.8163,
   "ic95": [
-    0.8058,
-    0.8184
+    0.8099,
+    0.8227
   ],
-  "n": 14060,
-  "validados_na_bancada": 14060,
+  "n": 14322,
+  "validados_na_bancada": 14322,
   "ranking": [
     {
       "modelo": "linear_svc",
-      "acerto_validado": 0.8121,
+      "acerto_validado": 0.8163,
       "ic95": [
-        0.8058,
-        0.8184
-      ]
-    },
-    {
-      "modelo": "extra_trees",
-      "acerto_validado": 0.7942,
-      "ic95": [
-        0.7873,
-        0.8012
+        0.8099,
+        0.8227
       ]
     },
     {
       "modelo": "sgd",
-      "acerto_validado": 0.794,
+      "acerto_validado": 0.7972,
       "ic95": [
-        0.7873,
-        0.8005
+        0.7904,
+        0.8035
+      ]
+    },
+    {
+      "modelo": "extra_trees",
+      "acerto_validado": 0.7947,
+      "ic95": [
+        0.7877,
+        0.8013
       ]
     },
     {
       "modelo": "regressao_logistica",
-      "acerto_validado": 0.7893,
+      "acerto_validado": 0.7914,
       "ic95": [
-        0.7823,
-        0.796
+        0.7848,
+        0.7979
       ]
     },
     {
       "modelo": "random_forest",
-      "acerto_validado": 0.7842,
+      "acerto_validado": 0.7859,
       "ic95": [
-        0.7772,
-        0.7913
+        0.7789,
+        0.7928
       ]
     },
     {
       "modelo": "naive_bayes",
-      "acerto_validado": 0.7057,
+      "acerto_validado": 0.7051,
       "ic95": [
-        0.6979,
-        0.7131
+        0.6973,
+        0.7125
       ]
     },
     {
       "modelo": "lstm",
-      "acerto_validado": 0.6979,
+      "acerto_validado": 0.7049,
       "ic95": [
-        0.6906,
-        0.7053
+        0.6972,
+        0.7122
       ]
     }
   ],
-  "n_registros": 14333,
+  "n_registros": 14336,
   "observacao": "Classificacao validada importada do repo classificacao-chamados; sem texto do chamado. NAO substitui log_classificacao.json."
 }
