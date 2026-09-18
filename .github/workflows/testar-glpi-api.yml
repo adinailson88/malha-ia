@@ -2,6 +2,11 @@ name: Testar API GLPI (somente leitura)
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/testar-glpi-api.yml'
 
 permissions:
   contents: read
