@@ -2,11 +2,11 @@
 global,Todos,,48418
 campus,Campus Jorge Amado,__Campus_Jorge_Amado,3882
 campus,Campus Maria Felipa - Jequié,__Campus_Maria_Felipa_,11
-campus,Campus Paulo Freire,__Campus_Paulo_Freire,3826
+campus,Campus Paulo Freire,__Campus_Paulo_Freire,3828
 campus,Campus Sosígenes Costa,__Campus_Sosigenes_Cos,4194
 campus,Reitoria,__Reitoria,2423
 tipo,Preventiva,__Preventiva,4771
-tipo,Corretiva,__Corretiva,9565
+tipo,Corretiva,__Corretiva,9567
 cat_prev,Aplicação cupinicida,__Prev_Aplicacao_cupinic,3
 cat_prev,Ar condicionado central,__Prev_Ar_condicionado_c,169
 cat_prev,Ar condicionado split,__Prev_Ar_condicionado_s,1840
@@ -34,6 +34,6 @@ cat_corr,Posto de trabalho,__Corr_Posto_de_trabalho,102
 cat_corr,Projetos e Reformas,__Corr_Projetos_e_Reform,108
 cat_corr,SISTEMAS,__Corr_SISTEMAS,1
 cat_corr,Segurança contra Incêndio,__Corr_Seguranca_contra_,33
-cat_corr,Suprimentos / Apoio Técnico,__Corr_Suprimentos_Apoio,103
+cat_corr,Suprimentos / Apoio Técnico,__Corr_Suprimentos_Apoio,105
 cat_corr,TI / Dados / Rede,__Corr_TI_Dados_Rede,466
 cat_corr,Área Externa e Ambiental,__Corr_Area_Externa_e_Am,126
