@@ -13829,7 +13829,7 @@ Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
 Manutenção Preventiva > Elevador
-Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Hidrossanitária > ETA / ETE
 Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Elétrica > Instalações elétricas
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -14135,7 +14135,7 @@ Climatização > Ar condicionado split
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
-Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Hidrossanitária > ETA / ETE
 Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Outros > Erro de chamado
 Hidrossanitária > Hidráulica
@@ -14292,7 +14292,7 @@ Elétrica > Iluminação
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
-Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Estrutura Predial > Alvenaria / Pisos / Estrutura
 Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
@@ -14337,3 +14337,19 @@ Climatização > Ar condicionado split
 Elétrica > Instalações elétricas
 Suprimentos / Apoio Técnico > Materiais
 Suprimentos / Apoio Técnico > Materiais
+TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
+"Estrutura Predial > Esquadrias, porta, portão e janelas"
+TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
+Estrutura Predial > Alvenaria / Pisos / Estrutura
+Hidrossanitária > Bomba
+Elétrica > Iluminação
+Estrutura Predial > Alvenaria / Pisos / Estrutura
+Outros > Erro de chamado
+"Estrutura Predial > Esquadrias, porta, portão e janelas"
+Climatização > Ar condicionado split
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Estrutura Predial > Infiltração
+Hidrossanitária > Hidráulica
+Estrutura Predial > Alvenaria / Pisos / Estrutura
+Estrutura Predial > Infiltração
+Estrutura Predial > Infiltração
