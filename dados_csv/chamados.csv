@@ -34899,7 +34899,7 @@ Materiais necessários:
 2025015054,Ar condicionado sem funcionar,2025-11-28 10:51,Fechado,,,,Campus Jorge Amado,,,,,Climatização > Ar condicionado split,,,,0,,,,"-14.770883343840165, -39.23605772449692",,"Ar condicionado sem funcionar
 Todas as Salas estudantis estão com o ar condicionado sem funcionar",,,Climatização > Ar condicionado,,0.7,LSTM_BAIXA_CONF,Baixa
 2025015062,Manutenção Semestral - Ar condicionado - Reitoria,2025-12-01 00:00,Fechado,,,,Reitoria,,,,,Manutenção Preventiva > Ar condicionado split,,,,57855.98,,,,"-14.788316740297745, -39.27483123836992",,Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados na Reitoria. Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do documento em anexo que versa sobre as tarefas semestrais que devem ser feitas nos equipamentos de Ar condicionados do tipo SPLIT.,Manutenção Semestral - Ar condicionado - Reitoria,Manutenção Semestral - Ar condicionado - Reitoria,Climatização > Ar condicionado,,1,LSTM,Média
-2025015064,Substituir antiderrapante,2025-12-01 08:47,Solucionado,,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,661.5,,,,#N/A,,"Prezado,
+2025015064,Substituir antiderrapante,2025-12-01 08:47,Solucionado,,,,Campus Jorge Amado,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,661.5,,,,#N/A,,"Prezado,
 
 O antiderrapante da escada de entrada está bastante desgastado precisando substituição.
 
@@ -35946,7 +35946,7 @@ Atenciosamente,
 Jorge Costa",,,Área Externa e Ambiental > Manutenção área externa / meio ambiente,,0.15,LSTM_BAIXA_CONF,Baixa
 2026020362,Reoorganização de tomada do laboratorio de informatica,2026-02-27 11:38,Fechado,,,,Campus Sosígenes Costa,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-16.423058409985778, -39.136850127779546",,"Esta sendo reorganizado as tomada que alimentam os notebooks do laboratório
 Atividade em andamento pelo eletricista.",,,Elétrica > Nobreak,,0.53,LSTM_BAIXA_CONF,Baixa
-2026020366,Instalação de câmera na sala dos conselhos,2026-02-27 14:01,Solucionado,,,,Reitoria,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,65.8,,,,"-14.788316740297745, -39.27483123836992",,Solicito instalação de Câmeras na sala dos conselhos,Instalação de câmera na sala dos conselhos,Instalação de câmera na sala dos conselhos,Climatização > Ar condicionado,,1,LSTM,Baixa
+2026020366,Instalação de câmera na sala dos conselhos,2026-02-27 14:01,Fechado,,,,Reitoria,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,65.8,,,,"-14.788316740297745, -39.27483123836992",,Solicito instalação de Câmeras na sala dos conselhos,Instalação de câmera na sala dos conselhos,Instalação de câmera na sala dos conselhos,Climatização > Ar condicionado,,1,LSTM,Baixa
 2026020368,Manutenção do Telhado CUNI Helvécia,2026-02-27 14:53,Processando (atribuído),,,,Campus Paulo Freire,,,,,"Estrutura Predial > Telhados, calhas, rufos, etc.",,,,0,,,,"-17.806897203757305, -39.66460824860207",,"Prezados, Boa tarde!
 
 Venho, por meio deste, solicitar manutenção no prédio do cuni de helvécia, em visita realizada hoje, puder verificar algumas infiltrações no telhado/forro, bem como a presença de cupins.
@@ -37368,13 +37368,13 @@ Solicitamos, por gentileza, a locação de uma caçamba de entulho para realiza�
 Ressaltamos que a solicitação se faz necessária em virtude da cerimônia de inauguração do sinal da TV pública em Teixeira de Freitas-BA, prevista para o dia 29/05.
 Dessa forma, a retirada dos materiais é indispensável para adequação e organização do local antes da realização do evento.
 Atenciosamente,",Remoção de Entulho,Remoção de Entulho,Hidrossanitária > Hidráulica,,0.36,LSTM_BAIXA_CONF,Baixa
-2026050311,Lâmpadas queimadas Setor de Labs,2026-05-20 16:40,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Elétrica > Iluminação,,,,0,,,,"-16.424310442233665, -39.1367972326299",,"Boa tarde,
+2026050311,Lâmpadas queimadas Setor de Labs,2026-05-20 16:40,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Elétrica > Iluminação,,,,1512,,,,"-16.424310442233665, -39.1367972326299",,"Boa tarde,
 
 Algumas lâmpadas do setor de laboratórios estão queimadas.
 Gostaria de pedir a troca delas.
 
 Atenciosamente
-Mattheus",,,Hidrossanitária > Hidráulica,,0.33,LSTM_BAIXA_CONF,Baixa
+Mattheus",Compra de lâmpadas,"Compra de lâmpadas para substituição no Campus, considerando as 130 do chamado, 45 do chamado 2026090402 e o restante para estoque e uso eventual.",Hidrossanitária > Hidráulica,,0.33,LSTM_BAIXA_CONF,Baixa
 2026050313,Instalação,2026-05-20 17:22,Fechado,,,,Campus Paulo Freire,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-17.53335341230621, -39.72217542816204",,"Solicito a instalação de duas tv´s, uma na parede do pátio do núcleo pedagógico e outra ao lado da sala do patrimônio, no complexo 1.",,,Hidrossanitária > Bomba,,0.45,LSTM_BAIXA_CONF,Alta
 2026050317,Instalação de televisão,2026-05-21 08:34,Fechado,,,,Campus Paulo Freire,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-17.534582646209113, -39.72461446135704",,"Prezados, bom dia!
 Solicito, por gentileza, a instalação de uma televisão na Pétala B do pavimento térreo do Núcleo Pedagógico.
@@ -38335,7 +38335,7 @@ Agradeço desde já pela atenção.
 Atenciosamente,
 Isabelle Lima",,,Elétrica > Instalações elétricas,,0.5,LSTM_BAIXA_CONF,Baixa
 2026070557,Solicitação de manutenção para reestabelecimento de iluminação da área,2026-07-30 17:19,Solucionado,,,,Reitoria,,,,,Elétrica > Iluminação,,,,0,,,,"-14.788316740297745, -39.27483123836992",,Solicitação de manutenção para reestabelecimento de iluminação da área externa do prédio da reitoria.,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.36,LSTM_BAIXA_CONF,Baixa
-2026070582,Solicitação pintura e consertos,2026-07-31 13:00,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,0,,,,"-16.424036771315144, -39.13615281834591",,"Gostaríamos de solicitar algumas melhorias para o devido uso da sala do Decanato do CFCAm/CSC:
+2026070582,Solicitação pintura e consertos,2026-07-31 13:00,Solucionado,,,,Campus Sosígenes Costa,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,0,,,,"-16.424036771315144, -39.13615281834591",,"Gostaríamos de solicitar algumas melhorias para o devido uso da sala do Decanato do CFCAm/CSC:
 1) o conserto ou troca da cortina da janela (pois a tarde o sol pe muito forte impossibilitando a utilização da sala sem cortina). A mesma tem defeito, sendo muito dificil utilizar em muitas ocasiões.
 2) reposição do acessório de abertura da janela, pois não existe, dificultando a abertura da mesma.
 3) solictação de renovação da pintura tornando o ambiente apresentável para receber a comunidade e autoridades.
@@ -38784,7 +38784,7 @@ Em paralelo, o funcionamento dessa pia é vital para o desenvolvimento de ativid
 Outros pedidos foram realizados no passado, por outros colegas do Centro, e ainda se encontram sem solução. Solicito, portanto, a resolução desse problema, o reparo do encanamento e o retorno ao abastecimento de água dessa pia, o quanto antes.
 Atenciosamente,
 Coordenação do Bacharelado Interdisciplinar em Artes (BI Artes - CSC/UFSB)",,,Hidrossanitária > Hidráulica,,0.41,LSTM_BAIXA_CONF,Média
-2026080705,Boia eletrica,2026-08-31 11:33,Solucionado,,,,Campus Sosígenes Costa,,,,,Manutenção Preventiva > Reservatório,,,,157.53,,,,"-16.424307884397862, -39.136705238608734",,"Solicito a liberação de boia elétrica.
+2026080705,Boia eletrica,2026-08-31 11:33,Solucionado,,,,Campus Sosígenes Costa,,,,,Hidrossanitária > Hidráulica,,,,157.53,,,,"-16.424307884397862, -39.136705238608734",,"Solicito a liberação de boia elétrica.
 
 3 und de Boia elétrica.",Substituição de bóias elétricas,Substituição de bóias elétricas,Manutenção Preventiva > Reservatório,,0.21,LSTM_BAIXA_CONF,Baixa
 2026080706,Reparo de gaveteiro,2026-08-31 12:46,Fechado,,,,Reitoria,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.788316740297745, -39.27483123836992",,"Prezados, boa tarde.
@@ -39170,7 +39170,7 @@ Solicito manutenção na Fibra óptica que liga o CJA à Fábrica de Chocolate.
 In loco, tem energia no espaço, equipamentos de ambos os lados ligados mas via está down.
 Local: Fábrica de Chocolate - CEPLAC",,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.7,LSTM_BAIXA_CONF,Baixa
 2026090334,Substituição de placas de antefogo,2026-09-21 15:04,Solucionado,,,,Campus Paulo Freire,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,0,,,,"-17.534235850278133, -39.724091821208056",,"Solicito, por gentileza, a verificação e substituição de algumas placas de antefogo do forro que se encontram danificadas/desgastadas no Laboratório Interdisciplinar 1, localizado no Complexo 2.",,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,0.27,LSTM_BAIXA_CONF,Média
-2026090338,Bomba com defeito,2026-09-21 15:46,Fechado,,,,Campus Paulo Freire,,,,,Hidrossanitária > Bomba,,,,563.98,,,,"-17.53335341230621, -39.72217542816204",,"Prezados, boa tarde!
+2026090338,Bomba com defeito,2026-09-21 15:46,Fechado,,,,Campus Paulo Freire,,,,,Hidrossanitária > Bomba,,,,563.98,,,,"-17.534582646209113, -39.72461446135704",,"Prezados, boa tarde!
 Solicito, por gentileza, a verificação de uma das bombas instaladas na casa de bombas do Núcleo Pedagógico, tendo em vista que o equipamento apresenta falha de funcionamento.
 Atenciosamente,",Bomba hidráulica do NUPED - CPF,Serviço de manutenção das bombas instaladas na casa de bombas do Nuped,Hidrossanitária > Bomba,,0.14,LSTM_BAIXA_CONF,Média
 2026090342,"Prezados, boa tarde.  Solicito por favor a troca de algumas lâmpadas q",2026-09-21 16:13,Solucionado,,,,Campus Jorge Amado,,,,,Elétrica > Iluminação,,,,0,,,,"-14.770883343840165, -39.23605772449692",,"Prezados, boa tarde.
@@ -39191,7 +39191,7 @@ Mariana Neto Rosa Lima",,,"Instalação de Acessórios e Mobiliário > Instalaç
 2026090380,O laboratório de Carcinologia apresenta infiltrações que necessitam de,2026-09-22 10:46,Solucionado,,,,Campus Jorge Amado,,,,,Estrutura Predial > Infiltração,,,,0,,,,#N/A,,O laboratório de Carcinologia apresenta infiltrações que necessitam de atenção urgente.,,,Estrutura Predial > Infiltração,,0.39,LSTM_BAIXA_CONF,Baixa
 2026090388,"Prezado, bom dia.  Poderia verificar por gentileza se teria possibilid",2026-09-22 11:53,Processando (atribuído),,,,Campus Jorge Amado,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-14.770309469288907, -39.23560995592077",,"Prezado, bom dia.
 Poderia verificar por gentileza se teria possibilidade de instalação de ducha no vestiário feminino.",,,Hidrossanitária > Hidráulica,,0.27,LSTM_BAIXA_CONF,Baixa
-2026090391,"Prezados, boa tarde.  Poderia por favor verificar o vazamento da piso",2026-09-22 14:03,Processando (atribuído),,,,Campus Jorge Amado,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,0,,,,"-14.770883343840165, -39.23605772449692",,"Prezados, boa tarde.
+2026090391,"Prezados, boa tarde.  Poderia por favor verificar o vazamento da piso",2026-09-22 14:03,Solucionado,,,,Campus Jorge Amado,,,,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,,0,,,,"-14.770883343840165, -39.23605772449692",,"Prezados, boa tarde.
 Poderia por favor verificar o vazamento da piso no banheiro feminino do pavilhão administrativo.",,,Estrutura Predial > Alvenaria / Pisos / Estrutura,,0.52,LSTM_BAIXA_CONF,Baixa
 2026090392,Manutenção no sifão,2026-09-22 14:03,Solucionado,,,,Campus Paulo Freire,,,,,Estrutura Predial > Infiltração,,,,0,,,,"-17.534582646209113, -39.72461446135704",,"Solicito a verificação e, se necessário, a substituição do sifão do banheiro masculino localizado no 1º andar do Anexo 1.
 O componente apresenta necessidade de manutenção, sendo necessária a avaliação pela equipe responsável.",,,Estrutura Predial > Infiltração,,0.16,LSTM_BAIXA_CONF,Baixa
@@ -39219,30 +39219,35 @@ Após a troca do filtro, a água do bebedouro está com impurezas mesmo após j�
 Atenciosamente,
 
 Mateus",,,Hidrossanitária > Hidráulica,,0.37,LSTM_BAIXA_CONF,Baixa
-2026090415,Compra de fontes para cameras,2026-09-23 16:06,Solucionado,,,,Reitoria,,,,,Elétrica > Instalações elétricas,,,,396.36,,,,"-14.788316740297745, -39.27483123836992",,Compra de fontes para cameras da reitoria,Compra de fontes para as cameras da reitoria,Compra de fontes para as cameras da reitoria,Elétrica > Instalações elétricas,,0.33,LSTM_BAIXA_CONF,Baixa
-2026090427,Ar-condicionado vazando água.,2026-09-24 10:37,Processando (atribuído),,,,Campus Paulo Freire,,,,,Climatização > Ar condicionado split,,,,0,,,,"-17.53335341230621, -39.72217542816204",,"Ar-condicionado vazando água, solicito reparo.",,,Climatização > Ar condicionado split,,0.98,LSTM,Baixa
+2026090415,Compra de fontes para cameras,2026-09-23 16:06,Fechado,,,,Reitoria,,,,,Elétrica > Instalações elétricas,,,,396.36,,,,"-14.788316740297745, -39.27483123836992",,Compra de fontes para cameras da reitoria,Compra de fontes para as cameras da reitoria,Compra de fontes para as cameras da reitoria,Elétrica > Instalações elétricas,,0.33,LSTM_BAIXA_CONF,Baixa
+2026090427,Ar-condicionado vazando água.,2026-09-24 10:37,Solucionado,,,,Campus Paulo Freire,,,,,Climatização > Ar condicionado split,,,,0,,,,"-17.53335341230621, -39.72217542816204",,"Ar-condicionado vazando água, solicito reparo.",,,Climatização > Ar condicionado split,,0.98,LSTM,Baixa
 2026090440,Retirada de fraldário da reitoria,2026-09-25 10:29,Processando (atribuído),,,,Reitoria,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.788316740297745, -39.27483123836992",,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,0.19,LSTM_BAIXA_CONF,Baixa
 2026090444,Manutenção no Armário de metal  deslizante da SECAD/CJA,2026-09-25 13:24,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.770883343840165, -39.23605772449692",,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,0.68,LSTM_BAIXA_CONF,Baixa
-2026090445,Privada entupida,2026-09-25 13:43,Processando (atribuído),,,,Campus Jorge Amado,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-14.770309469288907, -39.23560995592077",,,,,Hidrossanitária > Hidráulica,,0.91,LSTM_BAIXA_CONF,Baixa
-2026090449,"Prezados, boa tarde.  Poderia por gentileza verificar a possibilidade",2026-09-25 14:59,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.77147998352185, -39.23434744042999",,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,0.16,LSTM_BAIXA_CONF,Baixa
+2026090445,Privada entupida,2026-09-25 13:43,Solucionado,,,,Campus Jorge Amado,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-14.770309469288907, -39.23560995592077",,,,,Hidrossanitária > Hidráulica,,0.91,LSTM_BAIXA_CONF,Baixa
+2026090449,"Prezados, boa tarde.  Poderia por gentileza verificar a possibilidade",2026-09-25 14:59,Solucionado,,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.77147998352185, -39.23434744042999",,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,0.16,LSTM_BAIXA_CONF,Baixa
 2026090454,Solicitação de verificação técnica – Desarme recorrente dos disjuntores dos laboratórios,2026-09-25 16:57,Processando (atribuído),,,,Campus Jorge Amado,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-14.770309469288907, -39.23560995592077",,,,,Elétrica > Instalações elétricas,,0.2,LSTM_BAIXA_CONF,Baixa
-2026090458,Instalação de fraldário no CUNI,2026-09-26 15:22,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.809436680601632, -39.27904921187019",,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,0.45,LSTM_BAIXA_CONF,Baixa
-2026090462,Manutenção do ar condicionado da sala do ultrafreezer no laboratorio de Biologia Molecular,2026-09-28 08:44,Novo,,,,Campus Sosígenes Costa,,,,,Climatização > Ar condicionado split,,,,0,,,,"-16.424310442233665, -39.1367972326299",,,,,Climatização > Ar condicionado split,,0.97,LSTM,Baixa
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026090458,Instalação de fraldário no CUNI,2026-09-26 15:22,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.809436680601632, -39.27904921187019",,"Prezadas/os, boa tarde!
+
+Solicito a instalação do fraldário retirado da reitoria no CUNI de Itabuna (CIEBTEC). O local de instalação foi definido com a diretora da escola, mas não foi me passado, por isso, não coloquei aqui no chamado.",,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,0.45,LSTM_BAIXA_CONF,Baixa
+2026090462,Manutenção do ar condicionado da sala do ultrafreezer no laboratorio de Biologia Molecular,2026-09-28 08:44,Solucionado,,,,Campus Sosígenes Costa,,,,,Climatização > Ar condicionado split,,,,0,,,,"-16.424310442233665, -39.1367972326299",,"Prezados bom dia!
+O ar condicionado da sala dos freezer no laboratorio de Biologia Molecular está vazando junto a parede e não está esquentando o suficiente, como demonstrado pela ronda dos vigilantes. Favor interceder quando possível.
+At.te
+Fabiana Félix",,,Climatização > Ar condicionado split,,0.97,LSTM,Baixa
+2026090468,Pota sabonete quebrado,2026-09-28 11:09,Processando (atribuído),,,,Campus Jorge Amado,,,,,Hidrossanitária > Hidráulica,,,,0,,,,#N/A,,,,,Hidrossanitária > Hidráulica,,0.34,LSTM_BAIXA_CONF,Média
+2026090474,criação de uma conta corporativa/acadêmica no Google Workspace for Education,2026-09-28 13:41,Solucionado,,,,Campus Sosígenes Costa,,,,,Outros > Erro de chamado,,,,0,,,,"-16.424101724531493, -39.13626270686903",,,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.42,LSTM_BAIXA_CONF,Baixa
+2026090478,Reposição dos assentos sanitários no banheiro masculino do Pórtico,2026-09-28 15:40,Solucionado,,,,Campus Sosígenes Costa,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-16.423822637563376, -39.13549260894328",,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,0.68,LSTM_BAIXA_CONF,Baixa
+2026090485,Queda frequente de disjuntor na bilioteca CSC,2026-09-28 19:21,Processando (atribuído),,,,Campus Sosígenes Costa,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-16.424657613462742, -39.135949237122865",,,,,Elétrica > Instalações elétricas,,0.16,LSTM_BAIXA_CONF,Alta
+2026090488,Pintura da antiga sala de estudos,2026-09-29 08:09,Processando (atribuído),,,,Campus Paulo Freire,,,,,Estrutura Predial > Pintura,,,,0,,,,"-17.534582646209113, -39.72461446135704",,,,,,,,,
+2026090489,Adequação das instalações das novas salas,2026-09-29 08:12,Processando (atribuído),,,,Campus Paulo Freire,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-17.534582646209113, -39.72461446135704",,,,,,,,,
+2026090502,Ar Condicionado cheirando a queimado e não funcionando,2026-09-29 13:28,Processando (atribuído),,,,Reitoria,,,,,Climatização > Ar condicionado split,,,,0,,,,"-14.788316740297745, -39.27483123836992",,,,,,,,,
+2026090508,Flange para bebedouro,2026-09-29 14:36,Processando (atribuído),,,,Campus Paulo Freire,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-17.534582646209113, -39.72461446135704",,,,,,,,,
+2026090509,Ventilador de parede sem funcionar,2026-09-29 14:50,Processando (atribuído),,,,Campus Jorge Amado,,,,,Elétrica > Instalações elétricas,,,,0,,,,#N/A,,,,,,,,,
+2026090510,Vaso sanitário sem tampa,2026-09-29 14:52,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.770309469288907, -39.23560995592077",,,,,,,,,
+2026090511,Vaso sanitário sem tampa,2026-09-29 14:53,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.770309469288907, -39.23560995592077",,,,,,,,,
+2026090512,Suporte para papel higiênico solto ou quebrado,2026-09-29 14:54,Processando (atribuído),,,,Campus Jorge Amado,,,,,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,,0,,,,"-14.770309469288907, -39.23560995592077",,,,,,,,,
+2026090513,Descarga vazando água direto pelo vaso,2026-09-29 14:55,Processando (atribuído),,,,Campus Jorge Amado,,,,,Hidrossanitária > Hidráulica,,,,0,,,,"-14.770309469288907, -39.23560995592077",,,,,,,,,
+2026090519,"Prezados, boa tarde.  Verificar o ar condicionado da sala dos professo",2026-09-29 16:06,Novo,,,,Campus Jorge Amado,,,,,Climatização > Ar condicionado split,,,,0,,,,"-14.77147998352185, -39.23434744042999",,,,,,,,,
+2026090524,"Prezado/a, boa noite!  Informo que ar condicionado do gabinete 33 não",2026-09-29 20:38,Novo,,,,Campus Paulo Freire,,,,,Climatização > Ar condicionado split,,,,0,,,,"-17.533274716800296, -39.72248779186285",,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

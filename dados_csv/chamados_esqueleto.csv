@@ -34899,7 +34899,7 @@ Materiais necessários:
 2025015054,Ar condicionado sem funcionar,Climatização > Ar condicionado split,"Ar condicionado sem funcionar
 Todas as Salas estudantis estão com o ar condicionado sem funcionar",,
 2025015062,Manutenção Semestral - Ar condicionado - Reitoria,Manutenção Preventiva > Ar condicionado split,Solicito Limpeza Geral dos equipamentos de Ar condicionados Localizados na Reitoria. Essa limpeza e manutenção preventiva deve estar de acordo com o Anexo III do documento em anexo que versa sobre as tarefas semestrais que devem ser feitas nos equipamentos de Ar condicionados do tipo SPLIT.,Manutenção Semestral - Ar condicionado - Reitoria,Manutenção Semestral - Ar condicionado - Reitoria
-2025015064,Substituir antiderrapante,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezado,
+2025015064,Substituir antiderrapante,Estrutura Predial > Alvenaria / Pisos / Estrutura,"Prezado,
 
 O antiderrapante da escada de entrada está bastante desgastado precisando substituição.
 
@@ -37374,7 +37374,7 @@ Algumas lâmpadas do setor de laboratórios estão queimadas.
 Gostaria de pedir a troca delas.
 
 Atenciosamente
-Mattheus",,
+Mattheus",Compra de lâmpadas,"Compra de lâmpadas para substituição no Campus, considerando as 130 do chamado, 45 do chamado 2026090402 e o restante para estoque e uso eventual."
 2026050313,Instalação,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito a instalação de duas tv´s, uma na parede do pátio do núcleo pedagógico e outra ao lado da sala do patrimônio, no complexo 1.",,
 2026050317,Instalação de televisão,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, bom dia!
 Solicito, por gentileza, a instalação de uma televisão na Pétala B do pavimento térreo do Núcleo Pedagógico.
@@ -38784,7 +38784,7 @@ Em paralelo, o funcionamento dessa pia é vital para o desenvolvimento de ativid
 Outros pedidos foram realizados no passado, por outros colegas do Centro, e ainda se encontram sem solução. Solicito, portanto, a resolução desse problema, o reparo do encanamento e o retorno ao abastecimento de água dessa pia, o quanto antes.
 Atenciosamente,
 Coordenação do Bacharelado Interdisciplinar em Artes (BI Artes - CSC/UFSB)",,
-2026080705,Boia eletrica,Manutenção Preventiva > Reservatório,"Solicito a liberação de boia elétrica.
+2026080705,Boia eletrica,Hidrossanitária > Hidráulica,"Solicito a liberação de boia elétrica.
 
 3 und de Boia elétrica.",Substituição de bóias elétricas,Substituição de bóias elétricas
 2026080706,Reparo de gaveteiro,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, boa tarde.
@@ -39226,5 +39226,25 @@ Mateus",,
 2026090445,Privada entupida,Hidrossanitária > Hidráulica,,,
 2026090449,"Prezados, boa tarde.  Poderia por gentileza verificar a possibilidade","Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
 2026090454,Solicitação de verificação técnica – Desarme recorrente dos disjuntores dos laboratórios,Elétrica > Instalações elétricas,,,
-2026090458,Instalação de fraldário no CUNI,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026090462,Manutenção do ar condicionado da sala do ultrafreezer no laboratorio de Biologia Molecular,Climatização > Ar condicionado split,,,
+2026090458,Instalação de fraldário no CUNI,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezadas/os, boa tarde!
+
+Solicito a instalação do fraldário retirado da reitoria no CUNI de Itabuna (CIEBTEC). O local de instalação foi definido com a diretora da escola, mas não foi me passado, por isso, não coloquei aqui no chamado.",,
+2026090462,Manutenção do ar condicionado da sala do ultrafreezer no laboratorio de Biologia Molecular,Climatização > Ar condicionado split,"Prezados bom dia!
+O ar condicionado da sala dos freezer no laboratorio de Biologia Molecular está vazando junto a parede e não está esquentando o suficiente, como demonstrado pela ronda dos vigilantes. Favor interceder quando possível.
+At.te
+Fabiana Félix",,
+2026090468,Pota sabonete quebrado,Hidrossanitária > Hidráulica,,,
+2026090474,criação de uma conta corporativa/acadêmica no Google Workspace for Education,Outros > Erro de chamado,,,
+2026090478,Reposição dos assentos sanitários no banheiro masculino do Pórtico,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026090485,Queda frequente de disjuntor na bilioteca CSC,Elétrica > Instalações elétricas,,,
+2026090488,Pintura da antiga sala de estudos,Estrutura Predial > Pintura,,,
+2026090489,Adequação das instalações das novas salas,Elétrica > Instalações elétricas,,,
+2026090502,Ar Condicionado cheirando a queimado e não funcionando,Climatização > Ar condicionado split,,,
+2026090508,Flange para bebedouro,Hidrossanitária > Hidráulica,,,
+2026090509,Ventilador de parede sem funcionar,Elétrica > Instalações elétricas,,,
+2026090510,Vaso sanitário sem tampa,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026090511,Vaso sanitário sem tampa,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026090512,Suporte para papel higiênico solto ou quebrado,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026090513,Descarga vazando água direto pelo vaso,Hidrossanitária > Hidráulica,,,
+2026090519,"Prezados, boa tarde.  Verificar o ar condicionado da sala dos professo",Climatização > Ar condicionado split,,,
+2026090524,"Prezado/a, boa noite!  Informo que ar condicionado do gabinete 33 não",Climatização > Ar condicionado split,,,
