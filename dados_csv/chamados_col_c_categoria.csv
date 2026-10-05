@@ -8,7 +8,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Iluminação
 Elétrica > Instalações elétricas
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Elétrica > Instalações elétricas
+Elétrica > Iluminação
 Elétrica > Iluminação
 Climatização > Ar condicionado split
 Elétrica > Iluminação
@@ -51,7 +51,7 @@ Projetos e Reformas > Projeto
 Climatização > Ar condicionado split
 Suprimentos / Apoio Técnico > Materiais
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Estrutura Predial > Alvenaria / Pisos / Estrutura
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Iluminação
 Elétrica > Iluminação
 Climatização > Ar condicionado split
@@ -12070,7 +12070,7 @@ Manutenção Preventiva > Ar condicionado split
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Outros > Erro de chamado
-Estrutura Predial > Alvenaria / Pisos / Estrutura
+"Estrutura Predial > Telhados, calhas, rufos, etc."
 Hidrossanitária > Hidráulica
 Estrutura Predial > Infiltração
 Elétrica > Iluminação
@@ -12787,7 +12787,7 @@ Outros > Erro de chamado
 Elétrica > Instalações elétricas
 Outros > Erro de chamado
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
-Elétrica > Instalações elétricas
+Elétrica > Gerador
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
@@ -13411,7 +13411,7 @@ Hidrossanitária > Hidráulica
 Elétrica > Iluminação
 Suprimentos / Apoio Técnico > Materiais
 Elétrica > Instalações elétricas
-"Estrutura Predial > Telhados, calhas, rufos, etc."
+Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Outros > Outros
@@ -13881,7 +13881,7 @@ Manutenção Preventiva > Ar condicionado split
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
-Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Elétrica > Instalações elétricas
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Hidrossanitária > Hidráulica
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
@@ -14322,9 +14322,9 @@ Climatização > Ar condicionado central
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
-"Segurança contra Incêndio > Sistemas de combate a incêndio (extintores, hidrantes)"
 Outros > Erro de chamado
-"Segurança contra Incêndio > Sistemas de combate a incêndio (extintores, hidrantes)"
+Outros > Erro de chamado
+Outros > Erro de chamado
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Instalações elétricas
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -14384,4 +14384,51 @@ Elétrica > Instalações elétricas
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
+Climatização > Ar condicionado split
+Hidrossanitária > Hidráulica
+Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem
+Outros > Erro de chamado
+Climatização > Ar condicionado split
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Outros > Erro de chamado
+Elétrica > Nobreak
+Climatização > Ar condicionado split
+Elétrica > Iluminação
+Hidrossanitária > Hidráulica
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Instalação de Acessórios e Mobiliário > Placas de identificação
+Outros > Erro de chamado
+Climatização > Ar condicionado split
+Climatização > Ar condicionado split
+"Estrutura Predial > Esquadrias, porta, portão e janelas"
+"Estrutura Predial > Esquadrias, porta, portão e janelas"
+Hidrossanitária > Hidráulica
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Manutenção Preventiva > Ar condicionado central
+Manutenção Preventiva > Ar condicionado central
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Elevador
+Manutenção Preventiva > Elevador
+Manutenção Preventiva > Elevador
 Climatização > Ar condicionado split

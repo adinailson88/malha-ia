@@ -1,31 +1,31 @@
 ﻿Categoria,Tipo,N_Chamados,Modelo_Vencedor,RMSE,MAE,MAPE,Sufixo_Aba
 Aplicação cupinicida,Preventiva,3,—,—,—,—,__Prev_Aplicacao_cupinic
-Ar condicionado central,Preventiva,169,In-sample,0,2,0,__Prev_Ar_condicionado_c
-Ar condicionado split,Preventiva,1840,In-sample,0,1,0,__Prev_Ar_condicionado_s
+Ar condicionado central,Preventiva,171,In-sample,0,2,0,__Prev_Ar_condicionado_c
+Ar condicionado split,Preventiva,1840,In-sample,0,1,3,__Prev_Ar_condicionado_s
 Bomba,Preventiva,3,—,—,—,—,__Prev_Bomba
-Elevador,Preventiva,92,In-sample,0,1,0,__Prev_Elevador
+Elevador,Preventiva,92,In-sample,2.21,1.87,66.57,__Prev_Elevador
 Esgoto,Preventiva,34,In-sample,0,1,0,__Prev_Esgoto
-Gerador,Preventiva,1216,In-sample,0,1,-1,__Prev_Gerador
+Gerador,Preventiva,1216,In-sample,0,1,-2,__Prev_Gerador
 Hidráulica,Preventiva,33,In-sample,0,1,0,__Prev_Hidraulica
-Iluminação,Preventiva,135,In-sample,0,1,0,__Prev_Iluminacao
+Iluminação,Preventiva,135,In-sample,1.01,0.79,62.29,__Prev_Iluminacao
 Nobreak,Preventiva,11,—,—,—,—,__Prev_Nobreak
 Poços artesianos,Preventiva,20,—,—,—,—,__Prev_Pocos_artesianos
-Quadros Elétricos,Preventiva,579,In-sample,0,1,-1,__Prev_Quadros_Eletricos
-Reservatório,Preventiva,280,In-sample,0,1,1,__Prev_Reservatorio
-"Sistemas de combate a incêndio (extintores, hidrantes)",Preventiva,66,In-sample,0,1,0,__Prev_Sistemas_de_comba
+Quadros Elétricos,Preventiva,579,In-sample,1.91,1.73,42,__Prev_Quadros_Eletricos
+Reservatório,Preventiva,279,In-sample,0,1,0,__Prev_Reservatorio
+"Sistemas de combate a incêndio (extintores, hidrantes)",Preventiva,66,In-sample,1.57,1.17,72.73,__Prev_Sistemas_de_comba
 "Telhados, calhas, rufos, etc.",Preventiva,43,In-sample,0,2,0,__Prev_Telhados_calhas_r
 Vistoria em Instalações,Preventiva,247,In-sample,0,2,-1,__Prev_Vistoria_em_Insta
-Climatização,Corretiva,1708,In-sample,0,1,-5,__Corr_Climatizacao
-Elétrica,Corretiva,1922,In-sample,0,1,4,__Corr_Eletrica
+Climatização,Corretiva,1716,In-sample,0,1,-5,__Corr_Climatizacao
+Elétrica,Corretiva,1928,In-sample,0,1,3,__Corr_Eletrica
 Equipamentos de Transporte,Corretiva,24,—,—,—,—,__Corr_Equipamentos_de_T
-Estrutura Predial,Corretiva,2959,In-sample,0,1,6,__Corr_Estrutura_Predial
-Hidrossanitária,Corretiva,1374,In-sample,0,3,0,__Corr_Hidrossanitaria
-Instalação de Acessórios e Mobiliário,Corretiva,387,In-sample,0,1,0,__Corr_Instalacao_de_Ace
-Outros,Corretiva,285,In-sample,0,1,0,__Corr_Outros
+Estrutura Predial,Corretiva,2961,In-sample,0,1,2,__Corr_Estrutura_Predial
+Hidrossanitária,Corretiva,1382,In-sample,0,3,-1,__Corr_Hidrossanitaria
+Instalação de Acessórios e Mobiliário,Corretiva,396,In-sample,0,1,0,__Corr_Instalacao_de_Ace
+Outros,Corretiva,291,In-sample,0,1,0,__Corr_Outros
 Posto de trabalho,Corretiva,102,In-sample,0,1,1,__Corr_Posto_de_trabalho
 Projetos e Reformas,Corretiva,108,In-sample,0,1,0,__Corr_Projetos_e_Reform
 SISTEMAS,Corretiva,1,—,—,—,—,__Corr_SISTEMAS
-Segurança contra Incêndio,Corretiva,33,—,—,—,—,__Corr_Seguranca_contra_
+Segurança contra Incêndio,Corretiva,31,—,—,—,—,__Corr_Seguranca_contra_
 Suprimentos / Apoio Técnico,Corretiva,105,In-sample,0,1,0,__Corr_Suprimentos_Apoio
-TI / Dados / Rede,Corretiva,468,In-sample,0,1,-3,__Corr_TI_Dados_Rede
+TI / Dados / Rede,Corretiva,468,In-sample,0,1,-2,__Corr_TI_Dados_Rede
 Área Externa e Ambiental,Corretiva,123,In-sample,0,1,-1,__Corr_Area_Externa_e_Am

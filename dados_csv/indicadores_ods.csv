@@ -1,6 +1,6 @@
 ﻿Campus,N_chamados_total,N_infra_critica,Tempo_medio_resolucao_dias,Taxa_resolucao_no_prazo,N_criticos_alta,N_em_espaco_coletivo,Densidade_chamados_por_1000m2,Razao_preventiva_corretiva,Valor_total_gasto_R$,N_chamados_repetidos
-Campus Jorge Amado,3904,1261,,,0,310,0,0.234,6129825.37,0
-Campus Maria Felipa - Jequié,11,4,,,0,0,0,0.364,0,0
-Campus Paulo Freire,3844,1139,,,0,416,0,0.324,3128564.52,0
-Campus Sosígenes Costa,4205,1231,,,0,431,0,0.385,8639192.15,0
-Reitoria,2429,790,,,0,56,0,0.222,2230016.93,0
+Campus Jorge Amado,3908,1261,,,0,311,0,914,6129900.44,0
+Campus Maria Felipa - Jequié,11,4,,,0,0,0,4,0,0
+Campus Paulo Freire,3847,1141,,,0,416,0,1245,3128564.52,0
+Campus Sosígenes Costa,4211,1232,,,0,431,0,1622,8640051.88,0
+Reitoria,2431,790,,,0,56,0,539,2230016.93,0
