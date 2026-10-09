@@ -1,31 +1,31 @@
 ﻿Categoria,Tipo,N_Chamados,Modelo_Vencedor,RMSE,MAE,MAPE,Sufixo_Aba
 Aplicação cupinicida,Preventiva,3,â€”,â€”,â€”,â€”,__Prev_Aplicacao_cupinic
-Ar condicionado central,Preventiva,171,Vencedor (menor RMSE holdout = 0.90),0,2,0,__Prev_Ar_condicionado_c
-Ar condicionado split,Preventiva,1861,Vencedor (menor RMSE holdout = 10.28),0,1,3,__Prev_Ar_condicionado_s
+Ar condicionado central,Preventiva,171,Vencedor (menor RMSE holdout = 0.70),0,2,0,__Prev_Ar_condicionado_c
+Ar condicionado split,Preventiva,1861,Vencedor (menor RMSE holdout = 10.37),0,1,-1,__Prev_Ar_condicionado_s
 Bomba,Preventiva,3,â€”,â€”,â€”,â€”,__Prev_Bomba
-Elevador,Preventiva,95,Vencedor (menor RMSE holdout = 2.00),2.21,1.87,66.57,__Prev_Elevador
-Esgoto,Preventiva,34,Vencedor (menor RMSE holdout = 0.37),0,1,0,__Prev_Esgoto
-Gerador,Preventiva,1216,Vencedor (menor RMSE holdout = 1.26),0,1,-2,__Prev_Gerador
-Hidráulica,Preventiva,34,Vencedor (menor RMSE holdout = 0.61),0,1,0,__Prev_Hidraulica
-Iluminação,Preventiva,135,Vencedor (menor RMSE holdout = 1.01),1.01,0.79,62.29,__Prev_Iluminacao
+Elevador,Preventiva,95,Vencedor (menor RMSE holdout = 1.95),0,1,0,__Prev_Elevador
+Esgoto,Preventiva,34,Vencedor (menor RMSE holdout = 0.36),0,1,0,__Prev_Esgoto
+Gerador,Preventiva,1216,Vencedor (menor RMSE holdout = 0.52),0,1,-2,__Prev_Gerador
+Hidráulica,Preventiva,34,Vencedor (menor RMSE holdout = 0.64),0,1,0,__Prev_Hidraulica
+Iluminação,Preventiva,136,Vencedor (menor RMSE holdout = 0.39),0.94,0.77,44.25,__Prev_Iluminacao
 Nobreak,Preventiva,11,â€”,â€”,â€”,â€”,__Prev_Nobreak
 Poços artesianos,Preventiva,20,â€”,â€”,â€”,â€”,__Prev_Pocos_artesianos
-Quadros Elétricos,Preventiva,580,Vencedor (menor RMSE holdout = 1.84),1.91,1.73,42,__Prev_Quadros_Eletricos
+Quadros Elétricos,Preventiva,580,Vencedor (menor RMSE holdout = 1.91),1.91,1.73,42,__Prev_Quadros_Eletricos
 Reservatório,Preventiva,279,Vencedor (menor RMSE holdout = 3.16),0,1,0,__Prev_Reservatorio
 "Sistemas de combate a incêndio (extintores, hidrantes)",Preventiva,66,Vencedor (menor RMSE holdout = 1.30),1.57,1.17,72.73,__Prev_Sistemas_de_comba
 "Telhados, calhas, rufos, etc.",Preventiva,43,Vencedor (menor RMSE holdout = 0.48),0,2,0,__Prev_Telhados_calhas_r
 Vistoria em Instalações,Preventiva,247,Vencedor (menor RMSE holdout = 0.78),0,2,-1,__Prev_Vistoria_em_Insta
-Climatização,Corretiva,1718,Vencedor (menor RMSE holdout = 4.38),0,1,-5,__Corr_Climatizacao
-Elétrica,Corretiva,1929,Vencedor (menor RMSE holdout = 4.35),0,1,3,__Corr_Eletrica
+Climatização,Corretiva,1720,Vencedor (menor RMSE holdout = 4.38),0,1,-5,__Corr_Climatizacao
+Elétrica,Corretiva,1931,Vencedor (menor RMSE holdout = 4.35),0,1,3,__Corr_Eletrica
 Equipamentos de Transporte,Corretiva,24,â€”,â€”,â€”,â€”,__Corr_Equipamentos_de_T
-Estrutura Predial,Corretiva,2961,Vencedor (menor RMSE holdout = 5.75),0,1,2,__Corr_Estrutura_Predial
-Hidrossanitária,Corretiva,1382,Vencedor (menor RMSE holdout = 5.59),0,3,-1,__Corr_Hidrossanitaria
-Instalação de Acessórios e Mobiliário,Corretiva,396,Vencedor (menor RMSE holdout = 3.01),0,1,0,__Corr_Instalacao_de_Ace
-Outros,Corretiva,291,Vencedor (menor RMSE holdout = 2.81),0,1,0,__Corr_Outros
+Estrutura Predial,Corretiva,2962,Vencedor (menor RMSE holdout = 5.75),0,1,2,__Corr_Estrutura_Predial
+Hidrossanitária,Corretiva,1387,Vencedor (menor RMSE holdout = 5.59),0,3,-1,__Corr_Hidrossanitaria
+Instalação de Acessórios e Mobiliário,Corretiva,397,Vencedor (menor RMSE holdout = 3.01),0,1,0,__Corr_Instalacao_de_Ace
+Outros,Corretiva,292,Vencedor (menor RMSE holdout = 2.81),0,1,0,__Corr_Outros
 Posto de trabalho,Corretiva,102,Vencedor (menor RMSE holdout = 0.68),0,1,1,__Corr_Posto_de_trabalho
 Projetos e Reformas,Corretiva,108,Vencedor (menor RMSE holdout = 0.22),0,1,0,__Corr_Projetos_e_Reform
 SISTEMAS,Corretiva,1,â€”,â€”,â€”,â€”,__Corr_SISTEMAS
 Segurança contra Incêndio,Corretiva,31,â€”,â€”,â€”,â€”,__Corr_Seguranca_contra_
 Suprimentos / Apoio Técnico,Corretiva,105,Vencedor (menor RMSE holdout = 0.97),0,1,0,__Corr_Suprimentos_Apoio
-TI / Dados / Rede,Corretiva,469,Vencedor (menor RMSE holdout = 2.22),0,1,-2,__Corr_TI_Dados_Rede
-Área Externa e Ambiental,Corretiva,123,Vencedor (menor RMSE holdout = 2.16),0,1,-1,__Corr_Area_Externa_e_Am
+TI / Dados / Rede,Corretiva,468,Vencedor (menor RMSE holdout = 2.22),0,1,-2,__Corr_TI_Dados_Rede
+Área Externa e Ambiental,Corretiva,124,Vencedor (menor RMSE holdout = 2.16),0,1,-1,__Corr_Area_Externa_e_Am
