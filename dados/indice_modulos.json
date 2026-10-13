@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-10-12T18:10:00.187542+00:00",
+  "gerado_em_utc": "2026-10-13T16:22:01.305588+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,9 +37,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "d153713e5161",
-        "html_url": "https://github.com/adinailson88/malha-ia/commit/d153713e5161138dd78c1b777457a80b4ed670ae",
-        "data": "2026-10-12T16:06:21Z"
+        "sha": "e04ad951c289",
+        "html_url": "https://github.com/adinailson88/malha-ia/commit/e04ad951c2899500c9ded2ce9442622831ab9914",
+        "data": "2026-10-13T14:34:15Z"
       },
       "dados_atualizados_em_utc": "2026-10-12T13:36:06.472053+00:00",
       "resumo_dados": {
@@ -99,11 +99,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "d9f436791b47",
-        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/d9f436791b47d832a0dadf685cb9703fb553d399",
-        "data": "2026-10-12T15:50:00Z"
+        "sha": "d82d0ba30265",
+        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/d82d0ba302650d6a3d5b266e90fedf0878d12306",
+        "data": "2026-10-13T16:14:15Z"
       },
-      "dados_atualizados_em_utc": "2026-10-12T08:35:09.172838+00:00",
+      "dados_atualizados_em_utc": "2026-10-13T16:14:12.330079+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -157,9 +157,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "2c2bf39dfd5d",
-        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/2c2bf39dfd5d62c6db57432eecc8410c06733c93",
-        "data": "2026-10-12T08:35:27Z"
+        "sha": "60fb797003d5",
+        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/60fb797003d5856094fe0f3589ca99ddfffc517f",
+        "data": "2026-10-13T16:14:05Z"
       },
       "dados_atualizados_em_utc": "2026-10-07T04:16:37.416452+00:00",
       "resumo_dados": {},
@@ -215,11 +215,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "70b879381fee",
-        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/70b879381fee798733aeee6713d760781ad8d261",
-        "data": "2026-10-12T16:26:04Z"
+        "sha": "ca9578974790",
+        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/ca9578974790f4cc5801614725008445764af413",
+        "data": "2026-10-13T16:16:47Z"
       },
-      "dados_atualizados_em_utc": "2026-10-12T08:49:08.963831+00:00",
+      "dados_atualizados_em_utc": "2026-10-13T16:16:46.963203+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -273,9 +273,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "b80d4996b5d9",
-        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/b80d4996b5d986bad41340661047befa43306c92",
-        "data": "2026-10-12T15:54:52Z"
+        "sha": "fa22890e721f",
+        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/fa22890e721f8e63d2554e6df0003d4ddaacdc7f",
+        "data": "2026-10-13T10:55:48Z"
       },
       "dados_atualizados_em_utc": "2026-10-07T00:55:44.679381+00:00",
       "resumo_dados": {},
@@ -331,11 +331,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "a7050a2630c1",
-        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/a7050a2630c141d1663387643166c65ffd64ddef",
-        "data": "2026-10-12T17:09:18Z"
+        "sha": "2fefdcb134cc",
+        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/2fefdcb134ccc2e3e99ac086a6ebd006d958f3c2",
+        "data": "2026-10-13T13:30:51Z"
       },
-      "dados_atualizados_em_utc": "2026-10-12T17:09:17.540028+00:00",
+      "dados_atualizados_em_utc": "2026-10-13T12:21:51.591212+00:00",
       "resumo_dados": {
         "arquivos": 3,
         "linhas_dados": 179
