@@ -14,7 +14,7 @@ Quadros Elétricos,Preventiva,580,Vencedor (menor RMSE holdout = 1.91),1.91,1.73
 Reservatório,Preventiva,279,Vencedor (menor RMSE holdout = 3.09),0,1,1,__Prev_Reservatorio
 "Sistemas de combate a incêndio (extintores, hidrantes)",Preventiva,66,Vencedor (menor RMSE holdout = 0.91),0,1,1,__Prev_Sistemas_de_comba
 "Telhados, calhas, rufos, etc.",Preventiva,43,Vencedor (menor RMSE holdout = 0.48),0,2,0,__Prev_Telhados_calhas_r
-Vistoria em Instalações,Preventiva,247,Vencedor (menor RMSE holdout = 0.78),0,2,-1,__Prev_Vistoria_em_Insta
+Vistoria em Instalações,Preventiva,247,Vencedor (menor RMSE holdout = 0.89),0,2,-1,__Prev_Vistoria_em_Insta
 Climatização,Corretiva,1724,Vencedor (menor RMSE holdout = 4.38),0,1,-5,__Corr_Climatizacao
 Elétrica,Corretiva,1931,Vencedor (menor RMSE holdout = 4.35),0,1,3,__Corr_Eletrica
 Equipamentos de Transporte,Corretiva,24,â€”,â€”,â€”,â€”,__Corr_Equipamentos_de_T
