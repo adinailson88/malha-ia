@@ -33789,7 +33789,7 @@ Jéssica Xavier",,
 Ao desligar o ar condicionado a bandeja não fecha, se mantém abaixadas, o ar funciona normalmente porém a bandeja não está fechando.
 Favor verificar
 Local: Sala 04 - Térreo",,
-2025013847,Instalação de película,"Estrutura Predial > Esquadrias, porta, portão e janelas",Solicito a instalação de películas nas janelas da sala da pós-graduação,Instalação de película,Instalação de película
+2025013847,Instalação de película,"Estrutura Predial > Esquadrias, porta, portão e janelas",Solicito a instalação de películas nas janelas da sala da pós-graduação,Instalação de película; Complementar de instalação de película,Instalação de película; Complementar de instalação de película
 2025013856,Fechadura quebrada,"Estrutura Predial > Esquadrias, porta, portão e janelas","A maçaneta da sala 05 está solta, favor verificar",,
 2025013858,Maçaneta da porta solta,"Estrutura Predial > Esquadrias, porta, portão e janelas","Maçaneta da porta solta
 Local: Sala 05",,
@@ -38643,7 +38643,7 @@ Solicito, o mais breve possível, a instalação de 4 relógios de parede nos 4 
 Solicito, por gentileza, a instalação de persianas na sala do Psicólogo do Campus Paulo Freire.",,
 2026080527,"Prezados(as),  Solicito o apoio de um profissional para realizar a a",Instalação de Acessórios e Mobiliário > Placas de identificação,"Prezados(as),
 Solicito o apoio de um profissional para realizar a abertura de dois armários que se encontram trancados e cujas chaves não estão disponíveis , localizados na Coordenação de Sistemas da da STI .
-Informo que entrei em contato previamente com o Sr. Carlos, funcionário terceirizado, que orientou sobre a necessidade de abertura de chamado junto à DINFRA para atendimento da solicitação.",Reparo em fechaduras de armários,Reparo em fechaduras de armários
+Informo que entrei em contato previamente com o Sr. Carlos, funcionário terceirizado, que orientou sobre a necessidade de abertura de chamado junto à DINFRA para atendimento da solicitação.",Reparo em fechaduras de armários; Complementar de reparo em fechaduras de armários,Reparo em fechaduras de armários; Complementar de reparo em fechaduras de armários
 2026080529,Ajuste de puxador,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, bom dia!
 A pedido de Josi, por gentileza, solicito a alteração da posição do puxador no armário no Gabinete 22. O puxador está do lado de dentro da porta.
 
@@ -39349,8 +39349,14 @@ Atenciosamente,",,
 2026100053,Tampa do vaso sanitário quebrada,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Tampa do vaso sanitário quebrada
 
 Local: BANHEIRO PCD MASCULINO TERREO",,
-2026100058,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,Manutenção Preventiva > Ar condicionado central,,,
-2026100059,Manutenção Preventiva Mensal - Ar Condicionado Central - CSC - Tratamento Químico Mensal da Água de Condensação,Manutenção Preventiva > Ar condicionado central,,,
+2026100058,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,Manutenção Preventiva > Ar condicionado central,"Solicito manutenção preventiva mensal do ar condicionado central do CSC de acordo ao arquivo em anexo ""DINFRA.CM.17 - MANUTENÇÃO PREVENTIVA DE AR CONDICIONADO CENTRAL (CHILLER) - PMOC"".
+O acompanhamento deste chamado deve ser de acordo com as atividades descritas no ANEXO I .
+O retorno destas atividades devem ser dados à Coordenação de Manutenção ou à Coordenação de Campus do CSC, de modo que a UFSB tenha ciência das atividades preventivas realizadas no equipamento.
+Caso haja alguma necessidade de material(is) para manutenção corretiva, este(s) deverá(ão) ser solicitado(s) de imediato de modo que a aquisição seja o mais rápido possível.
+O fechamento deste chamado está condicionado ao retorno deste documento.",,
+2026100059,Manutenção Preventiva Mensal - Ar Condicionado Central - CSC - Tratamento Químico Mensal da Água de Condensação,Manutenção Preventiva > Ar condicionado central,"Solicito tratamento químico de água de condensação de ar condicionado central. Este procedimento deverá acompanhar o documento em anexo ""DINFRA.CM.17 - MANUTENÇÃO PREVENTIVA DE AR CONDICIONADO CENTRAL (CHILLER) - PMOC"", com informações sobre o sistema de refrigeração no Item 7.
+Os padrões técnicos a serem alcançados após o tratamento devem estar de acordo ao que consta no ANEXO IV do documento em anexo.
+Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um relatório técnico informando sobre o processo.",,
 2026100060,Manutenção Preventiva Mensal - Ar condicionado - Reitoria,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo.
 O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 04.",,
 2026100061,Manutenção Preventiva Mensal - Ar condicionado - CJA - Laboratório CEPLAC,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo. O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 05.",,
@@ -39425,7 +39431,7 @@ Solicito a adequação dos pontos de rede lógica e a instalação de tomadas no
 
 Os materiais serão fornecidos pelo coordenador do Campus, sendo necessária apenas a disponibilização de mão de obra para a execução dos serviços.
 
-Atenciosamente,",,
+Atenciosamente,",Adequação dos pontos de tomadas e lógica para câmeras,"OBS: Cabos nas cores azul, preto, verde"
 2026100151,Rampa de Acessibilidade do passeio da portaria da CEPLAC,Estrutura Predial > Alvenaria / Pisos / Estrutura,Requisição à Manutenção da instalação de rampa de acessibilidade do passeio da portaria da CEPLAC.,,
 2026100160,Verificação do ar-condicionado,Climatização > Ar condicionado split,"Solicito a verificação do ar-condicionado do laboratório Interdisciplinar 2, pois o mesmo se encontra com vazamento e apresenta ruídos.",Reparo no ar condicionado do laboratório Interdisciplinar 2,Reparo no ar condicionado do laboratório Interdisciplinar 2
 2026100164,Solicitação de supressão de árvore,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, boa tarde!
@@ -39448,15 +39454,148 @@ Ao abrir esse chamado, não aparece a categoria de chamado SISTEMAS > OUTRAS SOL
 2026100177,O ar condicionado da sala do setor ti e multimidia está com problema e,Climatização > Ar condicionado split,,,
 2026100181,Prezados  Solicito conserto da mangueira do lava olhos do Laboratório,Hidrossanitária > Hidráulica,,,
 2026100182,Solicitação de manutenção – Almoxarifado de Reagentes,Hidrossanitária > Hidráulica,,,
-2026100183,Solicitação de reparo urgente em ar-condicionado (Sala da DPG - ProPPG),Climatização > Ar condicionado split,,,
-2026100186,"Boa tarde , prezados colaboradores colegas, o Ar Condicionado da SECAD",Climatização > Ar condicionado split,,,
-2026100187,Não estou recebendo e-mails em minha caixa,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
-2026100200,Solicitação de apoio para instalação hidráulica de sistema de irrigação,Hidrossanitária > Hidráulica,,,
-2026100201,Solicito manutenção na Fibra óptica que liga o CJA à CFCAF. Fibra está,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
-2026100204,E-mail @gfe,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
-2026100205,Problemas no e-mail institucional e solicitação para o Google for Education,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
-2026100208,VERIFICAR NOBREAK / TROCA DE BATERIA,Elétrica > Nobreak,,,
-2026100209,Assunto: Solicitação de manutenção – Área da Cantina,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
-2026100211,Ar condicionado- Sala Multimídia,Climatização > Ar condicionado split,,,
-2026100212,Reparo de cabos de rede – Núcleo Pedagógico,Elétrica > Instalações elétricas,,,
-2026100215,Solicitação de ampliação da capacidade de armazenamento do e-mail institucional,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026100183,Solicitação de reparo urgente em ar-condicionado (Sala da DPG - ProPPG),Climatização > Ar condicionado split,"Prezados/as
+Boa tarde,
+Solicito com urgência o reparo do aparelho de ar-condicionado localizado na sala da DPG (ProPPG).
+O servidor que ocupa o setor relatou que, ao ligar o equipamento, houve um vazamento intenso de água acompanhado de blocos de gelo, o que molhou a mesa de trabalho. No momento, o aparelho continua pingando, o que inviabiliza o uso adequado do espaço e apresenta risco de danos aos equipamentos.
+Agradeço desde já pela atenção e solicito prioridade no atendimento, devido à urgência da situação.
+Atenciosamente,",,
+2026100186,"Boa tarde , prezados colaboradores colegas, o Ar Condicionado da SECAD",Climatização > Ar condicionado split,"Boa tarde , prezados colaboradores colegas, o Ar Condicionado da SECAD apresenta, pingamentos de água na sala, Aguardamos a resolução da demanda.
+Att.",,
+2026100187,Não estou recebendo e-mails em minha caixa,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Boa tarde,
+Minha chefia imediata relatou ter me enviado e-mail, inobstante minha caixa de mensagens encontar-se vazia.
+Solicito, atenção ao caso, atenciosamente Bráulio Cavalcanti Ferreria 48 999894575",,
+2026100200,Solicitação de apoio para instalação hidráulica de sistema de irrigação,Hidrossanitária > Hidráulica,"Bom dia, colega.
+
+Gostaria de solicitar o apoio da equipe, por meio da disponibilização de um colaborador terceirizado, para auxiliar na execução de serviços hidráulicos necessários à implantação de um pequeno sistema de irrigação na área experimental da UFSB, com finalidade didática, envolvendo os estudantes da turma.
+A atividade tem como objetivo proporcionar aos alunos uma experiência prática de montagem e instalação de um sistema de irrigação, integrando os conhecimentos teóricos desenvolvidos no componente curricular.
+Para viabilizar a instalação, solicito suporte para a realização de duas atividades: a ligação do abastecimento de água à caixa-d’água e a escavação de um trecho de aproximadamente 17 metros no terreno, destinado à instalação da tubulação hidráulica.
+Ressalto que a montagem do sistema de irrigação será realizada com a participação dos estudantes, como parte das atividades práticas de ensino. O apoio solicitado se restringe aos serviços necessários para viabilizar a infraestrutura hidráulica e a preparação do terreno.
+
+A montagem do sistema está previsto para a próxima quinta-feira, dia 15 de outubro, a partir das 08h.
+Agradeço desde já pela atenção.
+
+Obrigada.
+
+Carla Valéria da Silva Padilha",,
+2026100201,Solicito manutenção na Fibra óptica que liga o CJA à CFCAF. Fibra está,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Solicito manutenção na Fibra óptica que liga o CJA à CFCAF.
+Fibra está down.
+Local: CFCAF.",Manutenção na Fibra óptica que liga o CJA à CFCAF,Manutenção na Fibra óptica que liga o CJA à CFCAF
+2026100204,E-mail @gfe,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Boa tarde,
+Solicito um e-mail @gfe.ufsb.edu.br para poder fazer reuniões no meet.
+Obrigada,
+Fernanda",,
+2026100205,Problemas no e-mail institucional e solicitação para o Google for Education,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"#54dfb936-d9d62df8-6ace65f4c68793.54261823#
+Boa tarde,
+Minha chefia imediata relatou ter me enviado e-mails para minha caixa institucional braulio.cavalcanti@ufsb.edu.br , inobstante minha caixa de mensagens encontar-se vazia.
+Enviei e-mails testes do meu gmail pessoal ( brauliocavalcanti@gmail.com ) para o meu institucional ( braulio.cavalcanti@ufsb.edu.br ) e não recebi os e-mails testes.
+Solicito, especial atenção ao caso, pois a situação perdura a duas seanas, podendo haver prejuízo de enventuais e-mails enviados pelo corpo discente e chefia de minha imediata e das hierarquias superiores.
+No mesmo sentido, se possível gostaria também de inserção junto ao sistema Google For Education.
+Estou intregramente a vossa disposição pelo whtasapp 48 99989 4575 e e-mail pessoal brauliocavalcanti@gmail.com para solucionarmos a demanda em definitivo.
+Atenciosamente,
+Prof. Bráulio Cavalcanti Ferreira
+Curso de Direito
+SIAPE 1013219",,
+2026100208,VERIFICAR NOBREAK / TROCA DE BATERIA,Elétrica > Nobreak,"Prezados(as), boa tarde!
+Solicito a verificação do nobreak utilizado para alimentar os desumidificadores do Laboratório Herbário GCPP, tendo em vista que o equipamento está apresentando falhas, com acionamento frequente do alarme sonoro.
+Suspeita-se que o problema esteja relacionado ao desgaste da bateria, sendo necessária uma avaliação técnica para identificar a causa e verificar a necessidade de substituição.
+Ressalto a importância da manutenção do equipamento, considerando que os desumidificadores são essenciais para o controle da umidade e a preservação dos materiais armazenados no laboratório.",,
+2026100209,Assunto: Solicitação de manutenção – Área da Cantina,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Solicito a realização de serviços de manutenção na área da cantina do Campus Sosígenes Costa, contemplando a substituição de lâmpadas e os reparos necessários na parede, conforme demonstrado nas fotografias anexas.
+A solicitação tem como objetivo garantir condições adequadas de iluminação, conservação e segurança do ambiente.
+Dessa forma, solicito a avaliação e a adoção das providências necessárias para a execução dos serviços.",,
+2026100211,Ar condicionado- Sala Multimídia,Climatização > Ar condicionado split,"O ar condicionando da sala de multimídia vem apresentando instabilidade desde a semana passa.
+O Senhor Raimundo tentou por algumas vezes solucionar o problema mas hoje nos informou que não será possível.",,
+2026100212,Reparo de cabos de rede – Núcleo Pedagógico,Elétrica > Instalações elétricas,"Prezados, boa tarde!
+Solicito, por gentileza, o reparo dos cabos de rede que foram cortados durante o serviço de corte de grama no Núcleo Pedagógico.
+Atenciosamente,",,
+2026100215,Solicitação de ampliação da capacidade de armazenamento do e-mail institucional,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Caros,
+Boa tarde!
+Espero que esteja bem!
+Estou à frente da Coordenação do Curso de Direito e venho enfrentando um problema recorrente com a caixa de e-mail institucional direito@ufsb.edu.br , que frequentemente atinge o limite de armazenamento.
+Como não é possível excluir diversas mensagens, uma vez que elas constituem registros e comprovantes das atividades e dos encaminhamentos realizados ao longo da gestão, gostaria de solicitar a ampliação da capacidade de armazenamento dessa conta de e-mail.
+Você poderia, por gentileza, me auxiliar nessa demanda ou indicar o procedimento necessário para viabilizar essa ampliação?
+Desde já, agradeço pela atenção e pelo apoio.
+Atenciosamente,
+Cristina Grobério Pazó",,
+2026100221,"poda de árvores com risco de queda no viveiro florestal, localizado pr",Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
+2026100222,Ar condicionado com problema,Climatização > Ar condicionado split,,,
+2026100223,Ar condicionado com problema,Climatização > Ar condicionado split,,,
+2026100227,Ar condicionado pingando,Climatização > Ar condicionado split,Ar condicionado pingando.,,
+2026100230,Porta Asjur,"Estrutura Predial > Esquadrias, porta, portão e janelas","Solicito, por gentileza, manutenção da porta de vidro da Assessoria Jurídica, que está emperrando ao ser fechada",,
+2026100232,Solicitação de avaliação para supressão de árvore – Núcleo Pedagógico,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,"Prezados, boa tarde!
+Solicito, por gentileza, a avaliação da possibilidade de supressão de uma árvore localizada no Núcleo Pedagógico do CPF, pois ela está provocando a inclinação de um muro, com risco de comprometer a estabilidade da estrutura.
+Atenciosamente,",Supressão de árvores – Núcleo Pedagógico,Supressão de árvores – Núcleo Pedagógico
+2026100238,“Ligar ar condicionado central - auditório Monte Pascoal,Climatização > Ar condicionado split,"Prezados(as), boa tarde!
+
+Considerando a realização da Solenidade de Colação de Grau da UFSB, prevista para o dia 29 de outubro de 2026 (quinta-feira), às 18h, no Auditório Monte Pascoal, Campus Sosígenes Costa, solicitamos, por gentileza, o apoio do Setor de Infraestrutura para assegurar a climatização do espaço durante o evento.
+Solicitamos, se possível, que os equipamentos de ar-condicionado sejam acionados com a devida antecedência, de modo a garantir condições adequadas de conforto térmico para os formandos, convidados e demais participantes da solenidade.
+Evento: Solenidade - Colação de Grau - Turma 2026.2
+Dia: 29-10-2026
+Horário: 18h
+Local: Auditório Monte Pascoal
+Agradecemos pela atenção e colaboração e permanecemos à disposição para os esclarecimentos que se fizerem necessários.
+
+Atenciosamente,
+
+Renan Araújo Gomes,
+Secretário Executivo.",,
+2026100239,Reparo de torneira,Hidrossanitária > Hidráulica,"Prezados, boa tarde!
+Solicito, por gentileza, a verificação de uma torneira no Núcleo Pedagógico que está apresentando vazamento, para reparo ou substituição, se necessário.
+Atenciosamente,",,
+2026100242,Descarga não desativa automaticamente,Hidrossanitária > Hidráulica,"Prezados/as,
+
+Informo que a descarga do mictório da terceira cabine do último andar não está desativando automaticamente como nos demais mictórios. As pessoas estão usando e deixando a descarga acionada.
+
+Atenciosamente,
+
+Mateus",,
+2026100246,Inspeção Luminária de emergência - CJA Núcleo de Vivência,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100247,Inspeção Luminária de emergência - CJA Núcleo Pedagógico,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100248,Inspeção Luminária de emergência - CJA CFCAF,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100249,Inspeção Luminária de emergência - CSC PAV. Administrativo,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100250,Inspeção Luminária de emergência - CSC Passarelas e Biblioteca,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100251,Inspeção Luminária de emergência - CSC Bloco de serviços,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100252,Inspeção Luminária de emergência - CSC PAV. Convenções,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100253,Inspeção Luminária de emergência - CSC PAV. Feiras,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100254,Inspeção Luminária de emergência - CSC PORTICO,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100255,Inspeção Luminária de emergência - CSC LABORATÓRIOS,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100256,Inspeção Luminária de emergência - CPF COMPLEXO 1 BLOCO AULAS E ANEXO AULAS,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100257,Inspeção Luminária de emergência - CPF COMPLEXO 1 PAV. ADMINISTRATIVO,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100258,Inspeção Luminária de emergência - CPF COMPLEXO 2 LABORATÓRIOS,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100259,Inspeção Luminária de emergência - CPF COMPLEXO 2 SALA DE TUTORIA,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100260,Inspeção Luminária de emergência - CPF COMPLEXO 2 LAB. DE HABILIDADES,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100261,Inspeção Luminária de emergência - CPF COMPLEXO 2 ADM CFCS,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100262,Inspeção Luminária de emergência - CPF COMPLEXO 2 CEAME,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100263,Inspeção Luminária de emergência - CPF COMPLEXO 2 CLÍNICA ESCOLA PSICOLOGIA,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100264,"Inspeção Luminária de emergência - CPF COMPLEXO 2 LAPPSI, LAB. CIÊNCIA DADOS, ClÍNICA PSICOLOGIA",Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100265,Inspeção Luminária de emergência - CPF POSTOS DE SAÚDE,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100266,Inspeção Luminária de emergência - CPF INTERNATOS,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100267,Inspeção Luminária de emergência - CPF Núcleo Pedagógico,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100271,"Prezados/as,     Solicito o Reparo no ar condiconado pois o mesmo esta",Climatização > Ar condicionado split,"Prezados/as,
+
+Solicito o Reparo no ar condiconado pois o mesmo esta caindo agua que quase molhou a estação de trabalho que ultilizamos.
+
+Atenciosamente,",,
+2026100272,Falha no acesso à Nuvem UFSB,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Ao tentar acessar o sistema Nuvem UFSB (nuvem.ufsb.edu.br), o navegador Google Chrome apresenta um aviso de segurança informando que a conexão não é particular, com o código de erro NET::ERR_CERT_DATE_INVALID .
+Encaminho a captura de tela em anexo para análise e solicito, por gentileza, a verificação do problema e as orientações necessárias para regularizar o acesso.
+Desde já, agradeço pela atenção.",,
+2026100283,Vistoria no conforto médico do HMTF,"Estrutura Predial > Esquadrias, porta, portão e janelas","Prezados, boa tarde!
+Solicito, por gentileza, uma vistoria geral nas instalações do conforto médico do HMTF, para identificar possíveis problemas e avaliar os reparos necessários, incluindo a verificação das esquadrias, pois algumas não estão funcionando corretamente.
+Atenciosamente,",,
+2026100294,Retirada de dois ares condicionados da piscicultura para o Laboratório de Ecotoxicologia,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezado/a, boa tarde!
+Venho por meio deste solicitar a retirada de dois ares condicionados da piscicultura para ser instalado no Laboratório de Ecotoxicologia.
+Agradeço.
+Atenciosamente.,",,
+2026100297,Relatório de Viagens CPF-04: Bomba de incêndio em modo manual,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100298,Relatório de Viagens CPF-06: Corrosão na fixação do elevador.,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100299,"Relatório de Viagens CPF-13: Infiltração por fachadas, janelas e pisos",Manutenção Preventiva > Vistoria em Instalações,,,
+2026100301,Relatório de Viagens CPF-12: Portas do auditório e fachada,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100303,Relatório de Viagens CPF-14: Piso quebrado no último pavimento,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100306,Relatório de Viagens CPF-15: Drenagem do estacionamento,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100307,Relatório de Viagens CPF-16: Corrosão em hidrante e tubulação de incêndio,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100308,Relatório de Viagens CPF-17: Corrosão em elementos estruturais,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100316,Ar condicionado apresenta mensagem de erro E1,Climatização > Ar condicionado split,,,
+2026100317,Relatório de Viagens CPF-18: Alagamento da área técnica,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100318,Relatório de Viagens CPF-19: Trincas na laje de cobertura,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100319,Relatório de Viagens CPF-20: Wetland. Nível insuficiente,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100320,Relatório de Viagens CPF-21: Infiltração na casa de máquinas,Manutenção Preventiva > Vistoria em Instalações,,,
