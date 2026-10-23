@@ -23512,7 +23512,7 @@ Sala 204 - Dois aparelhos de 22 mil btus
 Os equipamentos estão disponíveis no almoxarifado do CJA.",Instalação de aparelhos de ar condicionado; Instalação de aparelhos de ar condicionado,Instalação de aparelhos de ar condicionado; Instalação de 6 aparelhos de 22.000 BTU's
 2023080128,Instalação de aparelho de ar condicionado,Climatização > Ar condicionado split,"Solicito a instalação de aparelho de ar condicionado na sala dos professores no NVGA
 Capacidade: 30 mil btus",,
-2023080129,Conserto de fechaduras,"Estrutura Predial > Esquadrias, porta, portão e janelas",Solicito o conserto das fechaduras das portas de emergência da escada e do Laboratório de Expressões Corporais (antigo auditório),,
+2023080129,Conserto de fechaduras,"Estrutura Predial > Esquadrias, porta, portão e janelas",Solicito o conserto das fechaduras das portas de emergência da escada e do Laboratório de Expressões Corporais (antigo auditório),Instalação de ventiladores no hall de acesso à reitoria,Solicito instalação de 2 ventiladores de parede no hall de entrada da Reitoria
 2023080131,Fibra óptica_fábrica de chocolate e ESARM - CEPLAC,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Prezados/as responsáveis
 Coman/Dinfra/Propa
 UFSB
@@ -38707,7 +38707,7 @@ Grata!",,
 2026080639,Solicitação de reparo em tubulação de água,Manutenção Preventiva > Hidráulica,,,
 2026080640,AR DA SALA TECNICA,Climatização > Ar condicionado split,"Prezados,
 Um dos equipamentos de ar condicionado da sala técnica (DG) não está refrigerando.
-Solicitamos manutenção desse equipamento.",Reposição de gás em ar condicionado,Reposição de gás em ar condicionado
+Solicitamos manutenção desse equipamento.",Reposição de gás em ar condicionado; Complementar de Reposição de gás em ar condicionado,Reposição de gás em ar condicionado; Complementar de Reposição de gás em ar condicionado
 2026080645,"À Equipe de Manutenção, Solicito manutenção/troca de baterias nos Nobr",Elétrica > Nobreak,"À Equipe de Manutenção,
 Solicito manutenção/troca de baterias nos Nobreaks SMS, reservados na Sala de Manutenção de TI para posterior devolução nas salas de distribuição e redes.
 Dispomos atualmente das Baterias.",,
@@ -39582,7 +39582,7 @@ Desde já, agradeço pela atenção.",,
 2026100283,Vistoria no conforto médico do HMTF,"Estrutura Predial > Esquadrias, porta, portão e janelas","Prezados, boa tarde!
 Solicito, por gentileza, uma vistoria geral nas instalações do conforto médico do HMTF, para identificar possíveis problemas e avaliar os reparos necessários, incluindo a verificação das esquadrias, pois algumas não estão funcionando corretamente.
 Atenciosamente,",,
-2026100294,Retirada de dois ares condicionados da piscicultura para o Laboratório de Ecotoxicologia,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezado/a, boa tarde!
+2026100294,Retirada de dois ares condicionados da piscicultura para o Laboratório de Ecotoxicologia,Climatização > Ar condicionado split,"Prezado/a, boa tarde!
 Venho por meio deste solicitar a retirada de dois ares condicionados da piscicultura para ser instalado no Laboratório de Ecotoxicologia.
 Agradeço.
 Atenciosamente.,",,
@@ -39610,27 +39610,84 @@ Solicito orientação da equipe sobre como proceder.",,
 
 No caso das paredes, recomendo aplicação de argamassa polimérica Viapol em trechos mais afetados próximos ao piso. Se for detectado alguma conexão com goteiras, levantar para realizarmos a substituição.",,
 2026100322,Solicitação de Verificação dos Portões – Complexo I,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
-2026100323,Desentupimento de bacia sanitária – Complexo I,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026100323,Desentupimento de bacia sanitária – Complexo I,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, bom dia!
+Solicito, por gentileza, a verificação e a realização do desentupimento de uma bacia sanitária localizada no Complexo I, a fim de restabelecer seu funcionamento adequado.
+Atenciosamente,",,
 2026100324,Substituição de bacia sanitária – Complexo I,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
 2026100325,"Prezados/as colegas,  Solitico aumento de quota para meu email institu",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
 2026100326,"Prezado, bom dia.  Poderia por gentileza verificar um vazamento do tet",Estrutura Predial > Alvenaria / Pisos / Estrutura,,,
-2026100334,Relatório de Viagens CPF-38: Alcance do gerador do N.P,Manutenção Preventiva > Vistoria em Instalações,,,
-2026100330,Limpeza de caixas e quadros eletricos,Elétrica > Instalações elétricas,,,
-2026100331,Verificação de Ar-Condicionado – Conforto Médico do HMTF,Climatização > Ar condicionado split,,,
-2026100335,Relatório de Viagens CPF-31: Limpeza de vigas e eletrocalhas,Manutenção Preventiva > Vistoria em Instalações,,,
-2026100336,Relatório de Viagens CPF-32: Limpeza da cúpula,Manutenção Preventiva > Vistoria em Instalações,,,
-2026100337,Relatório de Viagens CPF-33: Pintura em meia parede de salas de aula,Manutenção Preventiva > Vistoria em Instalações,,,
-2026100341,Relatório de Viagens CPF-34: Tampas do reservatório inferior,Manutenção Preventiva > Vistoria em Instalações,,,
-2026100345,Relatório de Viagens CPF-39: Painel do Gerador apagado,Manutenção Preventiva > Vistoria em Instalações,,,
-2026100349,Ar condicionado com problemas.,Climatização > Ar condicionado split,,,
-2026100350,Aparelho de Ar Condicionado Não Está Refrigerando,Climatização > Ar condicionado split,,,
-2026100352,Solicitação de instalação de mural de avisos,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026100354,Vazamento no sanitário feminino e masculino no pavilhão Pórtico,Estrutura Predial > Alvenaria / Pisos / Estrutura,,,
-2026100357,Instalação de banner conex,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026100360,Substituição da Porta de Vidro da SECAD,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026100334,Relatório de Viagens CPF-38: Alcance do gerador do N.P,Manutenção Preventiva > Vistoria em Instalações,"Foi informado que o alcance do gerador do Núcleo Pedagógico atende apenas a iluminação do térreo e do 1º andar, sem cobertura para o 2º pavimento.
+Anderson, essa informação procede?
+Em caso positivo, solicito confirmação de que o dimensionamento está de acordo com o projetado e avaliação se cabe manter dessa forma.",,
+2026100330,Limpeza de caixas e quadros eletricos,Elétrica > Instalações elétricas,"fazer a limpeza e aperto de todos os quadros elétricos, limpeza e expeçam das caixas de passagem para verificação de emendas onde precisão de ter o isolamento refeito o conexões substituídas, para garantir a segurança e bom funcionamento dos circuitos elétricos",,
+2026100331,Verificação de Ar-Condicionado – Conforto Médico do HMTF,Climatização > Ar condicionado split,"Prezados, boa tarde!
+Solicito, por gentileza, a verificação do aparelho de ar-condicionado localizado no conforto médico do HMTF, pois está apresentando um código de erro relacionado a um possível vazamento de gás refrigerante.
+Atenciosamente,",,
+2026100335,Relatório de Viagens CPF-31: Limpeza de vigas e eletrocalhas,Manutenção Preventiva > Vistoria em Instalações,"Foi identificado vários pontos com poeira e teias de aranha nas vigas, tubulações e eletrocalhas próximos à laje cuja limpeza estão além da capacidade da equipe local.
+Avaliar com equipe do campus a possibilidade de contratação de limpeza especializada e reavaliar a ausência de forro em locais abertos expostos à muita poeira e circulação de carros.",,
+2026100336,Relatório de Viagens CPF-32: Limpeza da cúpula,Manutenção Preventiva > Vistoria em Instalações,"A cúpula e estrutura da cobertura estão sujas; painéis solares na cobertura.
+Verificar possibilidade de contratação separada para limpar a cúpula, tendo em vista o trabalho em altura, e avaliar incluir a limpeza dos painéis solares em conjunto com a cúpula em contrato futuro de manutenção.",,
+2026100337,Relatório de Viagens CPF-33: Pintura em meia parede de salas de aula,Manutenção Preventiva > Vistoria em Instalações,"Identificado marcas de uso nas parede nas salas; a pintura geral está conservada.
+Levantar área de ""meia parede"" das salas de aula para orçamento com pintura acrílica lavável.",,
+2026100341,Relatório de Viagens CPF-34: Tampas do reservatório inferior,Manutenção Preventiva > Vistoria em Instalações,"As tampas de concreto do reservatório inferior são muito pesadas para operação e limpeza; também parecem apresentar possível infiltração na laje de cobertura.
+Anderson, verificar na região empresas ou serralherias para fazer propostas de tampas em aço reforçado para o local.
+Também precisamos elevar as paredes das caixas uma ou duas fiadas de bloco para evitar que a água de chuva escorra para dentro, nossa equipe faz isso? Como sugere?",,
+2026100345,Relatório de Viagens CPF-39: Painel do Gerador apagado,Manutenção Preventiva > Vistoria em Instalações,"O painel eletrônico do gerador do N.P está com mau funcionamento.
+Procurar empresas na cidade para fazer proposta de reparo",,
+2026100349,Ar condicionado com problemas.,Climatização > Ar condicionado split,"Saudações!
+O ar condicionado da sala da coleção de Formicidae do Laboratório de Proteção Florestal/Mirmecologia parou de esfriar, está apenas circulando o ar.
+Gostaria de solicitar que verificassem este aparelho com urgência, pois a humidade dentro da sala está altissima o que coloca em risco toda a coleção.
+Desde já agradeço.
+Att.,
+Alexandre.",,
+2026100350,Aparelho de Ar Condicionado Não Está Refrigerando,Climatização > Ar condicionado split,"Prezados, bom dia.
+
+Solicitamos manutenção em aparelho de ar condicionado localizado no Setor de Apoio Administrativo, que não está refrigerando.
+
+At.te,",Substituição de capacitor de ar condicionado,Substituição de capacitor de ar condicionado
+2026100352,Solicitação de instalação de mural de avisos,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, por gentileza, solicito a instalação de um mural de avisos do CFCS no complexo 2, no térreo, para abaixo da placa ""setor nível C0""¡",,
+2026100354,Vazamento no sanitário feminino e masculino no pavilhão Pórtico,Estrutura Predial > Alvenaria / Pisos / Estrutura,"""Bom dia! Dois sanitários (um no banheiro feminino e um no banheiro masculino) aqui no pavilhão Pórtico estão com vazamento ao dar descarga. A situação foi informada hoje pela colega terceirizada responsável pela limpeza.""",,
+2026100357,Instalação de banner conex,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Solicito instalação de banner na parede do térreo, complexo 2, para conex",,
+2026100360,Substituição da Porta de Vidro da SECAD,"Estrutura Predial > Esquadrias, porta, portão e janelas","Prezados, boa tarde.
+
+Solicitamos a substituição da porta de vidro da Secretaria Acadêmica do CJA, que estilhaçou, e a utilização de uma porta/tapume provisório até que seja realizada a substituição da referida porta.
+
+At.te,",,
 2026100362,"Prezado, boa tarde.  A porta de vidro da entrada da SEcad caiu, poderi","Estrutura Predial > Esquadrias, porta, portão e janelas",,,
-2026100374,limite da armazenamento,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
-2026100375,Manutenção Preventiva - Limpeza Ralos Cobertura Reitoria,"Manutenção Preventiva > Telhados, calhas, rufos, etc.",,,
-2026100376,Relatório de Viagens CPF-05: Segurança contra incêndio CPF,Manutenção Preventiva > Vistoria em Instalações,,,
-2026100377,Relatório de Viagens CPF-07: Piso tátil e estacionamento,Manutenção Preventiva > Vistoria em Instalações,,,
-2026100378,Relatório de Viagens CPF-23: Estoque da contratada com poucos itens,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100374,limite da armazenamento,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Estou à frente da Coordenação do Curso de Direito e venho enfrentando um problema recorrente com a caixa de e-mail institucional direito@ufsb.edu.br , que frequentemente atinge o limite de armazenamento.
+Como não é possível excluir diversas mensagens, uma vez que elas constituem registros e comprovantes das atividades e dos encaminhamentos realizados ao longo da gestão, gostaria de solicitar a ampliação da capacidade de armazenamento dessa conta de e-mail.
+Você poderia, por gentileza, me auxiliar nessa demanda ou indicar o procedimento necessário para viabilizar essa ampliação?
+Desde já, agradeço pela atenção e pelo apoio.",,
+2026100375,Manutenção Preventiva - Limpeza Ralos Cobertura Reitoria,"Manutenção Preventiva > Telhados, calhas, rufos, etc.","Verificação e limpeza dos ralos e calhas da cobertura e das áreas externas (jardins e passeios) para evitar entupimentos e áreas alagadas.
+Registrar com foto a situação dos ralos antes de fechar o chamado.",,
+2026100376,Relatório de Viagens CPF-05: Segurança contra incêndio CPF,Manutenção Preventiva > Vistoria em Instalações,"Os blocos de aulas, pavilhão administrativo e biblioteca do CPF operam sem iluminação de emergência em LED, alarme de incêndio ou mangueiras: apenas extintores.
+Peço que a equipe avalie, caso haja projeto para a área, se estes sistemas são necessários, caso contrário, definir a adequação de segurança contra incêndio no local",,
+2026100377,Relatório de Viagens CPF-07: Piso tátil e estacionamento,Manutenção Preventiva > Vistoria em Instalações,"O piso tátil instalado na entrada do Pavilhão Administrativo atravessa a entrada e o local onde os carros são estacionados, fazendo com que alguns veículos estacionem sobre a faixa.
+Sugiro projeto de comunicação visual para demarcar e sinalizar a rota, impedindo o estacionamento sobre ela.",,
+2026100378,Relatório de Viagens CPF-23: Estoque da contratada com poucos itens,Manutenção Preventiva > Vistoria em Instalações,"Foi identificado que o estoque de materiais e peças da contratada no campus está deficiente.
+Anderson, listar os materiais de maior consumo recorrente no campus para que sejam adquiridos via chamado.",,
+2026100379,Relatório de Viagens CPF-24: Acesso aos reservatórios superiores,Manutenção Preventiva > Vistoria em Instalações,"O acesso aos reservatórios superiores do Pavilhão de Aulas e do Bloco administrativo exigem destelhamento, o que impede a limpeza em dias de chuva e dificulta o trabalho da equipe.
+Avaliar com equipe a elaboração de um acesso permanente e seguro para as manutenções recorrentes",,
+2026100380,Relatório de Viagens CPF-35: Gerador não atende os pavilhões.,Manutenção Preventiva > Vistoria em Instalações,"O gerador não abastece os pavilhões de aula e a biblioteca.
+Avaliar expansão dos setores atendidos haja vista o maior efetivo de pessoal se concentrar, à noite, nos locais não atendidos pelo gerador.",,
+2026100381,Relatório de Viagens CPF-25: Pintura e conservação,Manutenção Preventiva > Vistoria em Instalações,"A pintura externa do campus está desgastada pelo tempo, em alguns locais existem marcas de uso e pichações. As paredes internas estão bem conservadas mas podem receber uma tinta lavável em meia parede para facilitar a limpeza e durabilidade.
+
+Anderson,
+Peço que avalie com a equipe um levantamento das áreas de pintura, interna e externa, dos pavilhões de aula e administrativo para avaliação dos custos.",,
+2026100382,Relatório de Viagens CPF-26: Espelhos e portas de sanitários,Manutenção Preventiva > Vistoria em Instalações,"Aderson,
+Levantar quantidade e dimensões das portas e espelhos danificados dos banheiros do pavilhão de aulas e administrativo para substituição.
+Caso algumas portas precisem apenas de pintura e manutenção, informar quantidade para abertura de O.S",,
+2026100383,Relatório de Viagens CPF-27: Condensadoras de alumínio,Manutenção Preventiva > Vistoria em Instalações,"Foi informado pela equipe de campo que as condensadoras de alumínio do campus costumam dar mais problemas que aquelas com cobre como material.
+Informar desempenho abaixo do esperado para equipe de projetos e compras.",,
+2026100384,Relatório de Viagens CPF-28: Caixa de passagem externa sem proteção.,Manutenção Preventiva > Vistoria em Instalações,"Identificado uma caixa de passagem instalada em parede externa, sem proteção contra chuva.
+
+Anderson, avaliar com a equipe a construção de um pequeno telhado com calha metálica pintada de branco ou material similar para proteger a caixa.",,
+2026100385,Problema de manutenção,Estrutura Predial > Infiltração,,,
+2026100386,Relatório de Viagens CPF-03: Alarme de incêndio com falhas,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100388,Solicitação de ampliação da capacidade de armazenamento do e-mail institucional,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026100390,Sala IHAC,"Estrutura Predial > Telhados, calhas, rufos, etc.",,,
+2026100397,Tomadas não funcionam,Elétrica > Instalações elétricas,,,
+2026100404,Instalação de ventiladores no hall de acesso à reitoria,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026100406,Relatório de Viagens CPF-01: Entrada de água na subestação,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100407,Relatório de Viagens CPF-22: Componentes elétricos externos.,Manutenção Preventiva > Vistoria em Instalações,,,
+2026100408,"Relatório de Viagens CPF-30: Fachada, esquadrias e entorno",Manutenção Preventiva > Vistoria em Instalações,,,
