@@ -39682,7 +39682,7 @@ Informar desempenho abaixo do esperado para equipe de projetos e compras.",,,Man
 2026100384,Relatório de Viagens CPF-28: Caixa de passagem externa sem proteção.,2026-10-21 07:51,Processando (atribuído),,,,Campus Paulo Freire,,,,,Manutenção Preventiva > Vistoria em Instalações,,,,0,,,,"-17.53294195326467, -39.72258736378763",,"Identificado uma caixa de passagem instalada em parede externa, sem proteção contra chuva.
 
 Anderson, avaliar com a equipe a construção de um pequeno telhado com calha metálica pintada de branco ou material similar para proteger a caixa.",,,Manutenção Preventiva > Vistoria em Instalações,,0.14,LSTM_BAIXA_CONF,Baixa
-2026100385,Problema de manutenção,2026-10-21 08:03,Processando (atribuído),,,,Reitoria,,,,,Estrutura Predial > Infiltração,,,,0,,,,"-14.788316740297745, -39.27483123836992",,,,,Estrutura Predial > Infiltração,,0.42,LSTM_BAIXA_CONF,Baixa
+2026100385,Problema de manutenção,2026-10-21 08:03,Solucionado,,,,Reitoria,,,,,Estrutura Predial > Infiltração,,,,0,,,,"-14.788316740297745, -39.27483123836992",,,,,Estrutura Predial > Infiltração,,0.42,LSTM_BAIXA_CONF,Baixa
 2026100386,Relatório de Viagens CPF-03: Alarme de incêndio com falhas,2026-10-21 08:11,Novo,,,,Campus Paulo Freire,,,,,Manutenção Preventiva > Vistoria em Instalações,,,,0,,,,"-17.534582646209113, -39.72461446135704",,,,,Manutenção Preventiva > Vistoria em Instalações,,0.26,LSTM_BAIXA_CONF,Alta
 2026100388,Solicitação de ampliação da capacidade de armazenamento do e-mail institucional,2026-10-21 09:09,Solucionado,,,,Campus Sosígenes Costa,,,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,,0,,,,"-16.424101724531493, -39.13626270686903",,,,,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,0.73,LSTM_BAIXA_CONF,Baixa
 2026100390,Sala IHAC,2026-10-21 09:54,Solucionado,,,,Campus Sosígenes Costa,,,,,"Estrutura Predial > Telhados, calhas, rufos, etc.",,,,0,,,,"-16.424036771315144, -39.13615281834591",,,,,"Estrutura Predial > Telhados, calhas, rufos, etc.",,0.36,LSTM_BAIXA_CONF,Baixa
@@ -39691,7 +39691,7 @@ Anderson, avaliar com a equipe a construção de um pequeno telhado com calha me
 2026100406,Relatório de Viagens CPF-01: Entrada de água na subestação,2026-10-22 15:30,Novo,,,,Campus Paulo Freire,,,,,Manutenção Preventiva > Vistoria em Instalações,,,,0,,,,"-17.534045350581277, -39.72401874491888",,,,,Manutenção Preventiva > Vistoria em Instalações,,0.14,LSTM_BAIXA_CONF,Baixa
 2026100407,Relatório de Viagens CPF-22: Componentes elétricos externos.,2026-10-22 15:37,Processando (atribuído),,,,Campus Paulo Freire,,,,,Manutenção Preventiva > Vistoria em Instalações,,,,0,,,,"-17.534045350581277, -39.72401874491888",,,,,Manutenção Preventiva > Vistoria em Instalações,,0.34,LSTM_BAIXA_CONF,Baixa
 2026100408,"Relatório de Viagens CPF-30: Fachada, esquadrias e entorno",2026-10-22 15:43,Processando (atribuído),,,,Campus Paulo Freire,,,,,Manutenção Preventiva > Vistoria em Instalações,,,,0,,,,"-17.534045350581277, -39.72401874491888",,,,,Manutenção Preventiva > Vistoria em Instalações,,0.2,LSTM_BAIXA_CONF,Baixa
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2026100413,Instalação elétrica,2026-10-23 09:48,Novo,,,,Reitoria,,,,,Elétrica > Instalações elétricas,,,,0,,,,"-14.788316740297745, -39.27483123836992",,,,,Elétrica > Instalações elétricas,,0.39,LSTM_BAIXA_CONF,Baixa
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
