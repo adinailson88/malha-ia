@@ -1,70 +1,70 @@
 {
-  "gerado_em_utc": "2026-10-29T13:43:14.363310Z",
+  "gerado_em_utc": "2026-10-30T13:34:00.073160Z",
   "fonte": "https://raw.githubusercontent.com/adinailson88/classificacao-chamados/main/docs/dados/registros_linear_svc.json",
   "criterio": "maior acerto_validado em avaliacao_final.json (verdade humana M/N/P) — seletor adaptativo",
   "melhor_modelo": "linear_svc",
-  "acerto_validado": 0.8163,
+  "acerto_validado": 0.8146,
   "ic95": [
-    0.8099,
-    0.8227
+    0.8082,
+    0.8209
   ],
-  "n": 14322,
-  "validados_na_bancada": 14322,
+  "n": 14559,
+  "validados_na_bancada": 14559,
   "ranking": [
     {
       "modelo": "linear_svc",
-      "acerto_validado": 0.8163,
+      "acerto_validado": 0.8146,
       "ic95": [
-        0.8099,
-        0.8227
+        0.8082,
+        0.8209
       ]
     },
     {
       "modelo": "sgd",
-      "acerto_validado": 0.7972,
+      "acerto_validado": 0.7957,
       "ic95": [
-        0.7904,
-        0.8035
+        0.7893,
+        0.8021
       ]
     },
     {
       "modelo": "extra_trees",
-      "acerto_validado": 0.7947,
+      "acerto_validado": 0.7913,
       "ic95": [
-        0.7877,
-        0.8013
+        0.7847,
+        0.7977
       ]
     },
     {
       "modelo": "regressao_logistica",
-      "acerto_validado": 0.7914,
+      "acerto_validado": 0.7899,
       "ic95": [
-        0.7848,
-        0.7979
+        0.7834,
+        0.7968
       ]
     },
     {
       "modelo": "random_forest",
-      "acerto_validado": 0.7859,
+      "acerto_validado": 0.7827,
       "ic95": [
-        0.7789,
-        0.7928
+        0.7761,
+        0.7893
       ]
     },
     {
       "modelo": "naive_bayes",
-      "acerto_validado": 0.7051,
+      "acerto_validado": 0.7074,
       "ic95": [
-        0.6973,
-        0.7125
+        0.7003,
+        0.7148
       ]
     },
     {
       "modelo": "lstm",
-      "acerto_validado": 0.7049,
+      "acerto_validado": 0.7022,
       "ic95": [
-        0.6972,
-        0.7122
+        0.6951,
+        0.7099
       ]
     }
   ],
