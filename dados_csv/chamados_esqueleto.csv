@@ -39600,7 +39600,7 @@ Mateus",,
 2026100264,"Inspeção Luminária de emergência - CPF COMPLEXO 2 LAPPSI, LAB. CIÊNCIA DADOS, ClÍNICA PSICOLOGIA",Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
 2026100265,Inspeção Luminária de emergência - CPF POSTOS DE SAÚDE,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
 2026100266,Inspeção Luminária de emergência - CPF INTERNATOS,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
-2026100267,Inspeção Luminária de emergência - CPF Núcleo Pedagógico,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",,
+2026100267,Inspeção Luminária de emergência - CPF Núcleo Pedagógico,Manutenção Preventiva > Iluminação,"Solicito a verificação do funcionamento das luminárias de emergência. Para este serviço, retire o equipamento da tomada e verifique se a luz se acende, o que garante seu correto funcionamento. Preencha a planilha em anexo informando a localização e situação do funcionamento.",Substituição de luminárias de emergência,Substituição de luminárias de emergência
 2026100271,"Prezados/as,     Solicito o Reparo no ar condiconado pois o mesmo esta",Climatização > Ar condicionado split,"Prezados/as,
 
 Solicito o Reparo no ar condiconado pois o mesmo esta caindo agua que quase molhou a estação de trabalho que ultilizamos.
@@ -39653,7 +39653,7 @@ Solicito orientação da equipe sobre como proceder.",,
 No caso das paredes, recomendo aplicação de argamassa polimérica Viapol em trechos mais afetados próximos ao piso. Se for detectado alguma conexão com goteiras, levantar para realizarmos a substituição.",,
 2026100322,Solicitação de Verificação dos Portões – Complexo I,"Estrutura Predial > Esquadrias, porta, portão e janelas","Prezados, bom dia!
 Solicito, por gentileza, a verificação dos portões de entrada e dos fundos do Complexo I, pois ambos estão apresentando problemas no fechamento.
-Atenciosamente,",,
+Atenciosamente,",Substituição de fechaduras,Substituição de fechaduras
 2026100323,Desentupimento de bacia sanitária – Complexo I,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados, bom dia!
 Solicito, por gentileza, a verificação e a realização do desentupimento de uma bacia sanitária localizada no Complexo I, a fim de restabelecer seu funcionamento adequado.
 Atenciosamente,",,
@@ -39773,6 +39773,12 @@ Anderson, levantar quantidade de placas para troca. Vamos colocar algum material
 Sobre a passarela, avaliar com equipe se podemos apenas comprar a tinta metálica e fazer nós mesmos a lavagem do policarbonato e pintura da estrutura ou se chamamos uma empresa para orçamento.",,
 2026100437,Qualidade da água,Hidrossanitária > Hidráulica,Favor verificar a qualidade da água nas instalações da reitoria pois fui informado que está com cheiro forte e desagradável.,,
 2026100438,Mudança de ponto de fio e rede de internet e mudança de layout de sala,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,Realizamos uma mudança de sala e estamos precisando adaptar pontos de rede elétrica e de internet e mudar o layout dos móveis inclusive para receber mais dois servidores no setor.,,
-2026100443,Aluguel de gerador para atender CPF2,Elétrica > Gerador,Aluguel de gerador para atender CPF2,,
+2026100443,Aluguel de gerador para atender CPF2,Elétrica > Gerador,Aluguel de gerador para atender CPF2,Aluguel de gerador para atender CPF2,Aluguel de gerador para atender CPF2
 2026100447,Manutenção Preventiva Bimensal - Gerador 75 kVA - Reitoria,Manutenção Preventiva > Gerador,"Solicito manutenção preventiva bimensal do gerador de 75 kVA do Campus Sosígenes Costa conforme documento em anexo. Favor seguir roteiro conforme Anexo I, pág. 04 e 05. Caso seja detectado alguma anomalia ou algum dos serviços descritos no documento não foi feito, favor informar descrever nesse chamado ou informar a Coordenação de Manutenção e a Coordenação de Campus.",,
 2026100463,Pia do banheiro com vazamento,Estrutura Predial > Infiltração,"Solicito a verificação da pia do banheiro do setor de laboratório, pois a mesma se encontra com vazamento.",,
+2026100467,Substituição de para-raio,Elétrica > Subestação,"Solicito a substituição de para-raio na subestação do Complexo 2.
+Motivo: Queimou após um raio cair sobre o campus.",Substituição de para-raio,Substituição de para-raio
+2026100472,Torneira quebrada,Hidrossanitária > Hidráulica,"Prezados, boa tarde.
+Solicito troca de torneira quebrada no laboratório de microbiologia, imunologia, parasitologia e patologia.
+Atensionamente,
+Thiago",,
