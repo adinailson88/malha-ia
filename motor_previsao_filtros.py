@@ -1122,6 +1122,41 @@ def parse_valor_chamado(valor_raw):
 # 10. EXTRATOR DE SÃ‰RIE DE CUSTOS (coluna Q â€” R$/mÃªs)
 # =====================================================================
 
+def parse_data_abertura(data_str):
+    """Interpreta a data do chamado sem nunca inverter dia e mes.
+
+    - AAAA-MM-DD[ T]HH:MM[:SS][.fff][Z]: ano primeiro, lido como ISO 8601. O pandas com
+      dayfirst=True trocava dia e mes quando o dia era <= 12 (ex.: 2026-05-06 virava 05/06).
+    - DD/MM/AAAA[ HH:MM[:SS]]: formato brasileiro, dia primeiro.
+    Qualquer outro formato devolve NaT; o chamador conta os descartes e avisa.
+    """
+    s = str(data_str).strip()
+    if not s:
+        return pd.NaT
+    if len(s) >= 10 and s[4] == '-' and s[7] == '-' and s[:4].isdigit():
+        d = pd.to_datetime(s, format='ISO8601', errors='coerce')
+        if not pd.isna(d) and d.tz is not None:
+            d = d.tz_convert('America/Bahia').tz_localize(None)
+        return d
+    for fmt in ('%d/%m/%Y %H:%M:%S', '%d/%m/%Y %H:%M', '%d/%m/%Y'):
+        d = pd.to_datetime(s, format=fmt, errors='coerce')
+        if not pd.isna(d):
+            return d
+    return pd.NaT
+
+
+def _verificar_datas_invalidas(n_invalidas, n_total, limite=0.05):
+    """Avisa sobre datas descartadas e interrompe se forem mais que `limite` do total."""
+    if n_invalidas <= 0:
+        return
+    print(f"[Datas] {n_invalidas} de {n_total} data(s) de abertura em formato nao reconhecido foram descartadas.")
+    if n_total and n_invalidas / n_total > limite:
+        raise ValueError(
+            f"{n_invalidas} de {n_total} datas de abertura em formato nao reconhecido "
+            f"(limite {limite:.0%}); verifique o formato da coluna de data."
+        )
+
+
 def extrair_serie_custo(dados_linhas):
     """[v4.0.4] Variante de extrair_serie_temporal que agrega por SOMA da
     coluna Q (Valor do chamado) em vez de COUNT. Devolve DataFrame com
@@ -1136,18 +1171,18 @@ def extrair_serie_custo(dados_linhas):
     """
     agora = datetime.now(FUSO_BAHIA)
     registros = []
+    n_datas_lidas = 0
+    n_datas_invalidas = 0
     for linha in dados_linhas:
         if len(linha) <= max(COL_DATA_ABERTURA, COL_VALOR):
             continue
         data_str = (linha[COL_DATA_ABERTURA] or '').strip()
         if not data_str:
             continue
-        data = pd.to_datetime(data_str, format='%d/%m/%Y %H:%M:%S', errors='coerce')
+        n_datas_lidas += 1
+        data = parse_data_abertura(data_str)
         if pd.isna(data):
-            data = pd.to_datetime(data_str, format='%d/%m/%Y', errors='coerce')
-        if pd.isna(data):
-            data = pd.to_datetime(data_str, dayfirst=True, errors='coerce')
-        if pd.isna(data):
+            n_datas_invalidas += 1
             continue
         try:
             if data.tz is None and data > agora.replace(tzinfo=None):
@@ -1160,6 +1195,8 @@ def extrair_serie_custo(dados_linhas):
         if valor is None or valor <= 0:
             continue
         registros.append({'data': data, 'valor': valor})
+
+    _verificar_datas_invalidas(n_datas_invalidas, n_datas_lidas)
 
     if not registros:
         return None

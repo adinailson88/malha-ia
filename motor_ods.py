@@ -279,6 +279,29 @@ def _ler_area_atual_por_campus():
     return {}
 
 
+def parse_data_abertura(data_str):
+    """Interpreta a data do chamado sem nunca inverter dia e mes.
+
+    - AAAA-MM-DD[ T]HH:MM[:SS][.fff][Z]: ano primeiro, lido como ISO 8601. O pandas com
+      dayfirst=True trocava dia e mes quando o dia era <= 12 (ex.: 2026-05-06 virava 05/06).
+    - DD/MM/AAAA[ HH:MM[:SS]]: formato brasileiro, dia primeiro.
+    Qualquer outro formato devolve NaT; o chamador conta os descartes e avisa.
+    """
+    s = str(data_str).strip()
+    if not s:
+        return pd.NaT
+    if len(s) >= 10 and s[4] == '-' and s[7] == '-' and s[:4].isdigit():
+        d = pd.to_datetime(s, format='ISO8601', errors='coerce')
+        if not pd.isna(d) and d.tz is not None:
+            d = d.tz_convert('America/Bahia').tz_localize(None)
+        return d
+    for fmt in ('%d/%m/%Y %H:%M:%S', '%d/%m/%Y %H:%M', '%d/%m/%Y'):
+        d = pd.to_datetime(s, format=fmt, errors='coerce')
+        if not pd.isna(d):
+            return d
+    return pd.NaT
+
+
 def calcular_indicadores_ods_por_campus(dados_linhas):
     """[v4.0.3] Calcula indicadores brutos por campus para painel ODS.
 
@@ -354,8 +377,8 @@ def calcular_indicadores_ods_por_campus(dados_linhas):
                 if len(l) <= max(COL_DATA_ABERTURA, COL_DATA_CONCLUSAO):
                     continue
                 try:
-                    dt_ab = pd.to_datetime(l[COL_DATA_ABERTURA], dayfirst=True, errors='coerce')
-                    dt_cc = pd.to_datetime(l[COL_DATA_CONCLUSAO], dayfirst=True, errors='coerce')
+                    dt_ab = parse_data_abertura(l[COL_DATA_ABERTURA])
+                    dt_cc = parse_data_abertura(l[COL_DATA_CONCLUSAO])
                 except Exception:
                     continue
                 if pd.isna(dt_ab) or pd.isna(dt_cc) or dt_cc < dt_ab:
