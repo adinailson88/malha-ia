@@ -76,9 +76,9 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Iluminação
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Instalações elétricas
-Projetos e Reformas > Reforma
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Instalações elétricas
-Estrutura Predial > Alvenaria / Pisos / Estrutura
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Elétrica > Iluminação
 Elétrica > Instalações elétricas
 Suprimentos / Apoio Técnico > Materiais
@@ -103,7 +103,7 @@ Elétrica > Instalações elétricas
 Climatização > Ar condicionado split
 Projetos e Reformas > Reforma
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
-Suprimentos / Apoio Técnico > Materiais
+Instalação de Acessórios e Mobiliário > Placas de identificação
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Iluminação
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
@@ -554,7 +554,7 @@ Elétrica > Instalações elétricas
 "Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
 Projetos e Reformas > Reforma
 Estrutura Predial > Infiltração
-Projetos e Reformas > Reforma
+"Estrutura Predial > Esquadrias, porta, portão e janelas"
 TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Climatização > Ar condicionado split
 Elétrica > Iluminação
@@ -1074,7 +1074,7 @@ Elétrica > Instalações elétricas
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Instalações elétricas
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Instalação de Acessórios e Mobiliário > Placas de identificação
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
@@ -1164,7 +1164,7 @@ Projetos e Reformas > Reforma
 Manutenção Preventiva > Gerador
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Elétrica > Iluminação
 Hidrossanitária > Hidráulica
@@ -1201,7 +1201,7 @@ Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
@@ -1311,7 +1311,7 @@ Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
@@ -1355,7 +1355,7 @@ Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
@@ -1496,19 +1496,19 @@ Elétrica > Instalações elétricas
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Projetos e Reformas > Reforma
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Estrutura Predial > Alvenaria / Pisos / Estrutura
+Manutenção Preventiva > Ar condicionado split
+TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
 Projetos e Reformas > Reforma
 Elétrica > Instalações elétricas
 Manutenção Preventiva > Esgoto
@@ -1544,19 +1544,19 @@ Elétrica > Instalações elétricas
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Hidrossanitária > Hidráulica
@@ -1660,14 +1660,14 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Climatização > Ar condicionado split
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
-Estrutura Predial > Alvenaria / Pisos / Estrutura
+Estrutura Predial > Forro
 Elétrica > Iluminação
 "Estrutura Predial > Telhados, calhas, rufos, etc."
 Climatização > Ar condicionado split
@@ -1694,7 +1694,7 @@ Elétrica > Iluminação
 Manutenção Preventiva > Nobreak
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
@@ -1721,20 +1721,20 @@ Manutenção Preventiva > Esgoto
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
@@ -1838,7 +1838,7 @@ Manutenção Preventiva > Vistoria em Instalações
 Manutenção Preventiva > Vistoria em Instalações
 Manutenção Preventiva > Vistoria em Instalações
 Manutenção Preventiva > Vistoria em Instalações
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 "Estrutura Predial > Telhados, calhas, rufos, etc."
 Instalação de Acessórios e Mobiliário > Placas de identificação
@@ -1852,7 +1852,7 @@ Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Elétrica > Instalações elétricas
@@ -1869,20 +1869,20 @@ Hidrossanitária > Hidráulica
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Instalações elétricas
 Elétrica > Instalações elétricas
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Climatização > Ar condicionado split
@@ -2009,7 +2009,7 @@ Projetos e Reformas > Projeto
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Hidrossanitária > Hidráulica
@@ -2023,7 +2023,7 @@ Suprimentos / Apoio Técnico > Materiais
 Outros > Erro de chamado
 Outros > Erro de chamado
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Hidrossanitária > Hidráulica
 Elétrica > Instalações elétricas
 Climatização > Ar condicionado split
@@ -2046,20 +2046,20 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -2213,7 +2213,7 @@ Estrutura Predial > Alvenaria / Pisos / Estrutura
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Elétrica > Instalações elétricas
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Manutenção Preventiva > Vistoria em Instalações
 Climatização > Ar condicionado split
@@ -2236,7 +2236,7 @@ Elétrica > Instalações elétricas
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 "Suprimentos / Apoio Técnico > Limpeza de equipamentos, ambiente e mobiliário"
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Climatização > Ar condicionado split
@@ -2260,20 +2260,20 @@ Climatização > Ar condicionado split
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Hidrossanitária > Hidráulica
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
 Hidrossanitária > Hidráulica
@@ -2344,7 +2344,7 @@ Elétrica > Instalações elétricas
 Manutenção Preventiva > Quadros Elétricos
 Climatização > Ar condicionado central
 Hidrossanitária > Hidráulica
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Elétrica > Iluminação
 Climatização > Ar condicionado split
@@ -2357,7 +2357,7 @@ Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
@@ -2366,7 +2366,7 @@ Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Manutenção Preventiva > Gerador
 Hidrossanitária > Hidráulica
-Estrutura Predial > Alvenaria / Pisos / Estrutura
+"Estrutura Predial > Esquadrias, porta, portão e janelas"
 Estrutura Predial > Infiltração
 Climatização > Ar condicionado split
 Elétrica > Iluminação
@@ -2392,19 +2392,19 @@ Elétrica > Iluminação
 "Estrutura Predial > Esquadrias, porta, portão e janelas"
 Elétrica > Iluminação
 Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
-Climatização > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado split
 Manutenção Preventiva > Gerador
 Climatização > Ar condicionado split
 "Estrutura Predial > Instalações Especiais (gás, ar comprimido, etc.)"
@@ -5545,7 +5545,7 @@ Climatização > Ar condicionado split
 Elétrica > Iluminação
 Climatização > Ar condicionado split
 Climatização > Ar condicionado split
-Estrutura Predial > Alvenaria / Pisos / Estrutura
+Hidrossanitária > Hidráulica
 Elétrica > Iluminação
 Estrutura Predial > Alvenaria / Pisos / Estrutura
 Manutenção Preventiva > Gerador
@@ -14578,4 +14578,14 @@ Elétrica > Gerador
 Manutenção Preventiva > Gerador
 Estrutura Predial > Infiltração
 Elétrica > Subestação
+Hidrossanitária > Hidráulica
+Manutenção Preventiva > Ar condicionado split
+Manutenção Preventiva > Ar condicionado central
+Manutenção Preventiva > Ar condicionado central
+TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi
+Climatização > Ar condicionado split
+Climatização > Ar condicionado split
+Hidrossanitária > Hidráulica
+"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)"
+Climatização > Ar condicionado central
 Hidrossanitária > Hidráulica
