@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-11-04T16:30:46.327383+00:00",
+  "gerado_em_utc": "2026-11-05T16:43:33.059836+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,9 +37,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "5d4997e16b00",
-        "html_url": "https://github.com/adinailson88/malha-ia/commit/5d4997e16b00b143dcbab01d562853a439bd2bf8",
-        "data": "2026-11-04T14:52:20Z"
+        "sha": "51d11e3dbb7d",
+        "html_url": "https://github.com/adinailson88/malha-ia/commit/51d11e3dbb7dfde14bc7e18d6a64e323a01e370f",
+        "data": "2026-11-05T14:57:24Z"
       },
       "dados_atualizados_em_utc": "2026-11-04T13:19:15.852933+00:00",
       "resumo_dados": {
@@ -99,11 +99,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "14c6dcae5cbc",
-        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/14c6dcae5cbc42216fda84f37b9a1249003aeba6",
-        "data": "2026-11-04T15:24:50Z"
+        "sha": "c96f7c7c560e",
+        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/c96f7c7c560ea4a73e5f906dfbc075594527a717",
+        "data": "2026-11-05T15:26:44Z"
       },
-      "dados_atualizados_em_utc": "2026-11-04T15:03:38.450214+00:00",
+      "dados_atualizados_em_utc": "2026-11-05T08:56:06.502459+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -157,9 +157,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "176d8330c82c",
-        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/176d8330c82c68232bb5576ab706861d6ed5a020",
-        "data": "2026-11-04T15:03:50Z"
+        "sha": "7ad032032bf6",
+        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/7ad032032bf6806e7b034f1c04cad6ba3910b2f5",
+        "data": "2026-11-05T08:56:29Z"
       },
       "dados_atualizados_em_utc": "2026-10-07T04:16:37.416452+00:00",
       "resumo_dados": {},
@@ -215,11 +215,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "a8ebcaf27dd7",
-        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/a8ebcaf27dd7cc57b2a5ed3cfdfd28765d208cfe",
-        "data": "2026-11-04T16:01:42Z"
+        "sha": "c28c3c0a5fb3",
+        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/c28c3c0a5fb314c3a061735ad4a917ec9bab11c6",
+        "data": "2026-11-05T15:07:50Z"
       },
-      "dados_atualizados_em_utc": "2026-11-04T16:01:41.477651+00:00",
+      "dados_atualizados_em_utc": "2026-11-05T10:30:03.031566+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -273,9 +273,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "1519177c7deb",
-        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/1519177c7deb520344235837a4106948fb793a4d",
-        "data": "2026-11-04T15:12:56Z"
+        "sha": "ce7e43abb5db",
+        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/ce7e43abb5db2fcbb875ce375bc78b413c9f0188",
+        "data": "2026-11-05T09:06:47Z"
       },
       "dados_atualizados_em_utc": "2026-10-07T00:55:44.679381+00:00",
       "resumo_dados": {},
@@ -331,14 +331,14 @@
         "erro": null
       },
       "commit_main": {
-        "sha": "347228216deb",
-        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/347228216deb248f072c91d121e0507f1510503d",
-        "data": "2026-11-04T13:44:25Z"
+        "sha": "50f606ce7eca",
+        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/50f606ce7eca470dcd3eedd1fedcaad925e2178a",
+        "data": "2026-11-05T13:56:56Z"
       },
-      "dados_atualizados_em_utc": "2026-11-04T10:11:40.332357+00:00",
+      "dados_atualizados_em_utc": "2026-11-05T12:36:02.630798+00:00",
       "resumo_dados": {
         "arquivos": 3,
-        "linhas_dados": 166
+        "linhas_dados": 201
       },
       "manifest_modulo": {
         "schema_version": "1.0",
