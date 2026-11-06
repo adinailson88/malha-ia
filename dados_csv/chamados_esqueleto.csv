@@ -39353,7 +39353,7 @@ Aproveito para solicitar novamente uma senha para utilizar a impressora. Fiz est
 Agradeço desde já.",,
 2026100033,Ar não resfria,Climatização > Ar condicionado split,O ar condicionado Gree não está refrigerando.,,
 2026100041,Solicita revisão do ar condicionado da área de acervo da biblioteca do,Climatização > Ar condicionado split,Solicita revisão do ar condicionado da área de acervo da biblioteca do CJA que após a limpeza está com som estranho,,
-2026100043,INSTALAÇÃO DE PELÍCULA DE VIDRO,"Estrutura Predial > Esquadrias, porta, portão e janelas","Solicitamos a gentileza de instalação de película de vidro na sala da Procuradoria, localizada no 3º andar, em razão da incidência de sol direito no local de trabalho dos servidores da unidade.",,
+2026100043,INSTALAÇÃO DE PELÍCULA DE VIDRO,"Estrutura Predial > Esquadrias, porta, portão e janelas","Solicitamos a gentileza de instalação de película de vidro na sala da Procuradoria, localizada no 3º andar, em razão da incidência de sol direito no local de trabalho dos servidores da unidade.",Instalação de película na janela da sala da Procuradoria,Instalação de película na janela da sala da Procuradoria
 2026100048,Fechadura,"Estrutura Predial > Esquadrias, porta, portão e janelas","Boa tarde!
 peço por gentileza, que seja colocada uma nova fechadura na porta da sala de Acessibilidade.
 Grata!",Substituição de fechadura na sala de Acessibilidade,Substituição de fechadura na sala de Acessibilidade
@@ -39671,7 +39671,7 @@ Em caso positivo, solicito confirmação de que o dimensionamento está de acord
 2026100330,Limpeza de caixas e quadros eletricos,Elétrica > Instalações elétricas,"fazer a limpeza e aperto de todos os quadros elétricos, limpeza e expeçam das caixas de passagem para verificação de emendas onde precisão de ter o isolamento refeito o conexões substituídas, para garantir a segurança e bom funcionamento dos circuitos elétricos",,
 2026100331,Verificação de Ar-Condicionado – Conforto Médico do HMTF,Climatização > Ar condicionado split,"Prezados, boa tarde!
 Solicito, por gentileza, a verificação do aparelho de ar-condicionado localizado no conforto médico do HMTF, pois está apresentando um código de erro relacionado a um possível vazamento de gás refrigerante.
-Atenciosamente,",,
+Atenciosamente,",Verificação de Ar-Condicionado – Conforto Médico do HMTF,Verificação de Ar-Condicionado – Conforto Médico do HMTF
 2026100335,Relatório de Viagens CPF-31: Limpeza de vigas e eletrocalhas,Manutenção Preventiva > Vistoria em Instalações,"Foi identificado vários pontos com poeira e teias de aranha nas vigas, tubulações e eletrocalhas próximos à laje cuja limpeza estão além da capacidade da equipe local.
 Avaliar com equipe do campus a possibilidade de contratação de limpeza especializada e reavaliar a ausência de forro em locais abertos expostos à muita poeira e circulação de carros.",,
 2026100336,Relatório de Viagens CPF-32: Limpeza da cúpula,Manutenção Preventiva > Vistoria em Instalações,"A cúpula e estrutura da cobertura estão sujas; painéis solares na cobertura.
@@ -39782,13 +39782,84 @@ Motivo: Queimou após um raio cair sobre o campus.",Substituição de para-raio;
 Solicito troca de torneira quebrada no laboratório de microbiologia, imunologia, parasitologia e patologia.
 Atensionamente,
 Thiago",,
-2026110001,Manutenção Preventiva Mensal - Ar condicionado - Reitoria,Manutenção Preventiva > Ar condicionado split,,,
-2026110002,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,Manutenção Preventiva > Ar condicionado central,,,
-2026110003,Manutenção Preventiva Mensal - Ar Condicionado Central - CSC - Tratamento Químico Mensal da Água de Condensação,Manutenção Preventiva > Ar condicionado central,,,
-2026110006,Instalação do Pacote Office ba máquina nova Cristiane Rabelo no CSC,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
-2026110010,Ar Condicionado parou de funcionar,Climatização > Ar condicionado split,,,
-2026110011,"Solicito, por gentileza, avaliação do aparelho de ar condicionado inst",Climatização > Ar condicionado split,,,
-2026110022,Troca de saboneteira e troca de suporte de pape higiênico,Hidrossanitária > Hidráulica,,,
-2026110023,Montagem de  beliche no conforto da UFSB na UPA,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
-2026110025,Ligar ar condicionado central para atender evento de Psicologia,Climatização > Ar condicionado central,,,
-2026110026,Solicitação de troca de tampa de vaso sanitário,Hidrossanitária > Hidráulica,,,
+2026110001,Manutenção Preventiva Mensal - Ar condicionado - Reitoria,Manutenção Preventiva > Ar condicionado split,"Solicito manutenção preventiva dos equipamentos de ar condicionado conforme arquivo em anexo.
+O acompanhamento dos serviços deverá ser feito de acordo ao Anexo I, página 04.",,
+2026110002,Manutenção Preventiva Mensal - Ar condicionado Central - CSC,Manutenção Preventiva > Ar condicionado central,"Solicito manutenção preventiva mensal do ar condicionado central do CSC de acordo ao arquivo em anexo ""DINFRA.CM.17 - MANUTENÇÃO PREVENTIVA DE AR CONDICIONADO CENTRAL (CHILLER) - PMOC"".
+O acompanhamento deste chamado deve ser de acordo com as atividades descritas no ANEXO I .
+O retorno destas atividades devem ser dados à Coordenação de Manutenção ou à Coordenação de Campus do CSC, de modo que a UFSB tenha ciência das atividades preventivas realizadas no equipamento.
+Caso haja alguma necessidade de material(is) para manutenção corretiva, este(s) deverá(ão) ser solicitado(s) de imediato de modo que a aquisição seja o mais rápido possível.
+O fechamento deste chamado está condicionado ao retorno deste documento.",,
+2026110003,Manutenção Preventiva Mensal - Ar Condicionado Central - CSC - Tratamento Químico Mensal da Água de Condensação,Manutenção Preventiva > Ar condicionado central,"Solicito tratamento químico de água de condensação de ar condicionado central. Este procedimento deverá acompanhar o documento em anexo ""DINFRA.CM.17 - MANUTENÇÃO PREVENTIVA DE AR CONDICIONADO CENTRAL (CHILLER) - PMOC"", com informações sobre o sistema de refrigeração no Item 7.
+Os padrões técnicos a serem alcançados após o tratamento devem estar de acordo ao que consta no ANEXO IV do documento em anexo.
+Após o tratamento, a UFSB deverá ser informada do serviço com a entrega de um relatório técnico informando sobre o processo.",,
+2026110006,Instalação do Pacote Office ba máquina nova Cristiane Rabelo no CSC,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"Bom dia. Por gentileza, providenciar a conexão da CPU nova na rede e instalação do Pacote Office na CPU nova que será utilizada por Cristiane Rabelo no Pavilhão ADM no CSC (Sala de esquina à direita da entrada principal do Bloco ADM).",,
+2026110010,Ar Condicionado parou de funcionar,Climatização > Ar condicionado split,"O ar acondicionado da sala da Procuradora parou de funcionar, solicito atendiemnto urgente.",,
+2026110011,"Solicito, por gentileza, avaliação do aparelho de ar condicionado inst",Climatização > Ar condicionado split,"Solicito, por gentileza, avaliação do aparelho de ar condicionado instalado na sala ""Acessibilidade e Educação Inclusiva"".",,
+2026110022,Troca de saboneteira e troca de suporte de pape higiênico,Hidrossanitária > Hidráulica,"Prezados,
+Solicito a troca do suporte de sabonete líquido do primeiro andar feminino e a troca do suporte de papel higiênico do banheiro dos segundo andar feminino.
+cordialmente",,
+2026110023,Montagem de  beliche no conforto da UFSB na UPA,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)","Prezados,
+
+Com o término da reforma do espaço, cedido à UFSB pela SMS - COAPES, na Unidade de Pronto Atendimento (UPA) e a necessidade de dar conforto aos internos do curso de medicina.
+
+A pedido do coordenador administrativo do CPF, solicito:
+Montagem de uma beliche com dois colchões. (A beliche está no espaço de manutenção do NP - 3º piso)
+Um escaninho com chaves. (Arlete vai indicar qual)
+Três mesas azuis de estudo e 3 cadeiras
+01 computador completo
+
+OBS: As chaves do espaço e o controle do ar estão no setor de apoio administrativo com Arlete",,
+2026110025,Ligar ar condicionado central para atender evento de Psicologia,Climatização > Ar condicionado central,"Solicito apoio para operação do ar condicionado Central para climatização do auditório monte pascoal 1 no período de 04 a 07/11/2026, durantante realização do XIV Simposio Brasileiro de Psicologia Politica que estará sendo realizado no campus Sosigenes Costa.",,
+2026110026,Solicitação de troca de tampa de vaso sanitário,Hidrossanitária > Hidráulica,Solicito a troca de 02 no banheiro feminino do segundo pavimento e 01 no feminino do primeiro. Estão quebradas.,Substituição de assento sanitário,Substituição de assento sanitário
+2026110029,Ar condicionado com problemas.,Climatização > Ar condicionado split,"Saudações!
+Gostaria de solicitar, se possível, a troca do aparelho de ar condicionado da coleção de Formicidae aqui no laboratório de Proteção Florestal/Mirmecologia. Recentemente tivemos problema com o aparelho que foi consertado. Mas novamente parou de funcionar. Esse equipamento já passou por vários reparos e com frequência apresenta problemas. Caso não seja possível a troca, solicitaria a manutenção/reparo do equipamento, pois a coleção não pode ficar sem o controle de temperatura.
+Desde já agradeço pela colaboração.
+Att.,
+Alexandre.",,
+2026110031,Gostaria de relatar que o ar-condicionado da sala multimídia (CSC) est,Climatização > Ar condicionado split,,,
+2026110035,Conserto da fechadura da porta,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026110036,Manutenção Preventiva Mensal - Ar condicionado - CJA - Laboratório CEPLAC,Manutenção Preventiva > Ar condicionado split,,,
+2026110037,Manutenção Preventiva Mensal - Ar condicionado - CJA - NUPED,Manutenção Preventiva > Ar condicionado split,,,
+2026110038,Manutenção Preventiva Mensal - Ar condicionado - CJA - NVGA,Manutenção Preventiva > Ar condicionado split,,,
+2026110039,Manutenção Preventiva Mensal - Ar condicionado - CJA - Auditório CEPLAC,Manutenção Preventiva > Ar condicionado split,,,
+2026110040,Manutenção Preventiva Mensal - Ar condicionado - CPF - Bloco Administrativo,Manutenção Preventiva > Ar condicionado split,,,
+2026110041,Manutenção Preventiva Mensal - Ar condicionado - CPF - Bloco de Aulas 1,Manutenção Preventiva > Ar condicionado split,,,
+2026110042,Manutenção Preventiva Mensal - Ar condicionado - CPF - Bloco de Aulas 2,Manutenção Preventiva > Ar condicionado split,,,
+2026110043,Manutenção Preventiva Mensal - Ar condicionado - CPF - Laboratório 1° Ciclo CFCS,Manutenção Preventiva > Ar condicionado split,,,
+2026110044,Manutenção Preventiva Mensal - Ar condicionado - CPF - Pavilhão Anexo de Aulas,Manutenção Preventiva > Ar condicionado split,,,
+2026110045,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão Administrativo,Manutenção Preventiva > Ar condicionado split,,,
+2026110046,Manutenção Preventiva Mensal - Ar condicionado - CSC - Bloco de Serviços,Manutenção Preventiva > Ar condicionado split,,,
+2026110047,Manutenção Preventiva Mensal - Ar condicionado - CSC - Espaço de Leitura,Manutenção Preventiva > Ar condicionado split,,,
+2026110048,Manutenção Preventiva Mensal - Ar condicionado - CSC - Laboratórios,Manutenção Preventiva > Ar condicionado split,,,
+2026110049,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Convenções,Manutenção Preventiva > Ar condicionado split,,,
+2026110050,Manutenção Preventiva Mensal - Ar condicionado - CSC - Pavilhão de Feiras,Manutenção Preventiva > Ar condicionado split,,,
+2026110051,Manutenção Preventiva Mensal - Ar Condicionado - CSC - Pórtico,Manutenção Preventiva > Ar condicionado split,,,
+2026110052,Manutenção Preventiva Mensal - Ar condicionado - CPF - Laboratório de Habilidades,Manutenção Preventiva > Ar condicionado split,,,
+2026110053,Manutenção Preventiva Mensal - Ar condicionado - CSC - LABMOL,Manutenção Preventiva > Ar condicionado split,,,
+2026110054,Manutenção Preventiva Mensal - Ar condicionado - CPF - Clínica escola de Psicologia,Manutenção Preventiva > Ar condicionado split,,,
+2026110055,Manutenção Preventiva Mensal - Ar condicionado - CPF - Salas de Tutoria,Manutenção Preventiva > Ar condicionado split,,,
+2026110056,Manutenção preventiva mensal do elevador da Reitoria,Manutenção Preventiva > Elevador,,,
+2026110057,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Paulo Freire,Manutenção Preventiva > Elevador,,,
+2026110058,Manutenção preventiva mensal dos elevadores do Núcleo Pedagógico do Campus Jorge Amado,Manutenção Preventiva > Elevador,,,
+2026110060,Mau Funcionamento Ar condicionado,Climatização > Ar condicionado split,,,
+2026110064,Ar condicionado com defeito,Climatização > Ar condicionado split,,,
+2026110071,manutenção no lava olhos,Hidrossanitária > Hidráulica,,Substituição de válvula de lava ollhos,Substituição de válvula de lava ollhos
+2026110072,Remoção de Traves de Madeira,Área Externa e Ambiental > Manutenção área externa / meio ambiente / Poda de árvore / Roçagem,,,
+2026110074,Substituição de Luminárias,Elétrica > Iluminação,,,
+2026110075,Readequação dos Detectores de Incêndio – LabEcos,Elétrica > Instalações elétricas,,,
+2026110076,Reposição de Vidros – Laboratório de Habilidades,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026110077,Ponto de rede quebrado ou solto,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
+2026110078,"Prezado, boa tarde.  Poderia por gentileza verificar a possibilidade d",Hidrossanitária > Hidráulica,,,
+2026110079,"Prezado, boa tarde.  Poderia por gentileza verificar a possibilidade d",Hidrossanitária > Hidráulica,,,
+2026110081,Defeito porta de armário,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026110082,Ar não liga,Climatização > Ar condicionado split,,,
+2026110084,A porta está caindo,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026110085,Iluminação da área externa da biblioteca não liga,Elétrica > Iluminação,,,
+2026110086,Limpeza Semestral - Reservatórios - CPF - Bloco Administrativo,Manutenção Preventiva > Reservatório,,,
+2026110087,Limpeza Semestral - Reservatórios - CPF - Pavilhão de Aulas 1,Manutenção Preventiva > Reservatório,,,
+2026110088,Limpeza Semestral - Reservatórios - CSC - Bloco de Serviços,Manutenção Preventiva > Reservatório,,,
+2026110089,Limpeza Semestral - Reservatórios - CSC - Bloco de Serviços (inferior),Manutenção Preventiva > Reservatório,,,
+2026110090,Limpeza Semestral - Reservatórios - CSC - Pórtico,Manutenção Preventiva > Reservatório,,,
+2026110091,Limpeza Semestral - Reservatórios - CSC - Bloco de Serviços,Manutenção Preventiva > Reservatório,,,
+2026110092,Limpeza Semestral - Reservatórios - CSC - Bloco de Serviços,Manutenção Preventiva > Reservatório,,,
+2026110093,Limpeza Semestral - Reservatórios - CSC - Bloco de Serviços,Manutenção Preventiva > Reservatório,,,
