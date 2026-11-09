@@ -36517,7 +36517,7 @@ Local: Sala 102 - 1° ANDAR",,
 2026040075,"À Equipe de Manutenção - DINFRA,   Solicito a Instalação de fibra ópti",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"À Equipe de Manutenção - DINFRA,
 
 Solicito a Instalação de fibra óptica + DIO, Rack e pontos de rede cabeada (à definir) na Portaria Entrada da CEPLAC, prevendo ampliação da cobertura ao Centro de Treinamento - BR415 instalando 01 Caixa de emenda nesta FO;
-Tendo em vista a constante necessidade de comunicação e dificuldades em contato com os colaboradores que estão disponíveis nesta área bem como demais usuários.",,
+Tendo em vista a constante necessidade de comunicação e dificuldades em contato com os colaboradores que estão disponíveis nesta área bem como demais usuários.",Instalação de fibra ótica na portaria da entrada da CEPLAC,Instalação de fibra ótica na portaria da entrada da CEPLAC
 2026040076,"À Equipe de Manutenção - DINFRA,     Solicito novo backbone interno CJ",TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,"À Equipe de Manutenção - DINFRA,
 
 Solicito novo backbone interno CJA - Fabrica de Chocolate - CFCAF e Portaria CEPLAC (6km + pontos de derivação/caixas de emenda), a única via vigente 6FO já teve muitas manutenções e emendas, causando atenuações e perdas constantes de conectividade.",,
@@ -39850,10 +39850,11 @@ Alexandre.",,
 2026110076,Reposição de Vidros – Laboratório de Habilidades,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
 2026110077,Ponto de rede quebrado ou solto,TI / Dados / Rede > Ponto de rede / fibra ótica / Wi-fi,,,
 2026110078,"Prezado, boa tarde.  Poderia por gentileza verificar a possibilidade d",Hidrossanitária > Hidráulica,,,
-2026110079,"Prezado, boa tarde.  Poderia por gentileza verificar a possibilidade d",Hidrossanitária > Hidráulica,,,
+2026110079,"Prezado, boa tarde.  Poderia por gentileza verificar a possibilidade d",Hidrossanitária > Hidráulica,,Substituição de assento sanitário no vestiário feminino,Substituição de assento sanitário no vestiário feminino
 2026110081,Defeito porta de armário,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
 2026110082,Ar não liga,Climatização > Ar condicionado split,,,
-2026110084,A porta está caindo,"Estrutura Predial > Esquadrias, porta, portão e janelas",,,
+2026110084,A porta está caindo,"Estrutura Predial > Esquadrias, porta, portão e janelas",,Reparo da porta da biblioteca - CSC,"serviço de troca de ferragens de duas portas da biblioteca do CSC.
+ps.: as ferragens devem ser pretas"
 2026110085,Iluminação da área externa da biblioteca não liga,Elétrica > Iluminação,,,
 2026110086,Limpeza Semestral - Reservatórios - CPF - Bloco Administrativo,Manutenção Preventiva > Reservatório,,,
 2026110087,Limpeza Semestral - Reservatórios - CPF - Pavilhão de Aulas 1,Manutenção Preventiva > Reservatório,,,
