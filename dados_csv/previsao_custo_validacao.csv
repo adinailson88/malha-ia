@@ -1,9 +1,9 @@
-﻿Modelo,RMSE_MÃ©dio_CV,RMSE_DesvPad_CV,N_Folds,Fold_1,Fold_2,Fold_3,Fold_4,Fold_5,InterpretaÃ§Ã£o
-ARIMA,125457.71,24313.03,3,159740.6,110596.12,106036.42,,,Baixa variÃ¢ncia (CV estÃ¡vel)
-SARIMAX-12,113481.17,27737.31,3,151921.24,87492.96,101029.3,,,Alta variÃ¢ncia (modelo sensÃ­vel ao perÃ­odo de treino)
-Holt-Winters,130590.78,11714.38,3,146952.65,120161.06,124658.65,,,Baixa variÃ¢ncia (CV estÃ¡vel)
-Theta,111918.98,30154.13,3,153868.29,84303.63,97585.02,,,Alta variÃ¢ncia (modelo sensÃ­vel ao perÃ­odo de treino)
-Naive_Sazonal,165636.4,35206.04,3,194181.64,186691.89,116035.68,,,Alta variÃ¢ncia (modelo sensÃ­vel ao perÃ­odo de treino)
-Drift,265582.53,184092.64,3,153300.91,525143.55,118303.13,,,Alta variÃ¢ncia (modelo sensÃ­vel ao perÃ­odo de treino)
+﻿Modelo,RMSE_Médio_CV,RMSE_DesvPad_CV,N_Folds,Fold_1,Fold_2,Fold_3,Fold_4,Fold_5,Interpretação
+ARIMA,153731.81,76580.06,3,260451.55,116338.52,84405.36,,,Alta variância (modelo sensível ao período de treino)
+SARIMAX-12,151910.56,71634.19,3,253089.48,96927.28,105714.92,,,Alta variância (modelo sensível ao período de treino)
+Holt-Winters,155766.77,73969.5,3,260337.09,101028.55,105934.67,,,Alta variância (modelo sensível ao período de treino)
+Theta,138838.14,83362.03,3,256718.44,78477.27,81318.71,,,Alta variância (modelo sensível ao período de treino)
+Naive_Sazonal,171337.36,57125.42,3,240701.21,172522.73,100788.14,,,Alta variância (modelo sensível ao período de treino)
+Drift,155641.86,75030.93,3,260739.25,115756.68,90429.66,,,Alta variância (modelo sensível ao período de treino)
 ,,,,,,,,,
-ValidaÃ§Ã£o Rolling-Origin com 3 folds Ã— 12 meses cada. Compara robustez relativa entre modelos sob diferentes janelas de treino.,,,,,,,,,
+Validação Rolling-Origin com 3 folds × 12 meses cada. Compara robustez relativa entre modelos sob diferentes janelas de treino.,,,,,,,,,
