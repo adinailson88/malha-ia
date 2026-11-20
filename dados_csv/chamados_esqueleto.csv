@@ -531,7 +531,7 @@ Segue em Anexo a foto do local.",,
 5722,Estamos com problemas nos ventiladores da sala 04 Algumas lâmpadas do,Elétrica > Iluminação,"Estamos com problemas nos ventiladores da sala 04
 Algumas lâmpadas do corredor não estão acendendo",,
 5728,Gentileza verificar mal funcionamento inadequado de ar condicionado da,Climatização > Ar condicionado split,Gentileza verificar mal funcionamento inadequado de ar condicionado da sala da secretaria executiva e da sala de reuniões do gabinete.,,
-5750,Estamos sem água devido á entrada de ar na bomba d'água.,Hidrossanitária > Hidráulica,Estamos sem água devido á entrada de ar na bomba d'água.,,
+5750,Estamos sem água devido á entrada de ar na bomba d'água.,Hidrossanitária > Bomba,Estamos sem água devido á entrada de ar na bomba d'água.,,
 5754,Solicito manutenção sobre um vazamento no rodapé proximo a pia do Sani,Hidrossanitária > Hidráulica,Solicito manutenção sobre um vazamento no rodapé proximo a pia do Sanitário masculino do Pavilhão de aulas.,,
 5808,Infiltração no bloco adm,"Estrutura Predial > Telhados, calhas, rufos, etc.","Solicito a substituição de telhas em alguns ambientes no bloco administrativo onde está ocorrendo infiltrações (Sala da Protic/ Sala de máquinas, Sala de infraestrutura; Secretaria academica).
 Qtd: 100 telhas tipo colonial (50 bicas / 50 capa)",,
@@ -39973,3 +39973,7 @@ ps.: as ferragens devem ser pretas"
 2026110284,Sensor de presensa iluminação,Elétrica > Iluminação,,,
 2026110285,Vaso Sanitário entupido,Hidrossanitária > Hidráulica,,,
 2026110289,Suporte para sabonete quebrado ou solto,"Instalação de Acessórios e Mobiliário > Instalação/reparo de equipamentos (Suportes de TV, acessórios de banheiro e quadro branco)",,,
+2026110291,"Prezados, Boa tarde! Solicito o conserto do refletor queimado no início do corredor do Pavilhão Pórtico.",Elétrica > Iluminação,,,
+2026110292,Projetor não liga,Elétrica > Instalações elétricas,,,
+2026110293,sanitário,Estrutura Predial > Infiltração,,,
+2026110294,Manutenção – Ar-Condicionado do Laboratório de Práticas Corporais,Climatização > Ar condicionado central,,Manutenção – Ar-Condicionado do Laboratório de Práticas Corporais,Manutenção – Ar-Condicionado do Laboratório de Práticas Corporais
