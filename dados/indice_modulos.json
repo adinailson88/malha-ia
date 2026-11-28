@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "gerado_em_utc": "2026-11-27T18:25:05.453937+00:00",
+  "gerado_em_utc": "2026-11-28T17:08:31.557107+00:00",
   "politica": "portal_central_manifesto_status_sem_orquestracao_pesada",
   "total_modulos": 6,
   "modulos_online": 6,
@@ -37,10 +37,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "d5986e6b13d7",
+        "html_url": "https://github.com/adinailson88/malha-ia/commit/d5986e6b13d7cbf1d68100bd89fd9c568d03064b",
+        "data": "2026-11-28T15:49:25Z"
       },
       "dados_atualizados_em_utc": "2026-11-27T15:40:00.472796+00:00",
       "resumo_dados": {
@@ -100,12 +99,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "7bf921093455",
+        "html_url": "https://github.com/adinailson88/malha-previsao-chamados/commit/7bf9210934554d549070b447ea48477f46da4636",
+        "data": "2026-11-28T15:43:45Z"
       },
-      "dados_atualizados_em_utc": "2026-11-27T14:40:40.728085+00:00",
+      "dados_atualizados_em_utc": "2026-11-28T13:51:55.084203+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -159,12 +157,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "4ff58716eef3",
+        "html_url": "https://github.com/adinailson88/malha-previsao-custos/commit/4ff58716eef32ec5c17d6e9211632824c2f51544",
+        "data": "2026-11-28T13:52:10Z"
       },
-      "dados_atualizados_em_utc": "2026-11-27T14:41:02.482871+00:00",
+      "dados_atualizados_em_utc": "2026-11-28T13:52:09.618326+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -218,12 +215,11 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "ff6673c2f074",
+        "html_url": "https://github.com/adinailson88/malha-ods-esg/commit/ff6673c2f07433b38b6c3133980b750c53793fd9",
+        "data": "2026-11-28T15:56:22Z"
       },
-      "dados_atualizados_em_utc": "2026-11-27T08:56:45.627361+00:00",
+      "dados_atualizados_em_utc": "2026-11-28T09:55:47.185331+00:00",
       "resumo_dados": {},
       "manifest_modulo": {
         "schema_version": "1.0",
@@ -277,10 +273,9 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "0f015bd12b4d",
+        "html_url": "https://github.com/adinailson88/malha-estatisticas-associadas/commit/0f015bd12b4da747d9731edcbac7fbaca04f4973",
+        "data": "2026-11-28T15:59:43Z"
       },
       "dados_atualizados_em_utc": "2026-10-07T00:55:44.679381+00:00",
       "resumo_dados": {},
@@ -336,15 +331,14 @@
         "erro": null
       },
       "commit_main": {
-        "sha": null,
-        "html_url": null,
-        "data": null,
-        "erro": "HTTP Error 403: rate limit exceeded"
+        "sha": "41c18e9811c9",
+        "html_url": "https://github.com/adinailson88/malha-previsao-filtros/commit/41c18e9811c965501cd13d9aa7b22717155315f0",
+        "data": "2026-11-28T14:59:47Z"
       },
-      "dados_atualizados_em_utc": "2026-11-27T11:05:06.584229+00:00",
+      "dados_atualizados_em_utc": "2026-11-28T11:10:33.556367+00:00",
       "resumo_dados": {
         "arquivos": 3,
-        "linhas_dados": 177
+        "linhas_dados": 180
       },
       "manifest_modulo": {
         "schema_version": "1.0",
